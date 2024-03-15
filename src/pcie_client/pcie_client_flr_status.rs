@@ -1,0 +1,102 @@
+#[doc = "Register `PCIE_CLIENT_FLR_STATUS` reader"]
+pub type R = crate::R<PcieClientFlrStatusSpec>;
+#[doc = "Function level reset in progress The core asserts bit i of this bus when the host initiates a reset of Function i though its FLR bit in the configuration space. The core continues to maintain the output high until the client sets the FLR_DONE input for the corresponding Function to indicate the completion of the reset operation.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum FlrInProg {
+    #[doc = "0: function level reset in progress"]
+    B0 = 0,
+    #[doc = "1: function level reset in progress"]
+    B1 = 1,
+}
+impl From<FlrInProg> for bool {
+    #[inline(always)]
+    fn from(variant: FlrInProg) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `FLR_IN_PROG` reader - Function level reset in progress The core asserts bit i of this bus when the host initiates a reset of Function i though its FLR bit in the configuration space. The core continues to maintain the output high until the client sets the FLR_DONE input for the corresponding Function to indicate the completion of the reset operation."]
+pub type FlrInProgR = crate::BitReader<FlrInProg>;
+impl FlrInProgR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> FlrInProg {
+        match self.bits {
+            false => FlrInProg::B0,
+            true => FlrInProg::B1,
+        }
+    }
+    #[doc = "function level reset in progress"]
+    #[inline(always)]
+    pub fn is_b0(&self) -> bool {
+        *self == FlrInProg::B0
+    }
+    #[doc = "function level reset in progress"]
+    #[inline(always)]
+    pub fn is_b1(&self) -> bool {
+        *self == FlrInProg::B1
+    }
+}
+#[doc = "Virtual function level reset in progress The core asserts bit i of this bus when the host initiates a reset of Virtual Function i though its FLR bit in the configuration space. The core continues to maintain the output high until the client sets the FLR_DONE input for the corresponding VF to indicate the completion of the reset operation. One bit for each function\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum VfFlrInProg {
+    #[doc = "0: function level reset in progress"]
+    B0 = 0,
+    #[doc = "1: function level reset in progress"]
+    B1 = 1,
+}
+impl From<VfFlrInProg> for u8 {
+    #[inline(always)]
+    fn from(variant: VfFlrInProg) -> Self {
+        variant as _
+    }
+}
+impl crate::FieldSpec for VfFlrInProg {
+    type Ux = u8;
+}
+#[doc = "Field `VF_FLR_IN_PROG` reader - Virtual function level reset in progress The core asserts bit i of this bus when the host initiates a reset of Virtual Function i though its FLR bit in the configuration space. The core continues to maintain the output high until the client sets the FLR_DONE input for the corresponding VF to indicate the completion of the reset operation. One bit for each function"]
+pub type VfFlrInProgR = crate::FieldReader<VfFlrInProg>;
+impl VfFlrInProgR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Option<VfFlrInProg> {
+        match self.bits {
+            0 => Some(VfFlrInProg::B0),
+            1 => Some(VfFlrInProg::B1),
+            _ => None,
+        }
+    }
+    #[doc = "function level reset in progress"]
+    #[inline(always)]
+    pub fn is_b0(&self) -> bool {
+        *self == VfFlrInProg::B0
+    }
+    #[doc = "function level reset in progress"]
+    #[inline(always)]
+    pub fn is_b1(&self) -> bool {
+        *self == VfFlrInProg::B1
+    }
+}
+impl R {
+    #[doc = "Bit 0 - Function level reset in progress The core asserts bit i of this bus when the host initiates a reset of Function i though its FLR bit in the configuration space. The core continues to maintain the output high until the client sets the FLR_DONE input for the corresponding Function to indicate the completion of the reset operation."]
+    #[inline(always)]
+    pub fn flr_in_prog(&self) -> FlrInProgR {
+        FlrInProgR::new((self.bits & 1) != 0)
+    }
+    #[doc = "Bits 8:15 - Virtual function level reset in progress The core asserts bit i of this bus when the host initiates a reset of Virtual Function i though its FLR bit in the configuration space. The core continues to maintain the output high until the client sets the FLR_DONE input for the corresponding VF to indicate the completion of the reset operation. One bit for each function"]
+    #[inline(always)]
+    pub fn vf_flr_in_prog(&self) -> VfFlrInProgR {
+        VfFlrInProgR::new(((self.bits >> 8) & 0xff) as u8)
+    }
+}
+#[doc = "Function level reset status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcie_client_flr_status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct PcieClientFlrStatusSpec;
+impl crate::RegisterSpec for PcieClientFlrStatusSpec {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [`pcie_client_flr_status::R`](R) reader structure"]
+impl crate::Readable for PcieClientFlrStatusSpec {}
+#[doc = "`reset()` method sets PCIE_CLIENT_FLR_STATUS to value 0"]
+impl crate::Resettable for PcieClientFlrStatusSpec {
+    const RESET_VALUE: u32 = 0;
+}
