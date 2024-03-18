@@ -1,6 +1,6 @@
 [package]
 name = "rk3399-rs"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 description = "Rust crate containing structures for the register maps of the RK3399 SoC"
 license = "MIT"
