@@ -2431,7 +2431,7 @@ module"]
 pub type PllReg3 = crate::Reg<pll_reg_3::PllReg3Spec>;
 #[doc = "Pll_control_3"]
 pub mod pll_reg_3;
-#[doc = "PLL_REG_4 (r) register accessor: Pll_control_4\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pll_reg_4::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pll_reg_4`]
+#[doc = "PLL_REG_4 (rw) register accessor: Pll_control_4\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pll_reg_4::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pll_reg_4::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pll_reg_4`]
 module"]
 #[doc(alias = "PLL_REG_4")]
 pub type PllReg4 = crate::Reg<pll_reg_4::PllReg4Spec>;

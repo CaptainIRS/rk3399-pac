@@ -1,0 +1,13 @@
+#[doc = "Register `DDR_DENALI_PHY_909` reader"]
+pub type R = crate::R<DdrDenaliPhy909Spec>;
+#[doc = "\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ddr_denali_phy_909::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct DdrDenaliPhy909Spec;
+impl crate::RegisterSpec for DdrDenaliPhy909Spec {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [`ddr_denali_phy_909::R`](R) reader structure"]
+impl crate::Readable for DdrDenaliPhy909Spec {}
+#[doc = "`reset()` method sets DDR_DENALI_PHY_909 to value 0"]
+impl crate::Resettable for DdrDenaliPhy909Spec {
+    const RESET_VALUE: u32 = 0;
+}

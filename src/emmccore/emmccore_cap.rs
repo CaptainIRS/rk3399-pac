@@ -4,7 +4,7 @@ pub type R = crate::R<EmmccoreCapSpec>;
 pub type W = crate::W<EmmccoreCapSpec>;
 #[doc = "Field `TIMEOUTCLOCKFREQUENCY` reader - This bit shows the base clock frequency used to detect Data Timeout Error. Not 0: 1Khz to 63Khz or 1Mhz to 63Mhz 0: Get Information viaanother method"]
 pub type TimeoutclockfrequencyR = crate::FieldReader;
-#[doc = "This bit shows the unit of base clock frequency used to detect Data Timeout Error.\n\nValue on reset: 0"]
+#[doc = "This bit shows the unit of base clock frequency used to detect Data Timeout Error.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Timeoutclockunit {
     #[doc = "0: Mhz"]
@@ -658,7 +658,7 @@ impl Ddr50supportR {
         *self == Ddr50support::B0
     }
 }
-#[doc = "This bit indicates support of Driver Type A for 1.8 Signaling.\n\nValue on reset: 0"]
+#[doc = "This bit indicates support of Driver Type A for 1.8 Signaling.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Drivertypeasupport {
     #[doc = "1: Driver Type A is Not Supported"]
@@ -694,7 +694,7 @@ impl DrivertypeasupportR {
         *self == Drivertypeasupport::B0
     }
 }
-#[doc = "This bit indicates support of Driver Type C for 1.8 Signaling.\n\nValue on reset: 0"]
+#[doc = "This bit indicates support of Driver Type C for 1.8 Signaling.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Drivertypecsupport {
     #[doc = "1: Driver Type C is Not Supported"]
@@ -747,7 +747,7 @@ where
         self.variant(Drivertypecsupport::B0)
     }
 }
-#[doc = "This bit indicates support of Driver Type D for 1.8 Signaling.\n\nValue on reset: 0"]
+#[doc = "This bit indicates support of Driver Type D for 1.8 Signaling.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Drivertypedsupport {
     #[doc = "1: Driver Type D is Not Supported"]
@@ -783,7 +783,7 @@ impl DrivertypedsupportR {
         *self == Drivertypedsupport::B0
     }
 }
-#[doc = "Driver Type 4 Support\n\nValue on reset: 0"]
+#[doc = "Driver Type 4 Support\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Drivertype4support {
     #[doc = "1: Driver Type 4 is Not Supported"]
@@ -914,7 +914,7 @@ impl RetuningmodeR {
         *self == Retuningmode::D3
     }
 }
-#[doc = "This field indicates clock multiplier value of programmable clock generator. Refer to Clock Control register. Setting 00h means that Host Controller does not support programmable clock generator.\n\nValue on reset: 0"]
+#[doc = "This field indicates clock multiplier value of programmable clock generator. Refer to Clock Control register. Setting 00h means that Host Controller does not support programmable clock generator.\n\nValue on reset: 16"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Clockmultiplier {
@@ -1218,7 +1218,7 @@ impl crate::Writable for EmmccoreCapSpec {
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u64 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u64 = 0;
 }
-#[doc = "`reset()` method sets EMMCCORE_CAP to value 0x8000_2007_44ed_0000"]
+#[doc = "`reset()` method sets EMMCCORE_CAP to value 0x8010_20f7_44ed_c880"]
 impl crate::Resettable for EmmccoreCapSpec {
-    const RESET_VALUE: u64 = 0x8000_2007_44ed_0000;
+    const RESET_VALUE: u64 = 0x8010_20f7_44ed_c880;
 }
