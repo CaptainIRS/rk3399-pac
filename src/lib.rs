@@ -241,7 +241,7 @@ impl core::fmt::Debug for Qos {
 }
 #[doc = "Quality of Service (QOS) Registers"]
 pub mod qos;
-#[doc = "QOS Registers for CCI_M0"]
+#[doc = "QoS Registers for CCI_M0"]
 pub struct QosCciM0 {
     _marker: PhantomData<*const ()>,
 }
@@ -285,7 +285,7 @@ impl core::fmt::Debug for QosCciM0 {
         f.debug_struct("QosCciM0").finish()
     }
 }
-#[doc = "QOS Registers for CCI_M0"]
+#[doc = "QoS Registers for CCI_M0"]
 pub use self::qos as qos_cci_m0;
 #[doc = "QoS Registers for CCI_M1"]
 pub struct QosCciM1 {
@@ -1989,17 +1989,17 @@ impl core::fmt::Debug for QosPerilpslvNsp {
 }
 #[doc = "QoS Registers for PERILPSLV_NSP"]
 pub use self::qos as qos_perilpslv_nsp;
-#[doc = "Registers for the error logger covering paths from all masters except the PMU of the Cortex-M0 to all slaves outside the PMU power domain"]
-pub struct ErrlogSlv {
+#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters except the PMU of the Cortex-M0 to all slaves outside the PMU power domain"]
+pub struct ErrLoggerSlv {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ErrlogSlv {}
-impl ErrlogSlv {
+unsafe impl Send for ErrLoggerSlv {}
+impl ErrLoggerSlv {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const errlog_slv::RegisterBlock = 0xffa6_4000 as *const _;
+    pub const PTR: *const err_logger_slv::RegisterBlock = 0xffa6_4000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const errlog_slv::RegisterBlock {
+    pub const fn ptr() -> *const err_logger_slv::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2021,31 +2021,31 @@ impl ErrlogSlv {
         }
     }
 }
-impl Deref for ErrlogSlv {
-    type Target = errlog_slv::RegisterBlock;
+impl Deref for ErrLoggerSlv {
+    type Target = err_logger_slv::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ErrlogSlv {
+impl core::fmt::Debug for ErrLoggerSlv {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ErrlogSlv").finish()
+        f.debug_struct("ErrLoggerSlv").finish()
     }
 }
-#[doc = "Registers for the error logger covering paths from all masters except the PMU of the Cortex-M0 to all slaves outside the PMU power domain"]
-pub mod errlog_slv;
-#[doc = "Registers for the error logger covering paths from all masters except the PMU of the Cortex-M0 to all slaves outside the PMU power domain"]
+#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters except the PMU of the Cortex-M0 to all slaves outside the PMU power domain"]
+pub mod err_logger_slv;
+#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters except the PMU of the Cortex-M0 to all slaves outside the PMU power domain"]
 pub struct ErrLoggerSlv0 {
     _marker: PhantomData<*const ()>,
 }
 unsafe impl Send for ErrLoggerSlv0 {}
 impl ErrLoggerSlv0 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const errlog_slv::RegisterBlock = 0xffa6_4000 as *const _;
+    pub const PTR: *const err_logger_slv::RegisterBlock = 0xffa6_4000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const errlog_slv::RegisterBlock {
+    pub const fn ptr() -> *const err_logger_slv::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2068,7 +2068,7 @@ impl ErrLoggerSlv0 {
     }
 }
 impl Deref for ErrLoggerSlv0 {
-    type Target = errlog_slv::RegisterBlock;
+    type Target = err_logger_slv::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -2079,19 +2079,19 @@ impl core::fmt::Debug for ErrLoggerSlv0 {
         f.debug_struct("ErrLoggerSlv0").finish()
     }
 }
-#[doc = "Registers for the error logger covering paths from all masters except the PMU of the Cortex-M0 to all slaves outside the PMU power domain"]
-pub use self::errlog_slv as err_logger_slv0;
-#[doc = "Registers for the error logger covering paths from the PMU of the Cortex-M0 to all slaves inside the PMU power domain"]
+#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters except the PMU of the Cortex-M0 to all slaves outside the PMU power domain"]
+pub use self::err_logger_slv as err_logger_slv0;
+#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from the PMU of the Cortex-M0 to all slaves inside the PMU power domain"]
 pub struct ErrLoggerSlv1 {
     _marker: PhantomData<*const ()>,
 }
 unsafe impl Send for ErrLoggerSlv1 {}
 impl ErrLoggerSlv1 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const errlog_slv::RegisterBlock = 0xffa6_8080 as *const _;
+    pub const PTR: *const err_logger_slv::RegisterBlock = 0xffa6_8080 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const errlog_slv::RegisterBlock {
+    pub const fn ptr() -> *const err_logger_slv::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2114,7 +2114,7 @@ impl ErrLoggerSlv1 {
     }
 }
 impl Deref for ErrLoggerSlv1 {
-    type Target = errlog_slv::RegisterBlock;
+    type Target = err_logger_slv::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -2125,19 +2125,19 @@ impl core::fmt::Debug for ErrLoggerSlv1 {
         f.debug_struct("ErrLoggerSlv1").finish()
     }
 }
-#[doc = "Registers for the error logger covering paths from the PMU of the Cortex-M0 to all slaves inside the PMU power domain"]
-pub use self::errlog_slv as err_logger_slv1;
-#[doc = "Registers for the error logger covering paths from all masters to the memory schedule"]
-pub struct ErrlogMsch {
+#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from the PMU of the Cortex-M0 to all slaves inside the PMU power domain"]
+pub use self::err_logger_slv as err_logger_slv1;
+#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters to the memory schedule"]
+pub struct ErrLoggerMsch {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ErrlogMsch {}
-impl ErrlogMsch {
+unsafe impl Send for ErrLoggerMsch {}
+impl ErrLoggerMsch {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const errlog_msch::RegisterBlock = 0xffa8_7c80 as *const _;
+    pub const PTR: *const err_logger_msch::RegisterBlock = 0xffa8_7c80 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const errlog_msch::RegisterBlock {
+    pub const fn ptr() -> *const err_logger_msch::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2159,31 +2159,31 @@ impl ErrlogMsch {
         }
     }
 }
-impl Deref for ErrlogMsch {
-    type Target = errlog_msch::RegisterBlock;
+impl Deref for ErrLoggerMsch {
+    type Target = err_logger_msch::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ErrlogMsch {
+impl core::fmt::Debug for ErrLoggerMsch {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ErrlogMsch").finish()
+        f.debug_struct("ErrLoggerMsch").finish()
     }
 }
-#[doc = "Registers for the error logger covering paths from all masters to the memory schedule"]
-pub mod errlog_msch;
-#[doc = "Registers for the error logger covering paths from all masters to the memory schedule 0"]
+#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters to the memory schedule"]
+pub mod err_logger_msch;
+#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters to the memory schedule 0"]
 pub struct ErrLoggerMsch0 {
     _marker: PhantomData<*const ()>,
 }
 unsafe impl Send for ErrLoggerMsch0 {}
 impl ErrLoggerMsch0 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const errlog_msch::RegisterBlock = 0xffa8_7c80 as *const _;
+    pub const PTR: *const err_logger_msch::RegisterBlock = 0xffa8_7c80 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const errlog_msch::RegisterBlock {
+    pub const fn ptr() -> *const err_logger_msch::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2206,7 +2206,7 @@ impl ErrLoggerMsch0 {
     }
 }
 impl Deref for ErrLoggerMsch0 {
-    type Target = errlog_msch::RegisterBlock;
+    type Target = err_logger_msch::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -2217,19 +2217,19 @@ impl core::fmt::Debug for ErrLoggerMsch0 {
         f.debug_struct("ErrLoggerMsch0").finish()
     }
 }
-#[doc = "Registers for the error logger covering paths from all masters to the memory schedule 0"]
-pub use self::errlog_msch as err_logger_msch0;
-#[doc = "Registers for the error logger covering paths from all masters to the memory schedule 1"]
+#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters to the memory schedule 0"]
+pub use self::err_logger_msch as err_logger_msch0;
+#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters to the memory schedule 1"]
 pub struct ErrLoggerMsch1 {
     _marker: PhantomData<*const ()>,
 }
 unsafe impl Send for ErrLoggerMsch1 {}
 impl ErrLoggerMsch1 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const errlog_msch::RegisterBlock = 0xffa8_fc80 as *const _;
+    pub const PTR: *const err_logger_msch::RegisterBlock = 0xffa8_fc80 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const errlog_msch::RegisterBlock {
+    pub const fn ptr() -> *const err_logger_msch::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2252,7 +2252,7 @@ impl ErrLoggerMsch1 {
     }
 }
 impl Deref for ErrLoggerMsch1 {
-    type Target = errlog_msch::RegisterBlock;
+    type Target = err_logger_msch::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -2263,8 +2263,8 @@ impl core::fmt::Debug for ErrLoggerMsch1 {
         f.debug_struct("ErrLoggerMsch1").finish()
     }
 }
-#[doc = "Registers for the error logger covering paths from all masters to the memory schedule 1"]
-pub use self::errlog_msch as err_logger_msch1;
+#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters to the memory schedule 1"]
+pub use self::err_logger_msch as err_logger_msch1;
 #[doc = "Memory Schedule (MSCH) Registers"]
 pub struct Msch {
     _marker: PhantomData<*const ()>,
@@ -6727,7 +6727,7 @@ impl core::fmt::Debug for Rki2c6 {
 }
 #[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 6 Registers"]
 pub use self::rki2c as rki2c6;
-#[doc = "Rockchip Inter-Integrated Circuit 7 (RKI2C) Registers"]
+#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 7 Registers"]
 pub struct Rki2c7 {
     _marker: PhantomData<*const ()>,
 }
@@ -6771,7 +6771,7 @@ impl core::fmt::Debug for Rki2c7 {
         f.debug_struct("Rki2c7").finish()
     }
 }
-#[doc = "Rockchip Inter-Integrated Circuit 7 (RKI2C) Registers"]
+#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 7 Registers"]
 pub use self::rki2c as rki2c7;
 #[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 8 Registers"]
 pub struct Rki2c8 {
@@ -7463,52 +7463,6 @@ impl core::fmt::Debug for Emmccore {
 }
 #[doc = "eMMC Controller (EMMCCORE) Registers"]
 pub mod emmccore;
-#[doc = "eMMC Controller (EMMCCORE) Registers"]
-pub struct Emmc {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Emmc {}
-impl Emmc {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const emmccore::RegisterBlock = 0xfe33_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const emmccore::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Emmc {
-    type Target = emmccore::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Emmc {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Emmc").finish()
-    }
-}
-#[doc = "eMMC Controller (EMMCCORE) Registers"]
-pub use self::emmccore as emmc;
 #[doc = "PCIe Client Registers"]
 pub struct PcieClient {
     _marker: PhantomData<*const ()>,
@@ -7647,7 +7601,7 @@ impl core::fmt::Debug for Ddrc {
 }
 #[doc = "DDR Controller (DDRC) Registers"]
 pub mod ddrc;
-#[doc = "DDR Controller 0"]
+#[doc = "DDR Controller 0 (DDRC0) Registers"]
 pub struct Ddrc0 {
     _marker: PhantomData<*const ()>,
 }
@@ -7691,9 +7645,9 @@ impl core::fmt::Debug for Ddrc0 {
         f.debug_struct("Ddrc0").finish()
     }
 }
-#[doc = "DDR Controller 0"]
+#[doc = "DDR Controller 0 (DDRC0) Registers"]
 pub use self::ddrc as ddrc0;
-#[doc = "DDR Controller 1"]
+#[doc = "DDR Controller 1 (DDRC1) Registers"]
 pub struct Ddrc1 {
     _marker: PhantomData<*const ()>,
 }
@@ -7737,7 +7691,7 @@ impl core::fmt::Debug for Ddrc1 {
         f.debug_struct("Ddrc1").finish()
     }
 }
-#[doc = "DDR Controller 1"]
+#[doc = "DDR Controller 1 (DDRC1) Registers"]
 pub use self::ddrc as ddrc1;
 #[doc = "PCIe Core Registers"]
 pub struct PcieCore {
@@ -7968,14 +7922,14 @@ pub struct Peripherals {
     pub qos_perilp_nsp: QosPerilpNsp,
     #[doc = "QOS_PERILPSLV_NSP"]
     pub qos_perilpslv_nsp: QosPerilpslvNsp,
-    #[doc = "ERRLOG_SLV"]
-    pub errlog_slv: ErrlogSlv,
+    #[doc = "ERR_LOGGER_SLV"]
+    pub err_logger_slv: ErrLoggerSlv,
     #[doc = "ERR_LOGGER_SLV0"]
     pub err_logger_slv0: ErrLoggerSlv0,
     #[doc = "ERR_LOGGER_SLV1"]
     pub err_logger_slv1: ErrLoggerSlv1,
-    #[doc = "ERRLOG_MSCH"]
-    pub errlog_msch: ErrlogMsch,
+    #[doc = "ERR_LOGGER_MSCH"]
+    pub err_logger_msch: ErrLoggerMsch,
     #[doc = "ERR_LOGGER_MSCH0"]
     pub err_logger_msch0: ErrLoggerMsch0,
     #[doc = "ERR_LOGGER_MSCH1"]
@@ -8206,8 +8160,6 @@ pub struct Peripherals {
     pub gmac: Gmac,
     #[doc = "EMMCCORE"]
     pub emmccore: Emmccore,
-    #[doc = "EMMC"]
-    pub emmc: Emmc,
     #[doc = "PCIE_CLIENT"]
     pub pcie_client: PcieClient,
     #[doc = "SARADC"]
@@ -8375,7 +8327,7 @@ impl Peripherals {
             qos_perilpslv_nsp: QosPerilpslvNsp {
                 _marker: PhantomData,
             },
-            errlog_slv: ErrlogSlv {
+            err_logger_slv: ErrLoggerSlv {
                 _marker: PhantomData,
             },
             err_logger_slv0: ErrLoggerSlv0 {
@@ -8384,7 +8336,7 @@ impl Peripherals {
             err_logger_slv1: ErrLoggerSlv1 {
                 _marker: PhantomData,
             },
-            errlog_msch: ErrlogMsch {
+            err_logger_msch: ErrLoggerMsch {
                 _marker: PhantomData,
             },
             err_logger_msch0: ErrLoggerMsch0 {
@@ -8730,9 +8682,6 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             emmccore: Emmccore {
-                _marker: PhantomData,
-            },
-            emmc: Emmc {
                 _marker: PhantomData,
             },
             pcie_client: PcieClient {
