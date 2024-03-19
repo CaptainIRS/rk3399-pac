@@ -77,7 +77,7 @@ where
         self.variant(OutputPrFactor::B0011)
     }
 }
-#[doc = "Configures the input video pixel repetition. For CEA Bits Name Attr Description modes, this value must be extracted from the CEA specification for the video mode being input. incoming_pr_factor\\[3:0\\]
+#[doc = "Configures the input video pixel repetition. For CEA modes, this value must be extracted from the CEA specification for the video mode being input. incoming_pr_factor\\[3:0\\]
 0000b: No action. Not used.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -100,7 +100,7 @@ impl From<IncomingPrFactor> for u8 {
 impl crate::FieldSpec for IncomingPrFactor {
     type Ux = u8;
 }
-#[doc = "Field `INCOMING_PR_FACTOR` reader - Configures the input video pixel repetition. For CEA Bits Name Attr Description modes, this value must be extracted from the CEA specification for the video mode being input. incoming_pr_factor\\[3:0\\]
+#[doc = "Field `INCOMING_PR_FACTOR` reader - Configures the input video pixel repetition. For CEA modes, this value must be extracted from the CEA specification for the video mode being input. incoming_pr_factor\\[3:0\\]
 0000b: No action. Not used."]
 pub type IncomingPrFactorR = crate::FieldReader<IncomingPrFactor>;
 impl IncomingPrFactorR {
@@ -136,7 +136,7 @@ impl IncomingPrFactorR {
         *self == IncomingPrFactor::B0100
     }
 }
-#[doc = "Field `INCOMING_PR_FACTOR` writer - Configures the input video pixel repetition. For CEA Bits Name Attr Description modes, this value must be extracted from the CEA specification for the video mode being input. incoming_pr_factor\\[3:0\\]
+#[doc = "Field `INCOMING_PR_FACTOR` writer - Configures the input video pixel repetition. For CEA modes, this value must be extracted from the CEA specification for the video mode being input. incoming_pr_factor\\[3:0\\]
 0000b: No action. Not used."]
 pub type IncomingPrFactorW<'a, REG> = crate::FieldWriter<'a, REG, 4, IncomingPrFactor>;
 impl<'a, REG> IncomingPrFactorW<'a, REG>
@@ -172,7 +172,7 @@ impl R {
     pub fn output_pr_factor(&self) -> OutputPrFactorR {
         OutputPrFactorR::new(self.bits & 0x0f)
     }
-    #[doc = "Bits 4:7 - Configures the input video pixel repetition. For CEA Bits Name Attr Description modes, this value must be extracted from the CEA specification for the video mode being input. incoming_pr_factor\\[3:0\\]
+    #[doc = "Bits 4:7 - Configures the input video pixel repetition. For CEA modes, this value must be extracted from the CEA specification for the video mode being input. incoming_pr_factor\\[3:0\\]
 0000b: No action. Not used."]
     #[inline(always)]
     pub fn incoming_pr_factor(&self) -> IncomingPrFactorR {
@@ -187,7 +187,7 @@ impl W {
     pub fn output_pr_factor(&mut self) -> OutputPrFactorW<FcPrconfSpec> {
         OutputPrFactorW::new(self, 0)
     }
-    #[doc = "Bits 4:7 - Configures the input video pixel repetition. For CEA Bits Name Attr Description modes, this value must be extracted from the CEA specification for the video mode being input. incoming_pr_factor\\[3:0\\]
+    #[doc = "Bits 4:7 - Configures the input video pixel repetition. For CEA modes, this value must be extracted from the CEA specification for the video mode being input. incoming_pr_factor\\[3:0\\]
 0000b: No action. Not used."]
     #[inline(always)]
     #[must_use]

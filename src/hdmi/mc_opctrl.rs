@@ -5,9 +5,9 @@ pub type W = crate::W<McOpctrlSpec>;
 #[doc = "Block HDCP bypass mechanism\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HdcpBlockByp {
-    #[doc = "0: You can still write to the hdcp_clkdisable bit of the register mc_clkdis but this action disables the HDCP module and blocks the bypass mechanism. The output data is frozen and the HDMI Tx and RX fail authentication. Once you set the value to 1'b1, you can change the value back to 1'b0 only by issuing a master reset to the Bits Name Attr Description Hdmi_tx. Otherwise, this field is a \"spare\" bit with no associated functionality."]
+    #[doc = "0: You can still write to the hdcp_clkdisable bit of the register mc_clkdis but this action disables the HDCP module and blocks the bypass mechanism. The output data is frozen and the HDMI Tx and RX fail authentication. Once you set the value to 1'b1, you can change the value back to 1'b0 only by issuing a master reset to the Hdmi_tx. Otherwise, this field is a \"spare\" bit with no associated functionality."]
     B0 = 0,
-    #[doc = "1: You can still write to the hdcp_clkdisable bit of the register mc_clkdis but this action disables the HDCP module and blocks the bypass mechanism. The output data is frozen and the HDMI Tx and RX fail authentication. Once you set the value to 1'b1, you can change the value back to 1'b0 only by issuing a master reset to the Bits Name Attr Description Hdmi_tx. Otherwise, this field is a \"spare\" bit with no associated functionality."]
+    #[doc = "1: You can still write to the hdcp_clkdisable bit of the register mc_clkdis but this action disables the HDCP module and blocks the bypass mechanism. The output data is frozen and the HDMI Tx and RX fail authentication. Once you set the value to 1'b1, you can change the value back to 1'b0 only by issuing a master reset to the Hdmi_tx. Otherwise, this field is a \"spare\" bit with no associated functionality."]
     B1 = 1,
 }
 impl From<HdcpBlockByp> for bool {
@@ -27,12 +27,12 @@ impl HdcpBlockBypR {
             true => HdcpBlockByp::B1,
         }
     }
-    #[doc = "You can still write to the hdcp_clkdisable bit of the register mc_clkdis but this action disables the HDCP module and blocks the bypass mechanism. The output data is frozen and the HDMI Tx and RX fail authentication. Once you set the value to 1'b1, you can change the value back to 1'b0 only by issuing a master reset to the Bits Name Attr Description Hdmi_tx. Otherwise, this field is a \"spare\" bit with no associated functionality."]
+    #[doc = "You can still write to the hdcp_clkdisable bit of the register mc_clkdis but this action disables the HDCP module and blocks the bypass mechanism. The output data is frozen and the HDMI Tx and RX fail authentication. Once you set the value to 1'b1, you can change the value back to 1'b0 only by issuing a master reset to the Hdmi_tx. Otherwise, this field is a \"spare\" bit with no associated functionality."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == HdcpBlockByp::B0
     }
-    #[doc = "You can still write to the hdcp_clkdisable bit of the register mc_clkdis but this action disables the HDCP module and blocks the bypass mechanism. The output data is frozen and the HDMI Tx and RX fail authentication. Once you set the value to 1'b1, you can change the value back to 1'b0 only by issuing a master reset to the Bits Name Attr Description Hdmi_tx. Otherwise, this field is a \"spare\" bit with no associated functionality."]
+    #[doc = "You can still write to the hdcp_clkdisable bit of the register mc_clkdis but this action disables the HDCP module and blocks the bypass mechanism. The output data is frozen and the HDMI Tx and RX fail authentication. Once you set the value to 1'b1, you can change the value back to 1'b0 only by issuing a master reset to the Hdmi_tx. Otherwise, this field is a \"spare\" bit with no associated functionality."]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == HdcpBlockByp::B1
@@ -44,12 +44,12 @@ impl<'a, REG> HdcpBlockBypW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "You can still write to the hdcp_clkdisable bit of the register mc_clkdis but this action disables the HDCP module and blocks the bypass mechanism. The output data is frozen and the HDMI Tx and RX fail authentication. Once you set the value to 1'b1, you can change the value back to 1'b0 only by issuing a master reset to the Bits Name Attr Description Hdmi_tx. Otherwise, this field is a \"spare\" bit with no associated functionality."]
+    #[doc = "You can still write to the hdcp_clkdisable bit of the register mc_clkdis but this action disables the HDCP module and blocks the bypass mechanism. The output data is frozen and the HDMI Tx and RX fail authentication. Once you set the value to 1'b1, you can change the value back to 1'b0 only by issuing a master reset to the Hdmi_tx. Otherwise, this field is a \"spare\" bit with no associated functionality."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(HdcpBlockByp::B0)
     }
-    #[doc = "You can still write to the hdcp_clkdisable bit of the register mc_clkdis but this action disables the HDCP module and blocks the bypass mechanism. The output data is frozen and the HDMI Tx and RX fail authentication. Once you set the value to 1'b1, you can change the value back to 1'b0 only by issuing a master reset to the Bits Name Attr Description Hdmi_tx. Otherwise, this field is a \"spare\" bit with no associated functionality."]
+    #[doc = "You can still write to the hdcp_clkdisable bit of the register mc_clkdis but this action disables the HDCP module and blocks the bypass mechanism. The output data is frozen and the HDMI Tx and RX fail authentication. Once you set the value to 1'b1, you can change the value back to 1'b0 only by issuing a master reset to the Hdmi_tx. Otherwise, this field is a \"spare\" bit with no associated functionality."]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(HdcpBlockByp::B1)
@@ -198,7 +198,7 @@ impl W {
         H22sOvrValW::new(self, 5)
     }
 }
-#[doc = "Block HDCP bypass mechanism 1'b0: This is the default value. You can write to the hdcp_clkdisable bit of the register mc_clkdis and bypass HDCP by acting on the register mc_clkdis bit 6 (hdcp_clkdisable) 1'b1: You can still write to the hdcp_clkdisable bit of the register mc_clkdis but this action disables the HDCP module and blocks the bypass mechanism. The output data is frozen and the HDMI Tx and RX fail authentication. Once you set the value to 1'b1, you can change the value back to 1'b0 only by issuing a master reset to the Bits Name Attr Description Hdmi_tx. Otherwise, this field is a \"spare\" bit with no associated functionality.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mc_opctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mc_opctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Block HDCP bypass mechanism 1'b0: This is the default value. You can write to the hdcp_clkdisable bit of the register mc_clkdis and bypass HDCP by acting on the register mc_clkdis bit 6 (hdcp_clkdisable) 1'b1: You can still write to the hdcp_clkdisable bit of the register mc_clkdis but this action disables the HDCP module and blocks the bypass mechanism. The output data is frozen and the HDMI Tx and RX fail authentication. Once you set the value to 1'b1, you can change the value back to 1'b0 only by issuing a master reset to the Hdmi_tx. Otherwise, this field is a \"spare\" bit with no associated functionality.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mc_opctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mc_opctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct McOpctrlSpec;
 impl crate::RegisterSpec for McOpctrlSpec {
     type Ux = u8;

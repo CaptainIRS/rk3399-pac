@@ -18,9 +18,9 @@ pub type AudsW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type NvbiR = crate::BitReader;
 #[doc = "Field `NVBI` writer - When set to 1, mutes ih_fc_stat0\\[3\\]. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
 pub type NvbiW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `MAS` reader - When set to 1, mutes ih_fc_stat0\\[4\\]. Otherwise, this field is a \"spare\" bit with no associated Bits Name Attr Description functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
+#[doc = "Field `MAS` reader - When set to 1, mutes ih_fc_stat0\\[4\\]. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
 pub type MasR = crate::BitReader;
-#[doc = "Field `MAS` writer - When set to 1, mutes ih_fc_stat0\\[4\\]. Otherwise, this field is a \"spare\" bit with no associated Bits Name Attr Description functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
+#[doc = "Field `MAS` writer - When set to 1, mutes ih_fc_stat0\\[4\\]. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
 pub type MasW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `HBR` reader - When set to 1, mutes ih_fc_stat0\\[5\\]"]
 pub type HbrR = crate::BitReader;
@@ -55,7 +55,7 @@ impl R {
     pub fn nvbi(&self) -> NvbiR {
         NvbiR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - When set to 1, mutes ih_fc_stat0\\[4\\]. Otherwise, this field is a \"spare\" bit with no associated Bits Name Attr Description functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
+    #[doc = "Bit 4 - When set to 1, mutes ih_fc_stat0\\[4\\]. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
     #[inline(always)]
     pub fn mas(&self) -> MasR {
         MasR::new(((self.bits >> 4) & 1) != 0)
@@ -101,7 +101,7 @@ impl W {
     pub fn nvbi(&mut self) -> NvbiW<IhMuteFcStat0Spec> {
         NvbiW::new(self, 3)
     }
-    #[doc = "Bit 4 - When set to 1, mutes ih_fc_stat0\\[4\\]. Otherwise, this field is a \"spare\" bit with no associated Bits Name Attr Description functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
+    #[doc = "Bit 4 - When set to 1, mutes ih_fc_stat0\\[4\\]. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
     #[inline(always)]
     #[must_use]
     pub fn mas(&mut self) -> MasW<IhMuteFcStat0Spec> {

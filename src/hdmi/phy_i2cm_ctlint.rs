@@ -2,7 +2,7 @@
 pub type R = crate::R<PhyI2cmCtlintSpec>;
 #[doc = "Register `PHY_I2CM_CTLINT` writer"]
 pub type W = crate::W<PhyI2cmCtlintSpec>;
-#[doc = "Field `ARBITRATION_INTERRUPT` reader - Arbitration error interrupt bit Bits Name Attr Description {arbitration_interrupt = (arbitration_mask==0b) &amp;&amp; (arbitration_status==arbitration_pol)} Note: This bit field is read by the sticky bits present on the ih_i2cmphy_stat0 register."]
+#[doc = "Field `ARBITRATION_INTERRUPT` reader - Arbitration error interrupt bit {arbitration_interrupt = (arbitration_mask==0b) &amp;&amp; (arbitration_status==arbitration_pol)} Note: This bit field is read by the sticky bits present on the ih_i2cmphy_stat0 register."]
 pub type ArbitrationInterruptR = crate::BitReader;
 #[doc = "Field `ARBITRATION_MASK` reader - Arbitration error interrupt mask signal."]
 pub type ArbitrationMaskR = crate::BitReader;
@@ -25,7 +25,7 @@ pub type NackPolR = crate::BitReader;
 #[doc = "Field `NACK_POL` writer - Not acknowledge error interrupt polarity configuration"]
 pub type NackPolW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 1 - Arbitration error interrupt bit Bits Name Attr Description {arbitration_interrupt = (arbitration_mask==0b) &amp;&amp; (arbitration_status==arbitration_pol)} Note: This bit field is read by the sticky bits present on the ih_i2cmphy_stat0 register."]
+    #[doc = "Bit 1 - Arbitration error interrupt bit {arbitration_interrupt = (arbitration_mask==0b) &amp;&amp; (arbitration_status==arbitration_pol)} Note: This bit field is read by the sticky bits present on the ih_i2cmphy_stat0 register."]
     #[inline(always)]
     pub fn arbitration_interrupt(&self) -> ArbitrationInterruptR {
         ArbitrationInterruptR::new(((self.bits >> 1) & 1) != 0)
@@ -87,7 +87,7 @@ impl W {
         NackPolW::new(self, 7)
     }
 }
-#[doc = "Arbitration error interrupt bit Bits Name Attr Description {arbitration_interrupt = (arbitration_mask==0b) &amp;&amp; (arbitration_status==arbitration_pol)} Note: This bit field is read by the sticky bits present on the ih_i2cmphy_stat0 register.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`phy_i2cm_ctlint::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`phy_i2cm_ctlint::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Arbitration error interrupt bit {arbitration_interrupt = (arbitration_mask==0b) &amp;&amp; (arbitration_status==arbitration_pol)} Note: This bit field is read by the sticky bits present on the ih_i2cmphy_stat0 register.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`phy_i2cm_ctlint::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`phy_i2cm_ctlint::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PhyI2cmCtlintSpec;
 impl crate::RegisterSpec for PhyI2cmCtlintSpec {
     type Ux = u8;

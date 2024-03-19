@@ -34,9 +34,9 @@ pub type I2sSelectW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Spare2R = crate::BitReader;
 #[doc = "Field `SPARE_2` writer - Reserved as \"spare\" bit with no associated functionality."]
 pub type Spare2W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `SW_AUDIO_FIFO_RST` reader - Audio FIFOs software reset Writing 0b: no action taken Writing 1b: Resets all audio FIFOs Reading from this register always returns 0b. Note: If a FIFO reset request (via SFR command) lands in the middle of an I2S transaction, the samples become Bits Name Attr Description misaligned (left-right sequence lost). As a solution, for each FIFO reset, an associated I2S reset must be issued (writing 8'hF7 to MC_SWRSTZ register)."]
+#[doc = "Field `SW_AUDIO_FIFO_RST` reader - Audio FIFOs software reset Writing 0b: no action taken Writing 1b: Resets all audio FIFOs Reading from this register always returns 0b. Note: If a FIFO reset request (via SFR command) lands in the middle of an I2S transaction, the samples become misaligned (left-right sequence lost). As a solution, for each FIFO reset, an associated I2S reset must be issued (writing 8'hF7 to MC_SWRSTZ register)."]
 pub type SwAudioFifoRstR = crate::BitReader;
-#[doc = "Field `SW_AUDIO_FIFO_RST` writer - Audio FIFOs software reset Writing 0b: no action taken Writing 1b: Resets all audio FIFOs Reading from this register always returns 0b. Note: If a FIFO reset request (via SFR command) lands in the middle of an I2S transaction, the samples become Bits Name Attr Description misaligned (left-right sequence lost). As a solution, for each FIFO reset, an associated I2S reset must be issued (writing 8'hF7 to MC_SWRSTZ register)."]
+#[doc = "Field `SW_AUDIO_FIFO_RST` writer - Audio FIFOs software reset Writing 0b: no action taken Writing 1b: Resets all audio FIFOs Reading from this register always returns 0b. Note: If a FIFO reset request (via SFR command) lands in the middle of an I2S transaction, the samples become misaligned (left-right sequence lost). As a solution, for each FIFO reset, an associated I2S reset must be issued (writing 8'hF7 to MC_SWRSTZ register)."]
 pub type SwAudioFifoRstW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:3 - Action I2S_in_en\\[0\\]
@@ -67,7 +67,7 @@ enable"]
     pub fn spare_2(&self) -> Spare2R {
         Spare2R::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 7 - Audio FIFOs software reset Writing 0b: no action taken Writing 1b: Resets all audio FIFOs Reading from this register always returns 0b. Note: If a FIFO reset request (via SFR command) lands in the middle of an I2S transaction, the samples become Bits Name Attr Description misaligned (left-right sequence lost). As a solution, for each FIFO reset, an associated I2S reset must be issued (writing 8'hF7 to MC_SWRSTZ register)."]
+    #[doc = "Bit 7 - Audio FIFOs software reset Writing 0b: no action taken Writing 1b: Resets all audio FIFOs Reading from this register always returns 0b. Note: If a FIFO reset request (via SFR command) lands in the middle of an I2S transaction, the samples become misaligned (left-right sequence lost). As a solution, for each FIFO reset, an associated I2S reset must be issued (writing 8'hF7 to MC_SWRSTZ register)."]
     #[inline(always)]
     pub fn sw_audio_fifo_rst(&self) -> SwAudioFifoRstR {
         SwAudioFifoRstR::new(((self.bits >> 7) & 1) != 0)
@@ -106,7 +106,7 @@ enable"]
     pub fn spare_2(&mut self) -> Spare2W<AudConf0Spec> {
         Spare2W::new(self, 6)
     }
-    #[doc = "Bit 7 - Audio FIFOs software reset Writing 0b: no action taken Writing 1b: Resets all audio FIFOs Reading from this register always returns 0b. Note: If a FIFO reset request (via SFR command) lands in the middle of an I2S transaction, the samples become Bits Name Attr Description misaligned (left-right sequence lost). As a solution, for each FIFO reset, an associated I2S reset must be issued (writing 8'hF7 to MC_SWRSTZ register)."]
+    #[doc = "Bit 7 - Audio FIFOs software reset Writing 0b: no action taken Writing 1b: Resets all audio FIFOs Reading from this register always returns 0b. Note: If a FIFO reset request (via SFR command) lands in the middle of an I2S transaction, the samples become misaligned (left-right sequence lost). As a solution, for each FIFO reset, an associated I2S reset must be issued (writing 8'hF7 to MC_SWRSTZ register)."]
     #[inline(always)]
     #[must_use]
     pub fn sw_audio_fifo_rst(&mut self) -> SwAudioFifoRstW<AudConf0Spec> {

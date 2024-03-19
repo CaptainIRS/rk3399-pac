@@ -6,9 +6,9 @@ pub type W = crate::W<AudN3Spec>;
 pub type AudnR = crate::FieldReader;
 #[doc = "Field `AUDN` writer - HDMI Audio Clock Regenerator N value"]
 pub type AudnW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-#[doc = "Field `NCTS_ATOMIC_WRITE` reader - When set, the new N and CTS values are only used when aud_n1 register is written. If clear, N and CTS data is updated each time a new N or CTS byte is Bits Name Attr Description written. The following write sequence is recommended: aud_n3 (set bit ncts_atomic_write if desired) aud_cts3 (set CTS_manual and CTS value if desired/enabled) aud_cts2 (required in CTS_manual) aud_cts1 (required in CTS_manual) aud_n3 (bit ncts_atomic_write with same value as in step 1.) aud_n2 aud_n1 For dynamic N/CTS changes, perform only steps from 2-7 or 5-7 depending on the state of CTS_manual."]
+#[doc = "Field `NCTS_ATOMIC_WRITE` reader - When set, the new N and CTS values are only used when aud_n1 register is written. If clear, N and CTS data is updated each time a new N or CTS byte is written. The following write sequence is recommended: aud_n3 (set bit ncts_atomic_write if desired) aud_cts3 (set CTS_manual and CTS value if desired/enabled) aud_cts2 (required in CTS_manual) aud_cts1 (required in CTS_manual) aud_n3 (bit ncts_atomic_write with same value as in step 1.) aud_n2 aud_n1 For dynamic N/CTS changes, perform only steps from 2-7 or 5-7 depending on the state of CTS_manual."]
 pub type NctsAtomicWriteR = crate::BitReader;
-#[doc = "Field `NCTS_ATOMIC_WRITE` writer - When set, the new N and CTS values are only used when aud_n1 register is written. If clear, N and CTS data is updated each time a new N or CTS byte is Bits Name Attr Description written. The following write sequence is recommended: aud_n3 (set bit ncts_atomic_write if desired) aud_cts3 (set CTS_manual and CTS value if desired/enabled) aud_cts2 (required in CTS_manual) aud_cts1 (required in CTS_manual) aud_n3 (bit ncts_atomic_write with same value as in step 1.) aud_n2 aud_n1 For dynamic N/CTS changes, perform only steps from 2-7 or 5-7 depending on the state of CTS_manual."]
+#[doc = "Field `NCTS_ATOMIC_WRITE` writer - When set, the new N and CTS values are only used when aud_n1 register is written. If clear, N and CTS data is updated each time a new N or CTS byte is written. The following write sequence is recommended: aud_n3 (set bit ncts_atomic_write if desired) aud_cts3 (set CTS_manual and CTS value if desired/enabled) aud_cts2 (required in CTS_manual) aud_cts1 (required in CTS_manual) aud_n3 (bit ncts_atomic_write with same value as in step 1.) aud_n2 aud_n1 For dynamic N/CTS changes, perform only steps from 2-7 or 5-7 depending on the state of CTS_manual."]
 pub type NctsAtomicWriteW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:3 - HDMI Audio Clock Regenerator N value"]
@@ -16,7 +16,7 @@ impl R {
     pub fn audn(&self) -> AudnR {
         AudnR::new(self.bits & 0x0f)
     }
-    #[doc = "Bit 7 - When set, the new N and CTS values are only used when aud_n1 register is written. If clear, N and CTS data is updated each time a new N or CTS byte is Bits Name Attr Description written. The following write sequence is recommended: aud_n3 (set bit ncts_atomic_write if desired) aud_cts3 (set CTS_manual and CTS value if desired/enabled) aud_cts2 (required in CTS_manual) aud_cts1 (required in CTS_manual) aud_n3 (bit ncts_atomic_write with same value as in step 1.) aud_n2 aud_n1 For dynamic N/CTS changes, perform only steps from 2-7 or 5-7 depending on the state of CTS_manual."]
+    #[doc = "Bit 7 - When set, the new N and CTS values are only used when aud_n1 register is written. If clear, N and CTS data is updated each time a new N or CTS byte is written. The following write sequence is recommended: aud_n3 (set bit ncts_atomic_write if desired) aud_cts3 (set CTS_manual and CTS value if desired/enabled) aud_cts2 (required in CTS_manual) aud_cts1 (required in CTS_manual) aud_n3 (bit ncts_atomic_write with same value as in step 1.) aud_n2 aud_n1 For dynamic N/CTS changes, perform only steps from 2-7 or 5-7 depending on the state of CTS_manual."]
     #[inline(always)]
     pub fn ncts_atomic_write(&self) -> NctsAtomicWriteR {
         NctsAtomicWriteR::new(((self.bits >> 7) & 1) != 0)
@@ -29,7 +29,7 @@ impl W {
     pub fn audn(&mut self) -> AudnW<AudN3Spec> {
         AudnW::new(self, 0)
     }
-    #[doc = "Bit 7 - When set, the new N and CTS values are only used when aud_n1 register is written. If clear, N and CTS data is updated each time a new N or CTS byte is Bits Name Attr Description written. The following write sequence is recommended: aud_n3 (set bit ncts_atomic_write if desired) aud_cts3 (set CTS_manual and CTS value if desired/enabled) aud_cts2 (required in CTS_manual) aud_cts1 (required in CTS_manual) aud_n3 (bit ncts_atomic_write with same value as in step 1.) aud_n2 aud_n1 For dynamic N/CTS changes, perform only steps from 2-7 or 5-7 depending on the state of CTS_manual."]
+    #[doc = "Bit 7 - When set, the new N and CTS values are only used when aud_n1 register is written. If clear, N and CTS data is updated each time a new N or CTS byte is written. The following write sequence is recommended: aud_n3 (set bit ncts_atomic_write if desired) aud_cts3 (set CTS_manual and CTS value if desired/enabled) aud_cts2 (required in CTS_manual) aud_cts1 (required in CTS_manual) aud_n3 (bit ncts_atomic_write with same value as in step 1.) aud_n2 aud_n1 For dynamic N/CTS changes, perform only steps from 2-7 or 5-7 depending on the state of CTS_manual."]
     #[inline(always)]
     #[must_use]
     pub fn ncts_atomic_write(&mut self) -> NctsAtomicWriteW<AudN3Spec> {

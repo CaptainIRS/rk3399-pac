@@ -116,9 +116,9 @@ pub type IcxGotoP0StW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type IfixPpToLastR = crate::BitReader;
 #[doc = "Field `IFIX_PP_TO_LAST` writer - Reserved. Controls packing machine strategy"]
 pub type IfixPpToLastW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `IDEFAULT_PHASE` reader - Controls the default phase packing machine used according to HDMI 1.4b specification: \"If the transmitted video format has timing such that the phase of the first pixel of every Video Data Period corresponds to pixel packing phase 0 (e.g. 10P0, 12P0, 16P0), the Source may set the Default_Phase bit in the GCP. The Sink may use this bit to optimize its filtering or handling of the Bits Name Attr Description PP field.\" This means that for 10-bit mode the Htotal must be dividable by 4; for 12- bit mode, the Htotal must be divisible by 2."]
+#[doc = "Field `IDEFAULT_PHASE` reader - Controls the default phase packing machine used according to HDMI 1.4b specification: \"If the transmitted video format has timing such that the phase of the first pixel of every Video Data Period corresponds to pixel packing phase 0 (e.g. 10P0, 12P0, 16P0), the Source may set the Default_Phase bit in the GCP. The Sink may use this bit to optimize its filtering or handling of the PP field.\" This means that for 10-bit mode the Htotal must be dividable by 4; for 12- bit mode, the Htotal must be divisible by 2."]
 pub type IdefaultPhaseR = crate::BitReader;
-#[doc = "Field `IDEFAULT_PHASE` writer - Controls the default phase packing machine used according to HDMI 1.4b specification: \"If the transmitted video format has timing such that the phase of the first pixel of every Video Data Period corresponds to pixel packing phase 0 (e.g. 10P0, 12P0, 16P0), the Source may set the Default_Phase bit in the GCP. The Sink may use this bit to optimize its filtering or handling of the Bits Name Attr Description PP field.\" This means that for 10-bit mode the Htotal must be dividable by 4; for 12- bit mode, the Htotal must be divisible by 2."]
+#[doc = "Field `IDEFAULT_PHASE` writer - Controls the default phase packing machine used according to HDMI 1.4b specification: \"If the transmitted video format has timing such that the phase of the first pixel of every Video Data Period corresponds to pixel packing phase 0 (e.g. 10P0, 12P0, 16P0), the Source may set the Default_Phase bit in the GCP. The Sink may use this bit to optimize its filtering or handling of the PP field.\" This means that for 10-bit mode the Htotal must be dividable by 4; for 12- bit mode, the Htotal must be divisible by 2."]
 pub type IdefaultPhaseW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 1 - Pixel packing stuffing control. The action is stated corresponding to pp_stuffing:"]
@@ -141,7 +141,7 @@ impl R {
     pub fn ifix_pp_to_last(&self) -> IfixPpToLastR {
         IfixPpToLastR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - Controls the default phase packing machine used according to HDMI 1.4b specification: \"If the transmitted video format has timing such that the phase of the first pixel of every Video Data Period corresponds to pixel packing phase 0 (e.g. 10P0, 12P0, 16P0), the Source may set the Default_Phase bit in the GCP. The Sink may use this bit to optimize its filtering or handling of the Bits Name Attr Description PP field.\" This means that for 10-bit mode the Htotal must be dividable by 4; for 12- bit mode, the Htotal must be divisible by 2."]
+    #[doc = "Bit 5 - Controls the default phase packing machine used according to HDMI 1.4b specification: \"If the transmitted video format has timing such that the phase of the first pixel of every Video Data Period corresponds to pixel packing phase 0 (e.g. 10P0, 12P0, 16P0), the Source may set the Default_Phase bit in the GCP. The Sink may use this bit to optimize its filtering or handling of the PP field.\" This means that for 10-bit mode the Htotal must be dividable by 4; for 12- bit mode, the Htotal must be divisible by 2."]
     #[inline(always)]
     pub fn idefault_phase(&self) -> IdefaultPhaseR {
         IdefaultPhaseR::new(((self.bits >> 5) & 1) != 0)
@@ -172,7 +172,7 @@ impl W {
     pub fn ifix_pp_to_last(&mut self) -> IfixPpToLastW<VpStuffSpec> {
         IfixPpToLastW::new(self, 4)
     }
-    #[doc = "Bit 5 - Controls the default phase packing machine used according to HDMI 1.4b specification: \"If the transmitted video format has timing such that the phase of the first pixel of every Video Data Period corresponds to pixel packing phase 0 (e.g. 10P0, 12P0, 16P0), the Source may set the Default_Phase bit in the GCP. The Sink may use this bit to optimize its filtering or handling of the Bits Name Attr Description PP field.\" This means that for 10-bit mode the Htotal must be dividable by 4; for 12- bit mode, the Htotal must be divisible by 2."]
+    #[doc = "Bit 5 - Controls the default phase packing machine used according to HDMI 1.4b specification: \"If the transmitted video format has timing such that the phase of the first pixel of every Video Data Period corresponds to pixel packing phase 0 (e.g. 10P0, 12P0, 16P0), the Source may set the Default_Phase bit in the GCP. The Sink may use this bit to optimize its filtering or handling of the PP field.\" This means that for 10-bit mode the Htotal must be dividable by 4; for 12- bit mode, the Htotal must be divisible by 2."]
     #[inline(always)]
     #[must_use]
     pub fn idefault_phase(&mut self) -> IdefaultPhaseW<VpStuffSpec> {

@@ -6,9 +6,9 @@ pub type W = crate::W<Hdcp22regStatSpec>;
 pub type StHdcp2CapableR = crate::BitReader;
 #[doc = "Field `ST_HDCP2_CAPABLE` writer - HDCP 2.2 capable rise interrupt status sticky bit. Clear by Write 1 to this bit field"]
 pub type StHdcp2CapableW<'a, REG> = crate::BitWriter1C<'a, REG>;
-#[doc = "Field `ST_HDCP2_NOT_CAPABLE` reader - HDCP 2.2 not capable rise interrupt status sticky bit. Clear by Write 1 to this bit field Bits Name Attr Description"]
+#[doc = "Field `ST_HDCP2_NOT_CAPABLE` reader - HDCP 2.2 not capable rise interrupt status sticky bit. Clear by Write 1 to this bit field"]
 pub type StHdcp2NotCapableR = crate::BitReader;
-#[doc = "Field `ST_HDCP2_NOT_CAPABLE` writer - HDCP 2.2 not capable rise interrupt status sticky bit. Clear by Write 1 to this bit field Bits Name Attr Description"]
+#[doc = "Field `ST_HDCP2_NOT_CAPABLE` writer - HDCP 2.2 not capable rise interrupt status sticky bit. Clear by Write 1 to this bit field"]
 pub type StHdcp2NotCapableW<'a, REG> = crate::BitWriter1C<'a, REG>;
 #[doc = "Field `ST_HDCP_AUTHENTICATION_LOST` reader - HDCP 2.2 authentication lost interrupt status sticky bit. Clear by Write 1 to this bit field"]
 pub type StHdcpAuthenticationLostR = crate::BitReader;
@@ -32,7 +32,7 @@ impl R {
     pub fn st_hdcp2_capable(&self) -> StHdcp2CapableR {
         StHdcp2CapableR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - HDCP 2.2 not capable rise interrupt status sticky bit. Clear by Write 1 to this bit field Bits Name Attr Description"]
+    #[doc = "Bit 1 - HDCP 2.2 not capable rise interrupt status sticky bit. Clear by Write 1 to this bit field"]
     #[inline(always)]
     pub fn st_hdcp2_not_capable(&self) -> StHdcp2NotCapableR {
         StHdcp2NotCapableR::new(((self.bits >> 1) & 1) != 0)
@@ -65,7 +65,7 @@ impl W {
     pub fn st_hdcp2_capable(&mut self) -> StHdcp2CapableW<Hdcp22regStatSpec> {
         StHdcp2CapableW::new(self, 0)
     }
-    #[doc = "Bit 1 - HDCP 2.2 not capable rise interrupt status sticky bit. Clear by Write 1 to this bit field Bits Name Attr Description"]
+    #[doc = "Bit 1 - HDCP 2.2 not capable rise interrupt status sticky bit. Clear by Write 1 to this bit field"]
     #[inline(always)]
     #[must_use]
     pub fn st_hdcp2_not_capable(&mut self) -> StHdcp2NotCapableW<Hdcp22regStatSpec> {

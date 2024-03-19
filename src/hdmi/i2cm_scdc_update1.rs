@@ -1,15 +1,15 @@
 #[doc = "Register `I2CM_SCDC_UPDATE1` reader"]
 pub type R = crate::R<I2cmScdcUpdate1Spec>;
-#[doc = "Field `I2CM_SCDC_UPDATE1` reader - Byte 1 of a SCDC I2C update sequential read Bits Name Attr Description"]
+#[doc = "Field `I2CM_SCDC_UPDATE1` reader - Byte 1 of a SCDC I2C update sequential read"]
 pub type I2cmScdcUpdate1R = crate::FieldReader;
 impl R {
-    #[doc = "Bits 0:7 - Byte 1 of a SCDC I2C update sequential read Bits Name Attr Description"]
+    #[doc = "Bits 0:7 - Byte 1 of a SCDC I2C update sequential read"]
     #[inline(always)]
     pub fn i2cm_scdc_update1(&self) -> I2cmScdcUpdate1R {
         I2cmScdcUpdate1R::new(self.bits)
     }
 }
-#[doc = "Byte 1 of a SCDC I2C update sequential read Bits Name Attr Description\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`i2cm_scdc_update1::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Byte 1 of a SCDC I2C update sequential read\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`i2cm_scdc_update1::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct I2cmScdcUpdate1Spec;
 impl crate::RegisterSpec for I2cmScdcUpdate1Spec {
     type Ux = u8;

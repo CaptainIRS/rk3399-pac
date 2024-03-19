@@ -2,26 +2,26 @@
 pub type R = crate::R<PhyI2cmFsSclHcnt0AddrSpec>;
 #[doc = "Register `PHY_I2CM_FS_SCL_HCNT_0_ADDR` writer"]
 pub type W = crate::W<PhyI2cmFsSclHcnt0AddrSpec>;
-#[doc = "Field `I2CMP_FS_SCL_HCNT0` reader - PHY I2C Fast Speed SCL High Level Control Register Bits Name Attr Description 0"]
+#[doc = "Field `I2CMP_FS_SCL_HCNT0` reader - PHY I2C Fast Speed SCL High Level Control Register 0"]
 pub type I2cmpFsSclHcnt0R = crate::FieldReader;
-#[doc = "Field `I2CMP_FS_SCL_HCNT0` writer - PHY I2C Fast Speed SCL High Level Control Register Bits Name Attr Description 0"]
+#[doc = "Field `I2CMP_FS_SCL_HCNT0` writer - PHY I2C Fast Speed SCL High Level Control Register 0"]
 pub type I2cmpFsSclHcnt0W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - PHY I2C Fast Speed SCL High Level Control Register Bits Name Attr Description 0"]
+    #[doc = "Bits 0:7 - PHY I2C Fast Speed SCL High Level Control Register 0"]
     #[inline(always)]
     pub fn i2cmp_fs_scl_hcnt0(&self) -> I2cmpFsSclHcnt0R {
         I2cmpFsSclHcnt0R::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - PHY I2C Fast Speed SCL High Level Control Register Bits Name Attr Description 0"]
+    #[doc = "Bits 0:7 - PHY I2C Fast Speed SCL High Level Control Register 0"]
     #[inline(always)]
     #[must_use]
     pub fn i2cmp_fs_scl_hcnt0(&mut self) -> I2cmpFsSclHcnt0W<PhyI2cmFsSclHcnt0AddrSpec> {
         I2cmpFsSclHcnt0W::new(self, 0)
     }
 }
-#[doc = "PHY I2C Fast Speed SCL High Level Control Register Bits Name Attr Description 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`phy_i2cm_fs_scl_hcnt_0_addr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`phy_i2cm_fs_scl_hcnt_0_addr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PHY I2C Fast Speed SCL High Level Control Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`phy_i2cm_fs_scl_hcnt_0_addr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`phy_i2cm_fs_scl_hcnt_0_addr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PhyI2cmFsSclHcnt0AddrSpec;
 impl crate::RegisterSpec for PhyI2cmFsSclHcnt0AddrSpec {
     type Ux = u8;

@@ -2,9 +2,9 @@
 pub type R = crate::R<JtagPhyConfigSpec>;
 #[doc = "Register `JTAG_PHY_CONFIG` writer"]
 pub type W = crate::W<JtagPhyConfigSpec>;
-#[doc = "Field `JTAG_TRST_N` reader - Configures the JTAG PHY interface output pin Bits Name Attr Description JTAG_TRST_N when in internal control mode (iphy_ext_ctrl=1'b0) or ophyext_jtag_trst_n when PHY_EXTERNAL=1."]
+#[doc = "Field `JTAG_TRST_N` reader - Configures the JTAG PHY interface output pin JTAG_TRST_N when in internal control mode (iphy_ext_ctrl=1'b0) or ophyext_jtag_trst_n when PHY_EXTERNAL=1."]
 pub type JtagTrstNR = crate::BitReader;
-#[doc = "Field `JTAG_TRST_N` writer - Configures the JTAG PHY interface output pin Bits Name Attr Description JTAG_TRST_N when in internal control mode (iphy_ext_ctrl=1'b0) or ophyext_jtag_trst_n when PHY_EXTERNAL=1."]
+#[doc = "Field `JTAG_TRST_N` writer - Configures the JTAG PHY interface output pin JTAG_TRST_N when in internal control mode (iphy_ext_ctrl=1'b0) or ophyext_jtag_trst_n when PHY_EXTERNAL=1."]
 pub type JtagTrstNW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Configures the JTAG PHY interface output pin I2C_JTAGZ to select the PHY configuration interface when in internal control mode (iphy_ext_ctrl=1'b0) or ophyext_jtag_i2c_jtagz when PHY_EXTERNAL=1.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -60,7 +60,7 @@ where
     }
 }
 impl R {
-    #[doc = "Bit 0 - Configures the JTAG PHY interface output pin Bits Name Attr Description JTAG_TRST_N when in internal control mode (iphy_ext_ctrl=1'b0) or ophyext_jtag_trst_n when PHY_EXTERNAL=1."]
+    #[doc = "Bit 0 - Configures the JTAG PHY interface output pin JTAG_TRST_N when in internal control mode (iphy_ext_ctrl=1'b0) or ophyext_jtag_trst_n when PHY_EXTERNAL=1."]
     #[inline(always)]
     pub fn jtag_trst_n(&self) -> JtagTrstNR {
         JtagTrstNR::new((self.bits & 1) != 0)
@@ -72,7 +72,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - Configures the JTAG PHY interface output pin Bits Name Attr Description JTAG_TRST_N when in internal control mode (iphy_ext_ctrl=1'b0) or ophyext_jtag_trst_n when PHY_EXTERNAL=1."]
+    #[doc = "Bit 0 - Configures the JTAG PHY interface output pin JTAG_TRST_N when in internal control mode (iphy_ext_ctrl=1'b0) or ophyext_jtag_trst_n when PHY_EXTERNAL=1."]
     #[inline(always)]
     #[must_use]
     pub fn jtag_trst_n(&mut self) -> JtagTrstNW<JtagPhyConfigSpec> {
@@ -85,7 +85,7 @@ impl W {
         I2cJtagzW::new(self, 4)
     }
 }
-#[doc = "Configures the JTAG PHY interface output pin Bits Name Attr Description JTAG_TRST_N when in internal control mode (iphy_ext_ctrl=1'b0) or ophyext_jtag_trst_n when PHY_EXTERNAL=1.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`jtag_phy_config::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`jtag_phy_config::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Configures the JTAG PHY interface output pin JTAG_TRST_N when in internal control mode (iphy_ext_ctrl=1'b0) or ophyext_jtag_trst_n when PHY_EXTERNAL=1.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`jtag_phy_config::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`jtag_phy_config::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct JtagPhyConfigSpec;
 impl crate::RegisterSpec for JtagPhyConfigSpec {
     type Ux = u8;

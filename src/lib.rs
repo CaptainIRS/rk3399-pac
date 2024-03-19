@@ -11,6 +11,9 @@ pub const NVIC_PRIO_BITS: u8 = 4;
 use generic::*;
 #[doc = r"Common register and bit access and modify traits"]
 pub mod generic;
+#[doc(hidden)]
+pub mod interrupt;
+pub use self::interrupt::Interrupt;
 #[doc = "Power Management Unit Clock and Reset Unit (PMUCRU) Registers"]
 pub struct Pmucru {
     _marker: PhantomData<*const ()>,
