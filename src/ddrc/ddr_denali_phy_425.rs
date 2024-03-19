@@ -1,16 +1,16 @@
 #[doc = "Register `DDR_DENALI_PHY_425` reader"]
 pub type R = crate::R<DdrDenaliPhy425Spec>;
-#[doc = "Field `PHY_GATE_SMPL1_SLV_DLY_ENC_OBS_3` reader - Observation register for gate sample1 slave delay encoded values for slice 3. READ-ONLY"]
+#[doc = "Field `PHY_GATE_SMPL1_SLV_DLY_ENC_OBS_3` reader - Observation register for gate sample1 slave delay encoded values for slice 3."]
 pub type PhyGateSmpl1SlvDlyEncObs3R = crate::FieldReader<u16>;
-#[doc = "Field `PHY_GATE_SMPL2_SLV_DLY_ENC_OBS_3` reader - Observation register for gate sample1 slave delay encoded values for slice 3. READ-ONLY"]
+#[doc = "Field `PHY_GATE_SMPL2_SLV_DLY_ENC_OBS_3` reader - Observation register for gate sample1 slave delay encoded values for slice 3."]
 pub type PhyGateSmpl2SlvDlyEncObs3R = crate::FieldReader<u16>;
 impl R {
-    #[doc = "Bits 0:8 - Observation register for gate sample1 slave delay encoded values for slice 3. READ-ONLY"]
+    #[doc = "Bits 0:8 - Observation register for gate sample1 slave delay encoded values for slice 3."]
     #[inline(always)]
     pub fn phy_gate_smpl1_slv_dly_enc_obs_3(&self) -> PhyGateSmpl1SlvDlyEncObs3R {
         PhyGateSmpl1SlvDlyEncObs3R::new((self.bits & 0x01ff) as u16)
     }
-    #[doc = "Bits 16:24 - Observation register for gate sample1 slave delay encoded values for slice 3. READ-ONLY"]
+    #[doc = "Bits 16:24 - Observation register for gate sample1 slave delay encoded values for slice 3."]
     #[inline(always)]
     pub fn phy_gate_smpl2_slv_dly_enc_obs_3(&self) -> PhyGateSmpl2SlvDlyEncObs3R {
         PhyGateSmpl2SlvDlyEncObs3R::new(((self.bits >> 16) & 0x01ff) as u16)

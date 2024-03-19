@@ -6,7 +6,7 @@ pub type W = crate::W<DdrDenaliCtl255Spec>;
 pub type RdlvlGateDfiPromoteThresholdF2R = crate::FieldReader<u16>;
 #[doc = "Field `RDLVL_GATE_DFI_PROMOTE_THRESHOLD_F2` writer - Gate training promotion number of long counts until the high priority request is asserted. Applies to DFI commands."]
 pub type RdlvlGateDfiPromoteThresholdF2W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-#[doc = "Field `CALVL_REQ` writer - User request to initiate CA training. Set to 1 to trigger. WRITE-ONLY"]
+#[doc = "Field `CALVL_REQ` writer - User request to initiate CA training. Set to 1 to trigger."]
 pub type CalvlReqW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CALVL_CS` reader - Specifies the target chip select for the CA training operation initiated through the CALVL_REQ parameter."]
 pub type CalvlCsR = crate::BitReader;
@@ -33,7 +33,7 @@ impl W {
     ) -> RdlvlGateDfiPromoteThresholdF2W<DdrDenaliCtl255Spec> {
         RdlvlGateDfiPromoteThresholdF2W::new(self, 0)
     }
-    #[doc = "Bit 16 - User request to initiate CA training. Set to 1 to trigger. WRITE-ONLY"]
+    #[doc = "Bit 16 - User request to initiate CA training. Set to 1 to trigger."]
     #[inline(always)]
     #[must_use]
     pub fn calvl_req(&mut self) -> CalvlReqW<DdrDenaliCtl255Spec> {

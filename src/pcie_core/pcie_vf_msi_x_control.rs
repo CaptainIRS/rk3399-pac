@@ -2,85 +2,69 @@
 pub type R = crate::R<PcieVfMsiXControlSpec>;
 #[doc = "Register `PCIE_VF_MSI_X_CONTROL` writer"]
 pub type W = crate::W<PcieVfMsiXControlSpec>;
-#[doc = "Field `CID` reader - Capability ID \\[CID\\]
-Identifies that the capability structure is for MSI-X. This field is set by default to 11 hex. It can be rewritten independently for each Function from the local management bus."]
+#[doc = "Field `CID` reader - Capability ID \\[CID\\]\n\nIdentifies that the capability\n\nstructure is for MSI-X. This field is\n\nset by default to 11 hex. It can be\n\nrewritten independently for each\n\nFunction from the local management\n\nbus."]
 pub type CidR = crate::FieldReader;
-#[doc = "Field `CP` reader - Capabilities Pointer \\[CP\\]
-Contains a pointer to the next PCI Capability Structure. The value read from this read-only field is the corresponding pointer in the MSI-X Capability Structure of the Physical Function this VF is attached to."]
+#[doc = "Field `CP` reader - Capabilities Pointer \\[CP\\]\n\nContains a pointer to the next PCI\n\nCapability Structure. The value read\n\nfrom this read-only field is the\n\ncorresponding pointer in the MSI-X\n\nCapability Structure of the Physical\n\nFunction this VF is attached to."]
 pub type CpR = crate::FieldReader;
-#[doc = "Field `MSIXTS` reader - MSI-X Table Size \\[MSIXTS\\]
-Specifies the size of the MSI-X Table, that is, the number of interrupt vectors defined for the Function. The programmed value is 1 minus the size of the table (that is, this field is set to 0 if the table size is 1.). It can be re-written independently for each Function from the local management bus."]
+#[doc = "Field `MSIXTS` reader - MSI-X Table Size \\[MSIXTS\\]\n\nSpecifies the size of the MSI-X Table,\n\nthat is, the number of interrupt\n\nvectors defined for the Function. The\n\nprogrammed value is 1 minus the\n\nsize of the table (that is, this field is\n\nset to 0 if the table size is 1.). It can\n\nbe re-written independently for each\n\nFunction from the local management\n\nbus."]
 pub type MsixtsR = crate::FieldReader<u16>;
-#[doc = "Field `R0` reader - Reserved \\[R0\\]
-Reserved"]
+#[doc = "Field `R0` reader - Reserved \\[R0\\]\n\nReserved"]
 pub type R0R = crate::FieldReader;
-#[doc = "Field `FM` reader - Function Mask \\[FM\\]
-This bit serves as a global mask to all the interrupt conditions associated with this Function. When this bit is set, the core will not send out MSI messages from this Function. This field can also be written from the local management bus."]
+#[doc = "Field `FM` reader - Function Mask \\[FM\\]\n\nThis bit serves as a global mask to\n\nall the interrupt conditions\n\nassociated with this Function. When\n\nthis bit is set, the core will not send\n\nout MSI messages from this\n\nFunction. This field can also be\n\nwritten from the local management\n\nbus."]
 pub type FmR = crate::BitReader;
-#[doc = "Field `FM` writer - Function Mask \\[FM\\]
-This bit serves as a global mask to all the interrupt conditions associated with this Function. When this bit is set, the core will not send out MSI messages from this Function. This field can also be written from the local management bus."]
+#[doc = "Field `FM` writer - Function Mask \\[FM\\]\n\nThis bit serves as a global mask to\n\nall the interrupt conditions\n\nassociated with this Function. When\n\nthis bit is set, the core will not send\n\nout MSI messages from this\n\nFunction. This field can also be\n\nwritten from the local management\n\nbus."]
 pub type FmW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `MSIXE` reader - MSI-X Enable \\[MSIXE\\]
-Set by the configuration program to enable the MSI-X feature. This field can also be written from the local management bus."]
+#[doc = "Field `MSIXE` reader - MSI-X Enable \\[MSIXE\\]\n\nSet by the configuration program to\n\nenable the MSI-X feature. This field\n\ncan also be written from the local\n\nmanagement bus."]
 pub type MsixeR = crate::BitReader;
-#[doc = "Field `MSIXE` writer - MSI-X Enable \\[MSIXE\\]
-Set by the configuration program to enable the MSI-X feature. This field can also be written from the local management bus."]
+#[doc = "Field `MSIXE` writer - MSI-X Enable \\[MSIXE\\]\n\nSet by the configuration program to\n\nenable the MSI-X feature. This field\n\ncan also be written from the local\n\nmanagement bus."]
 pub type MsixeW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bits 0:7 - Capability ID \\[CID\\]
-Identifies that the capability structure is for MSI-X. This field is set by default to 11 hex. It can be rewritten independently for each Function from the local management bus."]
+    #[doc = "Bits 0:7 - Capability ID \\[CID\\]\n\nIdentifies that the capability\n\nstructure is for MSI-X. This field is\n\nset by default to 11 hex. It can be\n\nrewritten independently for each\n\nFunction from the local management\n\nbus."]
     #[inline(always)]
     pub fn cid(&self) -> CidR {
         CidR::new((self.bits & 0xff) as u8)
     }
-    #[doc = "Bits 8:15 - Capabilities Pointer \\[CP\\]
-Contains a pointer to the next PCI Capability Structure. The value read from this read-only field is the corresponding pointer in the MSI-X Capability Structure of the Physical Function this VF is attached to."]
+    #[doc = "Bits 8:15 - Capabilities Pointer \\[CP\\]\n\nContains a pointer to the next PCI\n\nCapability Structure. The value read\n\nfrom this read-only field is the\n\ncorresponding pointer in the MSI-X\n\nCapability Structure of the Physical\n\nFunction this VF is attached to."]
     #[inline(always)]
     pub fn cp(&self) -> CpR {
         CpR::new(((self.bits >> 8) & 0xff) as u8)
     }
-    #[doc = "Bits 16:26 - MSI-X Table Size \\[MSIXTS\\]
-Specifies the size of the MSI-X Table, that is, the number of interrupt vectors defined for the Function. The programmed value is 1 minus the size of the table (that is, this field is set to 0 if the table size is 1.). It can be re-written independently for each Function from the local management bus."]
+    #[doc = "Bits 16:26 - MSI-X Table Size \\[MSIXTS\\]\n\nSpecifies the size of the MSI-X Table,\n\nthat is, the number of interrupt\n\nvectors defined for the Function. The\n\nprogrammed value is 1 minus the\n\nsize of the table (that is, this field is\n\nset to 0 if the table size is 1.). It can\n\nbe re-written independently for each\n\nFunction from the local management\n\nbus."]
     #[inline(always)]
     pub fn msixts(&self) -> MsixtsR {
         MsixtsR::new(((self.bits >> 16) & 0x07ff) as u16)
     }
-    #[doc = "Bits 27:29 - Reserved \\[R0\\]
-Reserved"]
+    #[doc = "Bits 27:29 - Reserved \\[R0\\]\n\nReserved"]
     #[inline(always)]
     pub fn r0(&self) -> R0R {
         R0R::new(((self.bits >> 27) & 7) as u8)
     }
-    #[doc = "Bit 30 - Function Mask \\[FM\\]
-This bit serves as a global mask to all the interrupt conditions associated with this Function. When this bit is set, the core will not send out MSI messages from this Function. This field can also be written from the local management bus."]
+    #[doc = "Bit 30 - Function Mask \\[FM\\]\n\nThis bit serves as a global mask to\n\nall the interrupt conditions\n\nassociated with this Function. When\n\nthis bit is set, the core will not send\n\nout MSI messages from this\n\nFunction. This field can also be\n\nwritten from the local management\n\nbus."]
     #[inline(always)]
     pub fn fm(&self) -> FmR {
         FmR::new(((self.bits >> 30) & 1) != 0)
     }
-    #[doc = "Bit 31 - MSI-X Enable \\[MSIXE\\]
-Set by the configuration program to enable the MSI-X feature. This field can also be written from the local management bus."]
+    #[doc = "Bit 31 - MSI-X Enable \\[MSIXE\\]\n\nSet by the configuration program to\n\nenable the MSI-X feature. This field\n\ncan also be written from the local\n\nmanagement bus."]
     #[inline(always)]
     pub fn msixe(&self) -> MsixeR {
         MsixeR::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 30 - Function Mask \\[FM\\]
-This bit serves as a global mask to all the interrupt conditions associated with this Function. When this bit is set, the core will not send out MSI messages from this Function. This field can also be written from the local management bus."]
+    #[doc = "Bit 30 - Function Mask \\[FM\\]\n\nThis bit serves as a global mask to\n\nall the interrupt conditions\n\nassociated with this Function. When\n\nthis bit is set, the core will not send\n\nout MSI messages from this\n\nFunction. This field can also be\n\nwritten from the local management\n\nbus."]
     #[inline(always)]
     #[must_use]
     pub fn fm(&mut self) -> FmW<PcieVfMsiXControlSpec> {
         FmW::new(self, 30)
     }
-    #[doc = "Bit 31 - MSI-X Enable \\[MSIXE\\]
-Set by the configuration program to enable the MSI-X feature. This field can also be written from the local management bus."]
+    #[doc = "Bit 31 - MSI-X Enable \\[MSIXE\\]\n\nSet by the configuration program to\n\nenable the MSI-X feature. This field\n\ncan also be written from the local\n\nmanagement bus."]
     #[inline(always)]
     #[must_use]
     pub fn msixe(&mut self) -> MsixeW<PcieVfMsiXControlSpec> {
         MsixeW::new(self, 31)
     }
 }
-#[doc = "MSI-X Control Register Set by the configuration program to enable the MSI-X feature. This field can also be written from the local management bus.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcie_vf_msi_x_control::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcie_vf_msi_x_control::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "MSI-X Control Register\n\nSet by the configuration program to\n\nenable the MSI-X feature. This field\n\ncan also be written from the local\n\nmanagement bus.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcie_vf_msi_x_control::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcie_vf_msi_x_control::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PcieVfMsiXControlSpec;
 impl crate::RegisterSpec for PcieVfMsiXControlSpec {
     type Ux = u32;

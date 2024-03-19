@@ -3,10 +3,11 @@ pub type R = crate::R<PmuWakeupCfg2Spec>;
 #[doc = "Register `PMU_WAKEUP_CFG2` writer"]
 pub type W = crate::W<PmuWakeupCfg2Spec>;
 #[doc = "gpio1a posedge pulse wakeup enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gpio1aPosedgeEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -32,7 +33,7 @@ impl Gpio1aPosedgeEnR {
             _ => None,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Gpio1aPosedgeEn::B0
@@ -50,7 +51,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio1aPosedgeEn::B0)
@@ -62,10 +63,11 @@ where
     }
 }
 #[doc = "gpio1b posedge pulse wakeup enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gpio1bPosedgeEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -91,7 +93,7 @@ impl Gpio1bPosedgeEnR {
             _ => None,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Gpio1bPosedgeEn::B0
@@ -109,7 +111,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio1bPosedgeEn::B0)
@@ -121,10 +123,11 @@ where
     }
 }
 #[doc = "gpio1c posedge pulse wakeup enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gpio1cPosedgeEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -150,7 +153,7 @@ impl Gpio1cPosedgeEnR {
             _ => None,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Gpio1cPosedgeEn::B0
@@ -168,7 +171,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio1cPosedgeEn::B0)
@@ -180,10 +183,11 @@ where
     }
 }
 #[doc = "gpio1d posedge pulse wakeup enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gpio1dPosedgeEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -209,7 +213,7 @@ impl Gpio1dPosedgeEnR {
             _ => None,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Gpio1dPosedgeEn::B0
@@ -227,7 +231,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio1dPosedgeEn::B0)

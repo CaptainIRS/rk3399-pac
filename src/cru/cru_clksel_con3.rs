@@ -2,57 +2,57 @@
 pub type R = crate::R<CruClkselCon3Spec>;
 #[doc = "Register `CRU_CLKSEL_CON3` writer"]
 pub type W = crate::W<CruClkselCon3Spec>;
-#[doc = "Field `ATCLK_CORE_B_DIV_CON` reader - atclk_core_b divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `ATCLK_CORE_B_DIV_CON` reader - atclk_core_b divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type AtclkCoreBDivConR = crate::FieldReader;
-#[doc = "Field `ATCLK_CORE_B_DIV_CON` writer - atclk_core_b divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `ATCLK_CORE_B_DIV_CON` writer - atclk_core_b divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type AtclkCoreBDivConW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Field `PCLK_DBG_B_DIV_CON` reader - pclk_dbg_b divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `PCLK_DBG_B_DIV_CON` reader - pclk_dbg_b divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type PclkDbgBDivConR = crate::FieldReader;
-#[doc = "Field `PCLK_DBG_B_DIV_CON` writer - pclk_dbg_b divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `PCLK_DBG_B_DIV_CON` writer - pclk_dbg_b divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type PclkDbgBDivConW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Field `PCLKEN_DBG_B_DIV_CON` reader - pclken_dbg_b divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `PCLKEN_DBG_B_DIV_CON` reader - pclken_dbg_b divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type PclkenDbgBDivConR = crate::FieldReader;
-#[doc = "Field `PCLKEN_DBG_B_DIV_CON` writer - pclken_dbg_b divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `PCLKEN_DBG_B_DIV_CON` writer - pclken_dbg_b divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type PclkenDbgBDivConW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:4 - atclk_core_b divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:4 - atclk_core_b divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn atclk_core_b_div_con(&self) -> AtclkCoreBDivConR {
         AtclkCoreBDivConR::new((self.bits & 0x1f) as u8)
     }
-    #[doc = "Bits 8:12 - pclk_dbg_b divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 8:12 - pclk_dbg_b divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn pclk_dbg_b_div_con(&self) -> PclkDbgBDivConR {
         PclkDbgBDivConR::new(((self.bits >> 8) & 0x1f) as u8)
     }
-    #[doc = "Bits 13:14 - pclken_dbg_b divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 13:14 - pclken_dbg_b divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn pclken_dbg_b_div_con(&self) -> PclkenDbgBDivConR {
         PclkenDbgBDivConR::new(((self.bits >> 13) & 3) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - atclk_core_b divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:4 - atclk_core_b divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn atclk_core_b_div_con(&mut self) -> AtclkCoreBDivConW<CruClkselCon3Spec> {
         AtclkCoreBDivConW::new(self, 0)
     }
-    #[doc = "Bits 8:12 - pclk_dbg_b divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 8:12 - pclk_dbg_b divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn pclk_dbg_b_div_con(&mut self) -> PclkDbgBDivConW<CruClkselCon3Spec> {
         PclkDbgBDivConW::new(self, 8)
     }
-    #[doc = "Bits 13:14 - pclken_dbg_b divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 13:14 - pclken_dbg_b divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn pclken_dbg_b_div_con(&mut self) -> PclkenDbgBDivConW<CruClkselCon3Spec> {
         PclkenDbgBDivConW::new(self, 13)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkselCon3Spec> {

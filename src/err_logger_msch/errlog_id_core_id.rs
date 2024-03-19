@@ -1,11 +1,11 @@
 #[doc = "Register `ERRLOG_Id_CoreId` reader"]
 pub type R = crate::R<ErrlogIdCoreIdSpec>;
-#[doc = "Field `CORETYPEID` reader - Field identifying the type of IP. It is the same for bothe msch_err_logger0 and msch_err_logger1."]
+#[doc = "Field `CORETYPEID` reader - Field identifying the type of IP.\n\nIt is the same for bothe msch_err_logger0 and msch_err_logger1."]
 pub type CoretypeidR = crate::FieldReader;
 #[doc = "Field `CORECHECKSUM` reader - Field containing a checksum of the parameters of the IP."]
 pub type CorechecksumR = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:7 - Field identifying the type of IP. It is the same for bothe msch_err_logger0 and msch_err_logger1."]
+    #[doc = "Bits 0:7 - Field identifying the type of IP.\n\nIt is the same for bothe msch_err_logger0 and msch_err_logger1."]
     #[inline(always)]
     pub fn coretypeid(&self) -> CoretypeidR {
         CoretypeidR::new((self.bits & 0xff) as u8)

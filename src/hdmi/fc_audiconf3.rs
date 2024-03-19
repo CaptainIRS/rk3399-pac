@@ -10,9 +10,9 @@ pub type LsvW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type DmInhR = crate::BitReader;
 #[doc = "Field `DM_INH` writer - Down mix enable"]
 pub type DmInhW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `LFEPBL` reader - LFE playback information LFEPBL1, LFEPBL0 LFE playback level as compared to the other channels."]
+#[doc = "Field `LFEPBL` reader - LFE playback information\n\nLFEPBL1, LFEPBL0 LFE playback level as compared\n\nto the other channels."]
 pub type LfepblR = crate::FieldReader;
-#[doc = "Field `LFEPBL` writer - LFE playback information LFEPBL1, LFEPBL0 LFE playback level as compared to the other channels."]
+#[doc = "Field `LFEPBL` writer - LFE playback information\n\nLFEPBL1, LFEPBL0 LFE playback level as compared\n\nto the other channels."]
 pub type LfepblW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
     #[doc = "Bits 0:3 - Level shift value (for down mixing)"]
@@ -25,7 +25,7 @@ impl R {
     pub fn dm_inh(&self) -> DmInhR {
         DmInhR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bits 5:6 - LFE playback information LFEPBL1, LFEPBL0 LFE playback level as compared to the other channels."]
+    #[doc = "Bits 5:6 - LFE playback information\n\nLFEPBL1, LFEPBL0 LFE playback level as compared\n\nto the other channels."]
     #[inline(always)]
     pub fn lfepbl(&self) -> LfepblR {
         LfepblR::new((self.bits >> 5) & 3)
@@ -44,14 +44,14 @@ impl W {
     pub fn dm_inh(&mut self) -> DmInhW<FcAudiconf3Spec> {
         DmInhW::new(self, 4)
     }
-    #[doc = "Bits 5:6 - LFE playback information LFEPBL1, LFEPBL0 LFE playback level as compared to the other channels."]
+    #[doc = "Bits 5:6 - LFE playback information\n\nLFEPBL1, LFEPBL0 LFE playback level as compared\n\nto the other channels."]
     #[inline(always)]
     #[must_use]
     pub fn lfepbl(&mut self) -> LfepblW<FcAudiconf3Spec> {
         LfepblW::new(self, 5)
     }
 }
-#[doc = "Level shift value (for down mixing)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_audiconf3::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_audiconf3::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer AUD Packet Configuration Register 3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_audiconf3::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_audiconf3::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcAudiconf3Spec;
 impl crate::RegisterSpec for FcAudiconf3Spec {
     type Ux = u8;

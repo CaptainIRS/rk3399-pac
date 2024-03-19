@@ -1,9 +1,9 @@
 #[doc = "Register `DDR_DENALI_CTL_204` reader"]
 pub type R = crate::R<DdrDenaliCtl204Spec>;
-#[doc = "Field `INT_STATUS` reader - Status of interrupt features in the controller. READ-ONLY"]
+#[doc = "Field `INT_STATUS` reader - Status of interrupt features in the controller."]
 pub type IntStatusR = crate::FieldReader;
 impl R {
-    #[doc = "Bits 0:1 - Status of interrupt features in the controller. READ-ONLY"]
+    #[doc = "Bits 0:1 - Status of interrupt features in the controller."]
     #[inline(always)]
     pub fn int_status(&self) -> IntStatusR {
         IntStatusR::new((self.bits & 3) as u8)

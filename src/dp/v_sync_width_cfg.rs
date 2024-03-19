@@ -2,19 +2,19 @@
 pub type R = crate::R<VSyncWidthCfgSpec>;
 #[doc = "Register `V_SYNC_WIDTH_CFG` writer"]
 pub type W = crate::W<VSyncWidthCfgSpec>;
-#[doc = "Field `V_SYNC_WIDTH_CFG` reader - This is used to specify the number of lines in VSYNC period. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+#[doc = "Field `V_SYNC_WIDTH_CFG` reader - This is used to specify the number of lines in \n\nVSYNC period. \n\nWhen F_SEL is 1, this value is sent in main \n\nstream attribute packet. \n\nWhen BIST_EN is 1, this bit field is used to \n\nspecify the BIST video stream format."]
 pub type VSyncWidthCfgR = crate::FieldReader;
-#[doc = "Field `V_SYNC_WIDTH_CFG` writer - This is used to specify the number of lines in VSYNC period. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+#[doc = "Field `V_SYNC_WIDTH_CFG` writer - This is used to specify the number of lines in \n\nVSYNC period. \n\nWhen F_SEL is 1, this value is sent in main \n\nstream attribute packet. \n\nWhen BIST_EN is 1, this bit field is used to \n\nspecify the BIST video stream format."]
 pub type VSyncWidthCfgW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - This is used to specify the number of lines in VSYNC period. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+    #[doc = "Bits 0:7 - This is used to specify the number of lines in \n\nVSYNC period. \n\nWhen F_SEL is 1, this value is sent in main \n\nstream attribute packet. \n\nWhen BIST_EN is 1, this bit field is used to \n\nspecify the BIST video stream format."]
     #[inline(always)]
     pub fn v_sync_width_cfg(&self) -> VSyncWidthCfgR {
         VSyncWidthCfgR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - This is used to specify the number of lines in VSYNC period. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+    #[doc = "Bits 0:7 - This is used to specify the number of lines in \n\nVSYNC period. \n\nWhen F_SEL is 1, this value is sent in main \n\nstream attribute packet. \n\nWhen BIST_EN is 1, this bit field is used to \n\nspecify the BIST video stream format."]
     #[inline(always)]
     #[must_use]
     pub fn v_sync_width_cfg(&mut self) -> VSyncWidthCfgW<VSyncWidthCfgSpec> {

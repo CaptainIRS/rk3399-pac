@@ -2,27 +2,27 @@
 pub type R = crate::R<PwmPwm3PeriodHprSpec>;
 #[doc = "Register `PWM_PWM3_PERIOD_HPR` writer"]
 pub type W = crate::W<PwmPwm3PeriodHprSpec>;
-#[doc = "Field `PERIOD_HPR` reader - Output Waveform Period/Input Waveform High Polarity Cycle If PWM is operated at the continuous mode or one-shot mode, this value defines the period of the output waveform. Note that, if the PWM is operated at the center-aligned mode, the period should be an even one, and therefore only the bit \\[31:1\\]
-is taken into account and bit \\[0\\]
-always considered as 0. If PWM is operated at the capture mode, this value indicates the effective high polarity cycles of input waveform. This value is based on the PWM clock. The value ranges from 0 to (2^32-1)."]
+#[doc = "Field `PERIOD_HPR` reader - Output Waveform Period/Input Waveform High Polarity Cycle\n\nIf PWM is operated at the continuous mode or one-shot mode,\n\nthis value defines the period of the output waveform. Note that, if\n\nthe PWM is operated at the center-aligned mode, the period\n\nshould be an even one, and therefore only the bit \\[31:1\\]
+is taken\n\ninto account and bit \\[0\\]
+always considered as 0.\n\nIf PWM is operated at the capture mode, this value indicates the\n\neffective high polarity cycles of input waveform.\n\nThis value is based on the PWM clock. The value ranges from 0 to\n\n(2^32-1)."]
 pub type PeriodHprR = crate::FieldReader<u32>;
-#[doc = "Field `PERIOD_HPR` writer - Output Waveform Period/Input Waveform High Polarity Cycle If PWM is operated at the continuous mode or one-shot mode, this value defines the period of the output waveform. Note that, if the PWM is operated at the center-aligned mode, the period should be an even one, and therefore only the bit \\[31:1\\]
-is taken into account and bit \\[0\\]
-always considered as 0. If PWM is operated at the capture mode, this value indicates the effective high polarity cycles of input waveform. This value is based on the PWM clock. The value ranges from 0 to (2^32-1)."]
+#[doc = "Field `PERIOD_HPR` writer - Output Waveform Period/Input Waveform High Polarity Cycle\n\nIf PWM is operated at the continuous mode or one-shot mode,\n\nthis value defines the period of the output waveform. Note that, if\n\nthe PWM is operated at the center-aligned mode, the period\n\nshould be an even one, and therefore only the bit \\[31:1\\]
+is taken\n\ninto account and bit \\[0\\]
+always considered as 0.\n\nIf PWM is operated at the capture mode, this value indicates the\n\neffective high polarity cycles of input waveform.\n\nThis value is based on the PWM clock. The value ranges from 0 to\n\n(2^32-1)."]
 pub type PeriodHprW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Output Waveform Period/Input Waveform High Polarity Cycle If PWM is operated at the continuous mode or one-shot mode, this value defines the period of the output waveform. Note that, if the PWM is operated at the center-aligned mode, the period should be an even one, and therefore only the bit \\[31:1\\]
-is taken into account and bit \\[0\\]
-always considered as 0. If PWM is operated at the capture mode, this value indicates the effective high polarity cycles of input waveform. This value is based on the PWM clock. The value ranges from 0 to (2^32-1)."]
+    #[doc = "Bits 0:31 - Output Waveform Period/Input Waveform High Polarity Cycle\n\nIf PWM is operated at the continuous mode or one-shot mode,\n\nthis value defines the period of the output waveform. Note that, if\n\nthe PWM is operated at the center-aligned mode, the period\n\nshould be an even one, and therefore only the bit \\[31:1\\]
+is taken\n\ninto account and bit \\[0\\]
+always considered as 0.\n\nIf PWM is operated at the capture mode, this value indicates the\n\neffective high polarity cycles of input waveform.\n\nThis value is based on the PWM clock. The value ranges from 0 to\n\n(2^32-1)."]
     #[inline(always)]
     pub fn period_hpr(&self) -> PeriodHprR {
         PeriodHprR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Output Waveform Period/Input Waveform High Polarity Cycle If PWM is operated at the continuous mode or one-shot mode, this value defines the period of the output waveform. Note that, if the PWM is operated at the center-aligned mode, the period should be an even one, and therefore only the bit \\[31:1\\]
-is taken into account and bit \\[0\\]
-always considered as 0. If PWM is operated at the capture mode, this value indicates the effective high polarity cycles of input waveform. This value is based on the PWM clock. The value ranges from 0 to (2^32-1)."]
+    #[doc = "Bits 0:31 - Output Waveform Period/Input Waveform High Polarity Cycle\n\nIf PWM is operated at the continuous mode or one-shot mode,\n\nthis value defines the period of the output waveform. Note that, if\n\nthe PWM is operated at the center-aligned mode, the period\n\nshould be an even one, and therefore only the bit \\[31:1\\]
+is taken\n\ninto account and bit \\[0\\]
+always considered as 0.\n\nIf PWM is operated at the capture mode, this value indicates the\n\neffective high polarity cycles of input waveform.\n\nThis value is based on the PWM clock. The value ranges from 0 to\n\n(2^32-1)."]
     #[inline(always)]
     #[must_use]
     pub fn period_hpr(&mut self) -> PeriodHprW<PwmPwm3PeriodHprSpec> {

@@ -2,19 +2,19 @@
 pub type R = crate::R<UartSdmamSpec>;
 #[doc = "Register `UART_SDMAM` writer"]
 pub type W = crate::W<UartSdmamSpec>;
-#[doc = "Field `SHADOW_DMA_MODE` reader - Shadow DMA Mode. This is a shadow register for the DMA mode bit (FCR\\[3\\])."]
+#[doc = "Field `SHADOW_DMA_MODE` reader - Shadow DMA Mode.\n\nThis is a shadow register for the DMA mode bit (FCR\\[3\\])."]
 pub type ShadowDmaModeR = crate::BitReader;
-#[doc = "Field `SHADOW_DMA_MODE` writer - Shadow DMA Mode. This is a shadow register for the DMA mode bit (FCR\\[3\\])."]
+#[doc = "Field `SHADOW_DMA_MODE` writer - Shadow DMA Mode.\n\nThis is a shadow register for the DMA mode bit (FCR\\[3\\])."]
 pub type ShadowDmaModeW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - Shadow DMA Mode. This is a shadow register for the DMA mode bit (FCR\\[3\\])."]
+    #[doc = "Bit 0 - Shadow DMA Mode.\n\nThis is a shadow register for the DMA mode bit (FCR\\[3\\])."]
     #[inline(always)]
     pub fn shadow_dma_mode(&self) -> ShadowDmaModeR {
         ShadowDmaModeR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Shadow DMA Mode. This is a shadow register for the DMA mode bit (FCR\\[3\\])."]
+    #[doc = "Bit 0 - Shadow DMA Mode.\n\nThis is a shadow register for the DMA mode bit (FCR\\[3\\])."]
     #[inline(always)]
     #[must_use]
     pub fn shadow_dma_mode(&mut self) -> ShadowDmaModeW<UartSdmamSpec> {

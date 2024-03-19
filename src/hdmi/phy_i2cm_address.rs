@@ -21,7 +21,7 @@ impl W {
         AddressW::new(self, 0)
     }
 }
-#[doc = "Register address for read and write operations\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`phy_i2cm_address::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`phy_i2cm_address::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PHY I2C Address Configuration Register\n\nThis register writes the address for read and write operations.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`phy_i2cm_address::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`phy_i2cm_address::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PhyI2cmAddressSpec;
 impl crate::RegisterSpec for PhyI2cmAddressSpec {
     type Ux = u8;

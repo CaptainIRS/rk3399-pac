@@ -2,14 +2,14 @@
 pub type R = crate::R<DdrDenaliCtl118Spec>;
 #[doc = "Register `DDR_DENALI_CTL_118` writer"]
 pub type W = crate::W<DdrDenaliCtl118Spec>;
-#[doc = "Field `MRW_STATUS` reader - Write memory mode register status. Bit (0) set indicates a WRITE_MODEREG parameter programming error. Bit (1) set indicates a PASR error. Bit (2) is Reserved. Bit (3) set indicates a self refresh or deep power down error. Bit (4) set indicates that a write to MR3 or MR11 was attempted (WRITE_MODEREG bit (25) was asserted with bit (17) set, or bit (23) was asserted with bits (7:0) defining MR3 or MR11) during tZQCAL after a ZQ calibration start command. READ-ONLY"]
+#[doc = "Field `MRW_STATUS` reader - Write memory mode register status. Bit (0) set indicates a WRITE_MODEREG parameter programming error. Bit (1) set indicates a PASR error. Bit (2) is Reserved. Bit (3) set indicates a self refresh or deep power down error. Bit (4) set indicates that a write to MR3 or MR11 was attempted (WRITE_MODEREG bit (25) was asserted with bit (17) set, or bit (23) was asserted with bits (7:0) defining MR3 or MR11) during tZQCAL after a ZQ calibration start command."]
 pub type MrwStatusR = crate::FieldReader;
 #[doc = "Field `READ_MODEREG` reader - Read the specified memory mode register from specified chip when start bit set. Bits (7:0) define the memory mode register and bits (15:8) define the chip select. Set bit (16) to 1 to trigger."]
 pub type ReadModeregR = crate::FieldReader<u32>;
 #[doc = "Field `READ_MODEREG` writer - Read the specified memory mode register from specified chip when start bit set. Bits (7:0) define the memory mode register and bits (15:8) define the chip select. Set bit (16) to 1 to trigger."]
 pub type ReadModeregW<'a, REG> = crate::FieldWriter<'a, REG, 17, u32>;
 impl R {
-    #[doc = "Bits 0:7 - Write memory mode register status. Bit (0) set indicates a WRITE_MODEREG parameter programming error. Bit (1) set indicates a PASR error. Bit (2) is Reserved. Bit (3) set indicates a self refresh or deep power down error. Bit (4) set indicates that a write to MR3 or MR11 was attempted (WRITE_MODEREG bit (25) was asserted with bit (17) set, or bit (23) was asserted with bits (7:0) defining MR3 or MR11) during tZQCAL after a ZQ calibration start command. READ-ONLY"]
+    #[doc = "Bits 0:7 - Write memory mode register status. Bit (0) set indicates a WRITE_MODEREG parameter programming error. Bit (1) set indicates a PASR error. Bit (2) is Reserved. Bit (3) set indicates a self refresh or deep power down error. Bit (4) set indicates that a write to MR3 or MR11 was attempted (WRITE_MODEREG bit (25) was asserted with bit (17) set, or bit (23) was asserted with bits (7:0) defining MR3 or MR11) during tZQCAL after a ZQ calibration start command."]
     #[inline(always)]
     pub fn mrw_status(&self) -> MrwStatusR {
         MrwStatusR::new((self.bits & 0xff) as u8)

@@ -21,7 +21,7 @@ impl W {
         FcDbgaud0ch0W::new(self, 0)
     }
 }
-#[doc = "Frame Composer Audio Data Channel 0 Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_dbgaud0ch0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_dbgaud0ch0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer Audio Data Channel 0 Register 0\n\nConfigures the audio fixed data to be used in channel 0 when in fixed audio selection.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_dbgaud0ch0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_dbgaud0ch0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcDbgaud0ch0Spec;
 impl crate::RegisterSpec for FcDbgaud0ch0Spec {
     type Ux = u8;

@@ -2,19 +2,19 @@
 pub type R = crate::R<UartScrSpec>;
 #[doc = "Register `UART_SCR` writer"]
 pub type W = crate::W<UartScrSpec>;
-#[doc = "Field `TEMP_STORE_SPACE` reader - This register is for programmers to use as a temporary storage space."]
+#[doc = "Field `TEMP_STORE_SPACE` reader - This register is for programmers to use as a temporary storage\n\nspace."]
 pub type TempStoreSpaceR = crate::FieldReader;
-#[doc = "Field `TEMP_STORE_SPACE` writer - This register is for programmers to use as a temporary storage space."]
+#[doc = "Field `TEMP_STORE_SPACE` writer - This register is for programmers to use as a temporary storage\n\nspace."]
 pub type TempStoreSpaceW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - This register is for programmers to use as a temporary storage space."]
+    #[doc = "Bits 0:7 - This register is for programmers to use as a temporary storage\n\nspace."]
     #[inline(always)]
     pub fn temp_store_space(&self) -> TempStoreSpaceR {
         TempStoreSpaceR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - This register is for programmers to use as a temporary storage space."]
+    #[doc = "Bits 0:7 - This register is for programmers to use as a temporary storage\n\nspace."]
     #[inline(always)]
     #[must_use]
     pub fn temp_store_space(&mut self) -> TempStoreSpaceW<UartScrSpec> {

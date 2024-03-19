@@ -2,19 +2,19 @@
 pub type R = crate::R<QosModeSpec>;
 #[doc = "Register `QOS_Mode` writer"]
 pub type W = crate::W<QosModeSpec>;
-#[doc = "Field `MODE` reader - 0 = Programmable mode: a programmed priority is assigned to each read or write, 1 = Bandwidth Limiter Mode: a hard limit restricts throughput, 2 = Bypass mode: (&lt;See SoC-specific QoS generator documentation>), 3 = Bandwidth Regulator mode: priority decreases when throughput exceeds a threshold."]
+#[doc = "Field `MODE` reader - 0 = Programmable mode: a programmed priority is assigned to\n\neach read or write,\n\n1 = Bandwidth Limiter Mode: a hard limit restricts throughput,\n\n2 = Bypass mode: (&lt;See SoC-specific QoS generator\n\ndocumentation>),\n\n3 = Bandwidth Regulator mode: priority decreases when\n\nthroughput exceeds a threshold."]
 pub type ModeR = crate::FieldReader;
-#[doc = "Field `MODE` writer - 0 = Programmable mode: a programmed priority is assigned to each read or write, 1 = Bandwidth Limiter Mode: a hard limit restricts throughput, 2 = Bypass mode: (&lt;See SoC-specific QoS generator documentation>), 3 = Bandwidth Regulator mode: priority decreases when throughput exceeds a threshold."]
+#[doc = "Field `MODE` writer - 0 = Programmable mode: a programmed priority is assigned to\n\neach read or write,\n\n1 = Bandwidth Limiter Mode: a hard limit restricts throughput,\n\n2 = Bypass mode: (&lt;See SoC-specific QoS generator\n\ndocumentation>),\n\n3 = Bandwidth Regulator mode: priority decreases when\n\nthroughput exceeds a threshold."]
 pub type ModeW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
-    #[doc = "Bits 0:1 - 0 = Programmable mode: a programmed priority is assigned to each read or write, 1 = Bandwidth Limiter Mode: a hard limit restricts throughput, 2 = Bypass mode: (&lt;See SoC-specific QoS generator documentation>), 3 = Bandwidth Regulator mode: priority decreases when throughput exceeds a threshold."]
+    #[doc = "Bits 0:1 - 0 = Programmable mode: a programmed priority is assigned to\n\neach read or write,\n\n1 = Bandwidth Limiter Mode: a hard limit restricts throughput,\n\n2 = Bypass mode: (&lt;See SoC-specific QoS generator\n\ndocumentation>),\n\n3 = Bandwidth Regulator mode: priority decreases when\n\nthroughput exceeds a threshold."]
     #[inline(always)]
     pub fn mode(&self) -> ModeR {
         ModeR::new((self.bits & 3) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:1 - 0 = Programmable mode: a programmed priority is assigned to each read or write, 1 = Bandwidth Limiter Mode: a hard limit restricts throughput, 2 = Bypass mode: (&lt;See SoC-specific QoS generator documentation>), 3 = Bandwidth Regulator mode: priority decreases when throughput exceeds a threshold."]
+    #[doc = "Bits 0:1 - 0 = Programmable mode: a programmed priority is assigned to\n\neach read or write,\n\n1 = Bandwidth Limiter Mode: a hard limit restricts throughput,\n\n2 = Bypass mode: (&lt;See SoC-specific QoS generator\n\ndocumentation>),\n\n3 = Bandwidth Regulator mode: priority decreases when\n\nthroughput exceeds a threshold."]
     #[inline(always)]
     #[must_use]
     pub fn mode(&mut self) -> ModeW<QosModeSpec> {

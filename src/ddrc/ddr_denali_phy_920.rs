@@ -6,7 +6,7 @@ pub type W = crate::W<DdrDenaliPhy920Spec>;
 pub type PhyPllCtrlOverrideR = crate::FieldReader<u16>;
 #[doc = "Field `PHY_PLL_CTRL_OVERRIDE` writer - Individual PHY clock PLL control overrides."]
 pub type PhyPllCtrlOverrideW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-#[doc = "Field `PHY_PLL_OBS_0` reader - PHY clock PLL_0 observe values. READ-ONLY"]
+#[doc = "Field `PHY_PLL_OBS_0` reader - PHY clock PLL_0 observe values."]
 pub type PhyPllObs0R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:15 - Individual PHY clock PLL control overrides."]
@@ -14,7 +14,7 @@ impl R {
     pub fn phy_pll_ctrl_override(&self) -> PhyPllCtrlOverrideR {
         PhyPllCtrlOverrideR::new((self.bits & 0xffff) as u16)
     }
-    #[doc = "Bits 16:31 - PHY clock PLL_0 observe values. READ-ONLY"]
+    #[doc = "Bits 16:31 - PHY clock PLL_0 observe values."]
     #[inline(always)]
     pub fn phy_pll_obs_0(&self) -> PhyPllObs0R {
         PhyPllObs0R::new(((self.bits >> 16) & 0xffff) as u16)

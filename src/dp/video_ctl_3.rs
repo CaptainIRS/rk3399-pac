@@ -2,10 +2,11 @@
 pub type R = crate::R<VideoCtl3Spec>;
 #[doc = "Register `VIDEO_CTL_3` writer"]
 pub type W = crate::W<VideoCtl3Spec>;
-#[doc = "Select video format stability check method in video capture block.\n\nValue on reset: 0"]
+#[doc = "Select video format stability check method in \n\nvideo capture block.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VidChkUpdateType {
-    #[doc = "1: Check stability with the difference of differences between adjacent frames. Compares difference of 1st and 2nd to difference of 3rd and 4th frame."]
+    #[doc = "1: Check stability with the difference between adjacent frames."]
     B1 = 1,
     #[doc = "0: Check stability with the difference of differences between adjacent frames. Compares difference of 1st and 2nd to difference of 3rd and 4th frame."]
     B0 = 0,
@@ -16,7 +17,7 @@ impl From<VidChkUpdateType> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `VID_CHK_UPDATE_TYPE` reader - Select video format stability check method in video capture block."]
+#[doc = "Field `VID_CHK_UPDATE_TYPE` reader - Select video format stability check method in \n\nvideo capture block."]
 pub type VidChkUpdateTypeR = crate::BitReader<VidChkUpdateType>;
 impl VidChkUpdateTypeR {
     #[doc = "Get enumerated values variant"]
@@ -27,7 +28,7 @@ impl VidChkUpdateTypeR {
             false => VidChkUpdateType::B0,
         }
     }
-    #[doc = "Check stability with the difference of differences between adjacent frames. Compares difference of 1st and 2nd to difference of 3rd and 4th frame."]
+    #[doc = "Check stability with the difference between adjacent frames."]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == VidChkUpdateType::B1
@@ -38,13 +39,13 @@ impl VidChkUpdateTypeR {
         *self == VidChkUpdateType::B0
     }
 }
-#[doc = "Field `VID_CHK_UPDATE_TYPE` writer - Select video format stability check method in video capture block."]
+#[doc = "Field `VID_CHK_UPDATE_TYPE` writer - Select video format stability check method in \n\nvideo capture block."]
 pub type VidChkUpdateTypeW<'a, REG> = crate::BitWriter1C<'a, REG, VidChkUpdateType>;
 impl<'a, REG> VidChkUpdateTypeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Check stability with the difference of differences between adjacent frames. Compares difference of 1st and 2nd to difference of 3rd and 4th frame."]
+    #[doc = "Check stability with the difference between adjacent frames."]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(VidChkUpdateType::B1)
@@ -55,10 +56,11 @@ where
         self.variant(VidChkUpdateType::B0)
     }
 }
-#[doc = "YCbCr Coefficients of input video. This is used to specify video data format in main stream attribute data.\n\nValue on reset: 0"]
+#[doc = "YCbCr Coefficients of input video. This is used \n\nto specify video data format in main stream \n\nattribute data.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum InYcCoeffi {
-    #[doc = "1: ITU601."]
+    #[doc = "1: ITU709."]
     B1 = 1,
     #[doc = "0: ITU601."]
     B0 = 0,
@@ -69,7 +71,7 @@ impl From<InYcCoeffi> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IN_YC_COEFFI` reader - YCbCr Coefficients of input video. This is used to specify video data format in main stream attribute data."]
+#[doc = "Field `IN_YC_COEFFI` reader - YCbCr Coefficients of input video. This is used \n\nto specify video data format in main stream \n\nattribute data."]
 pub type InYcCoeffiR = crate::BitReader<InYcCoeffi>;
 impl InYcCoeffiR {
     #[doc = "Get enumerated values variant"]
@@ -80,7 +82,7 @@ impl InYcCoeffiR {
             false => InYcCoeffi::B0,
         }
     }
-    #[doc = "ITU601."]
+    #[doc = "ITU709."]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == InYcCoeffi::B1
@@ -91,13 +93,13 @@ impl InYcCoeffiR {
         *self == InYcCoeffi::B0
     }
 }
-#[doc = "Field `IN_YC_COEFFI` writer - YCbCr Coefficients of input video. This is used to specify video data format in main stream attribute data."]
+#[doc = "Field `IN_YC_COEFFI` writer - YCbCr Coefficients of input video. This is used \n\nto specify video data format in main stream \n\nattribute data."]
 pub type InYcCoeffiW<'a, REG> = crate::BitWriter1C<'a, REG, InYcCoeffi>;
 impl<'a, REG> InYcCoeffiW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "ITU601."]
+    #[doc = "ITU709."]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(InYcCoeffi::B1)
@@ -109,25 +111,25 @@ where
     }
 }
 impl R {
-    #[doc = "Bit 4 - Select video format stability check method in video capture block."]
+    #[doc = "Bit 4 - Select video format stability check method in \n\nvideo capture block."]
     #[inline(always)]
     pub fn vid_chk_update_type(&self) -> VidChkUpdateTypeR {
         VidChkUpdateTypeR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 7 - YCbCr Coefficients of input video. This is used to specify video data format in main stream attribute data."]
+    #[doc = "Bit 7 - YCbCr Coefficients of input video. This is used \n\nto specify video data format in main stream \n\nattribute data."]
     #[inline(always)]
     pub fn in_yc_coeffi(&self) -> InYcCoeffiR {
         InYcCoeffiR::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 4 - Select video format stability check method in video capture block."]
+    #[doc = "Bit 4 - Select video format stability check method in \n\nvideo capture block."]
     #[inline(always)]
     #[must_use]
     pub fn vid_chk_update_type(&mut self) -> VidChkUpdateTypeW<VideoCtl3Spec> {
         VidChkUpdateTypeW::new(self, 4)
     }
-    #[doc = "Bit 7 - YCbCr Coefficients of input video. This is used to specify video data format in main stream attribute data."]
+    #[doc = "Bit 7 - YCbCr Coefficients of input video. This is used \n\nto specify video data format in main stream \n\nattribute data."]
     #[inline(always)]
     #[must_use]
     pub fn in_yc_coeffi(&mut self) -> InYcCoeffiW<VideoCtl3Spec> {

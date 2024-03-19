@@ -1,16 +1,16 @@
 #[doc = "Register `DDR_DENALI_PHY_426` reader"]
 pub type R = crate::R<DdrDenaliPhy426Spec>;
-#[doc = "Field `PHY_WRLVL_ERROR_OBS_3` reader - Observation register for write leveling error status for slice 3. READ-ONLY"]
+#[doc = "Field `PHY_WRLVL_ERROR_OBS_3` reader - Observation register for write leveling error status for slice 3."]
 pub type PhyWrlvlErrorObs3R = crate::FieldReader<u16>;
-#[doc = "Field `PHY_GTLVL_HARD0_DELAY_OBS_3` reader - Observation register for gate training first hard 0 DQS slave delay for slice 3. READ-ONLY"]
+#[doc = "Field `PHY_GTLVL_HARD0_DELAY_OBS_3` reader - Observation register for gate training first hard 0 DQS slave delay for slice 3."]
 pub type PhyGtlvlHard0DelayObs3R = crate::FieldReader<u16>;
 impl R {
-    #[doc = "Bits 0:15 - Observation register for write leveling error status for slice 3. READ-ONLY"]
+    #[doc = "Bits 0:15 - Observation register for write leveling error status for slice 3."]
     #[inline(always)]
     pub fn phy_wrlvl_error_obs_3(&self) -> PhyWrlvlErrorObs3R {
         PhyWrlvlErrorObs3R::new((self.bits & 0xffff) as u16)
     }
-    #[doc = "Bits 16:29 - Observation register for gate training first hard 0 DQS slave delay for slice 3. READ-ONLY"]
+    #[doc = "Bits 16:29 - Observation register for gate training first hard 0 DQS slave delay for slice 3."]
     #[inline(always)]
     pub fn phy_gtlvl_hard0_delay_obs_3(&self) -> PhyGtlvlHard0DelayObs3R {
         PhyGtlvlHard0DelayObs3R::new(((self.bits >> 16) & 0x3fff) as u16)

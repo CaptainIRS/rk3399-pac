@@ -3,9 +3,10 @@ pub type R = crate::R<EmmccoreNorintstsenaSpec>;
 #[doc = "Register `EMMCCORE_NORINTSTSENA` writer"]
 pub type W = crate::W<EmmccoreNorintstsenaSpec>;
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Commandcomplete {
-    #[doc = "0: Enabled"]
+    #[doc = "0: Masked"]
     B0 = 0,
     #[doc = "1: Enabled"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl CommandcompleteR {
             true => Commandcomplete::B1,
         }
     }
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Commandcomplete::B0
@@ -44,7 +45,7 @@ impl<'a, REG> CommandcompleteW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Commandcomplete::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Transfercomplete {
-    #[doc = "0: Enabled"]
+    #[doc = "0: Masked"]
     B0 = 0,
     #[doc = "1: Enabled"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl TransfercompleteR {
             true => Transfercomplete::B1,
         }
     }
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Transfercomplete::B0
@@ -97,7 +99,7 @@ impl<'a, REG> TransfercompleteW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Transfercomplete::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Blockgapevent {
-    #[doc = "0: Enabled"]
+    #[doc = "0: Masked"]
     B0 = 0,
     #[doc = "1: Enabled"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl BlockgapeventR {
             true => Blockgapevent::B1,
         }
     }
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Blockgapevent::B0
@@ -150,7 +153,7 @@ impl<'a, REG> BlockgapeventW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Blockgapevent::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmainterrupt {
-    #[doc = "0: Enabled"]
+    #[doc = "0: Masked"]
     B0 = 0,
     #[doc = "1: Enabled"]
     B1 = 1,
@@ -186,7 +190,7 @@ impl DmainterruptR {
             true => Dmainterrupt::B1,
         }
     }
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Dmainterrupt::B0
@@ -203,7 +207,7 @@ impl<'a, REG> DmainterruptW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Dmainterrupt::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bufferwriteready {
-    #[doc = "0: Enabled"]
+    #[doc = "0: Masked"]
     B0 = 0,
     #[doc = "1: Enabled"]
     B1 = 1,
@@ -239,7 +244,7 @@ impl BufferwritereadyR {
             true => Bufferwriteready::B1,
         }
     }
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Bufferwriteready::B0
@@ -256,7 +261,7 @@ impl<'a, REG> BufferwritereadyW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Bufferwriteready::B0)
@@ -268,9 +273,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bufferreadready {
-    #[doc = "0: Enabled"]
+    #[doc = "0: Masked"]
     B0 = 0,
     #[doc = "1: Enabled"]
     B1 = 1,
@@ -292,7 +298,7 @@ impl BufferreadreadyR {
             true => Bufferreadready::B1,
         }
     }
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Bufferreadready::B0
@@ -309,7 +315,7 @@ impl<'a, REG> BufferreadreadyW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Bufferreadready::B0)
@@ -321,9 +327,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cardinsertion {
-    #[doc = "0: Enabled"]
+    #[doc = "0: Masked"]
     B0 = 0,
     #[doc = "1: Enabled"]
     B1 = 1,
@@ -345,7 +352,7 @@ impl CardinsertionR {
             true => Cardinsertion::B1,
         }
     }
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cardinsertion::B0
@@ -362,7 +369,7 @@ impl<'a, REG> CardinsertionW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cardinsertion::B0)
@@ -374,9 +381,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cardremoval {
-    #[doc = "0: Enabled"]
+    #[doc = "0: Masked"]
     B0 = 0,
     #[doc = "1: Enabled"]
     B1 = 1,
@@ -398,7 +406,7 @@ impl CardremovalR {
             true => Cardremoval::B1,
         }
     }
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cardremoval::B0
@@ -415,7 +423,7 @@ impl<'a, REG> CardremovalW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cardremoval::B0)
@@ -427,9 +435,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cardinterrupt {
-    #[doc = "0: Enabled"]
+    #[doc = "0: Masked"]
     B0 = 0,
     #[doc = "1: Enabled"]
     B1 = 1,
@@ -451,7 +460,7 @@ impl CardinterruptR {
             true => Cardinterrupt::B1,
         }
     }
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cardinterrupt::B0
@@ -468,7 +477,7 @@ impl<'a, REG> CardinterruptW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cardinterrupt::B0)
@@ -480,9 +489,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Retuningevent {
-    #[doc = "0: Enabled"]
+    #[doc = "0: Masked"]
     B0 = 0,
     #[doc = "1: Enabled"]
     B1 = 1,
@@ -504,7 +514,7 @@ impl RetuningeventR {
             true => Retuningevent::B1,
         }
     }
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Retuningevent::B0
@@ -521,7 +531,7 @@ impl<'a, REG> RetuningeventW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Retuningevent::B0)
@@ -533,9 +543,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bootackrcv {
-    #[doc = "0: Enabled"]
+    #[doc = "0: Masked"]
     B0 = 0,
     #[doc = "1: Enabled"]
     B1 = 1,
@@ -557,7 +568,7 @@ impl BootackrcvR {
             true => Bootackrcv::B1,
         }
     }
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Bootackrcv::B0
@@ -574,7 +585,7 @@ impl<'a, REG> BootackrcvW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Bootackrcv::B0)
@@ -586,9 +597,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bootterminateinterrupt {
-    #[doc = "0: Enabled"]
+    #[doc = "0: Masked"]
     B0 = 0,
     #[doc = "1: Enabled"]
     B1 = 1,
@@ -610,7 +622,7 @@ impl BootterminateinterruptR {
             true => Bootterminateinterrupt::B1,
         }
     }
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Bootterminateinterrupt::B0
@@ -627,7 +639,7 @@ impl<'a, REG> BootterminateinterruptW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Bootterminateinterrupt::B0)

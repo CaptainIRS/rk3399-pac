@@ -6,7 +6,7 @@ pub type W = crate::W<DdrDenaliCtl225Spec>;
 pub type PhyupdAppendEnR = crate::BitReader;
 #[doc = "Field `PHYUPD_APPEND_EN` writer - Specifies if a PHY update will be run prior to completing a training sequence. Set to 1 to enable."]
 pub type PhyupdAppendEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `WRLVL_REQ` writer - User request to initiate write leveling. Set to 1 to trigger. WRITE- ONLY"]
+#[doc = "Field `WRLVL_REQ` writer - User request to initiate write leveling. Set to 1 to trigger."]
 pub type WrlvlReqW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `WRLVL_CS` reader - Specifies the target chip select for the write leveling operation initiated through the WRLVL_REQ parameter."]
 pub type WrlvlCsR = crate::BitReader;
@@ -40,7 +40,7 @@ impl W {
     pub fn phyupd_append_en(&mut self) -> PhyupdAppendEnW<DdrDenaliCtl225Spec> {
         PhyupdAppendEnW::new(self, 0)
     }
-    #[doc = "Bit 8 - User request to initiate write leveling. Set to 1 to trigger. WRITE- ONLY"]
+    #[doc = "Bit 8 - User request to initiate write leveling. Set to 1 to trigger."]
     #[inline(always)]
     #[must_use]
     pub fn wrlvl_req(&mut self) -> WrlvlReqW<DdrDenaliCtl225Spec> {

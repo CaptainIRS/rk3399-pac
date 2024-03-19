@@ -3,9 +3,10 @@ pub type R = crate::R<DdrmonDdrIfCtrlSpec>;
 #[doc = "Register `DDRMON_DDR_IF_CTRL` writer"]
 pub type W = crate::W<DdrmonDdrIfCtrlSpec>;
 #[doc = "Write or read monitor in channel 0 for command statistics\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ch0Direction {
-    #[doc = "1: write"]
+    #[doc = "1: read"]
     B1 = 1,
     #[doc = "0: write"]
     B0 = 0,
@@ -27,7 +28,7 @@ impl Ch0DirectionR {
             false => Ch0Direction::B0,
         }
     }
-    #[doc = "write"]
+    #[doc = "read"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Ch0Direction::B1
@@ -44,7 +45,7 @@ impl<'a, REG> Ch0DirectionW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "write"]
+    #[doc = "read"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Ch0Direction::B1)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Write or read monitor in channel 1 for command statistics\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ch1Direction {
-    #[doc = "1: write"]
+    #[doc = "1: read"]
     B1 = 1,
     #[doc = "0: write"]
     B0 = 0,
@@ -80,7 +82,7 @@ impl Ch1DirectionR {
             false => Ch1Direction::B0,
         }
     }
-    #[doc = "write"]
+    #[doc = "read"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Ch1Direction::B1
@@ -97,7 +99,7 @@ impl<'a, REG> Ch1DirectionW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "write"]
+    #[doc = "read"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Ch1Direction::B1)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "DDR interface and DFI monitor enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IfMonEn {
-    #[doc = "1: disable"]
+    #[doc = "1: enable"]
     B1 = 1,
     #[doc = "0: disable"]
     B0 = 0,
@@ -133,7 +136,7 @@ impl IfMonEnR {
             false => IfMonEn::B0,
         }
     }
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == IfMonEn::B1
@@ -150,7 +153,7 @@ impl<'a, REG> IfMonEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(IfMonEn::B1)
@@ -161,9 +164,9 @@ where
         self.variant(IfMonEn::B0)
     }
 }
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software. When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software. When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software. When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by software.\n\nWhen bit 16=0, bit 0 cannot be written by software;\n\nWhen bit 17=1, bit 1 can be written by software.\n\nWhen bit 17=0, bit 1 cannot be written by software;\n\n......\n\nWhen bit 31=1, bit 15 can be written by software.\n\nWhen bit 31=0, bit 15 cannot be written by software;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software. When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software. When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software. When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by software.\n\nWhen bit 16=0, bit 0 cannot be written by software;\n\nWhen bit 17=1, bit 1 can be written by software.\n\nWhen bit 17=0, bit 1 cannot be written by software;\n\n......\n\nWhen bit 31=1, bit 15 can be written by software.\n\nWhen bit 31=0, bit 15 cannot be written by software;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0 - Write or read monitor in channel 0 for command statistics"]
@@ -181,7 +184,7 @@ impl R {
     pub fn if_mon_en(&self) -> IfMonEnR {
         IfMonEnR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software. When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software. When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software. When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by software.\n\nWhen bit 16=0, bit 0 cannot be written by software;\n\nWhen bit 17=1, bit 1 can be written by software.\n\nWhen bit 17=0, bit 1 cannot be written by software;\n\n......\n\nWhen bit 31=1, bit 15 can be written by software.\n\nWhen bit 31=0, bit 15 cannot be written by software;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
@@ -206,7 +209,7 @@ impl W {
     pub fn if_mon_en(&mut self) -> IfMonEnW<DdrmonDdrIfCtrlSpec> {
         IfMonEnW::new(self, 2)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software. When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software. When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software. When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by software.\n\nWhen bit 16=0, bit 0 cannot be written by software;\n\nWhen bit 17=1, bit 1 can be written by software.\n\nWhen bit 17=0, bit 1 cannot be written by software;\n\n......\n\nWhen bit 31=1, bit 15 can be written by software.\n\nWhen bit 31=0, bit 15 cannot be written by software;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<DdrmonDdrIfCtrlSpec> {

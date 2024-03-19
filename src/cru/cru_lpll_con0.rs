@@ -2,35 +2,35 @@
 pub type R = crate::R<CruLpllCon0Spec>;
 #[doc = "Register `CRU_LPLL_CON0` writer"]
 pub type W = crate::W<CruLpllCon0Spec>;
-#[doc = "Field `FBDIV` reader - Feedback Divide Value Valid divider settings are: \\[16, 3200\\]
-in integer mode \\[20, 320\\]
-in fractional mode Tips: no plus one operation"]
+#[doc = "Field `FBDIV` reader - Feedback Divide Value\n\nValid divider settings are:\n\n\\[16, 3200\\]
+in integer mode\n\n\\[20, 320\\]
+in fractional mode\n\nTips: no plus one operation"]
 pub type FbdivR = crate::FieldReader<u16>;
-#[doc = "Field `FBDIV` writer - Feedback Divide Value Valid divider settings are: \\[16, 3200\\]
-in integer mode \\[20, 320\\]
-in fractional mode Tips: no plus one operation"]
+#[doc = "Field `FBDIV` writer - Feedback Divide Value\n\nValid divider settings are:\n\n\\[16, 3200\\]
+in integer mode\n\n\\[20, 320\\]
+in fractional mode\n\nTips: no plus one operation"]
 pub type FbdivW<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:11 - Feedback Divide Value Valid divider settings are: \\[16, 3200\\]
-in integer mode \\[20, 320\\]
-in fractional mode Tips: no plus one operation"]
+    #[doc = "Bits 0:11 - Feedback Divide Value\n\nValid divider settings are:\n\n\\[16, 3200\\]
+in integer mode\n\n\\[20, 320\\]
+in fractional mode\n\nTips: no plus one operation"]
     #[inline(always)]
     pub fn fbdiv(&self) -> FbdivR {
         FbdivR::new((self.bits & 0x0fff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:11 - Feedback Divide Value Valid divider settings are: \\[16, 3200\\]
-in integer mode \\[20, 320\\]
-in fractional mode Tips: no plus one operation"]
+    #[doc = "Bits 0:11 - Feedback Divide Value\n\nValid divider settings are:\n\n\\[16, 3200\\]
+in integer mode\n\n\\[20, 320\\]
+in fractional mode\n\nTips: no plus one operation"]
     #[inline(always)]
     #[must_use]
     pub fn fbdiv(&mut self) -> FbdivW<CruLpllCon0Spec> {
         FbdivW::new(self, 0)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruLpllCon0Spec> {

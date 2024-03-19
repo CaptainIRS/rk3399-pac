@@ -6,11 +6,11 @@ pub type W = crate::W<DdrPiReg52Spec>;
 pub type PiSwRdlvlResp3R = crate::FieldReader;
 #[doc = "Field `PI_SW_CALVL_RESP_0` reader - Indicates CA leveling response for data slice 0."]
 pub type PiSwCalvlResp0R = crate::FieldReader;
-#[doc = "Field `PI_SW_LEVELING_MODE` reader - Defines the leveling operation for software leveling. Set to 3'b001 for write leveling, set to 3'b010 for read data eye training, set to 3'b011 for read gate training, set to 3'b100 for ca training, set to 3'b101 for WDQ training."]
+#[doc = "Field `PI_SW_LEVELING_MODE` reader - Defines the leveling operation for software leveling. Set to 3'b001\n\nfor write leveling, set to 3'b010 for read data eye training, set to\n\n3'b011 for read gate training, set to 3'b100 for ca training, set to\n\n3'b101 for WDQ training."]
 pub type PiSwLevelingModeR = crate::FieldReader;
-#[doc = "Field `PI_SW_LEVELING_MODE` writer - Defines the leveling operation for software leveling. Set to 3'b001 for write leveling, set to 3'b010 for read data eye training, set to 3'b011 for read gate training, set to 3'b100 for ca training, set to 3'b101 for WDQ training."]
+#[doc = "Field `PI_SW_LEVELING_MODE` writer - Defines the leveling operation for software leveling. Set to 3'b001\n\nfor write leveling, set to 3'b010 for read data eye training, set to\n\n3'b011 for read gate training, set to 3'b100 for ca training, set to\n\n3'b101 for WDQ training."]
 pub type PiSwLevelingModeW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-#[doc = "Field `PI_SWLVL_START` writer - Indicates user request to initiate software leveling of type in the PI_REG_52.pi_sw_leveling_mode parameter. Set to 1 to trigger."]
+#[doc = "Field `PI_SWLVL_START` writer - Indicates user request to initiate software leveling of type in the\n\nPI_REG_52.pi_sw_leveling_mode parameter. Set to 1 to trigger."]
 pub type PiSwlvlStartW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:1 - Indicates read leveling response for data slice 3."]
@@ -23,20 +23,20 @@ impl R {
     pub fn pi_sw_calvl_resp_0(&self) -> PiSwCalvlResp0R {
         PiSwCalvlResp0R::new(((self.bits >> 8) & 3) as u8)
     }
-    #[doc = "Bits 16:18 - Defines the leveling operation for software leveling. Set to 3'b001 for write leveling, set to 3'b010 for read data eye training, set to 3'b011 for read gate training, set to 3'b100 for ca training, set to 3'b101 for WDQ training."]
+    #[doc = "Bits 16:18 - Defines the leveling operation for software leveling. Set to 3'b001\n\nfor write leveling, set to 3'b010 for read data eye training, set to\n\n3'b011 for read gate training, set to 3'b100 for ca training, set to\n\n3'b101 for WDQ training."]
     #[inline(always)]
     pub fn pi_sw_leveling_mode(&self) -> PiSwLevelingModeR {
         PiSwLevelingModeR::new(((self.bits >> 16) & 7) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 16:18 - Defines the leveling operation for software leveling. Set to 3'b001 for write leveling, set to 3'b010 for read data eye training, set to 3'b011 for read gate training, set to 3'b100 for ca training, set to 3'b101 for WDQ training."]
+    #[doc = "Bits 16:18 - Defines the leveling operation for software leveling. Set to 3'b001\n\nfor write leveling, set to 3'b010 for read data eye training, set to\n\n3'b011 for read gate training, set to 3'b100 for ca training, set to\n\n3'b101 for WDQ training."]
     #[inline(always)]
     #[must_use]
     pub fn pi_sw_leveling_mode(&mut self) -> PiSwLevelingModeW<DdrPiReg52Spec> {
         PiSwLevelingModeW::new(self, 16)
     }
-    #[doc = "Bit 24 - Indicates user request to initiate software leveling of type in the PI_REG_52.pi_sw_leveling_mode parameter. Set to 1 to trigger."]
+    #[doc = "Bit 24 - Indicates user request to initiate software leveling of type in the\n\nPI_REG_52.pi_sw_leveling_mode parameter. Set to 1 to trigger."]
     #[inline(always)]
     #[must_use]
     pub fn pi_swlvl_start(&mut self) -> PiSwlvlStartW<DdrPiReg52Spec> {

@@ -3,9 +3,10 @@ pub type R = crate::R<PwmPwm3CtrlSpec>;
 #[doc = "Register `PWM_PWM3_CTRL` writer"]
 pub type W = crate::W<PwmPwm3CtrlSpec>;
 #[doc = "PWM channel enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PwmEn {
-    #[doc = "0: enabled. If the PWM is worked in the one-shot mode, this bit will be cleared at the end of operation"]
+    #[doc = "0: disabled"]
     B0 = 0,
     #[doc = "1: enabled. If the PWM is worked in the one-shot mode, this bit will be cleared at the end of operation"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl PwmEnR {
             true => PwmEn::B1,
         }
     }
-    #[doc = "enabled. If the PWM is worked in the one-shot mode, this bit will be cleared at the end of operation"]
+    #[doc = "disabled"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PwmEn::B0
@@ -44,7 +45,7 @@ impl<'a, REG> PwmEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enabled. If the PWM is worked in the one-shot mode, this bit will be cleared at the end of operation"]
+    #[doc = "disabled"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PwmEn::B0)
@@ -56,14 +57,15 @@ where
     }
 }
 #[doc = "PWM Operation Mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PwmMode {
-    #[doc = "0: reserved"]
+    #[doc = "0: One shot mode. PWM produces the waveform within the repeated times defined by PWMx_CTRL_rpt"]
     B00 = 0,
-    #[doc = "1: reserved"]
+    #[doc = "1: Continuous mode. PWM produces the waveform continuously"]
     B01 = 1,
-    #[doc = "2: reserved"]
+    #[doc = "2: Capture mode. PWM measures the cycles of high/low polarity of input waveform."]
     B10 = 2,
     #[doc = "3: reserved"]
     B11 = 3,
@@ -91,17 +93,17 @@ impl PwmModeR {
             _ => unreachable!(),
         }
     }
-    #[doc = "reserved"]
+    #[doc = "One shot mode. PWM produces the waveform within the repeated times defined by PWMx_CTRL_rpt"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == PwmMode::B00
     }
-    #[doc = "reserved"]
+    #[doc = "Continuous mode. PWM produces the waveform continuously"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == PwmMode::B01
     }
-    #[doc = "reserved"]
+    #[doc = "Capture mode. PWM measures the cycles of high/low polarity of input waveform."]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == PwmMode::B10
@@ -119,17 +121,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "reserved"]
+    #[doc = "One shot mode. PWM produces the waveform within the repeated times defined by PWMx_CTRL_rpt"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(PwmMode::B00)
     }
-    #[doc = "reserved"]
+    #[doc = "Continuous mode. PWM produces the waveform continuously"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(PwmMode::B01)
     }
-    #[doc = "reserved"]
+    #[doc = "Capture mode. PWM measures the cycles of high/low polarity of input waveform."]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(PwmMode::B10)
@@ -140,10 +142,11 @@ where
         self.variant(PwmMode::B11)
     }
 }
-#[doc = "Duty Cycle Output Polarity This defines the polarity for duty cycle. PWM starts the output waveform with duty cycle.\n\nValue on reset: 0"]
+#[doc = "Duty Cycle Output Polarity\n\nThis defines the polarity for duty cycle. PWM starts the output\n\nwaveform with duty cycle.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DutyPol {
-    #[doc = "0: positive"]
+    #[doc = "0: negative"]
     B0 = 0,
     #[doc = "1: positive"]
     B1 = 1,
@@ -154,7 +157,7 @@ impl From<DutyPol> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DUTY_POL` reader - Duty Cycle Output Polarity This defines the polarity for duty cycle. PWM starts the output waveform with duty cycle."]
+#[doc = "Field `DUTY_POL` reader - Duty Cycle Output Polarity\n\nThis defines the polarity for duty cycle. PWM starts the output\n\nwaveform with duty cycle."]
 pub type DutyPolR = crate::BitReader<DutyPol>;
 impl DutyPolR {
     #[doc = "Get enumerated values variant"]
@@ -165,7 +168,7 @@ impl DutyPolR {
             true => DutyPol::B1,
         }
     }
-    #[doc = "positive"]
+    #[doc = "negative"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == DutyPol::B0
@@ -176,13 +179,13 @@ impl DutyPolR {
         *self == DutyPol::B1
     }
 }
-#[doc = "Field `DUTY_POL` writer - Duty Cycle Output Polarity This defines the polarity for duty cycle. PWM starts the output waveform with duty cycle."]
+#[doc = "Field `DUTY_POL` writer - Duty Cycle Output Polarity\n\nThis defines the polarity for duty cycle. PWM starts the output\n\nwaveform with duty cycle."]
 pub type DutyPolW<'a, REG> = crate::BitWriter<'a, REG, DutyPol>;
 impl<'a, REG> DutyPolW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "positive"]
+    #[doc = "negative"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(DutyPol::B0)
@@ -193,10 +196,11 @@ where
         self.variant(DutyPol::B1)
     }
 }
-#[doc = "Inactive State Output Polarity This defines the output waveform polarity when PWM channel is in inactive state. The inactive state means that PWM finishes the complete waveform in one-shot mode or PWM channel is disabled.\n\nValue on reset: 0"]
+#[doc = "Inactive State Output Polarity\n\nThis defines the output waveform polarity when PWM channel is\n\nin inactive state. The inactive state means that PWM finishes the\n\ncomplete waveform in one-shot mode or PWM channel is\n\ndisabled.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum InactivePol {
-    #[doc = "0: positive"]
+    #[doc = "0: negative"]
     B0 = 0,
     #[doc = "1: positive"]
     B1 = 1,
@@ -207,7 +211,7 @@ impl From<InactivePol> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `INACTIVE_POL` reader - Inactive State Output Polarity This defines the output waveform polarity when PWM channel is in inactive state. The inactive state means that PWM finishes the complete waveform in one-shot mode or PWM channel is disabled."]
+#[doc = "Field `INACTIVE_POL` reader - Inactive State Output Polarity\n\nThis defines the output waveform polarity when PWM channel is\n\nin inactive state. The inactive state means that PWM finishes the\n\ncomplete waveform in one-shot mode or PWM channel is\n\ndisabled."]
 pub type InactivePolR = crate::BitReader<InactivePol>;
 impl InactivePolR {
     #[doc = "Get enumerated values variant"]
@@ -218,7 +222,7 @@ impl InactivePolR {
             true => InactivePol::B1,
         }
     }
-    #[doc = "positive"]
+    #[doc = "negative"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == InactivePol::B0
@@ -229,13 +233,13 @@ impl InactivePolR {
         *self == InactivePol::B1
     }
 }
-#[doc = "Field `INACTIVE_POL` writer - Inactive State Output Polarity This defines the output waveform polarity when PWM channel is in inactive state. The inactive state means that PWM finishes the complete waveform in one-shot mode or PWM channel is disabled."]
+#[doc = "Field `INACTIVE_POL` writer - Inactive State Output Polarity\n\nThis defines the output waveform polarity when PWM channel is\n\nin inactive state. The inactive state means that PWM finishes the\n\ncomplete waveform in one-shot mode or PWM channel is\n\ndisabled."]
 pub type InactivePolW<'a, REG> = crate::BitWriter<'a, REG, InactivePol>;
 impl<'a, REG> InactivePolW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "positive"]
+    #[doc = "negative"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(InactivePol::B0)
@@ -247,9 +251,10 @@ where
     }
 }
 #[doc = "PWM Output mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum OutputMode {
-    #[doc = "0: center aligned mode"]
+    #[doc = "0: left aligned mode"]
     B0 = 0,
     #[doc = "1: center aligned mode"]
     B1 = 1,
@@ -271,7 +276,7 @@ impl OutputModeR {
             true => OutputMode::B1,
         }
     }
-    #[doc = "center aligned mode"]
+    #[doc = "left aligned mode"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == OutputMode::B0
@@ -288,7 +293,7 @@ impl<'a, REG> OutputModeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "center aligned mode"]
+    #[doc = "left aligned mode"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(OutputMode::B0)
@@ -300,9 +305,10 @@ where
     }
 }
 #[doc = "Low Power Mode Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LpEn {
-    #[doc = "0: enabled When PWM channel is inactive state and Low Power Mode is enabled, the path to PWM Clock prescale module is blocked to reduce power consumption."]
+    #[doc = "0: disabled"]
     B0 = 0,
     #[doc = "1: enabled When PWM channel is inactive state and Low Power Mode is enabled, the path to PWM Clock prescale module is blocked to reduce power consumption."]
     B1 = 1,
@@ -324,7 +330,7 @@ impl LpEnR {
             true => LpEn::B1,
         }
     }
-    #[doc = "enabled When PWM channel is inactive state and Low Power Mode is enabled, the path to PWM Clock prescale module is blocked to reduce power consumption."]
+    #[doc = "disabled"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == LpEn::B0
@@ -341,7 +347,7 @@ impl<'a, REG> LpEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enabled When PWM channel is inactive state and Low Power Mode is enabled, the path to PWM Clock prescale module is blocked to reduce power consumption."]
+    #[doc = "disabled"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(LpEn::B0)
@@ -353,9 +359,10 @@ where
     }
 }
 #[doc = "Clock Source Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClkSel {
-    #[doc = "0: scaled clock is selected as PWM clock source"]
+    #[doc = "0: non-scaled clock is selected as PWM clock source. It means that the prescale clock is directly used as the PWM clock source"]
     B0 = 0,
     #[doc = "1: scaled clock is selected as PWM clock source"]
     B1 = 1,
@@ -377,7 +384,7 @@ impl ClkSelR {
             true => ClkSel::B1,
         }
     }
-    #[doc = "scaled clock is selected as PWM clock source"]
+    #[doc = "non-scaled clock is selected as PWM clock source. It means that the prescale clock is directly used as the PWM clock source"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClkSel::B0
@@ -394,7 +401,7 @@ impl<'a, REG> ClkSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "scaled clock is selected as PWM clock source"]
+    #[doc = "non-scaled clock is selected as PWM clock source. It means that the prescale clock is directly used as the PWM clock source"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClkSel::B0)
@@ -405,17 +412,17 @@ where
         self.variant(ClkSel::B1)
     }
 }
-#[doc = "Field `PRESCALE` reader - Prescale Factor This field defines the prescale factor applied to input clock. The value N means that the input clock is divided by 2^N."]
+#[doc = "Field `PRESCALE` reader - Prescale Factor\n\nThis field defines the prescale factor applied to input clock. The\n\nvalue N means that the input clock is divided by 2^N."]
 pub type PrescaleR = crate::FieldReader;
-#[doc = "Field `PRESCALE` writer - Prescale Factor This field defines the prescale factor applied to input clock. The value N means that the input clock is divided by 2^N."]
+#[doc = "Field `PRESCALE` writer - Prescale Factor\n\nThis field defines the prescale factor applied to input clock. The\n\nvalue N means that the input clock is divided by 2^N."]
 pub type PrescaleW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-#[doc = "Field `SCALE` reader - Scale Factor This field defines the scale factor applied to prescaled clock. The value N means the clock is divided by 2*N. If N is 0, it means that the clock is divided by 512(2*256)."]
+#[doc = "Field `SCALE` reader - Scale Factor\n\nThis field defines the scale factor applied to prescaled clock. The\n\nvalue N means the clock is divided by 2*N. If N is 0, it means\n\nthat the clock is divided by 512(2*256)."]
 pub type ScaleR = crate::FieldReader;
-#[doc = "Field `SCALE` writer - Scale Factor This field defines the scale factor applied to prescaled clock. The value N means the clock is divided by 2*N. If N is 0, it means that the clock is divided by 512(2*256)."]
+#[doc = "Field `SCALE` writer - Scale Factor\n\nThis field defines the scale factor applied to prescaled clock. The\n\nvalue N means the clock is divided by 2*N. If N is 0, it means\n\nthat the clock is divided by 512(2*256)."]
 pub type ScaleW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-#[doc = "Field `RPT` reader - Repeat Counter This field defines the repeated effective periods of output waveform in one-shot mode. The value N means N+1 repeated effective periods."]
+#[doc = "Field `RPT` reader - Repeat Counter\n\nThis field defines the repeated effective periods of output\n\nwaveform in one-shot mode. The value N means N+1 repeated\n\neffective periods."]
 pub type RptR = crate::FieldReader;
-#[doc = "Field `RPT` writer - Repeat Counter This field defines the repeated effective periods of output waveform in one-shot mode. The value N means N+1 repeated effective periods."]
+#[doc = "Field `RPT` writer - Repeat Counter\n\nThis field defines the repeated effective periods of output\n\nwaveform in one-shot mode. The value N means N+1 repeated\n\neffective periods."]
 pub type RptW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bit 0 - PWM channel enable"]
@@ -428,12 +435,12 @@ impl R {
     pub fn pwm_mode(&self) -> PwmModeR {
         PwmModeR::new(((self.bits >> 1) & 3) as u8)
     }
-    #[doc = "Bit 3 - Duty Cycle Output Polarity This defines the polarity for duty cycle. PWM starts the output waveform with duty cycle."]
+    #[doc = "Bit 3 - Duty Cycle Output Polarity\n\nThis defines the polarity for duty cycle. PWM starts the output\n\nwaveform with duty cycle."]
     #[inline(always)]
     pub fn duty_pol(&self) -> DutyPolR {
         DutyPolR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - Inactive State Output Polarity This defines the output waveform polarity when PWM channel is in inactive state. The inactive state means that PWM finishes the complete waveform in one-shot mode or PWM channel is disabled."]
+    #[doc = "Bit 4 - Inactive State Output Polarity\n\nThis defines the output waveform polarity when PWM channel is\n\nin inactive state. The inactive state means that PWM finishes the\n\ncomplete waveform in one-shot mode or PWM channel is\n\ndisabled."]
     #[inline(always)]
     pub fn inactive_pol(&self) -> InactivePolR {
         InactivePolR::new(((self.bits >> 4) & 1) != 0)
@@ -453,17 +460,17 @@ impl R {
     pub fn clk_sel(&self) -> ClkSelR {
         ClkSelR::new(((self.bits >> 9) & 1) != 0)
     }
-    #[doc = "Bits 12:14 - Prescale Factor This field defines the prescale factor applied to input clock. The value N means that the input clock is divided by 2^N."]
+    #[doc = "Bits 12:14 - Prescale Factor\n\nThis field defines the prescale factor applied to input clock. The\n\nvalue N means that the input clock is divided by 2^N."]
     #[inline(always)]
     pub fn prescale(&self) -> PrescaleR {
         PrescaleR::new(((self.bits >> 12) & 7) as u8)
     }
-    #[doc = "Bits 16:23 - Scale Factor This field defines the scale factor applied to prescaled clock. The value N means the clock is divided by 2*N. If N is 0, it means that the clock is divided by 512(2*256)."]
+    #[doc = "Bits 16:23 - Scale Factor\n\nThis field defines the scale factor applied to prescaled clock. The\n\nvalue N means the clock is divided by 2*N. If N is 0, it means\n\nthat the clock is divided by 512(2*256)."]
     #[inline(always)]
     pub fn scale(&self) -> ScaleR {
         ScaleR::new(((self.bits >> 16) & 0xff) as u8)
     }
-    #[doc = "Bits 24:31 - Repeat Counter This field defines the repeated effective periods of output waveform in one-shot mode. The value N means N+1 repeated effective periods."]
+    #[doc = "Bits 24:31 - Repeat Counter\n\nThis field defines the repeated effective periods of output\n\nwaveform in one-shot mode. The value N means N+1 repeated\n\neffective periods."]
     #[inline(always)]
     pub fn rpt(&self) -> RptR {
         RptR::new(((self.bits >> 24) & 0xff) as u8)
@@ -482,13 +489,13 @@ impl W {
     pub fn pwm_mode(&mut self) -> PwmModeW<PwmPwm3CtrlSpec> {
         PwmModeW::new(self, 1)
     }
-    #[doc = "Bit 3 - Duty Cycle Output Polarity This defines the polarity for duty cycle. PWM starts the output waveform with duty cycle."]
+    #[doc = "Bit 3 - Duty Cycle Output Polarity\n\nThis defines the polarity for duty cycle. PWM starts the output\n\nwaveform with duty cycle."]
     #[inline(always)]
     #[must_use]
     pub fn duty_pol(&mut self) -> DutyPolW<PwmPwm3CtrlSpec> {
         DutyPolW::new(self, 3)
     }
-    #[doc = "Bit 4 - Inactive State Output Polarity This defines the output waveform polarity when PWM channel is in inactive state. The inactive state means that PWM finishes the complete waveform in one-shot mode or PWM channel is disabled."]
+    #[doc = "Bit 4 - Inactive State Output Polarity\n\nThis defines the output waveform polarity when PWM channel is\n\nin inactive state. The inactive state means that PWM finishes the\n\ncomplete waveform in one-shot mode or PWM channel is\n\ndisabled."]
     #[inline(always)]
     #[must_use]
     pub fn inactive_pol(&mut self) -> InactivePolW<PwmPwm3CtrlSpec> {
@@ -512,19 +519,19 @@ impl W {
     pub fn clk_sel(&mut self) -> ClkSelW<PwmPwm3CtrlSpec> {
         ClkSelW::new(self, 9)
     }
-    #[doc = "Bits 12:14 - Prescale Factor This field defines the prescale factor applied to input clock. The value N means that the input clock is divided by 2^N."]
+    #[doc = "Bits 12:14 - Prescale Factor\n\nThis field defines the prescale factor applied to input clock. The\n\nvalue N means that the input clock is divided by 2^N."]
     #[inline(always)]
     #[must_use]
     pub fn prescale(&mut self) -> PrescaleW<PwmPwm3CtrlSpec> {
         PrescaleW::new(self, 12)
     }
-    #[doc = "Bits 16:23 - Scale Factor This field defines the scale factor applied to prescaled clock. The value N means the clock is divided by 2*N. If N is 0, it means that the clock is divided by 512(2*256)."]
+    #[doc = "Bits 16:23 - Scale Factor\n\nThis field defines the scale factor applied to prescaled clock. The\n\nvalue N means the clock is divided by 2*N. If N is 0, it means\n\nthat the clock is divided by 512(2*256)."]
     #[inline(always)]
     #[must_use]
     pub fn scale(&mut self) -> ScaleW<PwmPwm3CtrlSpec> {
         ScaleW::new(self, 16)
     }
-    #[doc = "Bits 24:31 - Repeat Counter This field defines the repeated effective periods of output waveform in one-shot mode. The value N means N+1 repeated effective periods."]
+    #[doc = "Bits 24:31 - Repeat Counter\n\nThis field defines the repeated effective periods of output\n\nwaveform in one-shot mode. The value N means N+1 repeated\n\neffective periods."]
     #[inline(always)]
     #[must_use]
     pub fn rpt(&mut self) -> RptW<PwmPwm3CtrlSpec> {

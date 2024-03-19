@@ -9,7 +9,7 @@ impl R {
         DataiR::new(self.bits)
     }
 }
-#[doc = "Data read from register pointed by address\\[7:0\\].\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`i2cm_datai::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "I2C DDC Data read Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`i2cm_datai::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct I2cmDataiSpec;
 impl crate::RegisterSpec for I2cmDataiSpec {
     type Ux = u8;

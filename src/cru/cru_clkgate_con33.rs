@@ -2,96 +2,96 @@
 pub type R = crate::R<CruClkgateCon33Spec>;
 #[doc = "Register `CRU_CLKGATE_CON33` writer"]
 pub type W = crate::W<CruClkgateCon33Spec>;
-#[doc = "Field `ACLK_GIC_EN` reader - aclk_gic clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_GIC_EN` reader - aclk_gic clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkGicEnR = crate::BitReader;
-#[doc = "Field `ACLK_GIC_EN` writer - aclk_gic clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_GIC_EN` writer - aclk_gic clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkGicEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_GIC_NOC_EN` reader - aclk_gic_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `ACLK_GIC_NOC_EN` reader - aclk_gic_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type AclkGicNocEnR = crate::BitReader;
-#[doc = "Field `ACLK_GIC_NOC_EN` writer - aclk_gic_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `ACLK_GIC_NOC_EN` writer - aclk_gic_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type AclkGicNocEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_GIC_ADB400_CORE_L_2_GIC_EN` reader - aclk_gic_adb400_core_l_2_gic clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_GIC_ADB400_CORE_L_2_GIC_EN` reader - aclk_gic_adb400_core_l_2_gic clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkGicAdb400CoreL2GicEnR = crate::BitReader;
-#[doc = "Field `ACLK_GIC_ADB400_CORE_L_2_GIC_EN` writer - aclk_gic_adb400_core_l_2_gic clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_GIC_ADB400_CORE_L_2_GIC_EN` writer - aclk_gic_adb400_core_l_2_gic clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkGicAdb400CoreL2GicEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_GIC_ADB400_CORE_B_2_GIC_EN` reader - aclk_gic_adb400_core_b_2_gic clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_GIC_ADB400_CORE_B_2_GIC_EN` reader - aclk_gic_adb400_core_b_2_gic clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkGicAdb400CoreB2GicEnR = crate::BitReader;
-#[doc = "Field `ACLK_GIC_ADB400_CORE_B_2_GIC_EN` writer - aclk_gic_adb400_core_b_2_gic clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_GIC_ADB400_CORE_B_2_GIC_EN` writer - aclk_gic_adb400_core_b_2_gic clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkGicAdb400CoreB2GicEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_GIC_ADB400_GIC_2_CORE_L_EN` reader - aclk_gic_adb400_gic_2_core_l clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_GIC_ADB400_GIC_2_CORE_L_EN` reader - aclk_gic_adb400_gic_2_core_l clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkGicAdb400Gic2CoreLEnR = crate::BitReader;
-#[doc = "Field `ACLK_GIC_ADB400_GIC_2_CORE_L_EN` writer - aclk_gic_adb400_gic_2_core_l clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_GIC_ADB400_GIC_2_CORE_L_EN` writer - aclk_gic_adb400_gic_2_core_l clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkGicAdb400Gic2CoreLEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_GIC_ADB400_GIC_2_CORE_B_EN` reader - aclk_gic_adb400_gic_2_core_b clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_GIC_ADB400_GIC_2_CORE_B_EN` reader - aclk_gic_adb400_gic_2_core_b clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkGicAdb400Gic2CoreBEnR = crate::BitReader;
-#[doc = "Field `ACLK_GIC_ADB400_GIC_2_CORE_B_EN` writer - aclk_gic_adb400_gic_2_core_b clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_GIC_ADB400_GIC_2_CORE_B_EN` writer - aclk_gic_adb400_gic_2_core_b clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkGicAdb400Gic2CoreBEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `HCLK_SDMMC_EN` reader - hclk_sdmmc clock disable bit When HIGH, disable clock"]
+#[doc = "Field `HCLK_SDMMC_EN` reader - hclk_sdmmc clock disable bit\n\nWhen HIGH, disable clock"]
 pub type HclkSdmmcEnR = crate::BitReader;
-#[doc = "Field `HCLK_SDMMC_EN` writer - hclk_sdmmc clock disable bit When HIGH, disable clock"]
+#[doc = "Field `HCLK_SDMMC_EN` writer - hclk_sdmmc clock disable bit\n\nWhen HIGH, disable clock"]
 pub type HclkSdmmcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `HCLK_SD_NOC_EN` reader - hclk_sd_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `HCLK_SD_NOC_EN` reader - hclk_sd_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type HclkSdNocEnR = crate::BitReader;
-#[doc = "Field `HCLK_SD_NOC_EN` writer - hclk_sd_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `HCLK_SD_NOC_EN` writer - hclk_sd_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type HclkSdNocEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bit 0 - aclk_gic clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 0 - aclk_gic clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn aclk_gic_en(&self) -> AclkGicEnR {
         AclkGicEnR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - aclk_gic_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 1 - aclk_gic_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     pub fn aclk_gic_noc_en(&self) -> AclkGicNocEnR {
         AclkGicNocEnR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - aclk_gic_adb400_core_l_2_gic clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 2 - aclk_gic_adb400_core_l_2_gic clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn aclk_gic_adb400_core_l_2_gic_en(&self) -> AclkGicAdb400CoreL2GicEnR {
         AclkGicAdb400CoreL2GicEnR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - aclk_gic_adb400_core_b_2_gic clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 3 - aclk_gic_adb400_core_b_2_gic clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn aclk_gic_adb400_core_b_2_gic_en(&self) -> AclkGicAdb400CoreB2GicEnR {
         AclkGicAdb400CoreB2GicEnR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - aclk_gic_adb400_gic_2_core_l clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 4 - aclk_gic_adb400_gic_2_core_l clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn aclk_gic_adb400_gic_2_core_l_en(&self) -> AclkGicAdb400Gic2CoreLEnR {
         AclkGicAdb400Gic2CoreLEnR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - aclk_gic_adb400_gic_2_core_b clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 5 - aclk_gic_adb400_gic_2_core_b clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn aclk_gic_adb400_gic_2_core_b_en(&self) -> AclkGicAdb400Gic2CoreBEnR {
         AclkGicAdb400Gic2CoreBEnR::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 8 - hclk_sdmmc clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 8 - hclk_sdmmc clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn hclk_sdmmc_en(&self) -> HclkSdmmcEnR {
         HclkSdmmcEnR::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bit 9 - hclk_sd_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 9 - hclk_sd_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     pub fn hclk_sd_noc_en(&self) -> HclkSdNocEnR {
         HclkSdNocEnR::new(((self.bits >> 9) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - aclk_gic clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 0 - aclk_gic clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_gic_en(&mut self) -> AclkGicEnW<CruClkgateCon33Spec> {
         AclkGicEnW::new(self, 0)
     }
-    #[doc = "Bit 1 - aclk_gic_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 1 - aclk_gic_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_gic_noc_en(&mut self) -> AclkGicNocEnW<CruClkgateCon33Spec> {
         AclkGicNocEnW::new(self, 1)
     }
-    #[doc = "Bit 2 - aclk_gic_adb400_core_l_2_gic clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 2 - aclk_gic_adb400_core_l_2_gic clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_gic_adb400_core_l_2_gic_en(
@@ -99,7 +99,7 @@ impl W {
     ) -> AclkGicAdb400CoreL2GicEnW<CruClkgateCon33Spec> {
         AclkGicAdb400CoreL2GicEnW::new(self, 2)
     }
-    #[doc = "Bit 3 - aclk_gic_adb400_core_b_2_gic clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 3 - aclk_gic_adb400_core_b_2_gic clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_gic_adb400_core_b_2_gic_en(
@@ -107,7 +107,7 @@ impl W {
     ) -> AclkGicAdb400CoreB2GicEnW<CruClkgateCon33Spec> {
         AclkGicAdb400CoreB2GicEnW::new(self, 3)
     }
-    #[doc = "Bit 4 - aclk_gic_adb400_gic_2_core_l clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 4 - aclk_gic_adb400_gic_2_core_l clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_gic_adb400_gic_2_core_l_en(
@@ -115,7 +115,7 @@ impl W {
     ) -> AclkGicAdb400Gic2CoreLEnW<CruClkgateCon33Spec> {
         AclkGicAdb400Gic2CoreLEnW::new(self, 4)
     }
-    #[doc = "Bit 5 - aclk_gic_adb400_gic_2_core_b clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 5 - aclk_gic_adb400_gic_2_core_b clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_gic_adb400_gic_2_core_b_en(
@@ -123,19 +123,19 @@ impl W {
     ) -> AclkGicAdb400Gic2CoreBEnW<CruClkgateCon33Spec> {
         AclkGicAdb400Gic2CoreBEnW::new(self, 5)
     }
-    #[doc = "Bit 8 - hclk_sdmmc clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 8 - hclk_sdmmc clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn hclk_sdmmc_en(&mut self) -> HclkSdmmcEnW<CruClkgateCon33Spec> {
         HclkSdmmcEnW::new(self, 8)
     }
-    #[doc = "Bit 9 - hclk_sd_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 9 - hclk_sd_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     #[must_use]
     pub fn hclk_sd_noc_en(&mut self) -> HclkSdNocEnW<CruClkgateCon33Spec> {
         HclkSdNocEnW::new(self, 9)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkgateCon33Spec> {

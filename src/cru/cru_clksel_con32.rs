@@ -2,14 +2,15 @@
 pub type R = crate::R<CruClkselCon32Spec>;
 #[doc = "Register `CRU_CLKSEL_CON32` writer"]
 pub type W = crate::W<CruClkselCon32Spec>;
-#[doc = "Field `CLK_SPDIF_8CH_PLL_DIV_CON` reader - clk_spdif_8ch_pll divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_SPDIF_8CH_PLL_DIV_CON` reader - clk_spdif_8ch_pll divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkSpdif8chPllDivConR = crate::FieldReader;
-#[doc = "Field `CLK_SPDIF_8CH_PLL_DIV_CON` writer - clk_spdif_8ch_pll divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_SPDIF_8CH_PLL_DIV_CON` writer - clk_spdif_8ch_pll divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkSpdif8chPllDivConW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "clk_spdif_8ch clock source select control register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClkSpdif8chPllSel {
-    #[doc = "0: GPLL"]
+    #[doc = "0: CPLL"]
     B0 = 0,
     #[doc = "1: GPLL"]
     B1 = 1,
@@ -31,7 +32,7 @@ impl ClkSpdif8chPllSelR {
             true => ClkSpdif8chPllSel::B1,
         }
     }
-    #[doc = "GPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClkSpdif8chPllSel::B0
@@ -48,7 +49,7 @@ impl<'a, REG> ClkSpdif8chPllSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "GPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClkSpdif8chPllSel::B0)
@@ -59,19 +60,20 @@ where
         self.variant(ClkSpdif8chPllSel::B1)
     }
 }
-#[doc = "Field `CLK_DPTX_SPDIF_REC_DIV_CON` reader - clk_dptx_spdif_rec divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_DPTX_SPDIF_REC_DIV_CON` reader - clk_dptx_spdif_rec divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkDptxSpdifRecDivConR = crate::FieldReader;
-#[doc = "Field `CLK_DPTX_SPDIF_REC_DIV_CON` writer - clk_dptx_spdif_rec divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_DPTX_SPDIF_REC_DIV_CON` writer - clk_dptx_spdif_rec divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkDptxSpdifRecDivConW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "clk_spdif_8ch clock select control register\n\nValue on reset: 3"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ClkSpdif8chClkSel {
-    #[doc = "0: clk_12m"]
+    #[doc = "0: clk_spdif_divout"]
     B00 = 0,
-    #[doc = "1: clk_12m"]
+    #[doc = "1: clk_spdif_frac"]
     B01 = 1,
-    #[doc = "2: clk_12m"]
+    #[doc = "2: clkin_spdif from IO SAME AS clkin_i2s"]
     B10 = 2,
     #[doc = "3: clk_12m"]
     B11 = 3,
@@ -99,17 +101,17 @@ impl ClkSpdif8chClkSelR {
             _ => unreachable!(),
         }
     }
-    #[doc = "clk_12m"]
+    #[doc = "clk_spdif_divout"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == ClkSpdif8chClkSel::B00
     }
-    #[doc = "clk_12m"]
+    #[doc = "clk_spdif_frac"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == ClkSpdif8chClkSel::B01
     }
-    #[doc = "clk_12m"]
+    #[doc = "clkin_spdif from IO SAME AS clkin_i2s"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == ClkSpdif8chClkSel::B10
@@ -127,17 +129,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "clk_12m"]
+    #[doc = "clk_spdif_divout"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(ClkSpdif8chClkSel::B00)
     }
-    #[doc = "clk_12m"]
+    #[doc = "clk_spdif_frac"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(ClkSpdif8chClkSel::B01)
     }
-    #[doc = "clk_12m"]
+    #[doc = "clkin_spdif from IO SAME AS clkin_i2s"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(ClkSpdif8chClkSel::B10)
@@ -149,9 +151,10 @@ where
     }
 }
 #[doc = "clk_dptx_spdif_rec clock source select control register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClkDptxSpdifRecPllSel {
-    #[doc = "0: GPLL"]
+    #[doc = "0: CPLL"]
     B0 = 0,
     #[doc = "1: GPLL"]
     B1 = 1,
@@ -173,7 +176,7 @@ impl ClkDptxSpdifRecPllSelR {
             true => ClkDptxSpdifRecPllSel::B1,
         }
     }
-    #[doc = "GPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClkDptxSpdifRecPllSel::B0
@@ -190,7 +193,7 @@ impl<'a, REG> ClkDptxSpdifRecPllSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "GPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClkDptxSpdifRecPllSel::B0)
@@ -201,10 +204,10 @@ where
         self.variant(ClkDptxSpdifRecPllSel::B1)
     }
 }
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:6 - clk_spdif_8ch_pll divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:6 - clk_spdif_8ch_pll divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn clk_spdif_8ch_pll_div_con(&self) -> ClkSpdif8chPllDivConR {
         ClkSpdif8chPllDivConR::new((self.bits & 0x7f) as u8)
@@ -214,7 +217,7 @@ impl R {
     pub fn clk_spdif_8ch_pll_sel(&self) -> ClkSpdif8chPllSelR {
         ClkSpdif8chPllSelR::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bits 8:12 - clk_dptx_spdif_rec divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 8:12 - clk_dptx_spdif_rec divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn clk_dptx_spdif_rec_div_con(&self) -> ClkDptxSpdifRecDivConR {
         ClkDptxSpdifRecDivConR::new(((self.bits >> 8) & 0x1f) as u8)
@@ -231,7 +234,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:6 - clk_spdif_8ch_pll divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:6 - clk_spdif_8ch_pll divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn clk_spdif_8ch_pll_div_con(&mut self) -> ClkSpdif8chPllDivConW<CruClkselCon32Spec> {
@@ -243,7 +246,7 @@ impl W {
     pub fn clk_spdif_8ch_pll_sel(&mut self) -> ClkSpdif8chPllSelW<CruClkselCon32Spec> {
         ClkSpdif8chPllSelW::new(self, 7)
     }
-    #[doc = "Bits 8:12 - clk_dptx_spdif_rec divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 8:12 - clk_dptx_spdif_rec divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn clk_dptx_spdif_rec_div_con(&mut self) -> ClkDptxSpdifRecDivConW<CruClkselCon32Spec> {
@@ -261,7 +264,7 @@ impl W {
     pub fn clk_dptx_spdif_rec_pll_sel(&mut self) -> ClkDptxSpdifRecPllSelW<CruClkselCon32Spec> {
         ClkDptxSpdifRecPllSelW::new(self, 15)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkselCon32Spec> {

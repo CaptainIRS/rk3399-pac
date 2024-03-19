@@ -18,7 +18,7 @@ impl W {
         WrW::new(self, 4)
     }
 }
-#[doc = "Read operation request\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`phy_i2cm_operation::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PHY I2C RD/RD_EXT/WR Operation Register\n\nThis register requests read and write operations from the I2C Master PHY. This register can\n\nonly be written; reading this register always results in 00h. Writing 1'b1 simultaneously to\n\nread and write requests is considered a read request.\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`phy_i2cm_operation::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PhyI2cmOperationSpec;
 impl crate::RegisterSpec for PhyI2cmOperationSpec {
     type Ux = u8;

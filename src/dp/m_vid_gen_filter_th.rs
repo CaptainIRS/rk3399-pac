@@ -2,19 +2,19 @@
 pub type R = crate::R<MVidGenFilterThSpec>;
 #[doc = "Register `M_VID_GEN_FILTER_TH` writer"]
 pub type W = crate::W<MVidGenFilterThSpec>;
-#[doc = "Field `M_VID_GEN_FILTER_TH` reader - The threshold of M_VID generation filter It only takes effect when M_VID_GEN_FILTER_EN is set to 1"]
+#[doc = "Field `M_VID_GEN_FILTER_TH` reader - The threshold of M_VID generation filter \n\nIt only takes effect when \n\nM_VID_GEN_FILTER_EN is set to 1"]
 pub type MVidGenFilterThR = crate::FieldReader;
-#[doc = "Field `M_VID_GEN_FILTER_TH` writer - The threshold of M_VID generation filter It only takes effect when M_VID_GEN_FILTER_EN is set to 1"]
+#[doc = "Field `M_VID_GEN_FILTER_TH` writer - The threshold of M_VID generation filter \n\nIt only takes effect when \n\nM_VID_GEN_FILTER_EN is set to 1"]
 pub type MVidGenFilterThW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - The threshold of M_VID generation filter It only takes effect when M_VID_GEN_FILTER_EN is set to 1"]
+    #[doc = "Bits 0:7 - The threshold of M_VID generation filter \n\nIt only takes effect when \n\nM_VID_GEN_FILTER_EN is set to 1"]
     #[inline(always)]
     pub fn m_vid_gen_filter_th(&self) -> MVidGenFilterThR {
         MVidGenFilterThR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - The threshold of M_VID generation filter It only takes effect when M_VID_GEN_FILTER_EN is set to 1"]
+    #[doc = "Bits 0:7 - The threshold of M_VID generation filter \n\nIt only takes effect when \n\nM_VID_GEN_FILTER_EN is set to 1"]
     #[inline(always)]
     #[must_use]
     pub fn m_vid_gen_filter_th(&mut self) -> MVidGenFilterThW<MVidGenFilterThSpec> {

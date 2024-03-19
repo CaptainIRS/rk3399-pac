@@ -2,19 +2,19 @@
 pub type R = crate::R<GmacMmcRxipv4hderroctSpec>;
 #[doc = "Register `GMAC_MMC_RXIPV4HDERROCT` writer"]
 pub type W = crate::W<GmacMmcRxipv4hderroctSpec>;
-#[doc = "Field `RXIPV4_HDRERR_OCTETS` reader - Number of bytes received in IPv4 datagrams with header errors (checksum, length, version mismatch). The value in the Length field of IPv4 header is used to update this counter."]
+#[doc = "Field `RXIPV4_HDRERR_OCTETS` reader - Number of bytes received in IPv4 datagrams with header errors\n\n(checksum, length, version mismatch). The value in the Length\n\nfield of IPv4 header is used to update this counter."]
 pub type Rxipv4HdrerrOctetsR = crate::FieldReader<u32>;
-#[doc = "Field `RXIPV4_HDRERR_OCTETS` writer - Number of bytes received in IPv4 datagrams with header errors (checksum, length, version mismatch). The value in the Length field of IPv4 header is used to update this counter."]
+#[doc = "Field `RXIPV4_HDRERR_OCTETS` writer - Number of bytes received in IPv4 datagrams with header errors\n\n(checksum, length, version mismatch). The value in the Length\n\nfield of IPv4 header is used to update this counter."]
 pub type Rxipv4HdrerrOctetsW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Number of bytes received in IPv4 datagrams with header errors (checksum, length, version mismatch). The value in the Length field of IPv4 header is used to update this counter."]
+    #[doc = "Bits 0:31 - Number of bytes received in IPv4 datagrams with header errors\n\n(checksum, length, version mismatch). The value in the Length\n\nfield of IPv4 header is used to update this counter."]
     #[inline(always)]
     pub fn rxipv4_hdrerr_octets(&self) -> Rxipv4HdrerrOctetsR {
         Rxipv4HdrerrOctetsR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Number of bytes received in IPv4 datagrams with header errors (checksum, length, version mismatch). The value in the Length field of IPv4 header is used to update this counter."]
+    #[doc = "Bits 0:31 - Number of bytes received in IPv4 datagrams with header errors\n\n(checksum, length, version mismatch). The value in the Length\n\nfield of IPv4 header is used to update this counter."]
     #[inline(always)]
     #[must_use]
     pub fn rxipv4_hdrerr_octets(&mut self) -> Rxipv4HdrerrOctetsW<GmacMmcRxipv4hderroctSpec> {

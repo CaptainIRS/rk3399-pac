@@ -2,34 +2,28 @@
 pub type R = crate::R<AudSpdif2Spec>;
 #[doc = "Register `AUD_SPDIF2` writer"]
 pub type W = crate::W<AudSpdif2Spec>;
-#[doc = "Field `SPDIF_IN_EN` reader - Action SPDIF_in_en\\[0\\]
+#[doc = "Field `SPDIF_IN_EN` reader - Action\n\nSPDIF_in_en\\[0\\]
 - ispdifdata\\[0\\]
-enable SPDIF_in_en\\[1\\]
-- ispdifdata\\[1\\]
+enable SPDIF_in_en\\[1\\]\n\n- ispdifdata\\[1\\]
 enable SPDIF_in_en\\[2\\]
-- ispdifdata\\[2\\]
-enable SPDIF_in_en\\[3\\]
+- ispdifdata\\[2\\]\n\nenable SPDIF_in_en\\[3\\]
 - ispdifdata\\[3\\]
 enable"]
 pub type SpdifInEnR = crate::FieldReader;
-#[doc = "Field `SPDIF_IN_EN` writer - Action SPDIF_in_en\\[0\\]
+#[doc = "Field `SPDIF_IN_EN` writer - Action\n\nSPDIF_in_en\\[0\\]
 - ispdifdata\\[0\\]
-enable SPDIF_in_en\\[1\\]
-- ispdifdata\\[1\\]
+enable SPDIF_in_en\\[1\\]\n\n- ispdifdata\\[1\\]
 enable SPDIF_in_en\\[2\\]
-- ispdifdata\\[2\\]
-enable SPDIF_in_en\\[3\\]
+- ispdifdata\\[2\\]\n\nenable SPDIF_in_en\\[3\\]
 - ispdifdata\\[3\\]
 enable"]
 pub type SpdifInEnW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
-    #[doc = "Bits 0:3 - Action SPDIF_in_en\\[0\\]
+    #[doc = "Bits 0:3 - Action\n\nSPDIF_in_en\\[0\\]
 - ispdifdata\\[0\\]
-enable SPDIF_in_en\\[1\\]
-- ispdifdata\\[1\\]
+enable SPDIF_in_en\\[1\\]\n\n- ispdifdata\\[1\\]
 enable SPDIF_in_en\\[2\\]
-- ispdifdata\\[2\\]
-enable SPDIF_in_en\\[3\\]
+- ispdifdata\\[2\\]\n\nenable SPDIF_in_en\\[3\\]
 - ispdifdata\\[3\\]
 enable"]
     #[inline(always)]
@@ -38,13 +32,11 @@ enable"]
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - Action SPDIF_in_en\\[0\\]
+    #[doc = "Bits 0:3 - Action\n\nSPDIF_in_en\\[0\\]
 - ispdifdata\\[0\\]
-enable SPDIF_in_en\\[1\\]
-- ispdifdata\\[1\\]
+enable SPDIF_in_en\\[1\\]\n\n- ispdifdata\\[1\\]
 enable SPDIF_in_en\\[2\\]
-- ispdifdata\\[2\\]
-enable SPDIF_in_en\\[3\\]
+- ispdifdata\\[2\\]\n\nenable SPDIF_in_en\\[3\\]
 - ispdifdata\\[3\\]
 enable"]
     #[inline(always)]
@@ -53,15 +45,7 @@ enable"]
         SpdifInEnW::new(self, 0)
     }
 }
-#[doc = "Action SPDIF_in_en\\[0\\]
-- ispdifdata\\[0\\]
-enable SPDIF_in_en\\[1\\]
-- ispdifdata\\[1\\]
-enable SPDIF_in_en\\[2\\]
-- ispdifdata\\[2\\]
-enable SPDIF_in_en\\[3\\]
-- ispdifdata\\[3\\]
-enable\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aud_spdif2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`aud_spdif2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Audio SPDIF Enable Confiiguration Register 2\n\nThis register configures the SPDIF input enable that indicates which input SPDIF channels\n\nhave valid data.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aud_spdif2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`aud_spdif2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AudSpdif2Spec;
 impl crate::RegisterSpec for AudSpdif2Spec {
     type Ux = u8;

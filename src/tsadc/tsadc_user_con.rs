@@ -3,10 +3,11 @@ pub type R = crate::R<TsadcUserConSpec>;
 #[doc = "Register `TSADC_USER_CON` writer"]
 pub type W = crate::W<TsadcUserConSpec>;
 #[doc = "ADC input source selection(CH_SEL\\[2:0\\]).\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AdcInputSrcSel {
-    #[doc = "0: Input source 1 (SARADC_AIN\\[1\\]) Others : Reserved"]
+    #[doc = "0: Input source 0 (SARADC_AIN\\[0\\])"]
     B000 = 0,
     #[doc = "1: Input source 1 (SARADC_AIN\\[1\\]) Others : Reserved"]
     B001 = 1,
@@ -32,7 +33,7 @@ impl AdcInputSrcSelR {
             _ => None,
         }
     }
-    #[doc = "Input source 1 (SARADC_AIN\\[1\\]) Others : Reserved"]
+    #[doc = "Input source 0 (SARADC_AIN\\[0\\])"]
     #[inline(always)]
     pub fn is_b000(&self) -> bool {
         *self == AdcInputSrcSel::B000
@@ -50,7 +51,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Input source 1 (SARADC_AIN\\[1\\]) Others : Reserved"]
+    #[doc = "Input source 0 (SARADC_AIN\\[0\\])"]
     #[inline(always)]
     pub fn b000(self) -> &'a mut crate::W<REG> {
         self.variant(AdcInputSrcSel::B000)
@@ -62,9 +63,10 @@ where
     }
 }
 #[doc = "ADC power down control bit\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AdcPowerCtrl {
-    #[doc = "0: ADC power up and reset"]
+    #[doc = "0: ADC power down"]
     B0 = 0,
     #[doc = "1: ADC power up and reset"]
     B1 = 1,
@@ -86,7 +88,7 @@ impl AdcPowerCtrlR {
             true => AdcPowerCtrl::B1,
         }
     }
-    #[doc = "ADC power up and reset"]
+    #[doc = "ADC power down"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == AdcPowerCtrl::B0
@@ -103,7 +105,7 @@ impl<'a, REG> AdcPowerCtrlW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "ADC power up and reset"]
+    #[doc = "ADC power down"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(AdcPowerCtrl::B0)
@@ -115,9 +117,10 @@ where
     }
 }
 #[doc = "start mode.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum StartMode {
-    #[doc = "0: the start_of_conversion will be controlled by TSADC_USER_CON\\[5\\]."]
+    #[doc = "0: tsadc controller will asert start_of_conversion after \"inter_pd_soc\" cycles."]
     B0 = 0,
     #[doc = "1: the start_of_conversion will be controlled by TSADC_USER_CON\\[5\\]."]
     B1 = 1,
@@ -139,7 +142,7 @@ impl StartModeR {
             true => StartMode::B1,
         }
     }
-    #[doc = "the start_of_conversion will be controlled by TSADC_USER_CON\\[5\\]."]
+    #[doc = "tsadc controller will asert start_of_conversion after \"inter_pd_soc\" cycles."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == StartMode::B0
@@ -156,7 +159,7 @@ impl<'a, REG> StartModeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "the start_of_conversion will be controlled by TSADC_USER_CON\\[5\\]."]
+    #[doc = "tsadc controller will asert start_of_conversion after \"inter_pd_soc\" cycles."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(StartMode::B0)
@@ -167,10 +170,10 @@ where
         self.variant(StartMode::B1)
     }
 }
-#[doc = "Field `START` reader - When software write 1 to this bit , start_of_conversion will be assert. This bit will be cleared after TSADC access finishing. When TSADC_USER_CON\\[4\\]
+#[doc = "Field `START` reader - When software write 1 to this bit , start_of_conversion will be\n\nassert.\n\nThis bit will be cleared after TSADC access finishing.\n\nWhen TSADC_USER_CON\\[4\\]
 = 1'b1 take effect."]
 pub type StartR = crate::BitReader;
-#[doc = "Field `START` writer - When software write 1 to this bit , start_of_conversion will be assert. This bit will be cleared after TSADC access finishing. When TSADC_USER_CON\\[4\\]
+#[doc = "Field `START` writer - When software write 1 to this bit , start_of_conversion will be\n\nassert.\n\nThis bit will be cleared after TSADC access finishing.\n\nWhen TSADC_USER_CON\\[4\\]
 = 1'b1 take effect."]
 pub type StartW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `INTER_PD_SOC` reader - interleave between power down and start of conversion"]
@@ -178,9 +181,10 @@ pub type InterPdSocR = crate::FieldReader;
 #[doc = "Field `INTER_PD_SOC` writer - interleave between power down and start of conversion"]
 pub type InterPdSocW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "ADC status (EOC)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AdcStatus {
-    #[doc = "0: Conversion in progress"]
+    #[doc = "0: ADC stop"]
     B0 = 0,
     #[doc = "1: Conversion in progress"]
     B1 = 1,
@@ -202,7 +206,7 @@ impl AdcStatusR {
             true => AdcStatus::B1,
         }
     }
-    #[doc = "Conversion in progress"]
+    #[doc = "ADC stop"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == AdcStatus::B0
@@ -229,7 +233,7 @@ impl R {
     pub fn start_mode(&self) -> StartModeR {
         StartModeR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - When software write 1 to this bit , start_of_conversion will be assert. This bit will be cleared after TSADC access finishing. When TSADC_USER_CON\\[4\\]
+    #[doc = "Bit 5 - When software write 1 to this bit , start_of_conversion will be\n\nassert.\n\nThis bit will be cleared after TSADC access finishing.\n\nWhen TSADC_USER_CON\\[4\\]
 = 1'b1 take effect."]
     #[inline(always)]
     pub fn start(&self) -> StartR {
@@ -265,7 +269,7 @@ impl W {
     pub fn start_mode(&mut self) -> StartModeW<TsadcUserConSpec> {
         StartModeW::new(self, 4)
     }
-    #[doc = "Bit 5 - When software write 1 to this bit , start_of_conversion will be assert. This bit will be cleared after TSADC access finishing. When TSADC_USER_CON\\[4\\]
+    #[doc = "Bit 5 - When software write 1 to this bit , start_of_conversion will be\n\nassert.\n\nThis bit will be cleared after TSADC access finishing.\n\nWhen TSADC_USER_CON\\[4\\]
 = 1'b1 take effect."]
     #[inline(always)]
     #[must_use]

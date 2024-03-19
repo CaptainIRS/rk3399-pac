@@ -2,26 +2,26 @@
 pub type R = crate::R<AudCts2Spec>;
 #[doc = "Register `AUD_CTS2` writer"]
 pub type W = crate::W<AudCts2Spec>;
-#[doc = "Field `AUDCTS` reader - HDMI Audio Clock Regenerator CTS calculated value. This value can be manually set using the CTS_manual (AUD_CTS3) mechanism."]
+#[doc = "Field `AUDCTS` reader - HDMI Audio Clock Regenerator CTS calculated value.\n\nThis value can be manually set using the CTS_manual\n\n(AUD_CTS3) mechanism."]
 pub type AudctsR = crate::FieldReader;
-#[doc = "Field `AUDCTS` writer - HDMI Audio Clock Regenerator CTS calculated value. This value can be manually set using the CTS_manual (AUD_CTS3) mechanism."]
+#[doc = "Field `AUDCTS` writer - HDMI Audio Clock Regenerator CTS calculated value.\n\nThis value can be manually set using the CTS_manual\n\n(AUD_CTS3) mechanism."]
 pub type AudctsW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - HDMI Audio Clock Regenerator CTS calculated value. This value can be manually set using the CTS_manual (AUD_CTS3) mechanism."]
+    #[doc = "Bits 0:7 - HDMI Audio Clock Regenerator CTS calculated value.\n\nThis value can be manually set using the CTS_manual\n\n(AUD_CTS3) mechanism."]
     #[inline(always)]
     pub fn audcts(&self) -> AudctsR {
         AudctsR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - HDMI Audio Clock Regenerator CTS calculated value. This value can be manually set using the CTS_manual (AUD_CTS3) mechanism."]
+    #[doc = "Bits 0:7 - HDMI Audio Clock Regenerator CTS calculated value.\n\nThis value can be manually set using the CTS_manual\n\n(AUD_CTS3) mechanism."]
     #[inline(always)]
     #[must_use]
     pub fn audcts(&mut self) -> AudctsW<AudCts2Spec> {
         AudctsW::new(self, 0)
     }
 }
-#[doc = "HDMI Audio Clock Regenerator CTS calculated value. This value can be manually set using the CTS_manual (AUD_CTS3) mechanism.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aud_cts2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`aud_cts2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Audio Clock Regenerator CTS Register 2\n\nFor CTS expected values, refer to the HDMI 1.4b specification.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aud_cts2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`aud_cts2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AudCts2Spec;
 impl crate::RegisterSpec for AudCts2Spec {
     type Ux = u8;

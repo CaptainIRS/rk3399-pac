@@ -3,9 +3,10 @@ pub type R = crate::R<PmuWakeupCfg4Spec>;
 #[doc = "Register `PMU_WAKEUP_CFG4` writer"]
 pub type W = crate::W<PmuWakeupCfg4Spec>;
 #[doc = "cluster_l interrupt wakeup enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IntClusterLEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl IntClusterLEnR {
             true => IntClusterLEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IntClusterLEn::B0
@@ -44,7 +45,7 @@ impl<'a, REG> IntClusterLEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IntClusterLEn::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "cluster_b interrupt wakeup enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IntClusterBEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl IntClusterBEnR {
             true => IntClusterBEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IntClusterBEn::B0
@@ -97,7 +99,7 @@ impl<'a, REG> IntClusterBEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IntClusterBEn::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "gpio interrupt wakeup enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GpioIntEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl GpioIntEnR {
             true => GpioIntEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == GpioIntEn::B0
@@ -150,7 +153,7 @@ impl<'a, REG> GpioIntEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(GpioIntEn::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "sdio detect wakeup enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SdioEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -186,7 +190,7 @@ impl SdioEnR {
             true => SdioEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SdioEn::B0
@@ -203,7 +207,7 @@ impl<'a, REG> SdioEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SdioEn::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "sdmmc detect wakeup enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SdmmcEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -239,7 +244,7 @@ impl SdmmcEnR {
             true => SdmmcEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SdmmcEn::B0
@@ -256,7 +261,7 @@ impl<'a, REG> SdmmcEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SdmmcEn::B0)
@@ -268,9 +273,10 @@ where
     }
 }
 #[doc = "timer wakeup enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TimerEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -292,7 +298,7 @@ impl TimerEnR {
             true => TimerEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == TimerEn::B0
@@ -309,7 +315,7 @@ impl<'a, REG> TimerEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(TimerEn::B0)
@@ -321,9 +327,10 @@ where
     }
 }
 #[doc = "usb device detect wakeup enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UsbdevEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -345,7 +352,7 @@ impl UsbdevEnR {
             true => UsbdevEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == UsbdevEn::B0
@@ -362,7 +369,7 @@ impl<'a, REG> UsbdevEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(UsbdevEn::B0)
@@ -374,9 +381,10 @@ where
     }
 }
 #[doc = "software wakeup enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SftEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -398,7 +406,7 @@ impl SftEnR {
             true => SftEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SftEn::B0
@@ -415,7 +423,7 @@ impl<'a, REG> SftEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SftEn::B0)
@@ -427,9 +435,10 @@ where
     }
 }
 #[doc = "m3 watch dog wakeup enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WdtM0En {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -451,7 +460,7 @@ impl WdtM0EnR {
             true => WdtM0En::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == WdtM0En::B0
@@ -468,7 +477,7 @@ impl<'a, REG> WdtM0EnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(WdtM0En::B0)
@@ -480,9 +489,10 @@ where
     }
 }
 #[doc = "pmu time out wakeup enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TimeoutEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -504,7 +514,7 @@ impl TimeoutEnR {
             true => TimeoutEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == TimeoutEn::B0
@@ -521,7 +531,7 @@ impl<'a, REG> TimeoutEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(TimeoutEn::B0)
@@ -533,9 +543,10 @@ where
     }
 }
 #[doc = "pwm interrupt wakeup enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PwmEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -557,7 +568,7 @@ impl PwmEnR {
             true => PwmEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PwmEn::B0
@@ -574,7 +585,7 @@ impl<'a, REG> PwmEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PwmEn::B0)
@@ -586,9 +597,10 @@ where
     }
 }
 #[doc = "pcie interrupt wakeup enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PcieEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -610,7 +622,7 @@ impl PcieEnR {
             true => PcieEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PcieEn::B0
@@ -627,7 +639,7 @@ impl<'a, REG> PcieEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PcieEn::B0)

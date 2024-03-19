@@ -3,14 +3,15 @@ pub type R = crate::R<SpdifCfgrSpec>;
 #[doc = "Register `SPDIF_CFGR` writer"]
 pub type W = crate::W<SpdifCfgrSpec>;
 #[doc = "Valid data width\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Vdw {
-    #[doc = "0: reserved The valid data width is 16bit only for non-linear PCM"]
+    #[doc = "0: 16bit"]
     B00 = 0,
-    #[doc = "1: reserved The valid data width is 16bit only for non-linear PCM"]
+    #[doc = "1: 20bit"]
     B01 = 1,
-    #[doc = "2: reserved The valid data width is 16bit only for non-linear PCM"]
+    #[doc = "2: 24bit"]
     B10 = 2,
     #[doc = "3: reserved The valid data width is 16bit only for non-linear PCM"]
     B11 = 3,
@@ -38,17 +39,17 @@ impl VdwR {
             _ => unreachable!(),
         }
     }
-    #[doc = "reserved The valid data width is 16bit only for non-linear PCM"]
+    #[doc = "16bit"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == Vdw::B00
     }
-    #[doc = "reserved The valid data width is 16bit only for non-linear PCM"]
+    #[doc = "20bit"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Vdw::B01
     }
-    #[doc = "reserved The valid data width is 16bit only for non-linear PCM"]
+    #[doc = "24bit"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Vdw::B10
@@ -66,17 +67,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "reserved The valid data width is 16bit only for non-linear PCM"]
+    #[doc = "16bit"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(Vdw::B00)
     }
-    #[doc = "reserved The valid data width is 16bit only for non-linear PCM"]
+    #[doc = "20bit"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Vdw::B01)
     }
-    #[doc = "reserved The valid data width is 16bit only for non-linear PCM"]
+    #[doc = "24bit"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Vdw::B10)
@@ -88,9 +89,10 @@ where
     }
 }
 #[doc = "Halfword word transform enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hwt {
-    #[doc = "0: enable It is valid only when the valid data width is 16bit."]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable It is valid only when the valid data width is 16bit."]
     B1 = 1,
@@ -112,7 +114,7 @@ impl HwtR {
             true => Hwt::B1,
         }
     }
-    #[doc = "enable It is valid only when the valid data width is 16bit."]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Hwt::B0
@@ -129,7 +131,7 @@ impl<'a, REG> HwtW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable It is valid only when the valid data width is 16bit."]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Hwt::B0)
@@ -141,9 +143,10 @@ where
     }
 }
 #[doc = "audio data justified\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adj {
-    #[doc = "0: Left justified"]
+    #[doc = "0: Right justified"]
     B0 = 0,
     #[doc = "1: Left justified"]
     B1 = 1,
@@ -165,7 +168,7 @@ impl AdjR {
             true => Adj::B1,
         }
     }
-    #[doc = "Left justified"]
+    #[doc = "Right justified"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Adj::B0
@@ -182,7 +185,7 @@ impl<'a, REG> AdjW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Left justified"]
+    #[doc = "Right justified"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Adj::B0)
@@ -194,9 +197,10 @@ where
     }
 }
 #[doc = "Validity flag enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vfe {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -218,7 +222,7 @@ impl VfeR {
             true => Vfe::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Vfe::B0
@@ -235,7 +239,7 @@ impl<'a, REG> VfeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Vfe::B0)
@@ -247,9 +251,10 @@ where
     }
 }
 #[doc = "User data enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ude {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -271,7 +276,7 @@ impl UdeR {
             true => Ude::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Ude::B0
@@ -288,7 +293,7 @@ impl<'a, REG> UdeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Ude::B0)
@@ -300,9 +305,10 @@ where
     }
 }
 #[doc = "Channel status enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cse {
-    #[doc = "0: enable The bit should be set to 1 when the channel conveys non-linear PCM"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable The bit should be set to 1 when the channel conveys non-linear PCM"]
     B1 = 1,
@@ -324,7 +330,7 @@ impl CseR {
             true => Cse::B1,
         }
     }
-    #[doc = "enable The bit should be set to 1 when the channel conveys non-linear PCM"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cse::B0
@@ -341,7 +347,7 @@ impl<'a, REG> CseW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable The bit should be set to 1 when the channel conveys non-linear PCM"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cse::B0)
@@ -352,12 +358,13 @@ where
         self.variant(Cse::B1)
     }
 }
-#[doc = "Field `CLR` writer - mclk domain logic clear Write 1 to clear mclk domain logic. Read return zero."]
+#[doc = "Field `CLR` writer - mclk domain logic clear\n\nWrite 1 to clear mclk domain logic. Read return zero."]
 pub type ClrW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "PCM type\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pcmtype {
-    #[doc = "0: non-linear PCM"]
+    #[doc = "0: linear PCM"]
     B0 = 0,
     #[doc = "1: non-linear PCM"]
     B1 = 1,
@@ -379,7 +386,7 @@ impl PcmtypeR {
             true => Pcmtype::B1,
         }
     }
-    #[doc = "non-linear PCM"]
+    #[doc = "linear PCM"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Pcmtype::B0
@@ -396,7 +403,7 @@ impl<'a, REG> PcmtypeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "non-linear PCM"]
+    #[doc = "linear PCM"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Pcmtype::B0)
@@ -407,9 +414,9 @@ where
         self.variant(Pcmtype::B1)
     }
 }
-#[doc = "Field `MCD` reader - mclk divider Fmclk/Fsdo This parameter can be calculated by Fmclk/(Fs*128). Fs=the sample frequency be wanted"]
+#[doc = "Field `MCD` reader - mclk divider\n\nFmclk/Fsdo\n\nThis parameter can be calculated by Fmclk/(Fs*128).\n\nFs=the sample frequency be wanted"]
 pub type McdR = crate::FieldReader;
-#[doc = "Field `MCD` writer - mclk divider Fmclk/Fsdo This parameter can be calculated by Fmclk/(Fs*128). Fs=the sample frequency be wanted"]
+#[doc = "Field `MCD` writer - mclk divider\n\nFmclk/Fsdo\n\nThis parameter can be calculated by Fmclk/(Fs*128).\n\nFs=the sample frequency be wanted"]
 pub type McdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:1 - Valid data width"]
@@ -447,7 +454,7 @@ impl R {
     pub fn pcmtype(&self) -> PcmtypeR {
         PcmtypeR::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bits 16:23 - mclk divider Fmclk/Fsdo This parameter can be calculated by Fmclk/(Fs*128). Fs=the sample frequency be wanted"]
+    #[doc = "Bits 16:23 - mclk divider\n\nFmclk/Fsdo\n\nThis parameter can be calculated by Fmclk/(Fs*128).\n\nFs=the sample frequency be wanted"]
     #[inline(always)]
     pub fn mcd(&self) -> McdR {
         McdR::new(((self.bits >> 16) & 0xff) as u8)
@@ -490,7 +497,7 @@ impl W {
     pub fn cse(&mut self) -> CseW<SpdifCfgrSpec> {
         CseW::new(self, 6)
     }
-    #[doc = "Bit 7 - mclk domain logic clear Write 1 to clear mclk domain logic. Read return zero."]
+    #[doc = "Bit 7 - mclk domain logic clear\n\nWrite 1 to clear mclk domain logic. Read return zero."]
     #[inline(always)]
     #[must_use]
     pub fn clr(&mut self) -> ClrW<SpdifCfgrSpec> {
@@ -502,7 +509,7 @@ impl W {
     pub fn pcmtype(&mut self) -> PcmtypeW<SpdifCfgrSpec> {
         PcmtypeW::new(self, 8)
     }
-    #[doc = "Bits 16:23 - mclk divider Fmclk/Fsdo This parameter can be calculated by Fmclk/(Fs*128). Fs=the sample frequency be wanted"]
+    #[doc = "Bits 16:23 - mclk divider\n\nFmclk/Fsdo\n\nThis parameter can be calculated by Fmclk/(Fs*128).\n\nFs=the sample frequency be wanted"]
     #[inline(always)]
     #[must_use]
     pub fn mcd(&mut self) -> McdW<SpdifCfgrSpec> {

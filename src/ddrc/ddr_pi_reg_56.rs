@@ -4,9 +4,9 @@ pub type R = crate::R<DdrPiReg56Spec>;
 pub type W = crate::W<DdrPiReg56Spec>;
 #[doc = "Field `PI_SW_WDQLVL_RESP_3` reader - Indicates WDQ leveling response for data slice 3."]
 pub type PiSwWdqlvlResp3R = crate::FieldReader;
-#[doc = "Field `PI_SW_WDQLVL_VREF` reader - Indicates user-defined WDQ vref value in software leveling debug mode."]
+#[doc = "Field `PI_SW_WDQLVL_VREF` reader - Indicates user-defined WDQ vref value in software leveling debug\n\nmode."]
 pub type PiSwWdqlvlVrefR = crate::FieldReader;
-#[doc = "Field `PI_SW_WDQLVL_VREF` writer - Indicates user-defined WDQ vref value in software leveling debug mode."]
+#[doc = "Field `PI_SW_WDQLVL_VREF` writer - Indicates user-defined WDQ vref value in software leveling debug\n\nmode."]
 pub type PiSwWdqlvlVrefW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `PI_SWLVL_SM2_START` writer - Indicates software leveling start command for stage 2."]
 pub type PiSwlvlSm2StartW<'a, REG> = crate::BitWriter<'a, REG>;
@@ -18,14 +18,14 @@ impl R {
     pub fn pi_sw_wdqlvl_resp_3(&self) -> PiSwWdqlvlResp3R {
         PiSwWdqlvlResp3R::new((self.bits & 3) as u8)
     }
-    #[doc = "Bits 8:14 - Indicates user-defined WDQ vref value in software leveling debug mode."]
+    #[doc = "Bits 8:14 - Indicates user-defined WDQ vref value in software leveling debug\n\nmode."]
     #[inline(always)]
     pub fn pi_sw_wdqlvl_vref(&self) -> PiSwWdqlvlVrefR {
         PiSwWdqlvlVrefR::new(((self.bits >> 8) & 0x7f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 8:14 - Indicates user-defined WDQ vref value in software leveling debug mode."]
+    #[doc = "Bits 8:14 - Indicates user-defined WDQ vref value in software leveling debug\n\nmode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_sw_wdqlvl_vref(&mut self) -> PiSwWdqlvlVrefW<DdrPiReg56Spec> {

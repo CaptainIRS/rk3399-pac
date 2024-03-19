@@ -21,7 +21,7 @@ impl W {
         HdcpregAn3W::new(self, 0)
     }
 }
-#[doc = "Contains the value of AN\\[31:24\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hdcpreg_an3::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hdcpreg_an3::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "HDCP Forced AN Register 3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hdcpreg_an3::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hdcpreg_an3::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HdcpregAn3Spec;
 impl crate::RegisterSpec for HdcpregAn3Spec {
     type Ux = u8;

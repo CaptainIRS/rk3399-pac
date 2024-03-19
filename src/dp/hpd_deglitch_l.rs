@@ -2,19 +2,19 @@
 pub type R = crate::R<HpdDeglitchLSpec>;
 #[doc = "Register `HPD_DEGLITCH_L` writer"]
 pub type W = crate::W<HpdDeglitchLSpec>;
-#[doc = "Field `HPD_DEGLITCH_L` reader - HPD_DEGLITCH, which is counted at 24 MHz, is used to de-glitch the HPD signal This register is HPD_DEGLITCH \\[7:0\\]. The default value is 0x5E for 280.75 us deglitch time."]
+#[doc = "Field `HPD_DEGLITCH_L` reader - HPD_DEGLITCH, which is counted at 24 \n\nMHz, is used to de-glitch the HPD signal \n\nThis register is HPD_DEGLITCH \\[7:0\\]. The \n\ndefault value is 0x5E for 280.75 us deglitch \n\ntime."]
 pub type HpdDeglitchLR = crate::FieldReader;
-#[doc = "Field `HPD_DEGLITCH_L` writer - HPD_DEGLITCH, which is counted at 24 MHz, is used to de-glitch the HPD signal This register is HPD_DEGLITCH \\[7:0\\]. The default value is 0x5E for 280.75 us deglitch time."]
+#[doc = "Field `HPD_DEGLITCH_L` writer - HPD_DEGLITCH, which is counted at 24 \n\nMHz, is used to de-glitch the HPD signal \n\nThis register is HPD_DEGLITCH \\[7:0\\]. The \n\ndefault value is 0x5E for 280.75 us deglitch \n\ntime."]
 pub type HpdDeglitchLW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - HPD_DEGLITCH, which is counted at 24 MHz, is used to de-glitch the HPD signal This register is HPD_DEGLITCH \\[7:0\\]. The default value is 0x5E for 280.75 us deglitch time."]
+    #[doc = "Bits 0:7 - HPD_DEGLITCH, which is counted at 24 \n\nMHz, is used to de-glitch the HPD signal \n\nThis register is HPD_DEGLITCH \\[7:0\\]. The \n\ndefault value is 0x5E for 280.75 us deglitch \n\ntime."]
     #[inline(always)]
     pub fn hpd_deglitch_l(&self) -> HpdDeglitchLR {
         HpdDeglitchLR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - HPD_DEGLITCH, which is counted at 24 MHz, is used to de-glitch the HPD signal This register is HPD_DEGLITCH \\[7:0\\]. The default value is 0x5E for 280.75 us deglitch time."]
+    #[doc = "Bits 0:7 - HPD_DEGLITCH, which is counted at 24 \n\nMHz, is used to de-glitch the HPD signal \n\nThis register is HPD_DEGLITCH \\[7:0\\]. The \n\ndefault value is 0x5E for 280.75 us deglitch \n\ntime."]
     #[inline(always)]
     #[must_use]
     pub fn hpd_deglitch_l(&mut self) -> HpdDeglitchLW<HpdDeglitchLSpec> {

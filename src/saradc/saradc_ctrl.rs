@@ -3,18 +3,19 @@ pub type R = crate::R<SaradcCtrlSpec>;
 #[doc = "Register `SARADC_CTRL` writer"]
 pub type W = crate::W<SaradcCtrlSpec>;
 #[doc = "ADC input source selection(CH_SEL\\[2:0\\]).\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AdcInputSrcSel {
-    #[doc = "0: Input source 5 (SARADC_AIN\\[5\\]) Others : Reserved"]
+    #[doc = "0: Input source 0 (SARADC_AIN\\[0\\])"]
     B000 = 0,
-    #[doc = "1: Input source 5 (SARADC_AIN\\[5\\]) Others : Reserved"]
+    #[doc = "1: Input source 1 (SARADC_AIN\\[1\\])"]
     B001 = 1,
-    #[doc = "2: Input source 5 (SARADC_AIN\\[5\\]) Others : Reserved"]
+    #[doc = "2: Input source 2 (SARADC_AIN\\[2\\])"]
     B010 = 2,
-    #[doc = "3: Input source 5 (SARADC_AIN\\[5\\]) Others : Reserved"]
+    #[doc = "3: Input source 3 (SARADC_AIN\\[3\\])"]
     B011 = 3,
-    #[doc = "4: Input source 5 (SARADC_AIN\\[5\\]) Others : Reserved"]
+    #[doc = "4: Input source 4 (SARADC_AIN\\[4\\])"]
     B100 = 4,
     #[doc = "5: Input source 5 (SARADC_AIN\\[5\\]) Others : Reserved"]
     B101 = 5,
@@ -44,27 +45,27 @@ impl AdcInputSrcSelR {
             _ => None,
         }
     }
-    #[doc = "Input source 5 (SARADC_AIN\\[5\\]) Others : Reserved"]
+    #[doc = "Input source 0 (SARADC_AIN\\[0\\])"]
     #[inline(always)]
     pub fn is_b000(&self) -> bool {
         *self == AdcInputSrcSel::B000
     }
-    #[doc = "Input source 5 (SARADC_AIN\\[5\\]) Others : Reserved"]
+    #[doc = "Input source 1 (SARADC_AIN\\[1\\])"]
     #[inline(always)]
     pub fn is_b001(&self) -> bool {
         *self == AdcInputSrcSel::B001
     }
-    #[doc = "Input source 5 (SARADC_AIN\\[5\\]) Others : Reserved"]
+    #[doc = "Input source 2 (SARADC_AIN\\[2\\])"]
     #[inline(always)]
     pub fn is_b010(&self) -> bool {
         *self == AdcInputSrcSel::B010
     }
-    #[doc = "Input source 5 (SARADC_AIN\\[5\\]) Others : Reserved"]
+    #[doc = "Input source 3 (SARADC_AIN\\[3\\])"]
     #[inline(always)]
     pub fn is_b011(&self) -> bool {
         *self == AdcInputSrcSel::B011
     }
-    #[doc = "Input source 5 (SARADC_AIN\\[5\\]) Others : Reserved"]
+    #[doc = "Input source 4 (SARADC_AIN\\[4\\])"]
     #[inline(always)]
     pub fn is_b100(&self) -> bool {
         *self == AdcInputSrcSel::B100
@@ -82,27 +83,27 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Input source 5 (SARADC_AIN\\[5\\]) Others : Reserved"]
+    #[doc = "Input source 0 (SARADC_AIN\\[0\\])"]
     #[inline(always)]
     pub fn b000(self) -> &'a mut crate::W<REG> {
         self.variant(AdcInputSrcSel::B000)
     }
-    #[doc = "Input source 5 (SARADC_AIN\\[5\\]) Others : Reserved"]
+    #[doc = "Input source 1 (SARADC_AIN\\[1\\])"]
     #[inline(always)]
     pub fn b001(self) -> &'a mut crate::W<REG> {
         self.variant(AdcInputSrcSel::B001)
     }
-    #[doc = "Input source 5 (SARADC_AIN\\[5\\]) Others : Reserved"]
+    #[doc = "Input source 2 (SARADC_AIN\\[2\\])"]
     #[inline(always)]
     pub fn b010(self) -> &'a mut crate::W<REG> {
         self.variant(AdcInputSrcSel::B010)
     }
-    #[doc = "Input source 5 (SARADC_AIN\\[5\\]) Others : Reserved"]
+    #[doc = "Input source 3 (SARADC_AIN\\[3\\])"]
     #[inline(always)]
     pub fn b011(self) -> &'a mut crate::W<REG> {
         self.variant(AdcInputSrcSel::B011)
     }
-    #[doc = "Input source 5 (SARADC_AIN\\[5\\]) Others : Reserved"]
+    #[doc = "Input source 4 (SARADC_AIN\\[4\\])"]
     #[inline(always)]
     pub fn b100(self) -> &'a mut crate::W<REG> {
         self.variant(AdcInputSrcSel::B100)
@@ -114,9 +115,10 @@ where
     }
 }
 #[doc = "ADC power down control bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AdcPowerCtrl {
-    #[doc = "0: ADC power up and reset. start signal will be asserted (DLY_PU_SOC + 2) sclk clock period later after power up"]
+    #[doc = "0: ADC power down;"]
     B0 = 0,
     #[doc = "1: ADC power up and reset. start signal will be asserted (DLY_PU_SOC + 2) sclk clock period later after power up"]
     B1 = 1,
@@ -138,7 +140,7 @@ impl AdcPowerCtrlR {
             true => AdcPowerCtrl::B1,
         }
     }
-    #[doc = "ADC power up and reset. start signal will be asserted (DLY_PU_SOC + 2) sclk clock period later after power up"]
+    #[doc = "ADC power down;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == AdcPowerCtrl::B0
@@ -155,7 +157,7 @@ impl<'a, REG> AdcPowerCtrlW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "ADC power up and reset. start signal will be asserted (DLY_PU_SOC + 2) sclk clock period later after power up"]
+    #[doc = "ADC power down;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(AdcPowerCtrl::B0)
@@ -167,9 +169,10 @@ where
     }
 }
 #[doc = "Interrupt enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IntEn {
-    #[doc = "0: Enable"]
+    #[doc = "0: Disable"]
     B0 = 0,
     #[doc = "1: Enable"]
     B1 = 1,
@@ -191,7 +194,7 @@ impl IntEnR {
             true => IntEn::B1,
         }
     }
-    #[doc = "Enable"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IntEn::B0
@@ -208,7 +211,7 @@ impl<'a, REG> IntEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enable"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IntEn::B0)
@@ -219,9 +222,9 @@ where
         self.variant(IntEn::B1)
     }
 }
-#[doc = "Field `INT_STATUS` reader - Interrupt status. This bit will be set to 1 when end-of-conversion. Set 0 to clear the interrupt."]
+#[doc = "Field `INT_STATUS` reader - Interrupt status.\n\nThis bit will be set to 1 when end-of-conversion.\n\nSet 0 to clear the interrupt."]
 pub type IntStatusR = crate::BitReader;
-#[doc = "Field `INT_STATUS` writer - Interrupt status. This bit will be set to 1 when end-of-conversion. Set 0 to clear the interrupt."]
+#[doc = "Field `INT_STATUS` writer - Interrupt status.\n\nThis bit will be set to 1 when end-of-conversion.\n\nSet 0 to clear the interrupt."]
 pub type IntStatusW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:2 - ADC input source selection(CH_SEL\\[2:0\\])."]
@@ -239,7 +242,7 @@ impl R {
     pub fn int_en(&self) -> IntEnR {
         IntEnR::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 6 - Interrupt status. This bit will be set to 1 when end-of-conversion. Set 0 to clear the interrupt."]
+    #[doc = "Bit 6 - Interrupt status.\n\nThis bit will be set to 1 when end-of-conversion.\n\nSet 0 to clear the interrupt."]
     #[inline(always)]
     pub fn int_status(&self) -> IntStatusR {
         IntStatusR::new(((self.bits >> 6) & 1) != 0)
@@ -264,7 +267,7 @@ impl W {
     pub fn int_en(&mut self) -> IntEnW<SaradcCtrlSpec> {
         IntEnW::new(self, 5)
     }
-    #[doc = "Bit 6 - Interrupt status. This bit will be set to 1 when end-of-conversion. Set 0 to clear the interrupt."]
+    #[doc = "Bit 6 - Interrupt status.\n\nThis bit will be set to 1 when end-of-conversion.\n\nSet 0 to clear the interrupt."]
     #[inline(always)]
     #[must_use]
     pub fn int_status(&mut self) -> IntStatusW<SaradcCtrlSpec> {

@@ -1,6 +1,6 @@
 [package]
 name = "rk3399-rs"
-version = "0.1.5"
+version = "0.1.6"
 edition = "2021"
 description = "Rust crate containing structures for the register maps of the RK3399 SoC"
 license = "MIT"
@@ -12,4 +12,6 @@ repository = "https://github.com/CaptainIRS/rk3399-rs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+portable-atomic = "0.3.16"
 vcell = "0.1.0"
+

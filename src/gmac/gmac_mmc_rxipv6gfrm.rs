@@ -2,19 +2,19 @@
 pub type R = crate::R<GmacMmcRxipv6gfrmSpec>;
 #[doc = "Register `GMAC_MMC_RXIPV6GFRM` writer"]
 pub type W = crate::W<GmacMmcRxipv6gfrmSpec>;
-#[doc = "Field `RXIPV6_GD_FRMS` reader - Number of good IPv6 datagrams received with TCP, UDP, or ICMP payloads."]
+#[doc = "Field `RXIPV6_GD_FRMS` reader - Number of good IPv6 datagrams received with TCP, UDP, or ICMP\n\npayloads."]
 pub type Rxipv6GdFrmsR = crate::FieldReader<u32>;
-#[doc = "Field `RXIPV6_GD_FRMS` writer - Number of good IPv6 datagrams received with TCP, UDP, or ICMP payloads."]
+#[doc = "Field `RXIPV6_GD_FRMS` writer - Number of good IPv6 datagrams received with TCP, UDP, or ICMP\n\npayloads."]
 pub type Rxipv6GdFrmsW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Number of good IPv6 datagrams received with TCP, UDP, or ICMP payloads."]
+    #[doc = "Bits 0:31 - Number of good IPv6 datagrams received with TCP, UDP, or ICMP\n\npayloads."]
     #[inline(always)]
     pub fn rxipv6_gd_frms(&self) -> Rxipv6GdFrmsR {
         Rxipv6GdFrmsR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Number of good IPv6 datagrams received with TCP, UDP, or ICMP payloads."]
+    #[doc = "Bits 0:31 - Number of good IPv6 datagrams received with TCP, UDP, or ICMP\n\npayloads."]
     #[inline(always)]
     #[must_use]
     pub fn rxipv6_gd_frms(&mut self) -> Rxipv6GdFrmsW<GmacMmcRxipv6gfrmSpec> {

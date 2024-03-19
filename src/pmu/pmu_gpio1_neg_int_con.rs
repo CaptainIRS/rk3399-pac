@@ -3,10 +3,11 @@ pub type R = crate::R<PmuGpio1NegIntConSpec>;
 #[doc = "Register `PMU_GPIO1_NEG_INT_CON` writer"]
 pub type W = crate::W<PmuGpio1NegIntConSpec>;
 #[doc = "gpio1a negedge pulse interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gpio1aNegIntEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -32,7 +33,7 @@ impl Gpio1aNegIntEnR {
             _ => None,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Gpio1aNegIntEn::B0
@@ -50,7 +51,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio1aNegIntEn::B0)
@@ -62,10 +63,11 @@ where
     }
 }
 #[doc = "gpio1b negedge pulse interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gpio1bNegIntEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -91,7 +93,7 @@ impl Gpio1bNegIntEnR {
             _ => None,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Gpio1bNegIntEn::B0
@@ -109,7 +111,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio1bNegIntEn::B0)
@@ -121,10 +123,11 @@ where
     }
 }
 #[doc = "gpio1c negedge pulse interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gpio1cNegIntEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -150,7 +153,7 @@ impl Gpio1cNegIntEnR {
             _ => None,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Gpio1cNegIntEn::B0
@@ -168,7 +171,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio1cNegIntEn::B0)
@@ -180,10 +183,11 @@ where
     }
 }
 #[doc = "gpio1d negedge pulse interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gpio1dNegIntEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -209,7 +213,7 @@ impl Gpio1dNegIntEnR {
             _ => None,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Gpio1dNegIntEn::B0
@@ -227,7 +231,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio1dNegIntEn::B0)

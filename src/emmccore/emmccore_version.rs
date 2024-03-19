@@ -1,11 +1,11 @@
 #[doc = "Register `EMMCCORE_VERSION` reader"]
 pub type R = crate::R<EmmccoreVersionSpec>;
-#[doc = "Field `SPECIFICATIONVERSION` reader - The Host Controller Version Number is set to 0x02 (SD Host Specification Version 3.00)."]
+#[doc = "Field `SPECIFICATIONVERSION` reader - The Host Controller Version Number is set to 0x02 (SD Host\n\nSpecification Version 3.00)."]
 pub type SpecificationversionR = crate::FieldReader;
 #[doc = "Field `VENDORVERSION` reader - The Vendor Version Number is set to 0x10 (1.0)"]
 pub type VendorversionR = crate::FieldReader;
 impl R {
-    #[doc = "Bits 0:7 - The Host Controller Version Number is set to 0x02 (SD Host Specification Version 3.00)."]
+    #[doc = "Bits 0:7 - The Host Controller Version Number is set to 0x02 (SD Host\n\nSpecification Version 3.00)."]
     #[inline(always)]
     pub fn specificationversion(&self) -> SpecificationversionR {
         SpecificationversionR::new((self.bits & 0xff) as u8)

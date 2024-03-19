@@ -10,7 +10,7 @@ pub type PhyUserPatt4_0W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 pub type PhyCalvlVrefDrivingSlice0R = crate::BitReader;
 #[doc = "Field `PHY_CALVL_VREF_DRIVING_SLICE_0` writer - Indicates if slice 0 is used to drive the VREF value to the device during CA training."]
 pub type PhyCalvlVrefDrivingSlice0W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `SC_PHY_MANUAL_CLEAR_0` writer - Manual reset/clear of internal logic for slice 0. Bit (0) initiates manual setup of the read DQS gate. Bit (1) is reset of read entry FIFO pointers. Bit (2) is reset of master delay min/ max lock values. Bit (3) is manual reset of master delay unlock counter. Bit (4) is reset of leveling error bit in the leveling status registers. Bit (5) is clearing of the gate tracking observation register. Set each bit to 1 to initiate/reset. WRITE-ONLY"]
+#[doc = "Field `SC_PHY_MANUAL_CLEAR_0` writer - Manual reset/clear of internal logic for slice 0. Bit (0) initiates manual setup of the read DQS gate. Bit (1) is reset of read entry FIFO pointers. Bit (2) is reset of master delay min/ max lock values. Bit (3) is manual reset of master delay unlock counter. Bit (4) is reset of leveling error bit in the leveling status registers. Bit (5) is clearing of the gate tracking observation register. Set each bit to 1 to initiate/reset."]
 pub type ScPhyManualClear0W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
     #[doc = "Bits 0:15 - User-defined pattern to be used during write data leveling for slice 0. This register holds the DM bit for the 15 to 0 DQ written/read from device."]
@@ -39,7 +39,7 @@ impl W {
     ) -> PhyCalvlVrefDrivingSlice0W<DdrDenaliPhy32Spec> {
         PhyCalvlVrefDrivingSlice0W::new(self, 16)
     }
-    #[doc = "Bits 24:29 - Manual reset/clear of internal logic for slice 0. Bit (0) initiates manual setup of the read DQS gate. Bit (1) is reset of read entry FIFO pointers. Bit (2) is reset of master delay min/ max lock values. Bit (3) is manual reset of master delay unlock counter. Bit (4) is reset of leveling error bit in the leveling status registers. Bit (5) is clearing of the gate tracking observation register. Set each bit to 1 to initiate/reset. WRITE-ONLY"]
+    #[doc = "Bits 24:29 - Manual reset/clear of internal logic for slice 0. Bit (0) initiates manual setup of the read DQS gate. Bit (1) is reset of read entry FIFO pointers. Bit (2) is reset of master delay min/ max lock values. Bit (3) is manual reset of master delay unlock counter. Bit (4) is reset of leveling error bit in the leveling status registers. Bit (5) is clearing of the gate tracking observation register. Set each bit to 1 to initiate/reset."]
     #[inline(always)]
     #[must_use]
     pub fn sc_phy_manual_clear_0(&mut self) -> ScPhyManualClear0W<DdrDenaliPhy32Spec> {

@@ -1,16 +1,16 @@
 #[doc = "Register `HDCPREG_SEED0` writer"]
 pub type W = crate::W<HdcpregSeed0Spec>;
-#[doc = "Field `HDCPREG_SEED0` writer - Least significant byte of the decryption seed value (dpk_decrypt_seed\\[7:0\\])."]
+#[doc = "Field `HDCPREG_SEED0` writer - Least significant byte of the decryption seed value\n\n(dpk_decrypt_seed\\[7:0\\])."]
 pub type HdcpregSeed0W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl W {
-    #[doc = "Bits 0:7 - Least significant byte of the decryption seed value (dpk_decrypt_seed\\[7:0\\])."]
+    #[doc = "Bits 0:7 - Least significant byte of the decryption seed value\n\n(dpk_decrypt_seed\\[7:0\\])."]
     #[inline(always)]
     #[must_use]
     pub fn hdcpreg_seed0(&mut self) -> HdcpregSeed0W<HdcpregSeed0Spec> {
         HdcpregSeed0W::new(self, 0)
     }
 }
-#[doc = "Least significant byte of the decryption seed value (dpk_decrypt_seed\\[7:0\\]).\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hdcpreg_seed0::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "HDCP Encrypted DPK Seed Register 0\n\nThis register contains a byte of the HDCP Encrypted DPK seed value used to encrypt the\n\nDevice Private Keys. The required software configuration sequence is documented in the\n\nCores HDMI Transmitter User Guide in the \"Programming\" chapter, Section 3.2.4,\n\n\"Configure HDCP.\"\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hdcpreg_seed0::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HdcpregSeed0Spec;
 impl crate::RegisterSpec for HdcpregSeed0Spec {
     type Ux = u8;

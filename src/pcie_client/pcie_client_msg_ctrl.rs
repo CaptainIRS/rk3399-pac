@@ -3,9 +3,10 @@ pub type R = crate::R<PcieClientMsgCtrlSpec>;
 #[doc = "Register `PCIE_CLIENT_MSG_CTRL` writer"]
 pub type W = crate::W<PcieClientMsgCtrlSpec>;
 #[doc = "Message fifo receive enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MsgFifoEn {
-    #[doc = "0: enable client message receive"]
+    #[doc = "0: disable message receive"]
     B0 = 0,
     #[doc = "1: enable client message receive"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl MsgFifoEnR {
             true => MsgFifoEn::B1,
         }
     }
-    #[doc = "enable client message receive"]
+    #[doc = "disable message receive"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == MsgFifoEn::B0
@@ -44,7 +45,7 @@ impl<'a, REG> MsgFifoEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable client message receive"]
+    #[doc = "disable message receive"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(MsgFifoEn::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Message fifo receive mode select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MsgFifoRxMode {
-    #[doc = "0: full mode"]
+    #[doc = "0: partial mode"]
     B0 = 0,
     #[doc = "1: full mode"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl MsgFifoRxModeR {
             true => MsgFifoRxMode::B1,
         }
     }
-    #[doc = "full mode"]
+    #[doc = "partial mode"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == MsgFifoRxMode::B0
@@ -97,7 +99,7 @@ impl<'a, REG> MsgFifoRxModeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "full mode"]
+    #[doc = "partial mode"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(MsgFifoRxMode::B0)
@@ -108,15 +110,16 @@ where
         self.variant(MsgFifoRxMode::B1)
     }
 }
-#[doc = "Field `ALMFULL_WATER_MARK` reader - Almost full water mark almost full water mark configuration"]
+#[doc = "Field `ALMFULL_WATER_MARK` reader - Almost full water mark\n\nalmost full water mark configuration"]
 pub type AlmfullWaterMarkR = crate::FieldReader;
-#[doc = "Field `ALMFULL_WATER_MARK` writer - Almost full water mark almost full water mark configuration"]
+#[doc = "Field `ALMFULL_WATER_MARK` writer - Almost full water mark\n\nalmost full water mark configuration"]
 pub type AlmfullWaterMarkW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Write mask For each served bit\n\nValue on reset: 0"]
+#[doc = "Write mask\n\nFor each served bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum WriteMask {
-    #[doc = "0: write enable"]
+    #[doc = "0: write mask"]
     B0 = 0,
     #[doc = "1: write enable"]
     B1 = 1,
@@ -130,14 +133,14 @@ impl From<WriteMask> for u16 {
 impl crate::FieldSpec for WriteMask {
     type Ux = u16;
 }
-#[doc = "Field `WRITE_MASK` writer - Write mask For each served bit"]
+#[doc = "Field `WRITE_MASK` writer - Write mask\n\nFor each served bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, WriteMask>;
 impl<'a, REG> WriteMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u16>,
 {
-    #[doc = "write enable"]
+    #[doc = "write mask"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(WriteMask::B0)
@@ -159,7 +162,7 @@ impl R {
     pub fn msg_fifo_rx_mode(&self) -> MsgFifoRxModeR {
         MsgFifoRxModeR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bits 8:12 - Almost full water mark almost full water mark configuration"]
+    #[doc = "Bits 8:12 - Almost full water mark\n\nalmost full water mark configuration"]
     #[inline(always)]
     pub fn almfull_water_mark(&self) -> AlmfullWaterMarkR {
         AlmfullWaterMarkR::new(((self.bits >> 8) & 0x1f) as u8)
@@ -178,13 +181,13 @@ impl W {
     pub fn msg_fifo_rx_mode(&mut self) -> MsgFifoRxModeW<PcieClientMsgCtrlSpec> {
         MsgFifoRxModeW::new(self, 1)
     }
-    #[doc = "Bits 8:12 - Almost full water mark almost full water mark configuration"]
+    #[doc = "Bits 8:12 - Almost full water mark\n\nalmost full water mark configuration"]
     #[inline(always)]
     #[must_use]
     pub fn almfull_water_mark(&mut self) -> AlmfullWaterMarkW<PcieClientMsgCtrlSpec> {
         AlmfullWaterMarkW::new(self, 8)
     }
-    #[doc = "Bits 16:31 - Write mask For each served bit"]
+    #[doc = "Bits 16:31 - Write mask\n\nFor each served bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<PcieClientMsgCtrlSpec> {

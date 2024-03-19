@@ -9,7 +9,10 @@ impl R {
         BurstAddrR::new(self.bits)
     }
 }
-#[doc = "Start address for the current burst operation\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ahb_dma_bstraddr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Audio DMA Burst Start Address Register Array Address offset: i = 0 to 3\n\nThese read-only registers compose the start address of the current burst operation.\n\nburst_start_addr\\[31:0\\]
+= haddr\\[31:0\\]
+= initial_addr\\[31:0\\]
++ 16.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ahb_dma_bstraddr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AhbDmaBstraddrSpec;
 impl crate::RegisterSpec for AhbDmaBstraddrSpec {
     type Ux = u8;

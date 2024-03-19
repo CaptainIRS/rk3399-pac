@@ -2,43 +2,43 @@
 pub type R = crate::R<DdrPiReg109Spec>;
 #[doc = "Register `DDR_PI_REG_109` writer"]
 pub type W = crate::W<DdrPiReg109Spec>;
-#[doc = "Field `PI_TVREF_LONG_F2` reader - Indicates delay from dfi_calvl_strobe to next CMD (more than one param_calvl_vref_stepsize Vref change). The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TVREF_LONG_F2` reader - Indicates delay from dfi_calvl_strobe to next CMD (more than one\n\nparam_calvl_vref_stepsize Vref change). The suffix \"_f2\" of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTvrefLongF2R = crate::FieldReader<u16>;
-#[doc = "Field `PI_TVREF_LONG_F2` writer - Indicates delay from dfi_calvl_strobe to next CMD (more than one param_calvl_vref_stepsize Vref change). The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TVREF_LONG_F2` writer - Indicates delay from dfi_calvl_strobe to next CMD (more than one\n\nparam_calvl_vref_stepsize Vref change). The suffix \"_f2\" of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTvrefLongF2W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
-#[doc = "Field `PI_CALVL_VREF_INITIAL_START_POINT` reader - Indicates the start point of VREF for the Vref (ca) training vrefca_range, vref_ca_setting\\[5:0\\]."]
+#[doc = "Field `PI_CALVL_VREF_INITIAL_START_POINT` reader - Indicates the start point of VREF for the Vref (ca) training\n\nvrefca_range, vref_ca_setting\\[5:0\\]."]
 pub type PiCalvlVrefInitialStartPointR = crate::FieldReader;
-#[doc = "Field `PI_CALVL_VREF_INITIAL_START_POINT` writer - Indicates the start point of VREF for the Vref (ca) training vrefca_range, vref_ca_setting\\[5:0\\]."]
+#[doc = "Field `PI_CALVL_VREF_INITIAL_START_POINT` writer - Indicates the start point of VREF for the Vref (ca) training\n\nvrefca_range, vref_ca_setting\\[5:0\\]."]
 pub type PiCalvlVrefInitialStartPointW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
-#[doc = "Field `PI_CALVL_VREF_INITIAL_STOP_POINT` reader - Indicates the end point of VREF for the Vref(ca) training vrefca_range, vref_ca_setting\\[5:0\\]"]
+#[doc = "Field `PI_CALVL_VREF_INITIAL_STOP_POINT` reader - Indicates the end point of VREF for the Vref(ca) training\n\nvrefca_range, vref_ca_setting\\[5:0\\]"]
 pub type PiCalvlVrefInitialStopPointR = crate::FieldReader;
-#[doc = "Field `PI_CALVL_VREF_INITIAL_STOP_POINT` writer - Indicates the end point of VREF for the Vref(ca) training vrefca_range, vref_ca_setting\\[5:0\\]"]
+#[doc = "Field `PI_CALVL_VREF_INITIAL_STOP_POINT` writer - Indicates the end point of VREF for the Vref(ca) training\n\nvrefca_range, vref_ca_setting\\[5:0\\]"]
 pub type PiCalvlVrefInitialStopPointW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 impl R {
-    #[doc = "Bits 0:9 - Indicates delay from dfi_calvl_strobe to next CMD (more than one param_calvl_vref_stepsize Vref change). The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:9 - Indicates delay from dfi_calvl_strobe to next CMD (more than one\n\nparam_calvl_vref_stepsize Vref change). The suffix \"_f2\" of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tvref_long_f2(&self) -> PiTvrefLongF2R {
         PiTvrefLongF2R::new((self.bits & 0x03ff) as u16)
     }
-    #[doc = "Bits 16:22 - Indicates the start point of VREF for the Vref (ca) training vrefca_range, vref_ca_setting\\[5:0\\]."]
+    #[doc = "Bits 16:22 - Indicates the start point of VREF for the Vref (ca) training\n\nvrefca_range, vref_ca_setting\\[5:0\\]."]
     #[inline(always)]
     pub fn pi_calvl_vref_initial_start_point(&self) -> PiCalvlVrefInitialStartPointR {
         PiCalvlVrefInitialStartPointR::new(((self.bits >> 16) & 0x7f) as u8)
     }
-    #[doc = "Bits 24:30 - Indicates the end point of VREF for the Vref(ca) training vrefca_range, vref_ca_setting\\[5:0\\]"]
+    #[doc = "Bits 24:30 - Indicates the end point of VREF for the Vref(ca) training\n\nvrefca_range, vref_ca_setting\\[5:0\\]"]
     #[inline(always)]
     pub fn pi_calvl_vref_initial_stop_point(&self) -> PiCalvlVrefInitialStopPointR {
         PiCalvlVrefInitialStopPointR::new(((self.bits >> 24) & 0x7f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:9 - Indicates delay from dfi_calvl_strobe to next CMD (more than one param_calvl_vref_stepsize Vref change). The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:9 - Indicates delay from dfi_calvl_strobe to next CMD (more than one\n\nparam_calvl_vref_stepsize Vref change). The suffix \"_f2\" of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tvref_long_f2(&mut self) -> PiTvrefLongF2W<DdrPiReg109Spec> {
         PiTvrefLongF2W::new(self, 0)
     }
-    #[doc = "Bits 16:22 - Indicates the start point of VREF for the Vref (ca) training vrefca_range, vref_ca_setting\\[5:0\\]."]
+    #[doc = "Bits 16:22 - Indicates the start point of VREF for the Vref (ca) training\n\nvrefca_range, vref_ca_setting\\[5:0\\]."]
     #[inline(always)]
     #[must_use]
     pub fn pi_calvl_vref_initial_start_point(
@@ -46,7 +46,7 @@ impl W {
     ) -> PiCalvlVrefInitialStartPointW<DdrPiReg109Spec> {
         PiCalvlVrefInitialStartPointW::new(self, 16)
     }
-    #[doc = "Bits 24:30 - Indicates the end point of VREF for the Vref(ca) training vrefca_range, vref_ca_setting\\[5:0\\]"]
+    #[doc = "Bits 24:30 - Indicates the end point of VREF for the Vref(ca) training\n\nvrefca_range, vref_ca_setting\\[5:0\\]"]
     #[inline(always)]
     #[must_use]
     pub fn pi_calvl_vref_initial_stop_point(

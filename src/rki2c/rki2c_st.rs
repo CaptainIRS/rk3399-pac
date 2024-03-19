@@ -1,16 +1,16 @@
 #[doc = "Register `RKI2C_ST` reader"]
 pub type R = crate::R<Rki2cStSpec>;
-#[doc = "Field `SDA_ST` reader - sda status 1'b0: sda status low 1'b0: sda status high"]
+#[doc = "Field `SDA_ST` reader - sda status\n\n1'b0: sda status low\n\n1'b0: sda status high"]
 pub type SdaStR = crate::BitReader;
-#[doc = "Field `SCL_ST` reader - scl status 1'b0: scl status low 1'b0: scl status high"]
+#[doc = "Field `SCL_ST` reader - scl status\n\n1'b0: scl status low\n\n1'b0: scl status high"]
 pub type SclStR = crate::BitReader;
 impl R {
-    #[doc = "Bit 0 - sda status 1'b0: sda status low 1'b0: sda status high"]
+    #[doc = "Bit 0 - sda status\n\n1'b0: sda status low\n\n1'b0: sda status high"]
     #[inline(always)]
     pub fn sda_st(&self) -> SdaStR {
         SdaStR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - scl status 1'b0: scl status low 1'b0: scl status high"]
+    #[doc = "Bit 1 - scl status\n\n1'b0: scl status low\n\n1'b0: scl status high"]
     #[inline(always)]
     pub fn scl_st(&self) -> SclStR {
         SclStR::new(((self.bits >> 1) & 1) != 0)

@@ -2,34 +2,34 @@
 pub type R = crate::R<GrfUsbphy0Ctrl22Spec>;
 #[doc = "Register `GRF_usbphy0_ctrl22` writer"]
 pub type W = crate::W<GrfUsbphy0Ctrl22Spec>;
-#[doc = "Field `USBPHY_CTRL22` reader - usbphy_ctrl22 Bit352~367 of usbphy_ctrl register"]
+#[doc = "Field `USBPHY_CTRL22` reader - usbphy_ctrl22\n\nBit352~367 of usbphy_ctrl register"]
 pub type UsbphyCtrl22R = crate::FieldReader<u16>;
-#[doc = "Field `USBPHY_CTRL22` writer - usbphy_ctrl22 Bit352~367 of usbphy_ctrl register"]
+#[doc = "Field `USBPHY_CTRL22` writer - usbphy_ctrl22\n\nBit352~367 of usbphy_ctrl register"]
 pub type UsbphyCtrl22W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:15 - usbphy_ctrl22 Bit352~367 of usbphy_ctrl register"]
+    #[doc = "Bits 0:15 - usbphy_ctrl22\n\nBit352~367 of usbphy_ctrl register"]
     #[inline(always)]
     pub fn usbphy_ctrl22(&self) -> UsbphyCtrl22R {
         UsbphyCtrl22R::new((self.bits & 0xffff) as u16)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - usbphy_ctrl22 Bit352~367 of usbphy_ctrl register"]
+    #[doc = "Bits 0:15 - usbphy_ctrl22\n\nBit352~367 of usbphy_ctrl register"]
     #[inline(always)]
     #[must_use]
     pub fn usbphy_ctrl22(&mut self) -> UsbphyCtrl22W<GrfUsbphy0Ctrl22Spec> {
         UsbphyCtrl22W::new(self, 0)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfUsbphy0Ctrl22Spec> {

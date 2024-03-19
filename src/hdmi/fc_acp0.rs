@@ -21,7 +21,7 @@ impl W {
         AcptypeW::new(self, 0)
     }
 }
-#[doc = "Configures the ACP packet type.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_acp0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_acp0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer ACP Packet Type Configuration Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_acp0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_acp0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcAcp0Spec;
 impl crate::RegisterSpec for FcAcp0Spec {
     type Ux = u8;

@@ -2,34 +2,34 @@
 pub type R = crate::R<MmuIntClearSpec>;
 #[doc = "Register `MMU_INT_CLEAR` writer"]
 pub type W = crate::W<MmuIntClearSpec>;
-#[doc = "Field `PAGE_FAULT_CLEAR` reader - page fault interrupt clear, write 1 to this register can clear page fault interrupt."]
+#[doc = "Field `PAGE_FAULT_CLEAR` reader - page fault interrupt clear, write 1 to this\n\nregister can clear page fault interrupt."]
 pub type PageFaultClearR = crate::BitReader;
-#[doc = "Field `PAGE_FAULT_CLEAR` writer - page fault interrupt clear, write 1 to this register can clear page fault interrupt."]
+#[doc = "Field `PAGE_FAULT_CLEAR` writer - page fault interrupt clear, write 1 to this\n\nregister can clear page fault interrupt."]
 pub type PageFaultClearW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `READ_BUS_ERROR_CLEAR` reader - read bus error interrupt clear. write 1 to this register can clear read bus error interrupt."]
+#[doc = "Field `READ_BUS_ERROR_CLEAR` reader - read bus error interrupt clear. write 1 to this\n\nregister can clear read bus error interrupt."]
 pub type ReadBusErrorClearR = crate::BitReader;
-#[doc = "Field `READ_BUS_ERROR_CLEAR` writer - read bus error interrupt clear. write 1 to this register can clear read bus error interrupt."]
+#[doc = "Field `READ_BUS_ERROR_CLEAR` writer - read bus error interrupt clear. write 1 to this\n\nregister can clear read bus error interrupt."]
 pub type ReadBusErrorClearW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - page fault interrupt clear, write 1 to this register can clear page fault interrupt."]
+    #[doc = "Bit 0 - page fault interrupt clear, write 1 to this\n\nregister can clear page fault interrupt."]
     #[inline(always)]
     pub fn page_fault_clear(&self) -> PageFaultClearR {
         PageFaultClearR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - read bus error interrupt clear. write 1 to this register can clear read bus error interrupt."]
+    #[doc = "Bit 1 - read bus error interrupt clear. write 1 to this\n\nregister can clear read bus error interrupt."]
     #[inline(always)]
     pub fn read_bus_error_clear(&self) -> ReadBusErrorClearR {
         ReadBusErrorClearR::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - page fault interrupt clear, write 1 to this register can clear page fault interrupt."]
+    #[doc = "Bit 0 - page fault interrupt clear, write 1 to this\n\nregister can clear page fault interrupt."]
     #[inline(always)]
     #[must_use]
     pub fn page_fault_clear(&mut self) -> PageFaultClearW<MmuIntClearSpec> {
         PageFaultClearW::new(self, 0)
     }
-    #[doc = "Bit 1 - read bus error interrupt clear. write 1 to this register can clear read bus error interrupt."]
+    #[doc = "Bit 1 - read bus error interrupt clear. write 1 to this\n\nregister can clear read bus error interrupt."]
     #[inline(always)]
     #[must_use]
     pub fn read_bus_error_clear(&mut self) -> ReadBusErrorClearW<MmuIntClearSpec> {

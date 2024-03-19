@@ -2,41 +2,41 @@
 pub type R = crate::R<AudCtsDitherSpec>;
 #[doc = "Register `AUD_CTS_DITHER` writer"]
 pub type W = crate::W<AudCtsDitherSpec>;
-#[doc = "Field `DIVIDEND` reader - Dither dividend (4'd1 if no CTS Dither). This field should be configured with the value of dividend from the HDMI specification."]
+#[doc = "Field `DIVIDEND` reader - Dither dividend (4'd1 if no CTS Dither). This field\n\nshould be configured with the value of dividend from\n\nthe HDMI specification."]
 pub type DividendR = crate::FieldReader;
-#[doc = "Field `DIVIDEND` writer - Dither dividend (4'd1 if no CTS Dither). This field should be configured with the value of dividend from the HDMI specification."]
+#[doc = "Field `DIVIDEND` writer - Dither dividend (4'd1 if no CTS Dither). This field\n\nshould be configured with the value of dividend from\n\nthe HDMI specification."]
 pub type DividendW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-#[doc = "Field `DIVISOR` reader - Dither divisor (4'd1 if no CTS Dither). This field should be configured with the value of divisor from the HDMI specification."]
+#[doc = "Field `DIVISOR` reader - Dither divisor (4'd1 if no CTS Dither). This field\n\nshould be configured with the value of divisor from\n\nthe HDMI specification."]
 pub type DivisorR = crate::FieldReader;
-#[doc = "Field `DIVISOR` writer - Dither divisor (4'd1 if no CTS Dither). This field should be configured with the value of divisor from the HDMI specification."]
+#[doc = "Field `DIVISOR` writer - Dither divisor (4'd1 if no CTS Dither). This field\n\nshould be configured with the value of divisor from\n\nthe HDMI specification."]
 pub type DivisorW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
-    #[doc = "Bits 0:3 - Dither dividend (4'd1 if no CTS Dither). This field should be configured with the value of dividend from the HDMI specification."]
+    #[doc = "Bits 0:3 - Dither dividend (4'd1 if no CTS Dither). This field\n\nshould be configured with the value of dividend from\n\nthe HDMI specification."]
     #[inline(always)]
     pub fn dividend(&self) -> DividendR {
         DividendR::new(self.bits & 0x0f)
     }
-    #[doc = "Bits 4:7 - Dither divisor (4'd1 if no CTS Dither). This field should be configured with the value of divisor from the HDMI specification."]
+    #[doc = "Bits 4:7 - Dither divisor (4'd1 if no CTS Dither). This field\n\nshould be configured with the value of divisor from\n\nthe HDMI specification."]
     #[inline(always)]
     pub fn divisor(&self) -> DivisorR {
         DivisorR::new((self.bits >> 4) & 0x0f)
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - Dither dividend (4'd1 if no CTS Dither). This field should be configured with the value of dividend from the HDMI specification."]
+    #[doc = "Bits 0:3 - Dither dividend (4'd1 if no CTS Dither). This field\n\nshould be configured with the value of dividend from\n\nthe HDMI specification."]
     #[inline(always)]
     #[must_use]
     pub fn dividend(&mut self) -> DividendW<AudCtsDitherSpec> {
         DividendW::new(self, 0)
     }
-    #[doc = "Bits 4:7 - Dither divisor (4'd1 if no CTS Dither). This field should be configured with the value of divisor from the HDMI specification."]
+    #[doc = "Bits 4:7 - Dither divisor (4'd1 if no CTS Dither). This field\n\nshould be configured with the value of divisor from\n\nthe HDMI specification."]
     #[inline(always)]
     #[must_use]
     pub fn divisor(&mut self) -> DivisorW<AudCtsDitherSpec> {
         DivisorW::new(self, 4)
     }
 }
-#[doc = "Dither dividend (4'd1 if no CTS Dither). This field should be configured with the value of dividend from the HDMI specification.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aud_cts_dither::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`aud_cts_dither::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Audio CTS Dither Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aud_cts_dither::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`aud_cts_dither::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AudCtsDitherSpec;
 impl crate::RegisterSpec for AudCtsDitherSpec {
     type Ux = u8;

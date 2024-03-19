@@ -3,9 +3,10 @@ pub type R = crate::R<PmuIntConSpec>;
 #[doc = "Register `PMU_INT_CON` writer"]
 pub type W = crate::W<PmuIntConSpec>;
 #[doc = "global interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PmuIntEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl PmuIntEnR {
             true => PmuIntEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PmuIntEn::B0
@@ -44,7 +45,7 @@ impl<'a, REG> PmuIntEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PmuIntEn::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "power mode wakeup interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PwrmodeWakeupIntEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl PwrmodeWakeupIntEnR {
             true => PwrmodeWakeupIntEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PwrmodeWakeupIntEn::B0
@@ -97,7 +99,7 @@ impl<'a, REG> PwrmodeWakeupIntEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PwrmodeWakeupIntEn::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "gpio0 negedge wakeup interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WakeupGpio0NegIntEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl WakeupGpio0NegIntEnR {
             true => WakeupGpio0NegIntEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == WakeupGpio0NegIntEn::B0
@@ -150,7 +153,7 @@ impl<'a, REG> WakeupGpio0NegIntEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(WakeupGpio0NegIntEn::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "gpio posedge wakeup interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WakeupGpio0PosIntEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -186,7 +190,7 @@ impl WakeupGpio0PosIntEnR {
             true => WakeupGpio0PosIntEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == WakeupGpio0PosIntEn::B0
@@ -203,7 +207,7 @@ impl<'a, REG> WakeupGpio0PosIntEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(WakeupGpio0PosIntEn::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "gpio1 negedge wakeup interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WakeupGpio1NegIntEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -239,7 +244,7 @@ impl WakeupGpio1NegIntEnR {
             true => WakeupGpio1NegIntEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == WakeupGpio1NegIntEn::B0
@@ -256,7 +261,7 @@ impl<'a, REG> WakeupGpio1NegIntEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(WakeupGpio1NegIntEn::B0)
@@ -268,9 +273,10 @@ where
     }
 }
 #[doc = "gpio1 posedge wakeup interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WakeupGpio1PosIntEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -292,7 +298,7 @@ impl WakeupGpio1PosIntEnR {
             true => WakeupGpio1PosIntEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == WakeupGpio1PosIntEn::B0
@@ -309,7 +315,7 @@ impl<'a, REG> WakeupGpio1PosIntEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(WakeupGpio1PosIntEn::B0)

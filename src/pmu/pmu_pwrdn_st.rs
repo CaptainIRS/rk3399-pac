@@ -3,9 +3,10 @@ pub type R = crate::R<PmuPwrdnStSpec>;
 #[doc = "Register `PMU_PWRDN_ST` writer"]
 pub type W = crate::W<PmuPwrdnStSpec>;
 #[doc = "pd_a53_l0 power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdA53L0PwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl PdA53L0PwrStatR {
             true => PdA53L0PwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdA53L0PwrStat::B0
@@ -39,9 +40,10 @@ impl PdA53L0PwrStatR {
     }
 }
 #[doc = "pd_a53_l1 power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdA53L1PwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -63,7 +65,7 @@ impl PdA53L1PwrStatR {
             true => PdA53L1PwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdA53L1PwrStat::B0
@@ -75,9 +77,10 @@ impl PdA53L1PwrStatR {
     }
 }
 #[doc = "pd_a53_l2 power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdA53L2PwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -99,7 +102,7 @@ impl PdA53L2PwrStatR {
             true => PdA53L2PwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdA53L2PwrStat::B0
@@ -111,9 +114,10 @@ impl PdA53L2PwrStatR {
     }
 }
 #[doc = "pd_a53_l3 power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdA53L3PwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -135,7 +139,7 @@ impl PdA53L3PwrStatR {
             true => PdA53L3PwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdA53L3PwrStat::B0
@@ -147,9 +151,10 @@ impl PdA53L3PwrStatR {
     }
 }
 #[doc = "pd_a72_b0 power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdA72B0PwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -171,7 +176,7 @@ impl PdA72B0PwrStatR {
             true => PdA72B0PwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdA72B0PwrStat::B0
@@ -183,9 +188,10 @@ impl PdA72B0PwrStatR {
     }
 }
 #[doc = "pd_a72_b1 power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdA72B1PwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -207,7 +213,7 @@ impl PdA72B1PwrStatR {
             true => PdA72B1PwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdA72B1PwrStat::B0
@@ -219,9 +225,10 @@ impl PdA72B1PwrStatR {
     }
 }
 #[doc = "pd_scu_l power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdScuLPwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -243,7 +250,7 @@ impl PdScuLPwrStatR {
             true => PdScuLPwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdScuLPwrStat::B0
@@ -255,9 +262,10 @@ impl PdScuLPwrStatR {
     }
 }
 #[doc = "pd_scu_b power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdScuBPwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -279,7 +287,7 @@ impl PdScuBPwrStatR {
             true => PdScuBPwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdScuBPwrStat::B0
@@ -291,9 +299,10 @@ impl PdScuBPwrStatR {
     }
 }
 #[doc = "pd_tcpd0 power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdTcpd0PwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -315,7 +324,7 @@ impl PdTcpd0PwrStatR {
             true => PdTcpd0PwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdTcpd0PwrStat::B0
@@ -332,7 +341,7 @@ impl<'a, REG> PdTcpd0PwrStatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdTcpd0PwrStat::B0)
@@ -344,9 +353,10 @@ where
     }
 }
 #[doc = "pd_tcpd1 power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdTcpd1PwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -368,7 +378,7 @@ impl PdTcpd1PwrStatR {
             true => PdTcpd1PwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdTcpd1PwrStat::B0
@@ -385,7 +395,7 @@ impl<'a, REG> PdTcpd1PwrStatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdTcpd1PwrStat::B0)
@@ -397,9 +407,10 @@ where
     }
 }
 #[doc = "pd_core power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdCciPwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -421,7 +432,7 @@ impl PdCciPwrStatR {
             true => PdCciPwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdCciPwrStat::B0
@@ -438,7 +449,7 @@ impl<'a, REG> PdCciPwrStatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdCciPwrStat::B0)
@@ -450,9 +461,10 @@ where
     }
 }
 #[doc = "pd_bus power stat\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdPerilpPwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -474,7 +486,7 @@ impl PdPerilpPwrStatR {
             true => PdPerilpPwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdPerilpPwrStat::B0
@@ -491,7 +503,7 @@ impl<'a, REG> PdPerilpPwrStatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdPerilpPwrStat::B0)
@@ -503,9 +515,10 @@ where
     }
 }
 #[doc = "pd_peri power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdPerihpPwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -527,7 +540,7 @@ impl PdPerihpPwrStatR {
             true => PdPerihpPwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdPerihpPwrStat::B0
@@ -544,7 +557,7 @@ impl<'a, REG> PdPerihpPwrStatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdPerihpPwrStat::B0)
@@ -556,9 +569,10 @@ where
     }
 }
 #[doc = "pd_center power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdCenterPwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -580,7 +594,7 @@ impl PdCenterPwrStatR {
             true => PdCenterPwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdCenterPwrStat::B0
@@ -597,7 +611,7 @@ impl<'a, REG> PdCenterPwrStatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdCenterPwrStat::B0)
@@ -609,9 +623,10 @@ where
     }
 }
 #[doc = "pd_vio power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdVioPwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -633,7 +648,7 @@ impl PdVioPwrStatR {
             true => PdVioPwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdVioPwrStat::B0
@@ -650,7 +665,7 @@ impl<'a, REG> PdVioPwrStatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdVioPwrStat::B0)
@@ -662,9 +677,10 @@ where
     }
 }
 #[doc = "pd_gpu power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdGpuPwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -686,7 +702,7 @@ impl PdGpuPwrStatR {
             true => PdGpuPwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdGpuPwrStat::B0
@@ -703,7 +719,7 @@ impl<'a, REG> PdGpuPwrStatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdGpuPwrStat::B0)
@@ -715,9 +731,10 @@ where
     }
 }
 #[doc = "pd_vcodec power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdVcodecPwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -739,7 +756,7 @@ impl PdVcodecPwrStatR {
             true => PdVcodecPwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdVcodecPwrStat::B0
@@ -756,7 +773,7 @@ impl<'a, REG> PdVcodecPwrStatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdVcodecPwrStat::B0)
@@ -768,9 +785,10 @@ where
     }
 }
 #[doc = "pd_vdu power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdVduPwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -792,7 +810,7 @@ impl PdVduPwrStatR {
             true => PdVduPwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdVduPwrStat::B0
@@ -809,7 +827,7 @@ impl<'a, REG> PdVduPwrStatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdVduPwrStat::B0)
@@ -821,9 +839,10 @@ where
     }
 }
 #[doc = "pd_rga power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdRgaPwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -845,7 +864,7 @@ impl PdRgaPwrStatR {
             true => PdRgaPwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdRgaPwrStat::B0
@@ -862,7 +881,7 @@ impl<'a, REG> PdRgaPwrStatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdRgaPwrStat::B0)
@@ -874,9 +893,10 @@ where
     }
 }
 #[doc = "pd_iep power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdIepPwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -898,7 +918,7 @@ impl PdIepPwrStatR {
             true => PdIepPwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdIepPwrStat::B0
@@ -915,7 +935,7 @@ impl<'a, REG> PdIepPwrStatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdIepPwrStat::B0)
@@ -927,9 +947,10 @@ where
     }
 }
 #[doc = "pd_vo power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdVoPwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -951,7 +972,7 @@ impl PdVoPwrStatR {
             true => PdVoPwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdVoPwrStat::B0
@@ -968,7 +989,7 @@ impl<'a, REG> PdVoPwrStatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdVoPwrStat::B0)
@@ -980,9 +1001,10 @@ where
     }
 }
 #[doc = "pd_isp0 power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdIsp0PwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -1004,7 +1026,7 @@ impl PdIsp0PwrStatR {
             true => PdIsp0PwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdIsp0PwrStat::B0
@@ -1021,7 +1043,7 @@ impl<'a, REG> PdIsp0PwrStatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdIsp0PwrStat::B0)
@@ -1033,9 +1055,10 @@ where
     }
 }
 #[doc = "pd_isp1 power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdIsp1PwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -1057,7 +1080,7 @@ impl PdIsp1PwrStatR {
             true => PdIsp1PwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdIsp1PwrStat::B0
@@ -1074,7 +1097,7 @@ impl<'a, REG> PdIsp1PwrStatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdIsp1PwrStat::B0)
@@ -1086,9 +1109,10 @@ where
     }
 }
 #[doc = "pd_hdcp power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdHdcpPwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -1110,7 +1134,7 @@ impl PdHdcpPwrStatR {
             true => PdHdcpPwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdHdcpPwrStat::B0
@@ -1127,7 +1151,7 @@ impl<'a, REG> PdHdcpPwrStatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdHdcpPwrStat::B0)
@@ -1139,9 +1163,10 @@ where
     }
 }
 #[doc = "pd_gmac power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdGmacPwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -1163,7 +1188,7 @@ impl PdGmacPwrStatR {
             true => PdGmacPwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdGmacPwrStat::B0
@@ -1180,7 +1205,7 @@ impl<'a, REG> PdGmacPwrStatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdGmacPwrStat::B0)
@@ -1192,9 +1217,10 @@ where
     }
 }
 #[doc = "pd_emmc power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdEmmcPwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -1216,7 +1242,7 @@ impl PdEmmcPwrStatR {
             true => PdEmmcPwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdEmmcPwrStat::B0
@@ -1233,7 +1259,7 @@ impl<'a, REG> PdEmmcPwrStatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdEmmcPwrStat::B0)
@@ -1245,9 +1271,10 @@ where
     }
 }
 #[doc = "pd_usb3 power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdUsb3PwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -1269,7 +1296,7 @@ impl PdUsb3PwrStatR {
             true => PdUsb3PwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdUsb3PwrStat::B0
@@ -1286,7 +1313,7 @@ impl<'a, REG> PdUsb3PwrStatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdUsb3PwrStat::B0)
@@ -1298,9 +1325,10 @@ where
     }
 }
 #[doc = "pd_edp power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdEdpPwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -1322,7 +1350,7 @@ impl PdEdpPwrStatR {
             true => PdEdpPwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdEdpPwrStat::B0
@@ -1339,7 +1367,7 @@ impl<'a, REG> PdEdpPwrStatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdEdpPwrStat::B0)
@@ -1351,9 +1379,10 @@ where
     }
 }
 #[doc = "pd_gic power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdGicPwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -1375,7 +1404,7 @@ impl PdGicPwrStatR {
             true => PdGicPwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdGicPwrStat::B0
@@ -1392,7 +1421,7 @@ impl<'a, REG> PdGicPwrStatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdGicPwrStat::B0)
@@ -1404,9 +1433,10 @@ where
     }
 }
 #[doc = "pd_sd power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdSdPwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -1428,7 +1458,7 @@ impl PdSdPwrStatR {
             true => PdSdPwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdSdPwrStat::B0
@@ -1445,7 +1475,7 @@ impl<'a, REG> PdSdPwrStatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdSdPwrStat::B0)
@@ -1457,9 +1487,10 @@ where
     }
 }
 #[doc = "pd_sdioaudio power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdSdioaudioPwrStat {
-    #[doc = "0: powered down"]
+    #[doc = "0: powered up"]
     B0 = 0,
     #[doc = "1: powered down"]
     B1 = 1,
@@ -1481,7 +1512,7 @@ impl PdSdioaudioPwrStatR {
             true => PdSdioaudioPwrStat::B1,
         }
     }
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdSdioaudioPwrStat::B0
@@ -1498,7 +1529,7 @@ impl<'a, REG> PdSdioaudioPwrStatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "powered down"]
+    #[doc = "powered up"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdSdioaudioPwrStat::B0)

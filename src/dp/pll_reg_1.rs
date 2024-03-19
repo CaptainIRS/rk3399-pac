@@ -2,17 +2,18 @@
 pub type R = crate::R<PllReg1Spec>;
 #[doc = "Register `PLL_REG_1` writer"]
 pub type W = crate::W<PllReg1Spec>;
-#[doc = "Field `PLL_REF_CLK_FREQ` reader - reference CLOCK frequency: 1(default):24MHz 0:27MHz"]
+#[doc = "Field `PLL_REF_CLK_FREQ` reader - reference CLOCK frequency: \n\n1(default):24MHz \n\n0:27MHz"]
 pub type PllRefClkFreqR = crate::BitReader;
-#[doc = "Field `PLL_REF_CLK_FREQ` writer - reference CLOCK frequency: 1(default):24MHz 0:27MHz"]
+#[doc = "Field `PLL_REF_CLK_FREQ` writer - reference CLOCK frequency: \n\n1(default):24MHz \n\n0:27MHz"]
 pub type PllRefClkFreqW<'a, REG> = crate::BitWriter1C<'a, REG>;
 #[doc = "FVCO:\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LinkSpeed {
-    #[doc = "0: Reserved"]
+    #[doc = "0: 1.62G"]
     B00 = 0,
-    #[doc = "1: Reserved"]
+    #[doc = "1: 2.7G"]
     B01 = 1,
     #[doc = "2: Reserved"]
     B1x = 2,
@@ -39,12 +40,12 @@ impl LinkSpeedR {
             _ => None,
         }
     }
-    #[doc = "Reserved"]
+    #[doc = "1.62G"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == LinkSpeed::B00
     }
-    #[doc = "Reserved"]
+    #[doc = "2.7G"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == LinkSpeed::B01
@@ -56,7 +57,7 @@ impl LinkSpeedR {
     }
 }
 impl R {
-    #[doc = "Bit 0 - reference CLOCK frequency: 1(default):24MHz 0:27MHz"]
+    #[doc = "Bit 0 - reference CLOCK frequency: \n\n1(default):24MHz \n\n0:27MHz"]
     #[inline(always)]
     pub fn pll_ref_clk_freq(&self) -> PllRefClkFreqR {
         PllRefClkFreqR::new((self.bits & 1) != 0)
@@ -68,7 +69,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - reference CLOCK frequency: 1(default):24MHz 0:27MHz"]
+    #[doc = "Bit 0 - reference CLOCK frequency: \n\n1(default):24MHz \n\n0:27MHz"]
     #[inline(always)]
     #[must_use]
     pub fn pll_ref_clk_freq(&mut self) -> PllRefClkFreqW<PllReg1Spec> {

@@ -2,7 +2,7 @@
 pub type R = crate::R<DdrDenaliPhy646Spec>;
 #[doc = "Register `DDR_DENALI_PHY_646` writer"]
 pub type W = crate::W<DdrDenaliPhy646Spec>;
-#[doc = "Field `SC_PHY_ADR_SNAP_OBS_REGS_1` writer - Initiates a snapshot of the internal observation registers for address slice 1. Set to 1 to trigger. WRITE- ONLY"]
+#[doc = "Field `SC_PHY_ADR_SNAP_OBS_REGS_1` writer - Initiates a snapshot of the internal observation registers for address slice 1. Set to 1 to trigger."]
 pub type ScPhyAdrSnapObsRegs1W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PHY_ADR_TSEL_ENABLE_1` reader - Enables tsel_en for address slice 1."]
 pub type PhyAdrTselEnable1R = crate::BitReader;
@@ -34,7 +34,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - Initiates a snapshot of the internal observation registers for address slice 1. Set to 1 to trigger. WRITE- ONLY"]
+    #[doc = "Bit 0 - Initiates a snapshot of the internal observation registers for address slice 1. Set to 1 to trigger."]
     #[inline(always)]
     #[must_use]
     pub fn sc_phy_adr_snap_obs_regs_1(&mut self) -> ScPhyAdrSnapObsRegs1W<DdrDenaliPhy646Spec> {

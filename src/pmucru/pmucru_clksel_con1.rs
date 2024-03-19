@@ -2,14 +2,15 @@
 pub type R = crate::R<PmucruClkselCon1Spec>;
 #[doc = "Register `PMUCRU_CLKSEL_CON1` writer"]
 pub type W = crate::W<PmucruClkselCon1Spec>;
-#[doc = "Field `CLK_SPI3_DIV_CON` reader - clk_spi3 divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_SPI3_DIV_CON` reader - clk_spi3 divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkSpi3DivConR = crate::FieldReader;
-#[doc = "Field `CLK_SPI3_DIV_CON` writer - clk_spi3 divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_SPI3_DIV_CON` writer - clk_spi3 divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkSpi3DivConW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "clk_spi3_pll source select control register\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClkSpi3PllSel {
-    #[doc = "0: PPLL"]
+    #[doc = "0: xin_24m"]
     B0 = 0,
     #[doc = "1: PPLL"]
     B1 = 1,
@@ -31,7 +32,7 @@ impl ClkSpi3PllSelR {
             true => ClkSpi3PllSel::B1,
         }
     }
-    #[doc = "PPLL"]
+    #[doc = "xin_24m"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClkSpi3PllSel::B0
@@ -48,7 +49,7 @@ impl<'a, REG> ClkSpi3PllSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "PPLL"]
+    #[doc = "xin_24m"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClkSpi3PllSel::B0)
@@ -59,14 +60,15 @@ where
         self.variant(ClkSpi3PllSel::B1)
     }
 }
-#[doc = "Field `CLK_WIFI_DIV_CON` reader - clk_wifi divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_WIFI_DIV_CON` reader - clk_wifi divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkWifiDivConR = crate::FieldReader;
-#[doc = "Field `CLK_WIFI_DIV_CON` writer - clk_wifi divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_WIFI_DIV_CON` writer - clk_wifi divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkWifiDivConW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "clk_wifi_pll source select control register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClkWifiPllSel {
-    #[doc = "0: xin_24m"]
+    #[doc = "0: PPLL"]
     B0 = 0,
     #[doc = "1: xin_24m"]
     B1 = 1,
@@ -88,7 +90,7 @@ impl ClkWifiPllSelR {
             true => ClkWifiPllSel::B1,
         }
     }
-    #[doc = "xin_24m"]
+    #[doc = "PPLL"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClkWifiPllSel::B0
@@ -105,7 +107,7 @@ impl<'a, REG> ClkWifiPllSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "xin_24m"]
+    #[doc = "PPLL"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClkWifiPllSel::B0)
@@ -117,9 +119,10 @@ where
     }
 }
 #[doc = "clk_wifi source select control register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClkWifiSel {
-    #[doc = "0: clk_wifi_frac"]
+    #[doc = "0: clk_wifi_divout"]
     B0 = 0,
     #[doc = "1: clk_wifi_frac"]
     B1 = 1,
@@ -141,7 +144,7 @@ impl ClkWifiSelR {
             true => ClkWifiSel::B1,
         }
     }
-    #[doc = "clk_wifi_frac"]
+    #[doc = "clk_wifi_divout"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClkWifiSel::B0
@@ -158,7 +161,7 @@ impl<'a, REG> ClkWifiSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clk_wifi_frac"]
+    #[doc = "clk_wifi_divout"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClkWifiSel::B0)
@@ -170,9 +173,10 @@ where
     }
 }
 #[doc = "clk_timer source select control register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClkTimerSel {
-    #[doc = "0: clk_32k"]
+    #[doc = "0: xin_24m"]
     B0 = 0,
     #[doc = "1: clk_32k"]
     B1 = 1,
@@ -194,7 +198,7 @@ impl ClkTimerSelR {
             true => ClkTimerSel::B1,
         }
     }
-    #[doc = "clk_32k"]
+    #[doc = "xin_24m"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClkTimerSel::B0
@@ -211,7 +215,7 @@ impl<'a, REG> ClkTimerSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clk_32k"]
+    #[doc = "xin_24m"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClkTimerSel::B0)
@@ -222,10 +226,10 @@ where
         self.variant(ClkTimerSel::B1)
     }
 }
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:6 - clk_spi3 divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:6 - clk_spi3 divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn clk_spi3_div_con(&self) -> ClkSpi3DivConR {
         ClkSpi3DivConR::new((self.bits & 0x7f) as u8)
@@ -235,7 +239,7 @@ impl R {
     pub fn clk_spi3_pll_sel(&self) -> ClkSpi3PllSelR {
         ClkSpi3PllSelR::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bits 8:12 - clk_wifi divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 8:12 - clk_wifi divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn clk_wifi_div_con(&self) -> ClkWifiDivConR {
         ClkWifiDivConR::new(((self.bits >> 8) & 0x1f) as u8)
@@ -257,7 +261,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:6 - clk_spi3 divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:6 - clk_spi3 divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn clk_spi3_div_con(&mut self) -> ClkSpi3DivConW<PmucruClkselCon1Spec> {
@@ -269,7 +273,7 @@ impl W {
     pub fn clk_spi3_pll_sel(&mut self) -> ClkSpi3PllSelW<PmucruClkselCon1Spec> {
         ClkSpi3PllSelW::new(self, 7)
     }
-    #[doc = "Bits 8:12 - clk_wifi divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 8:12 - clk_wifi divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn clk_wifi_div_con(&mut self) -> ClkWifiDivConW<PmucruClkselCon1Spec> {
@@ -293,7 +297,7 @@ impl W {
     pub fn clk_timer_sel(&mut self) -> ClkTimerSelW<PmucruClkselCon1Spec> {
         ClkTimerSelW::new(self, 15)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<PmucruClkselCon1Spec> {

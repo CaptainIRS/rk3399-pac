@@ -2,14 +2,15 @@
 pub type R = crate::R<CruClkselCon63Spec>;
 #[doc = "Register `CRU_CLKSEL_CON63` writer"]
 pub type W = crate::W<CruClkselCon63Spec>;
-#[doc = "Field `CLK_I2C3_DIV_CON` reader - i2c3 divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_I2C3_DIV_CON` reader - i2c3 divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkI2c3DivConR = crate::FieldReader;
-#[doc = "Field `CLK_I2C3_DIV_CON` writer - i2c3 divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_I2C3_DIV_CON` writer - i2c3 divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkI2c3DivConW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "clk_i2c3 clock source select control register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClkI2c3PllSel {
-    #[doc = "0: GPLL"]
+    #[doc = "0: CPLL"]
     B0 = 0,
     #[doc = "1: GPLL"]
     B1 = 1,
@@ -31,7 +32,7 @@ impl ClkI2c3PllSelR {
             true => ClkI2c3PllSel::B1,
         }
     }
-    #[doc = "GPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClkI2c3PllSel::B0
@@ -48,7 +49,7 @@ impl<'a, REG> ClkI2c3PllSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "GPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClkI2c3PllSel::B0)
@@ -59,14 +60,15 @@ where
         self.variant(ClkI2c3PllSel::B1)
     }
 }
-#[doc = "Field `CLK_I2C7_DIV_CON` reader - i2c7 divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_I2C7_DIV_CON` reader - i2c7 divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkI2c7DivConR = crate::FieldReader;
-#[doc = "Field `CLK_I2C7_DIV_CON` writer - i2c7 divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_I2C7_DIV_CON` writer - i2c7 divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkI2c7DivConW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "clk_i2c7 clock source select control register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClkI2c7PllSel {
-    #[doc = "0: GPLL"]
+    #[doc = "0: CPLL"]
     B0 = 0,
     #[doc = "1: GPLL"]
     B1 = 1,
@@ -88,7 +90,7 @@ impl ClkI2c7PllSelR {
             true => ClkI2c7PllSel::B1,
         }
     }
-    #[doc = "GPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClkI2c7PllSel::B0
@@ -105,7 +107,7 @@ impl<'a, REG> ClkI2c7PllSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "GPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClkI2c7PllSel::B0)
@@ -116,10 +118,10 @@ where
         self.variant(ClkI2c7PllSel::B1)
     }
 }
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:6 - i2c3 divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:6 - i2c3 divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn clk_i2c3_div_con(&self) -> ClkI2c3DivConR {
         ClkI2c3DivConR::new((self.bits & 0x7f) as u8)
@@ -129,7 +131,7 @@ impl R {
     pub fn clk_i2c3_pll_sel(&self) -> ClkI2c3PllSelR {
         ClkI2c3PllSelR::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bits 8:14 - i2c7 divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 8:14 - i2c7 divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn clk_i2c7_div_con(&self) -> ClkI2c7DivConR {
         ClkI2c7DivConR::new(((self.bits >> 8) & 0x7f) as u8)
@@ -141,7 +143,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:6 - i2c3 divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:6 - i2c3 divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn clk_i2c3_div_con(&mut self) -> ClkI2c3DivConW<CruClkselCon63Spec> {
@@ -153,7 +155,7 @@ impl W {
     pub fn clk_i2c3_pll_sel(&mut self) -> ClkI2c3PllSelW<CruClkselCon63Spec> {
         ClkI2c3PllSelW::new(self, 7)
     }
-    #[doc = "Bits 8:14 - i2c7 divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 8:14 - i2c7 divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn clk_i2c7_div_con(&mut self) -> ClkI2c7DivConW<CruClkselCon63Spec> {
@@ -165,7 +167,7 @@ impl W {
     pub fn clk_i2c7_pll_sel(&mut self) -> ClkI2c7PllSelW<CruClkselCon63Spec> {
         ClkI2c7PllSelW::new(self, 15)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkselCon63Spec> {

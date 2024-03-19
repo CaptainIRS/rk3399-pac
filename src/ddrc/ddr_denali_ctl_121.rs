@@ -2,14 +2,14 @@
 pub type R = crate::R<DdrDenaliCtl121Spec>;
 #[doc = "Register `DDR_DENALI_CTL_121` writer"]
 pub type W = crate::W<DdrDenaliCtl121Spec>;
-#[doc = "Field `AUTO_TEMPCHK_VAL_1` reader - MR4 data for all devices on chip 1 accessed by automatic MRR commands. Bits (3:0) correlate to the device on the lower byte, bits (7:4) correlate to the devices on the 2nd byte etc. Value indicates the OP7, OP2, OP1 and OP0 bits. READ-ONLY"]
+#[doc = "Field `AUTO_TEMPCHK_VAL_1` reader - MR4 data for all devices on chip 1 accessed by automatic MRR commands. Bits (3:0) correlate to the device on the lower byte, bits (7:4) correlate to the devices on the 2nd byte etc. Value indicates the OP7, OP2, OP1 and OP0 bits."]
 pub type AutoTempchkVal1R = crate::FieldReader<u16>;
 #[doc = "Field `DISABLE_UPDATE_TVRCG` reader - Bypass changing for TVRCG during a DFS operation. Set to 1 to skip TVRCG."]
 pub type DisableUpdateTvrcgR = crate::BitReader;
 #[doc = "Field `DISABLE_UPDATE_TVRCG` writer - Bypass changing for TVRCG during a DFS operation. Set to 1 to skip TVRCG."]
 pub type DisableUpdateTvrcgW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bits 0:15 - MR4 data for all devices on chip 1 accessed by automatic MRR commands. Bits (3:0) correlate to the device on the lower byte, bits (7:4) correlate to the devices on the 2nd byte etc. Value indicates the OP7, OP2, OP1 and OP0 bits. READ-ONLY"]
+    #[doc = "Bits 0:15 - MR4 data for all devices on chip 1 accessed by automatic MRR commands. Bits (3:0) correlate to the device on the lower byte, bits (7:4) correlate to the devices on the 2nd byte etc. Value indicates the OP7, OP2, OP1 and OP0 bits."]
     #[inline(always)]
     pub fn auto_tempchk_val_1(&self) -> AutoTempchkVal1R {
         AutoTempchkVal1R::new((self.bits & 0xffff) as u16)

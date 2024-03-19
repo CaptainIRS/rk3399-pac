@@ -2,19 +2,19 @@
 pub type R = crate::R<SdmmcUsridSpec>;
 #[doc = "Register `SDMMC_USRID` writer"]
 pub type W = crate::W<SdmmcUsridSpec>;
-#[doc = "Field `USRID` reader - User identification register. The default value is determined by Configuration Value."]
+#[doc = "Field `USRID` reader - User identification register.\n\nThe default value is determined by Configuration Value."]
 pub type UsridR = crate::FieldReader<u32>;
-#[doc = "Field `USRID` writer - User identification register. The default value is determined by Configuration Value."]
+#[doc = "Field `USRID` writer - User identification register.\n\nThe default value is determined by Configuration Value."]
 pub type UsridW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - User identification register. The default value is determined by Configuration Value."]
+    #[doc = "Bits 0:31 - User identification register.\n\nThe default value is determined by Configuration Value."]
     #[inline(always)]
     pub fn usrid(&self) -> UsridR {
         UsridR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - User identification register. The default value is determined by Configuration Value."]
+    #[doc = "Bits 0:31 - User identification register.\n\nThe default value is determined by Configuration Value."]
     #[inline(always)]
     #[must_use]
     pub fn usrid(&mut self) -> UsridW<SdmmcUsridSpec> {

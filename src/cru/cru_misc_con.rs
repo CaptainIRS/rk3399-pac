@@ -3,38 +3,39 @@ pub type R = crate::R<CruMiscConSpec>;
 #[doc = "Register `CRU_MISC_CON` writer"]
 pub type W = crate::W<CruMiscConSpec>;
 #[doc = "Output clock selection for test\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TestclkSel {
-    #[doc = "0: clk_wifi"]
+    #[doc = "0: clk_core_b_2wrap"]
     H0 = 0,
-    #[doc = "1: clk_wifi"]
+    #[doc = "1: clk_core_l_2wrap"]
     H1 = 1,
-    #[doc = "2: clk_wifi"]
+    #[doc = "2: aclk_cci_2wrap"]
     H2 = 2,
-    #[doc = "3: clk_wifi"]
+    #[doc = "3: aclk_perihp_2wrap"]
     H3 = 3,
-    #[doc = "4: clk_wifi"]
+    #[doc = "4: aclk_perilp0_2wrap"]
     H4 = 4,
-    #[doc = "5: clk_wifi"]
+    #[doc = "5: hclk_perilp1_2wrap"]
     H5 = 5,
-    #[doc = "6: clk_wifi"]
+    #[doc = "6: aclk_center_2wrap"]
     H6 = 6,
-    #[doc = "7: clk_wifi"]
+    #[doc = "7: clk_ddrc_2wrap"]
     H7 = 7,
-    #[doc = "8: clk_wifi"]
+    #[doc = "8: aclk_gpu_2wrap"]
     H8 = 8,
-    #[doc = "9: clk_wifi"]
+    #[doc = "9: clk_rga_core_2wrap"]
     H9 = 9,
-    #[doc = "10: clk_wifi"]
+    #[doc = "10: clk_vdu_core_2wrap"]
     Ha = 10,
-    #[doc = "11: clk_wifi"]
+    #[doc = "11: clk_pciephy_ref100m"]
     Hb = 11,
-    #[doc = "12: clk_wifi"]
+    #[doc = "12: dclk_vop0_2wrap"]
     Hc = 12,
-    #[doc = "13: clk_wifi"]
+    #[doc = "13: clk_rtc"]
     Hd = 13,
-    #[doc = "14: clk_wifi"]
+    #[doc = "14: clkout_24m"]
     He = 14,
     #[doc = "15: clk_wifi"]
     Hf = 15,
@@ -74,77 +75,77 @@ impl TestclkSelR {
             _ => unreachable!(),
         }
     }
-    #[doc = "clk_wifi"]
+    #[doc = "clk_core_b_2wrap"]
     #[inline(always)]
     pub fn is_h0(&self) -> bool {
         *self == TestclkSel::H0
     }
-    #[doc = "clk_wifi"]
+    #[doc = "clk_core_l_2wrap"]
     #[inline(always)]
     pub fn is_h1(&self) -> bool {
         *self == TestclkSel::H1
     }
-    #[doc = "clk_wifi"]
+    #[doc = "aclk_cci_2wrap"]
     #[inline(always)]
     pub fn is_h2(&self) -> bool {
         *self == TestclkSel::H2
     }
-    #[doc = "clk_wifi"]
+    #[doc = "aclk_perihp_2wrap"]
     #[inline(always)]
     pub fn is_h3(&self) -> bool {
         *self == TestclkSel::H3
     }
-    #[doc = "clk_wifi"]
+    #[doc = "aclk_perilp0_2wrap"]
     #[inline(always)]
     pub fn is_h4(&self) -> bool {
         *self == TestclkSel::H4
     }
-    #[doc = "clk_wifi"]
+    #[doc = "hclk_perilp1_2wrap"]
     #[inline(always)]
     pub fn is_h5(&self) -> bool {
         *self == TestclkSel::H5
     }
-    #[doc = "clk_wifi"]
+    #[doc = "aclk_center_2wrap"]
     #[inline(always)]
     pub fn is_h6(&self) -> bool {
         *self == TestclkSel::H6
     }
-    #[doc = "clk_wifi"]
+    #[doc = "clk_ddrc_2wrap"]
     #[inline(always)]
     pub fn is_h7(&self) -> bool {
         *self == TestclkSel::H7
     }
-    #[doc = "clk_wifi"]
+    #[doc = "aclk_gpu_2wrap"]
     #[inline(always)]
     pub fn is_h8(&self) -> bool {
         *self == TestclkSel::H8
     }
-    #[doc = "clk_wifi"]
+    #[doc = "clk_rga_core_2wrap"]
     #[inline(always)]
     pub fn is_h9(&self) -> bool {
         *self == TestclkSel::H9
     }
-    #[doc = "clk_wifi"]
+    #[doc = "clk_vdu_core_2wrap"]
     #[inline(always)]
     pub fn is_ha(&self) -> bool {
         *self == TestclkSel::Ha
     }
-    #[doc = "clk_wifi"]
+    #[doc = "clk_pciephy_ref100m"]
     #[inline(always)]
     pub fn is_hb(&self) -> bool {
         *self == TestclkSel::Hb
     }
-    #[doc = "clk_wifi"]
+    #[doc = "dclk_vop0_2wrap"]
     #[inline(always)]
     pub fn is_hc(&self) -> bool {
         *self == TestclkSel::Hc
     }
-    #[doc = "clk_wifi"]
+    #[doc = "clk_rtc"]
     #[inline(always)]
     pub fn is_hd(&self) -> bool {
         *self == TestclkSel::Hd
     }
-    #[doc = "clk_wifi"]
+    #[doc = "clkout_24m"]
     #[inline(always)]
     pub fn is_he(&self) -> bool {
         *self == TestclkSel::He
@@ -162,77 +163,77 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "clk_wifi"]
+    #[doc = "clk_core_b_2wrap"]
     #[inline(always)]
     pub fn h0(self) -> &'a mut crate::W<REG> {
         self.variant(TestclkSel::H0)
     }
-    #[doc = "clk_wifi"]
+    #[doc = "clk_core_l_2wrap"]
     #[inline(always)]
     pub fn h1(self) -> &'a mut crate::W<REG> {
         self.variant(TestclkSel::H1)
     }
-    #[doc = "clk_wifi"]
+    #[doc = "aclk_cci_2wrap"]
     #[inline(always)]
     pub fn h2(self) -> &'a mut crate::W<REG> {
         self.variant(TestclkSel::H2)
     }
-    #[doc = "clk_wifi"]
+    #[doc = "aclk_perihp_2wrap"]
     #[inline(always)]
     pub fn h3(self) -> &'a mut crate::W<REG> {
         self.variant(TestclkSel::H3)
     }
-    #[doc = "clk_wifi"]
+    #[doc = "aclk_perilp0_2wrap"]
     #[inline(always)]
     pub fn h4(self) -> &'a mut crate::W<REG> {
         self.variant(TestclkSel::H4)
     }
-    #[doc = "clk_wifi"]
+    #[doc = "hclk_perilp1_2wrap"]
     #[inline(always)]
     pub fn h5(self) -> &'a mut crate::W<REG> {
         self.variant(TestclkSel::H5)
     }
-    #[doc = "clk_wifi"]
+    #[doc = "aclk_center_2wrap"]
     #[inline(always)]
     pub fn h6(self) -> &'a mut crate::W<REG> {
         self.variant(TestclkSel::H6)
     }
-    #[doc = "clk_wifi"]
+    #[doc = "clk_ddrc_2wrap"]
     #[inline(always)]
     pub fn h7(self) -> &'a mut crate::W<REG> {
         self.variant(TestclkSel::H7)
     }
-    #[doc = "clk_wifi"]
+    #[doc = "aclk_gpu_2wrap"]
     #[inline(always)]
     pub fn h8(self) -> &'a mut crate::W<REG> {
         self.variant(TestclkSel::H8)
     }
-    #[doc = "clk_wifi"]
+    #[doc = "clk_rga_core_2wrap"]
     #[inline(always)]
     pub fn h9(self) -> &'a mut crate::W<REG> {
         self.variant(TestclkSel::H9)
     }
-    #[doc = "clk_wifi"]
+    #[doc = "clk_vdu_core_2wrap"]
     #[inline(always)]
     pub fn ha(self) -> &'a mut crate::W<REG> {
         self.variant(TestclkSel::Ha)
     }
-    #[doc = "clk_wifi"]
+    #[doc = "clk_pciephy_ref100m"]
     #[inline(always)]
     pub fn hb(self) -> &'a mut crate::W<REG> {
         self.variant(TestclkSel::Hb)
     }
-    #[doc = "clk_wifi"]
+    #[doc = "dclk_vop0_2wrap"]
     #[inline(always)]
     pub fn hc(self) -> &'a mut crate::W<REG> {
         self.variant(TestclkSel::Hc)
     }
-    #[doc = "clk_wifi"]
+    #[doc = "clk_rtc"]
     #[inline(always)]
     pub fn hd(self) -> &'a mut crate::W<REG> {
         self.variant(TestclkSel::Hd)
     }
-    #[doc = "clk_wifi"]
+    #[doc = "clkout_24m"]
     #[inline(always)]
     pub fn he(self) -> &'a mut crate::W<REG> {
         self.variant(TestclkSel::He)
@@ -244,9 +245,10 @@ where
     }
 }
 #[doc = "A53/A72 warm reset enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WarmrstnEn {
-    #[doc = "0: enable A53/A72 warm reset"]
+    #[doc = "0: disable A53/A72 warm reset"]
     B0 = 0,
     #[doc = "1: enable A53/A72 warm reset"]
     B1 = 1,
@@ -268,7 +270,7 @@ impl WarmrstnEnR {
             true => WarmrstnEn::B1,
         }
     }
-    #[doc = "enable A53/A72 warm reset"]
+    #[doc = "disable A53/A72 warm reset"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == WarmrstnEn::B0
@@ -285,7 +287,7 @@ impl<'a, REG> WarmrstnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable A53/A72 warm reset"]
+    #[doc = "disable A53/A72 warm reset"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(WarmrstnEn::B0)
@@ -297,9 +299,10 @@ where
     }
 }
 #[doc = "A53/A72 DBGRSTN reset enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DbgrstnEn {
-    #[doc = "0: enable A53/A72 DBGRSTN reset"]
+    #[doc = "0: disable A53/A72 DBGRSTN reset"]
     B0 = 0,
     #[doc = "1: enable A53/A72 DBGRSTN reset"]
     B1 = 1,
@@ -321,7 +324,7 @@ impl DbgrstnEnR {
             true => DbgrstnEn::B1,
         }
     }
-    #[doc = "enable A53/A72 DBGRSTN reset"]
+    #[doc = "disable A53/A72 DBGRSTN reset"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == DbgrstnEn::B0
@@ -338,7 +341,7 @@ impl<'a, REG> DbgrstnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable A53/A72 DBGRSTN reset"]
+    #[doc = "disable A53/A72 DBGRSTN reset"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(DbgrstnEn::B0)
@@ -350,9 +353,10 @@ where
     }
 }
 #[doc = "A53/A72 software reset wait for STANDBYWFI enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CoreSrstWfien {
-    #[doc = "0: A53/A72 software reset is asserted after STANDBYWFI valid"]
+    #[doc = "0: A53/A72 software reset has no relation to STANDBYWFI status"]
     B0 = 0,
     #[doc = "1: A53/A72 software reset is asserted after STANDBYWFI valid"]
     B1 = 1,
@@ -374,7 +378,7 @@ impl CoreSrstWfienR {
             true => CoreSrstWfien::B1,
         }
     }
-    #[doc = "A53/A72 software reset is asserted after STANDBYWFI valid"]
+    #[doc = "A53/A72 software reset has no relation to STANDBYWFI status"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CoreSrstWfien::B0
@@ -391,7 +395,7 @@ impl<'a, REG> CoreSrstWfienW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "A53/A72 software reset is asserted after STANDBYWFI valid"]
+    #[doc = "A53/A72 software reset has no relation to STANDBYWFI status"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CoreSrstWfien::B0)
@@ -403,9 +407,10 @@ where
     }
 }
 #[doc = "A53/A72 warm reset wait for STANDBYWFI enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CoreWrstWifen {
-    #[doc = "0: A53/A72 warm reset is asserted after STANDBYWFI valid"]
+    #[doc = "0: A53/A72 warm reset has no relation to STANDBYWFI status"]
     B0 = 0,
     #[doc = "1: A53/A72 warm reset is asserted after STANDBYWFI valid"]
     B1 = 1,
@@ -427,7 +432,7 @@ impl CoreWrstWifenR {
             true => CoreWrstWifen::B1,
         }
     }
-    #[doc = "A53/A72 warm reset is asserted after STANDBYWFI valid"]
+    #[doc = "A53/A72 warm reset has no relation to STANDBYWFI status"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CoreWrstWifen::B0
@@ -444,7 +449,7 @@ impl<'a, REG> CoreWrstWifenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "A53/A72 warm reset is asserted after STANDBYWFI valid"]
+    #[doc = "A53/A72 warm reset has no relation to STANDBYWFI status"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CoreWrstWifen::B0)
@@ -456,9 +461,10 @@ where
     }
 }
 #[doc = "A53/A72 dbg reset wait for STANDBYWFI enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CoreDbgrstWfien {
-    #[doc = "0: A53 dgb reset is asserted after STANDBYWFI valid"]
+    #[doc = "0: A53 dbg reset has no relation to STANDBYWFI status"]
     B0 = 0,
     #[doc = "1: A53 dgb reset is asserted after STANDBYWFI valid"]
     B1 = 1,
@@ -480,7 +486,7 @@ impl CoreDbgrstWfienR {
             true => CoreDbgrstWfien::B1,
         }
     }
-    #[doc = "A53 dgb reset is asserted after STANDBYWFI valid"]
+    #[doc = "A53 dbg reset has no relation to STANDBYWFI status"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CoreDbgrstWfien::B0
@@ -497,7 +503,7 @@ impl<'a, REG> CoreDbgrstWfienW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "A53 dgb reset is asserted after STANDBYWFI valid"]
+    #[doc = "A53 dbg reset has no relation to STANDBYWFI status"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CoreDbgrstWfien::B0)
@@ -508,7 +514,7 @@ where
         self.variant(CoreDbgrstWfien::B1)
     }
 }
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:3 - Output clock selection for test"]
@@ -579,7 +585,7 @@ impl W {
     pub fn core_dbgrst_wfien(&mut self) -> CoreDbgrstWfienW<CruMiscConSpec> {
         CoreDbgrstWfienW::new(self, 8)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruMiscConSpec> {

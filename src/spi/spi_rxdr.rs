@@ -2,19 +2,19 @@
 pub type R = crate::R<SpiRxdrSpec>;
 #[doc = "Register `SPI_RXDR` writer"]
 pub type W = crate::W<SpiRxdrSpec>;
-#[doc = "Field `RXDR` reader - Receive FIFO Data Register. When the register is read, data in the receive FIFO is accessed."]
+#[doc = "Field `RXDR` reader - Receive FIFO Data Register.\n\nWhen the register is read, data in the receive FIFO is accessed."]
 pub type RxdrR = crate::FieldReader<u16>;
-#[doc = "Field `RXDR` writer - Receive FIFO Data Register. When the register is read, data in the receive FIFO is accessed."]
+#[doc = "Field `RXDR` writer - Receive FIFO Data Register.\n\nWhen the register is read, data in the receive FIFO is accessed."]
 pub type RxdrW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:15 - Receive FIFO Data Register. When the register is read, data in the receive FIFO is accessed."]
+    #[doc = "Bits 0:15 - Receive FIFO Data Register.\n\nWhen the register is read, data in the receive FIFO is accessed."]
     #[inline(always)]
     pub fn rxdr(&self) -> RxdrR {
         RxdrR::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - Receive FIFO Data Register. When the register is read, data in the receive FIFO is accessed."]
+    #[doc = "Bits 0:15 - Receive FIFO Data Register.\n\nWhen the register is read, data in the receive FIFO is accessed."]
     #[inline(always)]
     #[must_use]
     pub fn rxdr(&mut self) -> RxdrW<SpiRxdrSpec> {

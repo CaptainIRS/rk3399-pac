@@ -3,9 +3,10 @@ pub type R = crate::R<PcieClientBasicStrapConfSpec>;
 #[doc = "Register `PCIE_CLIENT_BASIC_STRAP_CONF` writer"]
 pub type W = crate::W<PcieClientBasicStrapConfSpec>;
 #[doc = "Config enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ConfEn {
-    #[doc = "0: enable When this input is set to 0 in the EP mode, the core will generate a CRS Completion in response to Configuration Requests. In systems where the core configuration registers are loaded from RAM on power-up, this prevents the core from responding to Configuration Requests before all the registers are loaded. This input can be strapped high when the power-on default values of the Configuration Registers do not need to be modified before Configuration Space enumeration."]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable When this input is set to 0 in the EP mode, the core will generate a CRS Completion in response to Configuration Requests. In systems where the core configuration registers are loaded from RAM on power-up, this prevents the core from responding to Configuration Requests before all the registers are loaded. This input can be strapped high when the power-on default values of the Configuration Registers do not need to be modified before Configuration Space enumeration."]
     B1 = 1,
@@ -27,7 +28,7 @@ impl ConfEnR {
             true => ConfEn::B1,
         }
     }
-    #[doc = "enable When this input is set to 0 in the EP mode, the core will generate a CRS Completion in response to Configuration Requests. In systems where the core configuration registers are loaded from RAM on power-up, this prevents the core from responding to Configuration Requests before all the registers are loaded. This input can be strapped high when the power-on default values of the Configuration Registers do not need to be modified before Configuration Space enumeration."]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ConfEn::B0
@@ -44,7 +45,7 @@ impl<'a, REG> ConfEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable When this input is set to 0 in the EP mode, the core will generate a CRS Completion in response to Configuration Requests. In systems where the core configuration registers are loaded from RAM on power-up, this prevents the core from responding to Configuration Requests before all the registers are loaded. This input can be strapped high when the power-on default values of the Configuration Registers do not need to be modified before Configuration Space enumeration."]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ConfEn::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Link training enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LinkTrainEn {
-    #[doc = "0: enable link training This input must be set to 1 to enable the LTSSM to bring up the link. Setting it to 0 forces the LTSSM to stay in the Detect Quiet state."]
+    #[doc = "0: Quite state"]
     B0 = 0,
     #[doc = "1: enable link training This input must be set to 1 to enable the LTSSM to bring up the link. Setting it to 0 forces the LTSSM to stay in the Detect Quiet state."]
     B1 = 1,
@@ -80,7 +82,7 @@ impl LinkTrainEnR {
             true => LinkTrainEn::B1,
         }
     }
-    #[doc = "enable link training This input must be set to 1 to enable the LTSSM to bring up the link. Setting it to 0 forces the LTSSM to stay in the Detect Quiet state."]
+    #[doc = "Quite state"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == LinkTrainEn::B0
@@ -97,7 +99,7 @@ impl<'a, REG> LinkTrainEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable link training This input must be set to 1 to enable the LTSSM to bring up the link. Setting it to 0 forces the LTSSM to stay in the Detect Quiet state."]
+    #[doc = "Quite state"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(LinkTrainEn::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "Single root I/O virtualization feature enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SrIovEn {
-    #[doc = "0: enable SR-IOV feature In a core supporting the Single Root I/O Virtualization feature, this strap input must be tied high to enable the SR-IOV feature. The ari_en input must also be strapped high to enable the SR- IOV feature."]
+    #[doc = "0: disable SR-IOV feature"]
     B0 = 0,
     #[doc = "1: enable SR-IOV feature In a core supporting the Single Root I/O Virtualization feature, this strap input must be tied high to enable the SR-IOV feature. The ari_en input must also be strapped high to enable the SR- IOV feature."]
     B1 = 1,
@@ -133,7 +136,7 @@ impl SrIovEnR {
             true => SrIovEn::B1,
         }
     }
-    #[doc = "enable SR-IOV feature In a core supporting the Single Root I/O Virtualization feature, this strap input must be tied high to enable the SR-IOV feature. The ari_en input must also be strapped high to enable the SR- IOV feature."]
+    #[doc = "disable SR-IOV feature"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SrIovEn::B0
@@ -150,7 +153,7 @@ impl<'a, REG> SrIovEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable SR-IOV feature In a core supporting the Single Root I/O Virtualization feature, this strap input must be tied high to enable the SR-IOV feature. The ari_en input must also be strapped high to enable the SR- IOV feature."]
+    #[doc = "disable SR-IOV feature"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SrIovEn::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "Alternate interpretation enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AriEn {
-    #[doc = "0: alternate interpretation of the PCI Routing ID This input is strapped to 0 for legacy interpretation of the PCI Routing ID (8-bit Bus + 5-bit Device + 3- bit Function). A 1 at this input enables the alternate interpretation (8-bit Bus + 8-bit Function)."]
+    #[doc = "0: legacy interpretation of the PCI Routing ID"]
     B0 = 0,
     #[doc = "1: alternate interpretation of the PCI Routing ID This input is strapped to 0 for legacy interpretation of the PCI Routing ID (8-bit Bus + 5-bit Device + 3- bit Function). A 1 at this input enables the alternate interpretation (8-bit Bus + 8-bit Function)."]
     B1 = 1,
@@ -186,7 +190,7 @@ impl AriEnR {
             true => AriEn::B1,
         }
     }
-    #[doc = "alternate interpretation of the PCI Routing ID This input is strapped to 0 for legacy interpretation of the PCI Routing ID (8-bit Bus + 5-bit Device + 3- bit Function). A 1 at this input enables the alternate interpretation (8-bit Bus + 8-bit Function)."]
+    #[doc = "legacy interpretation of the PCI Routing ID"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == AriEn::B0
@@ -203,7 +207,7 @@ impl<'a, REG> AriEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "alternate interpretation of the PCI Routing ID This input is strapped to 0 for legacy interpretation of the PCI Routing ID (8-bit Bus + 5-bit Device + 3- bit Function). A 1 at this input enables the alternate interpretation (8-bit Bus + 8-bit Function)."]
+    #[doc = "legacy interpretation of the PCI Routing ID"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(AriEn::B0)
@@ -214,14 +218,15 @@ where
         self.variant(AriEn::B1)
     }
 }
-#[doc = "Field `LANE_COUNT_IN` reader - configure the lane count supported 2’b11: reserved 2’b10: X4 2’b01: X2 2’b00: X1"]
+#[doc = "Field `LANE_COUNT_IN` reader - configure the lane count supported\n\n2’b11: reserved\n\n2’b10: X4\n\n2’b01: X2\n\n2’b00: X1"]
 pub type LaneCountInR = crate::FieldReader;
-#[doc = "Field `LANE_COUNT_IN` writer - configure the lane count supported 2’b11: reserved 2’b10: X4 2’b01: X2 2’b00: X1"]
+#[doc = "Field `LANE_COUNT_IN` writer - configure the lane count supported\n\n2’b11: reserved\n\n2’b10: X4\n\n2’b01: X2\n\n2’b00: X1"]
 pub type LaneCountInW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Controller operation mode select\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ModeSelect {
-    #[doc = "0: Root Port operation"]
+    #[doc = "0: Endpoint operation"]
     B0 = 0,
     #[doc = "1: Root Port operation"]
     B1 = 1,
@@ -243,7 +248,7 @@ impl ModeSelectR {
             true => ModeSelect::B1,
         }
     }
-    #[doc = "Root Port operation"]
+    #[doc = "Endpoint operation"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ModeSelect::B0
@@ -260,7 +265,7 @@ impl<'a, REG> ModeSelectW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Root Port operation"]
+    #[doc = "Endpoint operation"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ModeSelect::B0)
@@ -272,9 +277,10 @@ where
     }
 }
 #[doc = "Generation support select\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PcieGenSel {
-    #[doc = "0: Gen2 mode This strap input selects the generation of the PCI Express protocol supported by the core. If Gen1 mode. The core advertises only Gen1 capability in this mode, and will always operate at Gen1 speed. If Gen2 mode. The core advertises Gen1 and Gen2 capabilities in this mode, but not Gen3. The link may operate at Gen1 or Gen2 speed."]
+    #[doc = "0: Gen1 mode"]
     B0 = 0,
     #[doc = "1: Gen2 mode This strap input selects the generation of the PCI Express protocol supported by the core. If Gen1 mode. The core advertises only Gen1 capability in this mode, and will always operate at Gen1 speed. If Gen2 mode. The core advertises Gen1 and Gen2 capabilities in this mode, but not Gen3. The link may operate at Gen1 or Gen2 speed."]
     B1 = 1,
@@ -296,7 +302,7 @@ impl PcieGenSelR {
             true => PcieGenSel::B1,
         }
     }
-    #[doc = "Gen2 mode This strap input selects the generation of the PCI Express protocol supported by the core. If Gen1 mode. The core advertises only Gen1 capability in this mode, and will always operate at Gen1 speed. If Gen2 mode. The core advertises Gen1 and Gen2 capabilities in this mode, but not Gen3. The link may operate at Gen1 or Gen2 speed."]
+    #[doc = "Gen1 mode"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PcieGenSel::B0
@@ -313,7 +319,7 @@ impl<'a, REG> PcieGenSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Gen2 mode This strap input selects the generation of the PCI Express protocol supported by the core. If Gen1 mode. The core advertises only Gen1 capability in this mode, and will always operate at Gen1 speed. If Gen2 mode. The core advertises Gen1 and Gen2 capabilities in this mode, but not Gen3. The link may operate at Gen1 or Gen2 speed."]
+    #[doc = "Gen1 mode"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PcieGenSel::B0)
@@ -324,11 +330,12 @@ where
         self.variant(PcieGenSel::B1)
     }
 }
-#[doc = "Write mask bits For each served bit\n\nValue on reset: 0"]
+#[doc = "Write mask bits\n\nFor each served bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum WriteMask {
-    #[doc = "0: write enable"]
+    #[doc = "0: write mask"]
     B0 = 0,
     #[doc = "1: write enable"]
     B1 = 1,
@@ -342,14 +349,14 @@ impl From<WriteMask> for u16 {
 impl crate::FieldSpec for WriteMask {
     type Ux = u16;
 }
-#[doc = "Field `WRITE_MASK` writer - Write mask bits For each served bit"]
+#[doc = "Field `WRITE_MASK` writer - Write mask bits\n\nFor each served bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, WriteMask>;
 impl<'a, REG> WriteMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u16>,
 {
-    #[doc = "write enable"]
+    #[doc = "write mask"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(WriteMask::B0)
@@ -381,7 +388,7 @@ impl R {
     pub fn ari_en(&self) -> AriEnR {
         AriEnR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bits 4:5 - configure the lane count supported 2’b11: reserved 2’b10: X4 2’b01: X2 2’b00: X1"]
+    #[doc = "Bits 4:5 - configure the lane count supported\n\n2’b11: reserved\n\n2’b10: X4\n\n2’b01: X2\n\n2’b00: X1"]
     #[inline(always)]
     pub fn lane_count_in(&self) -> LaneCountInR {
         LaneCountInR::new(((self.bits >> 4) & 3) as u8)
@@ -422,7 +429,7 @@ impl W {
     pub fn ari_en(&mut self) -> AriEnW<PcieClientBasicStrapConfSpec> {
         AriEnW::new(self, 3)
     }
-    #[doc = "Bits 4:5 - configure the lane count supported 2’b11: reserved 2’b10: X4 2’b01: X2 2’b00: X1"]
+    #[doc = "Bits 4:5 - configure the lane count supported\n\n2’b11: reserved\n\n2’b10: X4\n\n2’b01: X2\n\n2’b00: X1"]
     #[inline(always)]
     #[must_use]
     pub fn lane_count_in(&mut self) -> LaneCountInW<PcieClientBasicStrapConfSpec> {
@@ -440,7 +447,7 @@ impl W {
     pub fn pcie_gen_sel(&mut self) -> PcieGenSelW<PcieClientBasicStrapConfSpec> {
         PcieGenSelW::new(self, 7)
     }
-    #[doc = "Bits 16:31 - Write mask bits For each served bit"]
+    #[doc = "Bits 16:31 - Write mask bits\n\nFor each served bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<PcieClientBasicStrapConfSpec> {

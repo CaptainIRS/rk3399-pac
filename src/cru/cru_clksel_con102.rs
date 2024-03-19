@@ -2,19 +2,19 @@
 pub type R = crate::R<CruClkselCon102Spec>;
 #[doc = "Register `CRU_CLKSEL_CON102` writer"]
 pub type W = crate::W<CruClkselCon102Spec>;
-#[doc = "Field `CLK_UART2_FRAC_DIV_CON` reader - uart2_frac divider control register Fout = Fsrc*numerator/denominator High 16-bit for numerator Low 16-bit for denominator"]
+#[doc = "Field `CLK_UART2_FRAC_DIV_CON` reader - uart2_frac divider control register\n\nFout = Fsrc*numerator/denominator\n\nHigh 16-bit for numerator\n\nLow 16-bit for denominator"]
 pub type ClkUart2FracDivConR = crate::FieldReader<u32>;
-#[doc = "Field `CLK_UART2_FRAC_DIV_CON` writer - uart2_frac divider control register Fout = Fsrc*numerator/denominator High 16-bit for numerator Low 16-bit for denominator"]
+#[doc = "Field `CLK_UART2_FRAC_DIV_CON` writer - uart2_frac divider control register\n\nFout = Fsrc*numerator/denominator\n\nHigh 16-bit for numerator\n\nLow 16-bit for denominator"]
 pub type ClkUart2FracDivConW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - uart2_frac divider control register Fout = Fsrc*numerator/denominator High 16-bit for numerator Low 16-bit for denominator"]
+    #[doc = "Bits 0:31 - uart2_frac divider control register\n\nFout = Fsrc*numerator/denominator\n\nHigh 16-bit for numerator\n\nLow 16-bit for denominator"]
     #[inline(always)]
     pub fn clk_uart2_frac_div_con(&self) -> ClkUart2FracDivConR {
         ClkUart2FracDivConR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - uart2_frac divider control register Fout = Fsrc*numerator/denominator High 16-bit for numerator Low 16-bit for denominator"]
+    #[doc = "Bits 0:31 - uart2_frac divider control register\n\nFout = Fsrc*numerator/denominator\n\nHigh 16-bit for numerator\n\nLow 16-bit for denominator"]
     #[inline(always)]
     #[must_use]
     pub fn clk_uart2_frac_div_con(&mut self) -> ClkUart2FracDivConW<CruClkselCon102Spec> {

@@ -3,14 +3,15 @@ pub type R = crate::R<LaneMapSpec>;
 #[doc = "Register `LANE_MAP` writer"]
 pub type W = crate::W<LaneMapSpec>;
 #[doc = "Control physical lane 0 will map to which logic lane:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Lane0Map {
-    #[doc = "3: Logic lane 0,"]
+    #[doc = "3: Logic lane 3,"]
     B11 = 3,
-    #[doc = "2: Logic lane 0,"]
+    #[doc = "2: Logic lane 2,"]
     B10 = 2,
-    #[doc = "1: Logic lane 0,"]
+    #[doc = "1: Logic lane 1,"]
     B01 = 1,
     #[doc = "0: Logic lane 0,"]
     B00 = 0,
@@ -38,17 +39,17 @@ impl Lane0MapR {
             _ => unreachable!(),
         }
     }
-    #[doc = "Logic lane 0,"]
+    #[doc = "Logic lane 3,"]
     #[inline(always)]
     pub fn is_b11(&self) -> bool {
         *self == Lane0Map::B11
     }
-    #[doc = "Logic lane 0,"]
+    #[doc = "Logic lane 2,"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Lane0Map::B10
     }
-    #[doc = "Logic lane 0,"]
+    #[doc = "Logic lane 1,"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Lane0Map::B01
@@ -66,17 +67,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Logic lane 0,"]
+    #[doc = "Logic lane 3,"]
     #[inline(always)]
     pub fn b11(self) -> &'a mut crate::W<REG> {
         self.variant(Lane0Map::B11)
     }
-    #[doc = "Logic lane 0,"]
+    #[doc = "Logic lane 2,"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Lane0Map::B10)
     }
-    #[doc = "Logic lane 0,"]
+    #[doc = "Logic lane 1,"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Lane0Map::B01)
@@ -88,14 +89,15 @@ where
     }
 }
 #[doc = "Control physical lane 1 will map to which logic lane:\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Lane1Map {
-    #[doc = "3: Logic lane 0,"]
+    #[doc = "3: Logic lane 3,"]
     B11 = 3,
-    #[doc = "2: Logic lane 0,"]
+    #[doc = "2: Logic lane 2,"]
     B10 = 2,
-    #[doc = "1: Logic lane 0,"]
+    #[doc = "1: Logic lane 1,"]
     B01 = 1,
     #[doc = "0: Logic lane 0,"]
     B00 = 0,
@@ -123,17 +125,17 @@ impl Lane1MapR {
             _ => unreachable!(),
         }
     }
-    #[doc = "Logic lane 0,"]
+    #[doc = "Logic lane 3,"]
     #[inline(always)]
     pub fn is_b11(&self) -> bool {
         *self == Lane1Map::B11
     }
-    #[doc = "Logic lane 0,"]
+    #[doc = "Logic lane 2,"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Lane1Map::B10
     }
-    #[doc = "Logic lane 0,"]
+    #[doc = "Logic lane 1,"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Lane1Map::B01
@@ -151,17 +153,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Logic lane 0,"]
+    #[doc = "Logic lane 3,"]
     #[inline(always)]
     pub fn b11(self) -> &'a mut crate::W<REG> {
         self.variant(Lane1Map::B11)
     }
-    #[doc = "Logic lane 0,"]
+    #[doc = "Logic lane 2,"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Lane1Map::B10)
     }
-    #[doc = "Logic lane 0,"]
+    #[doc = "Logic lane 1,"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Lane1Map::B01)
@@ -173,14 +175,15 @@ where
     }
 }
 #[doc = "Control physical lane 2 will map to which logic lane:\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Lane2Map {
-    #[doc = "3: Logic lane 0,"]
+    #[doc = "3: Logic lane 3,"]
     B11 = 3,
-    #[doc = "2: Logic lane 0,"]
+    #[doc = "2: Logic lane 2,"]
     B10 = 2,
-    #[doc = "1: Logic lane 0,"]
+    #[doc = "1: Logic lane 1,"]
     B01 = 1,
     #[doc = "0: Logic lane 0,"]
     B00 = 0,
@@ -208,17 +211,17 @@ impl Lane2MapR {
             _ => unreachable!(),
         }
     }
-    #[doc = "Logic lane 0,"]
+    #[doc = "Logic lane 3,"]
     #[inline(always)]
     pub fn is_b11(&self) -> bool {
         *self == Lane2Map::B11
     }
-    #[doc = "Logic lane 0,"]
+    #[doc = "Logic lane 2,"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Lane2Map::B10
     }
-    #[doc = "Logic lane 0,"]
+    #[doc = "Logic lane 1,"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Lane2Map::B01
@@ -236,17 +239,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Logic lane 0,"]
+    #[doc = "Logic lane 3,"]
     #[inline(always)]
     pub fn b11(self) -> &'a mut crate::W<REG> {
         self.variant(Lane2Map::B11)
     }
-    #[doc = "Logic lane 0,"]
+    #[doc = "Logic lane 2,"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Lane2Map::B10)
     }
-    #[doc = "Logic lane 0,"]
+    #[doc = "Logic lane 1,"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Lane2Map::B01)
@@ -258,14 +261,15 @@ where
     }
 }
 #[doc = "Control physical lane 3 will map to which logic lane:\n\nValue on reset: 3"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Lane3Map {
-    #[doc = "3: Logic lane 0,"]
+    #[doc = "3: Logic lane 3,"]
     B11 = 3,
-    #[doc = "2: Logic lane 0,"]
+    #[doc = "2: Logic lane 2,"]
     B10 = 2,
-    #[doc = "1: Logic lane 0,"]
+    #[doc = "1: Logic lane 1,"]
     B01 = 1,
     #[doc = "0: Logic lane 0,"]
     B00 = 0,
@@ -293,17 +297,17 @@ impl Lane3MapR {
             _ => unreachable!(),
         }
     }
-    #[doc = "Logic lane 0,"]
+    #[doc = "Logic lane 3,"]
     #[inline(always)]
     pub fn is_b11(&self) -> bool {
         *self == Lane3Map::B11
     }
-    #[doc = "Logic lane 0,"]
+    #[doc = "Logic lane 2,"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Lane3Map::B10
     }
-    #[doc = "Logic lane 0,"]
+    #[doc = "Logic lane 1,"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Lane3Map::B01
@@ -321,17 +325,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Logic lane 0,"]
+    #[doc = "Logic lane 3,"]
     #[inline(always)]
     pub fn b11(self) -> &'a mut crate::W<REG> {
         self.variant(Lane3Map::B11)
     }
-    #[doc = "Logic lane 0,"]
+    #[doc = "Logic lane 2,"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Lane3Map::B10)
     }
-    #[doc = "Logic lane 0,"]
+    #[doc = "Logic lane 1,"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Lane3Map::B01)

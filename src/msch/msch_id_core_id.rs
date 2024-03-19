@@ -2,7 +2,7 @@
 pub type R = crate::R<MschIdCoreIdSpec>;
 #[doc = "Field `CORETYPEID` reader - Field identifying the type of IP."]
 pub type CoretypeidR = crate::FieldReader;
-#[doc = "Field `CORECHECKSUM` reader - Field containing a checksum of the parameters of the IP. For memory schedule 0 , this value is 0x00dc1b For memory schedule 1 , this value is 0xc2f11d"]
+#[doc = "Field `CORECHECKSUM` reader - Field containing a checksum of the parameters of the IP.\n\nFor memory schedule 0 , this value is 0x00dc1b\n\nFor memory schedule 1 , this value is 0xc2f11d"]
 pub type CorechecksumR = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:7 - Field identifying the type of IP."]
@@ -10,7 +10,7 @@ impl R {
     pub fn coretypeid(&self) -> CoretypeidR {
         CoretypeidR::new((self.bits & 0xff) as u8)
     }
-    #[doc = "Bits 8:31 - Field containing a checksum of the parameters of the IP. For memory schedule 0 , this value is 0x00dc1b For memory schedule 1 , this value is 0xc2f11d"]
+    #[doc = "Bits 8:31 - Field containing a checksum of the parameters of the IP.\n\nFor memory schedule 0 , this value is 0x00dc1b\n\nFor memory schedule 1 , this value is 0xc2f11d"]
     #[inline(always)]
     pub fn corechecksum(&self) -> CorechecksumR {
         CorechecksumR::new((self.bits >> 8) & 0x00ff_ffff)

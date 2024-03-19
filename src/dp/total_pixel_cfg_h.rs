@@ -2,19 +2,19 @@
 pub type R = crate::R<TotalPixelCfgHSpec>;
 #[doc = "Register `TOTAL_PIXEL_CFG_H` writer"]
 pub type W = crate::W<TotalPixelCfgHSpec>;
-#[doc = "Field `TOTAL_PIXEL_CFG_H` reader - TOTAL_PIXEL_CFG is used to specify the number of pixels in each line. This register is TOTAL_PIXEL_CFG \\[13:8\\]. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+#[doc = "Field `TOTAL_PIXEL_CFG_H` reader - TOTAL_PIXEL_CFG is used to specify the \n\nnumber of pixels in each line. This register is \n\nTOTAL_PIXEL_CFG \\[13:8\\]. \n\nWhen F_SEL is 1, this value is sent in main \n\nstream attribute packet. \n\nWhen BIST_EN is 1, this bit field is used to \n\nspecify the BIST video stream format."]
 pub type TotalPixelCfgHR = crate::FieldReader;
-#[doc = "Field `TOTAL_PIXEL_CFG_H` writer - TOTAL_PIXEL_CFG is used to specify the number of pixels in each line. This register is TOTAL_PIXEL_CFG \\[13:8\\]. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+#[doc = "Field `TOTAL_PIXEL_CFG_H` writer - TOTAL_PIXEL_CFG is used to specify the \n\nnumber of pixels in each line. This register is \n\nTOTAL_PIXEL_CFG \\[13:8\\]. \n\nWhen F_SEL is 1, this value is sent in main \n\nstream attribute packet. \n\nWhen BIST_EN is 1, this bit field is used to \n\nspecify the BIST video stream format."]
 pub type TotalPixelCfgHW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
-    #[doc = "Bits 0:5 - TOTAL_PIXEL_CFG is used to specify the number of pixels in each line. This register is TOTAL_PIXEL_CFG \\[13:8\\]. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+    #[doc = "Bits 0:5 - TOTAL_PIXEL_CFG is used to specify the \n\nnumber of pixels in each line. This register is \n\nTOTAL_PIXEL_CFG \\[13:8\\]. \n\nWhen F_SEL is 1, this value is sent in main \n\nstream attribute packet. \n\nWhen BIST_EN is 1, this bit field is used to \n\nspecify the BIST video stream format."]
     #[inline(always)]
     pub fn total_pixel_cfg_h(&self) -> TotalPixelCfgHR {
         TotalPixelCfgHR::new((self.bits & 0x3f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:5 - TOTAL_PIXEL_CFG is used to specify the number of pixels in each line. This register is TOTAL_PIXEL_CFG \\[13:8\\]. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+    #[doc = "Bits 0:5 - TOTAL_PIXEL_CFG is used to specify the \n\nnumber of pixels in each line. This register is \n\nTOTAL_PIXEL_CFG \\[13:8\\]. \n\nWhen F_SEL is 1, this value is sent in main \n\nstream attribute packet. \n\nWhen BIST_EN is 1, this bit field is used to \n\nspecify the BIST video stream format."]
     #[inline(always)]
     #[must_use]
     pub fn total_pixel_cfg_h(&mut self) -> TotalPixelCfgHW<TotalPixelCfgHSpec> {

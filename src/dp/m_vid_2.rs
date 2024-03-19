@@ -2,19 +2,19 @@
 pub type R = crate::R<MVid2Spec>;
 #[doc = "Register `M_VID_2` writer"]
 pub type W = crate::W<MVid2Spec>;
-#[doc = "Field `M_VID_2` reader - M_VID \\[23:16\\]. If FIX_M_VID is 1, this M_VID is used. Otherwise the M_VID value which chip calculated is used"]
+#[doc = "Field `M_VID_2` reader - M_VID \\[23:16\\]. If FIX_M_VID is 1, this \n\nM_VID is used. Otherwise the M_VID value \n\nwhich chip calculated is used"]
 pub type MVid2R = crate::FieldReader;
-#[doc = "Field `M_VID_2` writer - M_VID \\[23:16\\]. If FIX_M_VID is 1, this M_VID is used. Otherwise the M_VID value which chip calculated is used"]
+#[doc = "Field `M_VID_2` writer - M_VID \\[23:16\\]. If FIX_M_VID is 1, this \n\nM_VID is used. Otherwise the M_VID value \n\nwhich chip calculated is used"]
 pub type MVid2W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - M_VID \\[23:16\\]. If FIX_M_VID is 1, this M_VID is used. Otherwise the M_VID value which chip calculated is used"]
+    #[doc = "Bits 0:7 - M_VID \\[23:16\\]. If FIX_M_VID is 1, this \n\nM_VID is used. Otherwise the M_VID value \n\nwhich chip calculated is used"]
     #[inline(always)]
     pub fn m_vid_2(&self) -> MVid2R {
         MVid2R::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - M_VID \\[23:16\\]. If FIX_M_VID is 1, this M_VID is used. Otherwise the M_VID value which chip calculated is used"]
+    #[doc = "Bits 0:7 - M_VID \\[23:16\\]. If FIX_M_VID is 1, this \n\nM_VID is used. Otherwise the M_VID value \n\nwhich chip calculated is used"]
     #[inline(always)]
     #[must_use]
     pub fn m_vid_2(&mut self) -> MVid2W<MVid2Spec> {

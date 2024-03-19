@@ -2,14 +2,15 @@
 pub type R = crate::R<CruClkselCon40Spec>;
 #[doc = "Register `CRU_CLKSEL_CON40` writer"]
 pub type W = crate::W<CruClkselCon40Spec>;
-#[doc = "Field `CLK_USB3_OTG0_SUSPEND_DIV_CON` reader - clk_usb3_otg0_suspend divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_USB3_OTG0_SUSPEND_DIV_CON` reader - clk_usb3_otg0_suspend divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkUsb3Otg0SuspendDivConR = crate::FieldReader<u16>;
-#[doc = "Field `CLK_USB3_OTG0_SUSPEND_DIV_CON` writer - clk_usb3_otg0_suspend divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_USB3_OTG0_SUSPEND_DIV_CON` writer - clk_usb3_otg0_suspend divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkUsb3Otg0SuspendDivConW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 #[doc = "clk_usb3_otg0_suspend_src clock select control register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClkUsb3Otg0SuspendSrcSel {
-    #[doc = "0: clk_32k"]
+    #[doc = "0: xin_24m"]
     B0 = 0,
     #[doc = "1: clk_32k"]
     B1 = 1,
@@ -31,7 +32,7 @@ impl ClkUsb3Otg0SuspendSrcSelR {
             true => ClkUsb3Otg0SuspendSrcSel::B1,
         }
     }
-    #[doc = "clk_32k"]
+    #[doc = "xin_24m"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClkUsb3Otg0SuspendSrcSel::B0
@@ -48,7 +49,7 @@ impl<'a, REG> ClkUsb3Otg0SuspendSrcSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clk_32k"]
+    #[doc = "xin_24m"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClkUsb3Otg0SuspendSrcSel::B0)
@@ -59,10 +60,10 @@ where
         self.variant(ClkUsb3Otg0SuspendSrcSel::B1)
     }
 }
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:9 - clk_usb3_otg0_suspend divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:9 - clk_usb3_otg0_suspend divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn clk_usb3_otg0_suspend_div_con(&self) -> ClkUsb3Otg0SuspendDivConR {
         ClkUsb3Otg0SuspendDivConR::new((self.bits & 0x03ff) as u16)
@@ -74,7 +75,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:9 - clk_usb3_otg0_suspend divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:9 - clk_usb3_otg0_suspend divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn clk_usb3_otg0_suspend_div_con(
@@ -90,7 +91,7 @@ impl W {
     ) -> ClkUsb3Otg0SuspendSrcSelW<CruClkselCon40Spec> {
         ClkUsb3Otg0SuspendSrcSelW::new(self, 15)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkselCon40Spec> {

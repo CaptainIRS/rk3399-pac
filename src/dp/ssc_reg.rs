@@ -3,30 +3,31 @@ pub type R = crate::R<SscRegSpec>;
 #[doc = "Register `SSC_REG` writer"]
 pub type W = crate::W<SscRegSpec>;
 #[doc = "\n\nValue on reset: 10"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SscDepth {
-    #[doc = "0: 5500ppm 1100-1111:6000ppm"]
+    #[doc = "0: disable"]
     B0000 = 0,
-    #[doc = "1: 5500ppm 1100-1111:6000ppm"]
+    #[doc = "1: 500ppm"]
     B0001 = 1,
-    #[doc = "2: 5500ppm 1100-1111:6000ppm"]
+    #[doc = "2: 1000ppm"]
     B0010 = 2,
-    #[doc = "3: 5500ppm 1100-1111:6000ppm"]
+    #[doc = "3: 1500ppm"]
     B0011 = 3,
-    #[doc = "4: 5500ppm 1100-1111:6000ppm"]
+    #[doc = "4: 2000ppm"]
     B0100 = 4,
-    #[doc = "5: 5500ppm 1100-1111:6000ppm"]
+    #[doc = "5: 2500ppm"]
     B0101 = 5,
-    #[doc = "6: 5500ppm 1100-1111:6000ppm"]
+    #[doc = "6: 3000ppm"]
     B0110 = 6,
-    #[doc = "7: 5500ppm 1100-1111:6000ppm"]
+    #[doc = "7: 3500ppm"]
     B0111 = 7,
-    #[doc = "8: 5500ppm 1100-1111:6000ppm"]
+    #[doc = "8: 4000ppm"]
     B1000 = 8,
-    #[doc = "9: 5500ppm 1100-1111:6000ppm"]
+    #[doc = "9: 4500ppm"]
     B1001 = 9,
-    #[doc = "10: 5500ppm 1100-1111:6000ppm"]
+    #[doc = "10: 5000ppm"]
     B1010 = 10,
     #[doc = "11: 5500ppm 1100-1111:6000ppm"]
     B1011 = 11,
@@ -62,57 +63,57 @@ impl SscDepthR {
             _ => None,
         }
     }
-    #[doc = "5500ppm 1100-1111:6000ppm"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0000(&self) -> bool {
         *self == SscDepth::B0000
     }
-    #[doc = "5500ppm 1100-1111:6000ppm"]
+    #[doc = "500ppm"]
     #[inline(always)]
     pub fn is_b0001(&self) -> bool {
         *self == SscDepth::B0001
     }
-    #[doc = "5500ppm 1100-1111:6000ppm"]
+    #[doc = "1000ppm"]
     #[inline(always)]
     pub fn is_b0010(&self) -> bool {
         *self == SscDepth::B0010
     }
-    #[doc = "5500ppm 1100-1111:6000ppm"]
+    #[doc = "1500ppm"]
     #[inline(always)]
     pub fn is_b0011(&self) -> bool {
         *self == SscDepth::B0011
     }
-    #[doc = "5500ppm 1100-1111:6000ppm"]
+    #[doc = "2000ppm"]
     #[inline(always)]
     pub fn is_b0100(&self) -> bool {
         *self == SscDepth::B0100
     }
-    #[doc = "5500ppm 1100-1111:6000ppm"]
+    #[doc = "2500ppm"]
     #[inline(always)]
     pub fn is_b0101(&self) -> bool {
         *self == SscDepth::B0101
     }
-    #[doc = "5500ppm 1100-1111:6000ppm"]
+    #[doc = "3000ppm"]
     #[inline(always)]
     pub fn is_b0110(&self) -> bool {
         *self == SscDepth::B0110
     }
-    #[doc = "5500ppm 1100-1111:6000ppm"]
+    #[doc = "3500ppm"]
     #[inline(always)]
     pub fn is_b0111(&self) -> bool {
         *self == SscDepth::B0111
     }
-    #[doc = "5500ppm 1100-1111:6000ppm"]
+    #[doc = "4000ppm"]
     #[inline(always)]
     pub fn is_b1000(&self) -> bool {
         *self == SscDepth::B1000
     }
-    #[doc = "5500ppm 1100-1111:6000ppm"]
+    #[doc = "4500ppm"]
     #[inline(always)]
     pub fn is_b1001(&self) -> bool {
         *self == SscDepth::B1001
     }
-    #[doc = "5500ppm 1100-1111:6000ppm"]
+    #[doc = "5000ppm"]
     #[inline(always)]
     pub fn is_b1010(&self) -> bool {
         *self == SscDepth::B1010
@@ -130,57 +131,57 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "5500ppm 1100-1111:6000ppm"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0000(self) -> &'a mut crate::W<REG> {
         self.variant(SscDepth::B0000)
     }
-    #[doc = "5500ppm 1100-1111:6000ppm"]
+    #[doc = "500ppm"]
     #[inline(always)]
     pub fn b0001(self) -> &'a mut crate::W<REG> {
         self.variant(SscDepth::B0001)
     }
-    #[doc = "5500ppm 1100-1111:6000ppm"]
+    #[doc = "1000ppm"]
     #[inline(always)]
     pub fn b0010(self) -> &'a mut crate::W<REG> {
         self.variant(SscDepth::B0010)
     }
-    #[doc = "5500ppm 1100-1111:6000ppm"]
+    #[doc = "1500ppm"]
     #[inline(always)]
     pub fn b0011(self) -> &'a mut crate::W<REG> {
         self.variant(SscDepth::B0011)
     }
-    #[doc = "5500ppm 1100-1111:6000ppm"]
+    #[doc = "2000ppm"]
     #[inline(always)]
     pub fn b0100(self) -> &'a mut crate::W<REG> {
         self.variant(SscDepth::B0100)
     }
-    #[doc = "5500ppm 1100-1111:6000ppm"]
+    #[doc = "2500ppm"]
     #[inline(always)]
     pub fn b0101(self) -> &'a mut crate::W<REG> {
         self.variant(SscDepth::B0101)
     }
-    #[doc = "5500ppm 1100-1111:6000ppm"]
+    #[doc = "3000ppm"]
     #[inline(always)]
     pub fn b0110(self) -> &'a mut crate::W<REG> {
         self.variant(SscDepth::B0110)
     }
-    #[doc = "5500ppm 1100-1111:6000ppm"]
+    #[doc = "3500ppm"]
     #[inline(always)]
     pub fn b0111(self) -> &'a mut crate::W<REG> {
         self.variant(SscDepth::B0111)
     }
-    #[doc = "5500ppm 1100-1111:6000ppm"]
+    #[doc = "4000ppm"]
     #[inline(always)]
     pub fn b1000(self) -> &'a mut crate::W<REG> {
         self.variant(SscDepth::B1000)
     }
-    #[doc = "5500ppm 1100-1111:6000ppm"]
+    #[doc = "4500ppm"]
     #[inline(always)]
     pub fn b1001(self) -> &'a mut crate::W<REG> {
         self.variant(SscDepth::B1001)
     }
-    #[doc = "5500ppm 1100-1111:6000ppm"]
+    #[doc = "5000ppm"]
     #[inline(always)]
     pub fn b1010(self) -> &'a mut crate::W<REG> {
         self.variant(SscDepth::B1010)
@@ -192,14 +193,15 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SscMode {
-    #[doc = "0: up spread"]
+    #[doc = "0: disable"]
     B00 = 0,
-    #[doc = "1: up spread"]
+    #[doc = "1: down spread"]
     B01 = 1,
-    #[doc = "2: up spread"]
+    #[doc = "2: center spread"]
     B10 = 2,
     #[doc = "3: up spread"]
     B11 = 3,
@@ -227,17 +229,17 @@ impl SscModeR {
             _ => unreachable!(),
         }
     }
-    #[doc = "up spread"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == SscMode::B00
     }
-    #[doc = "up spread"]
+    #[doc = "down spread"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == SscMode::B01
     }
-    #[doc = "up spread"]
+    #[doc = "center spread"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == SscMode::B10
@@ -255,17 +257,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "up spread"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(SscMode::B00)
     }
-    #[doc = "up spread"]
+    #[doc = "down spread"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(SscMode::B01)
     }
-    #[doc = "up spread"]
+    #[doc = "center spread"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(SscMode::B10)
@@ -277,14 +279,15 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SscOffset {
-    #[doc = "0: down 200ppm"]
+    #[doc = "0: no"]
     B00 = 0,
-    #[doc = "1: down 200ppm"]
+    #[doc = "1: up 100ppm"]
     B01 = 1,
-    #[doc = "2: down 200ppm"]
+    #[doc = "2: down 100ppm"]
     B10 = 2,
     #[doc = "3: down 200ppm"]
     B11 = 3,
@@ -312,17 +315,17 @@ impl SscOffsetR {
             _ => unreachable!(),
         }
     }
-    #[doc = "down 200ppm"]
+    #[doc = "no"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == SscOffset::B00
     }
-    #[doc = "down 200ppm"]
+    #[doc = "up 100ppm"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == SscOffset::B01
     }
-    #[doc = "down 200ppm"]
+    #[doc = "down 100ppm"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == SscOffset::B10
@@ -340,17 +343,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "down 200ppm"]
+    #[doc = "no"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(SscOffset::B00)
     }
-    #[doc = "down 200ppm"]
+    #[doc = "up 100ppm"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(SscOffset::B01)
     }
-    #[doc = "down 200ppm"]
+    #[doc = "down 100ppm"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(SscOffset::B10)

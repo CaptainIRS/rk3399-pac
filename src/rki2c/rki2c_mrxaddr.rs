@@ -2,14 +2,15 @@
 pub type R = crate::R<Rki2cMrxaddrSpec>;
 #[doc = "Register `RKI2C_MRXADDR` writer"]
 pub type W = crate::W<Rki2cMrxaddrSpec>;
-#[doc = "Field `SADDR` reader - master address register the lowest bit indicate write or read 24 bits address register"]
+#[doc = "Field `SADDR` reader - master address register\n\nthe lowest bit indicate write or read\n\n24 bits address register"]
 pub type SaddrR = crate::FieldReader<u32>;
-#[doc = "Field `SADDR` writer - master address register the lowest bit indicate write or read 24 bits address register"]
+#[doc = "Field `SADDR` writer - master address register\n\nthe lowest bit indicate write or read\n\n24 bits address register"]
 pub type SaddrW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 #[doc = "address low byte valid\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Addlvld {
-    #[doc = "0: valid"]
+    #[doc = "0: invalid"]
     B0 = 0,
     #[doc = "1: valid"]
     B1 = 1,
@@ -31,7 +32,7 @@ impl AddlvldR {
             true => Addlvld::B1,
         }
     }
-    #[doc = "valid"]
+    #[doc = "invalid"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Addlvld::B0
@@ -48,7 +49,7 @@ impl<'a, REG> AddlvldW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "valid"]
+    #[doc = "invalid"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Addlvld::B0)
@@ -60,9 +61,10 @@ where
     }
 }
 #[doc = "address middle byte valid\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Addmvld {
-    #[doc = "0: valid"]
+    #[doc = "0: invalid"]
     B0 = 0,
     #[doc = "1: valid"]
     B1 = 1,
@@ -84,7 +86,7 @@ impl AddmvldR {
             true => Addmvld::B1,
         }
     }
-    #[doc = "valid"]
+    #[doc = "invalid"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Addmvld::B0
@@ -101,7 +103,7 @@ impl<'a, REG> AddmvldW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "valid"]
+    #[doc = "invalid"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Addmvld::B0)
@@ -113,9 +115,10 @@ where
     }
 }
 #[doc = "address high byte valid\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Addhvld {
-    #[doc = "0: valid"]
+    #[doc = "0: invalid"]
     B0 = 0,
     #[doc = "1: valid"]
     B1 = 1,
@@ -137,7 +140,7 @@ impl AddhvldR {
             true => Addhvld::B1,
         }
     }
-    #[doc = "valid"]
+    #[doc = "invalid"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Addhvld::B0
@@ -154,7 +157,7 @@ impl<'a, REG> AddhvldW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "valid"]
+    #[doc = "invalid"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Addhvld::B0)
@@ -166,7 +169,7 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 0:23 - master address register the lowest bit indicate write or read 24 bits address register"]
+    #[doc = "Bits 0:23 - master address register\n\nthe lowest bit indicate write or read\n\n24 bits address register"]
     #[inline(always)]
     pub fn saddr(&self) -> SaddrR {
         SaddrR::new(self.bits & 0x00ff_ffff)
@@ -188,7 +191,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:23 - master address register the lowest bit indicate write or read 24 bits address register"]
+    #[doc = "Bits 0:23 - master address register\n\nthe lowest bit indicate write or read\n\n24 bits address register"]
     #[inline(always)]
     #[must_use]
     pub fn saddr(&mut self) -> SaddrW<Rki2cMrxaddrSpec> {

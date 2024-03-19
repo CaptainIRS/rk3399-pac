@@ -3,9 +3,10 @@ pub type R = crate::R<GrfPciePerfCon0Spec>;
 #[doc = "Register `GRF_PCIE_PERF_CON0` writer"]
 pub type W = crate::W<GrfPciePerfCon0Spec>;
 #[doc = "axi_perf enable bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PcieSwAxiPerfWork {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl PcieSwAxiPerfWorkR {
             true => PcieSwAxiPerfWork::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PcieSwAxiPerfWork::B0
@@ -44,7 +45,7 @@ impl<'a, REG> PcieSwAxiPerfWorkW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PcieSwAxiPerfWork::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "axi_perf clear bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PcieSwAxiPerfClr {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl PcieSwAxiPerfClrR {
             true => PcieSwAxiPerfClr::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PcieSwAxiPerfClr::B0
@@ -97,7 +99,7 @@ impl<'a, REG> PcieSwAxiPerfClrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PcieSwAxiPerfClr::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "axi_perf counter type\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PcieSwAxiCntType {
-    #[doc = "0: ddr align transfer test"]
+    #[doc = "0: axi transfer test"]
     B0 = 0,
     #[doc = "1: ddr align transfer test"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl PcieSwAxiCntTypeR {
             true => PcieSwAxiCntType::B1,
         }
     }
-    #[doc = "ddr align transfer test"]
+    #[doc = "axi transfer test"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PcieSwAxiCntType::B0
@@ -150,7 +153,7 @@ impl<'a, REG> PcieSwAxiCntTypeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "ddr align transfer test"]
+    #[doc = "axi transfer test"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PcieSwAxiCntType::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "axi_perf counter id control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PcieSwArCntIdType {
-    #[doc = "0: count sw_ar_count_id read channel only"]
+    #[doc = "0: count all read channel id"]
     B0 = 0,
     #[doc = "1: count sw_ar_count_id read channel only"]
     B1 = 1,
@@ -186,7 +190,7 @@ impl PcieSwArCntIdTypeR {
             true => PcieSwArCntIdType::B1,
         }
     }
-    #[doc = "count sw_ar_count_id read channel only"]
+    #[doc = "count all read channel id"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PcieSwArCntIdType::B0
@@ -203,7 +207,7 @@ impl<'a, REG> PcieSwArCntIdTypeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "count sw_ar_count_id read channel only"]
+    #[doc = "count all read channel id"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PcieSwArCntIdType::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PcieSwAwCntIdType {
-    #[doc = "0: count sw_aw_count_id write channel only"]
+    #[doc = "0: count all write channels"]
     B0 = 0,
     #[doc = "1: count sw_aw_count_id write channel only"]
     B1 = 1,
@@ -239,7 +244,7 @@ impl PcieSwAwCntIdTypeR {
             true => PcieSwAwCntIdType::B1,
         }
     }
-    #[doc = "count sw_aw_count_id write channel only"]
+    #[doc = "count all write channels"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PcieSwAwCntIdType::B0
@@ -256,7 +261,7 @@ impl<'a, REG> PcieSwAwCntIdTypeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "count sw_aw_count_id write channel only"]
+    #[doc = "count all write channels"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PcieSwAwCntIdType::B0)
@@ -268,14 +273,15 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PcieSwDdrAlignType {
-    #[doc = "0: 128-Byte align"]
+    #[doc = "0: 16-Byte align"]
     D0 = 0,
-    #[doc = "1: 128-Byte align"]
+    #[doc = "1: 32-Byte align"]
     D1 = 1,
-    #[doc = "2: 128-Byte align"]
+    #[doc = "2: 64-Byte align"]
     D2 = 2,
     #[doc = "3: 128-Byte align"]
     D3 = 3,
@@ -303,17 +309,17 @@ impl PcieSwDdrAlignTypeR {
             _ => unreachable!(),
         }
     }
-    #[doc = "128-Byte align"]
+    #[doc = "16-Byte align"]
     #[inline(always)]
     pub fn is_d0(&self) -> bool {
         *self == PcieSwDdrAlignType::D0
     }
-    #[doc = "128-Byte align"]
+    #[doc = "32-Byte align"]
     #[inline(always)]
     pub fn is_d1(&self) -> bool {
         *self == PcieSwDdrAlignType::D1
     }
-    #[doc = "128-Byte align"]
+    #[doc = "64-Byte align"]
     #[inline(always)]
     pub fn is_d2(&self) -> bool {
         *self == PcieSwDdrAlignType::D2
@@ -331,17 +337,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "128-Byte align"]
+    #[doc = "16-Byte align"]
     #[inline(always)]
     pub fn d0(self) -> &'a mut crate::W<REG> {
         self.variant(PcieSwDdrAlignType::D0)
     }
-    #[doc = "128-Byte align"]
+    #[doc = "32-Byte align"]
     #[inline(always)]
     pub fn d1(self) -> &'a mut crate::W<REG> {
         self.variant(PcieSwDdrAlignType::D1)
     }
-    #[doc = "128-Byte align"]
+    #[doc = "64-Byte align"]
     #[inline(always)]
     pub fn d2(self) -> &'a mut crate::W<REG> {
         self.variant(PcieSwDdrAlignType::D2)
@@ -352,13 +358,13 @@ where
         self.variant(PcieSwDdrAlignType::D3)
     }
 }
-#[doc = "Field `PCIE_SW_RD_LATENCY_ID` reader - Axi read channel id for latency AXI_PERFormance test"]
+#[doc = "Field `PCIE_SW_RD_LATENCY_ID` reader - Axi read channel id for latency\n\nAXI_PERFormance test"]
 pub type PcieSwRdLatencyIdR = crate::FieldReader;
-#[doc = "Field `PCIE_SW_RD_LATENCY_ID` writer - Axi read channel id for latency AXI_PERFormance test"]
+#[doc = "Field `PCIE_SW_RD_LATENCY_ID` writer - Axi read channel id for latency\n\nAXI_PERFormance test"]
 pub type PcieSwRdLatencyIdW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0 - axi_perf enable bit"]
@@ -391,12 +397,12 @@ impl R {
     pub fn pcie_sw_ddr_align_type(&self) -> PcieSwDdrAlignTypeR {
         PcieSwDdrAlignTypeR::new(((self.bits >> 5) & 3) as u8)
     }
-    #[doc = "Bits 8:12 - Axi read channel id for latency AXI_PERFormance test"]
+    #[doc = "Bits 8:12 - Axi read channel id for latency\n\nAXI_PERFormance test"]
     #[inline(always)]
     pub fn pcie_sw_rd_latency_id(&self) -> PcieSwRdLatencyIdR {
         PcieSwRdLatencyIdR::new(((self.bits >> 8) & 0x1f) as u8)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
@@ -439,13 +445,13 @@ impl W {
     pub fn pcie_sw_ddr_align_type(&mut self) -> PcieSwDdrAlignTypeW<GrfPciePerfCon0Spec> {
         PcieSwDdrAlignTypeW::new(self, 5)
     }
-    #[doc = "Bits 8:12 - Axi read channel id for latency AXI_PERFormance test"]
+    #[doc = "Bits 8:12 - Axi read channel id for latency\n\nAXI_PERFormance test"]
     #[inline(always)]
     #[must_use]
     pub fn pcie_sw_rd_latency_id(&mut self) -> PcieSwRdLatencyIdW<GrfPciePerfCon0Spec> {
         PcieSwRdLatencyIdW::new(self, 8)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfPciePerfCon0Spec> {

@@ -2,11 +2,12 @@
 pub type R = crate::R<GrfGpio4bSmtSpec>;
 #[doc = "Register `GRF_GPIO4B_SMT` writer"]
 pub type W = crate::W<GrfGpio4bSmtSpec>;
-#[doc = "GPIO schmitt trigger control, every GPIO bit corresponding to 1bits .\n\nValue on reset: 63"]
+#[doc = "GPIO schmitt trigger control, every GPIO bit\n\ncorresponding to 1bits .\n\nValue on reset: 63"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gpio4bSmt {
-    #[doc = "0: Schmitt trigger enabled."]
+    #[doc = "0: No hysteresis"]
     B0 = 0,
     #[doc = "1: Schmitt trigger enabled."]
     B1 = 1,
@@ -20,7 +21,7 @@ impl From<Gpio4bSmt> for u8 {
 impl crate::FieldSpec for Gpio4bSmt {
     type Ux = u8;
 }
-#[doc = "Field `GPIO4B_SMT` reader - GPIO schmitt trigger control, every GPIO bit corresponding to 1bits ."]
+#[doc = "Field `GPIO4B_SMT` reader - GPIO schmitt trigger control, every GPIO bit\n\ncorresponding to 1bits ."]
 pub type Gpio4bSmtR = crate::FieldReader<Gpio4bSmt>;
 impl Gpio4bSmtR {
     #[doc = "Get enumerated values variant"]
@@ -32,7 +33,7 @@ impl Gpio4bSmtR {
             _ => None,
         }
     }
-    #[doc = "Schmitt trigger enabled."]
+    #[doc = "No hysteresis"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Gpio4bSmt::B0
@@ -43,14 +44,14 @@ impl Gpio4bSmtR {
         *self == Gpio4bSmt::B1
     }
 }
-#[doc = "Field `GPIO4B_SMT` writer - GPIO schmitt trigger control, every GPIO bit corresponding to 1bits ."]
+#[doc = "Field `GPIO4B_SMT` writer - GPIO schmitt trigger control, every GPIO bit\n\ncorresponding to 1bits ."]
 pub type Gpio4bSmtW<'a, REG> = crate::FieldWriter<'a, REG, 6, Gpio4bSmt>;
 impl<'a, REG> Gpio4bSmtW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Schmitt trigger enabled."]
+    #[doc = "No hysteresis"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio4bSmt::B0)
@@ -61,30 +62,30 @@ where
         self.variant(Gpio4bSmt::B1)
     }
 }
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:5 - GPIO schmitt trigger control, every GPIO bit corresponding to 1bits ."]
+    #[doc = "Bits 0:5 - GPIO schmitt trigger control, every GPIO bit\n\ncorresponding to 1bits ."]
     #[inline(always)]
     pub fn gpio4b_smt(&self) -> Gpio4bSmtR {
         Gpio4bSmtR::new((self.bits & 0x3f) as u8)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:5 - GPIO schmitt trigger control, every GPIO bit corresponding to 1bits ."]
+    #[doc = "Bits 0:5 - GPIO schmitt trigger control, every GPIO bit\n\ncorresponding to 1bits ."]
     #[inline(always)]
     #[must_use]
     pub fn gpio4b_smt(&mut self) -> Gpio4bSmtW<GrfGpio4bSmtSpec> {
         Gpio4bSmtW::new(self, 0)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfGpio4bSmtSpec> {

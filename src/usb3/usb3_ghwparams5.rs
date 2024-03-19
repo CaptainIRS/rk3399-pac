@@ -1,9 +1,9 @@
 #[doc = "Register `USB3_GHWPARAMS5` reader"]
 pub type R = crate::R<Usb3Ghwparams5Spec>;
-#[doc = "Field `GHWPARAMS5` reader - Global Hardware Parameters Register 5 Global Hardware Parameters Register 5"]
+#[doc = "Field `GHWPARAMS5` reader - Global Hardware Parameters Register 5\n\nGlobal Hardware Parameters Register 5"]
 pub type Ghwparams5R = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Global Hardware Parameters Register 5 Global Hardware Parameters Register 5"]
+    #[doc = "Bits 0:31 - Global Hardware Parameters Register 5\n\nGlobal Hardware Parameters Register 5"]
     #[inline(always)]
     pub fn ghwparams5(&self) -> Ghwparams5R {
         Ghwparams5R::new(self.bits)

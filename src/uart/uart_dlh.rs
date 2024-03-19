@@ -2,19 +2,19 @@
 pub type R = crate::R<UartDlhSpec>;
 #[doc = "Register `UART_DLH` writer"]
 pub type W = crate::W<UartDlhSpec>;
-#[doc = "Field `BAUD_RATE_DIVISOR_H` reader - Upper 8 bits of a 16-bit, read/write, Divisor Latch register that contains the baud rate divisor for the UART."]
+#[doc = "Field `BAUD_RATE_DIVISOR_H` reader - Upper 8 bits of a 16-bit, read/write, Divisor Latch register that\n\ncontains the baud rate divisor for the UART."]
 pub type BaudRateDivisorHR = crate::FieldReader;
-#[doc = "Field `BAUD_RATE_DIVISOR_H` writer - Upper 8 bits of a 16-bit, read/write, Divisor Latch register that contains the baud rate divisor for the UART."]
+#[doc = "Field `BAUD_RATE_DIVISOR_H` writer - Upper 8 bits of a 16-bit, read/write, Divisor Latch register that\n\ncontains the baud rate divisor for the UART."]
 pub type BaudRateDivisorHW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - Upper 8 bits of a 16-bit, read/write, Divisor Latch register that contains the baud rate divisor for the UART."]
+    #[doc = "Bits 0:7 - Upper 8 bits of a 16-bit, read/write, Divisor Latch register that\n\ncontains the baud rate divisor for the UART."]
     #[inline(always)]
     pub fn baud_rate_divisor_h(&self) -> BaudRateDivisorHR {
         BaudRateDivisorHR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Upper 8 bits of a 16-bit, read/write, Divisor Latch register that contains the baud rate divisor for the UART."]
+    #[doc = "Bits 0:7 - Upper 8 bits of a 16-bit, read/write, Divisor Latch register that\n\ncontains the baud rate divisor for the UART."]
     #[inline(always)]
     #[must_use]
     pub fn baud_rate_divisor_h(&mut self) -> BaudRateDivisorHW<UartDlhSpec> {

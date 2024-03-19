@@ -3,10 +3,10 @@ pub type R = crate::R<SdmmcRstNSpec>;
 #[doc = "Register `SDMMC_RST_n` writer"]
 pub type W = crate::W<SdmmcRstNSpec>;
 #[doc = "Hardware reset.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CardReset {
-    #[doc = "0: reset These bits cause the cards to enter pre-idle state, which requires them to be re-initialized. CARD_RESET\\[0\\]
-should be set to 1'b1 to reset card."]
+    #[doc = "0: active mode"]
     B0 = 0,
     #[doc = "1: reset These bits cause the cards to enter pre-idle state, which requires them to be re-initialized. CARD_RESET\\[0\\]
 should be set to 1'b1 to reset card."]
@@ -29,8 +29,7 @@ impl CardResetR {
             true => CardReset::B1,
         }
     }
-    #[doc = "reset These bits cause the cards to enter pre-idle state, which requires them to be re-initialized. CARD_RESET\\[0\\]
-should be set to 1'b1 to reset card."]
+    #[doc = "active mode"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CardReset::B0
@@ -48,8 +47,7 @@ impl<'a, REG> CardResetW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "reset These bits cause the cards to enter pre-idle state, which requires them to be re-initialized. CARD_RESET\\[0\\]
-should be set to 1'b1 to reset card."]
+    #[doc = "active mode"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CardReset::B0)

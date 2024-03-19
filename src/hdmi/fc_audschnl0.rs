@@ -36,7 +36,7 @@ impl W {
         OiecCgmsaW::new(self, 4)
     }
 }
-#[doc = "IEC Copyright indication\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_audschnl0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_audschnl0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer Audio Sample Channel Status Configuration Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_audschnl0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_audschnl0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcAudschnl0Spec;
 impl crate::RegisterSpec for FcAudschnl0Spec {
     type Ux = u8;

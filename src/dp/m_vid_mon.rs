@@ -2,19 +2,19 @@
 pub type R = crate::R<MVidMonSpec>;
 #[doc = "Register `M_VID_MON` writer"]
 pub type W = crate::W<MVidMonSpec>;
-#[doc = "Field `M_VID_MON` reader - This register shows M_VID value which is actually transmitted to Rx for monitoring purpose."]
+#[doc = "Field `M_VID_MON` reader - This register shows M_VID value which is actually \n\ntransmitted to Rx for monitoring purpose."]
 pub type MVidMonR = crate::FieldReader<u32>;
-#[doc = "Field `M_VID_MON` writer - This register shows M_VID value which is actually transmitted to Rx for monitoring purpose."]
+#[doc = "Field `M_VID_MON` writer - This register shows M_VID value which is actually \n\ntransmitted to Rx for monitoring purpose."]
 pub type MVidMonW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
-    #[doc = "Bits 0:23 - This register shows M_VID value which is actually transmitted to Rx for monitoring purpose."]
+    #[doc = "Bits 0:23 - This register shows M_VID value which is actually \n\ntransmitted to Rx for monitoring purpose."]
     #[inline(always)]
     pub fn m_vid_mon(&self) -> MVidMonR {
         MVidMonR::new(self.bits & 0x00ff_ffff)
     }
 }
 impl W {
-    #[doc = "Bits 0:23 - This register shows M_VID value which is actually transmitted to Rx for monitoring purpose."]
+    #[doc = "Bits 0:23 - This register shows M_VID value which is actually \n\ntransmitted to Rx for monitoring purpose."]
     #[inline(always)]
     #[must_use]
     pub fn m_vid_mon(&mut self) -> MVidMonW<MVidMonSpec> {

@@ -1,9 +1,9 @@
 #[doc = "Register `ERRLOG_ErrLog1` reader"]
 pub type R = crate::R<ErrlogErrLog1Spec>;
-#[doc = "Field `ERRLOG1` reader - Contains transport protocol packet header field RouteID of the logged error. Unused bits are read as 0."]
+#[doc = "Field `ERRLOG1` reader - Contains transport protocol packet header field RouteID of the\n\nlogged error. Unused bits are read as 0."]
 pub type Errlog1R = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:21 - Contains transport protocol packet header field RouteID of the logged error. Unused bits are read as 0."]
+    #[doc = "Bits 0:21 - Contains transport protocol packet header field RouteID of the\n\nlogged error. Unused bits are read as 0."]
     #[inline(always)]
     pub fn errlog1(&self) -> Errlog1R {
         Errlog1R::new(self.bits & 0x003f_ffff)

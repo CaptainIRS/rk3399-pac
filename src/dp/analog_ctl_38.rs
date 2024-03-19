@@ -2,19 +2,19 @@
 pub type R = crate::R<AnalogCtl38Spec>;
 #[doc = "Register `ANALOG_CTL_38` writer"]
 pub type W = crate::W<AnalogCtl38Spec>;
-#[doc = "Field `R_CH0_PC2_FORCE_VALUE` reader - The forced ch0 PC2 value (for calculating ch0_swing_bit and ch0_pc2_bit) value in specific V_diff and Pre_emphasis."]
+#[doc = "Field `R_CH0_PC2_FORCE_VALUE` reader - The forced ch0 PC2 value (for calculating \n\nch0_swing_bit and ch0_pc2_bit) value in \n\nspecific V_diff and Pre_emphasis."]
 pub type RCh0Pc2ForceValueR = crate::FieldReader;
-#[doc = "Field `R_CH0_PC2_FORCE_VALUE` writer - The forced ch0 PC2 value (for calculating ch0_swing_bit and ch0_pc2_bit) value in specific V_diff and Pre_emphasis."]
+#[doc = "Field `R_CH0_PC2_FORCE_VALUE` writer - The forced ch0 PC2 value (for calculating \n\nch0_swing_bit and ch0_pc2_bit) value in \n\nspecific V_diff and Pre_emphasis."]
 pub type RCh0Pc2ForceValueW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
-    #[doc = "Bits 0:5 - The forced ch0 PC2 value (for calculating ch0_swing_bit and ch0_pc2_bit) value in specific V_diff and Pre_emphasis."]
+    #[doc = "Bits 0:5 - The forced ch0 PC2 value (for calculating \n\nch0_swing_bit and ch0_pc2_bit) value in \n\nspecific V_diff and Pre_emphasis."]
     #[inline(always)]
     pub fn r_ch0_pc2_force_value(&self) -> RCh0Pc2ForceValueR {
         RCh0Pc2ForceValueR::new((self.bits & 0x3f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:5 - The forced ch0 PC2 value (for calculating ch0_swing_bit and ch0_pc2_bit) value in specific V_diff and Pre_emphasis."]
+    #[doc = "Bits 0:5 - The forced ch0 PC2 value (for calculating \n\nch0_swing_bit and ch0_pc2_bit) value in \n\nspecific V_diff and Pre_emphasis."]
     #[inline(always)]
     #[must_use]
     pub fn r_ch0_pc2_force_value(&mut self) -> RCh0Pc2ForceValueW<AnalogCtl38Spec> {

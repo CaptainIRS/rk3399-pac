@@ -2,17 +2,18 @@
 pub type R = crate::R<I2sRxcrSpec>;
 #[doc = "Register `I2S_RXCR` writer"]
 pub type W = crate::W<I2sRxcrSpec>;
-#[doc = "Field `VDW` reader - Valid Data width (Can be written only when XFER\\[1\\]
-bit is 0.) 0~14:reserved 15:16bit 16:17bit 17:18bit 18:19bit ...... n:(n+1)bit ...... 28:29bit 29:30bit 30:31bit 31:32bit"]
+#[doc = "Field `VDW` reader - Valid Data width\n\n(Can be written only when XFER\\[1\\]
+bit is 0.)\n\n0~14:reserved\n\n15:16bit\n\n16:17bit\n\n17:18bit\n\n18:19bit\n\n......\n\nn:(n+1)bit\n\n......\n\n28:29bit\n\n29:30bit\n\n30:31bit\n\n31:32bit"]
 pub type VdwR = crate::FieldReader;
-#[doc = "Field `VDW` writer - Valid Data width (Can be written only when XFER\\[1\\]
-bit is 0.) 0~14:reserved 15:16bit 16:17bit 17:18bit 18:19bit ...... n:(n+1)bit ...... 28:29bit 29:30bit 30:31bit 31:32bit"]
+#[doc = "Field `VDW` writer - Valid Data width\n\n(Can be written only when XFER\\[1\\]
+bit is 0.)\n\n0~14:reserved\n\n15:16bit\n\n16:17bit\n\n17:18bit\n\n18:19bit\n\n......\n\nn:(n+1)bit\n\n......\n\n28:29bit\n\n29:30bit\n\n30:31bit\n\n31:32bit"]
 pub type VdwW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Transfer format select (Can be written only when XFER\\[1\\]
+#[doc = "Transfer format select\n\n(Can be written only when XFER\\[1\\]
 bit is 0.)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tfs {
-    #[doc = "0: pcm"]
+    #[doc = "0: i2s"]
     B0 = 0,
     #[doc = "1: pcm"]
     B1 = 1,
@@ -23,7 +24,7 @@ impl From<Tfs> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TFS` reader - Transfer format select (Can be written only when XFER\\[1\\]
+#[doc = "Field `TFS` reader - Transfer format select\n\n(Can be written only when XFER\\[1\\]
 bit is 0.)"]
 pub type TfsR = crate::BitReader<Tfs>;
 impl TfsR {
@@ -35,7 +36,7 @@ impl TfsR {
             true => Tfs::B1,
         }
     }
-    #[doc = "pcm"]
+    #[doc = "i2s"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Tfs::B0
@@ -46,14 +47,14 @@ impl TfsR {
         *self == Tfs::B1
     }
 }
-#[doc = "Field `TFS` writer - Transfer format select (Can be written only when XFER\\[1\\]
+#[doc = "Field `TFS` writer - Transfer format select\n\n(Can be written only when XFER\\[1\\]
 bit is 0.)"]
 pub type TfsW<'a, REG> = crate::BitWriter<'a, REG, Tfs>;
 impl<'a, REG> TfsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "pcm"]
+    #[doc = "i2s"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Tfs::B0)
@@ -64,16 +65,17 @@ where
         self.variant(Tfs::B1)
     }
 }
-#[doc = "PCM bus mode (Can be written only when XFER\\[1\\]
+#[doc = "PCM bus mode\n\n(Can be written only when XFER\\[1\\]
 bit is 0.)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Pbm {
-    #[doc = "0: PCM delay 3 mode"]
+    #[doc = "0: PCM no delay mode"]
     D0 = 0,
-    #[doc = "1: PCM delay 3 mode"]
+    #[doc = "1: PCM delay 1 mode"]
     D1 = 1,
-    #[doc = "2: PCM delay 3 mode"]
+    #[doc = "2: PCM delay 2 mode"]
     D2 = 2,
     #[doc = "3: PCM delay 3 mode"]
     D3 = 3,
@@ -87,7 +89,7 @@ impl From<Pbm> for u8 {
 impl crate::FieldSpec for Pbm {
     type Ux = u8;
 }
-#[doc = "Field `PBM` reader - PCM bus mode (Can be written only when XFER\\[1\\]
+#[doc = "Field `PBM` reader - PCM bus mode\n\n(Can be written only when XFER\\[1\\]
 bit is 0.)"]
 pub type PbmR = crate::FieldReader<Pbm>;
 impl PbmR {
@@ -102,17 +104,17 @@ impl PbmR {
             _ => unreachable!(),
         }
     }
-    #[doc = "PCM delay 3 mode"]
+    #[doc = "PCM no delay mode"]
     #[inline(always)]
     pub fn is_d0(&self) -> bool {
         *self == Pbm::D0
     }
-    #[doc = "PCM delay 3 mode"]
+    #[doc = "PCM delay 1 mode"]
     #[inline(always)]
     pub fn is_d1(&self) -> bool {
         *self == Pbm::D1
     }
-    #[doc = "PCM delay 3 mode"]
+    #[doc = "PCM delay 2 mode"]
     #[inline(always)]
     pub fn is_d2(&self) -> bool {
         *self == Pbm::D2
@@ -123,7 +125,7 @@ impl PbmR {
         *self == Pbm::D3
     }
 }
-#[doc = "Field `PBM` writer - PCM bus mode (Can be written only when XFER\\[1\\]
+#[doc = "Field `PBM` writer - PCM bus mode\n\n(Can be written only when XFER\\[1\\]
 bit is 0.)"]
 pub type PbmW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Pbm>;
 impl<'a, REG> PbmW<'a, REG>
@@ -131,17 +133,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "PCM delay 3 mode"]
+    #[doc = "PCM no delay mode"]
     #[inline(always)]
     pub fn d0(self) -> &'a mut crate::W<REG> {
         self.variant(Pbm::D0)
     }
-    #[doc = "PCM delay 3 mode"]
+    #[doc = "PCM delay 1 mode"]
     #[inline(always)]
     pub fn d1(self) -> &'a mut crate::W<REG> {
         self.variant(Pbm::D1)
     }
-    #[doc = "PCM delay 3 mode"]
+    #[doc = "PCM delay 2 mode"]
     #[inline(always)]
     pub fn d2(self) -> &'a mut crate::W<REG> {
         self.variant(Pbm::D2)
@@ -152,16 +154,17 @@ where
         self.variant(Pbm::D3)
     }
 }
-#[doc = "I2S bus mode (Can be written only when XFER\\[1\\]
+#[doc = "I2S bus mode\n\n(Can be written only when XFER\\[1\\]
 bit is 0.)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ibm {
-    #[doc = "0: reserved"]
+    #[doc = "0: I2S normal"]
     D0 = 0,
-    #[doc = "1: reserved"]
+    #[doc = "1: I2S Left justified"]
     D1 = 1,
-    #[doc = "2: reserved"]
+    #[doc = "2: I2S Right justified"]
     D2 = 2,
     #[doc = "3: reserved"]
     D3 = 3,
@@ -175,7 +178,7 @@ impl From<Ibm> for u8 {
 impl crate::FieldSpec for Ibm {
     type Ux = u8;
 }
-#[doc = "Field `IBM` reader - I2S bus mode (Can be written only when XFER\\[1\\]
+#[doc = "Field `IBM` reader - I2S bus mode\n\n(Can be written only when XFER\\[1\\]
 bit is 0.)"]
 pub type IbmR = crate::FieldReader<Ibm>;
 impl IbmR {
@@ -190,17 +193,17 @@ impl IbmR {
             _ => unreachable!(),
         }
     }
-    #[doc = "reserved"]
+    #[doc = "I2S normal"]
     #[inline(always)]
     pub fn is_d0(&self) -> bool {
         *self == Ibm::D0
     }
-    #[doc = "reserved"]
+    #[doc = "I2S Left justified"]
     #[inline(always)]
     pub fn is_d1(&self) -> bool {
         *self == Ibm::D1
     }
-    #[doc = "reserved"]
+    #[doc = "I2S Right justified"]
     #[inline(always)]
     pub fn is_d2(&self) -> bool {
         *self == Ibm::D2
@@ -211,7 +214,7 @@ impl IbmR {
         *self == Ibm::D3
     }
 }
-#[doc = "Field `IBM` writer - I2S bus mode (Can be written only when XFER\\[1\\]
+#[doc = "Field `IBM` writer - I2S bus mode\n\n(Can be written only when XFER\\[1\\]
 bit is 0.)"]
 pub type IbmW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Ibm>;
 impl<'a, REG> IbmW<'a, REG>
@@ -219,17 +222,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "reserved"]
+    #[doc = "I2S normal"]
     #[inline(always)]
     pub fn d0(self) -> &'a mut crate::W<REG> {
         self.variant(Ibm::D0)
     }
-    #[doc = "reserved"]
+    #[doc = "I2S Left justified"]
     #[inline(always)]
     pub fn d1(self) -> &'a mut crate::W<REG> {
         self.variant(Ibm::D1)
     }
-    #[doc = "reserved"]
+    #[doc = "I2S Right justified"]
     #[inline(always)]
     pub fn d2(self) -> &'a mut crate::W<REG> {
         self.variant(Ibm::D2)
@@ -240,11 +243,12 @@ where
         self.variant(Ibm::D3)
     }
 }
-#[doc = "First Bit Mode (Can be written only when XFER\\[1\\]
+#[doc = "First Bit Mode\n\n(Can be written only when XFER\\[1\\]
 bit is 0.)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fbm {
-    #[doc = "0: LSB"]
+    #[doc = "0: MSB"]
     B0 = 0,
     #[doc = "1: LSB"]
     B1 = 1,
@@ -255,7 +259,7 @@ impl From<Fbm> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FBM` reader - First Bit Mode (Can be written only when XFER\\[1\\]
+#[doc = "Field `FBM` reader - First Bit Mode\n\n(Can be written only when XFER\\[1\\]
 bit is 0.)"]
 pub type FbmR = crate::BitReader<Fbm>;
 impl FbmR {
@@ -267,7 +271,7 @@ impl FbmR {
             true => Fbm::B1,
         }
     }
-    #[doc = "LSB"]
+    #[doc = "MSB"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Fbm::B0
@@ -278,14 +282,14 @@ impl FbmR {
         *self == Fbm::B1
     }
 }
-#[doc = "Field `FBM` writer - First Bit Mode (Can be written only when XFER\\[1\\]
+#[doc = "Field `FBM` writer - First Bit Mode\n\n(Can be written only when XFER\\[1\\]
 bit is 0.)"]
 pub type FbmW<'a, REG> = crate::BitWriter<'a, REG, Fbm>;
 impl<'a, REG> FbmW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "LSB"]
+    #[doc = "MSB"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Fbm::B0)
@@ -296,11 +300,12 @@ where
         self.variant(Fbm::B1)
     }
 }
-#[doc = "Store justified mode (Can be written only when XFER\\[1\\]
-bit is 0.) 16bit~31bit DATA stored in 32 bits width fifo. If VDW select 16bit data, this bit is valid only when HWT select 0.Because if HWT is 1, every fifo unit contain two 16bit data and 32 bit space is full, it is impossible to choose justified mode.\n\nValue on reset: 0"]
+#[doc = "Store justified mode\n\n(Can be written only when XFER\\[1\\]
+bit is 0.)\n\n16bit~31bit DATA stored in 32 bits width fifo.\n\nIf VDW select 16bit data, this bit is valid only when HWT select\n\n0.Because if HWT is 1, every fifo unit contain two 16bit data and\n\n32 bit space is full, it is impossible to choose justified mode.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sjm {
-    #[doc = "0: left justified"]
+    #[doc = "0: right justified"]
     B0 = 0,
     #[doc = "1: left justified"]
     B1 = 1,
@@ -311,8 +316,8 @@ impl From<Sjm> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SJM` reader - Store justified mode (Can be written only when XFER\\[1\\]
-bit is 0.) 16bit~31bit DATA stored in 32 bits width fifo. If VDW select 16bit data, this bit is valid only when HWT select 0.Because if HWT is 1, every fifo unit contain two 16bit data and 32 bit space is full, it is impossible to choose justified mode."]
+#[doc = "Field `SJM` reader - Store justified mode\n\n(Can be written only when XFER\\[1\\]
+bit is 0.)\n\n16bit~31bit DATA stored in 32 bits width fifo.\n\nIf VDW select 16bit data, this bit is valid only when HWT select\n\n0.Because if HWT is 1, every fifo unit contain two 16bit data and\n\n32 bit space is full, it is impossible to choose justified mode."]
 pub type SjmR = crate::BitReader<Sjm>;
 impl SjmR {
     #[doc = "Get enumerated values variant"]
@@ -323,7 +328,7 @@ impl SjmR {
             true => Sjm::B1,
         }
     }
-    #[doc = "left justified"]
+    #[doc = "right justified"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Sjm::B0
@@ -334,14 +339,14 @@ impl SjmR {
         *self == Sjm::B1
     }
 }
-#[doc = "Field `SJM` writer - Store justified mode (Can be written only when XFER\\[1\\]
-bit is 0.) 16bit~31bit DATA stored in 32 bits width fifo. If VDW select 16bit data, this bit is valid only when HWT select 0.Because if HWT is 1, every fifo unit contain two 16bit data and 32 bit space is full, it is impossible to choose justified mode."]
+#[doc = "Field `SJM` writer - Store justified mode\n\n(Can be written only when XFER\\[1\\]
+bit is 0.)\n\n16bit~31bit DATA stored in 32 bits width fifo.\n\nIf VDW select 16bit data, this bit is valid only when HWT select\n\n0.Because if HWT is 1, every fifo unit contain two 16bit data and\n\n32 bit space is full, it is impossible to choose justified mode."]
 pub type SjmW<'a, REG> = crate::BitWriter<'a, REG, Sjm>;
 impl<'a, REG> SjmW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "left justified"]
+    #[doc = "right justified"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Sjm::B0)
@@ -352,11 +357,12 @@ where
         self.variant(Sjm::B1)
     }
 }
-#[doc = "Halfword word transform (Can be written only when XFER\\[1\\]
-bit is 0.) Only valid when VDW select 16bit data.\n\nValue on reset: 0"]
+#[doc = "Halfword word transform\n\n(Can be written only when XFER\\[1\\]
+bit is 0.)\n\nOnly valid when VDW select 16bit data.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hwt {
-    #[doc = "0: low 16bit data valid to AHB/APB bus, high 16 bit data invalid."]
+    #[doc = "0: 32 bit data valid to AHB/APB bus. Low 16 bit for left channel and high 16 bit for right channel."]
     B0 = 0,
     #[doc = "1: low 16bit data valid to AHB/APB bus, high 16 bit data invalid."]
     B1 = 1,
@@ -367,8 +373,8 @@ impl From<Hwt> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HWT` reader - Halfword word transform (Can be written only when XFER\\[1\\]
-bit is 0.) Only valid when VDW select 16bit data."]
+#[doc = "Field `HWT` reader - Halfword word transform\n\n(Can be written only when XFER\\[1\\]
+bit is 0.)\n\nOnly valid when VDW select 16bit data."]
 pub type HwtR = crate::BitReader<Hwt>;
 impl HwtR {
     #[doc = "Get enumerated values variant"]
@@ -379,7 +385,7 @@ impl HwtR {
             true => Hwt::B1,
         }
     }
-    #[doc = "low 16bit data valid to AHB/APB bus, high 16 bit data invalid."]
+    #[doc = "32 bit data valid to AHB/APB bus. Low 16 bit for left channel and high 16 bit for right channel."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Hwt::B0
@@ -390,14 +396,14 @@ impl HwtR {
         *self == Hwt::B1
     }
 }
-#[doc = "Field `HWT` writer - Halfword word transform (Can be written only when XFER\\[1\\]
-bit is 0.) Only valid when VDW select 16bit data."]
+#[doc = "Field `HWT` writer - Halfword word transform\n\n(Can be written only when XFER\\[1\\]
+bit is 0.)\n\nOnly valid when VDW select 16bit data."]
 pub type HwtW<'a, REG> = crate::BitWriter<'a, REG, Hwt>;
 impl<'a, REG> HwtW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "low 16bit data valid to AHB/APB bus, high 16 bit data invalid."]
+    #[doc = "32 bit data valid to AHB/APB bus. Low 16 bit for left channel and high 16 bit for right channel."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Hwt::B0)
@@ -409,14 +415,15 @@ where
     }
 }
 #[doc = "RX Channel select register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Rcsr {
-    #[doc = "0: eight channel"]
+    #[doc = "0: two channel"]
     B00 = 0,
-    #[doc = "1: eight channel"]
+    #[doc = "1: four channel"]
     B01 = 1,
-    #[doc = "2: eight channel"]
+    #[doc = "2: six channel"]
     B10 = 2,
     #[doc = "3: eight channel"]
     B11 = 3,
@@ -444,17 +451,17 @@ impl RcsrR {
             _ => unreachable!(),
         }
     }
-    #[doc = "eight channel"]
+    #[doc = "two channel"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == Rcsr::B00
     }
-    #[doc = "eight channel"]
+    #[doc = "four channel"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Rcsr::B01
     }
-    #[doc = "eight channel"]
+    #[doc = "six channel"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Rcsr::B10
@@ -472,17 +479,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "eight channel"]
+    #[doc = "two channel"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(Rcsr::B00)
     }
-    #[doc = "eight channel"]
+    #[doc = "four channel"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Rcsr::B01)
     }
-    #[doc = "eight channel"]
+    #[doc = "six channel"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Rcsr::B10)
@@ -494,44 +501,44 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 0:4 - Valid Data width (Can be written only when XFER\\[1\\]
-bit is 0.) 0~14:reserved 15:16bit 16:17bit 17:18bit 18:19bit ...... n:(n+1)bit ...... 28:29bit 29:30bit 30:31bit 31:32bit"]
+    #[doc = "Bits 0:4 - Valid Data width\n\n(Can be written only when XFER\\[1\\]
+bit is 0.)\n\n0~14:reserved\n\n15:16bit\n\n16:17bit\n\n17:18bit\n\n18:19bit\n\n......\n\nn:(n+1)bit\n\n......\n\n28:29bit\n\n29:30bit\n\n30:31bit\n\n31:32bit"]
     #[inline(always)]
     pub fn vdw(&self) -> VdwR {
         VdwR::new((self.bits & 0x1f) as u8)
     }
-    #[doc = "Bit 5 - Transfer format select (Can be written only when XFER\\[1\\]
+    #[doc = "Bit 5 - Transfer format select\n\n(Can be written only when XFER\\[1\\]
 bit is 0.)"]
     #[inline(always)]
     pub fn tfs(&self) -> TfsR {
         TfsR::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bits 7:8 - PCM bus mode (Can be written only when XFER\\[1\\]
+    #[doc = "Bits 7:8 - PCM bus mode\n\n(Can be written only when XFER\\[1\\]
 bit is 0.)"]
     #[inline(always)]
     pub fn pbm(&self) -> PbmR {
         PbmR::new(((self.bits >> 7) & 3) as u8)
     }
-    #[doc = "Bits 9:10 - I2S bus mode (Can be written only when XFER\\[1\\]
+    #[doc = "Bits 9:10 - I2S bus mode\n\n(Can be written only when XFER\\[1\\]
 bit is 0.)"]
     #[inline(always)]
     pub fn ibm(&self) -> IbmR {
         IbmR::new(((self.bits >> 9) & 3) as u8)
     }
-    #[doc = "Bit 11 - First Bit Mode (Can be written only when XFER\\[1\\]
+    #[doc = "Bit 11 - First Bit Mode\n\n(Can be written only when XFER\\[1\\]
 bit is 0.)"]
     #[inline(always)]
     pub fn fbm(&self) -> FbmR {
         FbmR::new(((self.bits >> 11) & 1) != 0)
     }
-    #[doc = "Bit 12 - Store justified mode (Can be written only when XFER\\[1\\]
-bit is 0.) 16bit~31bit DATA stored in 32 bits width fifo. If VDW select 16bit data, this bit is valid only when HWT select 0.Because if HWT is 1, every fifo unit contain two 16bit data and 32 bit space is full, it is impossible to choose justified mode."]
+    #[doc = "Bit 12 - Store justified mode\n\n(Can be written only when XFER\\[1\\]
+bit is 0.)\n\n16bit~31bit DATA stored in 32 bits width fifo.\n\nIf VDW select 16bit data, this bit is valid only when HWT select\n\n0.Because if HWT is 1, every fifo unit contain two 16bit data and\n\n32 bit space is full, it is impossible to choose justified mode."]
     #[inline(always)]
     pub fn sjm(&self) -> SjmR {
         SjmR::new(((self.bits >> 12) & 1) != 0)
     }
-    #[doc = "Bit 14 - Halfword word transform (Can be written only when XFER\\[1\\]
-bit is 0.) Only valid when VDW select 16bit data."]
+    #[doc = "Bit 14 - Halfword word transform\n\n(Can be written only when XFER\\[1\\]
+bit is 0.)\n\nOnly valid when VDW select 16bit data."]
     #[inline(always)]
     pub fn hwt(&self) -> HwtR {
         HwtR::new(((self.bits >> 14) & 1) != 0)
@@ -543,50 +550,50 @@ bit is 0.) Only valid when VDW select 16bit data."]
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - Valid Data width (Can be written only when XFER\\[1\\]
-bit is 0.) 0~14:reserved 15:16bit 16:17bit 17:18bit 18:19bit ...... n:(n+1)bit ...... 28:29bit 29:30bit 30:31bit 31:32bit"]
+    #[doc = "Bits 0:4 - Valid Data width\n\n(Can be written only when XFER\\[1\\]
+bit is 0.)\n\n0~14:reserved\n\n15:16bit\n\n16:17bit\n\n17:18bit\n\n18:19bit\n\n......\n\nn:(n+1)bit\n\n......\n\n28:29bit\n\n29:30bit\n\n30:31bit\n\n31:32bit"]
     #[inline(always)]
     #[must_use]
     pub fn vdw(&mut self) -> VdwW<I2sRxcrSpec> {
         VdwW::new(self, 0)
     }
-    #[doc = "Bit 5 - Transfer format select (Can be written only when XFER\\[1\\]
+    #[doc = "Bit 5 - Transfer format select\n\n(Can be written only when XFER\\[1\\]
 bit is 0.)"]
     #[inline(always)]
     #[must_use]
     pub fn tfs(&mut self) -> TfsW<I2sRxcrSpec> {
         TfsW::new(self, 5)
     }
-    #[doc = "Bits 7:8 - PCM bus mode (Can be written only when XFER\\[1\\]
+    #[doc = "Bits 7:8 - PCM bus mode\n\n(Can be written only when XFER\\[1\\]
 bit is 0.)"]
     #[inline(always)]
     #[must_use]
     pub fn pbm(&mut self) -> PbmW<I2sRxcrSpec> {
         PbmW::new(self, 7)
     }
-    #[doc = "Bits 9:10 - I2S bus mode (Can be written only when XFER\\[1\\]
+    #[doc = "Bits 9:10 - I2S bus mode\n\n(Can be written only when XFER\\[1\\]
 bit is 0.)"]
     #[inline(always)]
     #[must_use]
     pub fn ibm(&mut self) -> IbmW<I2sRxcrSpec> {
         IbmW::new(self, 9)
     }
-    #[doc = "Bit 11 - First Bit Mode (Can be written only when XFER\\[1\\]
+    #[doc = "Bit 11 - First Bit Mode\n\n(Can be written only when XFER\\[1\\]
 bit is 0.)"]
     #[inline(always)]
     #[must_use]
     pub fn fbm(&mut self) -> FbmW<I2sRxcrSpec> {
         FbmW::new(self, 11)
     }
-    #[doc = "Bit 12 - Store justified mode (Can be written only when XFER\\[1\\]
-bit is 0.) 16bit~31bit DATA stored in 32 bits width fifo. If VDW select 16bit data, this bit is valid only when HWT select 0.Because if HWT is 1, every fifo unit contain two 16bit data and 32 bit space is full, it is impossible to choose justified mode."]
+    #[doc = "Bit 12 - Store justified mode\n\n(Can be written only when XFER\\[1\\]
+bit is 0.)\n\n16bit~31bit DATA stored in 32 bits width fifo.\n\nIf VDW select 16bit data, this bit is valid only when HWT select\n\n0.Because if HWT is 1, every fifo unit contain two 16bit data and\n\n32 bit space is full, it is impossible to choose justified mode."]
     #[inline(always)]
     #[must_use]
     pub fn sjm(&mut self) -> SjmW<I2sRxcrSpec> {
         SjmW::new(self, 12)
     }
-    #[doc = "Bit 14 - Halfword word transform (Can be written only when XFER\\[1\\]
-bit is 0.) Only valid when VDW select 16bit data."]
+    #[doc = "Bit 14 - Halfword word transform\n\n(Can be written only when XFER\\[1\\]
+bit is 0.)\n\nOnly valid when VDW select 16bit data."]
     #[inline(always)]
     #[must_use]
     pub fn hwt(&mut self) -> HwtW<I2sRxcrSpec> {

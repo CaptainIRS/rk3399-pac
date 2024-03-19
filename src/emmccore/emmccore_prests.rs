@@ -2,12 +2,13 @@
 pub type R = crate::R<EmmccorePrestsSpec>;
 #[doc = "Register `EMMCCORE_PRESTS` writer"]
 pub type W = crate::W<EmmccorePrestsSpec>;
-#[doc = "Field `CMDINHIBIT` reader - If this bit is 0, it indicates the CMD line is not in use and the HC can issue a SD command using the CMD line. This bit is set immediately after the Command register is written. This bit is cleared when the command response is received. Even if the Command Inhibit (DAT) is set to 1, Commands using only the CMD line can be issued if this bit is 0. Changing from 1 to 0 generates a Command complete interrupt in the Normal Interrupt Status register. If the HC cannot issue the command because of a command conflict error or because of Command Not Issued By Auto CMD12 Error, this bit shall remain 1 and the Command Complete is not set. Status issuing Auto CMD12 is not read from this bit. Auto CMD12 and Auto CMD23 consist of two responses. In this case, this bit is not cleared by the response of CMD12 or CMD23 but cleared by the response of a read/write command. Status issuing Auto CMD12 is not read from this bit. So if a command is issued during Auto CMD12 operation, Host Controller shall manage to issue two commands: CMD12 and a command set by Command register."]
+#[doc = "Field `CMDINHIBIT` reader - If this bit is 0, it indicates the CMD line is not in use and the HC\n\ncan issue a SD command using the CMD line. This bit is set\n\nimmediately after the Command register is written. This bit is\n\ncleared when the command response is received.\n\nEven if the Command Inhibit (DAT) is set to 1, Commands using\n\nonly the CMD line can be issued if this bit is 0. Changing from 1\n\nto 0 generates a Command complete interrupt in the Normal\n\nInterrupt Status register. If the HC cannot issue the command\n\nbecause of a command conflict error or because of Command Not\n\nIssued By Auto CMD12 Error, this bit shall remain 1 and the\n\nCommand Complete is not set. Status issuing Auto CMD12 is not\n\nread from this bit.\n\nAuto CMD12 and Auto CMD23 consist of two responses. In this\n\ncase, this bit is not cleared by the response of CMD12 or CMD23\n\nbut cleared by the response of a read/write command. Status\n\nissuing Auto CMD12 is not read from this bit. So if a command is\n\nissued during Auto CMD12 operation, Host Controller shall\n\nmanage to issue two commands: CMD12 and a command set by\n\nCommand register."]
 pub type CmdinhibitR = crate::BitReader;
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Datinhibit {
-    #[doc = "1: Can issue command which uses the DAT line This status bit is generated if either the DAT Line Active or the Read transfer Active is set to 1. If this bit is 0, it indicates the HC can issue the next SD command. Commands with busy signal belong to Command Inhibit (DAT) (ex. R1b, R5b type). Changing from 1 to 0 generates a Transfer Complete interrupt in the Normal interrupt status register. Note: The SD Host Driver can save registers in the range of 000- 00Dh for a suspend transaction after this bit has changed from 1 to 0."]
+    #[doc = "1: cannot issue command which uses the DAT line"]
     B1 = 1,
     #[doc = "0: Can issue command which uses the DAT line This status bit is generated if either the DAT Line Active or the Read transfer Active is set to 1. If this bit is 0, it indicates the HC can issue the next SD command. Commands with busy signal belong to Command Inhibit (DAT) (ex. R1b, R5b type). Changing from 1 to 0 generates a Transfer Complete interrupt in the Normal interrupt status register. Note: The SD Host Driver can save registers in the range of 000- 00Dh for a suspend transaction after this bit has changed from 1 to 0."]
     B0 = 0,
@@ -29,7 +30,7 @@ impl DatinhibitR {
             false => Datinhibit::B0,
         }
     }
-    #[doc = "Can issue command which uses the DAT line This status bit is generated if either the DAT Line Active or the Read transfer Active is set to 1. If this bit is 0, it indicates the HC can issue the next SD command. Commands with busy signal belong to Command Inhibit (DAT) (ex. R1b, R5b type). Changing from 1 to 0 generates a Transfer Complete interrupt in the Normal interrupt status register. Note: The SD Host Driver can save registers in the range of 000- 00Dh for a suspend transaction after this bit has changed from 1 to 0."]
+    #[doc = "cannot issue command which uses the DAT line"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Datinhibit::B1
@@ -41,9 +42,10 @@ impl DatinhibitR {
     }
 }
 #[doc = "This bit indicates whether one of the DAT line on SD bus is in use.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Datlineactive {
-    #[doc = "1: DAT line inactive"]
+    #[doc = "1: DAT line active"]
     B1 = 1,
     #[doc = "0: DAT line inactive"]
     B0 = 0,
@@ -65,7 +67,7 @@ impl DatlineactiveR {
             false => Datlineactive::B0,
         }
     }
-    #[doc = "DAT line inactive"]
+    #[doc = "DAT line active"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Datlineactive::B1
@@ -77,9 +79,10 @@ impl DatlineactiveR {
     }
 }
 #[doc = "Re-Tuning Request\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Retuningreq {
-    #[doc = "1: Fixed or well tuned sampling clock Host Controller may request Host Driver to execute re-tuning sequence by setting this bit when the data window is shifted by temperature drift and a tuned sampling point does not have a good margin to receive correct data. This bit is cleared when a command is issued with setting Execute Tuning in the Host Control 2 register. Changing of this bit from 0 to 1 generates Re-Tuning Event. Refer to Normal Interrupt registers for more detail. This bit isn't set to 1 if Sampling Clock Select in the Host Control 2 register is set to 0 (using fixed sampling clock)."]
+    #[doc = "1: Sampling clock needs re-tuning"]
     B1 = 1,
     #[doc = "0: Fixed or well tuned sampling clock Host Controller may request Host Driver to execute re-tuning sequence by setting this bit when the data window is shifted by temperature drift and a tuned sampling point does not have a good margin to receive correct data. This bit is cleared when a command is issued with setting Execute Tuning in the Host Control 2 register. Changing of this bit from 0 to 1 generates Re-Tuning Event. Refer to Normal Interrupt registers for more detail. This bit isn't set to 1 if Sampling Clock Select in the Host Control 2 register is set to 0 (using fixed sampling clock)."]
     B0 = 0,
@@ -101,7 +104,7 @@ impl RetuningreqR {
             false => Retuningreq::B0,
         }
     }
-    #[doc = "Fixed or well tuned sampling clock Host Controller may request Host Driver to execute re-tuning sequence by setting this bit when the data window is shifted by temperature drift and a tuned sampling point does not have a good margin to receive correct data. This bit is cleared when a command is issued with setting Execute Tuning in the Host Control 2 register. Changing of this bit from 0 to 1 generates Re-Tuning Event. Refer to Normal Interrupt registers for more detail. This bit isn't set to 1 if Sampling Clock Select in the Host Control 2 register is set to 0 (using fixed sampling clock)."]
+    #[doc = "Sampling clock needs re-tuning"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Retuningreq::B1
@@ -113,9 +116,10 @@ impl RetuningreqR {
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Writetransactive {
-    #[doc = "1: No valid data This status indicates a write transfer is active. If this bit is 0, it means no valid write data exists in the HC. This bit is set in either of the following cases: a. After the end bit of the write command. b. When writing a 1 to Continue Request in the Block Gap Control register to restart a write transfer. This bit is cleared in either of the following cases: a. After getting the CRC status of the last data block as specified by the transfer count (Single or Multiple). b. After getting a CRC status of any block where data transmission is about to be stopped by a Stop At Block Gap Request. During a write transaction, a Block Gap Event interrupt is generated when this bit is changed to 0, as a result of the Stop At Block Gap Request being set. This status is useful for the HD in determining when to issue commands during write busy."]
+    #[doc = "1: transferring data"]
     B1 = 1,
     #[doc = "0: No valid data This status indicates a write transfer is active. If this bit is 0, it means no valid write data exists in the HC. This bit is set in either of the following cases: a. After the end bit of the write command. b. When writing a 1 to Continue Request in the Block Gap Control register to restart a write transfer. This bit is cleared in either of the following cases: a. After getting the CRC status of the last data block as specified by the transfer count (Single or Multiple). b. After getting a CRC status of any block where data transmission is about to be stopped by a Stop At Block Gap Request. During a write transaction, a Block Gap Event interrupt is generated when this bit is changed to 0, as a result of the Stop At Block Gap Request being set. This status is useful for the HD in determining when to issue commands during write busy."]
     B0 = 0,
@@ -137,7 +141,7 @@ impl WritetransactiveR {
             false => Writetransactive::B0,
         }
     }
-    #[doc = "No valid data This status indicates a write transfer is active. If this bit is 0, it means no valid write data exists in the HC. This bit is set in either of the following cases: a. After the end bit of the write command. b. When writing a 1 to Continue Request in the Block Gap Control register to restart a write transfer. This bit is cleared in either of the following cases: a. After getting the CRC status of the last data block as specified by the transfer count (Single or Multiple). b. After getting a CRC status of any block where data transmission is about to be stopped by a Stop At Block Gap Request. During a write transaction, a Block Gap Event interrupt is generated when this bit is changed to 0, as a result of the Stop At Block Gap Request being set. This status is useful for the HD in determining when to issue commands during write busy."]
+    #[doc = "transferring data"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Writetransactive::B1
@@ -149,9 +153,10 @@ impl WritetransactiveR {
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Readtransactive {
-    #[doc = "1: No valid data This status is used for detecting completion of a read transfer. This bit is set to 1 for either of the following conditions: a. After the end bit of the read command b. When writing a 1 to continue Request in the Block Gap Control register to restart a read transfer This bit is cleared to 0 for either of the following conditions: a. When the last data block as specified by block length is transferred to the system. b. When all valid data blocks have been transferred to the system and no current block transfers are being sent as a result of the Stop At Block Gap Request set to 1. A transfer complete interrupt is generated when this bit changes to 0."]
+    #[doc = "1: Transferring data"]
     B1 = 1,
     #[doc = "0: No valid data This status is used for detecting completion of a read transfer. This bit is set to 1 for either of the following conditions: a. After the end bit of the read command b. When writing a 1 to continue Request in the Block Gap Control register to restart a read transfer This bit is cleared to 0 for either of the following conditions: a. When the last data block as specified by block length is transferred to the system. b. When all valid data blocks have been transferred to the system and no current block transfers are being sent as a result of the Stop At Block Gap Request set to 1. A transfer complete interrupt is generated when this bit changes to 0."]
     B0 = 0,
@@ -173,7 +178,7 @@ impl ReadtransactiveR {
             false => Readtransactive::B0,
         }
     }
-    #[doc = "No valid data This status is used for detecting completion of a read transfer. This bit is set to 1 for either of the following conditions: a. After the end bit of the read command b. When writing a 1 to continue Request in the Block Gap Control register to restart a read transfer This bit is cleared to 0 for either of the following conditions: a. When the last data block as specified by block length is transferred to the system. b. When all valid data blocks have been transferred to the system and no current block transfers are being sent as a result of the Stop At Block Gap Request set to 1. A transfer complete interrupt is generated when this bit changes to 0."]
+    #[doc = "Transferring data"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Readtransactive::B1
@@ -185,9 +190,10 @@ impl ReadtransactiveR {
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bufferwriteenable {
-    #[doc = "0: Write Enable This status is used for non-DMA write transfers. This read only flag indicates if space is available for write data. If this bit is 1, data can be written to the buffer. A change of this bit from 1 to 0 occurs when all the block data is written to the buffer. A change of this bit from 0 to 1 occurs when top of block data can be written to the buffer and generates the Buffer Write Ready Interrupt."]
+    #[doc = "0: Write Disable"]
     B0 = 0,
     #[doc = "1: Write Enable This status is used for non-DMA write transfers. This read only flag indicates if space is available for write data. If this bit is 1, data can be written to the buffer. A change of this bit from 1 to 0 occurs when all the block data is written to the buffer. A change of this bit from 0 to 1 occurs when top of block data can be written to the buffer and generates the Buffer Write Ready Interrupt."]
     B1 = 1,
@@ -209,7 +215,7 @@ impl BufferwriteenableR {
             true => Bufferwriteenable::B1,
         }
     }
-    #[doc = "Write Enable This status is used for non-DMA write transfers. This read only flag indicates if space is available for write data. If this bit is 1, data can be written to the buffer. A change of this bit from 1 to 0 occurs when all the block data is written to the buffer. A change of this bit from 0 to 1 occurs when top of block data can be written to the buffer and generates the Buffer Write Ready Interrupt."]
+    #[doc = "Write Disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Bufferwriteenable::B0
@@ -221,9 +227,10 @@ impl BufferwriteenableR {
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bufferreadenable {
-    #[doc = "0: Read Enable This status is used for non-DMA read transfers. This read only flag indicates that valid data exists in the host side buffer status. If this bit is 1, readable data exists in the buffer. A change of this bit from 1 to 0 occurs when all the block data is read from the buffer. A change of this bit from 0 to 1 occurs when all the block data is ready in the buffer and generates the Buffer Read Ready Interrupt."]
+    #[doc = "0: Read Disable"]
     B0 = 0,
     #[doc = "1: Read Enable This status is used for non-DMA read transfers. This read only flag indicates that valid data exists in the host side buffer status. If this bit is 1, readable data exists in the buffer. A change of this bit from 1 to 0 occurs when all the block data is read from the buffer. A change of this bit from 0 to 1 occurs when all the block data is ready in the buffer and generates the Buffer Read Ready Interrupt."]
     B1 = 1,
@@ -245,7 +252,7 @@ impl BufferreadenableR {
             true => Bufferreadenable::B1,
         }
     }
-    #[doc = "Read Enable This status is used for non-DMA read transfers. This read only flag indicates that valid data exists in the host side buffer status. If this bit is 1, readable data exists in the buffer. A change of this bit from 1 to 0 occurs when all the block data is read from the buffer. A change of this bit from 0 to 1 occurs when all the block data is ready in the buffer and generates the Buffer Read Ready Interrupt."]
+    #[doc = "Read Disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Bufferreadenable::B0
@@ -257,9 +264,10 @@ impl BufferreadenableR {
     }
 }
 #[doc = "\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cardinserted {
-    #[doc = "0: Card Inserted This bit indicates whether a card has been inserted. Changing from 0 to 1 generates a Card Insertion interrupt in the Normal Interrupt Status register and changing from 1 to 0 generates a Card Removal Interrupt in the Normal Interrupt Status register. The Software Reset For All in the Software Reset register shall not affect this bit. If a Card is removed while its power is on and its clock is oscillating, the HC shall clear SD Bus Power in the Power Control register and SD Clock Enable in the Clock control register. In addition the HD should clear the HC by the Software Reset For All in Software register. The card detect is active regardless of the SD Bus Power."]
+    #[doc = "0: Reset or Debouncing or NoCard"]
     B0 = 0,
     #[doc = "1: Card Inserted This bit indicates whether a card has been inserted. Changing from 0 to 1 generates a Card Insertion interrupt in the Normal Interrupt Status register and changing from 1 to 0 generates a Card Removal Interrupt in the Normal Interrupt Status register. The Software Reset For All in the Software Reset register shall not affect this bit. If a Card is removed while its power is on and its clock is oscillating, the HC shall clear SD Bus Power in the Power Control register and SD Clock Enable in the Clock control register. In addition the HD should clear the HC by the Software Reset For All in Software register. The card detect is active regardless of the SD Bus Power."]
     B1 = 1,
@@ -281,7 +289,7 @@ impl CardinsertedR {
             true => Cardinserted::B1,
         }
     }
-    #[doc = "Card Inserted This bit indicates whether a card has been inserted. Changing from 0 to 1 generates a Card Insertion interrupt in the Normal Interrupt Status register and changing from 1 to 0 generates a Card Removal Interrupt in the Normal Interrupt Status register. The Software Reset For All in the Software Reset register shall not affect this bit. If a Card is removed while its power is on and its clock is oscillating, the HC shall clear SD Bus Power in the Power Control register and SD Clock Enable in the Clock control register. In addition the HD should clear the HC by the Software Reset For All in Software register. The card detect is active regardless of the SD Bus Power."]
+    #[doc = "Reset or Debouncing or NoCard"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cardinserted::B0
@@ -293,9 +301,10 @@ impl CardinsertedR {
     }
 }
 #[doc = "\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cardstatestable {
-    #[doc = "0: No Card or Inserted This bit is used for testing. If it is 0, the Card Detect Pin Level is not stable. If this bit is set to 1, it means the Card Detect Pin Level is stable. The Software Reset For All in the Software Reset Register shall not affect this bit."]
+    #[doc = "0: Reset of Debouncing"]
     B0 = 0,
     #[doc = "1: No Card or Inserted This bit is used for testing. If it is 0, the Card Detect Pin Level is not stable. If this bit is set to 1, it means the Card Detect Pin Level is stable. The Software Reset For All in the Software Reset Register shall not affect this bit."]
     B1 = 1,
@@ -317,7 +326,7 @@ impl CardstatestableR {
             true => Cardstatestable::B1,
         }
     }
-    #[doc = "No Card or Inserted This bit is used for testing. If it is 0, the Card Detect Pin Level is not stable. If this bit is set to 1, it means the Card Detect Pin Level is stable. The Software Reset For All in the Software Reset Register shall not affect this bit."]
+    #[doc = "Reset of Debouncing"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cardstatestable::B0
@@ -329,9 +338,10 @@ impl CardstatestableR {
     }
 }
 #[doc = "This bit reflects the inverse value of the SDCD# pin.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Carddetectpinlevel {
-    #[doc = "0: Card present (SDCD# = 0)"]
+    #[doc = "0: No Card present (SDCD# = 1)"]
     B0 = 0,
     #[doc = "1: Card present (SDCD# = 0)"]
     B1 = 1,
@@ -353,7 +363,7 @@ impl CarddetectpinlevelR {
             true => Carddetectpinlevel::B1,
         }
     }
-    #[doc = "Card present (SDCD# = 0)"]
+    #[doc = "No Card present (SDCD# = 1)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Carddetectpinlevel::B0
@@ -364,10 +374,11 @@ impl CarddetectpinlevelR {
         *self == Carddetectpinlevel::B1
     }
 }
-#[doc = "Write Protect Switch Pin Level. The Write Protect Switch is supported for memory and combo cards. This bit reflects the SDWP# pin.\n\nValue on reset: 1"]
+#[doc = "Write Protect Switch Pin Level.\n\nThe Write Protect Switch is supported for memory and combo\n\ncards. This bit reflects the SDWP# pin.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wrprtswpinlvl {
-    #[doc = "0: Write enabled (SDWP# = 1)"]
+    #[doc = "0: Write protected (SDWP# = 0)"]
     B0 = 0,
     #[doc = "1: Write enabled (SDWP# = 1)"]
     B1 = 1,
@@ -378,7 +389,7 @@ impl From<Wrprtswpinlvl> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WRPRTSWPINLVL` reader - Write Protect Switch Pin Level. The Write Protect Switch is supported for memory and combo cards. This bit reflects the SDWP# pin."]
+#[doc = "Field `WRPRTSWPINLVL` reader - Write Protect Switch Pin Level.\n\nThe Write Protect Switch is supported for memory and combo\n\ncards. This bit reflects the SDWP# pin."]
 pub type WrprtswpinlvlR = crate::BitReader<Wrprtswpinlvl>;
 impl WrprtswpinlvlR {
     #[doc = "Get enumerated values variant"]
@@ -389,7 +400,7 @@ impl WrprtswpinlvlR {
             true => Wrprtswpinlvl::B1,
         }
     }
-    #[doc = "Write enabled (SDWP# = 1)"]
+    #[doc = "Write protected (SDWP# = 0)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Wrprtswpinlvl::B0
@@ -401,25 +412,16 @@ impl WrprtswpinlvlR {
     }
 }
 #[doc = "Field `DAT30LINESIGNALLEVEL` reader - DAT\\[3:0\\]
-Line Signal Level This status is used to check DAT line level to recover from errors, and for debugging. This is especially useful in detecting the busy signal level from DAT\\[0\\]. \\[23\\]: DAT\\[3\\]
-\\[22\\]: DAT\\[2\\]
-\\[21\\]: DAT\\[1\\]
-\\[20\\]: DAT\\[0\\]"]
+Line Signal Level\n\nThis status is used to check DAT line level to recover from errors,\n\nand for debugging. This is especially useful in detecting the busy\n\nsignal level from DAT\\[0\\].\n\n\\[23\\]: DAT\\[3\\]\n\n\\[22\\]: DAT\\[2\\]\n\n\\[21\\]: DAT\\[1\\]\n\n\\[20\\]: DAT\\[0\\]"]
 pub type Dat30linesignallevelR = crate::FieldReader;
-#[doc = "Field `CMDLINESIGNALLEVEL` reader - This status is used to check CMD line level to recover from errors, and for debugging."]
+#[doc = "Field `CMDLINESIGNALLEVEL` reader - This status is used to check CMD line level to recover from errors,\n\nand for debugging."]
 pub type CmdlinesignallevelR = crate::BitReader;
-#[doc = "Field `DAT74LINESIGNALLEVEL` reader - This status is used to check DAT line level to recover from errors, and for debugging. \\[28\\]: DAT\\[7\\]
-\\[27\\]: DAT\\[6\\]
-\\[26\\]: DAT\\[5\\]
-\\[25\\]: DAT\\[4\\]"]
+#[doc = "Field `DAT74LINESIGNALLEVEL` reader - This status is used to check DAT line level to recover from errors,\n\nand for debugging.\n\n\\[28\\]: DAT\\[7\\]\n\n\\[27\\]: DAT\\[6\\]\n\n\\[26\\]: DAT\\[5\\]\n\n\\[25\\]: DAT\\[4\\]"]
 pub type Dat74linesignallevelR = crate::FieldReader;
-#[doc = "Field `DAT74LINESIGNALLEVEL` writer - This status is used to check DAT line level to recover from errors, and for debugging. \\[28\\]: DAT\\[7\\]
-\\[27\\]: DAT\\[6\\]
-\\[26\\]: DAT\\[5\\]
-\\[25\\]: DAT\\[4\\]"]
+#[doc = "Field `DAT74LINESIGNALLEVEL` writer - This status is used to check DAT line level to recover from errors,\n\nand for debugging.\n\n\\[28\\]: DAT\\[7\\]\n\n\\[27\\]: DAT\\[6\\]\n\n\\[26\\]: DAT\\[5\\]\n\n\\[25\\]: DAT\\[4\\]"]
 pub type Dat74linesignallevelW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
-    #[doc = "Bit 0 - If this bit is 0, it indicates the CMD line is not in use and the HC can issue a SD command using the CMD line. This bit is set immediately after the Command register is written. This bit is cleared when the command response is received. Even if the Command Inhibit (DAT) is set to 1, Commands using only the CMD line can be issued if this bit is 0. Changing from 1 to 0 generates a Command complete interrupt in the Normal Interrupt Status register. If the HC cannot issue the command because of a command conflict error or because of Command Not Issued By Auto CMD12 Error, this bit shall remain 1 and the Command Complete is not set. Status issuing Auto CMD12 is not read from this bit. Auto CMD12 and Auto CMD23 consist of two responses. In this case, this bit is not cleared by the response of CMD12 or CMD23 but cleared by the response of a read/write command. Status issuing Auto CMD12 is not read from this bit. So if a command is issued during Auto CMD12 operation, Host Controller shall manage to issue two commands: CMD12 and a command set by Command register."]
+    #[doc = "Bit 0 - If this bit is 0, it indicates the CMD line is not in use and the HC\n\ncan issue a SD command using the CMD line. This bit is set\n\nimmediately after the Command register is written. This bit is\n\ncleared when the command response is received.\n\nEven if the Command Inhibit (DAT) is set to 1, Commands using\n\nonly the CMD line can be issued if this bit is 0. Changing from 1\n\nto 0 generates a Command complete interrupt in the Normal\n\nInterrupt Status register. If the HC cannot issue the command\n\nbecause of a command conflict error or because of Command Not\n\nIssued By Auto CMD12 Error, this bit shall remain 1 and the\n\nCommand Complete is not set. Status issuing Auto CMD12 is not\n\nread from this bit.\n\nAuto CMD12 and Auto CMD23 consist of two responses. In this\n\ncase, this bit is not cleared by the response of CMD12 or CMD23\n\nbut cleared by the response of a read/write command. Status\n\nissuing Auto CMD12 is not read from this bit. So if a command is\n\nissued during Auto CMD12 operation, Host Controller shall\n\nmanage to issue two commands: CMD12 and a command set by\n\nCommand register."]
     #[inline(always)]
     pub fn cmdinhibit(&self) -> CmdinhibitR {
         CmdinhibitR::new((self.bits & 1) != 0)
@@ -474,39 +476,30 @@ impl R {
     pub fn carddetectpinlevel(&self) -> CarddetectpinlevelR {
         CarddetectpinlevelR::new(((self.bits >> 18) & 1) != 0)
     }
-    #[doc = "Bit 19 - Write Protect Switch Pin Level. The Write Protect Switch is supported for memory and combo cards. This bit reflects the SDWP# pin."]
+    #[doc = "Bit 19 - Write Protect Switch Pin Level.\n\nThe Write Protect Switch is supported for memory and combo\n\ncards. This bit reflects the SDWP# pin."]
     #[inline(always)]
     pub fn wrprtswpinlvl(&self) -> WrprtswpinlvlR {
         WrprtswpinlvlR::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bits 20:23 - DAT\\[3:0\\]
-Line Signal Level This status is used to check DAT line level to recover from errors, and for debugging. This is especially useful in detecting the busy signal level from DAT\\[0\\]. \\[23\\]: DAT\\[3\\]
-\\[22\\]: DAT\\[2\\]
-\\[21\\]: DAT\\[1\\]
-\\[20\\]: DAT\\[0\\]"]
+Line Signal Level\n\nThis status is used to check DAT line level to recover from errors,\n\nand for debugging. This is especially useful in detecting the busy\n\nsignal level from DAT\\[0\\].\n\n\\[23\\]: DAT\\[3\\]\n\n\\[22\\]: DAT\\[2\\]\n\n\\[21\\]: DAT\\[1\\]\n\n\\[20\\]: DAT\\[0\\]"]
     #[inline(always)]
     pub fn dat30linesignallevel(&self) -> Dat30linesignallevelR {
         Dat30linesignallevelR::new(((self.bits >> 20) & 0x0f) as u8)
     }
-    #[doc = "Bit 24 - This status is used to check CMD line level to recover from errors, and for debugging."]
+    #[doc = "Bit 24 - This status is used to check CMD line level to recover from errors,\n\nand for debugging."]
     #[inline(always)]
     pub fn cmdlinesignallevel(&self) -> CmdlinesignallevelR {
         CmdlinesignallevelR::new(((self.bits >> 24) & 1) != 0)
     }
-    #[doc = "Bits 25:28 - This status is used to check DAT line level to recover from errors, and for debugging. \\[28\\]: DAT\\[7\\]
-\\[27\\]: DAT\\[6\\]
-\\[26\\]: DAT\\[5\\]
-\\[25\\]: DAT\\[4\\]"]
+    #[doc = "Bits 25:28 - This status is used to check DAT line level to recover from errors,\n\nand for debugging.\n\n\\[28\\]: DAT\\[7\\]\n\n\\[27\\]: DAT\\[6\\]\n\n\\[26\\]: DAT\\[5\\]\n\n\\[25\\]: DAT\\[4\\]"]
     #[inline(always)]
     pub fn dat74linesignallevel(&self) -> Dat74linesignallevelR {
         Dat74linesignallevelR::new(((self.bits >> 25) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 25:28 - This status is used to check DAT line level to recover from errors, and for debugging. \\[28\\]: DAT\\[7\\]
-\\[27\\]: DAT\\[6\\]
-\\[26\\]: DAT\\[5\\]
-\\[25\\]: DAT\\[4\\]"]
+    #[doc = "Bits 25:28 - This status is used to check DAT line level to recover from errors,\n\nand for debugging.\n\n\\[28\\]: DAT\\[7\\]\n\n\\[27\\]: DAT\\[6\\]\n\n\\[26\\]: DAT\\[5\\]\n\n\\[25\\]: DAT\\[4\\]"]
     #[inline(always)]
     #[must_use]
     pub fn dat74linesignallevel(&mut self) -> Dat74linesignallevelW<EmmccorePrestsSpec> {

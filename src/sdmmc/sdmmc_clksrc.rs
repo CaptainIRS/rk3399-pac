@@ -2,31 +2,27 @@
 pub type R = crate::R<SdmmcClksrcSpec>;
 #[doc = "Register `SDMMC_CLKSRC` writer"]
 pub type W = crate::W<SdmmcClksrcSpec>;
-#[doc = "Field `CLK_SOURCE` reader - Clock divider source for up to 16 SD cards supported. Each card has two bits assigned to it. For example, bits\\[1:0\\]
-assigned for card-0, which maps and internally routes clock divider\\[3:0\\]
-outputs to cclk_out\\[15:0\\]
-pins, depending on bit value. 00: Clock divider 0 The cclk_out is always from clock divider 0, and this register is not implemented."]
+#[doc = "Field `CLK_SOURCE` reader - Clock divider source for up to 16 SD cards supported. Each card\n\nhas two bits assigned to it. For example, bits\\[1:0\\]
+assigned for\n\ncard-0, which maps and internally routes clock divider\\[3:0\\]\n\noutputs to cclk_out\\[15:0\\]
+pins, depending on bit value.\n\n00: Clock divider 0\n\nThe cclk_out is always from clock divider 0, and this register is\n\nnot implemented."]
 pub type ClkSourceR = crate::FieldReader;
-#[doc = "Field `CLK_SOURCE` writer - Clock divider source for up to 16 SD cards supported. Each card has two bits assigned to it. For example, bits\\[1:0\\]
-assigned for card-0, which maps and internally routes clock divider\\[3:0\\]
-outputs to cclk_out\\[15:0\\]
-pins, depending on bit value. 00: Clock divider 0 The cclk_out is always from clock divider 0, and this register is not implemented."]
+#[doc = "Field `CLK_SOURCE` writer - Clock divider source for up to 16 SD cards supported. Each card\n\nhas two bits assigned to it. For example, bits\\[1:0\\]
+assigned for\n\ncard-0, which maps and internally routes clock divider\\[3:0\\]\n\noutputs to cclk_out\\[15:0\\]
+pins, depending on bit value.\n\n00: Clock divider 0\n\nThe cclk_out is always from clock divider 0, and this register is\n\nnot implemented."]
 pub type ClkSourceW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
-    #[doc = "Bits 0:1 - Clock divider source for up to 16 SD cards supported. Each card has two bits assigned to it. For example, bits\\[1:0\\]
-assigned for card-0, which maps and internally routes clock divider\\[3:0\\]
-outputs to cclk_out\\[15:0\\]
-pins, depending on bit value. 00: Clock divider 0 The cclk_out is always from clock divider 0, and this register is not implemented."]
+    #[doc = "Bits 0:1 - Clock divider source for up to 16 SD cards supported. Each card\n\nhas two bits assigned to it. For example, bits\\[1:0\\]
+assigned for\n\ncard-0, which maps and internally routes clock divider\\[3:0\\]\n\noutputs to cclk_out\\[15:0\\]
+pins, depending on bit value.\n\n00: Clock divider 0\n\nThe cclk_out is always from clock divider 0, and this register is\n\nnot implemented."]
     #[inline(always)]
     pub fn clk_source(&self) -> ClkSourceR {
         ClkSourceR::new((self.bits & 3) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:1 - Clock divider source for up to 16 SD cards supported. Each card has two bits assigned to it. For example, bits\\[1:0\\]
-assigned for card-0, which maps and internally routes clock divider\\[3:0\\]
-outputs to cclk_out\\[15:0\\]
-pins, depending on bit value. 00: Clock divider 0 The cclk_out is always from clock divider 0, and this register is not implemented."]
+    #[doc = "Bits 0:1 - Clock divider source for up to 16 SD cards supported. Each card\n\nhas two bits assigned to it. For example, bits\\[1:0\\]
+assigned for\n\ncard-0, which maps and internally routes clock divider\\[3:0\\]\n\noutputs to cclk_out\\[15:0\\]
+pins, depending on bit value.\n\n00: Clock divider 0\n\nThe cclk_out is always from clock divider 0, and this register is\n\nnot implemented."]
     #[inline(always)]
     #[must_use]
     pub fn clk_source(&mut self) -> ClkSourceW<SdmmcClksrcSpec> {

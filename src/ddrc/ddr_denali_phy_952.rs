@@ -1,9 +1,9 @@
 #[doc = "Register `DDR_DENALI_PHY_952` reader"]
 pub type R = crate::R<DdrDenaliPhy952Spec>;
-#[doc = "Field `PHY_AC_LPBK_RESULT_OBS` reader - Observation register for the address/control slices. READ- ONLY"]
+#[doc = "Field `PHY_AC_LPBK_RESULT_OBS` reader - Observation register for the address/control slices."]
 pub type PhyAcLpbkResultObsR = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Observation register for the address/control slices. READ- ONLY"]
+    #[doc = "Bits 0:31 - Observation register for the address/control slices."]
     #[inline(always)]
     pub fn phy_ac_lpbk_result_obs(&self) -> PhyAcLpbkResultObsR {
         PhyAcLpbkResultObsR::new(self.bits)

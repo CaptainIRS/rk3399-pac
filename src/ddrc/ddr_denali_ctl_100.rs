@@ -10,7 +10,7 @@ pub type LpiWakeupTimeoutW<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 pub type TdfiLpRespR = crate::FieldReader;
 #[doc = "Field `TDFI_LP_RESP` writer - Defines the DFI tLP_RESP timing parameter (in DFI clocks), the maximum cycles between a dfi_lp_req assertion and a dfi_lp_ack assertion."]
 pub type TdfiLpRespW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-#[doc = "Field `LP_STATE` reader - Low power state status parameter. Bits (4:0) indicate the current low power state and bit (5) set indicates that status bits are valid. READ- ONLY"]
+#[doc = "Field `LP_STATE` reader - Low power state status parameter. Bits (4:0) indicate the current low power state and bit (5) set indicates that status bits are valid."]
 pub type LpStateR = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:11 - Defines the LPI timeout time, the maximum cycles between a dfi_lp_req de-assertion and a dfi_lp_ack de-assertion. If this value is exceeded, an interrupt will occur."]
@@ -23,7 +23,7 @@ impl R {
     pub fn tdfi_lp_resp(&self) -> TdfiLpRespR {
         TdfiLpRespR::new(((self.bits >> 16) & 7) as u8)
     }
-    #[doc = "Bits 24:30 - Low power state status parameter. Bits (4:0) indicate the current low power state and bit (5) set indicates that status bits are valid. READ- ONLY"]
+    #[doc = "Bits 24:30 - Low power state status parameter. Bits (4:0) indicate the current low power state and bit (5) set indicates that status bits are valid."]
     #[inline(always)]
     pub fn lp_state(&self) -> LpStateR {
         LpStateR::new(((self.bits >> 24) & 0x7f) as u8)

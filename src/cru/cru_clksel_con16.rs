@@ -2,23 +2,24 @@
 pub type R = crate::R<CruClkselCon16Spec>;
 #[doc = "Register `CRU_CLKSEL_CON16` writer"]
 pub type W = crate::W<CruClkselCon16Spec>;
-#[doc = "Field `CLK_SDMMC_DIV_CON` reader - clk_sdmmc divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_SDMMC_DIV_CON` reader - clk_sdmmc divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkSdmmcDivConR = crate::FieldReader;
-#[doc = "Field `CLK_SDMMC_DIV_CON` writer - clk_sdmmc divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_SDMMC_DIV_CON` writer - clk_sdmmc divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkSdmmcDivConW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "clk_sdmmc clock source select control register\n\nValue on reset: 5"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ClkSdmmcPllSel {
-    #[doc = "0: xin_24m"]
+    #[doc = "0: CPLL"]
     B000 = 0,
-    #[doc = "1: xin_24m"]
+    #[doc = "1: GPLL"]
     B001 = 1,
-    #[doc = "2: xin_24m"]
+    #[doc = "2: NPLL"]
     B010 = 2,
-    #[doc = "3: xin_24m"]
+    #[doc = "3: PPLL"]
     B011 = 3,
-    #[doc = "4: xin_24m"]
+    #[doc = "4: USB_480M"]
     B100 = 4,
     #[doc = "5: xin_24m"]
     B101 = 5,
@@ -48,27 +49,27 @@ impl ClkSdmmcPllSelR {
             _ => None,
         }
     }
-    #[doc = "xin_24m"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn is_b000(&self) -> bool {
         *self == ClkSdmmcPllSel::B000
     }
-    #[doc = "xin_24m"]
+    #[doc = "GPLL"]
     #[inline(always)]
     pub fn is_b001(&self) -> bool {
         *self == ClkSdmmcPllSel::B001
     }
-    #[doc = "xin_24m"]
+    #[doc = "NPLL"]
     #[inline(always)]
     pub fn is_b010(&self) -> bool {
         *self == ClkSdmmcPllSel::B010
     }
-    #[doc = "xin_24m"]
+    #[doc = "PPLL"]
     #[inline(always)]
     pub fn is_b011(&self) -> bool {
         *self == ClkSdmmcPllSel::B011
     }
-    #[doc = "xin_24m"]
+    #[doc = "USB_480M"]
     #[inline(always)]
     pub fn is_b100(&self) -> bool {
         *self == ClkSdmmcPllSel::B100
@@ -86,27 +87,27 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "xin_24m"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn b000(self) -> &'a mut crate::W<REG> {
         self.variant(ClkSdmmcPllSel::B000)
     }
-    #[doc = "xin_24m"]
+    #[doc = "GPLL"]
     #[inline(always)]
     pub fn b001(self) -> &'a mut crate::W<REG> {
         self.variant(ClkSdmmcPllSel::B001)
     }
-    #[doc = "xin_24m"]
+    #[doc = "NPLL"]
     #[inline(always)]
     pub fn b010(self) -> &'a mut crate::W<REG> {
         self.variant(ClkSdmmcPllSel::B010)
     }
-    #[doc = "xin_24m"]
+    #[doc = "PPLL"]
     #[inline(always)]
     pub fn b011(self) -> &'a mut crate::W<REG> {
         self.variant(ClkSdmmcPllSel::B011)
     }
-    #[doc = "xin_24m"]
+    #[doc = "USB_480M"]
     #[inline(always)]
     pub fn b100(self) -> &'a mut crate::W<REG> {
         self.variant(ClkSdmmcPllSel::B100)
@@ -117,10 +118,10 @@ where
         self.variant(ClkSdmmcPllSel::B101)
     }
 }
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:6 - clk_sdmmc divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:6 - clk_sdmmc divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn clk_sdmmc_div_con(&self) -> ClkSdmmcDivConR {
         ClkSdmmcDivConR::new((self.bits & 0x7f) as u8)
@@ -132,7 +133,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:6 - clk_sdmmc divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:6 - clk_sdmmc divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn clk_sdmmc_div_con(&mut self) -> ClkSdmmcDivConW<CruClkselCon16Spec> {
@@ -144,7 +145,7 @@ impl W {
     pub fn clk_sdmmc_pll_sel(&mut self) -> ClkSdmmcPllSelW<CruClkselCon16Spec> {
         ClkSdmmcPllSelW::new(self, 8)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkselCon16Spec> {

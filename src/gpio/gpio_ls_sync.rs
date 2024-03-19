@@ -2,10 +2,11 @@
 pub type R = crate::R<GpioLsSyncSpec>;
 #[doc = "Register `GPIO_LS_SYNC` writer"]
 pub type W = crate::W<GpioLsSyncSpec>;
-#[doc = "Writing a 1 to this register results in all level-sensitive interrupts being synchronized to pclk_intr.\n\nValue on reset: 0"]
+#[doc = "Writing a 1 to this register results in all level-sensitive interrupts\n\nbeing synchronized to pclk_intr.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GpioLsSync {
-    #[doc = "0: Synchronize to pclk_intr"]
+    #[doc = "0: No synchronization to pclk_intr (default)"]
     B0 = 0,
     #[doc = "1: Synchronize to pclk_intr"]
     B1 = 1,
@@ -16,7 +17,7 @@ impl From<GpioLsSync> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `GPIO_LS_SYNC` reader - Writing a 1 to this register results in all level-sensitive interrupts being synchronized to pclk_intr."]
+#[doc = "Field `GPIO_LS_SYNC` reader - Writing a 1 to this register results in all level-sensitive interrupts\n\nbeing synchronized to pclk_intr."]
 pub type GpioLsSyncR = crate::BitReader<GpioLsSync>;
 impl GpioLsSyncR {
     #[doc = "Get enumerated values variant"]
@@ -27,7 +28,7 @@ impl GpioLsSyncR {
             true => GpioLsSync::B1,
         }
     }
-    #[doc = "Synchronize to pclk_intr"]
+    #[doc = "No synchronization to pclk_intr (default)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == GpioLsSync::B0
@@ -38,13 +39,13 @@ impl GpioLsSyncR {
         *self == GpioLsSync::B1
     }
 }
-#[doc = "Field `GPIO_LS_SYNC` writer - Writing a 1 to this register results in all level-sensitive interrupts being synchronized to pclk_intr."]
+#[doc = "Field `GPIO_LS_SYNC` writer - Writing a 1 to this register results in all level-sensitive interrupts\n\nbeing synchronized to pclk_intr."]
 pub type GpioLsSyncW<'a, REG> = crate::BitWriter<'a, REG, GpioLsSync>;
 impl<'a, REG> GpioLsSyncW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Synchronize to pclk_intr"]
+    #[doc = "No synchronization to pclk_intr (default)"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(GpioLsSync::B0)
@@ -56,14 +57,14 @@ where
     }
 }
 impl R {
-    #[doc = "Bit 0 - Writing a 1 to this register results in all level-sensitive interrupts being synchronized to pclk_intr."]
+    #[doc = "Bit 0 - Writing a 1 to this register results in all level-sensitive interrupts\n\nbeing synchronized to pclk_intr."]
     #[inline(always)]
     pub fn gpio_ls_sync(&self) -> GpioLsSyncR {
         GpioLsSyncR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Writing a 1 to this register results in all level-sensitive interrupts being synchronized to pclk_intr."]
+    #[doc = "Bit 0 - Writing a 1 to this register results in all level-sensitive interrupts\n\nbeing synchronized to pclk_intr."]
     #[inline(always)]
     #[must_use]
     pub fn gpio_ls_sync(&mut self) -> GpioLsSyncW<GpioLsSyncSpec> {

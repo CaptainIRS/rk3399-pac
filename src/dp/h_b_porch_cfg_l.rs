@@ -2,19 +2,19 @@
 pub type R = crate::R<HBPorchCfgLSpec>;
 #[doc = "Register `H_B_PORCH_CFG_L` writer"]
 pub type W = crate::W<HBPorchCfgLSpec>;
-#[doc = "Field `H_B_PORCH_CFG_L` reader - H_B_PORCH_CFG is used to specify the number of pixel in frame horizon back porch part. This register is H_B_PORCH_CFG \\[7:0\\]. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+#[doc = "Field `H_B_PORCH_CFG_L` reader - H_B_PORCH_CFG is used to specify the number \n\nof pixel in frame horizon back porch part. This \n\nregister is H_B_PORCH_CFG \\[7:0\\]. \n\nWhen F_SEL is 1, this value is sent in main \n\nstream attribute packet. \n\nWhen BIST_EN is 1, this bit field is used to \n\nspecify the BIST video stream format."]
 pub type HBPorchCfgLR = crate::FieldReader;
-#[doc = "Field `H_B_PORCH_CFG_L` writer - H_B_PORCH_CFG is used to specify the number of pixel in frame horizon back porch part. This register is H_B_PORCH_CFG \\[7:0\\]. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+#[doc = "Field `H_B_PORCH_CFG_L` writer - H_B_PORCH_CFG is used to specify the number \n\nof pixel in frame horizon back porch part. This \n\nregister is H_B_PORCH_CFG \\[7:0\\]. \n\nWhen F_SEL is 1, this value is sent in main \n\nstream attribute packet. \n\nWhen BIST_EN is 1, this bit field is used to \n\nspecify the BIST video stream format."]
 pub type HBPorchCfgLW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - H_B_PORCH_CFG is used to specify the number of pixel in frame horizon back porch part. This register is H_B_PORCH_CFG \\[7:0\\]. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+    #[doc = "Bits 0:7 - H_B_PORCH_CFG is used to specify the number \n\nof pixel in frame horizon back porch part. This \n\nregister is H_B_PORCH_CFG \\[7:0\\]. \n\nWhen F_SEL is 1, this value is sent in main \n\nstream attribute packet. \n\nWhen BIST_EN is 1, this bit field is used to \n\nspecify the BIST video stream format."]
     #[inline(always)]
     pub fn h_b_porch_cfg_l(&self) -> HBPorchCfgLR {
         HBPorchCfgLR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - H_B_PORCH_CFG is used to specify the number of pixel in frame horizon back porch part. This register is H_B_PORCH_CFG \\[7:0\\]. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+    #[doc = "Bits 0:7 - H_B_PORCH_CFG is used to specify the number \n\nof pixel in frame horizon back porch part. This \n\nregister is H_B_PORCH_CFG \\[7:0\\]. \n\nWhen F_SEL is 1, this value is sent in main \n\nstream attribute packet. \n\nWhen BIST_EN is 1, this bit field is used to \n\nspecify the BIST video stream format."]
     #[inline(always)]
     #[must_use]
     pub fn h_b_porch_cfg_l(&mut self) -> HBPorchCfgLW<HBPorchCfgLSpec> {

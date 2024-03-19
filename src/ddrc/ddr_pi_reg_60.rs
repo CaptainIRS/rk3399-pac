@@ -2,49 +2,49 @@
 pub type R = crate::R<DdrPiReg60Spec>;
 #[doc = "Register `DDR_PI_REG_60` writer"]
 pub type W = crate::W<DdrPiReg60Spec>;
-#[doc = "Field `PI_WLMRD` reader - Indicates delay from the issuing MRS to the first write leveling strobe."]
+#[doc = "Field `PI_WLMRD` reader - Indicates delay from the issuing MRS to the first write leveling\n\nstrobe."]
 pub type PiWlmrdR = crate::FieldReader;
-#[doc = "Field `PI_WLMRD` writer - Indicates delay from the issuing MRS to the first write leveling strobe."]
+#[doc = "Field `PI_WLMRD` writer - Indicates delay from the issuing MRS to the first write leveling\n\nstrobe."]
 pub type PiWlmrdW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
-#[doc = "Field `PI_WRLVL_EN` reader - Enables the PI write leveling module. Bit1 represents the support when non-initialization. Bit0 represents the support when initialization. Set to 1 to enable."]
+#[doc = "Field `PI_WRLVL_EN` reader - Enables the PI write leveling module.\n\nBit1 represents the support when non-initialization.\n\nBit0 represents the support when initialization.\n\nSet to 1 to enable."]
 pub type PiWrlvlEnR = crate::FieldReader;
-#[doc = "Field `PI_WRLVL_EN` writer - Enables the PI write leveling module. Bit1 represents the support when non-initialization. Bit0 represents the support when initialization. Set to 1 to enable."]
+#[doc = "Field `PI_WRLVL_EN` writer - Enables the PI write leveling module.\n\nBit1 represents the support when non-initialization.\n\nBit0 represents the support when initialization.\n\nSet to 1 to enable."]
 pub type PiWrlvlEnW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-#[doc = "Field `PI_WRLVL_INTERVAL` reader - Indicates the number of long count sequences that are counted between automatic write leveling commands."]
+#[doc = "Field `PI_WRLVL_INTERVAL` reader - Indicates the number of long count sequences that are counted\n\nbetween automatic write leveling commands."]
 pub type PiWrlvlIntervalR = crate::FieldReader<u16>;
-#[doc = "Field `PI_WRLVL_INTERVAL` writer - Indicates the number of long count sequences that are counted between automatic write leveling commands."]
+#[doc = "Field `PI_WRLVL_INTERVAL` writer - Indicates the number of long count sequences that are counted\n\nbetween automatic write leveling commands."]
 pub type PiWrlvlIntervalW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:5 - Indicates delay from the issuing MRS to the first write leveling strobe."]
+    #[doc = "Bits 0:5 - Indicates delay from the issuing MRS to the first write leveling\n\nstrobe."]
     #[inline(always)]
     pub fn pi_wlmrd(&self) -> PiWlmrdR {
         PiWlmrdR::new((self.bits & 0x3f) as u8)
     }
-    #[doc = "Bits 8:9 - Enables the PI write leveling module. Bit1 represents the support when non-initialization. Bit0 represents the support when initialization. Set to 1 to enable."]
+    #[doc = "Bits 8:9 - Enables the PI write leveling module.\n\nBit1 represents the support when non-initialization.\n\nBit0 represents the support when initialization.\n\nSet to 1 to enable."]
     #[inline(always)]
     pub fn pi_wrlvl_en(&self) -> PiWrlvlEnR {
         PiWrlvlEnR::new(((self.bits >> 8) & 3) as u8)
     }
-    #[doc = "Bits 16:31 - Indicates the number of long count sequences that are counted between automatic write leveling commands."]
+    #[doc = "Bits 16:31 - Indicates the number of long count sequences that are counted\n\nbetween automatic write leveling commands."]
     #[inline(always)]
     pub fn pi_wrlvl_interval(&self) -> PiWrlvlIntervalR {
         PiWrlvlIntervalR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:5 - Indicates delay from the issuing MRS to the first write leveling strobe."]
+    #[doc = "Bits 0:5 - Indicates delay from the issuing MRS to the first write leveling\n\nstrobe."]
     #[inline(always)]
     #[must_use]
     pub fn pi_wlmrd(&mut self) -> PiWlmrdW<DdrPiReg60Spec> {
         PiWlmrdW::new(self, 0)
     }
-    #[doc = "Bits 8:9 - Enables the PI write leveling module. Bit1 represents the support when non-initialization. Bit0 represents the support when initialization. Set to 1 to enable."]
+    #[doc = "Bits 8:9 - Enables the PI write leveling module.\n\nBit1 represents the support when non-initialization.\n\nBit0 represents the support when initialization.\n\nSet to 1 to enable."]
     #[inline(always)]
     #[must_use]
     pub fn pi_wrlvl_en(&mut self) -> PiWrlvlEnW<DdrPiReg60Spec> {
         PiWrlvlEnW::new(self, 8)
     }
-    #[doc = "Bits 16:31 - Indicates the number of long count sequences that are counted between automatic write leveling commands."]
+    #[doc = "Bits 16:31 - Indicates the number of long count sequences that are counted\n\nbetween automatic write leveling commands."]
     #[inline(always)]
     #[must_use]
     pub fn pi_wrlvl_interval(&mut self) -> PiWrlvlIntervalW<DdrPiReg60Spec> {

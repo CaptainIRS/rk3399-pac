@@ -2,19 +2,19 @@
 pub type R = crate::R<MailboxA2bCmd1Spec>;
 #[doc = "Register `MAILBOX_A2B_CMD_1` writer"]
 pub type W = crate::W<MailboxA2bCmd1Spec>;
-#[doc = "Field `COMMAND` reader - command of Cortex-A53/Cortex-A72 to Cortex-M0"]
+#[doc = "Field `COMMAND` reader - command of Cortex-A53/Cortex-A72 to\n\nCortex-M0"]
 pub type CommandR = crate::FieldReader<u32>;
-#[doc = "Field `COMMAND` writer - command of Cortex-A53/Cortex-A72 to Cortex-M0"]
+#[doc = "Field `COMMAND` writer - command of Cortex-A53/Cortex-A72 to\n\nCortex-M0"]
 pub type CommandW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - command of Cortex-A53/Cortex-A72 to Cortex-M0"]
+    #[doc = "Bits 0:31 - command of Cortex-A53/Cortex-A72 to\n\nCortex-M0"]
     #[inline(always)]
     pub fn command(&self) -> CommandR {
         CommandR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - command of Cortex-A53/Cortex-A72 to Cortex-M0"]
+    #[doc = "Bits 0:31 - command of Cortex-A53/Cortex-A72 to\n\nCortex-M0"]
     #[inline(always)]
     #[must_use]
     pub fn command(&mut self) -> CommandW<MailboxA2bCmd1Spec> {

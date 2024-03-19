@@ -3,9 +3,10 @@ pub type R = crate::R<SdmmcBackEndPowerSpec>;
 #[doc = "Register `SDMMC_BACK_END_POWER` writer"]
 pub type W = crate::W<SdmmcBackEndPowerSpec>;
 #[doc = "Back end power\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BackEndPower {
-    #[doc = "0: Back-end Power supplied to card application"]
+    #[doc = "0: Off; Reset"]
     B0 = 0,
     #[doc = "1: Back-end Power supplied to card application"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl BackEndPowerR {
             true => BackEndPower::B1,
         }
     }
-    #[doc = "Back-end Power supplied to card application"]
+    #[doc = "Off; Reset"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == BackEndPower::B0
@@ -44,7 +45,7 @@ impl<'a, REG> BackEndPowerW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Back-end Power supplied to card application"]
+    #[doc = "Off; Reset"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(BackEndPower::B0)

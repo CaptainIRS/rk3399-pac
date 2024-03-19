@@ -3,10 +3,11 @@ pub type R = crate::R<TxInstuffingSpec>;
 #[doc = "Register `TX_INSTUFFING` writer"]
 pub type W = crate::W<TxInstuffingSpec>;
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GydataStuffing {
     #[doc = "0: When the dataen signal is low, the value in the gydata\\[15:0\\]
-output is given by the values in TX_GYDTA0 and TX_GYDATA1 registers."]
+output is the one sampled from the corresponding input data."]
     B0 = 0,
     #[doc = "1: When the dataen signal is low, the value in the gydata\\[15:0\\]
 output is given by the values in TX_GYDTA0 and TX_GYDATA1 registers."]
@@ -30,7 +31,7 @@ impl GydataStuffingR {
         }
     }
     #[doc = "When the dataen signal is low, the value in the gydata\\[15:0\\]
-output is given by the values in TX_GYDTA0 and TX_GYDATA1 registers."]
+output is the one sampled from the corresponding input data."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == GydataStuffing::B0
@@ -49,7 +50,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "When the dataen signal is low, the value in the gydata\\[15:0\\]
-output is given by the values in TX_GYDTA0 and TX_GYDATA1 registers."]
+output is the one sampled from the corresponding input data."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(GydataStuffing::B0)
@@ -62,10 +63,11 @@ output is given by the values in TX_GYDTA0 and TX_GYDATA1 registers."]
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RcrdataStuffing {
     #[doc = "0: When the dataen signal is low, the value in the rcrdata\\[15:0\\]
-output is given by the values in TX_RCRDTA0 and TX_RCRDATA1 registers."]
+output is the one sampled from the corresponding input data."]
     B0 = 0,
     #[doc = "1: When the dataen signal is low, the value in the rcrdata\\[15:0\\]
 output is given by the values in TX_RCRDTA0 and TX_RCRDATA1 registers."]
@@ -89,7 +91,7 @@ impl RcrdataStuffingR {
         }
     }
     #[doc = "When the dataen signal is low, the value in the rcrdata\\[15:0\\]
-output is given by the values in TX_RCRDTA0 and TX_RCRDATA1 registers."]
+output is the one sampled from the corresponding input data."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == RcrdataStuffing::B0
@@ -108,7 +110,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "When the dataen signal is low, the value in the rcrdata\\[15:0\\]
-output is given by the values in TX_RCRDTA0 and TX_RCRDATA1 registers."]
+output is the one sampled from the corresponding input data."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(RcrdataStuffing::B0)
@@ -121,10 +123,11 @@ output is given by the values in TX_RCRDTA0 and TX_RCRDATA1 registers."]
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BcbdataStuffing {
     #[doc = "0: When the dataen signal is low, the value in the bcbdata\\[15:0\\]
-output is given by the values in the TX_BCBDTA0 and TX_BCBDATA1 registers."]
+output is the one sampled from the corresponding input data."]
     B0 = 0,
     #[doc = "1: When the dataen signal is low, the value in the bcbdata\\[15:0\\]
 output is given by the values in the TX_BCBDTA0 and TX_BCBDATA1 registers."]
@@ -148,7 +151,7 @@ impl BcbdataStuffingR {
         }
     }
     #[doc = "When the dataen signal is low, the value in the bcbdata\\[15:0\\]
-output is given by the values in the TX_BCBDTA0 and TX_BCBDATA1 registers."]
+output is the one sampled from the corresponding input data."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == BcbdataStuffing::B0
@@ -167,7 +170,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "When the dataen signal is low, the value in the bcbdata\\[15:0\\]
-output is given by the values in the TX_BCBDTA0 and TX_BCBDATA1 registers."]
+output is the one sampled from the corresponding input data."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(BcbdataStuffing::B0)
@@ -216,9 +219,7 @@ impl W {
         BcbdataStuffingW::new(self, 2)
     }
 }
-#[doc = "0b: When the dataen signal is low, the value in the gydata\\[15:0\\]
-output is the one sampled from the corresponding input data. 1b: When the dataen signal is low, the value in the gydata\\[15:0\\]
-output is given by the values in TX_GYDTA0 and TX_GYDATA1 registers.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tx_instuffing::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tx_instuffing::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Video Input Stuffing Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tx_instuffing::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tx_instuffing::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TxInstuffingSpec;
 impl crate::RegisterSpec for TxInstuffingSpec {
     type Ux = u8;

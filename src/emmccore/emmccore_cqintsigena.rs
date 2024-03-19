@@ -3,9 +3,10 @@ pub type R = crate::R<EmmccoreCqintsigenaSpec>;
 #[doc = "Register `EMMCCORE_CQINTSIGENA` writer"]
 pub type W = crate::W<EmmccoreCqintsigenaSpec>;
 #[doc = "Halt Complete Interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hac {
-    #[doc = "1: disable"]
+    #[doc = "1: enable"]
     B1 = 1,
     #[doc = "0: disable"]
     B0 = 0,
@@ -27,7 +28,7 @@ impl HacR {
             false => Hac::B0,
         }
     }
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Hac::B1
@@ -44,7 +45,7 @@ impl<'a, REG> HacW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Hac::B1)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Task Complete Interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tcc {
-    #[doc = "1: disable"]
+    #[doc = "1: enable"]
     B1 = 1,
     #[doc = "0: disable"]
     B0 = 0,
@@ -80,7 +82,7 @@ impl TccR {
             false => Tcc::B0,
         }
     }
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Tcc::B1
@@ -97,7 +99,7 @@ impl<'a, REG> TccW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Tcc::B1)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "Response Error Detected Interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Red {
-    #[doc = "1: disable"]
+    #[doc = "1: enable"]
     B1 = 1,
     #[doc = "0: disable"]
     B0 = 0,
@@ -133,7 +136,7 @@ impl RedR {
             false => Red::B0,
         }
     }
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Red::B1
@@ -150,7 +153,7 @@ impl<'a, REG> RedW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Red::B1)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "Task Cleared\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tcl {
-    #[doc = "1: disable"]
+    #[doc = "1: enable"]
     B1 = 1,
     #[doc = "0: disable"]
     B0 = 0,
@@ -186,7 +190,7 @@ impl TclR {
             false => Tcl::B0,
         }
     }
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Tcl::B1
@@ -203,7 +207,7 @@ impl<'a, REG> TclW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Tcl::B1)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "Task Error Interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Terr {
-    #[doc = "1: disable"]
+    #[doc = "1: enable"]
     B1 = 1,
     #[doc = "0: disable"]
     B0 = 0,
@@ -239,7 +244,7 @@ impl TerrR {
             false => Terr::B0,
         }
     }
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Terr::B1
@@ -256,7 +261,7 @@ impl<'a, REG> TerrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Terr::B1)

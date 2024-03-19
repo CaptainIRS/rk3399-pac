@@ -10,29 +10,29 @@ pub type SeldipifW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type SeldataenpolR = crate::BitReader;
 #[doc = "Field `SELDATAENPOL` writer - Select data enable polarity."]
 pub type SeldataenpolW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ENHPDRXSENSE` reader - PHY ENHPDRXSENSE signal. Otherwise, this field is a \"spare\" bit with no associated functionality."]
+#[doc = "Field `ENHPDRXSENSE` reader - PHY ENHPDRXSENSE signal. Otherwise, this field is a\n\n\"spare\" bit with no associated functionality."]
 pub type EnhpdrxsenseR = crate::BitReader;
-#[doc = "Field `ENHPDRXSENSE` writer - PHY ENHPDRXSENSE signal. Otherwise, this field is a \"spare\" bit with no associated functionality."]
+#[doc = "Field `ENHPDRXSENSE` writer - PHY ENHPDRXSENSE signal. Otherwise, this field is a\n\n\"spare\" bit with no associated functionality."]
 pub type EnhpdrxsenseW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `TXPWRON` reader - PHY TXPWRON signal. Otherwise, this field is a \"spare\" bit with no associated functionality."]
+#[doc = "Field `TXPWRON` reader - PHY TXPWRON signal. Otherwise, this field is a\n\n\"spare\" bit with no associated functionality."]
 pub type TxpwronR = crate::BitReader;
-#[doc = "Field `TXPWRON` writer - PHY TXPWRON signal. Otherwise, this field is a \"spare\" bit with no associated functionality."]
+#[doc = "Field `TXPWRON` writer - PHY TXPWRON signal. Otherwise, this field is a\n\n\"spare\" bit with no associated functionality."]
 pub type TxpwronW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PDDQ` reader - PHY PDDQ signal. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (PHY_MHL_COMBO== 1) ? 1 :"]
+#[doc = "Field `PDDQ` reader - PHY PDDQ signal. Otherwise, this field is a \"spare\"\n\nbit with no associated functionality.\n\nReset Value: (PHY_MHL_COMBO== 1) ? 1 :"]
 pub type PddqR = crate::BitReader;
-#[doc = "Field `PDDQ` writer - PHY PDDQ signal. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (PHY_MHL_COMBO== 1) ? 1 :"]
+#[doc = "Field `PDDQ` writer - PHY PDDQ signal. Otherwise, this field is a \"spare\"\n\nbit with no associated functionality.\n\nReset Value: (PHY_MHL_COMBO== 1) ? 1 :"]
 pub type PddqW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `SVSRET` reader - PHY SVSRET signal. Otherwise, this field is a \"spare\" bit with no associated functionality."]
+#[doc = "Field `SVSRET` reader - PHY SVSRET signal. Otherwise, this field is a \"spare\"\n\nbit with no associated functionality."]
 pub type SvsretR = crate::BitReader;
-#[doc = "Field `SVSRET` writer - PHY SVSRET signal. Otherwise, this field is a \"spare\" bit with no associated functionality."]
+#[doc = "Field `SVSRET` writer - PHY SVSRET signal. Otherwise, this field is a \"spare\"\n\nbit with no associated functionality."]
 pub type SvsretW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ENTMDS` reader - Enable TMDS drivers, bias, and TMDS digital logic. Otherwise, this field is a \"spare\" bit with no associated functionality."]
+#[doc = "Field `ENTMDS` reader - Enable TMDS drivers, bias, and TMDS digital logic.\n\nOtherwise, this field is a \"spare\" bit with no\n\nassociated functionality."]
 pub type EntmdsR = crate::BitReader;
-#[doc = "Field `ENTMDS` writer - Enable TMDS drivers, bias, and TMDS digital logic. Otherwise, this field is a \"spare\" bit with no associated functionality."]
+#[doc = "Field `ENTMDS` writer - Enable TMDS drivers, bias, and TMDS digital logic.\n\nOtherwise, this field is a \"spare\" bit with no\n\nassociated functionality."]
 pub type EntmdsW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PDZ` reader - Power-down enable (active low 0b). Otherwise, this field is a \"spare\" bit with no associated functionality."]
+#[doc = "Field `PDZ` reader - Power-down enable (active low 0b). Otherwise, this\n\nfield is a \"spare\" bit with no associated functionality."]
 pub type PdzR = crate::BitReader;
-#[doc = "Field `PDZ` writer - Power-down enable (active low 0b). Otherwise, this field is a \"spare\" bit with no associated functionality."]
+#[doc = "Field `PDZ` writer - Power-down enable (active low 0b). Otherwise, this\n\nfield is a \"spare\" bit with no associated functionality."]
 pub type PdzW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Select interface control."]
@@ -45,32 +45,32 @@ impl R {
     pub fn seldataenpol(&self) -> SeldataenpolR {
         SeldataenpolR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - PHY ENHPDRXSENSE signal. Otherwise, this field is a \"spare\" bit with no associated functionality."]
+    #[doc = "Bit 2 - PHY ENHPDRXSENSE signal. Otherwise, this field is a\n\n\"spare\" bit with no associated functionality."]
     #[inline(always)]
     pub fn enhpdrxsense(&self) -> EnhpdrxsenseR {
         EnhpdrxsenseR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - PHY TXPWRON signal. Otherwise, this field is a \"spare\" bit with no associated functionality."]
+    #[doc = "Bit 3 - PHY TXPWRON signal. Otherwise, this field is a\n\n\"spare\" bit with no associated functionality."]
     #[inline(always)]
     pub fn txpwron(&self) -> TxpwronR {
         TxpwronR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - PHY PDDQ signal. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (PHY_MHL_COMBO== 1) ? 1 :"]
+    #[doc = "Bit 4 - PHY PDDQ signal. Otherwise, this field is a \"spare\"\n\nbit with no associated functionality.\n\nReset Value: (PHY_MHL_COMBO== 1) ? 1 :"]
     #[inline(always)]
     pub fn pddq(&self) -> PddqR {
         PddqR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - PHY SVSRET signal. Otherwise, this field is a \"spare\" bit with no associated functionality."]
+    #[doc = "Bit 5 - PHY SVSRET signal. Otherwise, this field is a \"spare\"\n\nbit with no associated functionality."]
     #[inline(always)]
     pub fn svsret(&self) -> SvsretR {
         SvsretR::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 6 - Enable TMDS drivers, bias, and TMDS digital logic. Otherwise, this field is a \"spare\" bit with no associated functionality."]
+    #[doc = "Bit 6 - Enable TMDS drivers, bias, and TMDS digital logic.\n\nOtherwise, this field is a \"spare\" bit with no\n\nassociated functionality."]
     #[inline(always)]
     pub fn entmds(&self) -> EntmdsR {
         EntmdsR::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 7 - Power-down enable (active low 0b). Otherwise, this field is a \"spare\" bit with no associated functionality."]
+    #[doc = "Bit 7 - Power-down enable (active low 0b). Otherwise, this\n\nfield is a \"spare\" bit with no associated functionality."]
     #[inline(always)]
     pub fn pdz(&self) -> PdzR {
         PdzR::new(((self.bits >> 7) & 1) != 0)
@@ -89,44 +89,44 @@ impl W {
     pub fn seldataenpol(&mut self) -> SeldataenpolW<PhyConf0Spec> {
         SeldataenpolW::new(self, 1)
     }
-    #[doc = "Bit 2 - PHY ENHPDRXSENSE signal. Otherwise, this field is a \"spare\" bit with no associated functionality."]
+    #[doc = "Bit 2 - PHY ENHPDRXSENSE signal. Otherwise, this field is a\n\n\"spare\" bit with no associated functionality."]
     #[inline(always)]
     #[must_use]
     pub fn enhpdrxsense(&mut self) -> EnhpdrxsenseW<PhyConf0Spec> {
         EnhpdrxsenseW::new(self, 2)
     }
-    #[doc = "Bit 3 - PHY TXPWRON signal. Otherwise, this field is a \"spare\" bit with no associated functionality."]
+    #[doc = "Bit 3 - PHY TXPWRON signal. Otherwise, this field is a\n\n\"spare\" bit with no associated functionality."]
     #[inline(always)]
     #[must_use]
     pub fn txpwron(&mut self) -> TxpwronW<PhyConf0Spec> {
         TxpwronW::new(self, 3)
     }
-    #[doc = "Bit 4 - PHY PDDQ signal. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (PHY_MHL_COMBO== 1) ? 1 :"]
+    #[doc = "Bit 4 - PHY PDDQ signal. Otherwise, this field is a \"spare\"\n\nbit with no associated functionality.\n\nReset Value: (PHY_MHL_COMBO== 1) ? 1 :"]
     #[inline(always)]
     #[must_use]
     pub fn pddq(&mut self) -> PddqW<PhyConf0Spec> {
         PddqW::new(self, 4)
     }
-    #[doc = "Bit 5 - PHY SVSRET signal. Otherwise, this field is a \"spare\" bit with no associated functionality."]
+    #[doc = "Bit 5 - PHY SVSRET signal. Otherwise, this field is a \"spare\"\n\nbit with no associated functionality."]
     #[inline(always)]
     #[must_use]
     pub fn svsret(&mut self) -> SvsretW<PhyConf0Spec> {
         SvsretW::new(self, 5)
     }
-    #[doc = "Bit 6 - Enable TMDS drivers, bias, and TMDS digital logic. Otherwise, this field is a \"spare\" bit with no associated functionality."]
+    #[doc = "Bit 6 - Enable TMDS drivers, bias, and TMDS digital logic.\n\nOtherwise, this field is a \"spare\" bit with no\n\nassociated functionality."]
     #[inline(always)]
     #[must_use]
     pub fn entmds(&mut self) -> EntmdsW<PhyConf0Spec> {
         EntmdsW::new(self, 6)
     }
-    #[doc = "Bit 7 - Power-down enable (active low 0b). Otherwise, this field is a \"spare\" bit with no associated functionality."]
+    #[doc = "Bit 7 - Power-down enable (active low 0b). Otherwise, this\n\nfield is a \"spare\" bit with no associated functionality."]
     #[inline(always)]
     #[must_use]
     pub fn pdz(&mut self) -> PdzW<PhyConf0Spec> {
         PdzW::new(self, 7)
     }
 }
-#[doc = "Select interface control.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`phy_conf0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`phy_conf0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PHY Configuration Register\n\nThis register holds the power down, data enable polarity, and interface control of the HDMI\n\nSource PHY control.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`phy_conf0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`phy_conf0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PhyConf0Spec;
 impl crate::RegisterSpec for PhyConf0Spec {
     type Ux = u8;

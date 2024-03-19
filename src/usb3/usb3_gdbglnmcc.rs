@@ -1,9 +1,9 @@
 #[doc = "Register `USB3_GDBGLNMCC` reader"]
 pub type R = crate::R<Usb3GdbglnmccSpec>;
-#[doc = "Field `LNMCC_BERC` reader - LNMCC_BERC This field indicates the bit error rate information for the port selected in the GDBGFIFOSPACE.PortSelect field.This field is for debug purposes only."]
+#[doc = "Field `LNMCC_BERC` reader - LNMCC_BERC\n\nThis field indicates the bit error rate information for the port\n\nselected in the GDBGFIFOSPACE.PortSelect field.This field is for\n\ndebug purposes only."]
 pub type LnmccBercR = crate::FieldReader<u16>;
 impl R {
-    #[doc = "Bits 0:8 - LNMCC_BERC This field indicates the bit error rate information for the port selected in the GDBGFIFOSPACE.PortSelect field.This field is for debug purposes only."]
+    #[doc = "Bits 0:8 - LNMCC_BERC\n\nThis field indicates the bit error rate information for the port\n\nselected in the GDBGFIFOSPACE.PortSelect field.This field is for\n\ndebug purposes only."]
     #[inline(always)]
     pub fn lnmcc_berc(&self) -> LnmccBercR {
         LnmccBercR::new((self.bits & 0x01ff) as u16)

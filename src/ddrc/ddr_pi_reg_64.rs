@@ -2,19 +2,19 @@
 pub type R = crate::R<DdrPiReg64Spec>;
 #[doc = "Register `DDR_PI_REG_64` writer"]
 pub type W = crate::W<DdrPiReg64Spec>;
-#[doc = "Field `PI_TDFI_WRLVL_RESP` reader - Defines the DFI tWRLVL_RESP timing parameter (in DFI clocks), the maximum cycles between a dfi_wrlvl_req assertion and a dfi_wrlvl_en assertion."]
+#[doc = "Field `PI_TDFI_WRLVL_RESP` reader - Defines the DFI tWRLVL_RESP timing parameter (in DFI clocks),\n\nthe maximum cycles between a dfi_wrlvl_req assertion and a\n\ndfi_wrlvl_en assertion."]
 pub type PiTdfiWrlvlRespR = crate::FieldReader<u32>;
-#[doc = "Field `PI_TDFI_WRLVL_RESP` writer - Defines the DFI tWRLVL_RESP timing parameter (in DFI clocks), the maximum cycles between a dfi_wrlvl_req assertion and a dfi_wrlvl_en assertion."]
+#[doc = "Field `PI_TDFI_WRLVL_RESP` writer - Defines the DFI tWRLVL_RESP timing parameter (in DFI clocks),\n\nthe maximum cycles between a dfi_wrlvl_req assertion and a\n\ndfi_wrlvl_en assertion."]
 pub type PiTdfiWrlvlRespW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Defines the DFI tWRLVL_RESP timing parameter (in DFI clocks), the maximum cycles between a dfi_wrlvl_req assertion and a dfi_wrlvl_en assertion."]
+    #[doc = "Bits 0:31 - Defines the DFI tWRLVL_RESP timing parameter (in DFI clocks),\n\nthe maximum cycles between a dfi_wrlvl_req assertion and a\n\ndfi_wrlvl_en assertion."]
     #[inline(always)]
     pub fn pi_tdfi_wrlvl_resp(&self) -> PiTdfiWrlvlRespR {
         PiTdfiWrlvlRespR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Defines the DFI tWRLVL_RESP timing parameter (in DFI clocks), the maximum cycles between a dfi_wrlvl_req assertion and a dfi_wrlvl_en assertion."]
+    #[doc = "Bits 0:31 - Defines the DFI tWRLVL_RESP timing parameter (in DFI clocks),\n\nthe maximum cycles between a dfi_wrlvl_req assertion and a\n\ndfi_wrlvl_en assertion."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tdfi_wrlvl_resp(&mut self) -> PiTdfiWrlvlRespW<DdrPiReg64Spec> {

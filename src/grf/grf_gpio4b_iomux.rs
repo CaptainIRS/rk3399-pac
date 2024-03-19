@@ -4,14 +4,15 @@ pub type R = crate::R<GrfGpio4bIomuxSpec>;
 pub type W = crate::W<GrfGpio4bIomuxSpec>;
 #[doc = "GPIO4B\\[0\\]
 iomux select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gpio4b0Sel {
-    #[doc = "0: reserved"]
+    #[doc = "0: gpio"]
     B00 = 0,
-    #[doc = "1: reserved"]
+    #[doc = "1: sdmmc_data0"]
     B01 = 1,
-    #[doc = "2: reserved"]
+    #[doc = "2: uart2dbga_sin"]
     B10 = 2,
     #[doc = "3: reserved"]
     B11 = 3,
@@ -40,17 +41,17 @@ impl Gpio4b0SelR {
             _ => unreachable!(),
         }
     }
-    #[doc = "reserved"]
+    #[doc = "gpio"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == Gpio4b0Sel::B00
     }
-    #[doc = "reserved"]
+    #[doc = "sdmmc_data0"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Gpio4b0Sel::B01
     }
-    #[doc = "reserved"]
+    #[doc = "uart2dbga_sin"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Gpio4b0Sel::B10
@@ -69,17 +70,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "reserved"]
+    #[doc = "gpio"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio4b0Sel::B00)
     }
-    #[doc = "reserved"]
+    #[doc = "sdmmc_data0"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio4b0Sel::B01)
     }
-    #[doc = "reserved"]
+    #[doc = "uart2dbga_sin"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio4b0Sel::B10)
@@ -92,14 +93,15 @@ where
 }
 #[doc = "GPIO4B\\[1\\]
 iomux select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gpio4b1Sel {
-    #[doc = "0: hdcpjtag_trstn"]
+    #[doc = "0: gpio"]
     B00 = 0,
-    #[doc = "1: hdcpjtag_trstn"]
+    #[doc = "1: sdmmc_data1"]
     B01 = 1,
-    #[doc = "2: hdcpjtag_trstn"]
+    #[doc = "2: uart2dbga_sout"]
     B10 = 2,
     #[doc = "3: hdcpjtag_trstn"]
     B11 = 3,
@@ -128,17 +130,17 @@ impl Gpio4b1SelR {
             _ => unreachable!(),
         }
     }
-    #[doc = "hdcpjtag_trstn"]
+    #[doc = "gpio"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == Gpio4b1Sel::B00
     }
-    #[doc = "hdcpjtag_trstn"]
+    #[doc = "sdmmc_data1"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Gpio4b1Sel::B01
     }
-    #[doc = "hdcpjtag_trstn"]
+    #[doc = "uart2dbga_sout"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Gpio4b1Sel::B10
@@ -157,17 +159,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "hdcpjtag_trstn"]
+    #[doc = "gpio"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio4b1Sel::B00)
     }
-    #[doc = "hdcpjtag_trstn"]
+    #[doc = "sdmmc_data1"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio4b1Sel::B01)
     }
-    #[doc = "hdcpjtag_trstn"]
+    #[doc = "uart2dbga_sout"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio4b1Sel::B10)
@@ -180,14 +182,15 @@ where
 }
 #[doc = "GPIO4B\\[2\\]
 iomux select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gpio4b2Sel {
-    #[doc = "0: hdcpjtag_tdi"]
+    #[doc = "0: gpio"]
     B00 = 0,
-    #[doc = "1: hdcpjtag_tdi"]
+    #[doc = "1: sdmmc_data2"]
     B01 = 1,
-    #[doc = "2: hdcpjtag_tdi"]
+    #[doc = "2: cxcsjtag_tck"]
     B10 = 2,
     #[doc = "3: hdcpjtag_tdi"]
     B11 = 3,
@@ -216,17 +219,17 @@ impl Gpio4b2SelR {
             _ => unreachable!(),
         }
     }
-    #[doc = "hdcpjtag_tdi"]
+    #[doc = "gpio"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == Gpio4b2Sel::B00
     }
-    #[doc = "hdcpjtag_tdi"]
+    #[doc = "sdmmc_data2"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Gpio4b2Sel::B01
     }
-    #[doc = "hdcpjtag_tdi"]
+    #[doc = "cxcsjtag_tck"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Gpio4b2Sel::B10
@@ -245,17 +248,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "hdcpjtag_tdi"]
+    #[doc = "gpio"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio4b2Sel::B00)
     }
-    #[doc = "hdcpjtag_tdi"]
+    #[doc = "sdmmc_data2"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio4b2Sel::B01)
     }
-    #[doc = "hdcpjtag_tdi"]
+    #[doc = "cxcsjtag_tck"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio4b2Sel::B10)
@@ -268,14 +271,15 @@ where
 }
 #[doc = "GPIO4B\\[3\\]
 iomux select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gpio4b3Sel {
-    #[doc = "0: hdcpjtag_tdo"]
+    #[doc = "0: gpio"]
     B00 = 0,
-    #[doc = "1: hdcpjtag_tdo"]
+    #[doc = "1: sdmmc_data3"]
     B01 = 1,
-    #[doc = "2: hdcpjtag_tdo"]
+    #[doc = "2: cxcsjtag_tms"]
     B10 = 2,
     #[doc = "3: hdcpjtag_tdo"]
     B11 = 3,
@@ -304,17 +308,17 @@ impl Gpio4b3SelR {
             _ => unreachable!(),
         }
     }
-    #[doc = "hdcpjtag_tdo"]
+    #[doc = "gpio"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == Gpio4b3Sel::B00
     }
-    #[doc = "hdcpjtag_tdo"]
+    #[doc = "sdmmc_data3"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Gpio4b3Sel::B01
     }
-    #[doc = "hdcpjtag_tdo"]
+    #[doc = "cxcsjtag_tms"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Gpio4b3Sel::B10
@@ -333,17 +337,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "hdcpjtag_tdo"]
+    #[doc = "gpio"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio4b3Sel::B00)
     }
-    #[doc = "hdcpjtag_tdo"]
+    #[doc = "sdmmc_data3"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio4b3Sel::B01)
     }
-    #[doc = "hdcpjtag_tdo"]
+    #[doc = "cxcsjtag_tms"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio4b3Sel::B10)
@@ -356,14 +360,15 @@ where
 }
 #[doc = "GPIO4B\\[4\\]
 iomux select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gpio4b4Sel {
-    #[doc = "0: hdcpjtag_tck"]
+    #[doc = "0: gpio"]
     B00 = 0,
-    #[doc = "1: hdcpjtag_tck"]
+    #[doc = "1: sdmmc_clkout"]
     B01 = 1,
-    #[doc = "2: hdcpjtag_tck"]
+    #[doc = "2: mcujtag_tck"]
     B10 = 2,
     #[doc = "3: hdcpjtag_tck"]
     B11 = 3,
@@ -392,17 +397,17 @@ impl Gpio4b4SelR {
             _ => unreachable!(),
         }
     }
-    #[doc = "hdcpjtag_tck"]
+    #[doc = "gpio"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == Gpio4b4Sel::B00
     }
-    #[doc = "hdcpjtag_tck"]
+    #[doc = "sdmmc_clkout"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Gpio4b4Sel::B01
     }
-    #[doc = "hdcpjtag_tck"]
+    #[doc = "mcujtag_tck"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Gpio4b4Sel::B10
@@ -421,17 +426,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "hdcpjtag_tck"]
+    #[doc = "gpio"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio4b4Sel::B00)
     }
-    #[doc = "hdcpjtag_tck"]
+    #[doc = "sdmmc_clkout"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio4b4Sel::B01)
     }
-    #[doc = "hdcpjtag_tck"]
+    #[doc = "mcujtag_tck"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio4b4Sel::B10)
@@ -444,14 +449,15 @@ where
 }
 #[doc = "GPIO4B\\[5\\]
 iomux select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gpio4b5Sel {
-    #[doc = "0: hdcpjtag_tms"]
+    #[doc = "0: gpio"]
     B00 = 0,
-    #[doc = "1: hdcpjtag_tms"]
+    #[doc = "1: sdmmc_cmd"]
     B01 = 1,
-    #[doc = "2: hdcpjtag_tms"]
+    #[doc = "2: mcujtag_tms"]
     B10 = 2,
     #[doc = "3: hdcpjtag_tms"]
     B11 = 3,
@@ -480,17 +486,17 @@ impl Gpio4b5SelR {
             _ => unreachable!(),
         }
     }
-    #[doc = "hdcpjtag_tms"]
+    #[doc = "gpio"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == Gpio4b5Sel::B00
     }
-    #[doc = "hdcpjtag_tms"]
+    #[doc = "sdmmc_cmd"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Gpio4b5Sel::B01
     }
-    #[doc = "hdcpjtag_tms"]
+    #[doc = "mcujtag_tms"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Gpio4b5Sel::B10
@@ -509,17 +515,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "hdcpjtag_tms"]
+    #[doc = "gpio"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio4b5Sel::B00)
     }
-    #[doc = "hdcpjtag_tms"]
+    #[doc = "sdmmc_cmd"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio4b5Sel::B01)
     }
-    #[doc = "hdcpjtag_tms"]
+    #[doc = "mcujtag_tms"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio4b5Sel::B10)
@@ -530,9 +536,9 @@ where
         self.variant(Gpio4b5Sel::B11)
     }
 }
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:1 - GPIO4B\\[0\\]
@@ -571,7 +577,7 @@ iomux select"]
     pub fn gpio4b5_sel(&self) -> Gpio4b5SelR {
         Gpio4b5SelR::new(((self.bits >> 10) & 3) as u8)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
@@ -620,7 +626,7 @@ iomux select"]
     pub fn gpio4b5_sel(&mut self) -> Gpio4b5SelW<GrfGpio4bIomuxSpec> {
         Gpio4b5SelW::new(self, 10)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfGpio4bIomuxSpec> {

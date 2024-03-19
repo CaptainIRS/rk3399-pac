@@ -2,19 +2,19 @@
 pub type R = crate::R<DpTxVersionSpec>;
 #[doc = "Register `DP_TX_VERSION` writer"]
 pub type W = crate::W<DpTxVersionSpec>;
-#[doc = "Field `DP_TX_VERSION` reader - &lt;7:5> process 011 (Global Foundry 28nm) &lt;4:3>: Version 00: Rev A &lt;2:0>: Minor revision 000: rev .1 Notion: It is effective when PAD_DVDD is supplied"]
+#[doc = "Field `DP_TX_VERSION` reader - &lt;7:5> process \n\n011 (Global Foundry 28nm) \n\n&lt;4:3>: Version \n\n00: Rev A \n\n&lt;2:0>: Minor revision \n\n000: rev .1 \n\nNotion: It is effective when PAD_DVDD is \n\nsupplied"]
 pub type DpTxVersionR = crate::FieldReader<u32>;
-#[doc = "Field `DP_TX_VERSION` writer - &lt;7:5> process 011 (Global Foundry 28nm) &lt;4:3>: Version 00: Rev A &lt;2:0>: Minor revision 000: rev .1 Notion: It is effective when PAD_DVDD is supplied"]
+#[doc = "Field `DP_TX_VERSION` writer - &lt;7:5> process \n\n011 (Global Foundry 28nm) \n\n&lt;4:3>: Version \n\n00: Rev A \n\n&lt;2:0>: Minor revision \n\n000: rev .1 \n\nNotion: It is effective when PAD_DVDD is \n\nsupplied"]
 pub type DpTxVersionW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - &lt;7:5> process 011 (Global Foundry 28nm) &lt;4:3>: Version 00: Rev A &lt;2:0>: Minor revision 000: rev .1 Notion: It is effective when PAD_DVDD is supplied"]
+    #[doc = "Bits 0:31 - &lt;7:5> process \n\n011 (Global Foundry 28nm) \n\n&lt;4:3>: Version \n\n00: Rev A \n\n&lt;2:0>: Minor revision \n\n000: rev .1 \n\nNotion: It is effective when PAD_DVDD is \n\nsupplied"]
     #[inline(always)]
     pub fn dp_tx_version(&self) -> DpTxVersionR {
         DpTxVersionR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - &lt;7:5> process 011 (Global Foundry 28nm) &lt;4:3>: Version 00: Rev A &lt;2:0>: Minor revision 000: rev .1 Notion: It is effective when PAD_DVDD is supplied"]
+    #[doc = "Bits 0:31 - &lt;7:5> process \n\n011 (Global Foundry 28nm) \n\n&lt;4:3>: Version \n\n00: Rev A \n\n&lt;2:0>: Minor revision \n\n000: rev .1 \n\nNotion: It is effective when PAD_DVDD is \n\nsupplied"]
     #[inline(always)]
     #[must_use]
     pub fn dp_tx_version(&mut self) -> DpTxVersionW<DpTxVersionSpec> {

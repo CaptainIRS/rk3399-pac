@@ -2,14 +2,15 @@
 pub type R = crate::R<VideoCtl1Spec>;
 #[doc = "Register `VIDEO_CTL_1` writer"]
 pub type W = crate::W<VideoCtl1Spec>;
-#[doc = "Field `VIDEO_MUTE` reader - Video mute enable. In video mute mode, the solid color, specified in Base + 0x04A8 ~ Base + 0x04B0, is displayed. 0: Disable, 1: Enable. Output video data is changed properly as soon as this bit is configured."]
+#[doc = "Field `VIDEO_MUTE` reader - Video mute enable. In video mute mode, the solid \n\ncolor, specified in Base + 0x04A8 ~ Base + 0x04B0, \n\nis displayed. \n\n0: Disable, 1: Enable. \n\nOutput video data is changed properly as soon as this \n\nbit is configured."]
 pub type VideoMuteR = crate::BitReader;
-#[doc = "Field `VIDEO_MUTE` writer - Video mute enable. In video mute mode, the solid color, specified in Base + 0x04A8 ~ Base + 0x04B0, is displayed. 0: Disable, 1: Enable. Output video data is changed properly as soon as this bit is configured."]
+#[doc = "Field `VIDEO_MUTE` writer - Video mute enable. In video mute mode, the solid \n\ncolor, specified in Base + 0x04A8 ~ Base + 0x04B0, \n\nis displayed. \n\n0: Disable, 1: Enable. \n\nOutput video data is changed properly as soon as this \n\nbit is configured."]
 pub type VideoMuteW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Video data input enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VideoEn {
-    #[doc = "0: Enable video data input, It takes effect at next video frame."]
+    #[doc = "0: Disable video data input."]
     B0 = 0,
     #[doc = "1: Enable video data input, It takes effect at next video frame."]
     B1 = 1,
@@ -31,7 +32,7 @@ impl VideoEnR {
             true => VideoEn::B1,
         }
     }
-    #[doc = "Enable video data input, It takes effect at next video frame."]
+    #[doc = "Disable video data input."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == VideoEn::B0
@@ -48,7 +49,7 @@ impl<'a, REG> VideoEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enable video data input, It takes effect at next video frame."]
+    #[doc = "Disable video data input."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(VideoEn::B0)
@@ -60,7 +61,7 @@ where
     }
 }
 impl R {
-    #[doc = "Bit 6 - Video mute enable. In video mute mode, the solid color, specified in Base + 0x04A8 ~ Base + 0x04B0, is displayed. 0: Disable, 1: Enable. Output video data is changed properly as soon as this bit is configured."]
+    #[doc = "Bit 6 - Video mute enable. In video mute mode, the solid \n\ncolor, specified in Base + 0x04A8 ~ Base + 0x04B0, \n\nis displayed. \n\n0: Disable, 1: Enable. \n\nOutput video data is changed properly as soon as this \n\nbit is configured."]
     #[inline(always)]
     pub fn video_mute(&self) -> VideoMuteR {
         VideoMuteR::new(((self.bits >> 6) & 1) != 0)
@@ -72,7 +73,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 6 - Video mute enable. In video mute mode, the solid color, specified in Base + 0x04A8 ~ Base + 0x04B0, is displayed. 0: Disable, 1: Enable. Output video data is changed properly as soon as this bit is configured."]
+    #[doc = "Bit 6 - Video mute enable. In video mute mode, the solid \n\ncolor, specified in Base + 0x04A8 ~ Base + 0x04B0, \n\nis displayed. \n\n0: Disable, 1: Enable. \n\nOutput video data is changed properly as soon as this \n\nbit is configured."]
     #[inline(always)]
     #[must_use]
     pub fn video_mute(&mut self) -> VideoMuteW<VideoCtl1Spec> {

@@ -3,9 +3,10 @@ pub type R = crate::R<PktSendCtlSpec>;
 #[doc = "Register `PKT_SEND_CTL` writer"]
 pub type W = crate::W<PktSendCtlSpec>;
 #[doc = "Configurable InfoFrame send enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IfEn {
-    #[doc = "1: Don't send InfoFrame. Make sure that the IF_TYPE and IF_PKT_DB1~25 Registers had been configured correctly and the IF_UP had been written with 1. This bit's type is R/W."]
+    #[doc = "1: Send InfoFrame defined in IF_TYPE and IF_PKT_DB1~25,"]
     B1 = 1,
     #[doc = "0: Don't send InfoFrame. Make sure that the IF_TYPE and IF_PKT_DB1~25 Registers had been configured correctly and the IF_UP had been written with 1. This bit's type is R/W."]
     B0 = 0,
@@ -27,7 +28,7 @@ impl IfEnR {
             false => IfEn::B0,
         }
     }
-    #[doc = "Don't send InfoFrame. Make sure that the IF_TYPE and IF_PKT_DB1~25 Registers had been configured correctly and the IF_UP had been written with 1. This bit's type is R/W."]
+    #[doc = "Send InfoFrame defined in IF_TYPE and IF_PKT_DB1~25,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == IfEn::B1
@@ -44,7 +45,7 @@ impl<'a, REG> IfEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Don't send InfoFrame. Make sure that the IF_TYPE and IF_PKT_DB1~25 Registers had been configured correctly and the IF_UP had been written with 1. This bit's type is R/W."]
+    #[doc = "Send InfoFrame defined in IF_TYPE and IF_PKT_DB1~25,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(IfEn::B1)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "MPEG InfoFrame send enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MpegInfoEn {
-    #[doc = "1: Don't send MPEG InfoFrame. Make sure that the MPEG Packet Content Registers had been configured correctly and the MPEG_INFO_UP had been written with 1. This bit's type is R/W."]
+    #[doc = "1: Send MPEG InfoFrame,"]
     B1 = 1,
     #[doc = "0: Don't send MPEG InfoFrame. Make sure that the MPEG Packet Content Registers had been configured correctly and the MPEG_INFO_UP had been written with 1. This bit's type is R/W."]
     B0 = 0,
@@ -80,7 +82,7 @@ impl MpegInfoEnR {
             false => MpegInfoEn::B0,
         }
     }
-    #[doc = "Don't send MPEG InfoFrame. Make sure that the MPEG Packet Content Registers had been configured correctly and the MPEG_INFO_UP had been written with 1. This bit's type is R/W."]
+    #[doc = "Send MPEG InfoFrame,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == MpegInfoEn::B1
@@ -97,7 +99,7 @@ impl<'a, REG> MpegInfoEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Don't send MPEG InfoFrame. Make sure that the MPEG Packet Content Registers had been configured correctly and the MPEG_INFO_UP had been written with 1. This bit's type is R/W."]
+    #[doc = "Send MPEG InfoFrame,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(MpegInfoEn::B1)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "AVI InfoFrame send enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AviInfoEn {
-    #[doc = "1: Don't send AVI InfoFrame. Make sure that the AVI Packet Content Registers had been configured correctly and the AVI_INFO_UP had been written with 1. This bit's type is R/W."]
+    #[doc = "1: Send AVI InfoFrame,"]
     B1 = 1,
     #[doc = "0: Don't send AVI InfoFrame. Make sure that the AVI Packet Content Registers had been configured correctly and the AVI_INFO_UP had been written with 1. This bit's type is R/W."]
     B0 = 0,
@@ -133,7 +136,7 @@ impl AviInfoEnR {
             false => AviInfoEn::B0,
         }
     }
-    #[doc = "Don't send AVI InfoFrame. Make sure that the AVI Packet Content Registers had been configured correctly and the AVI_INFO_UP had been written with 1. This bit's type is R/W."]
+    #[doc = "Send AVI InfoFrame,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == AviInfoEn::B1
@@ -150,7 +153,7 @@ impl<'a, REG> AviInfoEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Don't send AVI InfoFrame. Make sure that the AVI Packet Content Registers had been configured correctly and the AVI_INFO_UP had been written with 1. This bit's type is R/W."]
+    #[doc = "Send AVI InfoFrame,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(AviInfoEn::B1)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "Audio InfoFrame send enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AudioInfoEn {
-    #[doc = "1: Don't send Audio InfoFrame. Make sure that the Audio Packet Content Registers had been configured correctly and the AUDIO_INFO_UP had been written with 1. This bit's type is R/W."]
+    #[doc = "1: Send Audio InfoFrame,"]
     B1 = 1,
     #[doc = "0: Don't send Audio InfoFrame. Make sure that the Audio Packet Content Registers had been configured correctly and the AUDIO_INFO_UP had been written with 1. This bit's type is R/W."]
     B0 = 0,
@@ -186,7 +190,7 @@ impl AudioInfoEnR {
             false => AudioInfoEn::B0,
         }
     }
-    #[doc = "Don't send Audio InfoFrame. Make sure that the Audio Packet Content Registers had been configured correctly and the AUDIO_INFO_UP had been written with 1. This bit's type is R/W."]
+    #[doc = "Send Audio InfoFrame,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == AudioInfoEn::B1
@@ -203,7 +207,7 @@ impl<'a, REG> AudioInfoEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Don't send Audio InfoFrame. Make sure that the Audio Packet Content Registers had been configured correctly and the AUDIO_INFO_UP had been written with 1. This bit's type is R/W."]
+    #[doc = "Send Audio InfoFrame,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(AudioInfoEn::B1)
@@ -214,10 +218,11 @@ where
         self.variant(AudioInfoEn::B0)
     }
 }
-#[doc = "Configurable InfoFrame content has been updated.\n\nValue on reset: 0"]
+#[doc = "Configurable InfoFrame content has been \n\nupdated.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IfUp {
-    #[doc = "1: Don't care. Write 1 to this bit after IF_TYPE and IF_PKT_DB1~25 Registers have been configured as configurable InfoFrame content have been updated. This bit's type is R/W. This bit is self cleared after the register configured content has been used to update the InfoFrame."]
+    #[doc = "1: Updated,"]
     B1 = 1,
     #[doc = "0: Don't care. Write 1 to this bit after IF_TYPE and IF_PKT_DB1~25 Registers have been configured as configurable InfoFrame content have been updated. This bit's type is R/W. This bit is self cleared after the register configured content has been used to update the InfoFrame."]
     B0 = 0,
@@ -228,7 +233,7 @@ impl From<IfUp> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IF_UP` reader - Configurable InfoFrame content has been updated."]
+#[doc = "Field `IF_UP` reader - Configurable InfoFrame content has been \n\nupdated."]
 pub type IfUpR = crate::BitReader<IfUp>;
 impl IfUpR {
     #[doc = "Get enumerated values variant"]
@@ -239,7 +244,7 @@ impl IfUpR {
             false => IfUp::B0,
         }
     }
-    #[doc = "Don't care. Write 1 to this bit after IF_TYPE and IF_PKT_DB1~25 Registers have been configured as configurable InfoFrame content have been updated. This bit's type is R/W. This bit is self cleared after the register configured content has been used to update the InfoFrame."]
+    #[doc = "Updated,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == IfUp::B1
@@ -250,13 +255,13 @@ impl IfUpR {
         *self == IfUp::B0
     }
 }
-#[doc = "Field `IF_UP` writer - Configurable InfoFrame content has been updated."]
+#[doc = "Field `IF_UP` writer - Configurable InfoFrame content has been \n\nupdated."]
 pub type IfUpW<'a, REG> = crate::BitWriter1C<'a, REG, IfUp>;
 impl<'a, REG> IfUpW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Don't care. Write 1 to this bit after IF_TYPE and IF_PKT_DB1~25 Registers have been configured as configurable InfoFrame content have been updated. This bit's type is R/W. This bit is self cleared after the register configured content has been used to update the InfoFrame."]
+    #[doc = "Updated,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(IfUp::B1)
@@ -267,10 +272,11 @@ where
         self.variant(IfUp::B0)
     }
 }
-#[doc = "MPEG InfoFrame content has been updated.\n\nValue on reset: 0"]
+#[doc = "MPEG InfoFrame content has been \n\nupdated.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MpegInfoUp {
-    #[doc = "1: Don't care. Write 1 to this bit after MPEG Packet Content Registers have been configured as MPEG InfoFrame content has been updated. This bit's type is R/W. This bit is self cleared after the register configured content has been used to update the InfoFrame."]
+    #[doc = "1: Updated,"]
     B1 = 1,
     #[doc = "0: Don't care. Write 1 to this bit after MPEG Packet Content Registers have been configured as MPEG InfoFrame content has been updated. This bit's type is R/W. This bit is self cleared after the register configured content has been used to update the InfoFrame."]
     B0 = 0,
@@ -281,7 +287,7 @@ impl From<MpegInfoUp> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MPEG_INFO_UP` reader - MPEG InfoFrame content has been updated."]
+#[doc = "Field `MPEG_INFO_UP` reader - MPEG InfoFrame content has been \n\nupdated."]
 pub type MpegInfoUpR = crate::BitReader<MpegInfoUp>;
 impl MpegInfoUpR {
     #[doc = "Get enumerated values variant"]
@@ -292,7 +298,7 @@ impl MpegInfoUpR {
             false => MpegInfoUp::B0,
         }
     }
-    #[doc = "Don't care. Write 1 to this bit after MPEG Packet Content Registers have been configured as MPEG InfoFrame content has been updated. This bit's type is R/W. This bit is self cleared after the register configured content has been used to update the InfoFrame."]
+    #[doc = "Updated,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == MpegInfoUp::B1
@@ -303,13 +309,13 @@ impl MpegInfoUpR {
         *self == MpegInfoUp::B0
     }
 }
-#[doc = "Field `MPEG_INFO_UP` writer - MPEG InfoFrame content has been updated."]
+#[doc = "Field `MPEG_INFO_UP` writer - MPEG InfoFrame content has been \n\nupdated."]
 pub type MpegInfoUpW<'a, REG> = crate::BitWriter1C<'a, REG, MpegInfoUp>;
 impl<'a, REG> MpegInfoUpW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Don't care. Write 1 to this bit after MPEG Packet Content Registers have been configured as MPEG InfoFrame content has been updated. This bit's type is R/W. This bit is self cleared after the register configured content has been used to update the InfoFrame."]
+    #[doc = "Updated,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(MpegInfoUp::B1)
@@ -321,9 +327,10 @@ where
     }
 }
 #[doc = "AVI InfoFrame content has been updated.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AviInfoUp {
-    #[doc = "1: Don't care. Write 1 to this bit after AVI Packet Content Registers have been configured as AVI InfoFrame content has been updated. This bit's type is R/W. This bit is self cleared after the register configured content has been used to update the InfoFrame."]
+    #[doc = "1: Updated,"]
     B1 = 1,
     #[doc = "0: Don't care. Write 1 to this bit after AVI Packet Content Registers have been configured as AVI InfoFrame content has been updated. This bit's type is R/W. This bit is self cleared after the register configured content has been used to update the InfoFrame."]
     B0 = 0,
@@ -345,7 +352,7 @@ impl AviInfoUpR {
             false => AviInfoUp::B0,
         }
     }
-    #[doc = "Don't care. Write 1 to this bit after AVI Packet Content Registers have been configured as AVI InfoFrame content has been updated. This bit's type is R/W. This bit is self cleared after the register configured content has been used to update the InfoFrame."]
+    #[doc = "Updated,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == AviInfoUp::B1
@@ -362,7 +369,7 @@ impl<'a, REG> AviInfoUpW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Don't care. Write 1 to this bit after AVI Packet Content Registers have been configured as AVI InfoFrame content has been updated. This bit's type is R/W. This bit is self cleared after the register configured content has been used to update the InfoFrame."]
+    #[doc = "Updated,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(AviInfoUp::B1)
@@ -373,10 +380,11 @@ where
         self.variant(AviInfoUp::B0)
     }
 }
-#[doc = "Audio InfoFrame content has been updated.\n\nValue on reset: 0"]
+#[doc = "Audio InfoFrame content has been \n\nupdated.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AudioInfoUp {
-    #[doc = "1: Don't care. Write 1 to this bit after Audio Packet Content Registers have been configured as Audio InfoFrame content has been updated. This bit's type is R/W. This bit is self cleared after the register configured content has been used to update the InfoFrame."]
+    #[doc = "1: Updated,"]
     B1 = 1,
     #[doc = "0: Don't care. Write 1 to this bit after Audio Packet Content Registers have been configured as Audio InfoFrame content has been updated. This bit's type is R/W. This bit is self cleared after the register configured content has been used to update the InfoFrame."]
     B0 = 0,
@@ -387,7 +395,7 @@ impl From<AudioInfoUp> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `AUDIO_INFO_UP` reader - Audio InfoFrame content has been updated."]
+#[doc = "Field `AUDIO_INFO_UP` reader - Audio InfoFrame content has been \n\nupdated."]
 pub type AudioInfoUpR = crate::BitReader<AudioInfoUp>;
 impl AudioInfoUpR {
     #[doc = "Get enumerated values variant"]
@@ -398,7 +406,7 @@ impl AudioInfoUpR {
             false => AudioInfoUp::B0,
         }
     }
-    #[doc = "Don't care. Write 1 to this bit after Audio Packet Content Registers have been configured as Audio InfoFrame content has been updated. This bit's type is R/W. This bit is self cleared after the register configured content has been used to update the InfoFrame."]
+    #[doc = "Updated,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == AudioInfoUp::B1
@@ -409,13 +417,13 @@ impl AudioInfoUpR {
         *self == AudioInfoUp::B0
     }
 }
-#[doc = "Field `AUDIO_INFO_UP` writer - Audio InfoFrame content has been updated."]
+#[doc = "Field `AUDIO_INFO_UP` writer - Audio InfoFrame content has been \n\nupdated."]
 pub type AudioInfoUpW<'a, REG> = crate::BitWriter1C<'a, REG, AudioInfoUp>;
 impl<'a, REG> AudioInfoUpW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Don't care. Write 1 to this bit after Audio Packet Content Registers have been configured as Audio InfoFrame content has been updated. This bit's type is R/W. This bit is self cleared after the register configured content has been used to update the InfoFrame."]
+    #[doc = "Updated,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(AudioInfoUp::B1)
@@ -447,12 +455,12 @@ impl R {
     pub fn audio_info_en(&self) -> AudioInfoEnR {
         AudioInfoEnR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - Configurable InfoFrame content has been updated."]
+    #[doc = "Bit 4 - Configurable InfoFrame content has been \n\nupdated."]
     #[inline(always)]
     pub fn if_up(&self) -> IfUpR {
         IfUpR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - MPEG InfoFrame content has been updated."]
+    #[doc = "Bit 5 - MPEG InfoFrame content has been \n\nupdated."]
     #[inline(always)]
     pub fn mpeg_info_up(&self) -> MpegInfoUpR {
         MpegInfoUpR::new(((self.bits >> 5) & 1) != 0)
@@ -462,7 +470,7 @@ impl R {
     pub fn avi_info_up(&self) -> AviInfoUpR {
         AviInfoUpR::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 7 - Audio InfoFrame content has been updated."]
+    #[doc = "Bit 7 - Audio InfoFrame content has been \n\nupdated."]
     #[inline(always)]
     pub fn audio_info_up(&self) -> AudioInfoUpR {
         AudioInfoUpR::new(((self.bits >> 7) & 1) != 0)
@@ -493,13 +501,13 @@ impl W {
     pub fn audio_info_en(&mut self) -> AudioInfoEnW<PktSendCtlSpec> {
         AudioInfoEnW::new(self, 3)
     }
-    #[doc = "Bit 4 - Configurable InfoFrame content has been updated."]
+    #[doc = "Bit 4 - Configurable InfoFrame content has been \n\nupdated."]
     #[inline(always)]
     #[must_use]
     pub fn if_up(&mut self) -> IfUpW<PktSendCtlSpec> {
         IfUpW::new(self, 4)
     }
-    #[doc = "Bit 5 - MPEG InfoFrame content has been updated."]
+    #[doc = "Bit 5 - MPEG InfoFrame content has been \n\nupdated."]
     #[inline(always)]
     #[must_use]
     pub fn mpeg_info_up(&mut self) -> MpegInfoUpW<PktSendCtlSpec> {
@@ -511,7 +519,7 @@ impl W {
     pub fn avi_info_up(&mut self) -> AviInfoUpW<PktSendCtlSpec> {
         AviInfoUpW::new(self, 6)
     }
-    #[doc = "Bit 7 - Audio InfoFrame content has been updated."]
+    #[doc = "Bit 7 - Audio InfoFrame content has been \n\nupdated."]
     #[inline(always)]
     #[must_use]
     pub fn audio_info_up(&mut self) -> AudioInfoUpW<PktSendCtlSpec> {

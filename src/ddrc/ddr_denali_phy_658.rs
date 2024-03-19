@@ -6,9 +6,9 @@ pub type W = crate::W<DdrDenaliPhy658Spec>;
 pub type PhyAdrCalvlDebugMode1R = crate::BitReader;
 #[doc = "Field `PHY_ADR_CALVL_DEBUG_MODE_1` writer - Enables CA training debug mode for address slice 1. Set to 1 to enable."]
 pub type PhyAdrCalvlDebugMode1W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `SC_PHY_ADR_CALVL_DEBUG_CONT_1` writer - Allows the CA training state machine to advance (when in debug mode) for address slice 1. Set to 1 to trigger. WRITE-ONLY"]
+#[doc = "Field `SC_PHY_ADR_CALVL_DEBUG_CONT_1` writer - Allows the CA training state machine to advance (when in debug mode) for address slice 1. Set to 1 to trigger."]
 pub type ScPhyAdrCalvlDebugCont1W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `SC_PHY_ADR_CALVL_ERROR_CLR_1` writer - Clears the CA training state machine error status for address slice 1. Set to 1 to trigger. WRITE- ONLY"]
+#[doc = "Field `SC_PHY_ADR_CALVL_ERROR_CLR_1` writer - Clears the CA training state machine error status for address slice 1. Set to 1 to trigger."]
 pub type ScPhyAdrCalvlErrorClr1W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PHY_ADR_CALVL_OBS_SELECT_1` reader - CA bit lane to observe result from (OBS0 and OBS1) during CA training for address slice 1."]
 pub type PhyAdrCalvlObsSelect1R = crate::FieldReader;
@@ -33,7 +33,7 @@ impl W {
     pub fn phy_adr_calvl_debug_mode_1(&mut self) -> PhyAdrCalvlDebugMode1W<DdrDenaliPhy658Spec> {
         PhyAdrCalvlDebugMode1W::new(self, 0)
     }
-    #[doc = "Bit 8 - Allows the CA training state machine to advance (when in debug mode) for address slice 1. Set to 1 to trigger. WRITE-ONLY"]
+    #[doc = "Bit 8 - Allows the CA training state machine to advance (when in debug mode) for address slice 1. Set to 1 to trigger."]
     #[inline(always)]
     #[must_use]
     pub fn sc_phy_adr_calvl_debug_cont_1(
@@ -41,7 +41,7 @@ impl W {
     ) -> ScPhyAdrCalvlDebugCont1W<DdrDenaliPhy658Spec> {
         ScPhyAdrCalvlDebugCont1W::new(self, 8)
     }
-    #[doc = "Bit 16 - Clears the CA training state machine error status for address slice 1. Set to 1 to trigger. WRITE- ONLY"]
+    #[doc = "Bit 16 - Clears the CA training state machine error status for address slice 1. Set to 1 to trigger."]
     #[inline(always)]
     #[must_use]
     pub fn sc_phy_adr_calvl_error_clr_1(&mut self) -> ScPhyAdrCalvlErrorClr1W<DdrDenaliPhy658Spec> {

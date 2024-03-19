@@ -3,14 +3,15 @@ pub type R = crate::R<GrfSigDetectCon1Spec>;
 #[doc = "Register `GRF_SIG_DETECT_CON1` writer"]
 pub type W = crate::W<GrfSigDetectCon1Spec>;
 #[doc = "filter time select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Otg0IdFilterTimeSel {
-    #[doc = "0: 50ms"]
+    #[doc = "0: 5ms"]
     B00 = 0,
-    #[doc = "1: 50ms"]
+    #[doc = "1: 15ms"]
     B01 = 1,
-    #[doc = "2: 50ms"]
+    #[doc = "2: 35ms"]
     B10 = 2,
     #[doc = "3: 50ms"]
     B11 = 3,
@@ -38,17 +39,17 @@ impl Otg0IdFilterTimeSelR {
             _ => unreachable!(),
         }
     }
-    #[doc = "50ms"]
+    #[doc = "5ms"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == Otg0IdFilterTimeSel::B00
     }
-    #[doc = "50ms"]
+    #[doc = "15ms"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Otg0IdFilterTimeSel::B01
     }
-    #[doc = "50ms"]
+    #[doc = "35ms"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Otg0IdFilterTimeSel::B10
@@ -66,17 +67,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "50ms"]
+    #[doc = "5ms"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(Otg0IdFilterTimeSel::B00)
     }
-    #[doc = "50ms"]
+    #[doc = "15ms"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Otg0IdFilterTimeSel::B01)
     }
-    #[doc = "50ms"]
+    #[doc = "35ms"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Otg0IdFilterTimeSel::B10)
@@ -88,14 +89,15 @@ where
     }
 }
 #[doc = "filter time select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Otg0LlinestateFilterTimeSel {
-    #[doc = "0: 10ms"]
+    #[doc = "0: 100us"]
     B00 = 0,
-    #[doc = "1: 10ms"]
+    #[doc = "1: 500us"]
     B01 = 1,
-    #[doc = "2: 10ms"]
+    #[doc = "2: 1ms"]
     B10 = 2,
     #[doc = "3: 10ms"]
     B11 = 3,
@@ -123,17 +125,17 @@ impl Otg0LlinestateFilterTimeSelR {
             _ => unreachable!(),
         }
     }
-    #[doc = "10ms"]
+    #[doc = "100us"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == Otg0LlinestateFilterTimeSel::B00
     }
-    #[doc = "10ms"]
+    #[doc = "500us"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Otg0LlinestateFilterTimeSel::B01
     }
-    #[doc = "10ms"]
+    #[doc = "1ms"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Otg0LlinestateFilterTimeSel::B10
@@ -152,17 +154,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "10ms"]
+    #[doc = "100us"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(Otg0LlinestateFilterTimeSel::B00)
     }
-    #[doc = "10ms"]
+    #[doc = "500us"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Otg0LlinestateFilterTimeSel::B01)
     }
-    #[doc = "10ms"]
+    #[doc = "1ms"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Otg0LlinestateFilterTimeSel::B10)
@@ -174,14 +176,15 @@ where
     }
 }
 #[doc = "filter time select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Host0LlinestateFilterTimeSel {
-    #[doc = "0: 10ms"]
+    #[doc = "0: 100us"]
     B00 = 0,
-    #[doc = "1: 10ms"]
+    #[doc = "1: 500us"]
     B01 = 1,
-    #[doc = "2: 10ms"]
+    #[doc = "2: 1ms"]
     B10 = 2,
     #[doc = "3: 10ms"]
     B11 = 3,
@@ -209,17 +212,17 @@ impl Host0LlinestateFilterTimeSelR {
             _ => unreachable!(),
         }
     }
-    #[doc = "10ms"]
+    #[doc = "100us"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == Host0LlinestateFilterTimeSel::B00
     }
-    #[doc = "10ms"]
+    #[doc = "500us"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Host0LlinestateFilterTimeSel::B01
     }
-    #[doc = "10ms"]
+    #[doc = "1ms"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Host0LlinestateFilterTimeSel::B10
@@ -238,17 +241,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "10ms"]
+    #[doc = "100us"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(Host0LlinestateFilterTimeSel::B00)
     }
-    #[doc = "10ms"]
+    #[doc = "500us"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Host0LlinestateFilterTimeSel::B01)
     }
-    #[doc = "10ms"]
+    #[doc = "1ms"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Host0LlinestateFilterTimeSel::B10)
@@ -259,9 +262,9 @@ where
         self.variant(Host0LlinestateFilterTimeSel::B11)
     }
 }
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 8:9 - filter time select"]
@@ -279,7 +282,7 @@ impl R {
     pub fn host0_llinestate_filter_time_sel(&self) -> Host0LlinestateFilterTimeSelR {
         Host0LlinestateFilterTimeSelR::new(((self.bits >> 12) & 3) as u8)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
@@ -308,7 +311,7 @@ impl W {
     ) -> Host0LlinestateFilterTimeSelW<GrfSigDetectCon1Spec> {
         Host0LlinestateFilterTimeSelW::new(self, 12)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfSigDetectCon1Spec> {

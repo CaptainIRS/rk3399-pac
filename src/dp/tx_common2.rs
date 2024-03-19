@@ -3,22 +3,23 @@ pub type R = crate::R<TxCommon2Spec>;
 #[doc = "Register `TX_COMMON2` writer"]
 pub type W = crate::W<TxCommon2Spec>;
 #[doc = "TX data Patten\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TxDataPatten {
-    #[doc = "0: 11111111110000000000"]
+    #[doc = "0: all zero"]
     B000 = 0,
-    #[doc = "1: 11111111110000000000"]
+    #[doc = "1: all one"]
     B001 = 1,
-    #[doc = "2: 11111111110000000000"]
+    #[doc = "2: D10.2"]
     B010 = 2,
-    #[doc = "3: 11111111110000000000"]
+    #[doc = "3: 1100"]
     B011 = 3,
-    #[doc = "4: 11111111110000000000"]
+    #[doc = "4: K28.5"]
     B100 = 4,
-    #[doc = "5: 11111111110000000000"]
+    #[doc = "5: K28.7"]
     B101 = 5,
-    #[doc = "6: 11111111110000000000"]
+    #[doc = "6: 1111100000"]
     B110 = 6,
     #[doc = "7: 11111111110000000000"]
     B111 = 7,
@@ -50,37 +51,37 @@ impl TxDataPattenR {
             _ => unreachable!(),
         }
     }
-    #[doc = "11111111110000000000"]
+    #[doc = "all zero"]
     #[inline(always)]
     pub fn is_b000(&self) -> bool {
         *self == TxDataPatten::B000
     }
-    #[doc = "11111111110000000000"]
+    #[doc = "all one"]
     #[inline(always)]
     pub fn is_b001(&self) -> bool {
         *self == TxDataPatten::B001
     }
-    #[doc = "11111111110000000000"]
+    #[doc = "D10.2"]
     #[inline(always)]
     pub fn is_b010(&self) -> bool {
         *self == TxDataPatten::B010
     }
-    #[doc = "11111111110000000000"]
+    #[doc = "1100"]
     #[inline(always)]
     pub fn is_b011(&self) -> bool {
         *self == TxDataPatten::B011
     }
-    #[doc = "11111111110000000000"]
+    #[doc = "K28.5"]
     #[inline(always)]
     pub fn is_b100(&self) -> bool {
         *self == TxDataPatten::B100
     }
-    #[doc = "11111111110000000000"]
+    #[doc = "K28.7"]
     #[inline(always)]
     pub fn is_b101(&self) -> bool {
         *self == TxDataPatten::B101
     }
-    #[doc = "11111111110000000000"]
+    #[doc = "1111100000"]
     #[inline(always)]
     pub fn is_b110(&self) -> bool {
         *self == TxDataPatten::B110
@@ -98,37 +99,37 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "11111111110000000000"]
+    #[doc = "all zero"]
     #[inline(always)]
     pub fn b000(self) -> &'a mut crate::W<REG> {
         self.variant(TxDataPatten::B000)
     }
-    #[doc = "11111111110000000000"]
+    #[doc = "all one"]
     #[inline(always)]
     pub fn b001(self) -> &'a mut crate::W<REG> {
         self.variant(TxDataPatten::B001)
     }
-    #[doc = "11111111110000000000"]
+    #[doc = "D10.2"]
     #[inline(always)]
     pub fn b010(self) -> &'a mut crate::W<REG> {
         self.variant(TxDataPatten::B010)
     }
-    #[doc = "11111111110000000000"]
+    #[doc = "1100"]
     #[inline(always)]
     pub fn b011(self) -> &'a mut crate::W<REG> {
         self.variant(TxDataPatten::B011)
     }
-    #[doc = "11111111110000000000"]
+    #[doc = "K28.5"]
     #[inline(always)]
     pub fn b100(self) -> &'a mut crate::W<REG> {
         self.variant(TxDataPatten::B100)
     }
-    #[doc = "11111111110000000000"]
+    #[doc = "K28.7"]
     #[inline(always)]
     pub fn b101(self) -> &'a mut crate::W<REG> {
         self.variant(TxDataPatten::B101)
     }
-    #[doc = "11111111110000000000"]
+    #[doc = "1111100000"]
     #[inline(always)]
     pub fn b110(self) -> &'a mut crate::W<REG> {
         self.variant(TxDataPatten::B110)
@@ -140,9 +141,10 @@ where
     }
 }
 #[doc = "TX output pattern enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TxOutPatternEn {
-    #[doc = "0: dedicate pattern"]
+    #[doc = "0: normal TX"]
     B0 = 0,
     #[doc = "1: dedicate pattern"]
     B1 = 1,
@@ -164,7 +166,7 @@ impl TxOutPatternEnR {
             true => TxOutPatternEn::B1,
         }
     }
-    #[doc = "dedicate pattern"]
+    #[doc = "normal TX"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == TxOutPatternEn::B0
@@ -181,7 +183,7 @@ impl<'a, REG> TxOutPatternEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "dedicate pattern"]
+    #[doc = "normal TX"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(TxOutPatternEn::B0)
@@ -193,9 +195,10 @@ where
     }
 }
 #[doc = "TX ch0 output p-n inverse control:\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TxOutputPnInverseCh0 {
-    #[doc = "0: output p and n inverse"]
+    #[doc = "0: not inverse"]
     B0 = 0,
     #[doc = "1: output p and n inverse"]
     B1 = 1,
@@ -217,7 +220,7 @@ impl TxOutputPnInverseCh0R {
             true => TxOutputPnInverseCh0::B1,
         }
     }
-    #[doc = "output p and n inverse"]
+    #[doc = "not inverse"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == TxOutputPnInverseCh0::B0
@@ -234,7 +237,7 @@ impl<'a, REG> TxOutputPnInverseCh0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "output p and n inverse"]
+    #[doc = "not inverse"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(TxOutputPnInverseCh0::B0)
@@ -246,9 +249,10 @@ where
     }
 }
 #[doc = "TX ch1 output p-n inverse control:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TxOutputPnInverseCh1 {
-    #[doc = "0: output p and n inverse"]
+    #[doc = "0: not inverse"]
     B0 = 0,
     #[doc = "1: output p and n inverse"]
     B1 = 1,
@@ -270,7 +274,7 @@ impl TxOutputPnInverseCh1R {
             true => TxOutputPnInverseCh1::B1,
         }
     }
-    #[doc = "output p and n inverse"]
+    #[doc = "not inverse"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == TxOutputPnInverseCh1::B0
@@ -287,7 +291,7 @@ impl<'a, REG> TxOutputPnInverseCh1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "output p and n inverse"]
+    #[doc = "not inverse"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(TxOutputPnInverseCh1::B0)
@@ -299,9 +303,10 @@ where
     }
 }
 #[doc = "TX ch2 output p-n inverse control:\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TxOutputPnInverseCh2 {
-    #[doc = "0: output p and n inverse"]
+    #[doc = "0: not inverse"]
     B0 = 0,
     #[doc = "1: output p and n inverse"]
     B1 = 1,
@@ -323,7 +328,7 @@ impl TxOutputPnInverseCh2R {
             true => TxOutputPnInverseCh2::B1,
         }
     }
-    #[doc = "output p and n inverse"]
+    #[doc = "not inverse"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == TxOutputPnInverseCh2::B0
@@ -340,7 +345,7 @@ impl<'a, REG> TxOutputPnInverseCh2W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "output p and n inverse"]
+    #[doc = "not inverse"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(TxOutputPnInverseCh2::B0)
@@ -352,9 +357,10 @@ where
     }
 }
 #[doc = "TX ch3 output p-n inverse control:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TxOutputPnInverseCh3 {
-    #[doc = "0: output p and n inverse"]
+    #[doc = "0: not inverse"]
     B0 = 0,
     #[doc = "1: output p and n inverse"]
     B1 = 1,
@@ -376,7 +382,7 @@ impl TxOutputPnInverseCh3R {
             true => TxOutputPnInverseCh3::B1,
         }
     }
-    #[doc = "output p and n inverse"]
+    #[doc = "not inverse"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == TxOutputPnInverseCh3::B0
@@ -393,7 +399,7 @@ impl<'a, REG> TxOutputPnInverseCh3W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "output p and n inverse"]
+    #[doc = "not inverse"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(TxOutputPnInverseCh3::B0)

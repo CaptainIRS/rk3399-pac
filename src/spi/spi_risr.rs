@@ -1,9 +1,10 @@
 #[doc = "Register `SPI_RISR` reader"]
 pub type R = crate::R<SpiRisrSpec>;
 #[doc = "Transmit FIFO Empty Raw Interrupt Status\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tferis {
-    #[doc = "0: spi_txe_intr interrupt is active prior to masking"]
+    #[doc = "0: spi_txe_intr interrupt is not active prior to masking"]
     B0 = 0,
     #[doc = "1: spi_txe_intr interrupt is active prior to masking"]
     B1 = 1,
@@ -25,7 +26,7 @@ impl TferisR {
             true => Tferis::B1,
         }
     }
-    #[doc = "spi_txe_intr interrupt is active prior to masking"]
+    #[doc = "spi_txe_intr interrupt is not active prior to masking"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Tferis::B0
@@ -37,9 +38,10 @@ impl TferisR {
     }
 }
 #[doc = "Transmit FIFO Overflow Raw Interrupt Status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tforis {
-    #[doc = "0: spi_txo_intr interrupt is active prior to masking"]
+    #[doc = "0: spi_txo_intr interrupt is not active prior to masking"]
     B0 = 0,
     #[doc = "1: spi_txo_intr interrupt is active prior to masking"]
     B1 = 1,
@@ -61,7 +63,7 @@ impl TforisR {
             true => Tforis::B1,
         }
     }
-    #[doc = "spi_txo_intr interrupt is active prior to masking"]
+    #[doc = "spi_txo_intr interrupt is not active prior to masking"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Tforis::B0
@@ -73,9 +75,10 @@ impl TforisR {
     }
 }
 #[doc = "Receive FIFO Underflow Raw Interrupt Status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rfuris {
-    #[doc = "0: spi_rxu_intr interrupt is active prior to masking"]
+    #[doc = "0: spi_rxu_intr interrupt is not active prior to masking"]
     B0 = 0,
     #[doc = "1: spi_rxu_intr interrupt is active prior to masking"]
     B1 = 1,
@@ -97,7 +100,7 @@ impl RfurisR {
             true => Rfuris::B1,
         }
     }
-    #[doc = "spi_rxu_intr interrupt is active prior to masking"]
+    #[doc = "spi_rxu_intr interrupt is not active prior to masking"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Rfuris::B0
@@ -108,12 +111,13 @@ impl RfurisR {
         *self == Rfuris::B1
     }
 }
-#[doc = "Field `RFORIS` reader - Receive FIFO Overflow Raw Interrupt Status 1'b0 = spi_rxo_intr interrupt is not active prior to masking 1'b1 = spi_rxo_intr interrupt is active prior to masking"]
+#[doc = "Field `RFORIS` reader - Receive FIFO Overflow Raw Interrupt Status\n\n1'b0 = spi_rxo_intr interrupt is not active prior to masking\n\n1'b1 = spi_rxo_intr interrupt is active prior to masking"]
 pub type RforisR = crate::BitReader;
 #[doc = "Receive FIFO Full Raw Interrupt Status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rffris {
-    #[doc = "0: spi_rxf_intr interrupt is full prior to masking"]
+    #[doc = "0: spi_rxf_intr interrupt is not active prior to masking"]
     B0 = 0,
     #[doc = "1: spi_rxf_intr interrupt is full prior to masking"]
     B1 = 1,
@@ -135,7 +139,7 @@ impl RffrisR {
             true => Rffris::B1,
         }
     }
-    #[doc = "spi_rxf_intr interrupt is full prior to masking"]
+    #[doc = "spi_rxf_intr interrupt is not active prior to masking"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Rffris::B0
@@ -162,7 +166,7 @@ impl R {
     pub fn rfuris(&self) -> RfurisR {
         RfurisR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - Receive FIFO Overflow Raw Interrupt Status 1'b0 = spi_rxo_intr interrupt is not active prior to masking 1'b1 = spi_rxo_intr interrupt is active prior to masking"]
+    #[doc = "Bit 3 - Receive FIFO Overflow Raw Interrupt Status\n\n1'b0 = spi_rxo_intr interrupt is not active prior to masking\n\n1'b1 = spi_rxo_intr interrupt is active prior to masking"]
     #[inline(always)]
     pub fn rforis(&self) -> RforisR {
         RforisR::new(((self.bits >> 3) & 1) != 0)

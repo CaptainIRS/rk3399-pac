@@ -1,11 +1,11 @@
 #[doc = "Register `DMAC_DBGCMD` writer"]
 pub type W = crate::W<DmacDbgcmdSpec>;
-#[doc = "Field `DMAC_DBGCMD_BITS_1` writer - The debug encoding is as follows: b00 = execute the instruction that the DBGINST \\[1:0\\]
-Registers contain b01 = reserved b10 = reserved b11 = reserved"]
+#[doc = "Field `DMAC_DBGCMD_BITS_1` writer - The debug encoding is as follows:\n\nb00 = execute the instruction that the DBGINST \\[1:0\\]
+Registers\n\ncontain\n\nb01 = reserved\n\nb10 = reserved\n\nb11 = reserved"]
 pub type DmacDbgcmdBits1W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl W {
-    #[doc = "Bits 0:1 - The debug encoding is as follows: b00 = execute the instruction that the DBGINST \\[1:0\\]
-Registers contain b01 = reserved b10 = reserved b11 = reserved"]
+    #[doc = "Bits 0:1 - The debug encoding is as follows:\n\nb00 = execute the instruction that the DBGINST \\[1:0\\]
+Registers\n\ncontain\n\nb01 = reserved\n\nb10 = reserved\n\nb11 = reserved"]
     #[inline(always)]
     #[must_use]
     pub fn dmac_dbgcmd_bits_1(&mut self) -> DmacDbgcmdBits1W<DmacDbgcmdSpec> {

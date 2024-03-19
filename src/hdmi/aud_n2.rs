@@ -21,7 +21,7 @@ impl W {
         AudnW::new(self, 0)
     }
 }
-#[doc = "HDMI Audio Clock Regenerator N value\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aud_n2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`aud_n2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Audio Clock Regenerator N Value Register 2 For N expected values, refer to\n\nthe HDMI 1.4b specification.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aud_n2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`aud_n2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AudN2Spec;
 impl crate::RegisterSpec for AudN2Spec {
     type Ux = u8;

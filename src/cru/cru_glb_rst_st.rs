@@ -3,9 +3,10 @@ pub type R = crate::R<CruGlbRstStSpec>;
 #[doc = "Register `CRU_GLB_RST_ST` writer"]
 pub type W = crate::W<CruGlbRstStSpec>;
 #[doc = "first global rst flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FstGlbRstSt {
-    #[doc = "0: last hot reset is first global reset"]
+    #[doc = "0: last hot reset is not first global reset"]
     B0 = 0,
     #[doc = "1: last hot reset is first global reset"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl FstGlbRstStR {
             true => FstGlbRstSt::B1,
         }
     }
-    #[doc = "last hot reset is first global reset"]
+    #[doc = "last hot reset is not first global reset"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == FstGlbRstSt::B0
@@ -44,7 +45,7 @@ impl<'a, REG> FstGlbRstStW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "last hot reset is first global reset"]
+    #[doc = "last hot reset is not first global reset"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(FstGlbRstSt::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "second global rst flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SndGlbRstSt {
-    #[doc = "0: last hot reset is second global reset"]
+    #[doc = "0: last hot reset is not second global reset"]
     B0 = 0,
     #[doc = "1: last hot reset is second global reset"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl SndGlbRstStR {
             true => SndGlbRstSt::B1,
         }
     }
-    #[doc = "last hot reset is second global reset"]
+    #[doc = "last hot reset is not second global reset"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SndGlbRstSt::B0
@@ -97,7 +99,7 @@ impl<'a, REG> SndGlbRstStW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "last hot reset is second global reset"]
+    #[doc = "last hot reset is not second global reset"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SndGlbRstSt::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "first global TSADC triggered reset flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FstGlbTsadcRstSt {
-    #[doc = "0: last hot reset is first global TSADC triggered reset"]
+    #[doc = "0: last hot reset is not first global TSADC triggered reset"]
     B0 = 0,
     #[doc = "1: last hot reset is first global TSADC triggered reset"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl FstGlbTsadcRstStR {
             true => FstGlbTsadcRstSt::B1,
         }
     }
-    #[doc = "last hot reset is first global TSADC triggered reset"]
+    #[doc = "last hot reset is not first global TSADC triggered reset"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == FstGlbTsadcRstSt::B0
@@ -150,7 +153,7 @@ impl<'a, REG> FstGlbTsadcRstStW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "last hot reset is first global TSADC triggered reset"]
+    #[doc = "last hot reset is not first global TSADC triggered reset"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(FstGlbTsadcRstSt::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "second global TSADC triggered reset flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SndGlbTsadcRstSt {
-    #[doc = "0: last hot reset is second global TSADC triggered reset"]
+    #[doc = "0: last hot reset is not second global TSADC triggered reset"]
     B0 = 0,
     #[doc = "1: last hot reset is second global TSADC triggered reset"]
     B1 = 1,
@@ -186,7 +190,7 @@ impl SndGlbTsadcRstStR {
             true => SndGlbTsadcRstSt::B1,
         }
     }
-    #[doc = "last hot reset is second global TSADC triggered reset"]
+    #[doc = "last hot reset is not second global TSADC triggered reset"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SndGlbTsadcRstSt::B0
@@ -203,7 +207,7 @@ impl<'a, REG> SndGlbTsadcRstStW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "last hot reset is second global TSADC triggered reset"]
+    #[doc = "last hot reset is not second global TSADC triggered reset"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SndGlbTsadcRstSt::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "first global watch_dog triggered reset flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FstGlbWdtRstSt {
-    #[doc = "0: last hot reset is first global watch_dog triggered reset"]
+    #[doc = "0: last hot reset is not first global watch_dog triggered reset"]
     B0 = 0,
     #[doc = "1: last hot reset is first global watch_dog triggered reset"]
     B1 = 1,
@@ -239,7 +244,7 @@ impl FstGlbWdtRstStR {
             true => FstGlbWdtRstSt::B1,
         }
     }
-    #[doc = "last hot reset is first global watch_dog triggered reset"]
+    #[doc = "last hot reset is not first global watch_dog triggered reset"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == FstGlbWdtRstSt::B0
@@ -256,7 +261,7 @@ impl<'a, REG> FstGlbWdtRstStW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "last hot reset is first global watch_dog triggered reset"]
+    #[doc = "last hot reset is not first global watch_dog triggered reset"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(FstGlbWdtRstSt::B0)
@@ -268,9 +273,10 @@ where
     }
 }
 #[doc = "second global watch_dog triggered reset flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SndGlbWdtRstSt {
-    #[doc = "0: last hot reset is second global watch_dog triggered reset"]
+    #[doc = "0: last hot reset is not second global watch_dog triggered reset"]
     B0 = 0,
     #[doc = "1: last hot reset is second global watch_dog triggered reset"]
     B1 = 1,
@@ -292,7 +298,7 @@ impl SndGlbWdtRstStR {
             true => SndGlbWdtRstSt::B1,
         }
     }
-    #[doc = "last hot reset is second global watch_dog triggered reset"]
+    #[doc = "last hot reset is not second global watch_dog triggered reset"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SndGlbWdtRstSt::B0
@@ -309,7 +315,7 @@ impl<'a, REG> SndGlbWdtRstStW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "last hot reset is second global watch_dog triggered reset"]
+    #[doc = "last hot reset is not second global watch_dog triggered reset"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SndGlbWdtRstSt::B0)

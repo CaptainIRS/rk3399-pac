@@ -21,7 +21,7 @@ impl W {
         FcDbgtmdsW::new(self, 0)
     }
 }
-#[doc = "Frame Composer TMDS Data Channel 0 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_dbgtmds::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_dbgtmds::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer TMDS Data Channel Register Array\n\nConfigures the video fixed data to be used in TMDS channel x (where x is 0 to 2) when in\n\nfixed video selection.\n\nFor Channel 0, this equals to set B pixel component value in RGB video or Cb pixel\n\ncomponent value in YCbCr.\n\nFor Channel 1, this equals set G pixel component value in RGB video or Y pixel component\n\nvalue in YCbCr.\n\nFor Channel 2, this equals to set R pixel component value in RGB video or Cr pixel\n\ncomponent value in YCbCr.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_dbgtmds::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_dbgtmds::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcDbgtmdsSpec;
 impl crate::RegisterSpec for FcDbgtmdsSpec {
     type Ux = u8;

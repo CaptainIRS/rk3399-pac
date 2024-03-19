@@ -3,9 +3,10 @@ pub type R = crate::R<CicCtrl1Spec>;
 #[doc = "Register `CIC_CTRL1` writer"]
 pub type W = crate::W<CicCtrl1Spec>;
 #[doc = "Channel 0 standby mode enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum StdbyEnCh0 {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl StdbyEnCh0R {
             true => StdbyEnCh0::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == StdbyEnCh0::B0
@@ -44,7 +45,7 @@ impl<'a, REG> StdbyEnCh0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(StdbyEnCh0::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Channel 1 standby mode enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum StdbyEnCh1 {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl StdbyEnCh1R {
             true => StdbyEnCh1::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == StdbyEnCh1::B0
@@ -97,7 +99,7 @@ impl<'a, REG> StdbyEnCh1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(StdbyEnCh1::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "Channel 0 memory clock gating in standby mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum StdbyMemcgCh0 {
-    #[doc = "0: memory is clock gated when in standby mode"]
+    #[doc = "0: memory is not clock gated when in standby mode"]
     B0 = 0,
     #[doc = "1: memory is clock gated when in standby mode"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl StdbyMemcgCh0R {
             true => StdbyMemcgCh0::B1,
         }
     }
-    #[doc = "memory is clock gated when in standby mode"]
+    #[doc = "memory is not clock gated when in standby mode"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == StdbyMemcgCh0::B0
@@ -150,7 +153,7 @@ impl<'a, REG> StdbyMemcgCh0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "memory is clock gated when in standby mode"]
+    #[doc = "memory is not clock gated when in standby mode"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(StdbyMemcgCh0::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "Channel 1 memory clock gating in standby mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum StdbyMemcgCh1 {
-    #[doc = "0: memory is clock gated when in standby mode"]
+    #[doc = "0: memory is not clock gated when in standby mode"]
     B0 = 0,
     #[doc = "1: memory is clock gated when in standby mode"]
     B1 = 1,
@@ -186,7 +190,7 @@ impl StdbyMemcgCh1R {
             true => StdbyMemcgCh1::B1,
         }
     }
-    #[doc = "memory is clock gated when in standby mode"]
+    #[doc = "memory is not clock gated when in standby mode"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == StdbyMemcgCh1::B0
@@ -203,7 +207,7 @@ impl<'a, REG> StdbyMemcgCh1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "memory is clock gated when in standby mode"]
+    #[doc = "memory is not clock gated when in standby mode"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(StdbyMemcgCh1::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "Channel 0 LP command priority in standby mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum StdbyCmdPrioCh0 {
-    #[doc = "0: issue priority request when enter standby mode"]
+    #[doc = "0: don't issue priority request when enter standby mode"]
     B0 = 0,
     #[doc = "1: issue priority request when enter standby mode"]
     B1 = 1,
@@ -239,7 +244,7 @@ impl StdbyCmdPrioCh0R {
             true => StdbyCmdPrioCh0::B1,
         }
     }
-    #[doc = "issue priority request when enter standby mode"]
+    #[doc = "don't issue priority request when enter standby mode"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == StdbyCmdPrioCh0::B0
@@ -256,7 +261,7 @@ impl<'a, REG> StdbyCmdPrioCh0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "issue priority request when enter standby mode"]
+    #[doc = "don't issue priority request when enter standby mode"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(StdbyCmdPrioCh0::B0)
@@ -268,9 +273,10 @@ where
     }
 }
 #[doc = "Channel 1 LP command priority in standby mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum StdbyCmdPrioCh1 {
-    #[doc = "0: issue priority request when enter standby mode"]
+    #[doc = "0: don't issue priority request when enter standby mode"]
     B0 = 0,
     #[doc = "1: issue priority request when enter standby mode"]
     B1 = 1,
@@ -292,7 +298,7 @@ impl StdbyCmdPrioCh1R {
             true => StdbyCmdPrioCh1::B1,
         }
     }
-    #[doc = "issue priority request when enter standby mode"]
+    #[doc = "don't issue priority request when enter standby mode"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == StdbyCmdPrioCh1::B0
@@ -309,7 +315,7 @@ impl<'a, REG> StdbyCmdPrioCh1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "issue priority request when enter standby mode"]
+    #[doc = "don't issue priority request when enter standby mode"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(StdbyCmdPrioCh1::B0)
@@ -321,9 +327,10 @@ where
     }
 }
 #[doc = "Channel 0 LP command priority in external self-refresh mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LpCmdPrioCh0 {
-    #[doc = "0: issue priority request when enter external self-refresh"]
+    #[doc = "0: don't issue priority request when enter external self-refresh"]
     B0 = 0,
     #[doc = "1: issue priority request when enter external self-refresh"]
     B1 = 1,
@@ -345,7 +352,7 @@ impl LpCmdPrioCh0R {
             true => LpCmdPrioCh0::B1,
         }
     }
-    #[doc = "issue priority request when enter external self-refresh"]
+    #[doc = "don't issue priority request when enter external self-refresh"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == LpCmdPrioCh0::B0
@@ -362,7 +369,7 @@ impl<'a, REG> LpCmdPrioCh0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "issue priority request when enter external self-refresh"]
+    #[doc = "don't issue priority request when enter external self-refresh"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(LpCmdPrioCh0::B0)
@@ -374,9 +381,10 @@ where
     }
 }
 #[doc = "Channel 1 LP command priority in external self-refresh mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LpCmdPrioCh1 {
-    #[doc = "0: issue priority request when enter external self-refresh"]
+    #[doc = "0: don't issue priority request when enter external self-refresh"]
     B0 = 0,
     #[doc = "1: issue priority request when enter external self-refresh"]
     B1 = 1,
@@ -398,7 +406,7 @@ impl LpCmdPrioCh1R {
             true => LpCmdPrioCh1::B1,
         }
     }
-    #[doc = "issue priority request when enter external self-refresh"]
+    #[doc = "don't issue priority request when enter external self-refresh"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == LpCmdPrioCh1::B0
@@ -415,7 +423,7 @@ impl<'a, REG> LpCmdPrioCh1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "issue priority request when enter external self-refresh"]
+    #[doc = "don't issue priority request when enter external self-refresh"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(LpCmdPrioCh1::B0)
@@ -427,9 +435,10 @@ where
     }
 }
 #[doc = "Channel 0 memory clock gating in self-refresh\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SrefMemcgCh0 {
-    #[doc = "0: memory is clock gated in external self-refresh"]
+    #[doc = "0: memory is not clock gated in external self-refresh"]
     B0 = 0,
     #[doc = "1: memory is clock gated in external self-refresh"]
     B1 = 1,
@@ -451,7 +460,7 @@ impl SrefMemcgCh0R {
             true => SrefMemcgCh0::B1,
         }
     }
-    #[doc = "memory is clock gated in external self-refresh"]
+    #[doc = "memory is not clock gated in external self-refresh"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SrefMemcgCh0::B0
@@ -468,7 +477,7 @@ impl<'a, REG> SrefMemcgCh0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "memory is clock gated in external self-refresh"]
+    #[doc = "memory is not clock gated in external self-refresh"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SrefMemcgCh0::B0)
@@ -480,9 +489,10 @@ where
     }
 }
 #[doc = "Channel 1 memory clock gating in self-refresh\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SrefMemcgCh1 {
-    #[doc = "0: memory is clock gated in external self-refresh"]
+    #[doc = "0: memory is not clock gated in external self-refresh"]
     B0 = 0,
     #[doc = "1: memory is clock gated in external self-refresh"]
     B1 = 1,
@@ -504,7 +514,7 @@ impl SrefMemcgCh1R {
             true => SrefMemcgCh1::B1,
         }
     }
-    #[doc = "memory is clock gated in external self-refresh"]
+    #[doc = "memory is not clock gated in external self-refresh"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SrefMemcgCh1::B0
@@ -521,7 +531,7 @@ impl<'a, REG> SrefMemcgCh1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "memory is clock gated in external self-refresh"]
+    #[doc = "memory is not clock gated in external self-refresh"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SrefMemcgCh1::B0)
@@ -532,9 +542,9 @@ where
         self.variant(SrefMemcgCh1::B1)
     }
 }
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software. When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software. When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software. When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by software.\n\nWhen bit 16=0, bit 0 cannot be written by software;\n\nWhen bit 17=1, bit 1 can be written by software.\n\nWhen bit 17=0, bit 1 cannot be written by software;\n\n......\n\nWhen bit 31=1, bit 15 can be written by software.\n\nWhen bit 31=0, bit 15 cannot be written by software;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software. When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software. When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software. When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by software.\n\nWhen bit 16=0, bit 0 cannot be written by software;\n\nWhen bit 17=1, bit 1 can be written by software.\n\nWhen bit 17=0, bit 1 cannot be written by software;\n\n......\n\nWhen bit 31=1, bit 15 can be written by software.\n\nWhen bit 31=0, bit 15 cannot be written by software;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0 - Channel 0 standby mode enable"]
@@ -587,7 +597,7 @@ impl R {
     pub fn sref_memcg_ch1(&self) -> SrefMemcgCh1R {
         SrefMemcgCh1R::new(((self.bits >> 11) & 1) != 0)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software. When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software. When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software. When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by software.\n\nWhen bit 16=0, bit 0 cannot be written by software;\n\nWhen bit 17=1, bit 1 can be written by software.\n\nWhen bit 17=0, bit 1 cannot be written by software;\n\n......\n\nWhen bit 31=1, bit 15 can be written by software.\n\nWhen bit 31=0, bit 15 cannot be written by software;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
@@ -654,7 +664,7 @@ impl W {
     pub fn sref_memcg_ch1(&mut self) -> SrefMemcgCh1W<CicCtrl1Spec> {
         SrefMemcgCh1W::new(self, 11)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software. When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software. When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software. When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by software.\n\nWhen bit 16=0, bit 0 cannot be written by software;\n\nWhen bit 17=1, bit 1 can be written by software.\n\nWhen bit 17=0, bit 1 cannot be written by software;\n\n......\n\nWhen bit 31=1, bit 15 can be written by software.\n\nWhen bit 31=0, bit 15 cannot be written by software;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<CicCtrl1Spec> {

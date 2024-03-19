@@ -2,19 +2,19 @@
 pub type R = crate::R<SdmmcBufaddrSpec>;
 #[doc = "Register `SDMMC_BUFADDR` writer"]
 pub type W = crate::W<SdmmcBufaddrSpec>;
-#[doc = "Field `HBA` reader - Host Buffer Address Pointer. Cleared on Reset. Pointer updated by IDMAC during operation. This register points to the current Data Buffer Address being accessed by the IDMAC."]
+#[doc = "Field `HBA` reader - Host Buffer Address Pointer. Cleared on Reset. Pointer updated\n\nby IDMAC during operation. This register points to the current\n\nData Buffer Address being accessed by the IDMAC."]
 pub type HbaR = crate::FieldReader<u32>;
-#[doc = "Field `HBA` writer - Host Buffer Address Pointer. Cleared on Reset. Pointer updated by IDMAC during operation. This register points to the current Data Buffer Address being accessed by the IDMAC."]
+#[doc = "Field `HBA` writer - Host Buffer Address Pointer. Cleared on Reset. Pointer updated\n\nby IDMAC during operation. This register points to the current\n\nData Buffer Address being accessed by the IDMAC."]
 pub type HbaW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Host Buffer Address Pointer. Cleared on Reset. Pointer updated by IDMAC during operation. This register points to the current Data Buffer Address being accessed by the IDMAC."]
+    #[doc = "Bits 0:31 - Host Buffer Address Pointer. Cleared on Reset. Pointer updated\n\nby IDMAC during operation. This register points to the current\n\nData Buffer Address being accessed by the IDMAC."]
     #[inline(always)]
     pub fn hba(&self) -> HbaR {
         HbaR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Host Buffer Address Pointer. Cleared on Reset. Pointer updated by IDMAC during operation. This register points to the current Data Buffer Address being accessed by the IDMAC."]
+    #[doc = "Bits 0:31 - Host Buffer Address Pointer. Cleared on Reset. Pointer updated\n\nby IDMAC during operation. This register points to the current\n\nData Buffer Address being accessed by the IDMAC."]
     #[inline(always)]
     #[must_use]
     pub fn hba(&mut self) -> HbaW<SdmmcBufaddrSpec> {

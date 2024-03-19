@@ -2,19 +2,19 @@
 pub type R = crate::R<GpioSwportaDrSpec>;
 #[doc = "Register `GPIO_SWPORTA_DR` writer"]
 pub type W = crate::W<GpioSwportaDrSpec>;
-#[doc = "Field `GPIO_SWPORTA_DR` reader - Values written to this register are output on the I/O signals for Port A if the corresponding data direction bits for Port A are set to Output mode. The value read back is equal to the last value written to this register."]
+#[doc = "Field `GPIO_SWPORTA_DR` reader - Values written to this register are output on the I/O signals for\n\nPort A if the corresponding data direction bits for Port A are set to\n\nOutput mode. The value read back is equal to the last value\n\nwritten to this register."]
 pub type GpioSwportaDrR = crate::FieldReader<u32>;
-#[doc = "Field `GPIO_SWPORTA_DR` writer - Values written to this register are output on the I/O signals for Port A if the corresponding data direction bits for Port A are set to Output mode. The value read back is equal to the last value written to this register."]
+#[doc = "Field `GPIO_SWPORTA_DR` writer - Values written to this register are output on the I/O signals for\n\nPort A if the corresponding data direction bits for Port A are set to\n\nOutput mode. The value read back is equal to the last value\n\nwritten to this register."]
 pub type GpioSwportaDrW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Values written to this register are output on the I/O signals for Port A if the corresponding data direction bits for Port A are set to Output mode. The value read back is equal to the last value written to this register."]
+    #[doc = "Bits 0:31 - Values written to this register are output on the I/O signals for\n\nPort A if the corresponding data direction bits for Port A are set to\n\nOutput mode. The value read back is equal to the last value\n\nwritten to this register."]
     #[inline(always)]
     pub fn gpio_swporta_dr(&self) -> GpioSwportaDrR {
         GpioSwportaDrR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Values written to this register are output on the I/O signals for Port A if the corresponding data direction bits for Port A are set to Output mode. The value read back is equal to the last value written to this register."]
+    #[doc = "Bits 0:31 - Values written to this register are output on the I/O signals for\n\nPort A if the corresponding data direction bits for Port A are set to\n\nOutput mode. The value read back is equal to the last value\n\nwritten to this register."]
     #[inline(always)]
     #[must_use]
     pub fn gpio_swporta_dr(&mut self) -> GpioSwportaDrW<GpioSwportaDrSpec> {

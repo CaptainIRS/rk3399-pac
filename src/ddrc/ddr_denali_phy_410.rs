@@ -10,7 +10,7 @@ pub type PhyWdqlvlDqdmObsSelect3W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type PhyWdqlvlQtrDlyStep3R = crate::FieldReader;
 #[doc = "Field `PHY_WDQLVL_QTR_DLY_STEP_3` writer - Defines the step granularity for the logic to use once an edge is found. When this occurs, the logic jumps back to the previous invalid value and uses this step size to determine a more accurate delay value."]
 pub type PhyWdqlvlQtrDlyStep3W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-#[doc = "Field `SC_PHY_WDQLVL_CLR_PREV_RESULTS_3` writer - Clears the previous result value to allow a clean slate comparison for future write DQ leveling results for slice 3. Set to 1 to trigger. WRITE- ONLY"]
+#[doc = "Field `SC_PHY_WDQLVL_CLR_PREV_RESULTS_3` writer - Clears the previous result value to allow a clean slate comparison for future write DQ leveling results for slice 3. Set to 1 to trigger."]
 pub type ScPhyWdqlvlClrPrevResults3W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:3 - Select value to map an individual DQ data window leading/trailing edge to the leading/trailing edge observation registers during write data leveling for slice 3."]
@@ -39,7 +39,7 @@ impl W {
     pub fn phy_wdqlvl_qtr_dly_step_3(&mut self) -> PhyWdqlvlQtrDlyStep3W<DdrDenaliPhy410Spec> {
         PhyWdqlvlQtrDlyStep3W::new(self, 8)
     }
-    #[doc = "Bit 16 - Clears the previous result value to allow a clean slate comparison for future write DQ leveling results for slice 3. Set to 1 to trigger. WRITE- ONLY"]
+    #[doc = "Bit 16 - Clears the previous result value to allow a clean slate comparison for future write DQ leveling results for slice 3. Set to 1 to trigger."]
     #[inline(always)]
     #[must_use]
     pub fn sc_phy_wdqlvl_clr_prev_results_3(

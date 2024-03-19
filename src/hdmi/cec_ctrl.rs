@@ -3,14 +3,15 @@ pub type R = crate::R<CecCtrlSpec>;
 #[doc = "Register `CEC_CTRL` writer"]
 pub type W = crate::W<CecCtrlSpec>;
 #[doc = "\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FrameTyp {
-    #[doc = "0: Illegal value. If software writes this value, hardware sets the value to the default 2'b01."]
+    #[doc = "0: Signal Free Time = 3-bit periods. Previous attempt to send frame is unsuccessful."]
     B00 = 0,
-    #[doc = "1: Illegal value. If software writes this value, hardware sets the value to the default 2'b01."]
+    #[doc = "1: Signal Free Time = 5-bit periods. New initiator wants to send a frame."]
     B01 = 1,
-    #[doc = "2: Illegal value. If software writes this value, hardware sets the value to the default 2'b01."]
+    #[doc = "2: Signal Free Time = 7-bit periods. Present initiator wants to send another frame immediately after its previous frame. (specification CEC 9.1)."]
     B10 = 2,
     #[doc = "3: Illegal value. If software writes this value, hardware sets the value to the default 2'b01."]
     B11 = 3,
@@ -38,17 +39,17 @@ impl FrameTypR {
             _ => unreachable!(),
         }
     }
-    #[doc = "Illegal value. If software writes this value, hardware sets the value to the default 2'b01."]
+    #[doc = "Signal Free Time = 3-bit periods. Previous attempt to send frame is unsuccessful."]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == FrameTyp::B00
     }
-    #[doc = "Illegal value. If software writes this value, hardware sets the value to the default 2'b01."]
+    #[doc = "Signal Free Time = 5-bit periods. New initiator wants to send a frame."]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == FrameTyp::B01
     }
-    #[doc = "Illegal value. If software writes this value, hardware sets the value to the default 2'b01."]
+    #[doc = "Signal Free Time = 7-bit periods. Present initiator wants to send another frame immediately after its previous frame. (specification CEC 9.1)."]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == FrameTyp::B10
@@ -66,17 +67,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Illegal value. If software writes this value, hardware sets the value to the default 2'b01."]
+    #[doc = "Signal Free Time = 3-bit periods. Previous attempt to send frame is unsuccessful."]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(FrameTyp::B00)
     }
-    #[doc = "Illegal value. If software writes this value, hardware sets the value to the default 2'b01."]
+    #[doc = "Signal Free Time = 5-bit periods. New initiator wants to send a frame."]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(FrameTyp::B01)
     }
-    #[doc = "Illegal value. If software writes this value, hardware sets the value to the default 2'b01."]
+    #[doc = "Signal Free Time = 7-bit periods. Present initiator wants to send another frame immediately after its previous frame. (specification CEC 9.1)."]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(FrameTyp::B10)
@@ -88,9 +89,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BcNack {
-    #[doc = "1: Reset by software to ACK the received broadcast message."]
+    #[doc = "1: Set by software to NACK the received broadcast message. This bit holds until software resets. The broadcasts is answered with 1'b0, indicating the follower reject the message."]
     B1 = 1,
     #[doc = "0: Reset by software to ACK the received broadcast message."]
     B0 = 0,
@@ -112,7 +114,7 @@ impl BcNackR {
             false => BcNack::B0,
         }
     }
-    #[doc = "Reset by software to ACK the received broadcast message."]
+    #[doc = "Set by software to NACK the received broadcast message. This bit holds until software resets. The broadcasts is answered with 1'b0, indicating the follower reject the message."]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == BcNack::B1
@@ -129,7 +131,7 @@ impl<'a, REG> BcNackW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Reset by software to ACK the received broadcast message."]
+    #[doc = "Set by software to NACK the received broadcast message. This bit holds until software resets. The broadcasts is answered with 1'b0, indicating the follower reject the message."]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(BcNack::B1)
@@ -141,9 +143,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Standby {
-    #[doc = "1: CEC controller responds the ACK to all messages."]
+    #[doc = "1: CEC controller responds with a NACK to all messages and generates a wakeup status for opcode. It only responds with a NACK when the EOM is received. This means only the last block of a frame responds with NACK. The follower sends an ACK to the message when there is only one head block pointed to the follower, if the follower is in the standby mode."]
     B1 = 1,
     #[doc = "0: CEC controller responds the ACK to all messages."]
     B0 = 0,
@@ -165,7 +168,7 @@ impl StandbyR {
             false => Standby::B0,
         }
     }
-    #[doc = "CEC controller responds the ACK to all messages."]
+    #[doc = "CEC controller responds with a NACK to all messages and generates a wakeup status for opcode. It only responds with a NACK when the EOM is received. This means only the last block of a frame responds with NACK. The follower sends an ACK to the message when there is only one head block pointed to the follower, if the follower is in the standby mode."]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Standby::B1
@@ -182,7 +185,7 @@ impl<'a, REG> StandbyW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "CEC controller responds the ACK to all messages."]
+    #[doc = "CEC controller responds with a NACK to all messages and generates a wakeup status for opcode. It only responds with a NACK when the EOM is received. This means only the last block of a frame responds with NACK. The follower sends an ACK to the message when there is only one head block pointed to the follower, if the follower is in the standby mode."]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Standby::B1)
@@ -230,7 +233,7 @@ impl W {
         StandbyW::new(self, 4)
     }
 }
-#[doc = "2'b00: Signal Free Time = 3-bit periods. Previous attempt to send frame is unsuccessful. 2'b01: Signal Free Time = 5-bit periods. New initiator wants to send a frame. 2'b10: Signal Free Time = 7-bit periods. Present initiator wants to send another frame immediately after its previous frame. (specification CEC 9.1). 2'b11: Illegal value. If software writes this value, hardware sets the value to the default 2'b01.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cec_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cec_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "CEC Control Register\n\nThis register handles the main control of the CEC initiator.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cec_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cec_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CecCtrlSpec;
 impl crate::RegisterSpec for CecCtrlSpec {
     type Ux = u8;

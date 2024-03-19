@@ -2,34 +2,34 @@
 pub type R = crate::R<GmacAnCtrlSpec>;
 #[doc = "Register `GMAC_AN_CTRL` writer"]
 pub type W = crate::W<GmacAnCtrlSpec>;
-#[doc = "Field `RAN` reader - Restart Auto-Negotiation When set, will cause auto-negotiation to restart if the ANE is set. This bit is self-clearing after auto-negotiation starts. This bit should be cleared for normal operation."]
+#[doc = "Field `RAN` reader - Restart Auto-Negotiation\n\nWhen set, will cause auto-negotiation to restart if the ANE is set.\n\nThis bit is self-clearing after auto-negotiation starts. This bit\n\nshould be cleared for normal operation."]
 pub type RanR = crate::BitReader;
-#[doc = "Field `RAN` writer - Restart Auto-Negotiation When set, will cause auto-negotiation to restart if the ANE is set. This bit is self-clearing after auto-negotiation starts. This bit should be cleared for normal operation."]
+#[doc = "Field `RAN` writer - Restart Auto-Negotiation\n\nWhen set, will cause auto-negotiation to restart if the ANE is set.\n\nThis bit is self-clearing after auto-negotiation starts. This bit\n\nshould be cleared for normal operation."]
 pub type RanW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ANE` reader - Auto-Negotiation Enable When set, will enable the GMAC to perform auto-negotiation with the link partner. Clearing this bit will disable auto-negotiation."]
+#[doc = "Field `ANE` reader - Auto-Negotiation Enable\n\nWhen set, will enable the GMAC to perform auto-negotiation with\n\nthe link partner.\n\nClearing this bit will disable auto-negotiation."]
 pub type AneR = crate::BitReader;
-#[doc = "Field `ANE` writer - Auto-Negotiation Enable When set, will enable the GMAC to perform auto-negotiation with the link partner. Clearing this bit will disable auto-negotiation."]
+#[doc = "Field `ANE` writer - Auto-Negotiation Enable\n\nWhen set, will enable the GMAC to perform auto-negotiation with\n\nthe link partner.\n\nClearing this bit will disable auto-negotiation."]
 pub type AneW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 9 - Restart Auto-Negotiation When set, will cause auto-negotiation to restart if the ANE is set. This bit is self-clearing after auto-negotiation starts. This bit should be cleared for normal operation."]
+    #[doc = "Bit 9 - Restart Auto-Negotiation\n\nWhen set, will cause auto-negotiation to restart if the ANE is set.\n\nThis bit is self-clearing after auto-negotiation starts. This bit\n\nshould be cleared for normal operation."]
     #[inline(always)]
     pub fn ran(&self) -> RanR {
         RanR::new(((self.bits >> 9) & 1) != 0)
     }
-    #[doc = "Bit 12 - Auto-Negotiation Enable When set, will enable the GMAC to perform auto-negotiation with the link partner. Clearing this bit will disable auto-negotiation."]
+    #[doc = "Bit 12 - Auto-Negotiation Enable\n\nWhen set, will enable the GMAC to perform auto-negotiation with\n\nthe link partner.\n\nClearing this bit will disable auto-negotiation."]
     #[inline(always)]
     pub fn ane(&self) -> AneR {
         AneR::new(((self.bits >> 12) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 9 - Restart Auto-Negotiation When set, will cause auto-negotiation to restart if the ANE is set. This bit is self-clearing after auto-negotiation starts. This bit should be cleared for normal operation."]
+    #[doc = "Bit 9 - Restart Auto-Negotiation\n\nWhen set, will cause auto-negotiation to restart if the ANE is set.\n\nThis bit is self-clearing after auto-negotiation starts. This bit\n\nshould be cleared for normal operation."]
     #[inline(always)]
     #[must_use]
     pub fn ran(&mut self) -> RanW<GmacAnCtrlSpec> {
         RanW::new(self, 9)
     }
-    #[doc = "Bit 12 - Auto-Negotiation Enable When set, will enable the GMAC to perform auto-negotiation with the link partner. Clearing this bit will disable auto-negotiation."]
+    #[doc = "Bit 12 - Auto-Negotiation Enable\n\nWhen set, will enable the GMAC to perform auto-negotiation with\n\nthe link partner.\n\nClearing this bit will disable auto-negotiation."]
     #[inline(always)]
     #[must_use]
     pub fn ane(&mut self) -> AneW<GmacAnCtrlSpec> {

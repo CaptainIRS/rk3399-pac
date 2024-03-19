@@ -10,9 +10,9 @@ pub type OiecSampfreqW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type OiecClkaccuracyR = crate::FieldReader;
 #[doc = "Field `OIEC_CLKACCURACY` writer - Clock accuracy"]
 pub type OiecClkaccuracyW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-#[doc = "Field `OIEC_SAMPFREQ_EXT` reader - Sampling frequency (channel status bits 31 and 30)"]
+#[doc = "Field `OIEC_SAMPFREQ_EXT` reader - Sampling frequency (channel status bits 31 and\n\n30)"]
 pub type OiecSampfreqExtR = crate::FieldReader;
-#[doc = "Field `OIEC_SAMPFREQ_EXT` writer - Sampling frequency (channel status bits 31 and 30)"]
+#[doc = "Field `OIEC_SAMPFREQ_EXT` writer - Sampling frequency (channel status bits 31 and\n\n30)"]
 pub type OiecSampfreqExtW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
     #[doc = "Bits 0:3 - Sampling frequency"]
@@ -25,7 +25,7 @@ impl R {
     pub fn oiec_clkaccuracy(&self) -> OiecClkaccuracyR {
         OiecClkaccuracyR::new((self.bits >> 4) & 3)
     }
-    #[doc = "Bits 6:7 - Sampling frequency (channel status bits 31 and 30)"]
+    #[doc = "Bits 6:7 - Sampling frequency (channel status bits 31 and\n\n30)"]
     #[inline(always)]
     pub fn oiec_sampfreq_ext(&self) -> OiecSampfreqExtR {
         OiecSampfreqExtR::new((self.bits >> 6) & 3)
@@ -44,14 +44,14 @@ impl W {
     pub fn oiec_clkaccuracy(&mut self) -> OiecClkaccuracyW<FcAudschnl7Spec> {
         OiecClkaccuracyW::new(self, 4)
     }
-    #[doc = "Bits 6:7 - Sampling frequency (channel status bits 31 and 30)"]
+    #[doc = "Bits 6:7 - Sampling frequency (channel status bits 31 and\n\n30)"]
     #[inline(always)]
     #[must_use]
     pub fn oiec_sampfreq_ext(&mut self) -> OiecSampfreqExtW<FcAudschnl7Spec> {
         OiecSampfreqExtW::new(self, 6)
     }
 }
-#[doc = "Sampling frequency\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_audschnl7::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_audschnl7::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer Audio Sample Channel Status Configuration Register 7\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_audschnl7::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_audschnl7::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcAudschnl7Spec;
 impl crate::RegisterSpec for FcAudschnl7Spec {
     type Ux = u8;

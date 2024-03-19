@@ -1,9 +1,9 @@
 #[doc = "Register `EMMCCORE_CQCRA` reader"]
 pub type R = crate::R<EmmccoreCqcraSpec>;
-#[doc = "Field `LCRA` reader - Last Command Response Argument This field stores the argument of the last received command. CQE shall update the value every time a command response is received."]
+#[doc = "Field `LCRA` reader - Last Command Response Argument\n\nThis field stores the argument of the last received command. CQE\n\nshall update the value every time a command response is\n\nreceived."]
 pub type LcraR = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Last Command Response Argument This field stores the argument of the last received command. CQE shall update the value every time a command response is received."]
+    #[doc = "Bits 0:31 - Last Command Response Argument\n\nThis field stores the argument of the last received command. CQE\n\nshall update the value every time a command response is\n\nreceived."]
     #[inline(always)]
     pub fn lcra(&self) -> LcraR {
         LcraR::new(self.bits)

@@ -1,35 +1,29 @@
 #[doc = "Register `PCIE_PF_POWER_BUDGETING_ENHANCED_CAPABILITY_HEADER` reader"]
 pub type R = crate::R<PciePfPowerBudgetingEnhancedCapabilityHeaderSpec>;
-#[doc = "Field `PECID` reader - PCI Express Extended Capability ID \\[PECID\\]
-This field is hardwired to the Capability ID assigned by PCI SIG to the PCI Express Power Budgeting Capability (0004 hex)."]
+#[doc = "Field `PECID` reader - PCI Express Extended Capability ID \\[PECID\\]\n\nThis field is hardwired to the\n\nCapability ID assigned by PCI SIG to\n\nthe PCI Express Power Budgeting\n\nCapability (0004 hex)."]
 pub type PecidR = crate::FieldReader<u16>;
-#[doc = "Field `PCV` reader - Capability Version \\[PCV\\]
-Specifies the SIG assigned value for the version of the capability structure. This field is set by default to 1, but can be modified from the local management bus by writing into Function 0 from the local management bus."]
+#[doc = "Field `PCV` reader - Capability Version \\[PCV\\]\n\nSpecifies the SIG assigned value for\n\nthe version of the capability\n\nstructure. This field is set by default\n\nto 1, but can be modified from the\n\nlocal management bus by writing\n\ninto Function 0 from the local\n\nmanagement bus."]
 pub type PcvR = crate::FieldReader;
-#[doc = "Field `PBNCO` reader - Next Capability Offset \\[PBNCO\\]
-Indicates offset to the next PCI Express capability structure. The default next pointer value is dynamic and is dependent on whether the strap or LMI bits are set."]
+#[doc = "Field `PBNCO` reader - Next Capability Offset \\[PBNCO\\]\n\nIndicates offset to the next PCI\n\nExpress capability structure. The\n\ndefault next pointer value is dynamic\n\nand is dependent on whether the\n\nstrap or LMI bits are set."]
 pub type PbncoR = crate::FieldReader<u16>;
 impl R {
-    #[doc = "Bits 0:15 - PCI Express Extended Capability ID \\[PECID\\]
-This field is hardwired to the Capability ID assigned by PCI SIG to the PCI Express Power Budgeting Capability (0004 hex)."]
+    #[doc = "Bits 0:15 - PCI Express Extended Capability ID \\[PECID\\]\n\nThis field is hardwired to the\n\nCapability ID assigned by PCI SIG to\n\nthe PCI Express Power Budgeting\n\nCapability (0004 hex)."]
     #[inline(always)]
     pub fn pecid(&self) -> PecidR {
         PecidR::new((self.bits & 0xffff) as u16)
     }
-    #[doc = "Bits 16:19 - Capability Version \\[PCV\\]
-Specifies the SIG assigned value for the version of the capability structure. This field is set by default to 1, but can be modified from the local management bus by writing into Function 0 from the local management bus."]
+    #[doc = "Bits 16:19 - Capability Version \\[PCV\\]\n\nSpecifies the SIG assigned value for\n\nthe version of the capability\n\nstructure. This field is set by default\n\nto 1, but can be modified from the\n\nlocal management bus by writing\n\ninto Function 0 from the local\n\nmanagement bus."]
     #[inline(always)]
     pub fn pcv(&self) -> PcvR {
         PcvR::new(((self.bits >> 16) & 0x0f) as u8)
     }
-    #[doc = "Bits 20:31 - Next Capability Offset \\[PBNCO\\]
-Indicates offset to the next PCI Express capability structure. The default next pointer value is dynamic and is dependent on whether the strap or LMI bits are set."]
+    #[doc = "Bits 20:31 - Next Capability Offset \\[PBNCO\\]\n\nIndicates offset to the next PCI\n\nExpress capability structure. The\n\ndefault next pointer value is dynamic\n\nand is dependent on whether the\n\nstrap or LMI bits are set."]
     #[inline(always)]
     pub fn pbnco(&self) -> PbncoR {
         PbncoR::new(((self.bits >> 20) & 0x0fff) as u16)
     }
 }
-#[doc = "Power Budgeting Enhanced Capability Header Indicates offset to the next PCI Express capability structure. The default next pointer value is dynamic and is dependent on whether the strap or LMI bits are set.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcie_pf_power_budgeting_enhanced_capability_header::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Power Budgeting Enhanced Capability Header\n\nIndicates offset to the next PCI\n\nExpress capability structure. The\n\ndefault next pointer value is dynamic\n\nand is dependent on whether the\n\nstrap or LMI bits are set.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcie_pf_power_budgeting_enhanced_capability_header::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PciePfPowerBudgetingEnhancedCapabilityHeaderSpec;
 impl crate::RegisterSpec for PciePfPowerBudgetingEnhancedCapabilityHeaderSpec {
     type Ux = u32;

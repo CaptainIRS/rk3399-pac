@@ -6,7 +6,7 @@ pub type W = crate::W<DdrDenaliCtl87Spec>;
 pub type PhymstrNoArefR = crate::BitReader;
 #[doc = "Field `PHYMSTR_NO_AREF` writer - Disables refreshes during the PHY master interface sequence. Set to 1 to disable. Refreshes during reset are only supported for DFI 4.0 and this parameter may be set or cleared for DFI 4.0. For all other DFI versions, this parameter must be set to 1."]
 pub type PhymstrNoArefW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PHYMSTR_ERROR_STATUS` reader - Identifies the source of any DFI PHY Master Interface errors. Value of 1 indicates a timing violation of the associated timing parameter. READ-ONLY"]
+#[doc = "Field `PHYMSTR_ERROR_STATUS` reader - Identifies the source of any DFI PHY Master Interface errors. Value of 1 indicates a timing violation of the associated timing parameter."]
 pub type PhymstrErrorStatusR = crate::FieldReader;
 #[doc = "Field `MRR_TEMPCHK_NORM_THRESHOLD_F0` reader - MRR temp check number of long counts until the normal priority request is asserted for frequency copy 0."]
 pub type MrrTempchkNormThresholdF0R = crate::FieldReader<u16>;
@@ -18,7 +18,7 @@ impl R {
     pub fn phymstr_no_aref(&self) -> PhymstrNoArefR {
         PhymstrNoArefR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bits 8:9 - Identifies the source of any DFI PHY Master Interface errors. Value of 1 indicates a timing violation of the associated timing parameter. READ-ONLY"]
+    #[doc = "Bits 8:9 - Identifies the source of any DFI PHY Master Interface errors. Value of 1 indicates a timing violation of the associated timing parameter."]
     #[inline(always)]
     pub fn phymstr_error_status(&self) -> PhymstrErrorStatusR {
         PhymstrErrorStatusR::new(((self.bits >> 8) & 3) as u8)

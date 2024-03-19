@@ -10,13 +10,13 @@ pub type PvtmStartW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type PvtmOscEnR = crate::BitReader;
 #[doc = "Field `PVTM_OSC_EN` writer - pmu pvtm osc enable"]
 pub type PvtmOscEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PVTM_CLKOUT_DIV` reader - clk_pvtm_out_div=clk_pvtm_out/pvtm_clko ut_div"]
+#[doc = "Field `PVTM_CLKOUT_DIV` reader - clk_pvtm_out_div=clk_pvtm_out/pvtm_clko\n\nut_div"]
 pub type PvtmClkoutDivR = crate::FieldReader<u16>;
-#[doc = "Field `PVTM_CLKOUT_DIV` writer - clk_pvtm_out_div=clk_pvtm_out/pvtm_clko ut_div"]
+#[doc = "Field `PVTM_CLKOUT_DIV` writer - clk_pvtm_out_div=clk_pvtm_out/pvtm_clko\n\nut_div"]
 pub type PvtmClkoutDivW<'a, REG> = crate::FieldWriter<'a, REG, 14, u16>;
-#[doc = "Field `WRITE_ENABLE` reader - When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - When bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - When bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0 - pmu pvtm start"]
@@ -29,12 +29,12 @@ impl R {
     pub fn pvtm_osc_en(&self) -> PvtmOscEnR {
         PvtmOscEnR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bits 2:15 - clk_pvtm_out_div=clk_pvtm_out/pvtm_clko ut_div"]
+    #[doc = "Bits 2:15 - clk_pvtm_out_div=clk_pvtm_out/pvtm_clko\n\nut_div"]
     #[inline(always)]
     pub fn pvtm_clkout_div(&self) -> PvtmClkoutDivR {
         PvtmClkoutDivR::new(((self.bits >> 2) & 0x3fff) as u16)
     }
-    #[doc = "Bits 16:31 - When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - When bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
@@ -53,13 +53,13 @@ impl W {
     pub fn pvtm_osc_en(&mut self) -> PvtmOscEnW<PmugrfPmupvtmCon0Spec> {
         PvtmOscEnW::new(self, 1)
     }
-    #[doc = "Bits 2:15 - clk_pvtm_out_div=clk_pvtm_out/pvtm_clko ut_div"]
+    #[doc = "Bits 2:15 - clk_pvtm_out_div=clk_pvtm_out/pvtm_clko\n\nut_div"]
     #[inline(always)]
     #[must_use]
     pub fn pvtm_clkout_div(&mut self) -> PvtmClkoutDivW<PmugrfPmupvtmCon0Spec> {
         PvtmClkoutDivW::new(self, 2)
     }
-    #[doc = "Bits 16:31 - When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - When bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<PmugrfPmupvtmCon0Spec> {

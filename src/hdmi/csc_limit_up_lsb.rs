@@ -2,26 +2,26 @@
 pub type R = crate::R<CscLimitUpLsbSpec>;
 #[doc = "Register `CSC_LIMIT_UP_LSB` writer"]
 pub type W = crate::W<CscLimitUpLsbSpec>;
-#[doc = "Field `CSC_LIMIT_UP_LSB` reader - Color Space Converter Matrix Output Upper Limit Register LSB"]
+#[doc = "Field `CSC_LIMIT_UP_LSB` reader - Color Space Converter Matrix Output Upper Limit\n\nRegister LSB"]
 pub type CscLimitUpLsbR = crate::FieldReader;
-#[doc = "Field `CSC_LIMIT_UP_LSB` writer - Color Space Converter Matrix Output Upper Limit Register LSB"]
+#[doc = "Field `CSC_LIMIT_UP_LSB` writer - Color Space Converter Matrix Output Upper Limit\n\nRegister LSB"]
 pub type CscLimitUpLsbW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - Color Space Converter Matrix Output Upper Limit Register LSB"]
+    #[doc = "Bits 0:7 - Color Space Converter Matrix Output Upper Limit\n\nRegister LSB"]
     #[inline(always)]
     pub fn csc_limit_up_lsb(&self) -> CscLimitUpLsbR {
         CscLimitUpLsbR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Color Space Converter Matrix Output Upper Limit Register LSB"]
+    #[doc = "Bits 0:7 - Color Space Converter Matrix Output Upper Limit\n\nRegister LSB"]
     #[inline(always)]
     #[must_use]
     pub fn csc_limit_up_lsb(&mut self) -> CscLimitUpLsbW<CscLimitUpLsbSpec> {
         CscLimitUpLsbW::new(self, 0)
     }
 }
-#[doc = "Color Space Converter Matrix Output Upper Limit Register LSB\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csc_limit_up_lsb::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csc_limit_up_lsb::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Color Space Converter Matrix output Up Limit Register LSB\n\nFor more details, refer to the HDMI 1.4 specification, paragraph 6.6 Video Quantization\n\nRanges. For an RGB output of 8 bits, the expected limit is 254, and this register must be\n\nconfigured with 0xFE.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csc_limit_up_lsb::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csc_limit_up_lsb::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CscLimitUpLsbSpec;
 impl crate::RegisterSpec for CscLimitUpLsbSpec {
     type Ux = u8;

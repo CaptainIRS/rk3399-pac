@@ -2,34 +2,34 @@
 pub type R = crate::R<DdrPiReg93Spec>;
 #[doc = "Register `DDR_PI_REG_93` writer"]
 pub type W = crate::W<DdrPiReg93Spec>;
-#[doc = "Field `PI_CALVL_SEQ_EN` reader - Specifies the CA training patterns that are to be used. Set to 0 for pattern 0 only, set to 1 for patterns 0 and 1, set to 2 for patterns 0, 1, and 2, or set to 3 for all patterns."]
+#[doc = "Field `PI_CALVL_SEQ_EN` reader - Specifies the CA training patterns that are to be used. Set to 0 for\n\npattern 0 only, set to 1 for patterns 0 and 1, set to 2 for patterns 0,\n\n1, and 2, or set to 3 for all patterns."]
 pub type PiCalvlSeqEnR = crate::FieldReader;
-#[doc = "Field `PI_CALVL_SEQ_EN` writer - Specifies the CA training patterns that are to be used. Set to 0 for pattern 0 only, set to 1 for patterns 0 and 1, set to 2 for patterns 0, 1, and 2, or set to 3 for all patterns."]
+#[doc = "Field `PI_CALVL_SEQ_EN` writer - Specifies the CA training patterns that are to be used. Set to 0 for\n\npattern 0 only, set to 1 for patterns 0 and 1, set to 2 for patterns 0,\n\n1, and 2, or set to 3 for all patterns."]
 pub type PiCalvlSeqEnW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-#[doc = "Field `PI_CALVL_PERIODIC` reader - Enables the use of the dfi_lvl_periodic signal during CA training. Set to 1 to enable."]
+#[doc = "Field `PI_CALVL_PERIODIC` reader - Enables the use of the dfi_lvl_periodic signal during CA training. Set\n\nto 1 to enable."]
 pub type PiCalvlPeriodicR = crate::BitReader;
-#[doc = "Field `PI_CALVL_PERIODIC` writer - Enables the use of the dfi_lvl_periodic signal during CA training. Set to 1 to enable."]
+#[doc = "Field `PI_CALVL_PERIODIC` writer - Enables the use of the dfi_lvl_periodic signal during CA training. Set\n\nto 1 to enable."]
 pub type PiCalvlPeriodicW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bits 16:17 - Specifies the CA training patterns that are to be used. Set to 0 for pattern 0 only, set to 1 for patterns 0 and 1, set to 2 for patterns 0, 1, and 2, or set to 3 for all patterns."]
+    #[doc = "Bits 16:17 - Specifies the CA training patterns that are to be used. Set to 0 for\n\npattern 0 only, set to 1 for patterns 0 and 1, set to 2 for patterns 0,\n\n1, and 2, or set to 3 for all patterns."]
     #[inline(always)]
     pub fn pi_calvl_seq_en(&self) -> PiCalvlSeqEnR {
         PiCalvlSeqEnR::new(((self.bits >> 16) & 3) as u8)
     }
-    #[doc = "Bit 24 - Enables the use of the dfi_lvl_periodic signal during CA training. Set to 1 to enable."]
+    #[doc = "Bit 24 - Enables the use of the dfi_lvl_periodic signal during CA training. Set\n\nto 1 to enable."]
     #[inline(always)]
     pub fn pi_calvl_periodic(&self) -> PiCalvlPeriodicR {
         PiCalvlPeriodicR::new(((self.bits >> 24) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 16:17 - Specifies the CA training patterns that are to be used. Set to 0 for pattern 0 only, set to 1 for patterns 0 and 1, set to 2 for patterns 0, 1, and 2, or set to 3 for all patterns."]
+    #[doc = "Bits 16:17 - Specifies the CA training patterns that are to be used. Set to 0 for\n\npattern 0 only, set to 1 for patterns 0 and 1, set to 2 for patterns 0,\n\n1, and 2, or set to 3 for all patterns."]
     #[inline(always)]
     #[must_use]
     pub fn pi_calvl_seq_en(&mut self) -> PiCalvlSeqEnW<DdrPiReg93Spec> {
         PiCalvlSeqEnW::new(self, 16)
     }
-    #[doc = "Bit 24 - Enables the use of the dfi_lvl_periodic signal during CA training. Set to 1 to enable."]
+    #[doc = "Bit 24 - Enables the use of the dfi_lvl_periodic signal during CA training. Set\n\nto 1 to enable."]
     #[inline(always)]
     #[must_use]
     pub fn pi_calvl_periodic(&mut self) -> PiCalvlPeriodicW<DdrPiReg93Spec> {

@@ -2,10 +2,11 @@
 pub type R = crate::R<GmacIntfModeStaSpec>;
 #[doc = "Register `GMAC_INTF_MODE_STA` writer"]
 pub type W = crate::W<GmacIntfModeStaSpec>;
-#[doc = "Link Mode Indicates the current mode of operation of the link:\n\nValue on reset: 0"]
+#[doc = "Link Mode\n\nIndicates the current mode of operation of the link:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Lm {
-    #[doc = "0: Full-Duplex mode"]
+    #[doc = "0: Half-Duplex mode"]
     B0 = 0,
     #[doc = "1: Full-Duplex mode"]
     B1 = 1,
@@ -16,7 +17,7 @@ impl From<Lm> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LM` reader - Link Mode Indicates the current mode of operation of the link:"]
+#[doc = "Field `LM` reader - Link Mode\n\nIndicates the current mode of operation of the link:"]
 pub type LmR = crate::BitReader<Lm>;
 impl LmR {
     #[doc = "Get enumerated values variant"]
@@ -27,7 +28,7 @@ impl LmR {
             true => Lm::B1,
         }
     }
-    #[doc = "Full-Duplex mode"]
+    #[doc = "Half-Duplex mode"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Lm::B0
@@ -38,13 +39,13 @@ impl LmR {
         *self == Lm::B1
     }
 }
-#[doc = "Field `LM` writer - Link Mode Indicates the current mode of operation of the link:"]
+#[doc = "Field `LM` writer - Link Mode\n\nIndicates the current mode of operation of the link:"]
 pub type LmW<'a, REG> = crate::BitWriter<'a, REG, Lm>;
 impl<'a, REG> LmW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Full-Duplex mode"]
+    #[doc = "Half-Duplex mode"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Lm::B0)
@@ -55,13 +56,14 @@ where
         self.variant(Lm::B1)
     }
 }
-#[doc = "Link Speed Indicates the current speed of the link:\n\nValue on reset: 0"]
+#[doc = "Link Speed\n\nIndicates the current speed of the link:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Lsd {
-    #[doc = "0: 125 MHz"]
+    #[doc = "0: 2.5 MHz"]
     B00 = 0,
-    #[doc = "1: 125 MHz"]
+    #[doc = "1: 25 MHz"]
     B01 = 1,
     #[doc = "2: 125 MHz"]
     B10 = 2,
@@ -75,7 +77,7 @@ impl From<Lsd> for u8 {
 impl crate::FieldSpec for Lsd {
     type Ux = u8;
 }
-#[doc = "Field `LSD` reader - Link Speed Indicates the current speed of the link:"]
+#[doc = "Field `LSD` reader - Link Speed\n\nIndicates the current speed of the link:"]
 pub type LsdR = crate::FieldReader<Lsd>;
 impl LsdR {
     #[doc = "Get enumerated values variant"]
@@ -88,12 +90,12 @@ impl LsdR {
             _ => None,
         }
     }
-    #[doc = "125 MHz"]
+    #[doc = "2.5 MHz"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == Lsd::B00
     }
-    #[doc = "125 MHz"]
+    #[doc = "25 MHz"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Lsd::B01
@@ -104,27 +106,27 @@ impl LsdR {
         *self == Lsd::B10
     }
 }
-#[doc = "Field `LST` reader - Link Status Indicates whether the link is up (1'b1) or down (1'b0)"]
+#[doc = "Field `LST` reader - Link Status\n\nIndicates whether the link is up (1'b1) or down (1'b0)"]
 pub type LstR = crate::BitReader;
 impl R {
-    #[doc = "Bit 0 - Link Mode Indicates the current mode of operation of the link:"]
+    #[doc = "Bit 0 - Link Mode\n\nIndicates the current mode of operation of the link:"]
     #[inline(always)]
     pub fn lm(&self) -> LmR {
         LmR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bits 1:2 - Link Speed Indicates the current speed of the link:"]
+    #[doc = "Bits 1:2 - Link Speed\n\nIndicates the current speed of the link:"]
     #[inline(always)]
     pub fn lsd(&self) -> LsdR {
         LsdR::new(((self.bits >> 1) & 3) as u8)
     }
-    #[doc = "Bit 3 - Link Status Indicates whether the link is up (1'b1) or down (1'b0)"]
+    #[doc = "Bit 3 - Link Status\n\nIndicates whether the link is up (1'b1) or down (1'b0)"]
     #[inline(always)]
     pub fn lst(&self) -> LstR {
         LstR::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Link Mode Indicates the current mode of operation of the link:"]
+    #[doc = "Bit 0 - Link Mode\n\nIndicates the current mode of operation of the link:"]
     #[inline(always)]
     #[must_use]
     pub fn lm(&mut self) -> LmW<GmacIntfModeStaSpec> {

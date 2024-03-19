@@ -3,9 +3,10 @@ pub type R = crate::R<TsadcIntEnSpec>;
 #[doc = "Register `TSADC_INT_EN` writer"]
 pub type W = crate::W<TsadcIntEnSpec>;
 #[doc = "high temperature interrupt enable for src0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HtIntenSrc0 {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl HtIntenSrc0R {
             true => HtIntenSrc0::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == HtIntenSrc0::B0
@@ -44,7 +45,7 @@ impl<'a, REG> HtIntenSrc0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(HtIntenSrc0::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "high temperature interrupt enable for src1\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HtIntenSrc1 {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl HtIntenSrc1R {
             true => HtIntenSrc1::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == HtIntenSrc1::B0
@@ -97,7 +99,7 @@ impl<'a, REG> HtIntenSrc1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(HtIntenSrc1::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tshut2gpioEnSrc0 {
-    #[doc = "0: TSHUT output works."]
+    #[doc = "0: TSHUT output to gpio disabled. TSHUT output will always keep low ."]
     B0 = 0,
     #[doc = "1: TSHUT output works."]
     B1 = 1,
@@ -133,7 +136,7 @@ impl Tshut2gpioEnSrc0R {
             true => Tshut2gpioEnSrc0::B1,
         }
     }
-    #[doc = "TSHUT output works."]
+    #[doc = "TSHUT output to gpio disabled. TSHUT output will always keep low ."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Tshut2gpioEnSrc0::B0
@@ -150,7 +153,7 @@ impl<'a, REG> Tshut2gpioEnSrc0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "TSHUT output works."]
+    #[doc = "TSHUT output to gpio disabled. TSHUT output will always keep low ."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Tshut2gpioEnSrc0::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tshut2gpioEnSrc1 {
-    #[doc = "0: TSHUT output works."]
+    #[doc = "0: TSHUT output to gpio disabled. TSHUT output will always keep low ."]
     B0 = 0,
     #[doc = "1: TSHUT output works."]
     B1 = 1,
@@ -186,7 +190,7 @@ impl Tshut2gpioEnSrc1R {
             true => Tshut2gpioEnSrc1::B1,
         }
     }
-    #[doc = "TSHUT output works."]
+    #[doc = "TSHUT output to gpio disabled. TSHUT output will always keep low ."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Tshut2gpioEnSrc1::B0
@@ -203,7 +207,7 @@ impl<'a, REG> Tshut2gpioEnSrc1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "TSHUT output works."]
+    #[doc = "TSHUT output to gpio disabled. TSHUT output will always keep low ."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Tshut2gpioEnSrc1::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tshut2cruEnSrc0 {
-    #[doc = "0: TSHUT output works."]
+    #[doc = "0: TSHUT output to cru disabled. TSHUT output will always keep low ."]
     B0 = 0,
     #[doc = "1: TSHUT output works."]
     B1 = 1,
@@ -239,7 +244,7 @@ impl Tshut2cruEnSrc0R {
             true => Tshut2cruEnSrc0::B1,
         }
     }
-    #[doc = "TSHUT output works."]
+    #[doc = "TSHUT output to cru disabled. TSHUT output will always keep low ."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Tshut2cruEnSrc0::B0
@@ -256,7 +261,7 @@ impl<'a, REG> Tshut2cruEnSrc0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "TSHUT output works."]
+    #[doc = "TSHUT output to cru disabled. TSHUT output will always keep low ."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Tshut2cruEnSrc0::B0)
@@ -268,9 +273,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tshut2cruEnSrc1 {
-    #[doc = "0: TSHUT output works."]
+    #[doc = "0: TSHUT output to cru disabled. TSHUT output will always keep low ."]
     B0 = 0,
     #[doc = "1: TSHUT output works."]
     B1 = 1,
@@ -292,7 +298,7 @@ impl Tshut2cruEnSrc1R {
             true => Tshut2cruEnSrc1::B1,
         }
     }
-    #[doc = "TSHUT output works."]
+    #[doc = "TSHUT output to cru disabled. TSHUT output will always keep low ."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Tshut2cruEnSrc1::B0
@@ -309,7 +315,7 @@ impl<'a, REG> Tshut2cruEnSrc1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "TSHUT output works."]
+    #[doc = "TSHUT output to cru disabled. TSHUT output will always keep low ."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Tshut2cruEnSrc1::B0)
@@ -321,9 +327,10 @@ where
     }
 }
 #[doc = "low temperature interrupt enable for src0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LtIntenSrc0 {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -345,7 +352,7 @@ impl LtIntenSrc0R {
             true => LtIntenSrc0::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == LtIntenSrc0::B0
@@ -362,7 +369,7 @@ impl<'a, REG> LtIntenSrc0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(LtIntenSrc0::B0)
@@ -374,9 +381,10 @@ where
     }
 }
 #[doc = "low temperature interrupt enable for src1\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LtIntenSrc1 {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -398,7 +406,7 @@ impl LtIntenSrc1R {
             true => LtIntenSrc1::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == LtIntenSrc1::B0
@@ -415,7 +423,7 @@ impl<'a, REG> LtIntenSrc1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(LtIntenSrc1::B0)
@@ -426,10 +434,11 @@ where
         self.variant(LtIntenSrc1::B1)
     }
 }
-#[doc = "eoc_Interrupt enable. eoc_interrupt enable in user defined mode\n\nValue on reset: 0"]
+#[doc = "eoc_Interrupt enable.\n\neoc_interrupt enable in user defined mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EocIntEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -440,7 +449,7 @@ impl From<EocIntEn> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EOC_INT_EN` reader - eoc_Interrupt enable. eoc_interrupt enable in user defined mode"]
+#[doc = "Field `EOC_INT_EN` reader - eoc_Interrupt enable.\n\neoc_interrupt enable in user defined mode"]
 pub type EocIntEnR = crate::BitReader<EocIntEn>;
 impl EocIntEnR {
     #[doc = "Get enumerated values variant"]
@@ -451,7 +460,7 @@ impl EocIntEnR {
             true => EocIntEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == EocIntEn::B0
@@ -462,13 +471,13 @@ impl EocIntEnR {
         *self == EocIntEn::B1
     }
 }
-#[doc = "Field `EOC_INT_EN` writer - eoc_Interrupt enable. eoc_interrupt enable in user defined mode"]
+#[doc = "Field `EOC_INT_EN` writer - eoc_Interrupt enable.\n\neoc_interrupt enable in user defined mode"]
 pub type EocIntEnW<'a, REG> = crate::BitWriter<'a, REG, EocIntEn>;
 impl<'a, REG> EocIntEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(EocIntEn::B0)
@@ -520,7 +529,7 @@ impl R {
     pub fn lt_inten_src1(&self) -> LtIntenSrc1R {
         LtIntenSrc1R::new(((self.bits >> 13) & 1) != 0)
     }
-    #[doc = "Bit 16 - eoc_Interrupt enable. eoc_interrupt enable in user defined mode"]
+    #[doc = "Bit 16 - eoc_Interrupt enable.\n\neoc_interrupt enable in user defined mode"]
     #[inline(always)]
     pub fn eoc_int_en(&self) -> EocIntEnR {
         EocIntEnR::new(((self.bits >> 16) & 1) != 0)
@@ -575,7 +584,7 @@ impl W {
     pub fn lt_inten_src1(&mut self) -> LtIntenSrc1W<TsadcIntEnSpec> {
         LtIntenSrc1W::new(self, 13)
     }
-    #[doc = "Bit 16 - eoc_Interrupt enable. eoc_interrupt enable in user defined mode"]
+    #[doc = "Bit 16 - eoc_Interrupt enable.\n\neoc_interrupt enable in user defined mode"]
     #[inline(always)]
     #[must_use]
     pub fn eoc_int_en(&mut self) -> EocIntEnW<TsadcIntEnSpec> {

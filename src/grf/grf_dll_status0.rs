@@ -2,13 +2,13 @@
 pub type R = crate::R<GrfDllStatus0Spec>;
 #[doc = "Register `GRF_DLL_STATUS0` writer"]
 pub type W = crate::W<GrfDllStatus0Spec>;
-#[doc = "Field `PVTM_CORE_L_FREQ_DONE` reader - pd_core_l pvtm frequency calculate done stutus"]
+#[doc = "Field `PVTM_CORE_L_FREQ_DONE` reader - pd_core_l pvtm frequency calculate done\n\nstutus"]
 pub type PvtmCoreLFreqDoneR = crate::BitReader;
-#[doc = "Field `PVTM_CORE_L_FREQ_DONE` writer - pd_core_l pvtm frequency calculate done stutus"]
+#[doc = "Field `PVTM_CORE_L_FREQ_DONE` writer - pd_core_l pvtm frequency calculate done\n\nstutus"]
 pub type PvtmCoreLFreqDoneW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PVTM_CORE_B_FREQ_DONE` reader - pd_core_b pvtm frequency calculate done stutus"]
+#[doc = "Field `PVTM_CORE_B_FREQ_DONE` reader - pd_core_b pvtm frequency calculate done\n\nstutus"]
 pub type PvtmCoreBFreqDoneR = crate::BitReader;
-#[doc = "Field `PVTM_CORE_B_FREQ_DONE` writer - pd_core_b pvtm frequency calculate done stutus"]
+#[doc = "Field `PVTM_CORE_B_FREQ_DONE` writer - pd_core_b pvtm frequency calculate done\n\nstutus"]
 pub type PvtmCoreBFreqDoneW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PVTM_GPU_FREQ_DONE` reader - gpu pvtm frequency calculate done stutus"]
 pub type PvtmGpuFreqDoneR = crate::BitReader;
@@ -18,17 +18,17 @@ pub type PvtmGpuFreqDoneW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type PvtmDdrFreqDoneR = crate::BitReader;
 #[doc = "Field `PVTM_DDR_FREQ_DONE` writer - ddr pvtm frequency calculate done stutus"]
 pub type PvtmDdrFreqDoneW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bit 0 - pd_core_l pvtm frequency calculate done stutus"]
+    #[doc = "Bit 0 - pd_core_l pvtm frequency calculate done\n\nstutus"]
     #[inline(always)]
     pub fn pvtm_core_l_freq_done(&self) -> PvtmCoreLFreqDoneR {
         PvtmCoreLFreqDoneR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - pd_core_b pvtm frequency calculate done stutus"]
+    #[doc = "Bit 1 - pd_core_b pvtm frequency calculate done\n\nstutus"]
     #[inline(always)]
     pub fn pvtm_core_b_freq_done(&self) -> PvtmCoreBFreqDoneR {
         PvtmCoreBFreqDoneR::new(((self.bits >> 1) & 1) != 0)
@@ -43,20 +43,20 @@ impl R {
     pub fn pvtm_ddr_freq_done(&self) -> PvtmDdrFreqDoneR {
         PvtmDdrFreqDoneR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bit 0 - pd_core_l pvtm frequency calculate done stutus"]
+    #[doc = "Bit 0 - pd_core_l pvtm frequency calculate done\n\nstutus"]
     #[inline(always)]
     #[must_use]
     pub fn pvtm_core_l_freq_done(&mut self) -> PvtmCoreLFreqDoneW<GrfDllStatus0Spec> {
         PvtmCoreLFreqDoneW::new(self, 0)
     }
-    #[doc = "Bit 1 - pd_core_b pvtm frequency calculate done stutus"]
+    #[doc = "Bit 1 - pd_core_b pvtm frequency calculate done\n\nstutus"]
     #[inline(always)]
     #[must_use]
     pub fn pvtm_core_b_freq_done(&mut self) -> PvtmCoreBFreqDoneW<GrfDllStatus0Spec> {
@@ -74,7 +74,7 @@ impl W {
     pub fn pvtm_ddr_freq_done(&mut self) -> PvtmDdrFreqDoneW<GrfDllStatus0Spec> {
         PvtmDdrFreqDoneW::new(self, 3)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfDllStatus0Spec> {

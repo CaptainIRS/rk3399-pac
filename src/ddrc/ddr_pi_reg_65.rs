@@ -2,19 +2,19 @@
 pub type R = crate::R<DdrPiReg65Spec>;
 #[doc = "Register `DDR_PI_REG_65` writer"]
 pub type W = crate::W<DdrPiReg65Spec>;
-#[doc = "Field `PI_TDFI_WRLVL_MAX` reader - Defines the DFI tWRLVL_MAX timing parameter (in DFI clocks), the maximum cycles between a dfi_wrlvl_en assertion and a valid dfi_wrlvl_resp."]
+#[doc = "Field `PI_TDFI_WRLVL_MAX` reader - Defines the DFI tWRLVL_MAX timing parameter (in DFI clocks), the\n\nmaximum cycles between a dfi_wrlvl_en assertion and a valid\n\ndfi_wrlvl_resp."]
 pub type PiTdfiWrlvlMaxR = crate::FieldReader<u32>;
-#[doc = "Field `PI_TDFI_WRLVL_MAX` writer - Defines the DFI tWRLVL_MAX timing parameter (in DFI clocks), the maximum cycles between a dfi_wrlvl_en assertion and a valid dfi_wrlvl_resp."]
+#[doc = "Field `PI_TDFI_WRLVL_MAX` writer - Defines the DFI tWRLVL_MAX timing parameter (in DFI clocks), the\n\nmaximum cycles between a dfi_wrlvl_en assertion and a valid\n\ndfi_wrlvl_resp."]
 pub type PiTdfiWrlvlMaxW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Defines the DFI tWRLVL_MAX timing parameter (in DFI clocks), the maximum cycles between a dfi_wrlvl_en assertion and a valid dfi_wrlvl_resp."]
+    #[doc = "Bits 0:31 - Defines the DFI tWRLVL_MAX timing parameter (in DFI clocks), the\n\nmaximum cycles between a dfi_wrlvl_en assertion and a valid\n\ndfi_wrlvl_resp."]
     #[inline(always)]
     pub fn pi_tdfi_wrlvl_max(&self) -> PiTdfiWrlvlMaxR {
         PiTdfiWrlvlMaxR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Defines the DFI tWRLVL_MAX timing parameter (in DFI clocks), the maximum cycles between a dfi_wrlvl_en assertion and a valid dfi_wrlvl_resp."]
+    #[doc = "Bits 0:31 - Defines the DFI tWRLVL_MAX timing parameter (in DFI clocks), the\n\nmaximum cycles between a dfi_wrlvl_en assertion and a valid\n\ndfi_wrlvl_resp."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tdfi_wrlvl_max(&mut self) -> PiTdfiWrlvlMaxW<DdrPiReg65Spec> {

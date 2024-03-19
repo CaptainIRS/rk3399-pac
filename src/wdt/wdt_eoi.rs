@@ -1,9 +1,9 @@
 #[doc = "Register `WDT_EOI` reader"]
 pub type R = crate::R<WdtEoiSpec>;
-#[doc = "Field `WDT_INT_CLR` reader - Clears the watchdog interrupt. This can be used to clear the interrupt without restarting the watchdog counter.\n\nThe field is **cleared** (set to zero) following a read operation."]
+#[doc = "Field `WDT_INT_CLR` reader - Clears the watchdog interrupt.\n\nThis can be used to clear the interrupt without restarting the\n\nwatchdog counter.\n\nThe field is **cleared** (set to zero) following a read operation."]
 pub type WdtIntClrR = crate::BitReader;
 impl R {
-    #[doc = "Bit 0 - Clears the watchdog interrupt. This can be used to clear the interrupt without restarting the watchdog counter."]
+    #[doc = "Bit 0 - Clears the watchdog interrupt.\n\nThis can be used to clear the interrupt without restarting the\n\nwatchdog counter."]
     #[inline(always)]
     pub fn wdt_int_clr(&self) -> WdtIntClrR {
         WdtIntClrR::new((self.bits & 1) != 0)

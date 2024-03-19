@@ -2,64 +2,64 @@
 pub type R = crate::R<DdrPiReg67Spec>;
 #[doc = "Register `DDR_PI_REG_67` writer"]
 pub type W = crate::W<DdrPiReg67Spec>;
-#[doc = "Field `PI_ODT_EN_F0` reader - Enables support of DRAM ODT. When enabled, PI asserts and de-asserts ODT output to DRAM as needed. The suffix \"_f0\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_ODT_EN_F0` reader - Enables support of DRAM ODT. When enabled, PI asserts and\n\nde-asserts ODT output to DRAM as needed. The suffix \"_f0\" of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiOdtEnF0R = crate::BitReader;
-#[doc = "Field `PI_ODT_EN_F0` writer - Enables support of DRAM ODT. When enabled, PI asserts and de-asserts ODT output to DRAM as needed. The suffix \"_f0\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_ODT_EN_F0` writer - Enables support of DRAM ODT. When enabled, PI asserts and\n\nde-asserts ODT output to DRAM as needed. The suffix \"_f0\" of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiOdtEnF0W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PI_TODTL_2CMD_F1` reader - Defines the DRAM delay from an ODT de-assertion to the next non-write, non-read command. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TODTL_2CMD_F1` reader - Defines the DRAM delay from an ODT de-assertion to the next\n\nnon-write, non-read command. The suffix \"_f1\" of the parameter\n\nname is omitted when in non-DFS mode."]
 pub type PiTodtl2cmdF1R = crate::FieldReader;
-#[doc = "Field `PI_TODTL_2CMD_F1` writer - Defines the DRAM delay from an ODT de-assertion to the next non-write, non-read command. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TODTL_2CMD_F1` writer - Defines the DRAM delay from an ODT de-assertion to the next\n\nnon-write, non-read command. The suffix \"_f1\" of the parameter\n\nname is omitted when in non-DFS mode."]
 pub type PiTodtl2cmdF1W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-#[doc = "Field `PI_ODT_EN_F1` reader - Enables support of DRAM ODT. When enabled, PI asserts and de-asserts ODT output to DRAM as needed. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_ODT_EN_F1` reader - Enables support of DRAM ODT. When enabled, PI asserts and\n\nde-asserts ODT output to DRAM as needed. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiOdtEnF1R = crate::BitReader;
-#[doc = "Field `PI_ODT_EN_F1` writer - Enables support of DRAM ODT. When enabled, PI asserts and de-asserts ODT output to DRAM as needed. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_ODT_EN_F1` writer - Enables support of DRAM ODT. When enabled, PI asserts and\n\nde-asserts ODT output to DRAM as needed. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiOdtEnF1W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PI_TODTL_2CMD_F2` reader - Defines the DRAM delay from an ODT de-assertion to the next non-write, non-read command. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TODTL_2CMD_F2` reader - Defines the DRAM delay from an ODT de-assertion to the next\n\nnon-write, non-read command. The suffix \"_f2\" of the parameter\n\nname is omitted when in non-DFS mode."]
 pub type PiTodtl2cmdF2R = crate::FieldReader;
-#[doc = "Field `PI_TODTL_2CMD_F2` writer - Defines the DRAM delay from an ODT de-assertion to the next non-write, non-read command. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TODTL_2CMD_F2` writer - Defines the DRAM delay from an ODT de-assertion to the next\n\nnon-write, non-read command. The suffix \"_f2\" of the parameter\n\nname is omitted when in non-DFS mode."]
 pub type PiTodtl2cmdF2W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bit 0 - Enables support of DRAM ODT. When enabled, PI asserts and de-asserts ODT output to DRAM as needed. The suffix \"_f0\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bit 0 - Enables support of DRAM ODT. When enabled, PI asserts and\n\nde-asserts ODT output to DRAM as needed. The suffix \"_f0\" of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_odt_en_f0(&self) -> PiOdtEnF0R {
         PiOdtEnF0R::new((self.bits & 1) != 0)
     }
-    #[doc = "Bits 8:15 - Defines the DRAM delay from an ODT de-assertion to the next non-write, non-read command. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 8:15 - Defines the DRAM delay from an ODT de-assertion to the next\n\nnon-write, non-read command. The suffix \"_f1\" of the parameter\n\nname is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_todtl_2cmd_f1(&self) -> PiTodtl2cmdF1R {
         PiTodtl2cmdF1R::new(((self.bits >> 8) & 0xff) as u8)
     }
-    #[doc = "Bit 16 - Enables support of DRAM ODT. When enabled, PI asserts and de-asserts ODT output to DRAM as needed. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bit 16 - Enables support of DRAM ODT. When enabled, PI asserts and\n\nde-asserts ODT output to DRAM as needed. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_odt_en_f1(&self) -> PiOdtEnF1R {
         PiOdtEnF1R::new(((self.bits >> 16) & 1) != 0)
     }
-    #[doc = "Bits 24:31 - Defines the DRAM delay from an ODT de-assertion to the next non-write, non-read command. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 24:31 - Defines the DRAM delay from an ODT de-assertion to the next\n\nnon-write, non-read command. The suffix \"_f2\" of the parameter\n\nname is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_todtl_2cmd_f2(&self) -> PiTodtl2cmdF2R {
         PiTodtl2cmdF2R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Enables support of DRAM ODT. When enabled, PI asserts and de-asserts ODT output to DRAM as needed. The suffix \"_f0\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bit 0 - Enables support of DRAM ODT. When enabled, PI asserts and\n\nde-asserts ODT output to DRAM as needed. The suffix \"_f0\" of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_odt_en_f0(&mut self) -> PiOdtEnF0W<DdrPiReg67Spec> {
         PiOdtEnF0W::new(self, 0)
     }
-    #[doc = "Bits 8:15 - Defines the DRAM delay from an ODT de-assertion to the next non-write, non-read command. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 8:15 - Defines the DRAM delay from an ODT de-assertion to the next\n\nnon-write, non-read command. The suffix \"_f1\" of the parameter\n\nname is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_todtl_2cmd_f1(&mut self) -> PiTodtl2cmdF1W<DdrPiReg67Spec> {
         PiTodtl2cmdF1W::new(self, 8)
     }
-    #[doc = "Bit 16 - Enables support of DRAM ODT. When enabled, PI asserts and de-asserts ODT output to DRAM as needed. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bit 16 - Enables support of DRAM ODT. When enabled, PI asserts and\n\nde-asserts ODT output to DRAM as needed. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_odt_en_f1(&mut self) -> PiOdtEnF1W<DdrPiReg67Spec> {
         PiOdtEnF1W::new(self, 16)
     }
-    #[doc = "Bits 24:31 - Defines the DRAM delay from an ODT de-assertion to the next non-write, non-read command. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 24:31 - Defines the DRAM delay from an ODT de-assertion to the next\n\nnon-write, non-read command. The suffix \"_f2\" of the parameter\n\nname is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_todtl_2cmd_f2(&mut self) -> PiTodtl2cmdF2W<DdrPiReg67Spec> {

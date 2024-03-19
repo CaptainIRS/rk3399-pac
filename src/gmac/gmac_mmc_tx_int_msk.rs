@@ -2,94 +2,94 @@
 pub type R = crate::R<GmacMmcTxIntMskSpec>;
 #[doc = "Register `GMAC_MMC_TX_INT_MSK` writer"]
 pub type W = crate::W<GmacMmcTxIntMskSpec>;
-#[doc = "Field `INT0` reader - Setting this bit masks the interrupt when the txoctetcount_gb counter reaches half the maximum value, and also when it reaches the maximum value."]
+#[doc = "Field `INT0` reader - Setting this bit masks the interrupt when the txoctetcount_gb\n\ncounter reaches half the maximum value, and also when it\n\nreaches the maximum value."]
 pub type Int0R = crate::BitReader;
-#[doc = "Field `INT0` writer - Setting this bit masks the interrupt when the txoctetcount_gb counter reaches half the maximum value, and also when it reaches the maximum value."]
+#[doc = "Field `INT0` writer - Setting this bit masks the interrupt when the txoctetcount_gb\n\ncounter reaches half the maximum value, and also when it\n\nreaches the maximum value."]
 pub type Int0W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `INT1` reader - Setting this bit masks the interrupt when the txframecount_gb counter reaches half the maximum value, and also when it reaches the maximum value."]
+#[doc = "Field `INT1` reader - Setting this bit masks the interrupt when the txframecount_gb\n\ncounter reaches half the maximum value, and also when it\n\nreaches the maximum value."]
 pub type Int1R = crate::BitReader;
-#[doc = "Field `INT1` writer - Setting this bit masks the interrupt when the txframecount_gb counter reaches half the maximum value, and also when it reaches the maximum value."]
+#[doc = "Field `INT1` writer - Setting this bit masks the interrupt when the txframecount_gb\n\ncounter reaches half the maximum value, and also when it\n\nreaches the maximum value."]
 pub type Int1W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `INT13` reader - Setting this bit masks the interrupt when the txunderflowerror counter reaches half the maximum value, and also when it reaches the maximum value."]
+#[doc = "Field `INT13` reader - Setting this bit masks the interrupt when the txunderflowerror\n\ncounter reaches half the maximum value, and also when it\n\nreaches the maximum value."]
 pub type Int13R = crate::BitReader;
-#[doc = "Field `INT13` writer - Setting this bit masks the interrupt when the txunderflowerror counter reaches half the maximum value, and also when it reaches the maximum value."]
+#[doc = "Field `INT13` writer - Setting this bit masks the interrupt when the txunderflowerror\n\ncounter reaches half the maximum value, and also when it\n\nreaches the maximum value."]
 pub type Int13W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `INT19` reader - Setting this bit masks the interrupt when the txcarriererror counter reaches half the maximum value, and also when it reaches the maximum value."]
+#[doc = "Field `INT19` reader - Setting this bit masks the interrupt when the txcarriererror\n\ncounter reaches half the maximum value, and also when it\n\nreaches the maximum value."]
 pub type Int19R = crate::BitReader;
-#[doc = "Field `INT19` writer - Setting this bit masks the interrupt when the txcarriererror counter reaches half the maximum value, and also when it reaches the maximum value."]
+#[doc = "Field `INT19` writer - Setting this bit masks the interrupt when the txcarriererror\n\ncounter reaches half the maximum value, and also when it\n\nreaches the maximum value."]
 pub type Int19W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `INT20` reader - Setting this bit masks the interrupt when the txoctetcount_g counter reaches half the maximum value, and also when it reaches the maximum value."]
+#[doc = "Field `INT20` reader - Setting this bit masks the interrupt when the txoctetcount_g\n\ncounter reaches half the maximum value, and also when it\n\nreaches the maximum value."]
 pub type Int20R = crate::BitReader;
-#[doc = "Field `INT20` writer - Setting this bit masks the interrupt when the txoctetcount_g counter reaches half the maximum value, and also when it reaches the maximum value."]
+#[doc = "Field `INT20` writer - Setting this bit masks the interrupt when the txoctetcount_g\n\ncounter reaches half the maximum value, and also when it\n\nreaches the maximum value."]
 pub type Int20W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `INT21` reader - Setting this bit masks the interrupt when the txframecount_g counter reaches half the maximum value, and also when it reaches the maximum value."]
+#[doc = "Field `INT21` reader - Setting this bit masks the interrupt when the txframecount_g\n\ncounter reaches half the maximum value, and also when it\n\nreaches the maximum value."]
 pub type Int21R = crate::BitReader;
-#[doc = "Field `INT21` writer - Setting this bit masks the interrupt when the txframecount_g counter reaches half the maximum value, and also when it reaches the maximum value."]
+#[doc = "Field `INT21` writer - Setting this bit masks the interrupt when the txframecount_g\n\ncounter reaches half the maximum value, and also when it\n\nreaches the maximum value."]
 pub type Int21W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - Setting this bit masks the interrupt when the txoctetcount_gb counter reaches half the maximum value, and also when it reaches the maximum value."]
+    #[doc = "Bit 0 - Setting this bit masks the interrupt when the txoctetcount_gb\n\ncounter reaches half the maximum value, and also when it\n\nreaches the maximum value."]
     #[inline(always)]
     pub fn int0(&self) -> Int0R {
         Int0R::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - Setting this bit masks the interrupt when the txframecount_gb counter reaches half the maximum value, and also when it reaches the maximum value."]
+    #[doc = "Bit 1 - Setting this bit masks the interrupt when the txframecount_gb\n\ncounter reaches half the maximum value, and also when it\n\nreaches the maximum value."]
     #[inline(always)]
     pub fn int1(&self) -> Int1R {
         Int1R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 13 - Setting this bit masks the interrupt when the txunderflowerror counter reaches half the maximum value, and also when it reaches the maximum value."]
+    #[doc = "Bit 13 - Setting this bit masks the interrupt when the txunderflowerror\n\ncounter reaches half the maximum value, and also when it\n\nreaches the maximum value."]
     #[inline(always)]
     pub fn int13(&self) -> Int13R {
         Int13R::new(((self.bits >> 13) & 1) != 0)
     }
-    #[doc = "Bit 19 - Setting this bit masks the interrupt when the txcarriererror counter reaches half the maximum value, and also when it reaches the maximum value."]
+    #[doc = "Bit 19 - Setting this bit masks the interrupt when the txcarriererror\n\ncounter reaches half the maximum value, and also when it\n\nreaches the maximum value."]
     #[inline(always)]
     pub fn int19(&self) -> Int19R {
         Int19R::new(((self.bits >> 19) & 1) != 0)
     }
-    #[doc = "Bit 20 - Setting this bit masks the interrupt when the txoctetcount_g counter reaches half the maximum value, and also when it reaches the maximum value."]
+    #[doc = "Bit 20 - Setting this bit masks the interrupt when the txoctetcount_g\n\ncounter reaches half the maximum value, and also when it\n\nreaches the maximum value."]
     #[inline(always)]
     pub fn int20(&self) -> Int20R {
         Int20R::new(((self.bits >> 20) & 1) != 0)
     }
-    #[doc = "Bit 21 - Setting this bit masks the interrupt when the txframecount_g counter reaches half the maximum value, and also when it reaches the maximum value."]
+    #[doc = "Bit 21 - Setting this bit masks the interrupt when the txframecount_g\n\ncounter reaches half the maximum value, and also when it\n\nreaches the maximum value."]
     #[inline(always)]
     pub fn int21(&self) -> Int21R {
         Int21R::new(((self.bits >> 21) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Setting this bit masks the interrupt when the txoctetcount_gb counter reaches half the maximum value, and also when it reaches the maximum value."]
+    #[doc = "Bit 0 - Setting this bit masks the interrupt when the txoctetcount_gb\n\ncounter reaches half the maximum value, and also when it\n\nreaches the maximum value."]
     #[inline(always)]
     #[must_use]
     pub fn int0(&mut self) -> Int0W<GmacMmcTxIntMskSpec> {
         Int0W::new(self, 0)
     }
-    #[doc = "Bit 1 - Setting this bit masks the interrupt when the txframecount_gb counter reaches half the maximum value, and also when it reaches the maximum value."]
+    #[doc = "Bit 1 - Setting this bit masks the interrupt when the txframecount_gb\n\ncounter reaches half the maximum value, and also when it\n\nreaches the maximum value."]
     #[inline(always)]
     #[must_use]
     pub fn int1(&mut self) -> Int1W<GmacMmcTxIntMskSpec> {
         Int1W::new(self, 1)
     }
-    #[doc = "Bit 13 - Setting this bit masks the interrupt when the txunderflowerror counter reaches half the maximum value, and also when it reaches the maximum value."]
+    #[doc = "Bit 13 - Setting this bit masks the interrupt when the txunderflowerror\n\ncounter reaches half the maximum value, and also when it\n\nreaches the maximum value."]
     #[inline(always)]
     #[must_use]
     pub fn int13(&mut self) -> Int13W<GmacMmcTxIntMskSpec> {
         Int13W::new(self, 13)
     }
-    #[doc = "Bit 19 - Setting this bit masks the interrupt when the txcarriererror counter reaches half the maximum value, and also when it reaches the maximum value."]
+    #[doc = "Bit 19 - Setting this bit masks the interrupt when the txcarriererror\n\ncounter reaches half the maximum value, and also when it\n\nreaches the maximum value."]
     #[inline(always)]
     #[must_use]
     pub fn int19(&mut self) -> Int19W<GmacMmcTxIntMskSpec> {
         Int19W::new(self, 19)
     }
-    #[doc = "Bit 20 - Setting this bit masks the interrupt when the txoctetcount_g counter reaches half the maximum value, and also when it reaches the maximum value."]
+    #[doc = "Bit 20 - Setting this bit masks the interrupt when the txoctetcount_g\n\ncounter reaches half the maximum value, and also when it\n\nreaches the maximum value."]
     #[inline(always)]
     #[must_use]
     pub fn int20(&mut self) -> Int20W<GmacMmcTxIntMskSpec> {
         Int20W::new(self, 20)
     }
-    #[doc = "Bit 21 - Setting this bit masks the interrupt when the txframecount_g counter reaches half the maximum value, and also when it reaches the maximum value."]
+    #[doc = "Bit 21 - Setting this bit masks the interrupt when the txframecount_g\n\ncounter reaches half the maximum value, and also when it\n\nreaches the maximum value."]
     #[inline(always)]
     #[must_use]
     pub fn int21(&mut self) -> Int21W<GmacMmcTxIntMskSpec> {

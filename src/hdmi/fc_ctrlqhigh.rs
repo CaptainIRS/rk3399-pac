@@ -2,26 +2,26 @@
 pub type R = crate::R<FcCtrlqhighSpec>;
 #[doc = "Register `FC_CTRLQHIGH` writer"]
 pub type W = crate::W<FcCtrlqhighSpec>;
-#[doc = "Field `ONHIGHATTENDED` reader - Configures the number of high priority packets or audio sample packets consecutively attended before checking low priority queue status. Valid range is from 5'd1 to 5'd31."]
+#[doc = "Field `ONHIGHATTENDED` reader - Configures the number of high priority packets or\n\naudio sample packets consecutively attended\n\nbefore checking low priority queue status. Valid\n\nrange is from 5'd1 to 5'd31."]
 pub type OnhighattendedR = crate::FieldReader;
-#[doc = "Field `ONHIGHATTENDED` writer - Configures the number of high priority packets or audio sample packets consecutively attended before checking low priority queue status. Valid range is from 5'd1 to 5'd31."]
+#[doc = "Field `ONHIGHATTENDED` writer - Configures the number of high priority packets or\n\naudio sample packets consecutively attended\n\nbefore checking low priority queue status. Valid\n\nrange is from 5'd1 to 5'd31."]
 pub type OnhighattendedW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
-    #[doc = "Bits 0:4 - Configures the number of high priority packets or audio sample packets consecutively attended before checking low priority queue status. Valid range is from 5'd1 to 5'd31."]
+    #[doc = "Bits 0:4 - Configures the number of high priority packets or\n\naudio sample packets consecutively attended\n\nbefore checking low priority queue status. Valid\n\nrange is from 5'd1 to 5'd31."]
     #[inline(always)]
     pub fn onhighattended(&self) -> OnhighattendedR {
         OnhighattendedR::new(self.bits & 0x1f)
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - Configures the number of high priority packets or audio sample packets consecutively attended before checking low priority queue status. Valid range is from 5'd1 to 5'd31."]
+    #[doc = "Bits 0:4 - Configures the number of high priority packets or\n\naudio sample packets consecutively attended\n\nbefore checking low priority queue status. Valid\n\nrange is from 5'd1 to 5'd31."]
     #[inline(always)]
     #[must_use]
     pub fn onhighattended(&mut self) -> OnhighattendedW<FcCtrlqhighSpec> {
         OnhighattendedW::new(self, 0)
     }
 }
-#[doc = "Configures the number of high priority packets or audio sample packets consecutively attended before checking low priority queue status. Valid range is from 5'd1 to 5'd31.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_ctrlqhigh::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_ctrlqhigh::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer Number of High Priority Packets Attended Configuration\n\nRegister\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_ctrlqhigh::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_ctrlqhigh::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcCtrlqhighSpec;
 impl crate::RegisterSpec for FcCtrlqhighSpec {
     type Ux = u8;

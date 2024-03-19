@@ -2,11 +2,12 @@
 pub type R = crate::R<GpioDebounceSpec>;
 #[doc = "Register `GPIO_DEBOUNCE` writer"]
 pub type W = crate::W<GpioDebounceSpec>;
-#[doc = "Controls whether an external signal that is the source of an interrupt needs to be debounced to remove any spurious glitches. Writing a 1 to a bit in this register enables the debouncing circuitry. A signal must be valid for two periods of an external clock before it is internally processed.\n\nValue on reset: 0"]
+#[doc = "Controls whether an external signal that is the source of an\n\ninterrupt needs to be debounced to remove any spurious glitches.\n\nWriting a 1 to a bit in this register enables the debouncing\n\ncircuitry. A signal must be valid for two periods of an external\n\nclock before it is internally processed.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum GpioDebounce {
-    #[doc = "0: Enable debounce"]
+    #[doc = "0: No debounce (default)"]
     B0 = 0,
     #[doc = "1: Enable debounce"]
     B1 = 1,
@@ -20,7 +21,7 @@ impl From<GpioDebounce> for u32 {
 impl crate::FieldSpec for GpioDebounce {
     type Ux = u32;
 }
-#[doc = "Field `GPIO_DEBOUNCE` reader - Controls whether an external signal that is the source of an interrupt needs to be debounced to remove any spurious glitches. Writing a 1 to a bit in this register enables the debouncing circuitry. A signal must be valid for two periods of an external clock before it is internally processed."]
+#[doc = "Field `GPIO_DEBOUNCE` reader - Controls whether an external signal that is the source of an\n\ninterrupt needs to be debounced to remove any spurious glitches.\n\nWriting a 1 to a bit in this register enables the debouncing\n\ncircuitry. A signal must be valid for two periods of an external\n\nclock before it is internally processed."]
 pub type GpioDebounceR = crate::FieldReader<GpioDebounce>;
 impl GpioDebounceR {
     #[doc = "Get enumerated values variant"]
@@ -32,7 +33,7 @@ impl GpioDebounceR {
             _ => None,
         }
     }
-    #[doc = "Enable debounce"]
+    #[doc = "No debounce (default)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == GpioDebounce::B0
@@ -43,14 +44,14 @@ impl GpioDebounceR {
         *self == GpioDebounce::B1
     }
 }
-#[doc = "Field `GPIO_DEBOUNCE` writer - Controls whether an external signal that is the source of an interrupt needs to be debounced to remove any spurious glitches. Writing a 1 to a bit in this register enables the debouncing circuitry. A signal must be valid for two periods of an external clock before it is internally processed."]
+#[doc = "Field `GPIO_DEBOUNCE` writer - Controls whether an external signal that is the source of an\n\ninterrupt needs to be debounced to remove any spurious glitches.\n\nWriting a 1 to a bit in this register enables the debouncing\n\ncircuitry. A signal must be valid for two periods of an external\n\nclock before it is internally processed."]
 pub type GpioDebounceW<'a, REG> = crate::FieldWriter<'a, REG, 32, GpioDebounce>;
 impl<'a, REG> GpioDebounceW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u32>,
 {
-    #[doc = "Enable debounce"]
+    #[doc = "No debounce (default)"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(GpioDebounce::B0)
@@ -62,14 +63,14 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 0:31 - Controls whether an external signal that is the source of an interrupt needs to be debounced to remove any spurious glitches. Writing a 1 to a bit in this register enables the debouncing circuitry. A signal must be valid for two periods of an external clock before it is internally processed."]
+    #[doc = "Bits 0:31 - Controls whether an external signal that is the source of an\n\ninterrupt needs to be debounced to remove any spurious glitches.\n\nWriting a 1 to a bit in this register enables the debouncing\n\ncircuitry. A signal must be valid for two periods of an external\n\nclock before it is internally processed."]
     #[inline(always)]
     pub fn gpio_debounce(&self) -> GpioDebounceR {
         GpioDebounceR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Controls whether an external signal that is the source of an interrupt needs to be debounced to remove any spurious glitches. Writing a 1 to a bit in this register enables the debouncing circuitry. A signal must be valid for two periods of an external clock before it is internally processed."]
+    #[doc = "Bits 0:31 - Controls whether an external signal that is the source of an\n\ninterrupt needs to be debounced to remove any spurious glitches.\n\nWriting a 1 to a bit in this register enables the debouncing\n\ncircuitry. A signal must be valid for two periods of an external\n\nclock before it is internally processed."]
     #[inline(always)]
     #[must_use]
     pub fn gpio_debounce(&mut self) -> GpioDebounceW<GpioDebounceSpec> {

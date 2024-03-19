@@ -2,19 +2,19 @@
 pub type R = crate::R<EmmccoreArgSpec>;
 #[doc = "Register `EMMCCORE_ARG` writer"]
 pub type W = crate::W<EmmccoreArgSpec>;
-#[doc = "Field `COMMANDARGUMENT1` reader - The SD Command Argument is specified as bit39-8 of Command- Format."]
+#[doc = "Field `COMMANDARGUMENT1` reader - The SD Command Argument is specified as bit39-8 of Command-\n\nFormat."]
 pub type Commandargument1R = crate::FieldReader<u32>;
-#[doc = "Field `COMMANDARGUMENT1` writer - The SD Command Argument is specified as bit39-8 of Command- Format."]
+#[doc = "Field `COMMANDARGUMENT1` writer - The SD Command Argument is specified as bit39-8 of Command-\n\nFormat."]
 pub type Commandargument1W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - The SD Command Argument is specified as bit39-8 of Command- Format."]
+    #[doc = "Bits 0:31 - The SD Command Argument is specified as bit39-8 of Command-\n\nFormat."]
     #[inline(always)]
     pub fn commandargument1(&self) -> Commandargument1R {
         Commandargument1R::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - The SD Command Argument is specified as bit39-8 of Command- Format."]
+    #[doc = "Bits 0:31 - The SD Command Argument is specified as bit39-8 of Command-\n\nFormat."]
     #[inline(always)]
     #[must_use]
     pub fn commandargument1(&mut self) -> Commandargument1W<EmmccoreArgSpec> {

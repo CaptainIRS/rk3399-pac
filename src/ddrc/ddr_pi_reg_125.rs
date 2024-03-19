@@ -2,26 +2,26 @@
 pub type R = crate::R<DdrPiReg125Spec>;
 #[doc = "Register `DDR_PI_REG_125` writer"]
 pub type W = crate::W<DdrPiReg125Spec>;
-#[doc = "Field `PI_WDQLVL_ERROR_STATUS` reader - Holds the error associated with the write DQ level error interrupt. Bit0 set indicates a PI_REG_123.pi_tdfi_wdqlvl_max parameter violation and bit1 set indicates a PI_REG_122.pi_tdfi_wdqlvl_resp parameter violation."]
+#[doc = "Field `PI_WDQLVL_ERROR_STATUS` reader - Holds the error associated with the write DQ level error interrupt.\n\nBit0 set indicates a PI_REG_123.pi_tdfi_wdqlvl_max parameter\n\nviolation and bit1 set indicates a PI_REG_122.pi_tdfi_wdqlvl_resp\n\nparameter violation."]
 pub type PiWdqlvlErrorStatusR = crate::FieldReader;
-#[doc = "Field `PI_MR1_DATA_F0_0` reader - Indicates data to program into memory mode register 1 for chip select 0. The suffix \"_f0\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_MR1_DATA_F0_0` reader - Indicates data to program into memory mode register 1 for chip\n\nselect 0. The suffix \"_f0\" of the parameter name is omitted when in\n\nnon-DFS mode."]
 pub type PiMr1DataF0_0R = crate::FieldReader<u16>;
-#[doc = "Field `PI_MR1_DATA_F0_0` writer - Indicates data to program into memory mode register 1 for chip select 0. The suffix \"_f0\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_MR1_DATA_F0_0` writer - Indicates data to program into memory mode register 1 for chip\n\nselect 0. The suffix \"_f0\" of the parameter name is omitted when in\n\nnon-DFS mode."]
 pub type PiMr1DataF0_0W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:1 - Holds the error associated with the write DQ level error interrupt. Bit0 set indicates a PI_REG_123.pi_tdfi_wdqlvl_max parameter violation and bit1 set indicates a PI_REG_122.pi_tdfi_wdqlvl_resp parameter violation."]
+    #[doc = "Bits 0:1 - Holds the error associated with the write DQ level error interrupt.\n\nBit0 set indicates a PI_REG_123.pi_tdfi_wdqlvl_max parameter\n\nviolation and bit1 set indicates a PI_REG_122.pi_tdfi_wdqlvl_resp\n\nparameter violation."]
     #[inline(always)]
     pub fn pi_wdqlvl_error_status(&self) -> PiWdqlvlErrorStatusR {
         PiWdqlvlErrorStatusR::new((self.bits & 3) as u8)
     }
-    #[doc = "Bits 8:23 - Indicates data to program into memory mode register 1 for chip select 0. The suffix \"_f0\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 8:23 - Indicates data to program into memory mode register 1 for chip\n\nselect 0. The suffix \"_f0\" of the parameter name is omitted when in\n\nnon-DFS mode."]
     #[inline(always)]
     pub fn pi_mr1_data_f0_0(&self) -> PiMr1DataF0_0R {
         PiMr1DataF0_0R::new(((self.bits >> 8) & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 8:23 - Indicates data to program into memory mode register 1 for chip select 0. The suffix \"_f0\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 8:23 - Indicates data to program into memory mode register 1 for chip\n\nselect 0. The suffix \"_f0\" of the parameter name is omitted when in\n\nnon-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_mr1_data_f0_0(&mut self) -> PiMr1DataF0_0W<DdrPiReg125Spec> {

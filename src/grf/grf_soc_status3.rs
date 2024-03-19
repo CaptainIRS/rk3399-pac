@@ -63,9 +63,10 @@ pub type Usbcphy1OtgUtmiLinestateR = crate::FieldReader;
 #[doc = "Field `USBCPHY1_OTG_UTMI_HOSTDISCONNECT` reader - usbcphy1_otg_utmi_hostdisconnect status"]
 pub type Usbcphy1OtgUtmiHostdisconnectR = crate::BitReader;
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Usbcphy0HostUtmiFsXverOwn {
-    #[doc = "1: ehci owns usb2phy"]
+    #[doc = "1: ohci owns usb2phy"]
     B1 = 1,
     #[doc = "0: ehci owns usb2phy"]
     B0 = 0,
@@ -87,7 +88,7 @@ impl Usbcphy0HostUtmiFsXverOwnR {
             false => Usbcphy0HostUtmiFsXverOwn::B0,
         }
     }
-    #[doc = "ehci owns usb2phy"]
+    #[doc = "ohci owns usb2phy"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Usbcphy0HostUtmiFsXverOwn::B1
@@ -103,9 +104,10 @@ pub type Usbcphy0HostUtmiLinestateR = crate::FieldReader;
 #[doc = "Field `USBCPHY0_HOST_UTMI_HOSTDISCONNECT` reader - usbcphy0_host_utmi_hostdisconnect status"]
 pub type Usbcphy0HostUtmiHostdisconnectR = crate::BitReader;
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Usbcphy1HostUtmiFsXverOwn {
-    #[doc = "1: ehci owns usb2phy"]
+    #[doc = "1: ohci owns usb2phy"]
     B1 = 1,
     #[doc = "0: ehci owns usb2phy"]
     B0 = 0,
@@ -127,7 +129,7 @@ impl Usbcphy1HostUtmiFsXverOwnR {
             false => Usbcphy1HostUtmiFsXverOwn::B0,
         }
     }
-    #[doc = "ehci owns usb2phy"]
+    #[doc = "ohci owns usb2phy"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Usbcphy1HostUtmiFsXverOwn::B1

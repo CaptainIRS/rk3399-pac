@@ -2,19 +2,19 @@
 pub type R = crate::R<Rki2cMtxcntSpec>;
 #[doc = "Register `RKI2C_MTXCNT` writer"]
 pub type W = crate::W<Rki2cMtxcntSpec>;
-#[doc = "Field `MTXCNT` reader - master transmit count 6 bits counter"]
+#[doc = "Field `MTXCNT` reader - master transmit count\n\n6 bits counter"]
 pub type MtxcntR = crate::FieldReader;
-#[doc = "Field `MTXCNT` writer - master transmit count 6 bits counter"]
+#[doc = "Field `MTXCNT` writer - master transmit count\n\n6 bits counter"]
 pub type MtxcntW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
-    #[doc = "Bits 0:5 - master transmit count 6 bits counter"]
+    #[doc = "Bits 0:5 - master transmit count\n\n6 bits counter"]
     #[inline(always)]
     pub fn mtxcnt(&self) -> MtxcntR {
         MtxcntR::new((self.bits & 0x3f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:5 - master transmit count 6 bits counter"]
+    #[doc = "Bits 0:5 - master transmit count\n\n6 bits counter"]
     #[inline(always)]
     #[must_use]
     pub fn mtxcnt(&mut self) -> MtxcntW<Rki2cMtxcntSpec> {

@@ -3,9 +3,10 @@ pub type R = crate::R<PcieClientHotResetCtrlSpec>;
 #[doc = "Register `PCIE_CLIENT_HOT_RESET_CTRL` writer"]
 pub type W = crate::W<PcieClientHotResetCtrlSpec>;
 #[doc = "Assert hot reset to remote device\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HotResetIn {
-    #[doc = "0: assert When this input is asserted in the RC mode, the core initiates a Hot Reset sequence on the PCIe link. This signal should be driven synchronous to the CORE_CLK domain. The controller will keep the PCIe link in hot reset till the time this signal is driven asserted. When de-asserted, controller will bring the PCIe link out of hot reset and initiate link training"]
+    #[doc = "0: de-assert"]
     B0 = 0,
     #[doc = "1: assert When this input is asserted in the RC mode, the core initiates a Hot Reset sequence on the PCIe link. This signal should be driven synchronous to the CORE_CLK domain. The controller will keep the PCIe link in hot reset till the time this signal is driven asserted. When de-asserted, controller will bring the PCIe link out of hot reset and initiate link training"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl HotResetInR {
             true => HotResetIn::B1,
         }
     }
-    #[doc = "assert When this input is asserted in the RC mode, the core initiates a Hot Reset sequence on the PCIe link. This signal should be driven synchronous to the CORE_CLK domain. The controller will keep the PCIe link in hot reset till the time this signal is driven asserted. When de-asserted, controller will bring the PCIe link out of hot reset and initiate link training"]
+    #[doc = "de-assert"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == HotResetIn::B0
@@ -44,7 +45,7 @@ impl<'a, REG> HotResetInW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "assert When this input is asserted in the RC mode, the core initiates a Hot Reset sequence on the PCIe link. This signal should be driven synchronous to the CORE_CLK domain. The controller will keep the PCIe link in hot reset till the time this signal is driven asserted. When de-asserted, controller will bring the PCIe link out of hot reset and initiate link training"]
+    #[doc = "de-assert"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(HotResetIn::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Mask link down reset client logic\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LinkDownRstCltMask {
-    #[doc = "0: enable link down reset client logic"]
+    #[doc = "0: disable link down reset client logic"]
     B0 = 0,
     #[doc = "1: enable link down reset client logic"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl LinkDownRstCltMaskR {
             true => LinkDownRstCltMask::B1,
         }
     }
-    #[doc = "enable link down reset client logic"]
+    #[doc = "disable link down reset client logic"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == LinkDownRstCltMask::B0
@@ -97,7 +99,7 @@ impl<'a, REG> LinkDownRstCltMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable link down reset client logic"]
+    #[doc = "disable link down reset client logic"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(LinkDownRstCltMask::B0)
@@ -108,11 +110,12 @@ where
         self.variant(LinkDownRstCltMask::B1)
     }
 }
-#[doc = "Write mask For each served bit\n\nValue on reset: 0"]
+#[doc = "Write mask\n\nFor each served bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum WriteMask {
-    #[doc = "0: write enable"]
+    #[doc = "0: write mask"]
     B0 = 0,
     #[doc = "1: write enable"]
     B1 = 1,
@@ -126,14 +129,14 @@ impl From<WriteMask> for u8 {
 impl crate::FieldSpec for WriteMask {
     type Ux = u8;
 }
-#[doc = "Field `WRITE_MASK` writer - Write mask For each served bit"]
+#[doc = "Field `WRITE_MASK` writer - Write mask\n\nFor each served bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 2, WriteMask>;
 impl<'a, REG> WriteMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "write enable"]
+    #[doc = "write mask"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(WriteMask::B0)
@@ -169,7 +172,7 @@ impl W {
     pub fn link_down_rst_clt_mask(&mut self) -> LinkDownRstCltMaskW<PcieClientHotResetCtrlSpec> {
         LinkDownRstCltMaskW::new(self, 1)
     }
-    #[doc = "Bits 16:17 - Write mask For each served bit"]
+    #[doc = "Bits 16:17 - Write mask\n\nFor each served bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<PcieClientHotResetCtrlSpec> {

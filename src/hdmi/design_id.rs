@@ -1,15 +1,15 @@
 #[doc = "Register `DESIGN_ID` reader"]
 pub type R = crate::R<DesignIdSpec>;
-#[doc = "Field `DESIGN_ID` reader - Design ID code fixed by HDMI that Identifies the instantiated DWC_hdmi_tx controller. For example, DWC_hdmi_tx 2.11a, DESIGN_ID = 21"]
+#[doc = "Field `DESIGN_ID` reader - Design ID code fixed by HDMI that Identifies the\n\ninstantiated DWC_hdmi_tx controller. For example,\n\nDWC_hdmi_tx 2.11a, DESIGN_ID = 21"]
 pub type DesignIdR = crate::FieldReader;
 impl R {
-    #[doc = "Bits 0:7 - Design ID code fixed by HDMI that Identifies the instantiated DWC_hdmi_tx controller. For example, DWC_hdmi_tx 2.11a, DESIGN_ID = 21"]
+    #[doc = "Bits 0:7 - Design ID code fixed by HDMI that Identifies the\n\ninstantiated DWC_hdmi_tx controller. For example,\n\nDWC_hdmi_tx 2.11a, DESIGN_ID = 21"]
     #[inline(always)]
     pub fn design_id(&self) -> DesignIdR {
         DesignIdR::new(self.bits)
     }
 }
-#[doc = "Design ID code fixed by HDMI that Identifies the instantiated DWC_hdmi_tx controller. For example, DWC_hdmi_tx 2.11a, DESIGN_ID = 21\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`design_id::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Design Identification Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`design_id::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DesignIdSpec;
 impl crate::RegisterSpec for DesignIdSpec {
     type Ux = u8;

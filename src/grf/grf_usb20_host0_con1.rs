@@ -2,49 +2,49 @@
 pub type R = crate::R<GrfUsb20Host0Con1Spec>;
 #[doc = "Register `GRF_USB20_HOST0_CON1` writer"]
 pub type W = crate::W<GrfUsb20Host0Con1Spec>;
-#[doc = "Field `FLADJ_VAL` reader - fladj_val Must set this register to 0x20."]
+#[doc = "Field `FLADJ_VAL` reader - fladj_val\n\nMust set this register to 0x20."]
 pub type FladjValR = crate::FieldReader;
-#[doc = "Field `FLADJ_VAL` writer - fladj_val Must set this register to 0x20."]
+#[doc = "Field `FLADJ_VAL` writer - fladj_val\n\nMust set this register to 0x20."]
 pub type FladjValW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
-#[doc = "Field `FLADJ_VAL_COMMON` reader - fladj_val_common Must set this register to 0x20."]
+#[doc = "Field `FLADJ_VAL_COMMON` reader - fladj_val_common\n\nMust set this register to 0x20."]
 pub type FladjValCommonR = crate::FieldReader;
-#[doc = "Field `FLADJ_VAL_COMMON` writer - fladj_val_common Must set this register to 0x20."]
+#[doc = "Field `FLADJ_VAL_COMMON` writer - fladj_val_common\n\nMust set this register to 0x20."]
 pub type FladjValCommonW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:5 - fladj_val Must set this register to 0x20."]
+    #[doc = "Bits 0:5 - fladj_val\n\nMust set this register to 0x20."]
     #[inline(always)]
     pub fn fladj_val(&self) -> FladjValR {
         FladjValR::new((self.bits & 0x3f) as u8)
     }
-    #[doc = "Bits 6:11 - fladj_val_common Must set this register to 0x20."]
+    #[doc = "Bits 6:11 - fladj_val_common\n\nMust set this register to 0x20."]
     #[inline(always)]
     pub fn fladj_val_common(&self) -> FladjValCommonR {
         FladjValCommonR::new(((self.bits >> 6) & 0x3f) as u8)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:5 - fladj_val Must set this register to 0x20."]
+    #[doc = "Bits 0:5 - fladj_val\n\nMust set this register to 0x20."]
     #[inline(always)]
     #[must_use]
     pub fn fladj_val(&mut self) -> FladjValW<GrfUsb20Host0Con1Spec> {
         FladjValW::new(self, 0)
     }
-    #[doc = "Bits 6:11 - fladj_val_common Must set this register to 0x20."]
+    #[doc = "Bits 6:11 - fladj_val_common\n\nMust set this register to 0x20."]
     #[inline(always)]
     #[must_use]
     pub fn fladj_val_common(&mut self) -> FladjValCommonW<GrfUsb20Host0Con1Spec> {
         FladjValCommonW::new(self, 6)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfUsb20Host0Con1Spec> {

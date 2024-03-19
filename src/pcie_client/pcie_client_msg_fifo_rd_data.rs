@@ -1,9 +1,9 @@
 #[doc = "Register `PCIE_CLIENT_MSG_FIFO_RD_DATA` reader"]
 pub type R = crate::R<PcieClientMsgFifoRdDataSpec>;
-#[doc = "Field `RD_DATA` reader - Message fifo read data Message fifo read data"]
+#[doc = "Field `RD_DATA` reader - Message fifo read data\n\nMessage fifo read data"]
 pub type RdDataR = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Message fifo read data Message fifo read data"]
+    #[doc = "Bits 0:31 - Message fifo read data\n\nMessage fifo read data"]
     #[inline(always)]
     pub fn rd_data(&self) -> RdDataR {
         RdDataR::new(self.bits)

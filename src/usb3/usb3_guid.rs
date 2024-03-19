@@ -2,19 +2,19 @@
 pub type R = crate::R<Usb3GuidSpec>;
 #[doc = "Register `USB3_GUID` writer"]
 pub type W = crate::W<Usb3GuidSpec>;
-#[doc = "Field `USERID` reader - USERID Application-programmable ID field."]
+#[doc = "Field `USERID` reader - USERID\n\nApplication-programmable ID field."]
 pub type UseridR = crate::FieldReader<u32>;
-#[doc = "Field `USERID` writer - USERID Application-programmable ID field."]
+#[doc = "Field `USERID` writer - USERID\n\nApplication-programmable ID field."]
 pub type UseridW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - USERID Application-programmable ID field."]
+    #[doc = "Bits 0:31 - USERID\n\nApplication-programmable ID field."]
     #[inline(always)]
     pub fn userid(&self) -> UseridR {
         UseridR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - USERID Application-programmable ID field."]
+    #[doc = "Bits 0:31 - USERID\n\nApplication-programmable ID field."]
     #[inline(always)]
     #[must_use]
     pub fn userid(&mut self) -> UseridW<Usb3GuidSpec> {

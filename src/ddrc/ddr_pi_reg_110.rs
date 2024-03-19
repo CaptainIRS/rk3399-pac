@@ -14,9 +14,9 @@ pub type PiCalvlVrefNormalStepsizeW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type PiCalvlVrefDeltaR = crate::FieldReader;
 #[doc = "Field `PI_CALVL_VREF_DELTA` writer - Indicates the CA VREF adjustment for non-initial CA training."]
 pub type PiCalvlVrefDeltaW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-#[doc = "Field `PI_TDFI_INIT_START_MIN` reader - Indicates the minimum number of DFI clocks before dfi_init_start can be driven after a previous command or training event."]
+#[doc = "Field `PI_TDFI_INIT_START_MIN` reader - Indicates the minimum number of DFI clocks before dfi_init_start\n\ncan be driven after a previous command or training event."]
 pub type PiTdfiInitStartMinR = crate::FieldReader;
-#[doc = "Field `PI_TDFI_INIT_START_MIN` writer - Indicates the minimum number of DFI clocks before dfi_init_start can be driven after a previous command or training event."]
+#[doc = "Field `PI_TDFI_INIT_START_MIN` writer - Indicates the minimum number of DFI clocks before dfi_init_start\n\ncan be driven after a previous command or training event."]
 pub type PiTdfiInitStartMinW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:3 - Indicates the adjust step for the Vref(ca) training."]
@@ -34,7 +34,7 @@ impl R {
     pub fn pi_calvl_vref_delta(&self) -> PiCalvlVrefDeltaR {
         PiCalvlVrefDeltaR::new(((self.bits >> 16) & 0x0f) as u8)
     }
-    #[doc = "Bits 24:31 - Indicates the minimum number of DFI clocks before dfi_init_start can be driven after a previous command or training event."]
+    #[doc = "Bits 24:31 - Indicates the minimum number of DFI clocks before dfi_init_start\n\ncan be driven after a previous command or training event."]
     #[inline(always)]
     pub fn pi_tdfi_init_start_min(&self) -> PiTdfiInitStartMinR {
         PiTdfiInitStartMinR::new(((self.bits >> 24) & 0xff) as u8)
@@ -61,7 +61,7 @@ impl W {
     pub fn pi_calvl_vref_delta(&mut self) -> PiCalvlVrefDeltaW<DdrPiReg110Spec> {
         PiCalvlVrefDeltaW::new(self, 16)
     }
-    #[doc = "Bits 24:31 - Indicates the minimum number of DFI clocks before dfi_init_start can be driven after a previous command or training event."]
+    #[doc = "Bits 24:31 - Indicates the minimum number of DFI clocks before dfi_init_start\n\ncan be driven after a previous command or training event."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tdfi_init_start_min(&mut self) -> PiTdfiInitStartMinW<DdrPiReg110Spec> {

@@ -1,17 +1,17 @@
 #[doc = "Register `DDR_DENALI_PHY_945` writer"]
 pub type W = crate::W<DdrDenaliPhy945Spec>;
-#[doc = "Field `PHY_CAL_CLEAR_0` writer - Clear the pad calibration state machine and results for block 0. Set to 1 to trigger. WRITE-ONLY"]
+#[doc = "Field `PHY_CAL_CLEAR_0` writer - Clear the pad calibration state machine and results for block 0. Set to 1 to trigger."]
 pub type PhyCalClear0W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PHY_CAL_START_0` writer - Manual start for the pad calibration state machine for block 0. Set to 1 to trigger. WRITE-ONLY"]
+#[doc = "Field `PHY_CAL_START_0` writer - Manual start for the pad calibration state machine for block 0. Set to 1 to trigger."]
 pub type PhyCalStart0W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
-    #[doc = "Bit 0 - Clear the pad calibration state machine and results for block 0. Set to 1 to trigger. WRITE-ONLY"]
+    #[doc = "Bit 0 - Clear the pad calibration state machine and results for block 0. Set to 1 to trigger."]
     #[inline(always)]
     #[must_use]
     pub fn phy_cal_clear_0(&mut self) -> PhyCalClear0W<DdrDenaliPhy945Spec> {
         PhyCalClear0W::new(self, 0)
     }
-    #[doc = "Bit 8 - Manual start for the pad calibration state machine for block 0. Set to 1 to trigger. WRITE-ONLY"]
+    #[doc = "Bit 8 - Manual start for the pad calibration state machine for block 0. Set to 1 to trigger."]
     #[inline(always)]
     #[must_use]
     pub fn phy_cal_start_0(&mut self) -> PhyCalStart0W<DdrDenaliPhy945Spec> {

@@ -2,14 +2,15 @@
 pub type R = crate::R<CruBpllCon2Spec>;
 #[doc = "Register `CRU_BPLL_CON2` writer"]
 pub type W = crate::W<CruBpllCon2Spec>;
-#[doc = "Field `FRACDIV` reader - Fractional part of feedback divide (fraction = FRAC/2^24)"]
+#[doc = "Field `FRACDIV` reader - Fractional part of feedback divide\n\n(fraction = FRAC/2^24)"]
 pub type FracdivR = crate::FieldReader<u32>;
-#[doc = "Field `FRACDIV` writer - Fractional part of feedback divide (fraction = FRAC/2^24)"]
+#[doc = "Field `FRACDIV` writer - Fractional part of feedback divide\n\n(fraction = FRAC/2^24)"]
 pub type FracdivW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 #[doc = "PLL lock status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PllLock {
-    #[doc = "0: lock"]
+    #[doc = "0: unlock"]
     B0 = 0,
     #[doc = "1: lock"]
     B1 = 1,
@@ -31,7 +32,7 @@ impl PllLockR {
             true => PllLock::B1,
         }
     }
-    #[doc = "lock"]
+    #[doc = "unlock"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PllLock::B0
@@ -43,7 +44,7 @@ impl PllLockR {
     }
 }
 impl R {
-    #[doc = "Bits 0:23 - Fractional part of feedback divide (fraction = FRAC/2^24)"]
+    #[doc = "Bits 0:23 - Fractional part of feedback divide\n\n(fraction = FRAC/2^24)"]
     #[inline(always)]
     pub fn fracdiv(&self) -> FracdivR {
         FracdivR::new(self.bits & 0x00ff_ffff)
@@ -55,7 +56,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:23 - Fractional part of feedback divide (fraction = FRAC/2^24)"]
+    #[doc = "Bits 0:23 - Fractional part of feedback divide\n\n(fraction = FRAC/2^24)"]
     #[inline(always)]
     #[must_use]
     pub fn fracdiv(&mut self) -> FracdivW<CruBpllCon2Spec> {

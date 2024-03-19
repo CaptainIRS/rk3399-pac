@@ -2,19 +2,19 @@
 pub type R = crate::R<UartTflSpec>;
 #[doc = "Register `UART_TFL` writer"]
 pub type W = crate::W<UartTflSpec>;
-#[doc = "Field `TRANS_FIFO_LEVEL` reader - Transmit FIFO Level. This is indicates the number of data entries in the transmit FIFO."]
+#[doc = "Field `TRANS_FIFO_LEVEL` reader - Transmit FIFO Level.\n\nThis is indicates the number\n\nof data entries in the transmit FIFO."]
 pub type TransFifoLevelR = crate::FieldReader;
-#[doc = "Field `TRANS_FIFO_LEVEL` writer - Transmit FIFO Level. This is indicates the number of data entries in the transmit FIFO."]
+#[doc = "Field `TRANS_FIFO_LEVEL` writer - Transmit FIFO Level.\n\nThis is indicates the number\n\nof data entries in the transmit FIFO."]
 pub type TransFifoLevelW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
-    #[doc = "Bits 0:4 - Transmit FIFO Level. This is indicates the number of data entries in the transmit FIFO."]
+    #[doc = "Bits 0:4 - Transmit FIFO Level.\n\nThis is indicates the number\n\nof data entries in the transmit FIFO."]
     #[inline(always)]
     pub fn trans_fifo_level(&self) -> TransFifoLevelR {
         TransFifoLevelR::new((self.bits & 0x1f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - Transmit FIFO Level. This is indicates the number of data entries in the transmit FIFO."]
+    #[doc = "Bits 0:4 - Transmit FIFO Level.\n\nThis is indicates the number\n\nof data entries in the transmit FIFO."]
     #[inline(always)]
     #[must_use]
     pub fn trans_fifo_level(&mut self) -> TransFifoLevelW<UartTflSpec> {

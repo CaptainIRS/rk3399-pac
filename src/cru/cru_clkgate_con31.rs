@@ -2,162 +2,162 @@
 pub type R = crate::R<CruClkgateCon31Spec>;
 #[doc = "Register `CRU_CLKGATE_CON31` writer"]
 pub type W = crate::W<CruClkgateCon31Spec>;
-#[doc = "Field `PCLK_GRF_EN` reader - pclk_grf clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `PCLK_GRF_EN` reader - pclk_grf clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type PclkGrfEnR = crate::BitReader;
-#[doc = "Field `PCLK_GRF_EN` writer - pclk_grf clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `PCLK_GRF_EN` writer - pclk_grf clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type PclkGrfEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PCLK_INTR_ARB_EN` reader - pclk_intr_arb clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLK_INTR_ARB_EN` reader - pclk_intr_arb clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkIntrArbEnR = crate::BitReader;
-#[doc = "Field `PCLK_INTR_ARB_EN` writer - pclk_intr_arb clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLK_INTR_ARB_EN` writer - pclk_intr_arb clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkIntrArbEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PCLK_GPIO2_EN` reader - pclk_gpio2 clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLK_GPIO2_EN` reader - pclk_gpio2 clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkGpio2EnR = crate::BitReader;
-#[doc = "Field `PCLK_GPIO2_EN` writer - pclk_gpio2 clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLK_GPIO2_EN` writer - pclk_gpio2 clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkGpio2EnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PCLK_GPIO3_EN` reader - pclk_gpio3 clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLK_GPIO3_EN` reader - pclk_gpio3 clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkGpio3EnR = crate::BitReader;
-#[doc = "Field `PCLK_GPIO3_EN` writer - pclk_gpio3 clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLK_GPIO3_EN` writer - pclk_gpio3 clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkGpio3EnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PCLK_GPIO4_EN` reader - pclk_gpio4 clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLK_GPIO4_EN` reader - pclk_gpio4 clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkGpio4EnR = crate::BitReader;
-#[doc = "Field `PCLK_GPIO4_EN` writer - pclk_gpio4 clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLK_GPIO4_EN` writer - pclk_gpio4 clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkGpio4EnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PCLK_TIMER0_EN` reader - pclk_timer0 clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLK_TIMER0_EN` reader - pclk_timer0 clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkTimer0EnR = crate::BitReader;
-#[doc = "Field `PCLK_TIMER0_EN` writer - pclk_timer0 clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLK_TIMER0_EN` writer - pclk_timer0 clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkTimer0EnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PCLK_TIMER1_EN` reader - pclk_timer1 clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLK_TIMER1_EN` reader - pclk_timer1 clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkTimer1EnR = crate::BitReader;
-#[doc = "Field `PCLK_TIMER1_EN` writer - pclk_timer1 clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLK_TIMER1_EN` writer - pclk_timer1 clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkTimer1EnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PCLK_HSICPHY_EN` reader - pclk_hsicphy clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLK_HSICPHY_EN` reader - pclk_hsicphy clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkHsicphyEnR = crate::BitReader;
-#[doc = "Field `PCLK_HSICPHY_EN` writer - pclk_hsicphy clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLK_HSICPHY_EN` writer - pclk_hsicphy clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkHsicphyEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PCLK_PMU_INTR_ARB_EN` reader - pclk_pmu_intr_arb clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLK_PMU_INTR_ARB_EN` reader - pclk_pmu_intr_arb clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkPmuIntrArbEnR = crate::BitReader;
-#[doc = "Field `PCLK_PMU_INTR_ARB_EN` writer - pclk_pmu_intr_arb clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLK_PMU_INTR_ARB_EN` writer - pclk_pmu_intr_arb clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkPmuIntrArbEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PCLK_SGRF_EN` reader - pclk_sgrf clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `PCLK_SGRF_EN` reader - pclk_sgrf clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type PclkSgrfEnR = crate::BitReader;
-#[doc = "Field `PCLK_SGRF_EN` writer - pclk_sgrf clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `PCLK_SGRF_EN` writer - pclk_sgrf clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type PclkSgrfEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bit 1 - pclk_grf clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 1 - pclk_grf clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     pub fn pclk_grf_en(&self) -> PclkGrfEnR {
         PclkGrfEnR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - pclk_intr_arb clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 2 - pclk_intr_arb clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn pclk_intr_arb_en(&self) -> PclkIntrArbEnR {
         PclkIntrArbEnR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - pclk_gpio2 clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 3 - pclk_gpio2 clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn pclk_gpio2_en(&self) -> PclkGpio2EnR {
         PclkGpio2EnR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - pclk_gpio3 clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 4 - pclk_gpio3 clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn pclk_gpio3_en(&self) -> PclkGpio3EnR {
         PclkGpio3EnR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - pclk_gpio4 clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 5 - pclk_gpio4 clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn pclk_gpio4_en(&self) -> PclkGpio4EnR {
         PclkGpio4EnR::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 6 - pclk_timer0 clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 6 - pclk_timer0 clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn pclk_timer0_en(&self) -> PclkTimer0EnR {
         PclkTimer0EnR::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 7 - pclk_timer1 clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 7 - pclk_timer1 clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn pclk_timer1_en(&self) -> PclkTimer1EnR {
         PclkTimer1EnR::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bit 8 - pclk_hsicphy clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 8 - pclk_hsicphy clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn pclk_hsicphy_en(&self) -> PclkHsicphyEnR {
         PclkHsicphyEnR::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bit 9 - pclk_pmu_intr_arb clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 9 - pclk_pmu_intr_arb clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn pclk_pmu_intr_arb_en(&self) -> PclkPmuIntrArbEnR {
         PclkPmuIntrArbEnR::new(((self.bits >> 9) & 1) != 0)
     }
-    #[doc = "Bit 10 - pclk_sgrf clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 10 - pclk_sgrf clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     pub fn pclk_sgrf_en(&self) -> PclkSgrfEnR {
         PclkSgrfEnR::new(((self.bits >> 10) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 1 - pclk_grf clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 1 - pclk_grf clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     #[must_use]
     pub fn pclk_grf_en(&mut self) -> PclkGrfEnW<CruClkgateCon31Spec> {
         PclkGrfEnW::new(self, 1)
     }
-    #[doc = "Bit 2 - pclk_intr_arb clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 2 - pclk_intr_arb clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn pclk_intr_arb_en(&mut self) -> PclkIntrArbEnW<CruClkgateCon31Spec> {
         PclkIntrArbEnW::new(self, 2)
     }
-    #[doc = "Bit 3 - pclk_gpio2 clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 3 - pclk_gpio2 clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn pclk_gpio2_en(&mut self) -> PclkGpio2EnW<CruClkgateCon31Spec> {
         PclkGpio2EnW::new(self, 3)
     }
-    #[doc = "Bit 4 - pclk_gpio3 clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 4 - pclk_gpio3 clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn pclk_gpio3_en(&mut self) -> PclkGpio3EnW<CruClkgateCon31Spec> {
         PclkGpio3EnW::new(self, 4)
     }
-    #[doc = "Bit 5 - pclk_gpio4 clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 5 - pclk_gpio4 clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn pclk_gpio4_en(&mut self) -> PclkGpio4EnW<CruClkgateCon31Spec> {
         PclkGpio4EnW::new(self, 5)
     }
-    #[doc = "Bit 6 - pclk_timer0 clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 6 - pclk_timer0 clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn pclk_timer0_en(&mut self) -> PclkTimer0EnW<CruClkgateCon31Spec> {
         PclkTimer0EnW::new(self, 6)
     }
-    #[doc = "Bit 7 - pclk_timer1 clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 7 - pclk_timer1 clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn pclk_timer1_en(&mut self) -> PclkTimer1EnW<CruClkgateCon31Spec> {
         PclkTimer1EnW::new(self, 7)
     }
-    #[doc = "Bit 8 - pclk_hsicphy clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 8 - pclk_hsicphy clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn pclk_hsicphy_en(&mut self) -> PclkHsicphyEnW<CruClkgateCon31Spec> {
         PclkHsicphyEnW::new(self, 8)
     }
-    #[doc = "Bit 9 - pclk_pmu_intr_arb clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 9 - pclk_pmu_intr_arb clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn pclk_pmu_intr_arb_en(&mut self) -> PclkPmuIntrArbEnW<CruClkgateCon31Spec> {
         PclkPmuIntrArbEnW::new(self, 9)
     }
-    #[doc = "Bit 10 - pclk_sgrf clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 10 - pclk_sgrf clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     #[must_use]
     pub fn pclk_sgrf_en(&mut self) -> PclkSgrfEnW<CruClkgateCon31Spec> {
         PclkSgrfEnW::new(self, 10)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkgateCon31Spec> {

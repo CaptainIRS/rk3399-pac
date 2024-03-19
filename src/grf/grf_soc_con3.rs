@@ -2,10 +2,11 @@
 pub type R = crate::R<GrfSocCon3Spec>;
 #[doc = "Register `GRF_SOC_CON3` writer"]
 pub type W = crate::W<GrfSocCon3Spec>;
-#[doc = "noc_vio0_req_msch1_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[doc = "noc_vio0_req_msch1_rsp_err_stall bit\n\ncontrol\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vio0ReqMsch1Pwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -16,7 +17,7 @@ impl From<Vio0ReqMsch1Pwrdisctargpwrstall> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `VIO0_REQ_MSCH1_PWRDISCTARGPWRSTALL` reader - noc_vio0_req_msch1_rsp_err_stall bit control"]
+#[doc = "Field `VIO0_REQ_MSCH1_PWRDISCTARGPWRSTALL` reader - noc_vio0_req_msch1_rsp_err_stall bit\n\ncontrol"]
 pub type Vio0ReqMsch1PwrdisctargpwrstallR = crate::BitReader<Vio0ReqMsch1Pwrdisctargpwrstall>;
 impl Vio0ReqMsch1PwrdisctargpwrstallR {
     #[doc = "Get enumerated values variant"]
@@ -27,7 +28,7 @@ impl Vio0ReqMsch1PwrdisctargpwrstallR {
             true => Vio0ReqMsch1Pwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Vio0ReqMsch1Pwrdisctargpwrstall::B0
@@ -38,14 +39,14 @@ impl Vio0ReqMsch1PwrdisctargpwrstallR {
         *self == Vio0ReqMsch1Pwrdisctargpwrstall::B1
     }
 }
-#[doc = "Field `VIO0_REQ_MSCH1_PWRDISCTARGPWRSTALL` writer - noc_vio0_req_msch1_rsp_err_stall bit control"]
+#[doc = "Field `VIO0_REQ_MSCH1_PWRDISCTARGPWRSTALL` writer - noc_vio0_req_msch1_rsp_err_stall bit\n\ncontrol"]
 pub type Vio0ReqMsch1PwrdisctargpwrstallW<'a, REG> =
     crate::BitWriter<'a, REG, Vio0ReqMsch1Pwrdisctargpwrstall>;
 impl<'a, REG> Vio0ReqMsch1PwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Vio0ReqMsch1Pwrdisctargpwrstall::B0)
@@ -56,10 +57,11 @@ where
         self.variant(Vio0ReqMsch1Pwrdisctargpwrstall::B1)
     }
 }
-#[doc = "noc_vio1_req_msch0_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[doc = "noc_vio1_req_msch0_rsp_err_stall bit\n\ncontrol\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vio1ReqMsch0Pwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -70,7 +72,7 @@ impl From<Vio1ReqMsch0Pwrdisctargpwrstall> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `VIO1_REQ_MSCH0_PWRDISCTARGPWRSTALL` reader - noc_vio1_req_msch0_rsp_err_stall bit control"]
+#[doc = "Field `VIO1_REQ_MSCH0_PWRDISCTARGPWRSTALL` reader - noc_vio1_req_msch0_rsp_err_stall bit\n\ncontrol"]
 pub type Vio1ReqMsch0PwrdisctargpwrstallR = crate::BitReader<Vio1ReqMsch0Pwrdisctargpwrstall>;
 impl Vio1ReqMsch0PwrdisctargpwrstallR {
     #[doc = "Get enumerated values variant"]
@@ -81,7 +83,7 @@ impl Vio1ReqMsch0PwrdisctargpwrstallR {
             true => Vio1ReqMsch0Pwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Vio1ReqMsch0Pwrdisctargpwrstall::B0
@@ -92,14 +94,14 @@ impl Vio1ReqMsch0PwrdisctargpwrstallR {
         *self == Vio1ReqMsch0Pwrdisctargpwrstall::B1
     }
 }
-#[doc = "Field `VIO1_REQ_MSCH0_PWRDISCTARGPWRSTALL` writer - noc_vio1_req_msch0_rsp_err_stall bit control"]
+#[doc = "Field `VIO1_REQ_MSCH0_PWRDISCTARGPWRSTALL` writer - noc_vio1_req_msch0_rsp_err_stall bit\n\ncontrol"]
 pub type Vio1ReqMsch0PwrdisctargpwrstallW<'a, REG> =
     crate::BitWriter<'a, REG, Vio1ReqMsch0Pwrdisctargpwrstall>;
 impl<'a, REG> Vio1ReqMsch0PwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Vio1ReqMsch0Pwrdisctargpwrstall::B0)
@@ -110,10 +112,11 @@ where
         self.variant(Vio1ReqMsch0Pwrdisctargpwrstall::B1)
     }
 }
-#[doc = "noc_vio1_req_msch1_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[doc = "noc_vio1_req_msch1_rsp_err_stall bit\n\ncontrol\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vio1ReqMsch1Pwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -124,7 +127,7 @@ impl From<Vio1ReqMsch1Pwrdisctargpwrstall> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `VIO1_REQ_MSCH1_PWRDISCTARGPWRSTALL` reader - noc_vio1_req_msch1_rsp_err_stall bit control"]
+#[doc = "Field `VIO1_REQ_MSCH1_PWRDISCTARGPWRSTALL` reader - noc_vio1_req_msch1_rsp_err_stall bit\n\ncontrol"]
 pub type Vio1ReqMsch1PwrdisctargpwrstallR = crate::BitReader<Vio1ReqMsch1Pwrdisctargpwrstall>;
 impl Vio1ReqMsch1PwrdisctargpwrstallR {
     #[doc = "Get enumerated values variant"]
@@ -135,7 +138,7 @@ impl Vio1ReqMsch1PwrdisctargpwrstallR {
             true => Vio1ReqMsch1Pwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Vio1ReqMsch1Pwrdisctargpwrstall::B0
@@ -146,14 +149,14 @@ impl Vio1ReqMsch1PwrdisctargpwrstallR {
         *self == Vio1ReqMsch1Pwrdisctargpwrstall::B1
     }
 }
-#[doc = "Field `VIO1_REQ_MSCH1_PWRDISCTARGPWRSTALL` writer - noc_vio1_req_msch1_rsp_err_stall bit control"]
+#[doc = "Field `VIO1_REQ_MSCH1_PWRDISCTARGPWRSTALL` writer - noc_vio1_req_msch1_rsp_err_stall bit\n\ncontrol"]
 pub type Vio1ReqMsch1PwrdisctargpwrstallW<'a, REG> =
     crate::BitWriter<'a, REG, Vio1ReqMsch1Pwrdisctargpwrstall>;
 impl<'a, REG> Vio1ReqMsch1PwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Vio1ReqMsch1Pwrdisctargpwrstall::B0)
@@ -164,10 +167,11 @@ where
         self.variant(Vio1ReqMsch1Pwrdisctargpwrstall::B1)
     }
 }
-#[doc = "noc_viob_req_msch01_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[doc = "noc_viob_req_msch01_rsp_err_stall bit\n\ncontrol\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ViobReqMsch01Pwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -178,7 +182,7 @@ impl From<ViobReqMsch01Pwrdisctargpwrstall> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `VIOB_REQ_MSCH01_PWRDISCTARGPWRSTALL` reader - noc_viob_req_msch01_rsp_err_stall bit control"]
+#[doc = "Field `VIOB_REQ_MSCH01_PWRDISCTARGPWRSTALL` reader - noc_viob_req_msch01_rsp_err_stall bit\n\ncontrol"]
 pub type ViobReqMsch01PwrdisctargpwrstallR = crate::BitReader<ViobReqMsch01Pwrdisctargpwrstall>;
 impl ViobReqMsch01PwrdisctargpwrstallR {
     #[doc = "Get enumerated values variant"]
@@ -189,7 +193,7 @@ impl ViobReqMsch01PwrdisctargpwrstallR {
             true => ViobReqMsch01Pwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ViobReqMsch01Pwrdisctargpwrstall::B0
@@ -200,14 +204,14 @@ impl ViobReqMsch01PwrdisctargpwrstallR {
         *self == ViobReqMsch01Pwrdisctargpwrstall::B1
     }
 }
-#[doc = "Field `VIOB_REQ_MSCH01_PWRDISCTARGPWRSTALL` writer - noc_viob_req_msch01_rsp_err_stall bit control"]
+#[doc = "Field `VIOB_REQ_MSCH01_PWRDISCTARGPWRSTALL` writer - noc_viob_req_msch01_rsp_err_stall bit\n\ncontrol"]
 pub type ViobReqMsch01PwrdisctargpwrstallW<'a, REG> =
     crate::BitWriter<'a, REG, ViobReqMsch01Pwrdisctargpwrstall>;
 impl<'a, REG> ViobReqMsch01PwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ViobReqMsch01Pwrdisctargpwrstall::B0)
@@ -218,10 +222,11 @@ where
         self.variant(ViobReqMsch01Pwrdisctargpwrstall::B1)
     }
 }
-#[doc = "noc_viol_req_msch01_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[doc = "noc_viol_req_msch01_rsp_err_stall bit\n\ncontrol\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ViolReqMsch01Pwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -232,7 +237,7 @@ impl From<ViolReqMsch01Pwrdisctargpwrstall> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `VIOL_REQ_MSCH01_PWRDISCTARGPWRSTALL` reader - noc_viol_req_msch01_rsp_err_stall bit control"]
+#[doc = "Field `VIOL_REQ_MSCH01_PWRDISCTARGPWRSTALL` reader - noc_viol_req_msch01_rsp_err_stall bit\n\ncontrol"]
 pub type ViolReqMsch01PwrdisctargpwrstallR = crate::BitReader<ViolReqMsch01Pwrdisctargpwrstall>;
 impl ViolReqMsch01PwrdisctargpwrstallR {
     #[doc = "Get enumerated values variant"]
@@ -243,7 +248,7 @@ impl ViolReqMsch01PwrdisctargpwrstallR {
             true => ViolReqMsch01Pwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ViolReqMsch01Pwrdisctargpwrstall::B0
@@ -254,14 +259,14 @@ impl ViolReqMsch01PwrdisctargpwrstallR {
         *self == ViolReqMsch01Pwrdisctargpwrstall::B1
     }
 }
-#[doc = "Field `VIOL_REQ_MSCH01_PWRDISCTARGPWRSTALL` writer - noc_viol_req_msch01_rsp_err_stall bit control"]
+#[doc = "Field `VIOL_REQ_MSCH01_PWRDISCTARGPWRSTALL` writer - noc_viol_req_msch01_rsp_err_stall bit\n\ncontrol"]
 pub type ViolReqMsch01PwrdisctargpwrstallW<'a, REG> =
     crate::BitWriter<'a, REG, ViolReqMsch01Pwrdisctargpwrstall>;
 impl<'a, REG> ViolReqMsch01PwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ViolReqMsch01Pwrdisctargpwrstall::B0)
@@ -272,10 +277,11 @@ where
         self.variant(ViolReqMsch01Pwrdisctargpwrstall::B1)
     }
 }
-#[doc = "noc_usb3_fwd_perilp_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[doc = "noc_usb3_fwd_perilp_rsp_err_stall bit\n\ncontrol\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Usb3FwdPerilpPwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -286,7 +292,7 @@ impl From<Usb3FwdPerilpPwrdisctargpwrstall> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `USB3_FWD_PERILP_PWRDISCTARGPWRSTALL` reader - noc_usb3_fwd_perilp_rsp_err_stall bit control"]
+#[doc = "Field `USB3_FWD_PERILP_PWRDISCTARGPWRSTALL` reader - noc_usb3_fwd_perilp_rsp_err_stall bit\n\ncontrol"]
 pub type Usb3FwdPerilpPwrdisctargpwrstallR = crate::BitReader<Usb3FwdPerilpPwrdisctargpwrstall>;
 impl Usb3FwdPerilpPwrdisctargpwrstallR {
     #[doc = "Get enumerated values variant"]
@@ -297,7 +303,7 @@ impl Usb3FwdPerilpPwrdisctargpwrstallR {
             true => Usb3FwdPerilpPwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Usb3FwdPerilpPwrdisctargpwrstall::B0
@@ -308,14 +314,14 @@ impl Usb3FwdPerilpPwrdisctargpwrstallR {
         *self == Usb3FwdPerilpPwrdisctargpwrstall::B1
     }
 }
-#[doc = "Field `USB3_FWD_PERILP_PWRDISCTARGPWRSTALL` writer - noc_usb3_fwd_perilp_rsp_err_stall bit control"]
+#[doc = "Field `USB3_FWD_PERILP_PWRDISCTARGPWRSTALL` writer - noc_usb3_fwd_perilp_rsp_err_stall bit\n\ncontrol"]
 pub type Usb3FwdPerilpPwrdisctargpwrstallW<'a, REG> =
     crate::BitWriter<'a, REG, Usb3FwdPerilpPwrdisctargpwrstall>;
 impl<'a, REG> Usb3FwdPerilpPwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Usb3FwdPerilpPwrdisctargpwrstall::B0)
@@ -327,9 +333,10 @@ where
     }
 }
 #[doc = "noc_vio_fwd_isp0_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VioFwdIsp0Pwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -351,7 +358,7 @@ impl VioFwdIsp0PwrdisctargpwrstallR {
             true => VioFwdIsp0Pwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == VioFwdIsp0Pwrdisctargpwrstall::B0
@@ -369,7 +376,7 @@ impl<'a, REG> VioFwdIsp0PwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(VioFwdIsp0Pwrdisctargpwrstall::B0)
@@ -381,9 +388,10 @@ where
     }
 }
 #[doc = "noc_vio_fwd_isp1_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VioFwdIsp1Pwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -405,7 +413,7 @@ impl VioFwdIsp1PwrdisctargpwrstallR {
             true => VioFwdIsp1Pwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == VioFwdIsp1Pwrdisctargpwrstall::B0
@@ -423,7 +431,7 @@ impl<'a, REG> VioFwdIsp1PwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(VioFwdIsp1Pwrdisctargpwrstall::B0)
@@ -435,9 +443,10 @@ where
     }
 }
 #[doc = "noc_vio_fwd_vopb_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VioFwdVopbPwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -459,7 +468,7 @@ impl VioFwdVopbPwrdisctargpwrstallR {
             true => VioFwdVopbPwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == VioFwdVopbPwrdisctargpwrstall::B0
@@ -477,7 +486,7 @@ impl<'a, REG> VioFwdVopbPwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(VioFwdVopbPwrdisctargpwrstall::B0)
@@ -489,9 +498,10 @@ where
     }
 }
 #[doc = "noc_vio_fwd_vopl_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VioFwdVoplPwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -513,7 +523,7 @@ impl VioFwdVoplPwrdisctargpwrstallR {
             true => VioFwdVoplPwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == VioFwdVoplPwrdisctargpwrstall::B0
@@ -531,7 +541,7 @@ impl<'a, REG> VioFwdVoplPwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(VioFwdVoplPwrdisctargpwrstall::B0)
@@ -543,9 +553,10 @@ where
     }
 }
 #[doc = "noc_vio_fwd_hdcp_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VioFwdHdcpPwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -567,7 +578,7 @@ impl VioFwdHdcpPwrdisctargpwrstallR {
             true => VioFwdHdcpPwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == VioFwdHdcpPwrdisctargpwrstall::B0
@@ -585,7 +596,7 @@ impl<'a, REG> VioFwdHdcpPwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(VioFwdHdcpPwrdisctargpwrstall::B0)
@@ -596,10 +607,11 @@ where
         self.variant(VioFwdHdcpPwrdisctargpwrstall::B1)
     }
 }
-#[doc = "noc_vopb_req_msch11_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[doc = "noc_vopb_req_msch11_rsp_err_stall bit\n\ncontrol\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VopbReqMsch11Pwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -610,7 +622,7 @@ impl From<VopbReqMsch11Pwrdisctargpwrstall> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `VOPB_REQ_MSCH11_PWRDISCTARGPWRSTALL` reader - noc_vopb_req_msch11_rsp_err_stall bit control"]
+#[doc = "Field `VOPB_REQ_MSCH11_PWRDISCTARGPWRSTALL` reader - noc_vopb_req_msch11_rsp_err_stall bit\n\ncontrol"]
 pub type VopbReqMsch11PwrdisctargpwrstallR = crate::BitReader<VopbReqMsch11Pwrdisctargpwrstall>;
 impl VopbReqMsch11PwrdisctargpwrstallR {
     #[doc = "Get enumerated values variant"]
@@ -621,7 +633,7 @@ impl VopbReqMsch11PwrdisctargpwrstallR {
             true => VopbReqMsch11Pwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == VopbReqMsch11Pwrdisctargpwrstall::B0
@@ -632,14 +644,14 @@ impl VopbReqMsch11PwrdisctargpwrstallR {
         *self == VopbReqMsch11Pwrdisctargpwrstall::B1
     }
 }
-#[doc = "Field `VOPB_REQ_MSCH11_PWRDISCTARGPWRSTALL` writer - noc_vopb_req_msch11_rsp_err_stall bit control"]
+#[doc = "Field `VOPB_REQ_MSCH11_PWRDISCTARGPWRSTALL` writer - noc_vopb_req_msch11_rsp_err_stall bit\n\ncontrol"]
 pub type VopbReqMsch11PwrdisctargpwrstallW<'a, REG> =
     crate::BitWriter<'a, REG, VopbReqMsch11Pwrdisctargpwrstall>;
 impl<'a, REG> VopbReqMsch11PwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(VopbReqMsch11Pwrdisctargpwrstall::B0)
@@ -650,10 +662,11 @@ where
         self.variant(VopbReqMsch11Pwrdisctargpwrstall::B1)
     }
 }
-#[doc = "noc_vopl_req_msch11_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[doc = "noc_vopl_req_msch11_rsp_err_stall bit\n\ncontrol\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VoplReqMsch11Pwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -664,7 +677,7 @@ impl From<VoplReqMsch11Pwrdisctargpwrstall> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `VOPL_REQ_MSCH11_PWRDISCTARGPWRSTALL` reader - noc_vopl_req_msch11_rsp_err_stall bit control"]
+#[doc = "Field `VOPL_REQ_MSCH11_PWRDISCTARGPWRSTALL` reader - noc_vopl_req_msch11_rsp_err_stall bit\n\ncontrol"]
 pub type VoplReqMsch11PwrdisctargpwrstallR = crate::BitReader<VoplReqMsch11Pwrdisctargpwrstall>;
 impl VoplReqMsch11PwrdisctargpwrstallR {
     #[doc = "Get enumerated values variant"]
@@ -675,7 +688,7 @@ impl VoplReqMsch11PwrdisctargpwrstallR {
             true => VoplReqMsch11Pwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == VoplReqMsch11Pwrdisctargpwrstall::B0
@@ -686,14 +699,14 @@ impl VoplReqMsch11PwrdisctargpwrstallR {
         *self == VoplReqMsch11Pwrdisctargpwrstall::B1
     }
 }
-#[doc = "Field `VOPL_REQ_MSCH11_PWRDISCTARGPWRSTALL` writer - noc_vopl_req_msch11_rsp_err_stall bit control"]
+#[doc = "Field `VOPL_REQ_MSCH11_PWRDISCTARGPWRSTALL` writer - noc_vopl_req_msch11_rsp_err_stall bit\n\ncontrol"]
 pub type VoplReqMsch11PwrdisctargpwrstallW<'a, REG> =
     crate::BitWriter<'a, REG, VoplReqMsch11Pwrdisctargpwrstall>;
 impl<'a, REG> VoplReqMsch11PwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(VoplReqMsch11Pwrdisctargpwrstall::B0)
@@ -705,9 +718,10 @@ where
     }
 }
 #[doc = "noc_sd_fwd_perihp_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SdFwdPerihpPwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -729,7 +743,7 @@ impl SdFwdPerihpPwrdisctargpwrstallR {
             true => SdFwdPerihpPwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SdFwdPerihpPwrdisctargpwrstall::B0
@@ -747,7 +761,7 @@ impl<'a, REG> SdFwdPerihpPwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SdFwdPerihpPwrdisctargpwrstall::B0)
@@ -759,9 +773,10 @@ where
     }
 }
 #[doc = "noc_gic_fwd_perilp_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GicFwdPerilpPwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -783,7 +798,7 @@ impl GicFwdPerilpPwrdisctargpwrstallR {
             true => GicFwdPerilpPwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == GicFwdPerilpPwrdisctargpwrstall::B0
@@ -801,7 +816,7 @@ impl<'a, REG> GicFwdPerilpPwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(GicFwdPerilpPwrdisctargpwrstall::B0)
@@ -813,9 +828,10 @@ where
     }
 }
 #[doc = "noc_perihp_fwd_sd_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PerihpFwdSdPwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -837,7 +853,7 @@ impl PerihpFwdSdPwrdisctargpwrstallR {
             true => PerihpFwdSdPwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PerihpFwdSdPwrdisctargpwrstall::B0
@@ -855,7 +871,7 @@ impl<'a, REG> PerihpFwdSdPwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PerihpFwdSdPwrdisctargpwrstall::B0)
@@ -866,37 +882,37 @@ where
         self.variant(PerihpFwdSdPwrdisctargpwrstall::B1)
     }
 }
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bit 0 - noc_vio0_req_msch1_rsp_err_stall bit control"]
+    #[doc = "Bit 0 - noc_vio0_req_msch1_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     pub fn vio0_req_msch1_pwrdisctargpwrstall(&self) -> Vio0ReqMsch1PwrdisctargpwrstallR {
         Vio0ReqMsch1PwrdisctargpwrstallR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - noc_vio1_req_msch0_rsp_err_stall bit control"]
+    #[doc = "Bit 1 - noc_vio1_req_msch0_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     pub fn vio1_req_msch0_pwrdisctargpwrstall(&self) -> Vio1ReqMsch0PwrdisctargpwrstallR {
         Vio1ReqMsch0PwrdisctargpwrstallR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - noc_vio1_req_msch1_rsp_err_stall bit control"]
+    #[doc = "Bit 2 - noc_vio1_req_msch1_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     pub fn vio1_req_msch1_pwrdisctargpwrstall(&self) -> Vio1ReqMsch1PwrdisctargpwrstallR {
         Vio1ReqMsch1PwrdisctargpwrstallR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - noc_viob_req_msch01_rsp_err_stall bit control"]
+    #[doc = "Bit 3 - noc_viob_req_msch01_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     pub fn viob_req_msch01_pwrdisctargpwrstall(&self) -> ViobReqMsch01PwrdisctargpwrstallR {
         ViobReqMsch01PwrdisctargpwrstallR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - noc_viol_req_msch01_rsp_err_stall bit control"]
+    #[doc = "Bit 4 - noc_viol_req_msch01_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     pub fn viol_req_msch01_pwrdisctargpwrstall(&self) -> ViolReqMsch01PwrdisctargpwrstallR {
         ViolReqMsch01PwrdisctargpwrstallR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - noc_usb3_fwd_perilp_rsp_err_stall bit control"]
+    #[doc = "Bit 5 - noc_usb3_fwd_perilp_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     pub fn usb3_fwd_perilp_pwrdisctargpwrstall(&self) -> Usb3FwdPerilpPwrdisctargpwrstallR {
         Usb3FwdPerilpPwrdisctargpwrstallR::new(((self.bits >> 5) & 1) != 0)
@@ -926,12 +942,12 @@ impl R {
     pub fn vio_fwd_hdcp_pwrdisctargpwrstall(&self) -> VioFwdHdcpPwrdisctargpwrstallR {
         VioFwdHdcpPwrdisctargpwrstallR::new(((self.bits >> 10) & 1) != 0)
     }
-    #[doc = "Bit 11 - noc_vopb_req_msch11_rsp_err_stall bit control"]
+    #[doc = "Bit 11 - noc_vopb_req_msch11_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     pub fn vopb_req_msch11_pwrdisctargpwrstall(&self) -> VopbReqMsch11PwrdisctargpwrstallR {
         VopbReqMsch11PwrdisctargpwrstallR::new(((self.bits >> 11) & 1) != 0)
     }
-    #[doc = "Bit 12 - noc_vopl_req_msch11_rsp_err_stall bit control"]
+    #[doc = "Bit 12 - noc_vopl_req_msch11_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     pub fn vopl_req_msch11_pwrdisctargpwrstall(&self) -> VoplReqMsch11PwrdisctargpwrstallR {
         VoplReqMsch11PwrdisctargpwrstallR::new(((self.bits >> 12) & 1) != 0)
@@ -951,14 +967,14 @@ impl R {
     pub fn perihp_fwd_sd_pwrdisctargpwrstall(&self) -> PerihpFwdSdPwrdisctargpwrstallR {
         PerihpFwdSdPwrdisctargpwrstallR::new(((self.bits >> 15) & 1) != 0)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bit 0 - noc_vio0_req_msch1_rsp_err_stall bit control"]
+    #[doc = "Bit 0 - noc_vio0_req_msch1_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     #[must_use]
     pub fn vio0_req_msch1_pwrdisctargpwrstall(
@@ -966,7 +982,7 @@ impl W {
     ) -> Vio0ReqMsch1PwrdisctargpwrstallW<GrfSocCon3Spec> {
         Vio0ReqMsch1PwrdisctargpwrstallW::new(self, 0)
     }
-    #[doc = "Bit 1 - noc_vio1_req_msch0_rsp_err_stall bit control"]
+    #[doc = "Bit 1 - noc_vio1_req_msch0_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     #[must_use]
     pub fn vio1_req_msch0_pwrdisctargpwrstall(
@@ -974,7 +990,7 @@ impl W {
     ) -> Vio1ReqMsch0PwrdisctargpwrstallW<GrfSocCon3Spec> {
         Vio1ReqMsch0PwrdisctargpwrstallW::new(self, 1)
     }
-    #[doc = "Bit 2 - noc_vio1_req_msch1_rsp_err_stall bit control"]
+    #[doc = "Bit 2 - noc_vio1_req_msch1_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     #[must_use]
     pub fn vio1_req_msch1_pwrdisctargpwrstall(
@@ -982,7 +998,7 @@ impl W {
     ) -> Vio1ReqMsch1PwrdisctargpwrstallW<GrfSocCon3Spec> {
         Vio1ReqMsch1PwrdisctargpwrstallW::new(self, 2)
     }
-    #[doc = "Bit 3 - noc_viob_req_msch01_rsp_err_stall bit control"]
+    #[doc = "Bit 3 - noc_viob_req_msch01_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     #[must_use]
     pub fn viob_req_msch01_pwrdisctargpwrstall(
@@ -990,7 +1006,7 @@ impl W {
     ) -> ViobReqMsch01PwrdisctargpwrstallW<GrfSocCon3Spec> {
         ViobReqMsch01PwrdisctargpwrstallW::new(self, 3)
     }
-    #[doc = "Bit 4 - noc_viol_req_msch01_rsp_err_stall bit control"]
+    #[doc = "Bit 4 - noc_viol_req_msch01_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     #[must_use]
     pub fn viol_req_msch01_pwrdisctargpwrstall(
@@ -998,7 +1014,7 @@ impl W {
     ) -> ViolReqMsch01PwrdisctargpwrstallW<GrfSocCon3Spec> {
         ViolReqMsch01PwrdisctargpwrstallW::new(self, 4)
     }
-    #[doc = "Bit 5 - noc_usb3_fwd_perilp_rsp_err_stall bit control"]
+    #[doc = "Bit 5 - noc_usb3_fwd_perilp_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     #[must_use]
     pub fn usb3_fwd_perilp_pwrdisctargpwrstall(
@@ -1046,7 +1062,7 @@ impl W {
     ) -> VioFwdHdcpPwrdisctargpwrstallW<GrfSocCon3Spec> {
         VioFwdHdcpPwrdisctargpwrstallW::new(self, 10)
     }
-    #[doc = "Bit 11 - noc_vopb_req_msch11_rsp_err_stall bit control"]
+    #[doc = "Bit 11 - noc_vopb_req_msch11_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     #[must_use]
     pub fn vopb_req_msch11_pwrdisctargpwrstall(
@@ -1054,7 +1070,7 @@ impl W {
     ) -> VopbReqMsch11PwrdisctargpwrstallW<GrfSocCon3Spec> {
         VopbReqMsch11PwrdisctargpwrstallW::new(self, 11)
     }
-    #[doc = "Bit 12 - noc_vopl_req_msch11_rsp_err_stall bit control"]
+    #[doc = "Bit 12 - noc_vopl_req_msch11_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     #[must_use]
     pub fn vopl_req_msch11_pwrdisctargpwrstall(
@@ -1086,7 +1102,7 @@ impl W {
     ) -> PerihpFwdSdPwrdisctargpwrstallW<GrfSocCon3Spec> {
         PerihpFwdSdPwrdisctargpwrstallW::new(self, 15)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfSocCon3Spec> {

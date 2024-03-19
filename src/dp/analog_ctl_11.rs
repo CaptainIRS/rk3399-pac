@@ -2,19 +2,19 @@
 pub type R = crate::R<AnalogCtl11Spec>;
 #[doc = "Register `ANALOG_CTL_11` writer"]
 pub type W = crate::W<AnalogCtl11Spec>;
-#[doc = "Field `R_AMP_600MV_3P5DB` reader - The lookup-table 1(for calculating chx_swing_bit) value when V_diff is 600mv and Pre_emphasis is 3.5 db."]
+#[doc = "Field `R_AMP_600MV_3P5DB` reader - The lookup-table 1(for calculating \n\nchx_swing_bit) value when V_diff is 600mv \n\nand Pre_emphasis is 3.5 db."]
 pub type RAmp600mv3p5dbR = crate::FieldReader;
-#[doc = "Field `R_AMP_600MV_3P5DB` writer - The lookup-table 1(for calculating chx_swing_bit) value when V_diff is 600mv and Pre_emphasis is 3.5 db."]
+#[doc = "Field `R_AMP_600MV_3P5DB` writer - The lookup-table 1(for calculating \n\nchx_swing_bit) value when V_diff is 600mv \n\nand Pre_emphasis is 3.5 db."]
 pub type RAmp600mv3p5dbW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - The lookup-table 1(for calculating chx_swing_bit) value when V_diff is 600mv and Pre_emphasis is 3.5 db."]
+    #[doc = "Bits 0:7 - The lookup-table 1(for calculating \n\nchx_swing_bit) value when V_diff is 600mv \n\nand Pre_emphasis is 3.5 db."]
     #[inline(always)]
     pub fn r_amp_600mv_3p5db(&self) -> RAmp600mv3p5dbR {
         RAmp600mv3p5dbR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - The lookup-table 1(for calculating chx_swing_bit) value when V_diff is 600mv and Pre_emphasis is 3.5 db."]
+    #[doc = "Bits 0:7 - The lookup-table 1(for calculating \n\nchx_swing_bit) value when V_diff is 600mv \n\nand Pre_emphasis is 3.5 db."]
     #[inline(always)]
     #[must_use]
     pub fn r_amp_600mv_3p5db(&mut self) -> RAmp600mv3p5dbW<AnalogCtl11Spec> {

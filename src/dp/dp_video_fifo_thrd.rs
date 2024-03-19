@@ -2,14 +2,15 @@
 pub type R = crate::R<DpVideoFifoThrdSpec>;
 #[doc = "Register `DP_VIDEO_FIFO_THRD` writer"]
 pub type W = crate::W<DpVideoFifoThrdSpec>;
-#[doc = "Field `VIDEO_TH_VALUE` reader - Video Data FIFO threshold value. If VIDEO_TH_CTRL is 1, and data count in video data FIFO have reached FIFO threshold value, video data is read out from FIFO."]
+#[doc = "Field `VIDEO_TH_VALUE` reader - Video Data FIFO threshold value. If \n\nVIDEO_TH_CTRL is 1, and data count in video \n\ndata FIFO have reached FIFO threshold value, \n\nvideo data is read out from FIFO."]
 pub type VideoThValueR = crate::FieldReader;
-#[doc = "Field `VIDEO_TH_VALUE` writer - Video Data FIFO threshold value. If VIDEO_TH_CTRL is 1, and data count in video data FIFO have reached FIFO threshold value, video data is read out from FIFO."]
+#[doc = "Field `VIDEO_TH_VALUE` writer - Video Data FIFO threshold value. If \n\nVIDEO_TH_CTRL is 1, and data count in video \n\ndata FIFO have reached FIFO threshold value, \n\nvideo data is read out from FIFO."]
 pub type VideoThValueW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Video Data FIFO threshold control enables.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VideoThCtrl {
-    #[doc = "1: Video Data FIFO threshold uses internal calculate value automatically."]
+    #[doc = "1: Video Data FIFO threshold uses VIDEO_TH_VALUE."]
     B1 = 1,
     #[doc = "0: Video Data FIFO threshold uses internal calculate value automatically."]
     B0 = 0,
@@ -31,7 +32,7 @@ impl VideoThCtrlR {
             false => VideoThCtrl::B0,
         }
     }
-    #[doc = "Video Data FIFO threshold uses internal calculate value automatically."]
+    #[doc = "Video Data FIFO threshold uses VIDEO_TH_VALUE."]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == VideoThCtrl::B1
@@ -48,7 +49,7 @@ impl<'a, REG> VideoThCtrlW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Video Data FIFO threshold uses internal calculate value automatically."]
+    #[doc = "Video Data FIFO threshold uses VIDEO_TH_VALUE."]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(VideoThCtrl::B1)
@@ -60,7 +61,7 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 0:3 - Video Data FIFO threshold value. If VIDEO_TH_CTRL is 1, and data count in video data FIFO have reached FIFO threshold value, video data is read out from FIFO."]
+    #[doc = "Bits 0:3 - Video Data FIFO threshold value. If \n\nVIDEO_TH_CTRL is 1, and data count in video \n\ndata FIFO have reached FIFO threshold value, \n\nvideo data is read out from FIFO."]
     #[inline(always)]
     pub fn video_th_value(&self) -> VideoThValueR {
         VideoThValueR::new((self.bits & 0x0f) as u8)
@@ -72,7 +73,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - Video Data FIFO threshold value. If VIDEO_TH_CTRL is 1, and data count in video data FIFO have reached FIFO threshold value, video data is read out from FIFO."]
+    #[doc = "Bits 0:3 - Video Data FIFO threshold value. If \n\nVIDEO_TH_CTRL is 1, and data count in video \n\ndata FIFO have reached FIFO threshold value, \n\nvideo data is read out from FIFO."]
     #[inline(always)]
     #[must_use]
     pub fn video_th_value(&mut self) -> VideoThValueW<DpVideoFifoThrdSpec> {

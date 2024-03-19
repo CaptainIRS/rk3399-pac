@@ -1,9 +1,9 @@
 #[doc = "Register `USB3_GDBGEPINFO1` reader"]
 pub type R = crate::R<Usb3Gdbgepinfo1Spec>;
-#[doc = "Field `EPDEBUG` reader - Endpoint Debug Information High 32-bit Endpoint Debug Information High 32-bit"]
+#[doc = "Field `EPDEBUG` reader - Endpoint Debug Information High 32-bit\n\nEndpoint Debug Information High 32-bit"]
 pub type EpdebugR = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Endpoint Debug Information High 32-bit Endpoint Debug Information High 32-bit"]
+    #[doc = "Bits 0:31 - Endpoint Debug Information High 32-bit\n\nEndpoint Debug Information High 32-bit"]
     #[inline(always)]
     pub fn epdebug(&self) -> EpdebugR {
         EpdebugR::new(self.bits)

@@ -1,72 +1,72 @@
 #[doc = "Register `A_APIINTCLR` writer"]
 pub type W = crate::W<AApiintclrSpec>;
-#[doc = "Field `KSVACCESSINT` writer - Clears the interruption related to KSV Attr grant for Read-Write access."]
+#[doc = "Field `KSVACCESSINT` writer - Clears the interruption related to KSV Attr grant for\n\nRead-Write access."]
 pub type KsvaccessintW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `KSVSHA1CALCINT` writer - Clears the interruption related to KSV list update in memory that needs to be SHA1 verified."]
+#[doc = "Field `KSVSHA1CALCINT` writer - Clears the interruption related to KSV list update in\n\nmemory that needs to be SHA1 verified."]
 pub type Ksvsha1calcintW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `KEEPOUTERRORINT` writer - Clears the interruption related to keep out window error."]
+#[doc = "Field `KEEPOUTERRORINT` writer - Clears the interruption related to keep out window\n\nerror."]
 pub type KeepouterrorintW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `LOSTARBITRATION` writer - Clears the interruption related to I2C arbitration lost."]
+#[doc = "Field `LOSTARBITRATION` writer - Clears the interruption related to I2C arbitration\n\nlost."]
 pub type LostarbitrationW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `I2CNACK` writer - Clears the interruption related to I2C NACK reception."]
+#[doc = "Field `I2CNACK` writer - Clears the interruption related to I2C NACK\n\nreception."]
 pub type I2cnackW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `KSVSHA1CALCDONEINT` writer - Clears the interruption related to SHA1 verification has been done"]
+#[doc = "Field `KSVSHA1CALCDONEINT` writer - Clears the interruption related to SHA1 verification\n\nhas been done"]
 pub type Ksvsha1calcdoneintW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `HDCP_FAILED` writer - Clears the interruption related to HDCP authentication process failed."]
+#[doc = "Field `HDCP_FAILED` writer - Clears the interruption related to HDCP\n\nauthentication process failed."]
 pub type HdcpFailedW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `HDCP_ENGAGED` writer - Clears the interruption related to HDCP authentication process successful."]
+#[doc = "Field `HDCP_ENGAGED` writer - Clears the interruption related to HDCP\n\nauthentication process successful."]
 pub type HdcpEngagedW<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
-    #[doc = "Bit 0 - Clears the interruption related to KSV Attr grant for Read-Write access."]
+    #[doc = "Bit 0 - Clears the interruption related to KSV Attr grant for\n\nRead-Write access."]
     #[inline(always)]
     #[must_use]
     pub fn ksvaccessint(&mut self) -> KsvaccessintW<AApiintclrSpec> {
         KsvaccessintW::new(self, 0)
     }
-    #[doc = "Bit 1 - Clears the interruption related to KSV list update in memory that needs to be SHA1 verified."]
+    #[doc = "Bit 1 - Clears the interruption related to KSV list update in\n\nmemory that needs to be SHA1 verified."]
     #[inline(always)]
     #[must_use]
     pub fn ksvsha1calcint(&mut self) -> Ksvsha1calcintW<AApiintclrSpec> {
         Ksvsha1calcintW::new(self, 1)
     }
-    #[doc = "Bit 2 - Clears the interruption related to keep out window error."]
+    #[doc = "Bit 2 - Clears the interruption related to keep out window\n\nerror."]
     #[inline(always)]
     #[must_use]
     pub fn keepouterrorint(&mut self) -> KeepouterrorintW<AApiintclrSpec> {
         KeepouterrorintW::new(self, 2)
     }
-    #[doc = "Bit 3 - Clears the interruption related to I2C arbitration lost."]
+    #[doc = "Bit 3 - Clears the interruption related to I2C arbitration\n\nlost."]
     #[inline(always)]
     #[must_use]
     pub fn lostarbitration(&mut self) -> LostarbitrationW<AApiintclrSpec> {
         LostarbitrationW::new(self, 3)
     }
-    #[doc = "Bit 4 - Clears the interruption related to I2C NACK reception."]
+    #[doc = "Bit 4 - Clears the interruption related to I2C NACK\n\nreception."]
     #[inline(always)]
     #[must_use]
     pub fn i2cnack(&mut self) -> I2cnackW<AApiintclrSpec> {
         I2cnackW::new(self, 4)
     }
-    #[doc = "Bit 5 - Clears the interruption related to SHA1 verification has been done"]
+    #[doc = "Bit 5 - Clears the interruption related to SHA1 verification\n\nhas been done"]
     #[inline(always)]
     #[must_use]
     pub fn ksvsha1calcdoneint(&mut self) -> Ksvsha1calcdoneintW<AApiintclrSpec> {
         Ksvsha1calcdoneintW::new(self, 5)
     }
-    #[doc = "Bit 6 - Clears the interruption related to HDCP authentication process failed."]
+    #[doc = "Bit 6 - Clears the interruption related to HDCP\n\nauthentication process failed."]
     #[inline(always)]
     #[must_use]
     pub fn hdcp_failed(&mut self) -> HdcpFailedW<AApiintclrSpec> {
         HdcpFailedW::new(self, 6)
     }
-    #[doc = "Bit 7 - Clears the interruption related to HDCP authentication process successful."]
+    #[doc = "Bit 7 - Clears the interruption related to HDCP\n\nauthentication process successful."]
     #[inline(always)]
     #[must_use]
     pub fn hdcp_engaged(&mut self) -> HdcpEngagedW<AApiintclrSpec> {
         HdcpEngagedW::new(self, 7)
     }
 }
-#[doc = "Clears the interruption related to KSV Attr grant for Read-Write access.\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`a_apiintclr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "HDCP Interrupt Clear Register\n\nWrite only register, active high and auto cleared, cleans the respective interruption in the\n\ninterrupt status register.\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`a_apiintclr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AApiintclrSpec;
 impl crate::RegisterSpec for AApiintclrSpec {
     type Ux = u8;

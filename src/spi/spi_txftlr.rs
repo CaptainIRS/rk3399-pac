@@ -2,19 +2,19 @@
 pub type R = crate::R<SpiTxftlrSpec>;
 #[doc = "Register `SPI_TXFTLR` writer"]
 pub type W = crate::W<SpiTxftlrSpec>;
-#[doc = "Field `TXFTLR` reader - Transmit FIFO Threshold Level When the number of transmit FIFO entries is less than or equal to this value, the transmit FIFO empty interrupt is triggered."]
+#[doc = "Field `TXFTLR` reader - Transmit FIFO Threshold Level\n\nWhen the number of transmit FIFO entries is less than or equal to\n\nthis value, the transmit FIFO empty interrupt is triggered."]
 pub type TxftlrR = crate::FieldReader;
-#[doc = "Field `TXFTLR` writer - Transmit FIFO Threshold Level When the number of transmit FIFO entries is less than or equal to this value, the transmit FIFO empty interrupt is triggered."]
+#[doc = "Field `TXFTLR` writer - Transmit FIFO Threshold Level\n\nWhen the number of transmit FIFO entries is less than or equal to\n\nthis value, the transmit FIFO empty interrupt is triggered."]
 pub type TxftlrW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
-    #[doc = "Bits 0:4 - Transmit FIFO Threshold Level When the number of transmit FIFO entries is less than or equal to this value, the transmit FIFO empty interrupt is triggered."]
+    #[doc = "Bits 0:4 - Transmit FIFO Threshold Level\n\nWhen the number of transmit FIFO entries is less than or equal to\n\nthis value, the transmit FIFO empty interrupt is triggered."]
     #[inline(always)]
     pub fn txftlr(&self) -> TxftlrR {
         TxftlrR::new((self.bits & 0x1f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - Transmit FIFO Threshold Level When the number of transmit FIFO entries is less than or equal to this value, the transmit FIFO empty interrupt is triggered."]
+    #[doc = "Bits 0:4 - Transmit FIFO Threshold Level\n\nWhen the number of transmit FIFO entries is less than or equal to\n\nthis value, the transmit FIFO empty interrupt is triggered."]
     #[inline(always)]
     #[must_use]
     pub fn txftlr(&mut self) -> TxftlrW<SpiTxftlrSpec> {

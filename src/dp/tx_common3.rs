@@ -3,9 +3,10 @@ pub type R = crate::R<TxCommon3Spec>;
 #[doc = "Register `TX_COMMON3` writer"]
 pub type W = crate::W<TxCommon3Spec>;
 #[doc = "ch0 select i_ref_clk_24m for scan\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ScanClkSel {
-    #[doc = "0: select i_ref_clk_24m"]
+    #[doc = "0: select tx_bscan_data&lt;0>"]
     B0 = 0,
     #[doc = "1: select i_ref_clk_24m"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl ScanClkSelR {
             true => ScanClkSel::B1,
         }
     }
-    #[doc = "select i_ref_clk_24m"]
+    #[doc = "select tx_bscan_data&lt;0>"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ScanClkSel::B0
@@ -44,7 +45,7 @@ impl<'a, REG> ScanClkSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "select i_ref_clk_24m"]
+    #[doc = "select tx_bscan_data&lt;0>"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ScanClkSel::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "TX input clock inverse enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClkInverseEn {
-    #[doc = "0: TX input clock inverse"]
+    #[doc = "0: normal"]
     B0 = 0,
     #[doc = "1: TX input clock inverse"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl ClkInverseEnR {
             true => ClkInverseEn::B1,
         }
     }
-    #[doc = "TX input clock inverse"]
+    #[doc = "normal"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClkInverseEn::B0
@@ -97,7 +99,7 @@ impl<'a, REG> ClkInverseEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "TX input clock inverse"]
+    #[doc = "normal"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClkInverseEn::B0)
@@ -108,15 +110,16 @@ where
         self.variant(ClkInverseEn::B1)
     }
 }
-#[doc = "Select /20 clock delay (clk_div2_ssc &amp; tx_txd_clk)\n\nValue on reset: 0"]
+#[doc = "Select /20 clock delay (clk_div2_ssc &amp; \n\ntx_txd_clk)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ClkDlySel {
-    #[doc = "0: delay=150ps+3*70ps . . . . . ."]
+    #[doc = "0: delay=150ps"]
     B00000 = 0,
-    #[doc = "1: delay=150ps+3*70ps . . . . . ."]
+    #[doc = "1: delay=150ps+1*70ps"]
     B00001 = 1,
-    #[doc = "2: delay=150ps+3*70ps . . . . . ."]
+    #[doc = "2: delay=150ps+2*70ps"]
     B00010 = 2,
     #[doc = "3: delay=150ps+3*70ps . . . . . ."]
     B00011 = 3,
@@ -130,7 +133,7 @@ impl From<ClkDlySel> for u8 {
 impl crate::FieldSpec for ClkDlySel {
     type Ux = u8;
 }
-#[doc = "Field `CLK_DLY_SEL` reader - Select /20 clock delay (clk_div2_ssc &amp; tx_txd_clk)"]
+#[doc = "Field `CLK_DLY_SEL` reader - Select /20 clock delay (clk_div2_ssc &amp; \n\ntx_txd_clk)"]
 pub type ClkDlySelR = crate::FieldReader<ClkDlySel>;
 impl ClkDlySelR {
     #[doc = "Get enumerated values variant"]
@@ -144,17 +147,17 @@ impl ClkDlySelR {
             _ => None,
         }
     }
-    #[doc = "delay=150ps+3*70ps . . . . . ."]
+    #[doc = "delay=150ps"]
     #[inline(always)]
     pub fn is_b00000(&self) -> bool {
         *self == ClkDlySel::B00000
     }
-    #[doc = "delay=150ps+3*70ps . . . . . ."]
+    #[doc = "delay=150ps+1*70ps"]
     #[inline(always)]
     pub fn is_b00001(&self) -> bool {
         *self == ClkDlySel::B00001
     }
-    #[doc = "delay=150ps+3*70ps . . . . . ."]
+    #[doc = "delay=150ps+2*70ps"]
     #[inline(always)]
     pub fn is_b00010(&self) -> bool {
         *self == ClkDlySel::B00010
@@ -165,24 +168,24 @@ impl ClkDlySelR {
         *self == ClkDlySel::B00011
     }
 }
-#[doc = "Field `CLK_DLY_SEL` writer - Select /20 clock delay (clk_div2_ssc &amp; tx_txd_clk)"]
+#[doc = "Field `CLK_DLY_SEL` writer - Select /20 clock delay (clk_div2_ssc &amp; \n\ntx_txd_clk)"]
 pub type ClkDlySelW<'a, REG> = crate::FieldWriter<'a, REG, 5, ClkDlySel>;
 impl<'a, REG> ClkDlySelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "delay=150ps+3*70ps . . . . . ."]
+    #[doc = "delay=150ps"]
     #[inline(always)]
     pub fn b00000(self) -> &'a mut crate::W<REG> {
         self.variant(ClkDlySel::B00000)
     }
-    #[doc = "delay=150ps+3*70ps . . . . . ."]
+    #[doc = "delay=150ps+1*70ps"]
     #[inline(always)]
     pub fn b00001(self) -> &'a mut crate::W<REG> {
         self.variant(ClkDlySel::B00001)
     }
-    #[doc = "delay=150ps+3*70ps . . . . . ."]
+    #[doc = "delay=150ps+2*70ps"]
     #[inline(always)]
     pub fn b00010(self) -> &'a mut crate::W<REG> {
         self.variant(ClkDlySel::B00010)
@@ -204,7 +207,7 @@ impl R {
     pub fn clk_inverse_en(&self) -> ClkInverseEnR {
         ClkInverseEnR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bits 3:7 - Select /20 clock delay (clk_div2_ssc &amp; tx_txd_clk)"]
+    #[doc = "Bits 3:7 - Select /20 clock delay (clk_div2_ssc &amp; \n\ntx_txd_clk)"]
     #[inline(always)]
     pub fn clk_dly_sel(&self) -> ClkDlySelR {
         ClkDlySelR::new(((self.bits >> 3) & 0x1f) as u8)
@@ -223,7 +226,7 @@ impl W {
     pub fn clk_inverse_en(&mut self) -> ClkInverseEnW<TxCommon3Spec> {
         ClkInverseEnW::new(self, 2)
     }
-    #[doc = "Bits 3:7 - Select /20 clock delay (clk_div2_ssc &amp; tx_txd_clk)"]
+    #[doc = "Bits 3:7 - Select /20 clock delay (clk_div2_ssc &amp; \n\ntx_txd_clk)"]
     #[inline(always)]
     #[must_use]
     pub fn clk_dly_sel(&mut self) -> ClkDlySelW<TxCommon3Spec> {

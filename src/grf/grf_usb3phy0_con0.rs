@@ -3,9 +3,10 @@ pub type R = crate::R<GrfUsb3phy0Con0Spec>;
 #[doc = "Register `GRF_USB3PHY0_CON0` writer"]
 pub type W = crate::W<GrfUsb3phy0Con0Spec>;
 #[doc = "TypeC PHY connect direction\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TypecConnDir {
-    #[doc = "0: flip orientation"]
+    #[doc = "0: normal orientation"]
     B0 = 0,
     #[doc = "1: flip orientation"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl TypecConnDirR {
             true => TypecConnDir::B1,
         }
     }
-    #[doc = "flip orientation"]
+    #[doc = "normal orientation"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == TypecConnDir::B0
@@ -44,7 +45,7 @@ impl<'a, REG> TypecConnDirW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "flip orientation"]
+    #[doc = "normal orientation"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(TypecConnDir::B0)
@@ -55,14 +56,15 @@ where
         self.variant(TypecConnDir::B1)
     }
 }
-#[doc = "Field `PIPE_DATA_BUS_WIDTH` reader - Pipe interface data bus width 0: 32bit data bus width, only support 32bit data bus width."]
+#[doc = "Field `PIPE_DATA_BUS_WIDTH` reader - Pipe interface data bus width\n\n0: 32bit data bus width, only support 32bit\n\ndata bus width."]
 pub type PipeDataBusWidthR = crate::FieldReader;
-#[doc = "Field `PIPE_DATA_BUS_WIDTH` writer - Pipe interface data bus width 0: 32bit data bus width, only support 32bit data bus width."]
+#[doc = "Field `PIPE_DATA_BUS_WIDTH` writer - Pipe interface data bus width\n\n0: 32bit data bus width, only support 32bit\n\ndata bus width."]
 pub type PipeDataBusWidthW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "force usb3 to usb2 enable control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Usb3tousb2En {
-    #[doc = "1: not force usb3 controller work as usb2."]
+    #[doc = "1: force usb3 controller work as usb2."]
     B1 = 1,
     #[doc = "0: not force usb3 controller work as usb2."]
     B0 = 0,
@@ -84,7 +86,7 @@ impl Usb3tousb2EnR {
             false => Usb3tousb2En::B0,
         }
     }
-    #[doc = "not force usb3 controller work as usb2."]
+    #[doc = "force usb3 controller work as usb2."]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Usb3tousb2En::B1
@@ -101,7 +103,7 @@ impl<'a, REG> Usb3tousb2EnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "not force usb3 controller work as usb2."]
+    #[doc = "force usb3 controller work as usb2."]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Usb3tousb2En::B1)
@@ -113,12 +115,13 @@ where
     }
 }
 #[doc = "TCPC role trap\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TcpcRoleStrap {
-    #[doc = "1: TCPC default as DRP"]
+    #[doc = "1: TCPC default as DFP"]
     B01 = 1,
-    #[doc = "2: TCPC default as DRP"]
+    #[doc = "2: TCPC default as UFP"]
     B10 = 2,
     #[doc = "3: TCPC default as DRP"]
     B11 = 3,
@@ -145,12 +148,12 @@ impl TcpcRoleStrapR {
             _ => None,
         }
     }
-    #[doc = "TCPC default as DRP"]
+    #[doc = "TCPC default as DFP"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == TcpcRoleStrap::B01
     }
-    #[doc = "TCPC default as DRP"]
+    #[doc = "TCPC default as UFP"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == TcpcRoleStrap::B10
@@ -168,12 +171,12 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "TCPC default as DRP"]
+    #[doc = "TCPC default as DFP"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(TcpcRoleStrap::B01)
     }
-    #[doc = "TCPC default as DRP"]
+    #[doc = "TCPC default as UFP"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(TcpcRoleStrap::B10)
@@ -185,9 +188,10 @@ where
     }
 }
 #[doc = "dead_battery_sel\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DeadBatterySel {
-    #[doc = "0: select internal bit7 of this register"]
+    #[doc = "0: select external dead_battery_n from IOMUX"]
     B0 = 0,
     #[doc = "1: select internal bit7 of this register"]
     B1 = 1,
@@ -209,7 +213,7 @@ impl DeadBatterySelR {
             true => DeadBatterySel::B1,
         }
     }
-    #[doc = "select internal bit7 of this register"]
+    #[doc = "select external dead_battery_n from IOMUX"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == DeadBatterySel::B0
@@ -226,7 +230,7 @@ impl<'a, REG> DeadBatterySelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "select internal bit7 of this register"]
+    #[doc = "select external dead_battery_n from IOMUX"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(DeadBatterySel::B0)
@@ -238,9 +242,10 @@ where
     }
 }
 #[doc = "dead_battery_n\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DeadBatteryN {
-    #[doc = "1: dead battery"]
+    #[doc = "1: no dead battery"]
     B1 = 1,
     #[doc = "0: dead battery"]
     B0 = 0,
@@ -262,7 +267,7 @@ impl DeadBatteryNR {
             false => DeadBatteryN::B0,
         }
     }
-    #[doc = "dead battery"]
+    #[doc = "no dead battery"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == DeadBatteryN::B1
@@ -279,7 +284,7 @@ impl<'a, REG> DeadBatteryNW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "dead battery"]
+    #[doc = "no dead battery"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(DeadBatteryN::B1)
@@ -291,9 +296,10 @@ where
     }
 }
 #[doc = "TypeC connect direction select\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TypecConnDirSel {
-    #[doc = "0: select TCPC ouput typec_con_dir to TypeC PHY"]
+    #[doc = "0: select typec_conn_dir (bit0 of this register) to TypeC PHY"]
     B0 = 0,
     #[doc = "1: select TCPC ouput typec_con_dir to TypeC PHY"]
     B1 = 1,
@@ -315,7 +321,7 @@ impl TypecConnDirSelR {
             true => TypecConnDirSel::B1,
         }
     }
-    #[doc = "select TCPC ouput typec_con_dir to TypeC PHY"]
+    #[doc = "select typec_conn_dir (bit0 of this register) to TypeC PHY"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == TypecConnDirSel::B0
@@ -332,7 +338,7 @@ impl<'a, REG> TypecConnDirSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "select TCPC ouput typec_con_dir to TypeC PHY"]
+    #[doc = "select typec_conn_dir (bit0 of this register) to TypeC PHY"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(TypecConnDirSel::B0)
@@ -344,9 +350,10 @@ where
     }
 }
 #[doc = "TCPC Vbus On\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TcpcVbusOn {
-    #[doc = "0: enable TCPC vbus supply"]
+    #[doc = "0: disable TCPC vbus supply"]
     B0 = 0,
     #[doc = "1: enable TCPC vbus supply"]
     B1 = 1,
@@ -368,7 +375,7 @@ impl TcpcVbusOnR {
             true => TcpcVbusOn::B1,
         }
     }
-    #[doc = "enable TCPC vbus supply"]
+    #[doc = "disable TCPC vbus supply"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == TcpcVbusOn::B0
@@ -385,7 +392,7 @@ impl<'a, REG> TcpcVbusOnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable TCPC vbus supply"]
+    #[doc = "disable TCPC vbus supply"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(TcpcVbusOn::B0)
@@ -397,9 +404,10 @@ where
     }
 }
 #[doc = "vbus valid select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VbusValidSel {
-    #[doc = "0: usb vbus_valid from TCPC to usb3 controller"]
+    #[doc = "0: use bvalid from usb2phy to usb3 controller"]
     B0 = 0,
     #[doc = "1: usb vbus_valid from TCPC to usb3 controller"]
     B1 = 1,
@@ -421,7 +429,7 @@ impl VbusValidSelR {
             true => VbusValidSel::B1,
         }
     }
-    #[doc = "usb vbus_valid from TCPC to usb3 controller"]
+    #[doc = "use bvalid from usb2phy to usb3 controller"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == VbusValidSel::B0
@@ -438,7 +446,7 @@ impl<'a, REG> VbusValidSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "usb vbus_valid from TCPC to usb3 controller"]
+    #[doc = "use bvalid from usb2phy to usb3 controller"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(VbusValidSel::B0)
@@ -450,9 +458,10 @@ where
     }
 }
 #[doc = "cc1 overcurrent\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cc1OvercurrentN {
-    #[doc = "0: cc1 not overcurrent"]
+    #[doc = "0: cc1 overcurrent"]
     B0 = 0,
     #[doc = "1: cc1 not overcurrent"]
     B1 = 1,
@@ -474,7 +483,7 @@ impl Cc1OvercurrentNR {
             true => Cc1OvercurrentN::B1,
         }
     }
-    #[doc = "cc1 not overcurrent"]
+    #[doc = "cc1 overcurrent"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cc1OvercurrentN::B0
@@ -491,7 +500,7 @@ impl<'a, REG> Cc1OvercurrentNW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "cc1 not overcurrent"]
+    #[doc = "cc1 overcurrent"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cc1OvercurrentN::B0)
@@ -503,9 +512,10 @@ where
     }
 }
 #[doc = "cc2 overcurrent\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cc2OvercurrentN {
-    #[doc = "0: cc2 not overcurrent"]
+    #[doc = "0: cc2 overcurrent"]
     B0 = 0,
     #[doc = "1: cc2 not overcurrent"]
     B1 = 1,
@@ -527,7 +537,7 @@ impl Cc2OvercurrentNR {
             true => Cc2OvercurrentN::B1,
         }
     }
-    #[doc = "cc2 not overcurrent"]
+    #[doc = "cc2 overcurrent"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cc2OvercurrentN::B0
@@ -544,7 +554,7 @@ impl<'a, REG> Cc2OvercurrentNW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "cc2 not overcurrent"]
+    #[doc = "cc2 overcurrent"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cc2OvercurrentN::B0)
@@ -556,12 +566,13 @@ where
     }
 }
 #[doc = "vbus source select to IOMUX\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum VbusSrcSel {
-    #[doc = "0: select host0_drvvbus, host1_drvvbus, otg0_drvvbus, otg1_drvvbus to IOMUX"]
+    #[doc = "0: select vbus_source_en of TCPC0 to IOMUX"]
     D0 = 0,
-    #[doc = "1: select host0_drvvbus, host1_drvvbus, otg0_drvvbus, otg1_drvvbus to IOMUX"]
+    #[doc = "1: select vbus_source_en of TCPC1 to IOMUX"]
     D1 = 1,
     #[doc = "2: select host0_drvvbus, host1_drvvbus, otg0_drvvbus, otg1_drvvbus to IOMUX"]
     D2 = 2,
@@ -588,12 +599,12 @@ impl VbusSrcSelR {
             _ => None,
         }
     }
-    #[doc = "select host0_drvvbus, host1_drvvbus, otg0_drvvbus, otg1_drvvbus to IOMUX"]
+    #[doc = "select vbus_source_en of TCPC0 to IOMUX"]
     #[inline(always)]
     pub fn is_d0(&self) -> bool {
         *self == VbusSrcSel::D0
     }
-    #[doc = "select host0_drvvbus, host1_drvvbus, otg0_drvvbus, otg1_drvvbus to IOMUX"]
+    #[doc = "select vbus_source_en of TCPC1 to IOMUX"]
     #[inline(always)]
     pub fn is_d1(&self) -> bool {
         *self == VbusSrcSel::D1
@@ -611,12 +622,12 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "select host0_drvvbus, host1_drvvbus, otg0_drvvbus, otg1_drvvbus to IOMUX"]
+    #[doc = "select vbus_source_en of TCPC0 to IOMUX"]
     #[inline(always)]
     pub fn d0(self) -> &'a mut crate::W<REG> {
         self.variant(VbusSrcSel::D0)
     }
-    #[doc = "select host0_drvvbus, host1_drvvbus, otg0_drvvbus, otg1_drvvbus to IOMUX"]
+    #[doc = "select vbus_source_en of TCPC1 to IOMUX"]
     #[inline(always)]
     pub fn d1(self) -> &'a mut crate::W<REG> {
         self.variant(VbusSrcSel::D1)
@@ -627,9 +638,9 @@ where
         self.variant(VbusSrcSel::D2)
     }
 }
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0 - TypeC PHY connect direction"]
@@ -637,7 +648,7 @@ impl R {
     pub fn typec_conn_dir(&self) -> TypecConnDirR {
         TypecConnDirR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bits 1:2 - Pipe interface data bus width 0: 32bit data bus width, only support 32bit data bus width."]
+    #[doc = "Bits 1:2 - Pipe interface data bus width\n\n0: 32bit data bus width, only support 32bit\n\ndata bus width."]
     #[inline(always)]
     pub fn pipe_data_bus_width(&self) -> PipeDataBusWidthR {
         PipeDataBusWidthR::new(((self.bits >> 1) & 3) as u8)
@@ -692,7 +703,7 @@ impl R {
     pub fn vbus_src_sel(&self) -> VbusSrcSelR {
         VbusSrcSelR::new(((self.bits >> 14) & 3) as u8)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
@@ -705,7 +716,7 @@ impl W {
     pub fn typec_conn_dir(&mut self) -> TypecConnDirW<GrfUsb3phy0Con0Spec> {
         TypecConnDirW::new(self, 0)
     }
-    #[doc = "Bits 1:2 - Pipe interface data bus width 0: 32bit data bus width, only support 32bit data bus width."]
+    #[doc = "Bits 1:2 - Pipe interface data bus width\n\n0: 32bit data bus width, only support 32bit\n\ndata bus width."]
     #[inline(always)]
     #[must_use]
     pub fn pipe_data_bus_width(&mut self) -> PipeDataBusWidthW<GrfUsb3phy0Con0Spec> {
@@ -771,7 +782,7 @@ impl W {
     pub fn vbus_src_sel(&mut self) -> VbusSrcSelW<GrfUsb3phy0Con0Spec> {
         VbusSrcSelW::new(self, 14)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfUsb3phy0Con0Spec> {

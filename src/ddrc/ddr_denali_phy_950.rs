@@ -6,9 +6,9 @@ pub type W = crate::W<DdrDenaliPhy950Spec>;
 pub type PhyPadAtbCtrlR = crate::FieldReader<u16>;
 #[doc = "Field `PHY_PAD_ATB_CTRL` writer - Pad ATB control settings. Bit (0) is the enable signal. Bits (5:1) are the ATB data signals. Bits (15:8) are the 1 hot select for which pad is selected."]
 pub type PhyPadAtbCtrlW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-#[doc = "Field `PHY_ADRCTL_MANUAL_UPDATE` writer - Address/control manual update of slave delay lines. Set to 1 to update. WRITE-ONLY"]
+#[doc = "Field `PHY_ADRCTL_MANUAL_UPDATE` writer - Address/control manual update of slave delay lines. Set to 1 to update."]
 pub type PhyAdrctlManualUpdateW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PHY_AC_LPBK_ERR_CLEAR` writer - Address/control loopback error clear. Set to 1 to clear error. WRITE-ONLY"]
+#[doc = "Field `PHY_AC_LPBK_ERR_CLEAR` writer - Address/control loopback error clear. Set to 1 to clear error."]
 pub type PhyAcLpbkErrClearW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:15 - Pad ATB control settings. Bit (0) is the enable signal. Bits (5:1) are the ATB data signals. Bits (15:8) are the 1 hot select for which pad is selected."]
@@ -24,13 +24,13 @@ impl W {
     pub fn phy_pad_atb_ctrl(&mut self) -> PhyPadAtbCtrlW<DdrDenaliPhy950Spec> {
         PhyPadAtbCtrlW::new(self, 0)
     }
-    #[doc = "Bit 16 - Address/control manual update of slave delay lines. Set to 1 to update. WRITE-ONLY"]
+    #[doc = "Bit 16 - Address/control manual update of slave delay lines. Set to 1 to update."]
     #[inline(always)]
     #[must_use]
     pub fn phy_adrctl_manual_update(&mut self) -> PhyAdrctlManualUpdateW<DdrDenaliPhy950Spec> {
         PhyAdrctlManualUpdateW::new(self, 16)
     }
-    #[doc = "Bit 24 - Address/control loopback error clear. Set to 1 to clear error. WRITE-ONLY"]
+    #[doc = "Bit 24 - Address/control loopback error clear. Set to 1 to clear error."]
     #[inline(always)]
     #[must_use]
     pub fn phy_ac_lpbk_err_clear(&mut self) -> PhyAcLpbkErrClearW<DdrDenaliPhy950Spec> {

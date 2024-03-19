@@ -2,19 +2,19 @@
 pub type R = crate::R<Cci500MaxOtS0Spec>;
 #[doc = "Register `CCI500_MAX_OT_S0` writer"]
 pub type W = crate::W<Cci500MaxOtS0Spec>;
-#[doc = "Field `MAX_OT` reader - The maximum number of OTs for the interface. This is a combined issuing limit. It represents the maximum number of transactions that the upstream master can issue when the AR and AW channels are considered as one issuing source."]
+#[doc = "Field `MAX_OT` reader - The maximum number of OTs for the\n\ninterface. This is a combined issuing limit. It\n\nrepresents the maximum number of\n\ntransactions that the upstream master can\n\nissue when the AR and AW channels are\n\nconsidered as one issuing source."]
 pub type MaxOtR = crate::BitReader;
-#[doc = "Field `MAX_OT` writer - The maximum number of OTs for the interface. This is a combined issuing limit. It represents the maximum number of transactions that the upstream master can issue when the AR and AW channels are considered as one issuing source."]
+#[doc = "Field `MAX_OT` writer - The maximum number of OTs for the\n\ninterface. This is a combined issuing limit. It\n\nrepresents the maximum number of\n\ntransactions that the upstream master can\n\nissue when the AR and AW channels are\n\nconsidered as one issuing source."]
 pub type MaxOtW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - The maximum number of OTs for the interface. This is a combined issuing limit. It represents the maximum number of transactions that the upstream master can issue when the AR and AW channels are considered as one issuing source."]
+    #[doc = "Bit 0 - The maximum number of OTs for the\n\ninterface. This is a combined issuing limit. It\n\nrepresents the maximum number of\n\ntransactions that the upstream master can\n\nissue when the AR and AW channels are\n\nconsidered as one issuing source."]
     #[inline(always)]
     pub fn max_ot(&self) -> MaxOtR {
         MaxOtR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - The maximum number of OTs for the interface. This is a combined issuing limit. It represents the maximum number of transactions that the upstream master can issue when the AR and AW channels are considered as one issuing source."]
+    #[doc = "Bit 0 - The maximum number of OTs for the\n\ninterface. This is a combined issuing limit. It\n\nrepresents the maximum number of\n\ntransactions that the upstream master can\n\nissue when the AR and AW channels are\n\nconsidered as one issuing source."]
     #[inline(always)]
     #[must_use]
     pub fn max_ot(&mut self) -> MaxOtW<Cci500MaxOtS0Spec> {

@@ -3,9 +3,10 @@ pub type R = crate::R<PllReg3Spec>;
 #[doc = "Register `PLL_REG_3` writer"]
 pub type W = crate::W<PllReg3Spec>;
 #[doc = "force PLL lock detector lock\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PllLockDetForce {
-    #[doc = "0: force PLL lock"]
+    #[doc = "0: not force lock (default)"]
     B0 = 0,
     #[doc = "1: force PLL lock"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl PllLockDetForceR {
             true => PllLockDetForce::B1,
         }
     }
-    #[doc = "force PLL lock"]
+    #[doc = "not force lock (default)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PllLockDetForce::B0
@@ -44,7 +45,7 @@ impl<'a, REG> PllLockDetForceW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "force PLL lock"]
+    #[doc = "not force lock (default)"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PllLockDetForce::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "PLL lock detector mode select\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PllLockDetMode {
-    #[doc = "0: integer N"]
+    #[doc = "0: fractional N (default)"]
     B0 = 0,
     #[doc = "1: integer N"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl PllLockDetModeR {
             true => PllLockDetMode::B1,
         }
     }
-    #[doc = "integer N"]
+    #[doc = "fractional N (default)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PllLockDetMode::B0
@@ -97,7 +99,7 @@ impl<'a, REG> PllLockDetModeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "integer N"]
+    #[doc = "fractional N (default)"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PllLockDetMode::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "lock detector bypass select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LockDetBypass {
-    #[doc = "0: bypass lock detector in ssc"]
+    #[doc = "0: not bypass (default)"]
     B0 = 0,
     #[doc = "1: bypass lock detector in ssc"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl LockDetBypassR {
             true => LockDetBypass::B1,
         }
     }
-    #[doc = "bypass lock detector in ssc"]
+    #[doc = "not bypass (default)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == LockDetBypass::B0
@@ -150,7 +153,7 @@ impl<'a, REG> LockDetBypassW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "bypass lock detector in ssc"]
+    #[doc = "not bypass (default)"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(LockDetBypass::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "PLL and ssc reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PallSscReset {
-    #[doc = "1: normal"]
+    #[doc = "1: reset"]
     B1 = 1,
     #[doc = "0: normal"]
     B0 = 0,
@@ -186,7 +190,7 @@ impl PallSscResetR {
             false => PallSscReset::B0,
         }
     }
-    #[doc = "normal"]
+    #[doc = "reset"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == PallSscReset::B1
@@ -203,7 +207,7 @@ impl<'a, REG> PallSscResetW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "normal"]
+    #[doc = "reset"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(PallSscReset::B1)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "loop filter control voltage reset select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LoopFilterResetSel {
-    #[doc = "1: reset to DVDD (default)"]
+    #[doc = "1: reset to the value below DVDD"]
     B1 = 1,
     #[doc = "0: reset to DVDD (default)"]
     B0 = 0,
@@ -239,7 +244,7 @@ impl LoopFilterResetSelR {
             false => LoopFilterResetSel::B0,
         }
     }
-    #[doc = "reset to DVDD (default)"]
+    #[doc = "reset to the value below DVDD"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == LoopFilterResetSel::B1
@@ -256,7 +261,7 @@ impl<'a, REG> LoopFilterResetSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "reset to DVDD (default)"]
+    #[doc = "reset to the value below DVDD"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(LoopFilterResetSel::B1)
@@ -267,15 +272,16 @@ where
         self.variant(LoopFilterResetSel::B0)
     }
 }
-#[doc = "lock detector output counter select, counter period is twice of reference clock\n\nValue on reset: 1"]
+#[doc = "lock detector output counter select, \n\ncounter period is twice of reference clock\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LockDetCntSel {
-    #[doc = "0: 512 cycle"]
+    #[doc = "0: 64 cycle"]
     B00 = 0,
-    #[doc = "1: 512 cycle"]
+    #[doc = "1: 128 cycle"]
     B01 = 1,
-    #[doc = "2: 512 cycle"]
+    #[doc = "2: 256 cycle (default)"]
     B10 = 2,
     #[doc = "3: 512 cycle"]
     B11 = 3,
@@ -289,7 +295,7 @@ impl From<LockDetCntSel> for u8 {
 impl crate::FieldSpec for LockDetCntSel {
     type Ux = u8;
 }
-#[doc = "Field `LOCK_DET_CNT_SEL` reader - lock detector output counter select, counter period is twice of reference clock"]
+#[doc = "Field `LOCK_DET_CNT_SEL` reader - lock detector output counter select, \n\ncounter period is twice of reference clock"]
 pub type LockDetCntSelR = crate::FieldReader<LockDetCntSel>;
 impl LockDetCntSelR {
     #[doc = "Get enumerated values variant"]
@@ -303,17 +309,17 @@ impl LockDetCntSelR {
             _ => unreachable!(),
         }
     }
-    #[doc = "512 cycle"]
+    #[doc = "64 cycle"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == LockDetCntSel::B00
     }
-    #[doc = "512 cycle"]
+    #[doc = "128 cycle"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == LockDetCntSel::B01
     }
-    #[doc = "512 cycle"]
+    #[doc = "256 cycle (default)"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == LockDetCntSel::B10
@@ -324,24 +330,24 @@ impl LockDetCntSelR {
         *self == LockDetCntSel::B11
     }
 }
-#[doc = "Field `LOCK_DET_CNT_SEL` writer - lock detector output counter select, counter period is twice of reference clock"]
+#[doc = "Field `LOCK_DET_CNT_SEL` writer - lock detector output counter select, \n\ncounter period is twice of reference clock"]
 pub type LockDetCntSelW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, LockDetCntSel>;
 impl<'a, REG> LockDetCntSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "512 cycle"]
+    #[doc = "64 cycle"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(LockDetCntSel::B00)
     }
-    #[doc = "512 cycle"]
+    #[doc = "128 cycle"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(LockDetCntSel::B01)
     }
-    #[doc = "512 cycle"]
+    #[doc = "256 cycle (default)"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(LockDetCntSel::B10)
@@ -378,7 +384,7 @@ impl R {
     pub fn loop_filter_reset_sel(&self) -> LoopFilterResetSelR {
         LoopFilterResetSelR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bits 5:6 - lock detector output counter select, counter period is twice of reference clock"]
+    #[doc = "Bits 5:6 - lock detector output counter select, \n\ncounter period is twice of reference clock"]
     #[inline(always)]
     pub fn lock_det_cnt_sel(&self) -> LockDetCntSelR {
         LockDetCntSelR::new(((self.bits >> 5) & 3) as u8)
@@ -415,7 +421,7 @@ impl W {
     pub fn loop_filter_reset_sel(&mut self) -> LoopFilterResetSelW<PllReg3Spec> {
         LoopFilterResetSelW::new(self, 4)
     }
-    #[doc = "Bits 5:6 - lock detector output counter select, counter period is twice of reference clock"]
+    #[doc = "Bits 5:6 - lock detector output counter select, \n\ncounter period is twice of reference clock"]
     #[inline(always)]
     #[must_use]
     pub fn lock_det_cnt_sel(&mut self) -> LockDetCntSelW<PllReg3Spec> {

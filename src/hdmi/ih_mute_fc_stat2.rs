@@ -10,9 +10,9 @@ pub type HighpriorityOverflowW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type LowpriorityOverflowR = crate::BitReader;
 #[doc = "Field `LOWPRIORITY_OVERFLOW` writer - When set to 1, mutes ih_fc_stat2\\[1\\]"]
 pub type LowpriorityOverflowW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `DRM` reader - When set to 1, mutes ih_fc_stat2\\[4\\]. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
+#[doc = "Field `DRM` reader - When set to 1, mutes ih_fc_stat2\\[4\\].\n\nReset Value: (HDMI_TX_20== 1) ? 1 : 0"]
 pub type DrmR = crate::BitReader;
-#[doc = "Field `DRM` writer - When set to 1, mutes ih_fc_stat2\\[4\\]. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
+#[doc = "Field `DRM` writer - When set to 1, mutes ih_fc_stat2\\[4\\].\n\nReset Value: (HDMI_TX_20== 1) ? 1 : 0"]
 pub type DrmW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - When set to 1, mutes ih_fc_stat2\\[0\\]"]
@@ -25,7 +25,7 @@ impl R {
     pub fn lowpriority_overflow(&self) -> LowpriorityOverflowR {
         LowpriorityOverflowR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 4 - When set to 1, mutes ih_fc_stat2\\[4\\]. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
+    #[doc = "Bit 4 - When set to 1, mutes ih_fc_stat2\\[4\\].\n\nReset Value: (HDMI_TX_20== 1) ? 1 : 0"]
     #[inline(always)]
     pub fn drm(&self) -> DrmR {
         DrmR::new(((self.bits >> 4) & 1) != 0)
@@ -44,14 +44,14 @@ impl W {
     pub fn lowpriority_overflow(&mut self) -> LowpriorityOverflowW<IhMuteFcStat2Spec> {
         LowpriorityOverflowW::new(self, 1)
     }
-    #[doc = "Bit 4 - When set to 1, mutes ih_fc_stat2\\[4\\]. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
+    #[doc = "Bit 4 - When set to 1, mutes ih_fc_stat2\\[4\\].\n\nReset Value: (HDMI_TX_20== 1) ? 1 : 0"]
     #[inline(always)]
     #[must_use]
     pub fn drm(&mut self) -> DrmW<IhMuteFcStat2Spec> {
         DrmW::new(self, 4)
     }
 }
-#[doc = "When set to 1, mutes ih_fc_stat2\\[0\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ih_mute_fc_stat2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ih_mute_fc_stat2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer Interrupt Mute Control Register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ih_mute_fc_stat2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ih_mute_fc_stat2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IhMuteFcStat2Spec;
 impl crate::RegisterSpec for IhMuteFcStat2Spec {
     type Ux = u8;

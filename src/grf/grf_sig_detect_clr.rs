@@ -3,9 +3,10 @@ pub type R = crate::R<GrfSigDetectClrSpec>;
 #[doc = "Register `GRF_SIG_DETECT_CLR` writer"]
 pub type W = crate::W<GrfSigDetectClrSpec>;
 #[doc = "sdmmc card rise edge detect control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SdmmcCardRiseEdge {
-    #[doc = "0: enable"]
+    #[doc = "0: disbale"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl SdmmcCardRiseEdgeR {
             true => SdmmcCardRiseEdge::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SdmmcCardRiseEdge::B0
@@ -44,7 +45,7 @@ impl<'a, REG> SdmmcCardRiseEdgeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SdmmcCardRiseEdge::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "sdmmc card fall edge detect control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SdmmcCardFallEdge {
-    #[doc = "0: enable"]
+    #[doc = "0: disbale"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl SdmmcCardFallEdgeR {
             true => SdmmcCardFallEdge::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SdmmcCardFallEdge::B0
@@ -97,7 +99,7 @@ impl<'a, REG> SdmmcCardFallEdgeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SdmmcCardFallEdge::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "cphy0_otg_linestate_change detect control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cphy0OtgLinestateChange {
-    #[doc = "0: enable"]
+    #[doc = "0: disbale"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl Cphy0OtgLinestateChangeR {
             true => Cphy0OtgLinestateChange::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cphy0OtgLinestateChange::B0
@@ -150,7 +153,7 @@ impl<'a, REG> Cphy0OtgLinestateChangeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cphy0OtgLinestateChange::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "cphy0_otg_bvalid_rise detect control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cphy0OtgBvalidRise {
-    #[doc = "0: enable"]
+    #[doc = "0: disbale"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -186,7 +190,7 @@ impl Cphy0OtgBvalidRiseR {
             true => Cphy0OtgBvalidRise::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cphy0OtgBvalidRise::B0
@@ -203,7 +207,7 @@ impl<'a, REG> Cphy0OtgBvalidRiseW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cphy0OtgBvalidRise::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "cphy0_otg_id_rise detect control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cphy0OtgIdRise {
-    #[doc = "0: enable"]
+    #[doc = "0: disbale"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -239,7 +244,7 @@ impl Cphy0OtgIdRiseR {
             true => Cphy0OtgIdRise::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cphy0OtgIdRise::B0
@@ -256,7 +261,7 @@ impl<'a, REG> Cphy0OtgIdRiseW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cphy0OtgIdRise::B0)
@@ -268,9 +273,10 @@ where
     }
 }
 #[doc = "cphy0_otg_id_fall detect control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cphy0OtgIdFall {
-    #[doc = "0: enable"]
+    #[doc = "0: disbale"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -292,7 +298,7 @@ impl Cphy0OtgIdFallR {
             true => Cphy0OtgIdFall::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cphy0OtgIdFall::B0
@@ -309,7 +315,7 @@ impl<'a, REG> Cphy0OtgIdFallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cphy0OtgIdFall::B0)
@@ -321,9 +327,10 @@ where
     }
 }
 #[doc = "cphy0_host_linestate_change detect control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cphy0HostLinestateChange {
-    #[doc = "0: enable"]
+    #[doc = "0: disbale"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -345,7 +352,7 @@ impl Cphy0HostLinestateChangeR {
             true => Cphy0HostLinestateChange::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cphy0HostLinestateChange::B0
@@ -362,7 +369,7 @@ impl<'a, REG> Cphy0HostLinestateChangeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cphy0HostLinestateChange::B0)
@@ -374,9 +381,10 @@ where
     }
 }
 #[doc = "cphy1_otg_linestate_change detect control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cphy1OtgLinestateChange {
-    #[doc = "0: enable"]
+    #[doc = "0: disbale"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -398,7 +406,7 @@ impl Cphy1OtgLinestateChangeR {
             true => Cphy1OtgLinestateChange::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cphy1OtgLinestateChange::B0
@@ -415,7 +423,7 @@ impl<'a, REG> Cphy1OtgLinestateChangeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cphy1OtgLinestateChange::B0)
@@ -427,9 +435,10 @@ where
     }
 }
 #[doc = "cphy1_otg_bvalid_rise detect control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cphy1OtgBvalidRise {
-    #[doc = "0: enable"]
+    #[doc = "0: disbale"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -451,7 +460,7 @@ impl Cphy1OtgBvalidRiseR {
             true => Cphy1OtgBvalidRise::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cphy1OtgBvalidRise::B0
@@ -468,7 +477,7 @@ impl<'a, REG> Cphy1OtgBvalidRiseW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cphy1OtgBvalidRise::B0)
@@ -480,9 +489,10 @@ where
     }
 }
 #[doc = "cphy1_otg_id_rise detect control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cphy1OtgIdRise {
-    #[doc = "0: enable"]
+    #[doc = "0: disbale"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -504,7 +514,7 @@ impl Cphy1OtgIdRiseR {
             true => Cphy1OtgIdRise::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cphy1OtgIdRise::B0
@@ -521,7 +531,7 @@ impl<'a, REG> Cphy1OtgIdRiseW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cphy1OtgIdRise::B0)
@@ -533,9 +543,10 @@ where
     }
 }
 #[doc = "cphy1_otg_id_fall detect control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cphy1OtgIdFall {
-    #[doc = "0: enable"]
+    #[doc = "0: disbale"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -557,7 +568,7 @@ impl Cphy1OtgIdFallR {
             true => Cphy1OtgIdFall::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cphy1OtgIdFall::B0
@@ -574,7 +585,7 @@ impl<'a, REG> Cphy1OtgIdFallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cphy1OtgIdFall::B0)
@@ -586,9 +597,10 @@ where
     }
 }
 #[doc = "cphy1_host_linestate_change detect control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cphy1HostLinestateChange {
-    #[doc = "0: enable"]
+    #[doc = "0: disbale"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -610,7 +622,7 @@ impl Cphy1HostLinestateChangeR {
             true => Cphy1HostLinestateChange::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cphy1HostLinestateChange::B0
@@ -627,7 +639,7 @@ impl<'a, REG> Cphy1HostLinestateChangeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cphy1HostLinestateChange::B0)
@@ -639,9 +651,10 @@ where
     }
 }
 #[doc = "uphy0_rxdet_change detect control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uphy0RxdetChange {
-    #[doc = "0: enable"]
+    #[doc = "0: disbale"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -663,7 +676,7 @@ impl Uphy0RxdetChangeR {
             true => Uphy0RxdetChange::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Uphy0RxdetChange::B0
@@ -680,7 +693,7 @@ impl<'a, REG> Uphy0RxdetChangeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Uphy0RxdetChange::B0)
@@ -692,9 +705,10 @@ where
     }
 }
 #[doc = "uphy1_rxdet_change detect control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uphy1RxdetChange {
-    #[doc = "0: enable"]
+    #[doc = "0: disbale"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -716,7 +730,7 @@ impl Uphy1RxdetChangeR {
             true => Uphy1RxdetChange::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Uphy1RxdetChange::B0
@@ -733,7 +747,7 @@ impl<'a, REG> Uphy1RxdetChangeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disbale"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Uphy1RxdetChange::B0)
@@ -744,9 +758,9 @@ where
         self.variant(Uphy1RxdetChange::B1)
     }
 }
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0 - sdmmc card rise edge detect control"]
@@ -819,7 +833,7 @@ impl R {
     pub fn uphy1_rxdet_change(&self) -> Uphy1RxdetChangeR {
         Uphy1RxdetChangeR::new(((self.bits >> 13) & 1) != 0)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
@@ -914,7 +928,7 @@ impl W {
     pub fn uphy1_rxdet_change(&mut self) -> Uphy1RxdetChangeW<GrfSigDetectClrSpec> {
         Uphy1RxdetChangeW::new(self, 13)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfSigDetectClrSpec> {

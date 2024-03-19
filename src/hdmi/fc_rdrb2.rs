@@ -21,7 +21,7 @@ impl W {
         AudiframeinterpolationW::new(self, 0)
     }
 }
-#[doc = "Audio frame interpolation\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_rdrb2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_rdrb2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer Round Robin AUDI Packet Insertion Register 2\n\nConfigures the Frame Composer (FC) RDRB frame interpolation for AUDI packet insertion\n\non data island when FC is on RDRB mode for this packet.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_rdrb2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_rdrb2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcRdrb2Spec;
 impl crate::RegisterSpec for FcRdrb2Spec {
     type Ux = u8;

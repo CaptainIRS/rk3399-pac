@@ -2,15 +2,16 @@
 pub type R = crate::R<SpiCtrlr0Spec>;
 #[doc = "Register `SPI_CTRLR0` writer"]
 pub type W = crate::W<SpiCtrlr0Spec>;
-#[doc = "Data Frame Size Selects the data frame length.\n\nValue on reset: 2"]
+#[doc = "Data Frame Size\n\nSelects the data frame length.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Dfs {
-    #[doc = "0: reserved"]
+    #[doc = "0: 4bit data"]
     B00 = 0,
-    #[doc = "1: reserved"]
+    #[doc = "1: 8bit data"]
     B01 = 1,
-    #[doc = "2: reserved"]
+    #[doc = "2: 16bit data"]
     B10 = 2,
     #[doc = "3: reserved"]
     B11 = 3,
@@ -24,7 +25,7 @@ impl From<Dfs> for u8 {
 impl crate::FieldSpec for Dfs {
     type Ux = u8;
 }
-#[doc = "Field `DFS` reader - Data Frame Size Selects the data frame length."]
+#[doc = "Field `DFS` reader - Data Frame Size\n\nSelects the data frame length."]
 pub type DfsR = crate::FieldReader<Dfs>;
 impl DfsR {
     #[doc = "Get enumerated values variant"]
@@ -38,17 +39,17 @@ impl DfsR {
             _ => unreachable!(),
         }
     }
-    #[doc = "reserved"]
+    #[doc = "4bit data"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == Dfs::B00
     }
-    #[doc = "reserved"]
+    #[doc = "8bit data"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Dfs::B01
     }
-    #[doc = "reserved"]
+    #[doc = "16bit data"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Dfs::B10
@@ -59,24 +60,24 @@ impl DfsR {
         *self == Dfs::B11
     }
 }
-#[doc = "Field `DFS` writer - Data Frame Size Selects the data frame length."]
+#[doc = "Field `DFS` writer - Data Frame Size\n\nSelects the data frame length."]
 pub type DfsW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Dfs>;
 impl<'a, REG> DfsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "reserved"]
+    #[doc = "4bit data"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(Dfs::B00)
     }
-    #[doc = "reserved"]
+    #[doc = "8bit data"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Dfs::B01)
     }
-    #[doc = "reserved"]
+    #[doc = "16bit data"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Dfs::B10)
@@ -87,33 +88,34 @@ where
         self.variant(Dfs::B11)
     }
 }
-#[doc = "Control Frame Size Selects the length of the control word for the Microwire frame format. 4'b0000~0010:reserved\n\nValue on reset: 0"]
+#[doc = "Control Frame Size\n\nSelects the length of the control word for the Microwire frame\n\nformat.\n\n4'b0000~0010:reserved\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cfs {
-    #[doc = "3: 16-bit serial data transfer"]
+    #[doc = "3: 4-bit serial data transfer"]
     B0011 = 3,
-    #[doc = "4: 16-bit serial data transfer"]
+    #[doc = "4: 5-bit serial data transfer"]
     B0100 = 4,
-    #[doc = "5: 16-bit serial data transfer"]
+    #[doc = "5: 6-bit serial data transfer"]
     B0101 = 5,
-    #[doc = "6: 16-bit serial data transfer"]
+    #[doc = "6: 7-bit serial data transfer"]
     B0110 = 6,
-    #[doc = "7: 16-bit serial data transfer"]
+    #[doc = "7: 8-bit serial data transfer"]
     B0111 = 7,
-    #[doc = "8: 16-bit serial data transfer"]
+    #[doc = "8: 9-bit serial data transfer"]
     B1000 = 8,
-    #[doc = "9: 16-bit serial data transfer"]
+    #[doc = "9: 10-bit serial data transfer"]
     B1001 = 9,
-    #[doc = "10: 16-bit serial data transfer"]
+    #[doc = "10: 11-bit serial data transfer"]
     B1010 = 10,
-    #[doc = "11: 16-bit serial data transfer"]
+    #[doc = "11: 12-bit serial data transfer"]
     B1011 = 11,
-    #[doc = "12: 16-bit serial data transfer"]
+    #[doc = "12: 13-bit serial data transfer"]
     B1100 = 12,
-    #[doc = "13: 16-bit serial data transfer"]
+    #[doc = "13: 14-bit serial data transfer"]
     B1101 = 13,
-    #[doc = "14: 16-bit serial data transfer"]
+    #[doc = "14: 15-bit serial data transfer"]
     B1110 = 14,
     #[doc = "15: 16-bit serial data transfer"]
     B1111 = 15,
@@ -127,7 +129,7 @@ impl From<Cfs> for u8 {
 impl crate::FieldSpec for Cfs {
     type Ux = u8;
 }
-#[doc = "Field `CFS` reader - Control Frame Size Selects the length of the control word for the Microwire frame format. 4'b0000~0010:reserved"]
+#[doc = "Field `CFS` reader - Control Frame Size\n\nSelects the length of the control word for the Microwire frame\n\nformat.\n\n4'b0000~0010:reserved"]
 pub type CfsR = crate::FieldReader<Cfs>;
 impl CfsR {
     #[doc = "Get enumerated values variant"]
@@ -150,62 +152,62 @@ impl CfsR {
             _ => None,
         }
     }
-    #[doc = "16-bit serial data transfer"]
+    #[doc = "4-bit serial data transfer"]
     #[inline(always)]
     pub fn is_b0011(&self) -> bool {
         *self == Cfs::B0011
     }
-    #[doc = "16-bit serial data transfer"]
+    #[doc = "5-bit serial data transfer"]
     #[inline(always)]
     pub fn is_b0100(&self) -> bool {
         *self == Cfs::B0100
     }
-    #[doc = "16-bit serial data transfer"]
+    #[doc = "6-bit serial data transfer"]
     #[inline(always)]
     pub fn is_b0101(&self) -> bool {
         *self == Cfs::B0101
     }
-    #[doc = "16-bit serial data transfer"]
+    #[doc = "7-bit serial data transfer"]
     #[inline(always)]
     pub fn is_b0110(&self) -> bool {
         *self == Cfs::B0110
     }
-    #[doc = "16-bit serial data transfer"]
+    #[doc = "8-bit serial data transfer"]
     #[inline(always)]
     pub fn is_b0111(&self) -> bool {
         *self == Cfs::B0111
     }
-    #[doc = "16-bit serial data transfer"]
+    #[doc = "9-bit serial data transfer"]
     #[inline(always)]
     pub fn is_b1000(&self) -> bool {
         *self == Cfs::B1000
     }
-    #[doc = "16-bit serial data transfer"]
+    #[doc = "10-bit serial data transfer"]
     #[inline(always)]
     pub fn is_b1001(&self) -> bool {
         *self == Cfs::B1001
     }
-    #[doc = "16-bit serial data transfer"]
+    #[doc = "11-bit serial data transfer"]
     #[inline(always)]
     pub fn is_b1010(&self) -> bool {
         *self == Cfs::B1010
     }
-    #[doc = "16-bit serial data transfer"]
+    #[doc = "12-bit serial data transfer"]
     #[inline(always)]
     pub fn is_b1011(&self) -> bool {
         *self == Cfs::B1011
     }
-    #[doc = "16-bit serial data transfer"]
+    #[doc = "13-bit serial data transfer"]
     #[inline(always)]
     pub fn is_b1100(&self) -> bool {
         *self == Cfs::B1100
     }
-    #[doc = "16-bit serial data transfer"]
+    #[doc = "14-bit serial data transfer"]
     #[inline(always)]
     pub fn is_b1101(&self) -> bool {
         *self == Cfs::B1101
     }
-    #[doc = "16-bit serial data transfer"]
+    #[doc = "15-bit serial data transfer"]
     #[inline(always)]
     pub fn is_b1110(&self) -> bool {
         *self == Cfs::B1110
@@ -216,69 +218,69 @@ impl CfsR {
         *self == Cfs::B1111
     }
 }
-#[doc = "Field `CFS` writer - Control Frame Size Selects the length of the control word for the Microwire frame format. 4'b0000~0010:reserved"]
+#[doc = "Field `CFS` writer - Control Frame Size\n\nSelects the length of the control word for the Microwire frame\n\nformat.\n\n4'b0000~0010:reserved"]
 pub type CfsW<'a, REG> = crate::FieldWriter<'a, REG, 4, Cfs>;
 impl<'a, REG> CfsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "16-bit serial data transfer"]
+    #[doc = "4-bit serial data transfer"]
     #[inline(always)]
     pub fn b0011(self) -> &'a mut crate::W<REG> {
         self.variant(Cfs::B0011)
     }
-    #[doc = "16-bit serial data transfer"]
+    #[doc = "5-bit serial data transfer"]
     #[inline(always)]
     pub fn b0100(self) -> &'a mut crate::W<REG> {
         self.variant(Cfs::B0100)
     }
-    #[doc = "16-bit serial data transfer"]
+    #[doc = "6-bit serial data transfer"]
     #[inline(always)]
     pub fn b0101(self) -> &'a mut crate::W<REG> {
         self.variant(Cfs::B0101)
     }
-    #[doc = "16-bit serial data transfer"]
+    #[doc = "7-bit serial data transfer"]
     #[inline(always)]
     pub fn b0110(self) -> &'a mut crate::W<REG> {
         self.variant(Cfs::B0110)
     }
-    #[doc = "16-bit serial data transfer"]
+    #[doc = "8-bit serial data transfer"]
     #[inline(always)]
     pub fn b0111(self) -> &'a mut crate::W<REG> {
         self.variant(Cfs::B0111)
     }
-    #[doc = "16-bit serial data transfer"]
+    #[doc = "9-bit serial data transfer"]
     #[inline(always)]
     pub fn b1000(self) -> &'a mut crate::W<REG> {
         self.variant(Cfs::B1000)
     }
-    #[doc = "16-bit serial data transfer"]
+    #[doc = "10-bit serial data transfer"]
     #[inline(always)]
     pub fn b1001(self) -> &'a mut crate::W<REG> {
         self.variant(Cfs::B1001)
     }
-    #[doc = "16-bit serial data transfer"]
+    #[doc = "11-bit serial data transfer"]
     #[inline(always)]
     pub fn b1010(self) -> &'a mut crate::W<REG> {
         self.variant(Cfs::B1010)
     }
-    #[doc = "16-bit serial data transfer"]
+    #[doc = "12-bit serial data transfer"]
     #[inline(always)]
     pub fn b1011(self) -> &'a mut crate::W<REG> {
         self.variant(Cfs::B1011)
     }
-    #[doc = "16-bit serial data transfer"]
+    #[doc = "13-bit serial data transfer"]
     #[inline(always)]
     pub fn b1100(self) -> &'a mut crate::W<REG> {
         self.variant(Cfs::B1100)
     }
-    #[doc = "16-bit serial data transfer"]
+    #[doc = "14-bit serial data transfer"]
     #[inline(always)]
     pub fn b1101(self) -> &'a mut crate::W<REG> {
         self.variant(Cfs::B1101)
     }
-    #[doc = "16-bit serial data transfer"]
+    #[doc = "15-bit serial data transfer"]
     #[inline(always)]
     pub fn b1110(self) -> &'a mut crate::W<REG> {
         self.variant(Cfs::B1110)
@@ -289,10 +291,11 @@ where
         self.variant(Cfs::B1111)
     }
 }
-#[doc = "Serial Clock Phase Valid when the frame format is set to Motorola SPI.\n\nValue on reset: 0"]
+#[doc = "Serial Clock Phase\n\nValid when the frame format is set to Motorola SPI.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Scph {
-    #[doc = "0: Serial clock toggles at start of first data bit"]
+    #[doc = "0: Serial clock toggles in middle of first data bit"]
     B0 = 0,
     #[doc = "1: Serial clock toggles at start of first data bit"]
     B1 = 1,
@@ -303,7 +306,7 @@ impl From<Scph> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SCPH` reader - Serial Clock Phase Valid when the frame format is set to Motorola SPI."]
+#[doc = "Field `SCPH` reader - Serial Clock Phase\n\nValid when the frame format is set to Motorola SPI."]
 pub type ScphR = crate::BitReader<Scph>;
 impl ScphR {
     #[doc = "Get enumerated values variant"]
@@ -314,7 +317,7 @@ impl ScphR {
             true => Scph::B1,
         }
     }
-    #[doc = "Serial clock toggles at start of first data bit"]
+    #[doc = "Serial clock toggles in middle of first data bit"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Scph::B0
@@ -325,13 +328,13 @@ impl ScphR {
         *self == Scph::B1
     }
 }
-#[doc = "Field `SCPH` writer - Serial Clock Phase Valid when the frame format is set to Motorola SPI."]
+#[doc = "Field `SCPH` writer - Serial Clock Phase\n\nValid when the frame format is set to Motorola SPI."]
 pub type ScphW<'a, REG> = crate::BitWriter<'a, REG, Scph>;
 impl<'a, REG> ScphW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Serial clock toggles at start of first data bit"]
+    #[doc = "Serial clock toggles in middle of first data bit"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Scph::B0)
@@ -342,10 +345,11 @@ where
         self.variant(Scph::B1)
     }
 }
-#[doc = "Serial Clock Polarity Valid when the frame format is set to Motorola SPI.\n\nValue on reset: 0"]
+#[doc = "Serial Clock Polarity\n\nValid when the frame format is set to Motorola SPI.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Scpol {
-    #[doc = "0: Inactive state of serial clock is high"]
+    #[doc = "0: Inactive state of serial clock is low"]
     B0 = 0,
     #[doc = "1: Inactive state of serial clock is high"]
     B1 = 1,
@@ -356,7 +360,7 @@ impl From<Scpol> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SCPOL` reader - Serial Clock Polarity Valid when the frame format is set to Motorola SPI."]
+#[doc = "Field `SCPOL` reader - Serial Clock Polarity\n\nValid when the frame format is set to Motorola SPI."]
 pub type ScpolR = crate::BitReader<Scpol>;
 impl ScpolR {
     #[doc = "Get enumerated values variant"]
@@ -367,7 +371,7 @@ impl ScpolR {
             true => Scpol::B1,
         }
     }
-    #[doc = "Inactive state of serial clock is high"]
+    #[doc = "Inactive state of serial clock is low"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Scpol::B0
@@ -378,13 +382,13 @@ impl ScpolR {
         *self == Scpol::B1
     }
 }
-#[doc = "Field `SCPOL` writer - Serial Clock Polarity Valid when the frame format is set to Motorola SPI."]
+#[doc = "Field `SCPOL` writer - Serial Clock Polarity\n\nValid when the frame format is set to Motorola SPI."]
 pub type ScpolW<'a, REG> = crate::BitWriter<'a, REG, Scpol>;
 impl<'a, REG> ScpolW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Inactive state of serial clock is high"]
+    #[doc = "Inactive state of serial clock is low"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Scpol::B0)
@@ -395,15 +399,16 @@ where
         self.variant(Scpol::B1)
     }
 }
-#[doc = "Chip Select Mode Valid when the frame format is set to Motorola SPI and SPI used as a master.\n\nValue on reset: 0"]
+#[doc = "Chip Select Mode\n\nValid when the frame format is set to Motorola SPI and SPI used\n\nas a master.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Csm {
-    #[doc = "0: reserved"]
+    #[doc = "0: ss_n keep low after every frame data is transferred."]
     B00 = 0,
-    #[doc = "1: reserved"]
+    #[doc = "1: ss_n be high for half sclk_out cycles after every frame data is transferred."]
     B01 = 1,
-    #[doc = "2: reserved"]
+    #[doc = "2: ss_n be high for one sclk_out cycle after every frame data is transferred."]
     B10 = 2,
     #[doc = "3: reserved"]
     B11 = 3,
@@ -417,7 +422,7 @@ impl From<Csm> for u8 {
 impl crate::FieldSpec for Csm {
     type Ux = u8;
 }
-#[doc = "Field `CSM` reader - Chip Select Mode Valid when the frame format is set to Motorola SPI and SPI used as a master."]
+#[doc = "Field `CSM` reader - Chip Select Mode\n\nValid when the frame format is set to Motorola SPI and SPI used\n\nas a master."]
 pub type CsmR = crate::FieldReader<Csm>;
 impl CsmR {
     #[doc = "Get enumerated values variant"]
@@ -431,17 +436,17 @@ impl CsmR {
             _ => unreachable!(),
         }
     }
-    #[doc = "reserved"]
+    #[doc = "ss_n keep low after every frame data is transferred."]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == Csm::B00
     }
-    #[doc = "reserved"]
+    #[doc = "ss_n be high for half sclk_out cycles after every frame data is transferred."]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Csm::B01
     }
-    #[doc = "reserved"]
+    #[doc = "ss_n be high for one sclk_out cycle after every frame data is transferred."]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Csm::B10
@@ -452,24 +457,24 @@ impl CsmR {
         *self == Csm::B11
     }
 }
-#[doc = "Field `CSM` writer - Chip Select Mode Valid when the frame format is set to Motorola SPI and SPI used as a master."]
+#[doc = "Field `CSM` writer - Chip Select Mode\n\nValid when the frame format is set to Motorola SPI and SPI used\n\nas a master."]
 pub type CsmW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Csm>;
 impl<'a, REG> CsmW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "reserved"]
+    #[doc = "ss_n keep low after every frame data is transferred."]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(Csm::B00)
     }
-    #[doc = "reserved"]
+    #[doc = "ss_n be high for half sclk_out cycles after every frame data is transferred."]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Csm::B01)
     }
-    #[doc = "reserved"]
+    #[doc = "ss_n be high for one sclk_out cycle after every frame data is transferred."]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Csm::B10)
@@ -480,10 +485,11 @@ where
         self.variant(Csm::B11)
     }
 }
-#[doc = "ss_n to sclk_out delay Valid when the frame format is set to Motorola SPI and SPI used as a master.\n\nValue on reset: 0"]
+#[doc = "ss_n to sclk_out delay\n\nValid when the frame format is set to Motorola SPI and SPI used\n\nas a master.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ssd {
-    #[doc = "0: the period between ss_n active and sclk_out active is one sclk_out cycle."]
+    #[doc = "0: the period between ss_n active and sclk_out active is half sclk_out cycles."]
     B0 = 0,
     #[doc = "1: the period between ss_n active and sclk_out active is one sclk_out cycle."]
     B1 = 1,
@@ -494,7 +500,7 @@ impl From<Ssd> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SSD` reader - ss_n to sclk_out delay Valid when the frame format is set to Motorola SPI and SPI used as a master."]
+#[doc = "Field `SSD` reader - ss_n to sclk_out delay\n\nValid when the frame format is set to Motorola SPI and SPI used\n\nas a master."]
 pub type SsdR = crate::BitReader<Ssd>;
 impl SsdR {
     #[doc = "Get enumerated values variant"]
@@ -505,7 +511,7 @@ impl SsdR {
             true => Ssd::B1,
         }
     }
-    #[doc = "the period between ss_n active and sclk_out active is one sclk_out cycle."]
+    #[doc = "the period between ss_n active and sclk_out active is half sclk_out cycles."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Ssd::B0
@@ -516,13 +522,13 @@ impl SsdR {
         *self == Ssd::B1
     }
 }
-#[doc = "Field `SSD` writer - ss_n to sclk_out delay Valid when the frame format is set to Motorola SPI and SPI used as a master."]
+#[doc = "Field `SSD` writer - ss_n to sclk_out delay\n\nValid when the frame format is set to Motorola SPI and SPI used\n\nas a master."]
 pub type SsdW<'a, REG> = crate::BitWriter<'a, REG, Ssd>;
 impl<'a, REG> SsdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "the period between ss_n active and sclk_out active is one sclk_out cycle."]
+    #[doc = "the period between ss_n active and sclk_out active is half sclk_out cycles."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Ssd::B0)
@@ -533,10 +539,11 @@ where
         self.variant(Ssd::B1)
     }
 }
-#[doc = "Endian Mode Serial endian mode can be configured by this bit. Apb endian mode is always little endian.\n\nValue on reset: 0"]
+#[doc = "Endian Mode\n\nSerial endian mode can be configured by this bit. Apb endian\n\nmode is always little endian.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Em {
-    #[doc = "0: big endian"]
+    #[doc = "0: little endian"]
     B0 = 0,
     #[doc = "1: big endian"]
     B1 = 1,
@@ -547,7 +554,7 @@ impl From<Em> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EM` reader - Endian Mode Serial endian mode can be configured by this bit. Apb endian mode is always little endian."]
+#[doc = "Field `EM` reader - Endian Mode\n\nSerial endian mode can be configured by this bit. Apb endian\n\nmode is always little endian."]
 pub type EmR = crate::BitReader<Em>;
 impl EmR {
     #[doc = "Get enumerated values variant"]
@@ -558,7 +565,7 @@ impl EmR {
             true => Em::B1,
         }
     }
-    #[doc = "big endian"]
+    #[doc = "little endian"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Em::B0
@@ -569,13 +576,13 @@ impl EmR {
         *self == Em::B1
     }
 }
-#[doc = "Field `EM` writer - Endian Mode Serial endian mode can be configured by this bit. Apb endian mode is always little endian."]
+#[doc = "Field `EM` writer - Endian Mode\n\nSerial endian mode can be configured by this bit. Apb endian\n\nmode is always little endian."]
 pub type EmW<'a, REG> = crate::BitWriter<'a, REG, Em>;
 impl<'a, REG> EmW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "big endian"]
+    #[doc = "little endian"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Em::B0)
@@ -587,9 +594,10 @@ where
     }
 }
 #[doc = "First Bit Mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fbm {
-    #[doc = "0: first bit is LSB"]
+    #[doc = "0: first bit is MSB"]
     B0 = 0,
     #[doc = "1: first bit is LSB"]
     B1 = 1,
@@ -611,7 +619,7 @@ impl FbmR {
             true => Fbm::B1,
         }
     }
-    #[doc = "first bit is LSB"]
+    #[doc = "first bit is MSB"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Fbm::B0
@@ -628,7 +636,7 @@ impl<'a, REG> FbmW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "first bit is LSB"]
+    #[doc = "first bit is MSB"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Fbm::B0)
@@ -639,10 +647,11 @@ where
         self.variant(Fbm::B1)
     }
 }
-#[doc = "Byte and Halfword Transform Valid when data frame size is 8bit.\n\nValue on reset: 0"]
+#[doc = "Byte and Halfword Transform\n\nValid when data frame size is 8bit.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bht {
-    #[doc = "0: apb 8bit write/read, spi 8bit write/read"]
+    #[doc = "0: apb 16bit write/read, spi 8bit write/read"]
     B0 = 0,
     #[doc = "1: apb 8bit write/read, spi 8bit write/read"]
     B1 = 1,
@@ -653,7 +662,7 @@ impl From<Bht> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BHT` reader - Byte and Halfword Transform Valid when data frame size is 8bit."]
+#[doc = "Field `BHT` reader - Byte and Halfword Transform\n\nValid when data frame size is 8bit."]
 pub type BhtR = crate::BitReader<Bht>;
 impl BhtR {
     #[doc = "Get enumerated values variant"]
@@ -664,7 +673,7 @@ impl BhtR {
             true => Bht::B1,
         }
     }
-    #[doc = "apb 8bit write/read, spi 8bit write/read"]
+    #[doc = "apb 16bit write/read, spi 8bit write/read"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Bht::B0
@@ -675,13 +684,13 @@ impl BhtR {
         *self == Bht::B1
     }
 }
-#[doc = "Field `BHT` writer - Byte and Halfword Transform Valid when data frame size is 8bit."]
+#[doc = "Field `BHT` writer - Byte and Halfword Transform\n\nValid when data frame size is 8bit."]
 pub type BhtW<'a, REG> = crate::BitWriter<'a, REG, Bht>;
 impl<'a, REG> BhtW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "apb 8bit write/read, spi 8bit write/read"]
+    #[doc = "apb 16bit write/read, spi 8bit write/read"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Bht::B0)
@@ -692,15 +701,16 @@ where
         self.variant(Bht::B1)
     }
 }
-#[doc = "Rxd Sample Delay When SPI is configured as a master, if the rxd data cannot be sampled by the sclk_out edge at the right time, this register should be configured to define the number of the spi_clk cycles after the active sclk_out edge to sample rxd data later when SPI works at high frequency.\n\nValue on reset: 0"]
+#[doc = "Rxd Sample Delay\n\nWhen SPI is configured as a master, if the rxd data cannot be\n\nsampled by the sclk_out edge at the right time, this register\n\nshould be configured to define the number of the spi_clk cycles\n\nafter the active sclk_out edge to sample rxd data later when SPI\n\nworks at high frequency.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Rsd {
-    #[doc = "0: 3 cycles delay"]
+    #[doc = "0: do not delay"]
     B00 = 0,
-    #[doc = "1: 3 cycles delay"]
+    #[doc = "1: 1 cycle delay"]
     B01 = 1,
-    #[doc = "2: 3 cycles delay"]
+    #[doc = "2: 2 cycles delay"]
     B10 = 2,
     #[doc = "3: 3 cycles delay"]
     B11 = 3,
@@ -714,7 +724,7 @@ impl From<Rsd> for u8 {
 impl crate::FieldSpec for Rsd {
     type Ux = u8;
 }
-#[doc = "Field `RSD` reader - Rxd Sample Delay When SPI is configured as a master, if the rxd data cannot be sampled by the sclk_out edge at the right time, this register should be configured to define the number of the spi_clk cycles after the active sclk_out edge to sample rxd data later when SPI works at high frequency."]
+#[doc = "Field `RSD` reader - Rxd Sample Delay\n\nWhen SPI is configured as a master, if the rxd data cannot be\n\nsampled by the sclk_out edge at the right time, this register\n\nshould be configured to define the number of the spi_clk cycles\n\nafter the active sclk_out edge to sample rxd data later when SPI\n\nworks at high frequency."]
 pub type RsdR = crate::FieldReader<Rsd>;
 impl RsdR {
     #[doc = "Get enumerated values variant"]
@@ -728,17 +738,17 @@ impl RsdR {
             _ => unreachable!(),
         }
     }
-    #[doc = "3 cycles delay"]
+    #[doc = "do not delay"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == Rsd::B00
     }
-    #[doc = "3 cycles delay"]
+    #[doc = "1 cycle delay"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Rsd::B01
     }
-    #[doc = "3 cycles delay"]
+    #[doc = "2 cycles delay"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Rsd::B10
@@ -749,24 +759,24 @@ impl RsdR {
         *self == Rsd::B11
     }
 }
-#[doc = "Field `RSD` writer - Rxd Sample Delay When SPI is configured as a master, if the rxd data cannot be sampled by the sclk_out edge at the right time, this register should be configured to define the number of the spi_clk cycles after the active sclk_out edge to sample rxd data later when SPI works at high frequency."]
+#[doc = "Field `RSD` writer - Rxd Sample Delay\n\nWhen SPI is configured as a master, if the rxd data cannot be\n\nsampled by the sclk_out edge at the right time, this register\n\nshould be configured to define the number of the spi_clk cycles\n\nafter the active sclk_out edge to sample rxd data later when SPI\n\nworks at high frequency."]
 pub type RsdW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Rsd>;
 impl<'a, REG> RsdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "3 cycles delay"]
+    #[doc = "do not delay"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(Rsd::B00)
     }
-    #[doc = "3 cycles delay"]
+    #[doc = "1 cycle delay"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Rsd::B01)
     }
-    #[doc = "3 cycles delay"]
+    #[doc = "2 cycles delay"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Rsd::B10)
@@ -778,14 +788,15 @@ where
     }
 }
 #[doc = "Frame Format\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Frf {
-    #[doc = "0: Reserved"]
+    #[doc = "0: Motorola SPI"]
     B00 = 0,
-    #[doc = "1: Reserved"]
+    #[doc = "1: Texas Instruments SSP"]
     B01 = 1,
-    #[doc = "2: Reserved"]
+    #[doc = "2: National Semiconductors Microwire"]
     B10 = 2,
     #[doc = "3: Reserved"]
     B11 = 3,
@@ -813,17 +824,17 @@ impl FrfR {
             _ => unreachable!(),
         }
     }
-    #[doc = "Reserved"]
+    #[doc = "Motorola SPI"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == Frf::B00
     }
-    #[doc = "Reserved"]
+    #[doc = "Texas Instruments SSP"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Frf::B01
     }
-    #[doc = "Reserved"]
+    #[doc = "National Semiconductors Microwire"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Frf::B10
@@ -841,17 +852,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Reserved"]
+    #[doc = "Motorola SPI"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(Frf::B00)
     }
-    #[doc = "Reserved"]
+    #[doc = "Texas Instruments SSP"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Frf::B01)
     }
-    #[doc = "Reserved"]
+    #[doc = "National Semiconductors Microwire"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Frf::B10)
@@ -863,14 +874,15 @@ where
     }
 }
 #[doc = "Transfer Mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Xfm {
-    #[doc = "0: reserved"]
+    #[doc = "0: Transmit &amp; Receive"]
     B00 = 0,
-    #[doc = "1: reserved"]
+    #[doc = "1: Transmit Only"]
     B01 = 1,
-    #[doc = "2: reserved"]
+    #[doc = "2: Receive Only"]
     B10 = 2,
     #[doc = "3: reserved"]
     B11 = 3,
@@ -898,17 +910,17 @@ impl XfmR {
             _ => unreachable!(),
         }
     }
-    #[doc = "reserved"]
+    #[doc = "Transmit &amp; Receive"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == Xfm::B00
     }
-    #[doc = "reserved"]
+    #[doc = "Transmit Only"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Xfm::B01
     }
-    #[doc = "reserved"]
+    #[doc = "Receive Only"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Xfm::B10
@@ -926,17 +938,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "reserved"]
+    #[doc = "Transmit &amp; Receive"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(Xfm::B00)
     }
-    #[doc = "reserved"]
+    #[doc = "Transmit Only"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Xfm::B01)
     }
-    #[doc = "reserved"]
+    #[doc = "Receive Only"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Xfm::B10)
@@ -948,9 +960,10 @@ where
     }
 }
 #[doc = "Operation Mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Opm {
-    #[doc = "0: Slave Mode"]
+    #[doc = "0: Master Mode"]
     B0 = 0,
     #[doc = "1: Slave Mode"]
     B1 = 1,
@@ -972,7 +985,7 @@ impl OpmR {
             true => Opm::B1,
         }
     }
-    #[doc = "Slave Mode"]
+    #[doc = "Master Mode"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Opm::B0
@@ -989,7 +1002,7 @@ impl<'a, REG> OpmW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Slave Mode"]
+    #[doc = "Master Mode"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Opm::B0)
@@ -1000,10 +1013,11 @@ where
         self.variant(Opm::B1)
     }
 }
-#[doc = "Microwire Transfer Mode Valid when frame format is set to National Semiconductors Microwire.\n\nValue on reset: 0"]
+#[doc = "Microwire Transfer Mode\n\nValid when frame format is set to National Semiconductors\n\nMicrowire.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mtm {
-    #[doc = "0: sequential transfer"]
+    #[doc = "0: non-sequential transfer"]
     B0 = 0,
     #[doc = "1: sequential transfer"]
     B1 = 1,
@@ -1014,7 +1028,7 @@ impl From<Mtm> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MTM` reader - Microwire Transfer Mode Valid when frame format is set to National Semiconductors Microwire."]
+#[doc = "Field `MTM` reader - Microwire Transfer Mode\n\nValid when frame format is set to National Semiconductors\n\nMicrowire."]
 pub type MtmR = crate::BitReader<Mtm>;
 impl MtmR {
     #[doc = "Get enumerated values variant"]
@@ -1025,7 +1039,7 @@ impl MtmR {
             true => Mtm::B1,
         }
     }
-    #[doc = "sequential transfer"]
+    #[doc = "non-sequential transfer"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Mtm::B0
@@ -1036,13 +1050,13 @@ impl MtmR {
         *self == Mtm::B1
     }
 }
-#[doc = "Field `MTM` writer - Microwire Transfer Mode Valid when frame format is set to National Semiconductors Microwire."]
+#[doc = "Field `MTM` writer - Microwire Transfer Mode\n\nValid when frame format is set to National Semiconductors\n\nMicrowire."]
 pub type MtmW<'a, REG> = crate::BitWriter<'a, REG, Mtm>;
 impl<'a, REG> MtmW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "sequential transfer"]
+    #[doc = "non-sequential transfer"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Mtm::B0)
@@ -1054,37 +1068,37 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 0:1 - Data Frame Size Selects the data frame length."]
+    #[doc = "Bits 0:1 - Data Frame Size\n\nSelects the data frame length."]
     #[inline(always)]
     pub fn dfs(&self) -> DfsR {
         DfsR::new((self.bits & 3) as u8)
     }
-    #[doc = "Bits 2:5 - Control Frame Size Selects the length of the control word for the Microwire frame format. 4'b0000~0010:reserved"]
+    #[doc = "Bits 2:5 - Control Frame Size\n\nSelects the length of the control word for the Microwire frame\n\nformat.\n\n4'b0000~0010:reserved"]
     #[inline(always)]
     pub fn cfs(&self) -> CfsR {
         CfsR::new(((self.bits >> 2) & 0x0f) as u8)
     }
-    #[doc = "Bit 6 - Serial Clock Phase Valid when the frame format is set to Motorola SPI."]
+    #[doc = "Bit 6 - Serial Clock Phase\n\nValid when the frame format is set to Motorola SPI."]
     #[inline(always)]
     pub fn scph(&self) -> ScphR {
         ScphR::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 7 - Serial Clock Polarity Valid when the frame format is set to Motorola SPI."]
+    #[doc = "Bit 7 - Serial Clock Polarity\n\nValid when the frame format is set to Motorola SPI."]
     #[inline(always)]
     pub fn scpol(&self) -> ScpolR {
         ScpolR::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bits 8:9 - Chip Select Mode Valid when the frame format is set to Motorola SPI and SPI used as a master."]
+    #[doc = "Bits 8:9 - Chip Select Mode\n\nValid when the frame format is set to Motorola SPI and SPI used\n\nas a master."]
     #[inline(always)]
     pub fn csm(&self) -> CsmR {
         CsmR::new(((self.bits >> 8) & 3) as u8)
     }
-    #[doc = "Bit 10 - ss_n to sclk_out delay Valid when the frame format is set to Motorola SPI and SPI used as a master."]
+    #[doc = "Bit 10 - ss_n to sclk_out delay\n\nValid when the frame format is set to Motorola SPI and SPI used\n\nas a master."]
     #[inline(always)]
     pub fn ssd(&self) -> SsdR {
         SsdR::new(((self.bits >> 10) & 1) != 0)
     }
-    #[doc = "Bit 11 - Endian Mode Serial endian mode can be configured by this bit. Apb endian mode is always little endian."]
+    #[doc = "Bit 11 - Endian Mode\n\nSerial endian mode can be configured by this bit. Apb endian\n\nmode is always little endian."]
     #[inline(always)]
     pub fn em(&self) -> EmR {
         EmR::new(((self.bits >> 11) & 1) != 0)
@@ -1094,12 +1108,12 @@ impl R {
     pub fn fbm(&self) -> FbmR {
         FbmR::new(((self.bits >> 12) & 1) != 0)
     }
-    #[doc = "Bit 13 - Byte and Halfword Transform Valid when data frame size is 8bit."]
+    #[doc = "Bit 13 - Byte and Halfword Transform\n\nValid when data frame size is 8bit."]
     #[inline(always)]
     pub fn bht(&self) -> BhtR {
         BhtR::new(((self.bits >> 13) & 1) != 0)
     }
-    #[doc = "Bits 14:15 - Rxd Sample Delay When SPI is configured as a master, if the rxd data cannot be sampled by the sclk_out edge at the right time, this register should be configured to define the number of the spi_clk cycles after the active sclk_out edge to sample rxd data later when SPI works at high frequency."]
+    #[doc = "Bits 14:15 - Rxd Sample Delay\n\nWhen SPI is configured as a master, if the rxd data cannot be\n\nsampled by the sclk_out edge at the right time, this register\n\nshould be configured to define the number of the spi_clk cycles\n\nafter the active sclk_out edge to sample rxd data later when SPI\n\nworks at high frequency."]
     #[inline(always)]
     pub fn rsd(&self) -> RsdR {
         RsdR::new(((self.bits >> 14) & 3) as u8)
@@ -1119,50 +1133,50 @@ impl R {
     pub fn opm(&self) -> OpmR {
         OpmR::new(((self.bits >> 20) & 1) != 0)
     }
-    #[doc = "Bit 21 - Microwire Transfer Mode Valid when frame format is set to National Semiconductors Microwire."]
+    #[doc = "Bit 21 - Microwire Transfer Mode\n\nValid when frame format is set to National Semiconductors\n\nMicrowire."]
     #[inline(always)]
     pub fn mtm(&self) -> MtmR {
         MtmR::new(((self.bits >> 21) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:1 - Data Frame Size Selects the data frame length."]
+    #[doc = "Bits 0:1 - Data Frame Size\n\nSelects the data frame length."]
     #[inline(always)]
     #[must_use]
     pub fn dfs(&mut self) -> DfsW<SpiCtrlr0Spec> {
         DfsW::new(self, 0)
     }
-    #[doc = "Bits 2:5 - Control Frame Size Selects the length of the control word for the Microwire frame format. 4'b0000~0010:reserved"]
+    #[doc = "Bits 2:5 - Control Frame Size\n\nSelects the length of the control word for the Microwire frame\n\nformat.\n\n4'b0000~0010:reserved"]
     #[inline(always)]
     #[must_use]
     pub fn cfs(&mut self) -> CfsW<SpiCtrlr0Spec> {
         CfsW::new(self, 2)
     }
-    #[doc = "Bit 6 - Serial Clock Phase Valid when the frame format is set to Motorola SPI."]
+    #[doc = "Bit 6 - Serial Clock Phase\n\nValid when the frame format is set to Motorola SPI."]
     #[inline(always)]
     #[must_use]
     pub fn scph(&mut self) -> ScphW<SpiCtrlr0Spec> {
         ScphW::new(self, 6)
     }
-    #[doc = "Bit 7 - Serial Clock Polarity Valid when the frame format is set to Motorola SPI."]
+    #[doc = "Bit 7 - Serial Clock Polarity\n\nValid when the frame format is set to Motorola SPI."]
     #[inline(always)]
     #[must_use]
     pub fn scpol(&mut self) -> ScpolW<SpiCtrlr0Spec> {
         ScpolW::new(self, 7)
     }
-    #[doc = "Bits 8:9 - Chip Select Mode Valid when the frame format is set to Motorola SPI and SPI used as a master."]
+    #[doc = "Bits 8:9 - Chip Select Mode\n\nValid when the frame format is set to Motorola SPI and SPI used\n\nas a master."]
     #[inline(always)]
     #[must_use]
     pub fn csm(&mut self) -> CsmW<SpiCtrlr0Spec> {
         CsmW::new(self, 8)
     }
-    #[doc = "Bit 10 - ss_n to sclk_out delay Valid when the frame format is set to Motorola SPI and SPI used as a master."]
+    #[doc = "Bit 10 - ss_n to sclk_out delay\n\nValid when the frame format is set to Motorola SPI and SPI used\n\nas a master."]
     #[inline(always)]
     #[must_use]
     pub fn ssd(&mut self) -> SsdW<SpiCtrlr0Spec> {
         SsdW::new(self, 10)
     }
-    #[doc = "Bit 11 - Endian Mode Serial endian mode can be configured by this bit. Apb endian mode is always little endian."]
+    #[doc = "Bit 11 - Endian Mode\n\nSerial endian mode can be configured by this bit. Apb endian\n\nmode is always little endian."]
     #[inline(always)]
     #[must_use]
     pub fn em(&mut self) -> EmW<SpiCtrlr0Spec> {
@@ -1174,13 +1188,13 @@ impl W {
     pub fn fbm(&mut self) -> FbmW<SpiCtrlr0Spec> {
         FbmW::new(self, 12)
     }
-    #[doc = "Bit 13 - Byte and Halfword Transform Valid when data frame size is 8bit."]
+    #[doc = "Bit 13 - Byte and Halfword Transform\n\nValid when data frame size is 8bit."]
     #[inline(always)]
     #[must_use]
     pub fn bht(&mut self) -> BhtW<SpiCtrlr0Spec> {
         BhtW::new(self, 13)
     }
-    #[doc = "Bits 14:15 - Rxd Sample Delay When SPI is configured as a master, if the rxd data cannot be sampled by the sclk_out edge at the right time, this register should be configured to define the number of the spi_clk cycles after the active sclk_out edge to sample rxd data later when SPI works at high frequency."]
+    #[doc = "Bits 14:15 - Rxd Sample Delay\n\nWhen SPI is configured as a master, if the rxd data cannot be\n\nsampled by the sclk_out edge at the right time, this register\n\nshould be configured to define the number of the spi_clk cycles\n\nafter the active sclk_out edge to sample rxd data later when SPI\n\nworks at high frequency."]
     #[inline(always)]
     #[must_use]
     pub fn rsd(&mut self) -> RsdW<SpiCtrlr0Spec> {
@@ -1204,7 +1218,7 @@ impl W {
     pub fn opm(&mut self) -> OpmW<SpiCtrlr0Spec> {
         OpmW::new(self, 20)
     }
-    #[doc = "Bit 21 - Microwire Transfer Mode Valid when frame format is set to National Semiconductors Microwire."]
+    #[doc = "Bit 21 - Microwire Transfer Mode\n\nValid when frame format is set to National Semiconductors\n\nMicrowire."]
     #[inline(always)]
     #[must_use]
     pub fn mtm(&mut self) -> MtmW<SpiCtrlr0Spec> {

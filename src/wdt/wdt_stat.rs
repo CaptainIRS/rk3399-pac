@@ -1,9 +1,10 @@
 #[doc = "Register `WDT_STAT` reader"]
 pub type R = crate::R<WdtStatSpec>;
 #[doc = "This register shows the interrupt status of the WDT.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WdtStatus {
-    #[doc = "1: Interrupt is inactive."]
+    #[doc = "1: Interrupt is active regardless of polarity;"]
     B1 = 1,
     #[doc = "0: Interrupt is inactive."]
     B0 = 0,
@@ -25,7 +26,7 @@ impl WdtStatusR {
             false => WdtStatus::B0,
         }
     }
-    #[doc = "Interrupt is inactive."]
+    #[doc = "Interrupt is active regardless of polarity;"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == WdtStatus::B1

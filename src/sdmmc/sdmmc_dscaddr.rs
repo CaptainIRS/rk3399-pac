@@ -2,19 +2,19 @@
 pub type R = crate::R<SdmmcDscaddrSpec>;
 #[doc = "Register `SDMMC_DSCADDR` writer"]
 pub type W = crate::W<SdmmcDscaddrSpec>;
-#[doc = "Field `HDA` reader - Host Descriptor Address Pointer. Cleared on reset. Pointer updated by IDMAC during operation. This register points to the start address of the current descriptor read by the IDMAC."]
+#[doc = "Field `HDA` reader - Host Descriptor Address Pointer. Cleared on reset. Pointer\n\nupdated by IDMAC during operation. This register points to the\n\nstart address of the current descriptor read by the IDMAC."]
 pub type HdaR = crate::FieldReader<u32>;
-#[doc = "Field `HDA` writer - Host Descriptor Address Pointer. Cleared on reset. Pointer updated by IDMAC during operation. This register points to the start address of the current descriptor read by the IDMAC."]
+#[doc = "Field `HDA` writer - Host Descriptor Address Pointer. Cleared on reset. Pointer\n\nupdated by IDMAC during operation. This register points to the\n\nstart address of the current descriptor read by the IDMAC."]
 pub type HdaW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Host Descriptor Address Pointer. Cleared on reset. Pointer updated by IDMAC during operation. This register points to the start address of the current descriptor read by the IDMAC."]
+    #[doc = "Bits 0:31 - Host Descriptor Address Pointer. Cleared on reset. Pointer\n\nupdated by IDMAC during operation. This register points to the\n\nstart address of the current descriptor read by the IDMAC."]
     #[inline(always)]
     pub fn hda(&self) -> HdaR {
         HdaR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Host Descriptor Address Pointer. Cleared on reset. Pointer updated by IDMAC during operation. This register points to the start address of the current descriptor read by the IDMAC."]
+    #[doc = "Bits 0:31 - Host Descriptor Address Pointer. Cleared on reset. Pointer\n\nupdated by IDMAC during operation. This register points to the\n\nstart address of the current descriptor read by the IDMAC."]
     #[inline(always)]
     #[must_use]
     pub fn hda(&mut self) -> HdaW<SdmmcDscaddrSpec> {

@@ -2,11 +2,12 @@
 pub type R = crate::R<DpIntStaMaskSpec>;
 #[doc = "Register `DP_INT_STA_MASK` writer"]
 pub type W = crate::W<DpIntStaMaskSpec>;
-#[doc = "Each bit corresponds to the same bit in DisplayPort Interrupt Status Register (DP_INT_STA).\n\nValue on reset: 0"]
+#[doc = "Each bit corresponds to the same bit in \n\nDisplayPort Interrupt Status Register \n\n(DP_INT_STA).\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DpIntStaMask {
-    #[doc = "1: Mask interrupt."]
+    #[doc = "1: Enable interrupt."]
     B1 = 1,
     #[doc = "0: Mask interrupt."]
     B0 = 0,
@@ -20,7 +21,7 @@ impl From<DpIntStaMask> for u8 {
 impl crate::FieldSpec for DpIntStaMask {
     type Ux = u8;
 }
-#[doc = "Field `DP_INT_STA_MASK` reader - Each bit corresponds to the same bit in DisplayPort Interrupt Status Register (DP_INT_STA)."]
+#[doc = "Field `DP_INT_STA_MASK` reader - Each bit corresponds to the same bit in \n\nDisplayPort Interrupt Status Register \n\n(DP_INT_STA)."]
 pub type DpIntStaMaskR = crate::FieldReader<DpIntStaMask>;
 impl DpIntStaMaskR {
     #[doc = "Get enumerated values variant"]
@@ -32,7 +33,7 @@ impl DpIntStaMaskR {
             _ => None,
         }
     }
-    #[doc = "Mask interrupt."]
+    #[doc = "Enable interrupt."]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == DpIntStaMask::B1
@@ -43,14 +44,14 @@ impl DpIntStaMaskR {
         *self == DpIntStaMask::B0
     }
 }
-#[doc = "Field `DP_INT_STA_MASK` writer - Each bit corresponds to the same bit in DisplayPort Interrupt Status Register (DP_INT_STA)."]
+#[doc = "Field `DP_INT_STA_MASK` writer - Each bit corresponds to the same bit in \n\nDisplayPort Interrupt Status Register \n\n(DP_INT_STA)."]
 pub type DpIntStaMaskW<'a, REG> = crate::FieldWriter<'a, REG, 7, DpIntStaMask>;
 impl<'a, REG> DpIntStaMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Mask interrupt."]
+    #[doc = "Enable interrupt."]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(DpIntStaMask::B1)
@@ -62,14 +63,14 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 0:6 - Each bit corresponds to the same bit in DisplayPort Interrupt Status Register (DP_INT_STA)."]
+    #[doc = "Bits 0:6 - Each bit corresponds to the same bit in \n\nDisplayPort Interrupt Status Register \n\n(DP_INT_STA)."]
     #[inline(always)]
     pub fn dp_int_sta_mask(&self) -> DpIntStaMaskR {
         DpIntStaMaskR::new((self.bits & 0x7f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:6 - Each bit corresponds to the same bit in DisplayPort Interrupt Status Register (DP_INT_STA)."]
+    #[doc = "Bits 0:6 - Each bit corresponds to the same bit in \n\nDisplayPort Interrupt Status Register \n\n(DP_INT_STA)."]
     #[inline(always)]
     #[must_use]
     pub fn dp_int_sta_mask(&mut self) -> DpIntStaMaskW<DpIntStaMaskSpec> {

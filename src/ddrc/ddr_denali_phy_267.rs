@@ -10,7 +10,7 @@ pub type PhyRddqsDqBypassSlaveDelay2W<'a, REG> = crate::FieldWriter<'a, REG, 10,
 pub type PhyGateErrorDelaySelect2R = crate::FieldReader;
 #[doc = "Field `PHY_GATE_ERROR_DELAY_SELECT_2` writer - Number of cycles to wait for the DQS gate to close before flagging an error for slice 2."]
 pub type PhyGateErrorDelaySelect2W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Field `SC_PHY_SNAP_OBS_REGS_2` writer - Initiates a snapshot of the internal observation registers for slice 2. Set to 1 to trigger. WRITE-ONLY"]
+#[doc = "Field `SC_PHY_SNAP_OBS_REGS_2` writer - Initiates a snapshot of the internal observation registers for slice 2. Set to 1 to trigger."]
 pub type ScPhySnapObsRegs2W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:9 - Read DQS data clock bypass mode slave delay setting for slice 2."]
@@ -41,7 +41,7 @@ impl W {
     ) -> PhyGateErrorDelaySelect2W<DdrDenaliPhy267Spec> {
         PhyGateErrorDelaySelect2W::new(self, 16)
     }
-    #[doc = "Bit 24 - Initiates a snapshot of the internal observation registers for slice 2. Set to 1 to trigger. WRITE-ONLY"]
+    #[doc = "Bit 24 - Initiates a snapshot of the internal observation registers for slice 2. Set to 1 to trigger."]
     #[inline(always)]
     #[must_use]
     pub fn sc_phy_snap_obs_regs_2(&mut self) -> ScPhySnapObsRegs2W<DdrDenaliPhy267Spec> {

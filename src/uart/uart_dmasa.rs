@@ -1,9 +1,9 @@
 #[doc = "Register `UART_DMASA` writer"]
 pub type W = crate::W<UartDmasaSpec>;
-#[doc = "Field `DMA_SOFTWARE_ACK` writer - This register is use to perform a DMA software acknowledge if a transfer needs to be terminated due to an error condition."]
+#[doc = "Field `DMA_SOFTWARE_ACK` writer - This register is use to perform a DMA software acknowledge if a\n\ntransfer needs to be terminated due to an error condition."]
 pub type DmaSoftwareAckW<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
-    #[doc = "Bit 0 - This register is use to perform a DMA software acknowledge if a transfer needs to be terminated due to an error condition."]
+    #[doc = "Bit 0 - This register is use to perform a DMA software acknowledge if a\n\ntransfer needs to be terminated due to an error condition."]
     #[inline(always)]
     #[must_use]
     pub fn dma_software_ack(&mut self) -> DmaSoftwareAckW<UartDmasaSpec> {

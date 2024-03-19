@@ -2,19 +2,19 @@
 pub type R = crate::R<DdrPiReg23Spec>;
 #[doc = "Register `DDR_PI_REG_23` writer"]
 pub type W = crate::W<DdrPiReg23Spec>;
-#[doc = "Field `PI_FREQ_MAP` reader - User indicates all the supported working frequencies. Each bit represents one supported frequency."]
+#[doc = "Field `PI_FREQ_MAP` reader - User indicates all the supported working frequencies. Each bit\n\nrepresents one supported frequency."]
 pub type PiFreqMapR = crate::FieldReader<u32>;
-#[doc = "Field `PI_FREQ_MAP` writer - User indicates all the supported working frequencies. Each bit represents one supported frequency."]
+#[doc = "Field `PI_FREQ_MAP` writer - User indicates all the supported working frequencies. Each bit\n\nrepresents one supported frequency."]
 pub type PiFreqMapW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - User indicates all the supported working frequencies. Each bit represents one supported frequency."]
+    #[doc = "Bits 0:31 - User indicates all the supported working frequencies. Each bit\n\nrepresents one supported frequency."]
     #[inline(always)]
     pub fn pi_freq_map(&self) -> PiFreqMapR {
         PiFreqMapR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - User indicates all the supported working frequencies. Each bit represents one supported frequency."]
+    #[doc = "Bits 0:31 - User indicates all the supported working frequencies. Each bit\n\nrepresents one supported frequency."]
     #[inline(always)]
     #[must_use]
     pub fn pi_freq_map(&mut self) -> PiFreqMapW<DdrPiReg23Spec> {

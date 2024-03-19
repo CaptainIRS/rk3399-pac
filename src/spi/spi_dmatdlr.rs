@@ -2,19 +2,19 @@
 pub type R = crate::R<SpiDmatdlrSpec>;
 #[doc = "Register `SPI_DMATDLR` writer"]
 pub type W = crate::W<SpiDmatdlrSpec>;
-#[doc = "Field `TDL` reader - Transmit Data Level This bit field controls the level at which a DMA request is made by the transmit logic. It is equal to the watermark level; that is, the dma_tx_req signal is generated when the number of valid data entries in the transmit FIFO is equal to or below this field value, and Transmit DMA Enable (DMACR\\[1\\]) = 1."]
+#[doc = "Field `TDL` reader - Transmit Data Level\n\nThis bit field controls the level at which a DMA request is made by\n\nthe transmit logic. It is equal to the watermark level; that is, the\n\ndma_tx_req signal is generated when the number of valid data\n\nentries in the transmit FIFO is equal to or below this field value,\n\nand Transmit DMA Enable (DMACR\\[1\\]) = 1."]
 pub type TdlR = crate::FieldReader;
-#[doc = "Field `TDL` writer - Transmit Data Level This bit field controls the level at which a DMA request is made by the transmit logic. It is equal to the watermark level; that is, the dma_tx_req signal is generated when the number of valid data entries in the transmit FIFO is equal to or below this field value, and Transmit DMA Enable (DMACR\\[1\\]) = 1."]
+#[doc = "Field `TDL` writer - Transmit Data Level\n\nThis bit field controls the level at which a DMA request is made by\n\nthe transmit logic. It is equal to the watermark level; that is, the\n\ndma_tx_req signal is generated when the number of valid data\n\nentries in the transmit FIFO is equal to or below this field value,\n\nand Transmit DMA Enable (DMACR\\[1\\]) = 1."]
 pub type TdlW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
-    #[doc = "Bits 0:4 - Transmit Data Level This bit field controls the level at which a DMA request is made by the transmit logic. It is equal to the watermark level; that is, the dma_tx_req signal is generated when the number of valid data entries in the transmit FIFO is equal to or below this field value, and Transmit DMA Enable (DMACR\\[1\\]) = 1."]
+    #[doc = "Bits 0:4 - Transmit Data Level\n\nThis bit field controls the level at which a DMA request is made by\n\nthe transmit logic. It is equal to the watermark level; that is, the\n\ndma_tx_req signal is generated when the number of valid data\n\nentries in the transmit FIFO is equal to or below this field value,\n\nand Transmit DMA Enable (DMACR\\[1\\]) = 1."]
     #[inline(always)]
     pub fn tdl(&self) -> TdlR {
         TdlR::new((self.bits & 0x1f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - Transmit Data Level This bit field controls the level at which a DMA request is made by the transmit logic. It is equal to the watermark level; that is, the dma_tx_req signal is generated when the number of valid data entries in the transmit FIFO is equal to or below this field value, and Transmit DMA Enable (DMACR\\[1\\]) = 1."]
+    #[doc = "Bits 0:4 - Transmit Data Level\n\nThis bit field controls the level at which a DMA request is made by\n\nthe transmit logic. It is equal to the watermark level; that is, the\n\ndma_tx_req signal is generated when the number of valid data\n\nentries in the transmit FIFO is equal to or below this field value,\n\nand Transmit DMA Enable (DMACR\\[1\\]) = 1."]
     #[inline(always)]
     #[must_use]
     pub fn tdl(&mut self) -> TdlW<SpiDmatdlrSpec> {

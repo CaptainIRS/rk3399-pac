@@ -1,22 +1,22 @@
 #[doc = "Register `A_HDCPOBS1` reader"]
 pub type R = crate::R<AHdcpobs1Spec>;
-#[doc = "Field `STATER` reader - Observability register informs in which state the revocation machine is on."]
+#[doc = "Field `STATER` reader - Observability register informs in which state the\n\nrevocation machine is on."]
 pub type StaterR = crate::FieldReader;
-#[doc = "Field `STATEOEG` reader - Observability register informs in which state the OESS machine is on."]
+#[doc = "Field `STATEOEG` reader - Observability register informs in which state the\n\nOESS machine is on."]
 pub type StateoegR = crate::FieldReader;
 impl R {
-    #[doc = "Bits 0:3 - Observability register informs in which state the revocation machine is on."]
+    #[doc = "Bits 0:3 - Observability register informs in which state the\n\nrevocation machine is on."]
     #[inline(always)]
     pub fn stater(&self) -> StaterR {
         StaterR::new(self.bits & 0x0f)
     }
-    #[doc = "Bits 4:6 - Observability register informs in which state the OESS machine is on."]
+    #[doc = "Bits 4:6 - Observability register informs in which state the\n\nOESS machine is on."]
     #[inline(always)]
     pub fn stateoeg(&self) -> StateoegR {
         StateoegR::new((self.bits >> 4) & 7)
     }
 }
-#[doc = "Observability register informs in which state the revocation machine is on.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`a_hdcpobs1::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "HDCP Observation Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`a_hdcpobs1::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AHdcpobs1Spec;
 impl crate::RegisterSpec for AHdcpobs1Spec {
     type Ux = u8;

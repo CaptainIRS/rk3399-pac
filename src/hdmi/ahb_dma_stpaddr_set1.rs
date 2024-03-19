@@ -25,8 +25,11 @@ to end DMA burst transactions"]
         FinalAddr1W::new(self, 0)
     }
 }
-#[doc = "Defines final_addr_1\\[7:0\\]
-to end DMA burst transactions\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ahb_dma_stpaddr_set1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ahb_dma_stpaddr_set1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Audio DMA Stop Address Set 1 Register Array Address offset: i = 0 to 3\n\nThese registers define the final_addr_1\\[31:0\\]
+used as the final point to the DMA burst read\n\ntransactions. Upon start_dma_transaction configuration, the DMA engine starts requesting\n\nburst reads from the external system memory. Each burst read can have a maximum\n\ntheoretical length of 256 words (due to the AMBA AHB specification 1 Kbyte boundary burst\n\nlimitation).\n\nThe DMA engine is responsible for incrementing the burst starting address and defining its\n\ncorresponding burst length to reach the final_addr\\[31:0\\]
+address. The last burst request\n\nissued by the DMA engine takes into account that it should only request data until the\n\nfinal_addr\\[31:0\\]
+address (included) and for that should calculate the correct burst length.\n\nAfter reaching the final_addr_1\\[31:0\\]
+address, the done interrupt is active to indicate\n\ncompletion of the DMA operation.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ahb_dma_stpaddr_set1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ahb_dma_stpaddr_set1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AhbDmaStpaddrSet1Spec;
 impl crate::RegisterSpec for AhbDmaStpaddrSet1Spec {
     type Ux = u8;

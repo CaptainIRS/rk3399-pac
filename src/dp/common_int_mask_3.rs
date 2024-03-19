@@ -2,11 +2,12 @@
 pub type R = crate::R<CommonIntMask3Spec>;
 #[doc = "Register `COMMON_INT_MASK_3` writer"]
 pub type W = crate::W<CommonIntMask3Spec>;
-#[doc = "Each bit corresponds to the same bit in Common Interrupt Status Register 3.\n\nValue on reset: 0"]
+#[doc = "Each bit corresponds to the same bit in \n\nCommon Interrupt Status Register 3.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CommonIntMask3 {
-    #[doc = "0: Enable interrupt"]
+    #[doc = "0: Mask interrupt"]
     B0 = 0,
     #[doc = "1: Enable interrupt"]
     B1 = 1,
@@ -20,7 +21,7 @@ impl From<CommonIntMask3> for u8 {
 impl crate::FieldSpec for CommonIntMask3 {
     type Ux = u8;
 }
-#[doc = "Field `COMMON_INT_MASK_3` reader - Each bit corresponds to the same bit in Common Interrupt Status Register 3."]
+#[doc = "Field `COMMON_INT_MASK_3` reader - Each bit corresponds to the same bit in \n\nCommon Interrupt Status Register 3."]
 pub type CommonIntMask3R = crate::FieldReader<CommonIntMask3>;
 impl CommonIntMask3R {
     #[doc = "Get enumerated values variant"]
@@ -32,7 +33,7 @@ impl CommonIntMask3R {
             _ => None,
         }
     }
-    #[doc = "Enable interrupt"]
+    #[doc = "Mask interrupt"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CommonIntMask3::B0
@@ -43,14 +44,14 @@ impl CommonIntMask3R {
         *self == CommonIntMask3::B1
     }
 }
-#[doc = "Field `COMMON_INT_MASK_3` writer - Each bit corresponds to the same bit in Common Interrupt Status Register 3."]
+#[doc = "Field `COMMON_INT_MASK_3` writer - Each bit corresponds to the same bit in \n\nCommon Interrupt Status Register 3."]
 pub type CommonIntMask3W<'a, REG> = crate::FieldWriter<'a, REG, 4, CommonIntMask3>;
 impl<'a, REG> CommonIntMask3W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Enable interrupt"]
+    #[doc = "Mask interrupt"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CommonIntMask3::B0)
@@ -62,14 +63,14 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 1:4 - Each bit corresponds to the same bit in Common Interrupt Status Register 3."]
+    #[doc = "Bits 1:4 - Each bit corresponds to the same bit in \n\nCommon Interrupt Status Register 3."]
     #[inline(always)]
     pub fn common_int_mask_3(&self) -> CommonIntMask3R {
         CommonIntMask3R::new(((self.bits >> 1) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 1:4 - Each bit corresponds to the same bit in Common Interrupt Status Register 3."]
+    #[doc = "Bits 1:4 - Each bit corresponds to the same bit in \n\nCommon Interrupt Status Register 3."]
     #[inline(always)]
     #[must_use]
     pub fn common_int_mask_3(&mut self) -> CommonIntMask3W<CommonIntMask3Spec> {

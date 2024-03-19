@@ -21,7 +21,7 @@ impl W {
         FcGmdPbW::new(self, 0)
     }
 }
-#[doc = "Frame Composer GMD Packet Body Register Array\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_gmd_pb::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_gmd_pb::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer GMD Packet Body Register Array Configures the GMD packet\n\nbody of the GMD packet.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_gmd_pb::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_gmd_pb::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcGmdPbSpec;
 impl crate::RegisterSpec for FcGmdPbSpec {
     type Ux = u8;

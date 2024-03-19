@@ -2,14 +2,15 @@
 pub type R = crate::R<CruClkselCon59Spec>;
 #[doc = "Register `CRU_CLKSEL_CON59` writer"]
 pub type W = crate::W<CruClkselCon59Spec>;
-#[doc = "Field `CLK_SPI0_DIV_CON` reader - spi0 divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_SPI0_DIV_CON` reader - spi0 divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkSpi0DivConR = crate::FieldReader;
-#[doc = "Field `CLK_SPI0_DIV_CON` writer - spi0 divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_SPI0_DIV_CON` writer - spi0 divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkSpi0DivConW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "clk_spi0 clock source select control register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClkSpi0PllSel {
-    #[doc = "0: GPLL"]
+    #[doc = "0: CPLL"]
     B0 = 0,
     #[doc = "1: GPLL"]
     B1 = 1,
@@ -31,7 +32,7 @@ impl ClkSpi0PllSelR {
             true => ClkSpi0PllSel::B1,
         }
     }
-    #[doc = "GPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClkSpi0PllSel::B0
@@ -48,7 +49,7 @@ impl<'a, REG> ClkSpi0PllSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "GPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClkSpi0PllSel::B0)
@@ -59,14 +60,15 @@ where
         self.variant(ClkSpi0PllSel::B1)
     }
 }
-#[doc = "Field `CLK_SPI1_DIV_CON` reader - spi1 divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_SPI1_DIV_CON` reader - spi1 divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkSpi1DivConR = crate::FieldReader;
-#[doc = "Field `CLK_SPI1_DIV_CON` writer - spi1 divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_SPI1_DIV_CON` writer - spi1 divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkSpi1DivConW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "clk_spi1 clock source select control register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClkSpi1PllSel {
-    #[doc = "0: GPLL"]
+    #[doc = "0: CPLL"]
     B0 = 0,
     #[doc = "1: GPLL"]
     B1 = 1,
@@ -88,7 +90,7 @@ impl ClkSpi1PllSelR {
             true => ClkSpi1PllSel::B1,
         }
     }
-    #[doc = "GPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClkSpi1PllSel::B0
@@ -105,7 +107,7 @@ impl<'a, REG> ClkSpi1PllSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "GPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClkSpi1PllSel::B0)
@@ -116,10 +118,10 @@ where
         self.variant(ClkSpi1PllSel::B1)
     }
 }
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:6 - spi0 divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:6 - spi0 divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn clk_spi0_div_con(&self) -> ClkSpi0DivConR {
         ClkSpi0DivConR::new((self.bits & 0x7f) as u8)
@@ -129,7 +131,7 @@ impl R {
     pub fn clk_spi0_pll_sel(&self) -> ClkSpi0PllSelR {
         ClkSpi0PllSelR::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bits 8:14 - spi1 divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 8:14 - spi1 divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn clk_spi1_div_con(&self) -> ClkSpi1DivConR {
         ClkSpi1DivConR::new(((self.bits >> 8) & 0x7f) as u8)
@@ -141,7 +143,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:6 - spi0 divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:6 - spi0 divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn clk_spi0_div_con(&mut self) -> ClkSpi0DivConW<CruClkselCon59Spec> {
@@ -153,7 +155,7 @@ impl W {
     pub fn clk_spi0_pll_sel(&mut self) -> ClkSpi0PllSelW<CruClkselCon59Spec> {
         ClkSpi0PllSelW::new(self, 7)
     }
-    #[doc = "Bits 8:14 - spi1 divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 8:14 - spi1 divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn clk_spi1_div_con(&mut self) -> ClkSpi1DivConW<CruClkselCon59Spec> {
@@ -165,7 +167,7 @@ impl W {
     pub fn clk_spi1_pll_sel(&mut self) -> ClkSpi1PllSelW<CruClkselCon59Spec> {
         ClkSpi1PllSelW::new(self, 15)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkselCon59Spec> {

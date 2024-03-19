@@ -3,14 +3,15 @@ pub type R = crate::R<DpLn0LinkTrainingCtlSpec>;
 #[doc = "Register `DP_LN0_LINK_TRAINING_CTL` writer"]
 pub type W = crate::W<DpLn0LinkTrainingCtlSpec>;
 #[doc = "Lane 0 output amplitude setting\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DriveCurrentSet0 {
-    #[doc = "3: 400 mV. This bit's type is R/W."]
+    #[doc = "3: 1200 mV,"]
     B11 = 3,
-    #[doc = "2: 400 mV. This bit's type is R/W."]
+    #[doc = "2: 800 mV,"]
     B10 = 2,
-    #[doc = "1: 400 mV. This bit's type is R/W."]
+    #[doc = "1: 600 mV,"]
     B01 = 1,
     #[doc = "0: 400 mV. This bit's type is R/W."]
     B00 = 0,
@@ -38,17 +39,17 @@ impl DriveCurrentSet0R {
             _ => unreachable!(),
         }
     }
-    #[doc = "400 mV. This bit's type is R/W."]
+    #[doc = "1200 mV,"]
     #[inline(always)]
     pub fn is_b11(&self) -> bool {
         *self == DriveCurrentSet0::B11
     }
-    #[doc = "400 mV. This bit's type is R/W."]
+    #[doc = "800 mV,"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == DriveCurrentSet0::B10
     }
-    #[doc = "400 mV. This bit's type is R/W."]
+    #[doc = "600 mV,"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == DriveCurrentSet0::B01
@@ -66,17 +67,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "400 mV. This bit's type is R/W."]
+    #[doc = "1200 mV,"]
     #[inline(always)]
     pub fn b11(self) -> &'a mut crate::W<REG> {
         self.variant(DriveCurrentSet0::B11)
     }
-    #[doc = "400 mV. This bit's type is R/W."]
+    #[doc = "800 mV,"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(DriveCurrentSet0::B10)
     }
-    #[doc = "400 mV. This bit's type is R/W."]
+    #[doc = "600 mV,"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(DriveCurrentSet0::B01)
@@ -87,17 +88,18 @@ where
         self.variant(DriveCurrentSet0::B00)
     }
 }
-#[doc = "Field `MAX_DRIVE_REACH_0` reader - This bit field is set to 1 automatically when max driving current level of DP Tx is reached. For test purpose only. This bit's type is RO. For more information, refer to MAX_PRE_REACH_0."]
+#[doc = "Field `MAX_DRIVE_REACH_0` reader - This bit field is set to 1 automatically when \n\nmax driving current level of DP Tx is \n\nreached. For test purpose only. This bit's \n\ntype is RO. For more information, refer to \n\nMAX_PRE_REACH_0."]
 pub type MaxDriveReach0R = crate::BitReader;
 #[doc = "Lane 0 pre-emphasis level setting\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PreEmphasisSet0 {
-    #[doc = "3: 0 dB (No pre-emphasis). This bit's type is R/W."]
+    #[doc = "3: 9.5 dB,"]
     B11 = 3,
-    #[doc = "2: 0 dB (No pre-emphasis). This bit's type is R/W."]
+    #[doc = "2: 6.0 dB,"]
     B10 = 2,
-    #[doc = "1: 0 dB (No pre-emphasis). This bit's type is R/W."]
+    #[doc = "1: 3.5 dB,"]
     B01 = 1,
     #[doc = "0: 0 dB (No pre-emphasis). This bit's type is R/W."]
     B00 = 0,
@@ -125,17 +127,17 @@ impl PreEmphasisSet0R {
             _ => unreachable!(),
         }
     }
-    #[doc = "0 dB (No pre-emphasis). This bit's type is R/W."]
+    #[doc = "9.5 dB,"]
     #[inline(always)]
     pub fn is_b11(&self) -> bool {
         *self == PreEmphasisSet0::B11
     }
-    #[doc = "0 dB (No pre-emphasis). This bit's type is R/W."]
+    #[doc = "6.0 dB,"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == PreEmphasisSet0::B10
     }
-    #[doc = "0 dB (No pre-emphasis). This bit's type is R/W."]
+    #[doc = "3.5 dB,"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == PreEmphasisSet0::B01
@@ -153,17 +155,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "0 dB (No pre-emphasis). This bit's type is R/W."]
+    #[doc = "9.5 dB,"]
     #[inline(always)]
     pub fn b11(self) -> &'a mut crate::W<REG> {
         self.variant(PreEmphasisSet0::B11)
     }
-    #[doc = "0 dB (No pre-emphasis). This bit's type is R/W."]
+    #[doc = "6.0 dB,"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(PreEmphasisSet0::B10)
     }
-    #[doc = "0 dB (No pre-emphasis). This bit's type is R/W."]
+    #[doc = "3.5 dB,"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(PreEmphasisSet0::B01)
@@ -174,7 +176,7 @@ where
         self.variant(PreEmphasisSet0::B00)
     }
 }
-#[doc = "Field `MAX_PRE_REACH_0` reader - This bit field is set to 1 automatically when max pre-emphasis level of DP Tx is reached. This bit's type is RO. Note that the MAX_PRE_REACH_0 and MAX_DRIVE_REACH_0 have the same value like the following table."]
+#[doc = "Field `MAX_PRE_REACH_0` reader - This bit field is set to 1 automatically when \n\nmax pre-emphasis level of DP Tx is \n\nreached. \n\nThis bit's type is RO. \n\nNote that the MAX_PRE_REACH_0 and \n\nMAX_DRIVE_REACH_0 have the same \n\nvalue like the following table."]
 pub type MaxPreReach0R = crate::BitReader;
 impl R {
     #[doc = "Bits 0:1 - Lane 0 output amplitude setting"]
@@ -182,7 +184,7 @@ impl R {
     pub fn drive_current_set_0(&self) -> DriveCurrentSet0R {
         DriveCurrentSet0R::new((self.bits & 3) as u8)
     }
-    #[doc = "Bit 2 - This bit field is set to 1 automatically when max driving current level of DP Tx is reached. For test purpose only. This bit's type is RO. For more information, refer to MAX_PRE_REACH_0."]
+    #[doc = "Bit 2 - This bit field is set to 1 automatically when \n\nmax driving current level of DP Tx is \n\nreached. For test purpose only. This bit's \n\ntype is RO. For more information, refer to \n\nMAX_PRE_REACH_0."]
     #[inline(always)]
     pub fn max_drive_reach_0(&self) -> MaxDriveReach0R {
         MaxDriveReach0R::new(((self.bits >> 2) & 1) != 0)
@@ -192,7 +194,7 @@ impl R {
     pub fn pre_emphasis_set_0(&self) -> PreEmphasisSet0R {
         PreEmphasisSet0R::new(((self.bits >> 3) & 3) as u8)
     }
-    #[doc = "Bit 5 - This bit field is set to 1 automatically when max pre-emphasis level of DP Tx is reached. This bit's type is RO. Note that the MAX_PRE_REACH_0 and MAX_DRIVE_REACH_0 have the same value like the following table."]
+    #[doc = "Bit 5 - This bit field is set to 1 automatically when \n\nmax pre-emphasis level of DP Tx is \n\nreached. \n\nThis bit's type is RO. \n\nNote that the MAX_PRE_REACH_0 and \n\nMAX_DRIVE_REACH_0 have the same \n\nvalue like the following table."]
     #[inline(always)]
     pub fn max_pre_reach_0(&self) -> MaxPreReach0R {
         MaxPreReach0R::new(((self.bits >> 5) & 1) != 0)

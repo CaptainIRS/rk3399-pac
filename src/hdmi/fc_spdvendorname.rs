@@ -2,26 +2,26 @@
 pub type R = crate::R<FcSpdvendornameSpec>;
 #[doc = "Register `FC_SPDVENDORNAME[%s]` writer"]
 pub type W = crate::W<FcSpdvendornameSpec>;
-#[doc = "Field `FC_SPDVENDORNAME` reader - Frame Composer SPD Packet Data Vendor Name Register Array Configures the Source Product Descriptor infoFrame 8 bytes Vendor name. For more information, refer to the CEA-861-E specification."]
+#[doc = "Field `FC_SPDVENDORNAME` reader - Frame Composer SPD Packet Data Vendor Name\n\nRegister Array Configures the Source Product\n\nDescriptor infoFrame 8 bytes Vendor name. For\n\nmore information, refer to the CEA-861-E\n\nspecification."]
 pub type FcSpdvendornameR = crate::FieldReader;
-#[doc = "Field `FC_SPDVENDORNAME` writer - Frame Composer SPD Packet Data Vendor Name Register Array Configures the Source Product Descriptor infoFrame 8 bytes Vendor name. For more information, refer to the CEA-861-E specification."]
+#[doc = "Field `FC_SPDVENDORNAME` writer - Frame Composer SPD Packet Data Vendor Name\n\nRegister Array Configures the Source Product\n\nDescriptor infoFrame 8 bytes Vendor name. For\n\nmore information, refer to the CEA-861-E\n\nspecification."]
 pub type FcSpdvendornameW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - Frame Composer SPD Packet Data Vendor Name Register Array Configures the Source Product Descriptor infoFrame 8 bytes Vendor name. For more information, refer to the CEA-861-E specification."]
+    #[doc = "Bits 0:7 - Frame Composer SPD Packet Data Vendor Name\n\nRegister Array Configures the Source Product\n\nDescriptor infoFrame 8 bytes Vendor name. For\n\nmore information, refer to the CEA-861-E\n\nspecification."]
     #[inline(always)]
     pub fn fc_spdvendorname(&self) -> FcSpdvendornameR {
         FcSpdvendornameR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Frame Composer SPD Packet Data Vendor Name Register Array Configures the Source Product Descriptor infoFrame 8 bytes Vendor name. For more information, refer to the CEA-861-E specification."]
+    #[doc = "Bits 0:7 - Frame Composer SPD Packet Data Vendor Name\n\nRegister Array Configures the Source Product\n\nDescriptor infoFrame 8 bytes Vendor name. For\n\nmore information, refer to the CEA-861-E\n\nspecification."]
     #[inline(always)]
     #[must_use]
     pub fn fc_spdvendorname(&mut self) -> FcSpdvendornameW<FcSpdvendornameSpec> {
         FcSpdvendornameW::new(self, 0)
     }
 }
-#[doc = "Frame Composer SPD Packet Data Vendor Name Register Array Configures the Source Product Descriptor infoFrame 8 bytes Vendor name. For more information, refer to the CEA-861-E specification.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_spdvendorname::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_spdvendorname::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer SPD Packet Data Vendor Name Register Array\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_spdvendorname::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_spdvendorname::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcSpdvendornameSpec;
 impl crate::RegisterSpec for FcSpdvendornameSpec {
     type Ux = u8;

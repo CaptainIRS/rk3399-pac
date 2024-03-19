@@ -3,9 +3,10 @@ pub type R = crate::R<PcieClientErrCtrlSpec>;
 #[doc = "Register `PCIE_CLIENT_ERR_CTRL` writer"]
 pub type W = crate::W<PcieClientErrCtrlSpec>;
 #[doc = "Assert an uncorrectable error input to core\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UncorrErrInEn {
-    #[doc = "0: write one to generate one pulse The client may activate this input for one cycle to indicate an uncorrectable error detected within the client logic that needs to be reported as an internal error through the PCI Express Advanced Error Reporting mechanism. In response, the core sets the Uncorrectable Internal Error Status bit in the AER Uncorrectable Error Status Register of all enabled Functions, and in EP mode also sends an error message if enabled to do so. This error is not considered Function-specific."]
+    #[doc = "0: no error"]
     B0 = 0,
     #[doc = "1: write one to generate one pulse The client may activate this input for one cycle to indicate an uncorrectable error detected within the client logic that needs to be reported as an internal error through the PCI Express Advanced Error Reporting mechanism. In response, the core sets the Uncorrectable Internal Error Status bit in the AER Uncorrectable Error Status Register of all enabled Functions, and in EP mode also sends an error message if enabled to do so. This error is not considered Function-specific."]
     B1 = 1,
@@ -22,7 +23,7 @@ impl<'a, REG> UncorrErrInEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "write one to generate one pulse The client may activate this input for one cycle to indicate an uncorrectable error detected within the client logic that needs to be reported as an internal error through the PCI Express Advanced Error Reporting mechanism. In response, the core sets the Uncorrectable Internal Error Status bit in the AER Uncorrectable Error Status Register of all enabled Functions, and in EP mode also sends an error message if enabled to do so. This error is not considered Function-specific."]
+    #[doc = "no error"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(UncorrErrInEn::B0)
@@ -34,9 +35,10 @@ where
     }
 }
 #[doc = "Assert a correctable error input to core\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CorrErrInEn {
-    #[doc = "0: write one to generate one pulse The client may activate this input for one cycle to indicate a correctable error detected within the client logic that needs to be reported as an internal error through the PCI Express Advanced Error Reporting mechanism. In response, the core sets the Corrected Internal Error Status bit in the AER Correctable Error Status Register of all enabled Functions, and in EP mode also sends an error message if enabled to do so. This error is not considered Function-specific."]
+    #[doc = "0: no error"]
     B0 = 0,
     #[doc = "1: write one to generate one pulse The client may activate this input for one cycle to indicate a correctable error detected within the client logic that needs to be reported as an internal error through the PCI Express Advanced Error Reporting mechanism. In response, the core sets the Corrected Internal Error Status bit in the AER Correctable Error Status Register of all enabled Functions, and in EP mode also sends an error message if enabled to do so. This error is not considered Function-specific."]
     B1 = 1,
@@ -53,7 +55,7 @@ impl<'a, REG> CorrErrInEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "write one to generate one pulse The client may activate this input for one cycle to indicate a correctable error detected within the client logic that needs to be reported as an internal error through the PCI Express Advanced Error Reporting mechanism. In response, the core sets the Corrected Internal Error Status bit in the AER Correctable Error Status Register of all enabled Functions, and in EP mode also sends an error message if enabled to do so. This error is not considered Function-specific."]
+    #[doc = "no error"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CorrErrInEn::B0)
@@ -65,9 +67,10 @@ where
     }
 }
 #[doc = "Enable fatal error counter\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FatalErrCntEn {
-    #[doc = "0: enable counter"]
+    #[doc = "0: disable counter"]
     B0 = 0,
     #[doc = "1: enable counter"]
     B1 = 1,
@@ -89,7 +92,7 @@ impl FatalErrCntEnR {
             true => FatalErrCntEn::B1,
         }
     }
-    #[doc = "enable counter"]
+    #[doc = "disable counter"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == FatalErrCntEn::B0
@@ -106,7 +109,7 @@ impl<'a, REG> FatalErrCntEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable counter"]
+    #[doc = "disable counter"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(FatalErrCntEn::B0)
@@ -118,9 +121,10 @@ where
     }
 }
 #[doc = "Enable non-fatal error counter\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum NfatalErrCntEn {
-    #[doc = "0: enable counter"]
+    #[doc = "0: disable counter"]
     B0 = 0,
     #[doc = "1: enable counter"]
     B1 = 1,
@@ -142,7 +146,7 @@ impl NfatalErrCntEnR {
             true => NfatalErrCntEn::B1,
         }
     }
-    #[doc = "enable counter"]
+    #[doc = "disable counter"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == NfatalErrCntEn::B0
@@ -159,7 +163,7 @@ impl<'a, REG> NfatalErrCntEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable counter"]
+    #[doc = "disable counter"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(NfatalErrCntEn::B0)
@@ -171,9 +175,10 @@ where
     }
 }
 #[doc = "Enable correctable error counter\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CorrErrCntEn {
-    #[doc = "0: enable counter"]
+    #[doc = "0: disable counter"]
     B0 = 0,
     #[doc = "1: enable counter"]
     B1 = 1,
@@ -195,7 +200,7 @@ impl CorrErrCntEnR {
             true => CorrErrCntEn::B1,
         }
     }
-    #[doc = "enable counter"]
+    #[doc = "disable counter"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CorrErrCntEn::B0
@@ -212,7 +217,7 @@ impl<'a, REG> CorrErrCntEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable counter"]
+    #[doc = "disable counter"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CorrErrCntEn::B0)
@@ -223,11 +228,12 @@ where
         self.variant(CorrErrCntEn::B1)
     }
 }
-#[doc = "Write mask For each served bit\n\nValue on reset: 0"]
+#[doc = "Write mask\n\nFor each served bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum WriteMask {
-    #[doc = "0: write enable"]
+    #[doc = "0: write mask"]
     B0 = 0,
     #[doc = "1: write enable"]
     B1 = 1,
@@ -241,14 +247,14 @@ impl From<WriteMask> for u16 {
 impl crate::FieldSpec for WriteMask {
     type Ux = u16;
 }
-#[doc = "Field `WRITE_MASK` writer - Write mask For each served bit"]
+#[doc = "Field `WRITE_MASK` writer - Write mask\n\nFor each served bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, WriteMask>;
 impl<'a, REG> WriteMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u16>,
 {
-    #[doc = "write enable"]
+    #[doc = "write mask"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(WriteMask::B0)
@@ -307,7 +313,7 @@ impl W {
     pub fn corr_err_cnt_en(&mut self) -> CorrErrCntEnW<PcieClientErrCtrlSpec> {
         CorrErrCntEnW::new(self, 10)
     }
-    #[doc = "Bits 16:31 - Write mask For each served bit"]
+    #[doc = "Bits 16:31 - Write mask\n\nFor each served bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<PcieClientErrCtrlSpec> {

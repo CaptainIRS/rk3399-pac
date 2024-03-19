@@ -2,21 +2,21 @@
 pub type R = crate::R<DdrDenaliCtl307Spec>;
 #[doc = "Register `DDR_DENALI_CTL_307` writer"]
 pub type W = crate::W<DdrDenaliCtl307Spec>;
-#[doc = "Field `RDLVL_ERROR_STATUS` reader - Holds the error associated with the data eye training error or gate training error interrupt. Uppermost bit set indicates a TDFI_RDLVL_RESP parameter violation. Next uppermost bit set indicates a TDFI_RDLVL_MAX parameter violation. Lower bits are reserved. READ-ONLY"]
+#[doc = "Field `RDLVL_ERROR_STATUS` reader - Holds the error associated with the data eye training error or gate training error interrupt. Uppermost bit set indicates a TDFI_RDLVL_RESP parameter violation. Next uppermost bit set indicates a TDFI_RDLVL_MAX parameter violation. Lower bits are reserved."]
 pub type RdlvlErrorStatusR = crate::FieldReader;
-#[doc = "Field `RDLVL_GATE_ERROR_STATUS` reader - Holds the error associated with the read gate training error or gate training error interrupt. Uppermost bit set indicates a TDFI_RDLVL_RESP parameter violation. Next uppermost bit set indicates a TDFI_RDLVL_MAX parameter violation. Lower bits are reserved. READ-ONLY"]
+#[doc = "Field `RDLVL_GATE_ERROR_STATUS` reader - Holds the error associated with the read gate training error or gate training error interrupt. Uppermost bit set indicates a TDFI_RDLVL_RESP parameter violation. Next uppermost bit set indicates a TDFI_RDLVL_MAX parameter violation. Lower bits are reserved."]
 pub type RdlvlGateErrorStatusR = crate::FieldReader;
 #[doc = "Field `TDFI_CALVL_EN` reader - Defines the DFI tCALVL_EN timing parameter (in DFI clocks), the minimum cycles between a dfi_calvl_en assertion and a dfi_cke de-assertion."]
 pub type TdfiCalvlEnR = crate::FieldReader;
 #[doc = "Field `TDFI_CALVL_EN` writer - Defines the DFI tCALVL_EN timing parameter (in DFI clocks), the minimum cycles between a dfi_calvl_en assertion and a dfi_cke de-assertion."]
 pub type TdfiCalvlEnW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:1 - Holds the error associated with the data eye training error or gate training error interrupt. Uppermost bit set indicates a TDFI_RDLVL_RESP parameter violation. Next uppermost bit set indicates a TDFI_RDLVL_MAX parameter violation. Lower bits are reserved. READ-ONLY"]
+    #[doc = "Bits 0:1 - Holds the error associated with the data eye training error or gate training error interrupt. Uppermost bit set indicates a TDFI_RDLVL_RESP parameter violation. Next uppermost bit set indicates a TDFI_RDLVL_MAX parameter violation. Lower bits are reserved."]
     #[inline(always)]
     pub fn rdlvl_error_status(&self) -> RdlvlErrorStatusR {
         RdlvlErrorStatusR::new((self.bits & 3) as u8)
     }
-    #[doc = "Bits 8:9 - Holds the error associated with the read gate training error or gate training error interrupt. Uppermost bit set indicates a TDFI_RDLVL_RESP parameter violation. Next uppermost bit set indicates a TDFI_RDLVL_MAX parameter violation. Lower bits are reserved. READ-ONLY"]
+    #[doc = "Bits 8:9 - Holds the error associated with the read gate training error or gate training error interrupt. Uppermost bit set indicates a TDFI_RDLVL_RESP parameter violation. Next uppermost bit set indicates a TDFI_RDLVL_MAX parameter violation. Lower bits are reserved."]
     #[inline(always)]
     pub fn rdlvl_gate_error_status(&self) -> RdlvlGateErrorStatusR {
         RdlvlGateErrorStatusR::new(((self.bits >> 8) & 3) as u8)

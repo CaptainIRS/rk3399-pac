@@ -2,19 +2,19 @@
 pub type R = crate::R<DdrPiReg81Spec>;
 #[doc = "Register `DDR_PI_REG_81` writer"]
 pub type W = crate::W<DdrPiReg81Spec>;
-#[doc = "Field `PI_TDFI_RDLVL_MAX` reader - Defines the DFI tRDLVL_MAX timing parameter (in DFI clocks), the maximum cycles between a dfi_rdlvl_en or dfi_rdlvl_gate_en assertion and a valid dfi_rdlvl_resp."]
+#[doc = "Field `PI_TDFI_RDLVL_MAX` reader - Defines the DFI tRDLVL_MAX timing parameter (in DFI clocks), the\n\nmaximum cycles between a dfi_rdlvl_en or dfi_rdlvl_gate_en\n\nassertion and a valid dfi_rdlvl_resp."]
 pub type PiTdfiRdlvlMaxR = crate::FieldReader<u32>;
-#[doc = "Field `PI_TDFI_RDLVL_MAX` writer - Defines the DFI tRDLVL_MAX timing parameter (in DFI clocks), the maximum cycles between a dfi_rdlvl_en or dfi_rdlvl_gate_en assertion and a valid dfi_rdlvl_resp."]
+#[doc = "Field `PI_TDFI_RDLVL_MAX` writer - Defines the DFI tRDLVL_MAX timing parameter (in DFI clocks), the\n\nmaximum cycles between a dfi_rdlvl_en or dfi_rdlvl_gate_en\n\nassertion and a valid dfi_rdlvl_resp."]
 pub type PiTdfiRdlvlMaxW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Defines the DFI tRDLVL_MAX timing parameter (in DFI clocks), the maximum cycles between a dfi_rdlvl_en or dfi_rdlvl_gate_en assertion and a valid dfi_rdlvl_resp."]
+    #[doc = "Bits 0:31 - Defines the DFI tRDLVL_MAX timing parameter (in DFI clocks), the\n\nmaximum cycles between a dfi_rdlvl_en or dfi_rdlvl_gate_en\n\nassertion and a valid dfi_rdlvl_resp."]
     #[inline(always)]
     pub fn pi_tdfi_rdlvl_max(&self) -> PiTdfiRdlvlMaxR {
         PiTdfiRdlvlMaxR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Defines the DFI tRDLVL_MAX timing parameter (in DFI clocks), the maximum cycles between a dfi_rdlvl_en or dfi_rdlvl_gate_en assertion and a valid dfi_rdlvl_resp."]
+    #[doc = "Bits 0:31 - Defines the DFI tRDLVL_MAX timing parameter (in DFI clocks), the\n\nmaximum cycles between a dfi_rdlvl_en or dfi_rdlvl_gate_en\n\nassertion and a valid dfi_rdlvl_resp."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tdfi_rdlvl_max(&mut self) -> PiTdfiRdlvlMaxW<DdrPiReg81Spec> {

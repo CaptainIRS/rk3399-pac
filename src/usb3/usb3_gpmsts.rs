@@ -2,26 +2,26 @@
 pub type R = crate::R<Usb3GpmstsSpec>;
 #[doc = "Register `USB3_GPMSTS` writer"]
 pub type W = crate::W<Usb3GpmstsSpec>;
-#[doc = "Field `U2WAKEUP` reader - U2Wakeup This field indicates the following USB 2.0 port wakeup conditions: Bit \\[0\\]: Overcurrent Detected Bit \\[1\\]: Resume Detected Bit \\[2\\]: Connect Detected Bit \\[3\\]: Disconnect Detected Bit \\[4\\]: Last Connection State Bit \\[5\\]: ID Change Detected Bit \\[6\\]: SRP Request Detected Bit \\[7\\]: ULPI Interrupt Detected Bit \\[8\\]: USB Reset Detected Bit \\[9\\]: Resume Detected Changed"]
+#[doc = "Field `U2WAKEUP` reader - U2Wakeup\n\nThis field indicates the following USB 2.0 port wakeup conditions:\n\nBit \\[0\\]: Overcurrent Detected\n\nBit \\[1\\]: Resume Detected\n\nBit \\[2\\]: Connect Detected\n\nBit \\[3\\]: Disconnect Detected\n\nBit \\[4\\]: Last Connection State\n\nBit \\[5\\]: ID Change Detected\n\nBit \\[6\\]: SRP Request Detected\n\nBit \\[7\\]: ULPI Interrupt Detected\n\nBit \\[8\\]: USB Reset Detected\n\nBit \\[9\\]: Resume Detected Changed"]
 pub type U2wakeupR = crate::FieldReader<u16>;
-#[doc = "Field `U3WAKEUP` reader - U3Wakeup This field gives the following USB 3.0 port wakeup conditions: Bit \\[12\\]: Overcurrent Detected Bit \\[13\\]: Resume Detected Bit \\[14\\]: Connect Detected Bit \\[15\\]: Disconnect Detected Bit \\[16\\]: Last Connection State"]
+#[doc = "Field `U3WAKEUP` reader - U3Wakeup\n\nThis field gives the following USB 3.0 port wakeup conditions:\n\nBit \\[12\\]: Overcurrent Detected\n\nBit \\[13\\]: Resume Detected\n\nBit \\[14\\]: Connect Detected\n\nBit \\[15\\]: Disconnect Detected\n\nBit \\[16\\]: Last Connection State"]
 pub type U3wakeupR = crate::FieldReader;
-#[doc = "Field `PORTSEL` writer - Global Power Management Status Register This field selects the port number."]
+#[doc = "Field `PORTSEL` writer - Global Power Management Status Register\n\nThis field selects the port number."]
 pub type PortselW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
-    #[doc = "Bits 0:9 - U2Wakeup This field indicates the following USB 2.0 port wakeup conditions: Bit \\[0\\]: Overcurrent Detected Bit \\[1\\]: Resume Detected Bit \\[2\\]: Connect Detected Bit \\[3\\]: Disconnect Detected Bit \\[4\\]: Last Connection State Bit \\[5\\]: ID Change Detected Bit \\[6\\]: SRP Request Detected Bit \\[7\\]: ULPI Interrupt Detected Bit \\[8\\]: USB Reset Detected Bit \\[9\\]: Resume Detected Changed"]
+    #[doc = "Bits 0:9 - U2Wakeup\n\nThis field indicates the following USB 2.0 port wakeup conditions:\n\nBit \\[0\\]: Overcurrent Detected\n\nBit \\[1\\]: Resume Detected\n\nBit \\[2\\]: Connect Detected\n\nBit \\[3\\]: Disconnect Detected\n\nBit \\[4\\]: Last Connection State\n\nBit \\[5\\]: ID Change Detected\n\nBit \\[6\\]: SRP Request Detected\n\nBit \\[7\\]: ULPI Interrupt Detected\n\nBit \\[8\\]: USB Reset Detected\n\nBit \\[9\\]: Resume Detected Changed"]
     #[inline(always)]
     pub fn u2wakeup(&self) -> U2wakeupR {
         U2wakeupR::new((self.bits & 0x03ff) as u16)
     }
-    #[doc = "Bits 12:16 - U3Wakeup This field gives the following USB 3.0 port wakeup conditions: Bit \\[12\\]: Overcurrent Detected Bit \\[13\\]: Resume Detected Bit \\[14\\]: Connect Detected Bit \\[15\\]: Disconnect Detected Bit \\[16\\]: Last Connection State"]
+    #[doc = "Bits 12:16 - U3Wakeup\n\nThis field gives the following USB 3.0 port wakeup conditions:\n\nBit \\[12\\]: Overcurrent Detected\n\nBit \\[13\\]: Resume Detected\n\nBit \\[14\\]: Connect Detected\n\nBit \\[15\\]: Disconnect Detected\n\nBit \\[16\\]: Last Connection State"]
     #[inline(always)]
     pub fn u3wakeup(&self) -> U3wakeupR {
         U3wakeupR::new(((self.bits >> 12) & 0x1f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 28:31 - Global Power Management Status Register This field selects the port number."]
+    #[doc = "Bits 28:31 - Global Power Management Status Register\n\nThis field selects the port number."]
     #[inline(always)]
     #[must_use]
     pub fn portsel(&mut self) -> PortselW<Usb3GpmstsSpec> {

@@ -2,19 +2,19 @@
 pub type R = crate::R<Cci500InterfaceMonitorCtrlSpec>;
 #[doc = "Register `CCI500_INTERFACE_MONITOR_CTRL` writer"]
 pub type W = crate::W<Cci500InterfaceMonitorCtrlSpec>;
-#[doc = "Field `ENABLE_INTERFACE_MONITORS` reader - 0b0 Interface Monitor counters and flags are set to 0. 0b1 Enable all Interface Monitors."]
+#[doc = "Field `ENABLE_INTERFACE_MONITORS` reader - 0b0 Interface Monitor counters and flags are\n\nset to 0.\n\n0b1 Enable all Interface Monitors."]
 pub type EnableInterfaceMonitorsR = crate::BitReader;
-#[doc = "Field `ENABLE_INTERFACE_MONITORS` writer - 0b0 Interface Monitor counters and flags are set to 0. 0b1 Enable all Interface Monitors."]
+#[doc = "Field `ENABLE_INTERFACE_MONITORS` writer - 0b0 Interface Monitor counters and flags are\n\nset to 0.\n\n0b1 Enable all Interface Monitors."]
 pub type EnableInterfaceMonitorsW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - 0b0 Interface Monitor counters and flags are set to 0. 0b1 Enable all Interface Monitors."]
+    #[doc = "Bit 0 - 0b0 Interface Monitor counters and flags are\n\nset to 0.\n\n0b1 Enable all Interface Monitors."]
     #[inline(always)]
     pub fn enable_interface_monitors(&self) -> EnableInterfaceMonitorsR {
         EnableInterfaceMonitorsR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - 0b0 Interface Monitor counters and flags are set to 0. 0b1 Enable all Interface Monitors."]
+    #[doc = "Bit 0 - 0b0 Interface Monitor counters and flags are\n\nset to 0.\n\n0b1 Enable all Interface Monitors."]
     #[inline(always)]
     #[must_use]
     pub fn enable_interface_monitors(

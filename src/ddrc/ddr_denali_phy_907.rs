@@ -2,7 +2,7 @@
 pub type R = crate::R<DdrDenaliPhy907Spec>;
 #[doc = "Register `DDR_DENALI_PHY_907` writer"]
 pub type W = crate::W<DdrDenaliPhy907Spec>;
-#[doc = "Field `PHY_ADRCTL_SNAP_OBS_REGS` writer - Initiates a snapshot of the internal observation registers for the address/control block. Set to 1 to trigger. WRITE-ONLY"]
+#[doc = "Field `PHY_ADRCTL_SNAP_OBS_REGS` writer - Initiates a snapshot of the internal observation registers for the address/control block. Set to 1 to trigger."]
 pub type PhyAdrctlSnapObsRegsW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PHY_DFI_PHYUPD_TYPE` reader - Defines the value of the dfi_phyupd_type output signal to MC."]
 pub type PhyDfiPhyupdTypeR = crate::FieldReader;
@@ -34,7 +34,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - Initiates a snapshot of the internal observation registers for the address/control block. Set to 1 to trigger. WRITE-ONLY"]
+    #[doc = "Bit 0 - Initiates a snapshot of the internal observation registers for the address/control block. Set to 1 to trigger."]
     #[inline(always)]
     #[must_use]
     pub fn phy_adrctl_snap_obs_regs(&mut self) -> PhyAdrctlSnapObsRegsW<DdrDenaliPhy907Spec> {

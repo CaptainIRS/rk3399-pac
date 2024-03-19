@@ -3,9 +3,10 @@ pub type R = crate::R<SdmmcCtrlSpec>;
 #[doc = "Register `SDMMC_CTRL` writer"]
 pub type W = crate::W<SdmmcCtrlSpec>;
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ControllerReset {
-    #[doc = "0: reset SDMMC controller To reset controller, firmware should set bit to 1. This bit is auto- cleared after two AHB and two cclk_in clock cycles. This resets: a. BIU/CIU interface b. CIU and state machines c. abort_read_data, send_irq_response, and read_wait bits of Control register d. start_cmd bit of Command register Does not affect any registers or DMA interface, or FIFO or host interrupts"]
+    #[doc = "0: no change"]
     B0 = 0,
     #[doc = "1: reset SDMMC controller To reset controller, firmware should set bit to 1. This bit is auto- cleared after two AHB and two cclk_in clock cycles. This resets: a. BIU/CIU interface b. CIU and state machines c. abort_read_data, send_irq_response, and read_wait bits of Control register d. start_cmd bit of Command register Does not affect any registers or DMA interface, or FIFO or host interrupts"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl ControllerResetR {
             true => ControllerReset::B1,
         }
     }
-    #[doc = "reset SDMMC controller To reset controller, firmware should set bit to 1. This bit is auto- cleared after two AHB and two cclk_in clock cycles. This resets: a. BIU/CIU interface b. CIU and state machines c. abort_read_data, send_irq_response, and read_wait bits of Control register d. start_cmd bit of Command register Does not affect any registers or DMA interface, or FIFO or host interrupts"]
+    #[doc = "no change"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ControllerReset::B0
@@ -44,7 +45,7 @@ impl<'a, REG> ControllerResetW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "reset SDMMC controller To reset controller, firmware should set bit to 1. This bit is auto- cleared after two AHB and two cclk_in clock cycles. This resets: a. BIU/CIU interface b. CIU and state machines c. abort_read_data, send_irq_response, and read_wait bits of Control register d. start_cmd bit of Command register Does not affect any registers or DMA interface, or FIFO or host interrupts"]
+    #[doc = "no change"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ControllerReset::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FifoReset {
-    #[doc = "0: reset to data FIFO To reset FIFO pointers To reset FIFO, firmware should set bit to 1. This bit is auto- cleared after completion of reset operation"]
+    #[doc = "0: no change"]
     B0 = 0,
     #[doc = "1: reset to data FIFO To reset FIFO pointers To reset FIFO, firmware should set bit to 1. This bit is auto- cleared after completion of reset operation"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl FifoResetR {
             true => FifoReset::B1,
         }
     }
-    #[doc = "reset to data FIFO To reset FIFO pointers To reset FIFO, firmware should set bit to 1. This bit is auto- cleared after completion of reset operation"]
+    #[doc = "no change"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == FifoReset::B0
@@ -97,7 +99,7 @@ impl<'a, REG> FifoResetW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "reset to data FIFO To reset FIFO pointers To reset FIFO, firmware should set bit to 1. This bit is auto- cleared after completion of reset operation"]
+    #[doc = "no change"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(FifoReset::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DmaReset {
-    #[doc = "0: reset internal DMA interface control logic To reset DMA interface, firmware should set bit to 1. This bit is auto-cleared after two AHB clocks."]
+    #[doc = "0: no change"]
     B0 = 0,
     #[doc = "1: reset internal DMA interface control logic To reset DMA interface, firmware should set bit to 1. This bit is auto-cleared after two AHB clocks."]
     B1 = 1,
@@ -133,7 +136,7 @@ impl DmaResetR {
             true => DmaReset::B1,
         }
     }
-    #[doc = "reset internal DMA interface control logic To reset DMA interface, firmware should set bit to 1. This bit is auto-cleared after two AHB clocks."]
+    #[doc = "no change"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == DmaReset::B0
@@ -150,7 +153,7 @@ impl<'a, REG> DmaResetW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "reset internal DMA interface control logic To reset DMA interface, firmware should set bit to 1. This bit is auto-cleared after two AHB clocks."]
+    #[doc = "no change"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(DmaReset::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "Global interrupt enable/disable bit:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IntEnable {
-    #[doc = "0: enable interrupts The int port is 1 only when this bit is 1 and one or more unmasked interrupts are set."]
+    #[doc = "0: disable interrupts"]
     B0 = 0,
     #[doc = "1: enable interrupts The int port is 1 only when this bit is 1 and one or more unmasked interrupts are set."]
     B1 = 1,
@@ -186,7 +190,7 @@ impl IntEnableR {
             true => IntEnable::B1,
         }
     }
-    #[doc = "enable interrupts The int port is 1 only when this bit is 1 and one or more unmasked interrupts are set."]
+    #[doc = "disable interrupts"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IntEnable::B0
@@ -203,7 +207,7 @@ impl<'a, REG> IntEnableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable interrupts The int port is 1 only when this bit is 1 and one or more unmasked interrupts are set."]
+    #[doc = "disable interrupts"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IntEnable::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DmaEnable {
-    #[doc = "0: enable DMA transfer mode Even when DMA mode is enabled, host can still push/pop data into or from FIFO; this should not happen during the normal operation. If there is simultaneous FIFO access from host/DMA, the data coherency is lost. Also, there is no arbitration inside SDMMC Controller to prioritize simultaneous host/DMA access."]
+    #[doc = "0: disable DMA transfer mode"]
     B0 = 0,
     #[doc = "1: enable DMA transfer mode Even when DMA mode is enabled, host can still push/pop data into or from FIFO; this should not happen during the normal operation. If there is simultaneous FIFO access from host/DMA, the data coherency is lost. Also, there is no arbitration inside SDMMC Controller to prioritize simultaneous host/DMA access."]
     B1 = 1,
@@ -239,7 +244,7 @@ impl DmaEnableR {
             true => DmaEnable::B1,
         }
     }
-    #[doc = "enable DMA transfer mode Even when DMA mode is enabled, host can still push/pop data into or from FIFO; this should not happen during the normal operation. If there is simultaneous FIFO access from host/DMA, the data coherency is lost. Also, there is no arbitration inside SDMMC Controller to prioritize simultaneous host/DMA access."]
+    #[doc = "disable DMA transfer mode"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == DmaEnable::B0
@@ -256,7 +261,7 @@ impl<'a, REG> DmaEnableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable DMA transfer mode Even when DMA mode is enabled, host can still push/pop data into or from FIFO; this should not happen during the normal operation. If there is simultaneous FIFO access from host/DMA, the data coherency is lost. Also, there is no arbitration inside SDMMC Controller to prioritize simultaneous host/DMA access."]
+    #[doc = "disable DMA transfer mode"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(DmaEnable::B0)
@@ -268,9 +273,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ReadWait {
-    #[doc = "0: assert read wait For sending read-wait to SDIO cards"]
+    #[doc = "0: clear read wait"]
     B0 = 0,
     #[doc = "1: assert read wait For sending read-wait to SDIO cards"]
     B1 = 1,
@@ -292,7 +298,7 @@ impl ReadWaitR {
             true => ReadWait::B1,
         }
     }
-    #[doc = "assert read wait For sending read-wait to SDIO cards"]
+    #[doc = "clear read wait"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ReadWait::B0
@@ -309,7 +315,7 @@ impl<'a, REG> ReadWaitW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "assert read wait For sending read-wait to SDIO cards"]
+    #[doc = "clear read wait"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ReadWait::B0)
@@ -321,9 +327,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SendIrqResponse {
-    #[doc = "0: send auto IRQ response Bit automatically clears once response is sent. To wait for MMC card interrupts, host issues CMD40, and SDMMC Controller waits for interrupt response from MMC card(s). In meantime, if host wants SDMMC Controller to exit waiting for interrupt state, it can set this bit, at which time SDMMC Controller command state-machine sends CMD40 response on bus and returns to idle state."]
+    #[doc = "0: no change"]
     B0 = 0,
     #[doc = "1: send auto IRQ response Bit automatically clears once response is sent. To wait for MMC card interrupts, host issues CMD40, and SDMMC Controller waits for interrupt response from MMC card(s). In meantime, if host wants SDMMC Controller to exit waiting for interrupt state, it can set this bit, at which time SDMMC Controller command state-machine sends CMD40 response on bus and returns to idle state."]
     B1 = 1,
@@ -345,7 +352,7 @@ impl SendIrqResponseR {
             true => SendIrqResponse::B1,
         }
     }
-    #[doc = "send auto IRQ response Bit automatically clears once response is sent. To wait for MMC card interrupts, host issues CMD40, and SDMMC Controller waits for interrupt response from MMC card(s). In meantime, if host wants SDMMC Controller to exit waiting for interrupt state, it can set this bit, at which time SDMMC Controller command state-machine sends CMD40 response on bus and returns to idle state."]
+    #[doc = "no change"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SendIrqResponse::B0
@@ -362,7 +369,7 @@ impl<'a, REG> SendIrqResponseW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "send auto IRQ response Bit automatically clears once response is sent. To wait for MMC card interrupts, host issues CMD40, and SDMMC Controller waits for interrupt response from MMC card(s). In meantime, if host wants SDMMC Controller to exit waiting for interrupt state, it can set this bit, at which time SDMMC Controller command state-machine sends CMD40 response on bus and returns to idle state."]
+    #[doc = "no change"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SendIrqResponse::B0)
@@ -374,9 +381,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AbortReadData {
-    #[doc = "0: after suspend command is issued during read-transfer, software polls card to find when suspend happened. Once suspend occurs, software sets bit to reset data state-machine, which is waiting for next block of data. Bit automatically clears once data state machine resets to idle. Used in SDIO card suspend sequence."]
+    #[doc = "0: no change"]
     B0 = 0,
     #[doc = "1: after suspend command is issued during read-transfer, software polls card to find when suspend happened. Once suspend occurs, software sets bit to reset data state-machine, which is waiting for next block of data. Bit automatically clears once data state machine resets to idle. Used in SDIO card suspend sequence."]
     B1 = 1,
@@ -398,7 +406,7 @@ impl AbortReadDataR {
             true => AbortReadData::B1,
         }
     }
-    #[doc = "after suspend command is issued during read-transfer, software polls card to find when suspend happened. Once suspend occurs, software sets bit to reset data state-machine, which is waiting for next block of data. Bit automatically clears once data state machine resets to idle. Used in SDIO card suspend sequence."]
+    #[doc = "no change"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == AbortReadData::B0
@@ -415,7 +423,7 @@ impl<'a, REG> AbortReadDataW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "after suspend command is issued during read-transfer, software polls card to find when suspend happened. Once suspend occurs, software sets bit to reset data state-machine, which is waiting for next block of data. Bit automatically clears once data state machine resets to idle. Used in SDIO card suspend sequence."]
+    #[doc = "no change"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(AbortReadData::B0)
@@ -427,9 +435,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SendCcsd {
-    #[doc = "0: Send Command Completion Signal Disable (CCSD) to CE-ATA device When set, Mobile Storage Host Controller sends CCSD to CE-ATA device. Software sets this bit only if current command is expecting CCS (that is, RW_BLK) and interrupts are enabled in CE-ATA device. Once the CCSD pattern is sent to device, Mobile Storage Host Controller automatically clears send_ccsd bit. It also sets Command Done (CD) bit in RINTSTS register and generates interrupt to host if Command Done interrupt is not masked. NOTE: Once send_ccsd bit is set, it takes two card clock cycles to drive the CCSD on the CMD line. Due to this, during the boundary conditions it may happen that CCSD is sent to the CE-ATA device, even if the device signalled CCS"]
+    #[doc = "0: Clear bit if Mobile Storage Host Controller does not reset the bit."]
     B0 = 0,
     #[doc = "1: Send Command Completion Signal Disable (CCSD) to CE-ATA device When set, Mobile Storage Host Controller sends CCSD to CE-ATA device. Software sets this bit only if current command is expecting CCS (that is, RW_BLK) and interrupts are enabled in CE-ATA device. Once the CCSD pattern is sent to device, Mobile Storage Host Controller automatically clears send_ccsd bit. It also sets Command Done (CD) bit in RINTSTS register and generates interrupt to host if Command Done interrupt is not masked. NOTE: Once send_ccsd bit is set, it takes two card clock cycles to drive the CCSD on the CMD line. Due to this, during the boundary conditions it may happen that CCSD is sent to the CE-ATA device, even if the device signalled CCS"]
     B1 = 1,
@@ -451,7 +460,7 @@ impl SendCcsdR {
             true => SendCcsd::B1,
         }
     }
-    #[doc = "Send Command Completion Signal Disable (CCSD) to CE-ATA device When set, Mobile Storage Host Controller sends CCSD to CE-ATA device. Software sets this bit only if current command is expecting CCS (that is, RW_BLK) and interrupts are enabled in CE-ATA device. Once the CCSD pattern is sent to device, Mobile Storage Host Controller automatically clears send_ccsd bit. It also sets Command Done (CD) bit in RINTSTS register and generates interrupt to host if Command Done interrupt is not masked. NOTE: Once send_ccsd bit is set, it takes two card clock cycles to drive the CCSD on the CMD line. Due to this, during the boundary conditions it may happen that CCSD is sent to the CE-ATA device, even if the device signalled CCS"]
+    #[doc = "Clear bit if Mobile Storage Host Controller does not reset the bit."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SendCcsd::B0
@@ -468,7 +477,7 @@ impl<'a, REG> SendCcsdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Send Command Completion Signal Disable (CCSD) to CE-ATA device When set, Mobile Storage Host Controller sends CCSD to CE-ATA device. Software sets this bit only if current command is expecting CCS (that is, RW_BLK) and interrupts are enabled in CE-ATA device. Once the CCSD pattern is sent to device, Mobile Storage Host Controller automatically clears send_ccsd bit. It also sets Command Done (CD) bit in RINTSTS register and generates interrupt to host if Command Done interrupt is not masked. NOTE: Once send_ccsd bit is set, it takes two card clock cycles to drive the CCSD on the CMD line. Due to this, during the boundary conditions it may happen that CCSD is sent to the CE-ATA device, even if the device signalled CCS"]
+    #[doc = "Clear bit if Mobile Storage Host Controller does not reset the bit."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SendCcsd::B0)
@@ -480,9 +489,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SendAutoStopCcsd {
-    #[doc = "0: Send internally generated STOP after sending CCSD to CE-ATA device. NOTE: Always set send_auto_stop_ccsd and send_ccsd bits together send_auto_stop_ccsd should not be set independent of send_ccsd. When set, Mobile Storage Host Controller automatically sends internally- generated STOP command (CMD12) to CE-ATA device. After sending internally-generated STOP command, Auto Command Done (ACD) in RINTSTS is set and generates interrupt to host if Auto Command Done interrupt is not masked. After sending the CCSD, Mobile Storage Host Controller automatically clears send_auto_stop_ccsd bit."]
+    #[doc = "0: Clear bit if Mobile Storage Host Controller does not reset the bit."]
     B0 = 0,
     #[doc = "1: Send internally generated STOP after sending CCSD to CE-ATA device. NOTE: Always set send_auto_stop_ccsd and send_ccsd bits together send_auto_stop_ccsd should not be set independent of send_ccsd. When set, Mobile Storage Host Controller automatically sends internally- generated STOP command (CMD12) to CE-ATA device. After sending internally-generated STOP command, Auto Command Done (ACD) in RINTSTS is set and generates interrupt to host if Auto Command Done interrupt is not masked. After sending the CCSD, Mobile Storage Host Controller automatically clears send_auto_stop_ccsd bit."]
     B1 = 1,
@@ -504,7 +514,7 @@ impl SendAutoStopCcsdR {
             true => SendAutoStopCcsd::B1,
         }
     }
-    #[doc = "Send internally generated STOP after sending CCSD to CE-ATA device. NOTE: Always set send_auto_stop_ccsd and send_ccsd bits together send_auto_stop_ccsd should not be set independent of send_ccsd. When set, Mobile Storage Host Controller automatically sends internally- generated STOP command (CMD12) to CE-ATA device. After sending internally-generated STOP command, Auto Command Done (ACD) in RINTSTS is set and generates interrupt to host if Auto Command Done interrupt is not masked. After sending the CCSD, Mobile Storage Host Controller automatically clears send_auto_stop_ccsd bit."]
+    #[doc = "Clear bit if Mobile Storage Host Controller does not reset the bit."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SendAutoStopCcsd::B0
@@ -521,7 +531,7 @@ impl<'a, REG> SendAutoStopCcsdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Send internally generated STOP after sending CCSD to CE-ATA device. NOTE: Always set send_auto_stop_ccsd and send_ccsd bits together send_auto_stop_ccsd should not be set independent of send_ccsd. When set, Mobile Storage Host Controller automatically sends internally- generated STOP command (CMD12) to CE-ATA device. After sending internally-generated STOP command, Auto Command Done (ACD) in RINTSTS is set and generates interrupt to host if Auto Command Done interrupt is not masked. After sending the CCSD, Mobile Storage Host Controller automatically clears send_auto_stop_ccsd bit."]
+    #[doc = "Clear bit if Mobile Storage Host Controller does not reset the bit."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SendAutoStopCcsd::B0)
@@ -533,9 +543,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CeataDeviceInterruptStatus {
-    #[doc = "0: Interrupts are enabled in CE-ATA device (nIEN = 0 in ATA control register) Software should appropriately write to this bit after power-on reset or any other reset to CE-ATA device. After reset, usually CE-ATA device interrupt is disabled (nIEN = 1). If the host enables CE-ATA device interrupt, then software should set this bit."]
+    #[doc = "0: Interrupts not enabled in CE-ATA device (nIEN = 1 in ATA control register)"]
     B0 = 0,
     #[doc = "1: Interrupts are enabled in CE-ATA device (nIEN = 0 in ATA control register) Software should appropriately write to this bit after power-on reset or any other reset to CE-ATA device. After reset, usually CE-ATA device interrupt is disabled (nIEN = 1). If the host enables CE-ATA device interrupt, then software should set this bit."]
     B1 = 1,
@@ -557,7 +568,7 @@ impl CeataDeviceInterruptStatusR {
             true => CeataDeviceInterruptStatus::B1,
         }
     }
-    #[doc = "Interrupts are enabled in CE-ATA device (nIEN = 0 in ATA control register) Software should appropriately write to this bit after power-on reset or any other reset to CE-ATA device. After reset, usually CE-ATA device interrupt is disabled (nIEN = 1). If the host enables CE-ATA device interrupt, then software should set this bit."]
+    #[doc = "Interrupts not enabled in CE-ATA device (nIEN = 1 in ATA control register)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CeataDeviceInterruptStatus::B0
@@ -575,7 +586,7 @@ impl<'a, REG> CeataDeviceInterruptStatusW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Interrupts are enabled in CE-ATA device (nIEN = 0 in ATA control register) Software should appropriately write to this bit after power-on reset or any other reset to CE-ATA device. After reset, usually CE-ATA device interrupt is disabled (nIEN = 1). If the host enables CE-ATA device interrupt, then software should set this bit."]
+    #[doc = "Interrupts not enabled in CE-ATA device (nIEN = 1 in ATA control register)"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CeataDeviceInterruptStatus::B0)
@@ -586,10 +597,11 @@ where
         self.variant(CeataDeviceInterruptStatus::B1)
     }
 }
-#[doc = "Present only for the Internal DMAC configuration; else, it is reserved.\n\nValue on reset: 0"]
+#[doc = "Present only for the Internal DMAC configuration; else, it is\n\nreserved.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UseInternalDmac {
-    #[doc = "0: Internal DMAC used for data transfe"]
+    #[doc = "0: The host performs data transfers through the slave interface"]
     B0 = 0,
     #[doc = "1: Internal DMAC used for data transfe"]
     B1 = 1,
@@ -600,7 +612,7 @@ impl From<UseInternalDmac> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `USE_INTERNAL_DMAC` reader - Present only for the Internal DMAC configuration; else, it is reserved."]
+#[doc = "Field `USE_INTERNAL_DMAC` reader - Present only for the Internal DMAC configuration; else, it is\n\nreserved."]
 pub type UseInternalDmacR = crate::BitReader<UseInternalDmac>;
 impl UseInternalDmacR {
     #[doc = "Get enumerated values variant"]
@@ -611,7 +623,7 @@ impl UseInternalDmacR {
             true => UseInternalDmac::B1,
         }
     }
-    #[doc = "Internal DMAC used for data transfe"]
+    #[doc = "The host performs data transfers through the slave interface"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == UseInternalDmac::B0
@@ -622,13 +634,13 @@ impl UseInternalDmacR {
         *self == UseInternalDmac::B1
     }
 }
-#[doc = "Field `USE_INTERNAL_DMAC` writer - Present only for the Internal DMAC configuration; else, it is reserved."]
+#[doc = "Field `USE_INTERNAL_DMAC` writer - Present only for the Internal DMAC configuration; else, it is\n\nreserved."]
 pub type UseInternalDmacW<'a, REG> = crate::BitWriter<'a, REG, UseInternalDmac>;
 impl<'a, REG> UseInternalDmacW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Internal DMAC used for data transfe"]
+    #[doc = "The host performs data transfers through the slave interface"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(UseInternalDmac::B0)
@@ -695,7 +707,7 @@ impl R {
     pub fn ceata_device_interrupt_status(&self) -> CeataDeviceInterruptStatusR {
         CeataDeviceInterruptStatusR::new(((self.bits >> 11) & 1) != 0)
     }
-    #[doc = "Bit 25 - Present only for the Internal DMAC configuration; else, it is reserved."]
+    #[doc = "Bit 25 - Present only for the Internal DMAC configuration; else, it is\n\nreserved."]
     #[inline(always)]
     pub fn use_internal_dmac(&self) -> UseInternalDmacR {
         UseInternalDmacR::new(((self.bits >> 25) & 1) != 0)
@@ -768,7 +780,7 @@ impl W {
     pub fn ceata_device_interrupt_status(&mut self) -> CeataDeviceInterruptStatusW<SdmmcCtrlSpec> {
         CeataDeviceInterruptStatusW::new(self, 11)
     }
-    #[doc = "Bit 25 - Present only for the Internal DMAC configuration; else, it is reserved."]
+    #[doc = "Bit 25 - Present only for the Internal DMAC configuration; else, it is\n\nreserved."]
     #[inline(always)]
     #[must_use]
     pub fn use_internal_dmac(&mut self) -> UseInternalDmacW<SdmmcCtrlSpec> {

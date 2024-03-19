@@ -1,9 +1,9 @@
 #[doc = "Register `EMMCCORE_SLOTINTSTS` reader"]
 pub type R = crate::R<EmmccoreSlotintstsSpec>;
-#[doc = "Field `INTSLOT0` reader - This status bit indicates the OR of Interrupt signal and Wakeup signal for slot"]
+#[doc = "Field `INTSLOT0` reader - This status bit indicates the OR of Interrupt signal and Wakeup\n\nsignal for slot"]
 pub type Intslot0R = crate::BitReader;
 impl R {
-    #[doc = "Bit 0 - This status bit indicates the OR of Interrupt signal and Wakeup signal for slot"]
+    #[doc = "Bit 0 - This status bit indicates the OR of Interrupt signal and Wakeup\n\nsignal for slot"]
     #[inline(always)]
     pub fn intslot0(&self) -> Intslot0R {
         Intslot0R::new((self.bits & 1) != 0)

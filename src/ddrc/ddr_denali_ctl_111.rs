@@ -6,7 +6,7 @@ pub type W = crate::W<DdrDenaliCtl111Spec>;
 pub type TdfiInitCompleteF2R = crate::FieldReader<u16>;
 #[doc = "Field `TDFI_INIT_COMPLETE_F2` writer - Defines the DFI tINIT_COMPLETE timing parameter (in DFI clocks) for frequency copy 2, the maximum cycles between a dfi_init_start de- assertion and a dfi_init_complete assertion from the PHY."]
 pub type TdfiInitCompleteF2W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-#[doc = "Field `CURRENT_REG_COPY` reader - Indicates the current copy of timing parameters that is in use by the controller. READ-ONLY"]
+#[doc = "Field `CURRENT_REG_COPY` reader - Indicates the current copy of timing parameters that is in use by the controller."]
 pub type CurrentRegCopyR = crate::FieldReader;
 #[doc = "Field `DFS_PHY_REG_WRITE_EN` reader - Enable a register write to the PHY during a frequency change. Set to 1 to enable."]
 pub type DfsPhyRegWriteEnR = crate::BitReader;
@@ -18,7 +18,7 @@ impl R {
     pub fn tdfi_init_complete_f2(&self) -> TdfiInitCompleteF2R {
         TdfiInitCompleteF2R::new((self.bits & 0xffff) as u16)
     }
-    #[doc = "Bits 16:17 - Indicates the current copy of timing parameters that is in use by the controller. READ-ONLY"]
+    #[doc = "Bits 16:17 - Indicates the current copy of timing parameters that is in use by the controller."]
     #[inline(always)]
     pub fn current_reg_copy(&self) -> CurrentRegCopyR {
         CurrentRegCopyR::new(((self.bits >> 16) & 3) as u8)

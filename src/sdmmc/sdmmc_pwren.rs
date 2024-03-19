@@ -2,10 +2,11 @@
 pub type R = crate::R<SdmmcPwrenSpec>;
 #[doc = "Register `SDMMC_PWREN` writer"]
 pub type W = crate::W<SdmmcPwrenSpec>;
-#[doc = "Power on/off switch for the card. Once power is turned on, firmware should wait for regulator/switch ramp-up time before trying to initialize card.\n\nValue on reset: 0"]
+#[doc = "Power on/off switch for the card.\n\nOnce power is turned on, firmware should wait for\n\nregulator/switch ramp-up time before trying to initialize card.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PowerEnable {
-    #[doc = "0: power on Bit values output to card_power_en port."]
+    #[doc = "0: power off"]
     B0 = 0,
     #[doc = "1: power on Bit values output to card_power_en port."]
     B1 = 1,
@@ -16,7 +17,7 @@ impl From<PowerEnable> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `POWER_ENABLE` reader - Power on/off switch for the card. Once power is turned on, firmware should wait for regulator/switch ramp-up time before trying to initialize card."]
+#[doc = "Field `POWER_ENABLE` reader - Power on/off switch for the card.\n\nOnce power is turned on, firmware should wait for\n\nregulator/switch ramp-up time before trying to initialize card."]
 pub type PowerEnableR = crate::BitReader<PowerEnable>;
 impl PowerEnableR {
     #[doc = "Get enumerated values variant"]
@@ -27,7 +28,7 @@ impl PowerEnableR {
             true => PowerEnable::B1,
         }
     }
-    #[doc = "power on Bit values output to card_power_en port."]
+    #[doc = "power off"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PowerEnable::B0
@@ -38,13 +39,13 @@ impl PowerEnableR {
         *self == PowerEnable::B1
     }
 }
-#[doc = "Field `POWER_ENABLE` writer - Power on/off switch for the card. Once power is turned on, firmware should wait for regulator/switch ramp-up time before trying to initialize card."]
+#[doc = "Field `POWER_ENABLE` writer - Power on/off switch for the card.\n\nOnce power is turned on, firmware should wait for\n\nregulator/switch ramp-up time before trying to initialize card."]
 pub type PowerEnableW<'a, REG> = crate::BitWriter<'a, REG, PowerEnable>;
 impl<'a, REG> PowerEnableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "power on Bit values output to card_power_en port."]
+    #[doc = "power off"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PowerEnable::B0)
@@ -56,14 +57,14 @@ where
     }
 }
 impl R {
-    #[doc = "Bit 0 - Power on/off switch for the card. Once power is turned on, firmware should wait for regulator/switch ramp-up time before trying to initialize card."]
+    #[doc = "Bit 0 - Power on/off switch for the card.\n\nOnce power is turned on, firmware should wait for\n\nregulator/switch ramp-up time before trying to initialize card."]
     #[inline(always)]
     pub fn power_enable(&self) -> PowerEnableR {
         PowerEnableR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Power on/off switch for the card. Once power is turned on, firmware should wait for regulator/switch ramp-up time before trying to initialize card."]
+    #[doc = "Bit 0 - Power on/off switch for the card.\n\nOnce power is turned on, firmware should wait for\n\nregulator/switch ramp-up time before trying to initialize card."]
     #[inline(always)]
     #[must_use]
     pub fn power_enable(&mut self) -> PowerEnableW<SdmmcPwrenSpec> {

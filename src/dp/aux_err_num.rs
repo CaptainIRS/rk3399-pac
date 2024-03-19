@@ -2,19 +2,19 @@
 pub type R = crate::R<AuxErrNumSpec>;
 #[doc = "Register `AUX_ERR_NUM` writer"]
 pub type W = crate::W<AuxErrNumSpec>;
-#[doc = "Field `AUX_ERR_NUM` reader - The error number counter of AUX channel counts when AUX channel access failed. In AUX CH reading, this number indicates the number of read back byte. In AUX CH writing, this number indicates the number of reply command."]
+#[doc = "Field `AUX_ERR_NUM` reader - The error number counter of AUX channel \n\ncounts when AUX channel access failed. \n\nIn AUX CH reading, this number indicates the \n\nnumber of read back byte. \n\nIn AUX CH writing, this number indicates the \n\nnumber of reply command."]
 pub type AuxErrNumR = crate::FieldReader;
-#[doc = "Field `AUX_ERR_NUM` writer - The error number counter of AUX channel counts when AUX channel access failed. In AUX CH reading, this number indicates the number of read back byte. In AUX CH writing, this number indicates the number of reply command."]
+#[doc = "Field `AUX_ERR_NUM` writer - The error number counter of AUX channel \n\ncounts when AUX channel access failed. \n\nIn AUX CH reading, this number indicates the \n\nnumber of read back byte. \n\nIn AUX CH writing, this number indicates the \n\nnumber of reply command."]
 pub type AuxErrNumW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - The error number counter of AUX channel counts when AUX channel access failed. In AUX CH reading, this number indicates the number of read back byte. In AUX CH writing, this number indicates the number of reply command."]
+    #[doc = "Bits 0:7 - The error number counter of AUX channel \n\ncounts when AUX channel access failed. \n\nIn AUX CH reading, this number indicates the \n\nnumber of read back byte. \n\nIn AUX CH writing, this number indicates the \n\nnumber of reply command."]
     #[inline(always)]
     pub fn aux_err_num(&self) -> AuxErrNumR {
         AuxErrNumR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - The error number counter of AUX channel counts when AUX channel access failed. In AUX CH reading, this number indicates the number of read back byte. In AUX CH writing, this number indicates the number of reply command."]
+    #[doc = "Bits 0:7 - The error number counter of AUX channel \n\ncounts when AUX channel access failed. \n\nIn AUX CH reading, this number indicates the \n\nnumber of read back byte. \n\nIn AUX CH writing, this number indicates the \n\nnumber of reply command."]
     #[inline(always)]
     #[must_use]
     pub fn aux_err_num(&mut self) -> AuxErrNumW<AuxErrNumSpec> {

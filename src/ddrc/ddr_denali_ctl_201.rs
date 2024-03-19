@@ -14,7 +14,7 @@ pub type WrDbiEnW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type RdDbiEnR = crate::BitReader;
 #[doc = "Field `RD_DBI_EN` writer - Enables controller support of DRAM DBI feature for read data with DDR4 devices. Set to 1 to enable."]
 pub type RdDbiEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `DFI_ERROR` reader - Indicates that the DFI error flag has been asserted. READ-ONLY"]
+#[doc = "Field `DFI_ERROR` reader - Indicates that the DFI error flag has been asserted."]
 pub type DfiErrorR = crate::FieldReader;
 impl R {
     #[doc = "Bit 0 - Enable read preamble training during gate training. Set to 1 to enable."]
@@ -32,7 +32,7 @@ impl R {
     pub fn rd_dbi_en(&self) -> RdDbiEnR {
         RdDbiEnR::new(((self.bits >> 16) & 1) != 0)
     }
-    #[doc = "Bits 24:28 - Indicates that the DFI error flag has been asserted. READ-ONLY"]
+    #[doc = "Bits 24:28 - Indicates that the DFI error flag has been asserted."]
     #[inline(always)]
     pub fn dfi_error(&self) -> DfiErrorR {
         DfiErrorR::new(((self.bits >> 24) & 0x1f) as u8)

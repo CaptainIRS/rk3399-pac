@@ -2,9 +2,9 @@
 pub type R = crate::R<DdrPiReg101Spec>;
 #[doc = "Register `DDR_PI_REG_101` writer"]
 pub type W = crate::W<DdrPiReg101Spec>;
-#[doc = "Field `PI_CALVL_INTERVAL` reader - Indicates the number of long count sequences that is counted between automatic CA training commands."]
+#[doc = "Field `PI_CALVL_INTERVAL` reader - Indicates the number of long count sequences that is counted\n\nbetween automatic CA training commands."]
 pub type PiCalvlIntervalR = crate::FieldReader<u16>;
-#[doc = "Field `PI_CALVL_INTERVAL` writer - Indicates the number of long count sequences that is counted between automatic CA training commands."]
+#[doc = "Field `PI_CALVL_INTERVAL` writer - Indicates the number of long count sequences that is counted\n\nbetween automatic CA training commands."]
 pub type PiCalvlIntervalW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `PI_TCACKEL` reader - Indicates DRAM TCACKEL value in cycles."]
 pub type PiTcackelR = crate::FieldReader;
@@ -15,7 +15,7 @@ pub type PiTcamrdR = crate::FieldReader;
 #[doc = "Field `PI_TCAMRD` writer - Indicates DRAM TCAMRD value in cycles."]
 pub type PiTcamrdW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
-    #[doc = "Bits 0:15 - Indicates the number of long count sequences that is counted between automatic CA training commands."]
+    #[doc = "Bits 0:15 - Indicates the number of long count sequences that is counted\n\nbetween automatic CA training commands."]
     #[inline(always)]
     pub fn pi_calvl_interval(&self) -> PiCalvlIntervalR {
         PiCalvlIntervalR::new((self.bits & 0xffff) as u16)
@@ -32,7 +32,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - Indicates the number of long count sequences that is counted between automatic CA training commands."]
+    #[doc = "Bits 0:15 - Indicates the number of long count sequences that is counted\n\nbetween automatic CA training commands."]
     #[inline(always)]
     #[must_use]
     pub fn pi_calvl_interval(&mut self) -> PiCalvlIntervalW<DdrPiReg101Spec> {

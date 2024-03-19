@@ -3,9 +3,10 @@ pub type R = crate::R<DdrmonCtrlSpec>;
 #[doc = "Register `DDRMON_CTRL` writer"]
 pub type W = crate::W<DdrmonCtrlSpec>;
 #[doc = "DFI Timer Count Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TimerCntEn {
-    #[doc = "1: disable"]
+    #[doc = "1: enable"]
     B1 = 1,
     #[doc = "0: disable"]
     B0 = 0,
@@ -27,7 +28,7 @@ impl TimerCntEnR {
             false => TimerCntEn::B0,
         }
     }
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == TimerCntEn::B1
@@ -44,7 +45,7 @@ impl<'a, REG> TimerCntEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(TimerCntEn::B1)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Software Mode Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SoftwareEn {
-    #[doc = "1: disable"]
+    #[doc = "1: enable"]
     B1 = 1,
     #[doc = "0: disable"]
     B0 = 0,
@@ -80,7 +82,7 @@ impl SoftwareEnR {
             false => SoftwareEn::B0,
         }
     }
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == SoftwareEn::B1
@@ -97,7 +99,7 @@ impl<'a, REG> SoftwareEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(SoftwareEn::B1)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "LPDDR3 Mode Monitor Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Lpddr3En {
-    #[doc = "1: disable"]
+    #[doc = "1: enable"]
     B1 = 1,
     #[doc = "0: disable"]
     B0 = 0,
@@ -133,7 +136,7 @@ impl Lpddr3EnR {
             false => Lpddr3En::B0,
         }
     }
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Lpddr3En::B1
@@ -150,7 +153,7 @@ impl<'a, REG> Lpddr3EnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Lpddr3En::B1)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "Hardware Mode Enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HardwareEn {
-    #[doc = "1: disable"]
+    #[doc = "1: enable"]
     B1 = 1,
     #[doc = "0: disable"]
     B0 = 0,
@@ -186,7 +190,7 @@ impl HardwareEnR {
             false => HardwareEn::B0,
         }
     }
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == HardwareEn::B1
@@ -203,7 +207,7 @@ impl<'a, REG> HardwareEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(HardwareEn::B1)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "LPDDR4 Mode Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Lpddr4En {
-    #[doc = "1: disable"]
+    #[doc = "1: enable"]
     B1 = 1,
     #[doc = "0: disable"]
     B0 = 0,
@@ -239,7 +244,7 @@ impl Lpddr4EnR {
             false => Lpddr4En::B0,
         }
     }
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Lpddr4En::B1
@@ -256,7 +261,7 @@ impl<'a, REG> Lpddr4EnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Lpddr4En::B1)
@@ -267,9 +272,9 @@ where
         self.variant(Lpddr4En::B0)
     }
 }
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by softwar . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software. When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software. When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by softwar .\n\nWhen bit 16=0, bit 0 cannot be written by software;\n\nWhen bit 17=1, bit 1 can be written by software.\n\nWhen bit 17=0, bit 1 cannot be written by software;\n\n......\n\nWhen bit 31=1, bit 15 can be written by software.\n\nWhen bit 31=0, bit 15 cannot be written by software;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by softwar . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software. When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software. When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by softwar .\n\nWhen bit 16=0, bit 0 cannot be written by software;\n\nWhen bit 17=1, bit 1 can be written by software.\n\nWhen bit 17=0, bit 1 cannot be written by software;\n\n......\n\nWhen bit 31=1, bit 15 can be written by software.\n\nWhen bit 31=0, bit 15 cannot be written by software;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0 - DFI Timer Count Enable"]
@@ -297,7 +302,7 @@ impl R {
     pub fn lpddr4_en(&self) -> Lpddr4EnR {
         Lpddr4EnR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by softwar . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software. When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software. When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by softwar .\n\nWhen bit 16=0, bit 0 cannot be written by software;\n\nWhen bit 17=1, bit 1 can be written by software.\n\nWhen bit 17=0, bit 1 cannot be written by software;\n\n......\n\nWhen bit 31=1, bit 15 can be written by software.\n\nWhen bit 31=0, bit 15 cannot be written by software;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
@@ -334,7 +339,7 @@ impl W {
     pub fn lpddr4_en(&mut self) -> Lpddr4EnW<DdrmonCtrlSpec> {
         Lpddr4EnW::new(self, 4)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by softwar . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software. When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software. When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by softwar .\n\nWhen bit 16=0, bit 0 cannot be written by software;\n\nWhen bit 17=1, bit 1 can be written by software.\n\nWhen bit 17=0, bit 1 cannot be written by software;\n\n......\n\nWhen bit 31=1, bit 15 can be written by software.\n\nWhen bit 31=0, bit 15 cannot be written by software;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<DdrmonCtrlSpec> {

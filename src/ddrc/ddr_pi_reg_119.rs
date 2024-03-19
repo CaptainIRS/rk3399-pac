@@ -10,9 +10,9 @@ pub type PiWdqlvlRespMaskW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type PiWdqlvlRotateR = crate::BitReader;
 #[doc = "Field `PI_WDQLVL_ROTATE` writer - Enables write DQ training rotate for periodic training."]
 pub type PiWdqlvlRotateW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PI_WDQLVL_CS_MAP` reader - Indicates map of chip selects that are included in write DQ training sequence."]
+#[doc = "Field `PI_WDQLVL_CS_MAP` reader - Indicates map of chip selects that are included in write DQ training\n\nsequence."]
 pub type PiWdqlvlCsMapR = crate::FieldReader;
-#[doc = "Field `PI_WDQLVL_CS_MAP` writer - Indicates map of chip selects that are included in write DQ training sequence."]
+#[doc = "Field `PI_WDQLVL_CS_MAP` writer - Indicates map of chip selects that are included in write DQ training\n\nsequence."]
 pub type PiWdqlvlCsMapW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `PI_WDQLVL_VREF_INITIAL_START_POINT` reader - Indicates write DQ training VREF start value."]
 pub type PiWdqlvlVrefInitialStartPointR = crate::FieldReader;
@@ -29,7 +29,7 @@ impl R {
     pub fn pi_wdqlvl_rotate(&self) -> PiWdqlvlRotateR {
         PiWdqlvlRotateR::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bits 16:17 - Indicates map of chip selects that are included in write DQ training sequence."]
+    #[doc = "Bits 16:17 - Indicates map of chip selects that are included in write DQ training\n\nsequence."]
     #[inline(always)]
     pub fn pi_wdqlvl_cs_map(&self) -> PiWdqlvlCsMapR {
         PiWdqlvlCsMapR::new(((self.bits >> 16) & 3) as u8)
@@ -53,7 +53,7 @@ impl W {
     pub fn pi_wdqlvl_rotate(&mut self) -> PiWdqlvlRotateW<DdrPiReg119Spec> {
         PiWdqlvlRotateW::new(self, 8)
     }
-    #[doc = "Bits 16:17 - Indicates map of chip selects that are included in write DQ training sequence."]
+    #[doc = "Bits 16:17 - Indicates map of chip selects that are included in write DQ training\n\nsequence."]
     #[inline(always)]
     #[must_use]
     pub fn pi_wdqlvl_cs_map(&mut self) -> PiWdqlvlCsMapW<DdrPiReg119Spec> {

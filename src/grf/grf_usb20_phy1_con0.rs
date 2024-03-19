@@ -3,9 +3,10 @@ pub type R = crate::R<GrfUsb20Phy1Con0Spec>;
 #[doc = "Register `GRF_USB20_PHY1_CON0` writer"]
 pub type W = crate::W<GrfUsb20Phy1Con0Spec>;
 #[doc = "otg_disable_0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum OtgDisable0 {
-    #[doc = "1: enable otg function of usb3otg1"]
+    #[doc = "1: disable otg function of usb3otg1"]
     B1 = 1,
     #[doc = "0: enable otg function of usb3otg1"]
     B0 = 0,
@@ -27,7 +28,7 @@ impl OtgDisable0R {
             false => OtgDisable0::B0,
         }
     }
-    #[doc = "enable otg function of usb3otg1"]
+    #[doc = "disable otg function of usb3otg1"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == OtgDisable0::B1
@@ -44,7 +45,7 @@ impl<'a, REG> OtgDisable0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable otg function of usb3otg1"]
+    #[doc = "disable otg function of usb3otg1"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(OtgDisable0::B1)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "otg_disable_1\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum OtgDisable1 {
-    #[doc = "1: enable otg function of usb2 host1"]
+    #[doc = "1: disable otg function of usb2 host1"]
     B1 = 1,
     #[doc = "0: enable otg function of usb2 host1"]
     B0 = 0,
@@ -80,7 +82,7 @@ impl OtgDisable1R {
             false => OtgDisable1::B0,
         }
     }
-    #[doc = "enable otg function of usb2 host1"]
+    #[doc = "disable otg function of usb2 host1"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == OtgDisable1::B1
@@ -97,7 +99,7 @@ impl<'a, REG> OtgDisable1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable otg function of usb2 host1"]
+    #[doc = "disable otg function of usb2 host1"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(OtgDisable1::B1)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "bypassdmen\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bypassdmen {
-    #[doc = "1: disable bypass uart_sout to DM for usb3otg1"]
+    #[doc = "1: enable bypass uart_sout to DM for usb3otg1"]
     B1 = 1,
     #[doc = "0: disable bypass uart_sout to DM for usb3otg1"]
     B0 = 0,
@@ -133,7 +136,7 @@ impl BypassdmenR {
             false => Bypassdmen::B0,
         }
     }
-    #[doc = "disable bypass uart_sout to DM for usb3otg1"]
+    #[doc = "enable bypass uart_sout to DM for usb3otg1"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Bypassdmen::B1
@@ -150,7 +153,7 @@ impl<'a, REG> BypassdmenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "disable bypass uart_sout to DM for usb3otg1"]
+    #[doc = "enable bypass uart_sout to DM for usb3otg1"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Bypassdmen::B1)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "bypasssel\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bypasssel {
-    #[doc = "1: Normal USB function for usb3otg1"]
+    #[doc = "1: bypass DP/DM as uart sin/sout for usb3otg1"]
     B1 = 1,
     #[doc = "0: Normal USB function for usb3otg1"]
     B0 = 0,
@@ -186,7 +190,7 @@ impl BypassselR {
             false => Bypasssel::B0,
         }
     }
-    #[doc = "Normal USB function for usb3otg1"]
+    #[doc = "bypass DP/DM as uart sin/sout for usb3otg1"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Bypasssel::B1
@@ -203,7 +207,7 @@ impl<'a, REG> BypassselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Normal USB function for usb3otg1"]
+    #[doc = "bypass DP/DM as uart sin/sout for usb3otg1"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Bypasssel::B1)
@@ -214,37 +218,37 @@ where
         self.variant(Bypasssel::B0)
     }
 }
-#[doc = "Field `OTG_COMMONONN` reader - otg_commononn configure pll clock output in suspend mode"]
+#[doc = "Field `OTG_COMMONONN` reader - otg_commononn\n\nconfigure pll clock output in suspend mode"]
 pub type OtgCommononnR = crate::BitReader;
-#[doc = "Field `OTG_COMMONONN` writer - otg_commononn configure pll clock output in suspend mode"]
+#[doc = "Field `OTG_COMMONONN` writer - otg_commononn\n\nconfigure pll clock output in suspend mode"]
 pub type OtgCommononnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `IDP_SINK_EN` reader - idp_sink_en 1: enable idp_sink for battery charge for usb3otg1"]
+#[doc = "Field `IDP_SINK_EN` reader - idp_sink_en\n\n1: enable idp_sink for battery charge for\n\nusb3otg1"]
 pub type IdpSinkEnR = crate::BitReader;
-#[doc = "Field `IDP_SINK_EN` writer - idp_sink_en 1: enable idp_sink for battery charge for usb3otg1"]
+#[doc = "Field `IDP_SINK_EN` writer - idp_sink_en\n\n1: enable idp_sink for battery charge for\n\nusb3otg1"]
 pub type IdpSinkEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `IDM_SINK_EN` reader - idm_sink_en 1: enable idm_sink for battery charge for usb3otg1"]
+#[doc = "Field `IDM_SINK_EN` reader - idm_sink_en\n\n1: enable idm_sink for battery charge for\n\nusb3otg1"]
 pub type IdmSinkEnR = crate::BitReader;
-#[doc = "Field `IDM_SINK_EN` writer - idm_sink_en 1: enable idm_sink for battery charge for usb3otg1"]
+#[doc = "Field `IDM_SINK_EN` writer - idm_sink_en\n\n1: enable idm_sink for battery charge for\n\nusb3otg1"]
 pub type IdmSinkEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `IDP_SRC_EN` reader - idp_src_en 1: enable idp_src for battery charge for usb3otg1"]
+#[doc = "Field `IDP_SRC_EN` reader - idp_src_en\n\n1: enable idp_src for battery charge for\n\nusb3otg1"]
 pub type IdpSrcEnR = crate::BitReader;
-#[doc = "Field `IDP_SRC_EN` writer - idp_src_en 1: enable idp_src for battery charge for usb3otg1"]
+#[doc = "Field `IDP_SRC_EN` writer - idp_src_en\n\n1: enable idp_src for battery charge for\n\nusb3otg1"]
 pub type IdpSrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `RDM_PDWN_EN` reader - rdm_pdwn_en 1: enable rdm_pdwn for battery charge for usb3otg1"]
+#[doc = "Field `RDM_PDWN_EN` reader - rdm_pdwn_en\n\n1: enable rdm_pdwn for battery charge for\n\nusb3otg1"]
 pub type RdmPdwnEnR = crate::BitReader;
-#[doc = "Field `RDM_PDWN_EN` writer - rdm_pdwn_en 1: enable rdm_pdwn for battery charge for usb3otg1"]
+#[doc = "Field `RDM_PDWN_EN` writer - rdm_pdwn_en\n\n1: enable rdm_pdwn for battery charge for\n\nusb3otg1"]
 pub type RdmPdwnEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `VDP_SRC_EN` reader - vdp_src_en 1:enable vdp_src for battery charge for usb3otg1"]
+#[doc = "Field `VDP_SRC_EN` reader - vdp_src_en\n\n1:enable vdp_src for battery charge for\n\nusb3otg1"]
 pub type VdpSrcEnR = crate::BitReader;
-#[doc = "Field `VDP_SRC_EN` writer - vdp_src_en 1:enable vdp_src for battery charge for usb3otg1"]
+#[doc = "Field `VDP_SRC_EN` writer - vdp_src_en\n\n1:enable vdp_src for battery charge for\n\nusb3otg1"]
 pub type VdpSrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `VDM_SRC_EN` reader - vdm_src_en 1: enable vdm_src for battery charge for usb3otg1"]
+#[doc = "Field `VDM_SRC_EN` reader - vdm_src_en\n\n1: enable vdm_src for battery charge for\n\nusb3otg1"]
 pub type VdmSrcEnR = crate::BitReader;
-#[doc = "Field `VDM_SRC_EN` writer - vdm_src_en 1: enable vdm_src for battery charge for usb3otg1"]
+#[doc = "Field `VDM_SRC_EN` writer - vdm_src_en\n\n1: enable vdm_src for battery charge for\n\nusb3otg1"]
 pub type VdmSrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0 - otg_disable_0"]
@@ -267,42 +271,42 @@ impl R {
     pub fn bypasssel(&self) -> BypassselR {
         BypassselR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - otg_commononn configure pll clock output in suspend mode"]
+    #[doc = "Bit 4 - otg_commononn\n\nconfigure pll clock output in suspend mode"]
     #[inline(always)]
     pub fn otg_commononn(&self) -> OtgCommononnR {
         OtgCommononnR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 7 - idp_sink_en 1: enable idp_sink for battery charge for usb3otg1"]
+    #[doc = "Bit 7 - idp_sink_en\n\n1: enable idp_sink for battery charge for\n\nusb3otg1"]
     #[inline(always)]
     pub fn idp_sink_en(&self) -> IdpSinkEnR {
         IdpSinkEnR::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bit 8 - idm_sink_en 1: enable idm_sink for battery charge for usb3otg1"]
+    #[doc = "Bit 8 - idm_sink_en\n\n1: enable idm_sink for battery charge for\n\nusb3otg1"]
     #[inline(always)]
     pub fn idm_sink_en(&self) -> IdmSinkEnR {
         IdmSinkEnR::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bit 9 - idp_src_en 1: enable idp_src for battery charge for usb3otg1"]
+    #[doc = "Bit 9 - idp_src_en\n\n1: enable idp_src for battery charge for\n\nusb3otg1"]
     #[inline(always)]
     pub fn idp_src_en(&self) -> IdpSrcEnR {
         IdpSrcEnR::new(((self.bits >> 9) & 1) != 0)
     }
-    #[doc = "Bit 10 - rdm_pdwn_en 1: enable rdm_pdwn for battery charge for usb3otg1"]
+    #[doc = "Bit 10 - rdm_pdwn_en\n\n1: enable rdm_pdwn for battery charge for\n\nusb3otg1"]
     #[inline(always)]
     pub fn rdm_pdwn_en(&self) -> RdmPdwnEnR {
         RdmPdwnEnR::new(((self.bits >> 10) & 1) != 0)
     }
-    #[doc = "Bit 11 - vdp_src_en 1:enable vdp_src for battery charge for usb3otg1"]
+    #[doc = "Bit 11 - vdp_src_en\n\n1:enable vdp_src for battery charge for\n\nusb3otg1"]
     #[inline(always)]
     pub fn vdp_src_en(&self) -> VdpSrcEnR {
         VdpSrcEnR::new(((self.bits >> 11) & 1) != 0)
     }
-    #[doc = "Bit 12 - vdm_src_en 1: enable vdm_src for battery charge for usb3otg1"]
+    #[doc = "Bit 12 - vdm_src_en\n\n1: enable vdm_src for battery charge for\n\nusb3otg1"]
     #[inline(always)]
     pub fn vdm_src_en(&self) -> VdmSrcEnR {
         VdmSrcEnR::new(((self.bits >> 12) & 1) != 0)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
@@ -333,49 +337,49 @@ impl W {
     pub fn bypasssel(&mut self) -> BypassselW<GrfUsb20Phy1Con0Spec> {
         BypassselW::new(self, 3)
     }
-    #[doc = "Bit 4 - otg_commononn configure pll clock output in suspend mode"]
+    #[doc = "Bit 4 - otg_commononn\n\nconfigure pll clock output in suspend mode"]
     #[inline(always)]
     #[must_use]
     pub fn otg_commononn(&mut self) -> OtgCommononnW<GrfUsb20Phy1Con0Spec> {
         OtgCommononnW::new(self, 4)
     }
-    #[doc = "Bit 7 - idp_sink_en 1: enable idp_sink for battery charge for usb3otg1"]
+    #[doc = "Bit 7 - idp_sink_en\n\n1: enable idp_sink for battery charge for\n\nusb3otg1"]
     #[inline(always)]
     #[must_use]
     pub fn idp_sink_en(&mut self) -> IdpSinkEnW<GrfUsb20Phy1Con0Spec> {
         IdpSinkEnW::new(self, 7)
     }
-    #[doc = "Bit 8 - idm_sink_en 1: enable idm_sink for battery charge for usb3otg1"]
+    #[doc = "Bit 8 - idm_sink_en\n\n1: enable idm_sink for battery charge for\n\nusb3otg1"]
     #[inline(always)]
     #[must_use]
     pub fn idm_sink_en(&mut self) -> IdmSinkEnW<GrfUsb20Phy1Con0Spec> {
         IdmSinkEnW::new(self, 8)
     }
-    #[doc = "Bit 9 - idp_src_en 1: enable idp_src for battery charge for usb3otg1"]
+    #[doc = "Bit 9 - idp_src_en\n\n1: enable idp_src for battery charge for\n\nusb3otg1"]
     #[inline(always)]
     #[must_use]
     pub fn idp_src_en(&mut self) -> IdpSrcEnW<GrfUsb20Phy1Con0Spec> {
         IdpSrcEnW::new(self, 9)
     }
-    #[doc = "Bit 10 - rdm_pdwn_en 1: enable rdm_pdwn for battery charge for usb3otg1"]
+    #[doc = "Bit 10 - rdm_pdwn_en\n\n1: enable rdm_pdwn for battery charge for\n\nusb3otg1"]
     #[inline(always)]
     #[must_use]
     pub fn rdm_pdwn_en(&mut self) -> RdmPdwnEnW<GrfUsb20Phy1Con0Spec> {
         RdmPdwnEnW::new(self, 10)
     }
-    #[doc = "Bit 11 - vdp_src_en 1:enable vdp_src for battery charge for usb3otg1"]
+    #[doc = "Bit 11 - vdp_src_en\n\n1:enable vdp_src for battery charge for\n\nusb3otg1"]
     #[inline(always)]
     #[must_use]
     pub fn vdp_src_en(&mut self) -> VdpSrcEnW<GrfUsb20Phy1Con0Spec> {
         VdpSrcEnW::new(self, 11)
     }
-    #[doc = "Bit 12 - vdm_src_en 1: enable vdm_src for battery charge for usb3otg1"]
+    #[doc = "Bit 12 - vdm_src_en\n\n1: enable vdm_src for battery charge for\n\nusb3otg1"]
     #[inline(always)]
     #[must_use]
     pub fn vdm_src_en(&mut self) -> VdmSrcEnW<GrfUsb20Phy1Con0Spec> {
         VdmSrcEnW::new(self, 12)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfUsb20Phy1Con0Spec> {

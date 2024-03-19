@@ -2,15 +2,16 @@
 pub type R = crate::R<PmugrfGpio0aPSpec>;
 #[doc = "Register `PMUGRF_GPIO0A_P` writer"]
 pub type W = crate::W<PmugrfGpio0aPSpec>;
-#[doc = "GPIO0A PE/PS programmation section, every GPIO bit corresponding to 2bits\\[PS:PE\\]\n\nValue on reset: 56671"]
+#[doc = "GPIO0A PE/PS programmation section, every\n\nGPIO bit corresponding to 2bits\\[PS:PE\\]\n\nValue on reset: 56671"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum Gpio0aP {
     #[doc = "0: Z(Noraml operaton);"]
     B00 = 0,
-    #[doc = "3: Z(Noraml operaton);"]
+    #[doc = "3: weak 1(pull-up);"]
     B11 = 3,
-    #[doc = "1: Z(Noraml operaton);"]
+    #[doc = "1: weak 0(pull-down);"]
     B01 = 1,
     #[doc = "2: Z(Noraml operaton);"]
     B10 = 2,
@@ -24,7 +25,7 @@ impl From<Gpio0aP> for u16 {
 impl crate::FieldSpec for Gpio0aP {
     type Ux = u16;
 }
-#[doc = "Field `GPIO0A_P` reader - GPIO0A PE/PS programmation section, every GPIO bit corresponding to 2bits\\[PS:PE\\]"]
+#[doc = "Field `GPIO0A_P` reader - GPIO0A PE/PS programmation section, every\n\nGPIO bit corresponding to 2bits\\[PS:PE\\]"]
 pub type Gpio0aPR = crate::FieldReader<Gpio0aP>;
 impl Gpio0aPR {
     #[doc = "Get enumerated values variant"]
@@ -43,12 +44,12 @@ impl Gpio0aPR {
     pub fn is_b00(&self) -> bool {
         *self == Gpio0aP::B00
     }
-    #[doc = "Z(Noraml operaton);"]
+    #[doc = "weak 1(pull-up);"]
     #[inline(always)]
     pub fn is_b11(&self) -> bool {
         *self == Gpio0aP::B11
     }
-    #[doc = "Z(Noraml operaton);"]
+    #[doc = "weak 0(pull-down);"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Gpio0aP::B01
@@ -59,7 +60,7 @@ impl Gpio0aPR {
         *self == Gpio0aP::B10
     }
 }
-#[doc = "Field `GPIO0A_P` writer - GPIO0A PE/PS programmation section, every GPIO bit corresponding to 2bits\\[PS:PE\\]"]
+#[doc = "Field `GPIO0A_P` writer - GPIO0A PE/PS programmation section, every\n\nGPIO bit corresponding to 2bits\\[PS:PE\\]"]
 pub type Gpio0aPW<'a, REG> = crate::FieldWriter<'a, REG, 16, Gpio0aP>;
 impl<'a, REG> Gpio0aPW<'a, REG>
 where
@@ -71,12 +72,12 @@ where
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio0aP::B00)
     }
-    #[doc = "Z(Noraml operaton);"]
+    #[doc = "weak 1(pull-up);"]
     #[inline(always)]
     pub fn b11(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio0aP::B11)
     }
-    #[doc = "Z(Noraml operaton);"]
+    #[doc = "weak 0(pull-down);"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio0aP::B01)
@@ -87,23 +88,23 @@ where
         self.variant(Gpio0aP::B10)
     }
 }
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:15 - GPIO0A PE/PS programmation section, every GPIO bit corresponding to 2bits\\[PS:PE\\]"]
+    #[doc = "Bits 0:15 - GPIO0A PE/PS programmation section, every\n\nGPIO bit corresponding to 2bits\\[PS:PE\\]"]
     #[inline(always)]
     pub fn gpio0a_p(&self) -> Gpio0aPR {
         Gpio0aPR::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - GPIO0A PE/PS programmation section, every GPIO bit corresponding to 2bits\\[PS:PE\\]"]
+    #[doc = "Bits 0:15 - GPIO0A PE/PS programmation section, every\n\nGPIO bit corresponding to 2bits\\[PS:PE\\]"]
     #[inline(always)]
     #[must_use]
     pub fn gpio0a_p(&mut self) -> Gpio0aPW<PmugrfGpio0aPSpec> {
         Gpio0aPW::new(self, 0)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<PmugrfGpio0aPSpec> {

@@ -7,9 +7,10 @@ pub type GmacClkTxDlCfgR = crate::FieldReader;
 #[doc = "Field `GMAC_CLK_TX_DL_CFG` writer - RGMII TX clock delayline value"]
 pub type GmacClkTxDlCfgW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "RGMII TX clock delayline enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GmacTxclkDlyEna {
-    #[doc = "1: disable"]
+    #[doc = "1: enable"]
     B1 = 1,
     #[doc = "0: disable"]
     B0 = 0,
@@ -31,7 +32,7 @@ impl GmacTxclkDlyEnaR {
             false => GmacTxclkDlyEna::B0,
         }
     }
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == GmacTxclkDlyEna::B1
@@ -48,7 +49,7 @@ impl<'a, REG> GmacTxclkDlyEnaW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(GmacTxclkDlyEna::B1)
@@ -64,9 +65,10 @@ pub type GmacClkRxDlCfgR = crate::FieldReader;
 #[doc = "Field `GMAC_CLK_RX_DL_CFG` writer - RGMII RX clock delayline value"]
 pub type GmacClkRxDlCfgW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "RGMII TX clock delayline enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GmacRxclkDlyEna {
-    #[doc = "1: disable"]
+    #[doc = "1: enable"]
     B1 = 1,
     #[doc = "0: disable"]
     B0 = 0,
@@ -88,7 +90,7 @@ impl GmacRxclkDlyEnaR {
             false => GmacRxclkDlyEna::B0,
         }
     }
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == GmacRxclkDlyEna::B1
@@ -105,7 +107,7 @@ impl<'a, REG> GmacRxclkDlyEnaW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(GmacRxclkDlyEna::B1)
@@ -116,9 +118,9 @@ where
         self.variant(GmacRxclkDlyEna::B0)
     }
 }
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:6 - RGMII TX clock delayline value"]
@@ -141,7 +143,7 @@ impl R {
     pub fn gmac_rxclk_dly_ena(&self) -> GmacRxclkDlyEnaR {
         GmacRxclkDlyEnaR::new(((self.bits >> 15) & 1) != 0)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
@@ -172,7 +174,7 @@ impl W {
     pub fn gmac_rxclk_dly_ena(&mut self) -> GmacRxclkDlyEnaW<GrfSocCon6Spec> {
         GmacRxclkDlyEnaW::new(self, 15)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfSocCon6Spec> {

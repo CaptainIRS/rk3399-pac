@@ -2,26 +2,26 @@
 pub type R = crate::R<McLockonclock2Spec>;
 #[doc = "Register `MC_LOCKONCLOCK_2` writer"]
 pub type W = crate::W<McLockonclock2Spec>;
-#[doc = "Field `AHBDMACLK` reader - AHB audio DMA clock status. Indicates that the clock is present in the system. Cleared by WR 1 to this position."]
+#[doc = "Field `AHBDMACLK` reader - AHB audio DMA clock status. Indicates that the clock is\n\npresent in the system. Cleared by WR 1 to this position."]
 pub type AhbdmaclkR = crate::BitReader;
-#[doc = "Field `AHBDMACLK` writer - AHB audio DMA clock status. Indicates that the clock is present in the system. Cleared by WR 1 to this position."]
+#[doc = "Field `AHBDMACLK` writer - AHB audio DMA clock status. Indicates that the clock is\n\npresent in the system. Cleared by WR 1 to this position."]
 pub type AhbdmaclkW<'a, REG> = crate::BitWriter1C<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - AHB audio DMA clock status. Indicates that the clock is present in the system. Cleared by WR 1 to this position."]
+    #[doc = "Bit 0 - AHB audio DMA clock status. Indicates that the clock is\n\npresent in the system. Cleared by WR 1 to this position."]
     #[inline(always)]
     pub fn ahbdmaclk(&self) -> AhbdmaclkR {
         AhbdmaclkR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - AHB audio DMA clock status. Indicates that the clock is present in the system. Cleared by WR 1 to this position."]
+    #[doc = "Bit 0 - AHB audio DMA clock status. Indicates that the clock is\n\npresent in the system. Cleared by WR 1 to this position."]
     #[inline(always)]
     #[must_use]
     pub fn ahbdmaclk(&mut self) -> AhbdmaclkW<McLockonclock2Spec> {
         AhbdmaclkW::new(self, 0)
     }
 }
-#[doc = "AHB audio DMA clock status. Indicates that the clock is present in the system. Cleared by WR 1 to this position.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mc_lockonclock_2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mc_lockonclock_2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Main Controller Clock Present Register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mc_lockonclock_2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mc_lockonclock_2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct McLockonclock2Spec;
 impl crate::RegisterSpec for McLockonclock2Spec {
     type Ux = u8;

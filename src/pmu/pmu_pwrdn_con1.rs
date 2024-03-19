@@ -3,9 +3,10 @@ pub type R = crate::R<PmuPwrdnCon1Spec>;
 #[doc = "Register `PMU_PWRDN_CON1` writer"]
 pub type W = crate::W<PmuPwrdnCon1Spec>;
 #[doc = "vd_scu_l power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VdScuLEnable {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl VdScuLEnableR {
             true => VdScuLEnable::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == VdScuLEnable::B0
@@ -44,7 +45,7 @@ impl<'a, REG> VdScuLEnableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(VdScuLEnable::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "vd_scu_b power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VdScuBPwrdwn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl VdScuBPwrdwnR {
             true => VdScuBPwrdwn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == VdScuBPwrdwn::B0
@@ -97,7 +99,7 @@ impl<'a, REG> VdScuBPwrdwnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(VdScuBPwrdwn::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "vd_center power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VdCenterPwrdwn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl VdCenterPwrdwnR {
             true => VdCenterPwrdwn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == VdCenterPwrdwn::B0
@@ -150,7 +153,7 @@ impl<'a, REG> VdCenterPwrdwnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(VdCenterPwrdwn::B0)

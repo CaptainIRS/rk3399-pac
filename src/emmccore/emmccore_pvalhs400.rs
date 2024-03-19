@@ -1,11 +1,12 @@
 #[doc = "Register `EMMCCORE_PVALHS400` reader"]
 pub type R = crate::R<EmmccorePvalhs400Spec>;
-#[doc = "Field `SDCLKFREQUENCYSELECTVALUE` reader - 10-bit preset value to set SDCLK Frequency Select in the Clock Control Register is described by a host system."]
+#[doc = "Field `SDCLKFREQUENCYSELECTVALUE` reader - 10-bit preset value to set SDCLK Frequency Select in the Clock\n\nControl Register is described by a host system."]
 pub type SdclkfrequencyselectvalueR = crate::FieldReader<u16>;
-#[doc = "This bit is effective when Host Controller supports programmable clockgenerator.\n\nValue on reset: 0"]
+#[doc = "This bit is effective when Host Controller supports programmable\n\nclockgenerator.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Clockgeneratorselectvalue {
-    #[doc = "1: Host Controller Ver2.00 Compatible Clock Generator"]
+    #[doc = "1: Programmable Clock Generator"]
     B1 = 1,
     #[doc = "0: Host Controller Ver2.00 Compatible Clock Generator"]
     B0 = 0,
@@ -16,7 +17,7 @@ impl From<Clockgeneratorselectvalue> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CLOCKGENERATORSELECTVALUE` reader - This bit is effective when Host Controller supports programmable clockgenerator."]
+#[doc = "Field `CLOCKGENERATORSELECTVALUE` reader - This bit is effective when Host Controller supports programmable\n\nclockgenerator."]
 pub type ClockgeneratorselectvalueR = crate::BitReader<Clockgeneratorselectvalue>;
 impl ClockgeneratorselectvalueR {
     #[doc = "Get enumerated values variant"]
@@ -27,7 +28,7 @@ impl ClockgeneratorselectvalueR {
             false => Clockgeneratorselectvalue::B0,
         }
     }
-    #[doc = "Host Controller Ver2.00 Compatible Clock Generator"]
+    #[doc = "Programmable Clock Generator"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Clockgeneratorselectvalue::B1
@@ -38,15 +39,16 @@ impl ClockgeneratorselectvalueR {
         *self == Clockgeneratorselectvalue::B0
     }
 }
-#[doc = "Driver Strength is supported by 1.8V signaling bus speed modes. This field is meaningless for 3.3V signaling.\n\nValue on reset: 0"]
+#[doc = "Driver Strength is supported by 1.8V signaling bus speed modes.\n\nThis field is meaningless for 3.3V signaling.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Driverstrengthselectvalue {
-    #[doc = "3: Driver Type B is Selected"]
+    #[doc = "3: Driver Type D is Selected"]
     B11 = 3,
-    #[doc = "2: Driver Type B is Selected"]
+    #[doc = "2: Driver Type C is Selected"]
     B10 = 2,
-    #[doc = "1: Driver Type B is Selected"]
+    #[doc = "1: Driver Type A is Selected"]
     B01 = 1,
     #[doc = "0: Driver Type B is Selected"]
     B00 = 0,
@@ -60,7 +62,7 @@ impl From<Driverstrengthselectvalue> for u8 {
 impl crate::FieldSpec for Driverstrengthselectvalue {
     type Ux = u8;
 }
-#[doc = "Field `DRIVERSTRENGTHSELECTVALUE` reader - Driver Strength is supported by 1.8V signaling bus speed modes. This field is meaningless for 3.3V signaling."]
+#[doc = "Field `DRIVERSTRENGTHSELECTVALUE` reader - Driver Strength is supported by 1.8V signaling bus speed modes.\n\nThis field is meaningless for 3.3V signaling."]
 pub type DriverstrengthselectvalueR = crate::FieldReader<Driverstrengthselectvalue>;
 impl DriverstrengthselectvalueR {
     #[doc = "Get enumerated values variant"]
@@ -74,17 +76,17 @@ impl DriverstrengthselectvalueR {
             _ => unreachable!(),
         }
     }
-    #[doc = "Driver Type B is Selected"]
+    #[doc = "Driver Type D is Selected"]
     #[inline(always)]
     pub fn is_b11(&self) -> bool {
         *self == Driverstrengthselectvalue::B11
     }
-    #[doc = "Driver Type B is Selected"]
+    #[doc = "Driver Type C is Selected"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Driverstrengthselectvalue::B10
     }
-    #[doc = "Driver Type B is Selected"]
+    #[doc = "Driver Type A is Selected"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Driverstrengthselectvalue::B01
@@ -96,17 +98,17 @@ impl DriverstrengthselectvalueR {
     }
 }
 impl R {
-    #[doc = "Bits 0:9 - 10-bit preset value to set SDCLK Frequency Select in the Clock Control Register is described by a host system."]
+    #[doc = "Bits 0:9 - 10-bit preset value to set SDCLK Frequency Select in the Clock\n\nControl Register is described by a host system."]
     #[inline(always)]
     pub fn sdclkfrequencyselectvalue(&self) -> SdclkfrequencyselectvalueR {
         SdclkfrequencyselectvalueR::new(self.bits & 0x03ff)
     }
-    #[doc = "Bit 10 - This bit is effective when Host Controller supports programmable clockgenerator."]
+    #[doc = "Bit 10 - This bit is effective when Host Controller supports programmable\n\nclockgenerator."]
     #[inline(always)]
     pub fn clockgeneratorselectvalue(&self) -> ClockgeneratorselectvalueR {
         ClockgeneratorselectvalueR::new(((self.bits >> 10) & 1) != 0)
     }
-    #[doc = "Bits 14:15 - Driver Strength is supported by 1.8V signaling bus speed modes. This field is meaningless for 3.3V signaling."]
+    #[doc = "Bits 14:15 - Driver Strength is supported by 1.8V signaling bus speed modes.\n\nThis field is meaningless for 3.3V signaling."]
     #[inline(always)]
     pub fn driverstrengthselectvalue(&self) -> DriverstrengthselectvalueR {
         DriverstrengthselectvalueR::new(((self.bits >> 14) & 3) as u8)

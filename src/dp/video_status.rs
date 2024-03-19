@@ -3,9 +3,10 @@ pub type R = crate::R<VideoStatusSpec>;
 #[doc = "Register `VIDEO_STATUS` writer"]
 pub type W = crate::W<VideoStatusSpec>;
 #[doc = "Auto-detect HSYNC polarity:\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HsyncPS {
-    #[doc = "1: High is active. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+    #[doc = "1: Low is active,"]
     B1 = 1,
     #[doc = "0: High is active. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
     B0 = 0,
@@ -27,7 +28,7 @@ impl HsyncPSR {
             false => HsyncPS::B0,
         }
     }
-    #[doc = "High is active. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+    #[doc = "Low is active,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == HsyncPS::B1
@@ -44,7 +45,7 @@ impl<'a, REG> HsyncPSW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "High is active. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+    #[doc = "Low is active,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(HsyncPS::B1)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Auto-detect VSYNC polarity:\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VsyncPS {
-    #[doc = "1: High is active. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+    #[doc = "1: Low is active,"]
     B1 = 1,
     #[doc = "0: High is active. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
     B0 = 0,
@@ -80,7 +82,7 @@ impl VsyncPSR {
             false => VsyncPS::B0,
         }
     }
-    #[doc = "High is active. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+    #[doc = "Low is active,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == VsyncPS::B1
@@ -97,7 +99,7 @@ impl<'a, REG> VsyncPSW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "High is active. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+    #[doc = "Low is active,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(VsyncPS::B1)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "Auto-detect interlace or progressive scan status:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IScanS {
-    #[doc = "1: Progressive scan. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+    #[doc = "1: Interlace scan,"]
     B1 = 1,
     #[doc = "0: Progressive scan. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
     B0 = 0,
@@ -133,7 +136,7 @@ impl IScanSR {
             false => IScanS::B0,
         }
     }
-    #[doc = "Progressive scan. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+    #[doc = "Interlace scan,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == IScanS::B1
@@ -150,7 +153,7 @@ impl<'a, REG> IScanSW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Progressive scan. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+    #[doc = "Interlace scan,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(IScanS::B1)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "Interlace scan field status.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FieldS {
-    #[doc = "1: First field. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+    #[doc = "1: Second field,"]
     B1 = 1,
     #[doc = "0: First field. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
     B0 = 0,
@@ -186,7 +190,7 @@ impl FieldSR {
             false => FieldS::B0,
         }
     }
-    #[doc = "First field. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+    #[doc = "Second field,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == FieldS::B1
@@ -203,7 +207,7 @@ impl<'a, REG> FieldSW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "First field. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+    #[doc = "Second field,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(FieldS::B1)

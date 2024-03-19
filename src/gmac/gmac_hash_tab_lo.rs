@@ -2,19 +2,19 @@
 pub type R = crate::R<GmacHashTabLoSpec>;
 #[doc = "Register `GMAC_HASH_TAB_LO` writer"]
 pub type W = crate::W<GmacHashTabLoSpec>;
-#[doc = "Field `HTL` reader - Hash Table Low This field contains the lower 32 bits of Hash table"]
+#[doc = "Field `HTL` reader - Hash Table Low\n\nThis field contains the lower 32 bits of Hash table"]
 pub type HtlR = crate::FieldReader<u32>;
-#[doc = "Field `HTL` writer - Hash Table Low This field contains the lower 32 bits of Hash table"]
+#[doc = "Field `HTL` writer - Hash Table Low\n\nThis field contains the lower 32 bits of Hash table"]
 pub type HtlW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Hash Table Low This field contains the lower 32 bits of Hash table"]
+    #[doc = "Bits 0:31 - Hash Table Low\n\nThis field contains the lower 32 bits of Hash table"]
     #[inline(always)]
     pub fn htl(&self) -> HtlR {
         HtlR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Hash Table Low This field contains the lower 32 bits of Hash table"]
+    #[doc = "Bits 0:31 - Hash Table Low\n\nThis field contains the lower 32 bits of Hash table"]
     #[inline(always)]
     #[must_use]
     pub fn htl(&mut self) -> HtlW<GmacHashTabLoSpec> {

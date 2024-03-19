@@ -1,30 +1,30 @@
 #[doc = "Register `DDR_DENALI_CTL_01` reader"]
 pub type R = crate::R<DdrDenaliCtl01Spec>;
-#[doc = "Field `MAX_ROW_REG` reader - Holds the maximum width of memory address bus. READ-ONLY"]
+#[doc = "Field `MAX_ROW_REG` reader - Holds the maximum width of memory address bus."]
 pub type MaxRowRegR = crate::FieldReader;
-#[doc = "Field `MAX_COL_REG` reader - Holds the maximum width of column address in DRAMs. READ- ONLY"]
+#[doc = "Field `MAX_COL_REG` reader - Holds the maximum width of column address in DRAMs."]
 pub type MaxColRegR = crate::FieldReader;
-#[doc = "Field `MAX_CS_REG` reader - Holds the maximum number of chip selects available. READ-ONLY"]
+#[doc = "Field `MAX_CS_REG` reader - Holds the maximum number of chip selects available."]
 pub type MaxCsRegR = crate::FieldReader;
-#[doc = "Field `READ_DATA_FIFO_DEPTH` reader - Reports the depth of the controller core read data queue. READ- ONLY"]
+#[doc = "Field `READ_DATA_FIFO_DEPTH` reader - Reports the depth of the controller core read data queue."]
 pub type ReadDataFifoDepthR = crate::FieldReader;
 impl R {
-    #[doc = "Bits 0:4 - Holds the maximum width of memory address bus. READ-ONLY"]
+    #[doc = "Bits 0:4 - Holds the maximum width of memory address bus."]
     #[inline(always)]
     pub fn max_row_reg(&self) -> MaxRowRegR {
         MaxRowRegR::new((self.bits & 0x1f) as u8)
     }
-    #[doc = "Bits 8:11 - Holds the maximum width of column address in DRAMs. READ- ONLY"]
+    #[doc = "Bits 8:11 - Holds the maximum width of column address in DRAMs."]
     #[inline(always)]
     pub fn max_col_reg(&self) -> MaxColRegR {
         MaxColRegR::new(((self.bits >> 8) & 0x0f) as u8)
     }
-    #[doc = "Bits 16:17 - Holds the maximum number of chip selects available. READ-ONLY"]
+    #[doc = "Bits 16:17 - Holds the maximum number of chip selects available."]
     #[inline(always)]
     pub fn max_cs_reg(&self) -> MaxCsRegR {
         MaxCsRegR::new(((self.bits >> 16) & 3) as u8)
     }
-    #[doc = "Bits 24:31 - Reports the depth of the controller core read data queue. READ- ONLY"]
+    #[doc = "Bits 24:31 - Reports the depth of the controller core read data queue."]
     #[inline(always)]
     pub fn read_data_fifo_depth(&self) -> ReadDataFifoDepthR {
         ReadDataFifoDepthR::new(((self.bits >> 24) & 0xff) as u8)

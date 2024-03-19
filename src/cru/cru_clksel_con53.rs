@@ -2,17 +2,18 @@
 pub type R = crate::R<CruClkselCon53Spec>;
 #[doc = "Register `CRU_CLKSEL_CON53` writer"]
 pub type W = crate::W<CruClkselCon53Spec>;
-#[doc = "Field `ACLK_ISP0_DIV_CON` reader - aclk_isp0 divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `ACLK_ISP0_DIV_CON` reader - aclk_isp0 divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type AclkIsp0DivConR = crate::FieldReader;
-#[doc = "Field `ACLK_ISP0_DIV_CON` writer - aclk_isp0 divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `ACLK_ISP0_DIV_CON` writer - aclk_isp0 divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type AclkIsp0DivConW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "aclk_isp0 clock source select control register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AclkIsp0PllSel {
-    #[doc = "0: PPLL"]
+    #[doc = "0: CPLL"]
     B00 = 0,
-    #[doc = "1: PPLL"]
+    #[doc = "1: GPLL"]
     B01 = 1,
     #[doc = "2: PPLL"]
     B10 = 2,
@@ -39,12 +40,12 @@ impl AclkIsp0PllSelR {
             _ => None,
         }
     }
-    #[doc = "PPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == AclkIsp0PllSel::B00
     }
-    #[doc = "PPLL"]
+    #[doc = "GPLL"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == AclkIsp0PllSel::B01
@@ -62,12 +63,12 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "PPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(AclkIsp0PllSel::B00)
     }
-    #[doc = "PPLL"]
+    #[doc = "GPLL"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(AclkIsp0PllSel::B01)
@@ -78,14 +79,14 @@ where
         self.variant(AclkIsp0PllSel::B10)
     }
 }
-#[doc = "Field `HCLK_ISP0_DIV_CON` reader - hclk_isp0 divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `HCLK_ISP0_DIV_CON` reader - hclk_isp0 divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type HclkIsp0DivConR = crate::FieldReader;
-#[doc = "Field `HCLK_ISP0_DIV_CON` writer - hclk_isp0 divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `HCLK_ISP0_DIV_CON` writer - hclk_isp0 divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type HclkIsp0DivConW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:4 - aclk_isp0 divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:4 - aclk_isp0 divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn aclk_isp0_div_con(&self) -> AclkIsp0DivConR {
         AclkIsp0DivConR::new((self.bits & 0x1f) as u8)
@@ -95,14 +96,14 @@ impl R {
     pub fn aclk_isp0_pll_sel(&self) -> AclkIsp0PllSelR {
         AclkIsp0PllSelR::new(((self.bits >> 6) & 3) as u8)
     }
-    #[doc = "Bits 8:12 - hclk_isp0 divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 8:12 - hclk_isp0 divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn hclk_isp0_div_con(&self) -> HclkIsp0DivConR {
         HclkIsp0DivConR::new(((self.bits >> 8) & 0x1f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - aclk_isp0 divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:4 - aclk_isp0 divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_isp0_div_con(&mut self) -> AclkIsp0DivConW<CruClkselCon53Spec> {
@@ -114,13 +115,13 @@ impl W {
     pub fn aclk_isp0_pll_sel(&mut self) -> AclkIsp0PllSelW<CruClkselCon53Spec> {
         AclkIsp0PllSelW::new(self, 6)
     }
-    #[doc = "Bits 8:12 - hclk_isp0 divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 8:12 - hclk_isp0 divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn hclk_isp0_div_con(&mut self) -> HclkIsp0DivConW<CruClkselCon53Spec> {
         HclkIsp0DivConW::new(self, 8)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkselCon53Spec> {

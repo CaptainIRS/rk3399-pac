@@ -2,19 +2,19 @@
 pub type R = crate::R<TsadcComp0ShutSpec>;
 #[doc = "Register `TSADC_COMP0_SHUT` writer"]
 pub type W = crate::W<TsadcComp0ShutSpec>;
-#[doc = "Field `TSADC_COMP_SRC0` reader - TSADC high temperature level. TSADC output is bigger than tsadc_comp, means the temperature is too high. TSHUT will be valid."]
+#[doc = "Field `TSADC_COMP_SRC0` reader - TSADC high temperature level.\n\nTSADC output is bigger than tsadc_comp, means the temperature\n\nis too high.\n\nTSHUT will be valid."]
 pub type TsadcCompSrc0R = crate::FieldReader<u16>;
-#[doc = "Field `TSADC_COMP_SRC0` writer - TSADC high temperature level. TSADC output is bigger than tsadc_comp, means the temperature is too high. TSHUT will be valid."]
+#[doc = "Field `TSADC_COMP_SRC0` writer - TSADC high temperature level.\n\nTSADC output is bigger than tsadc_comp, means the temperature\n\nis too high.\n\nTSHUT will be valid."]
 pub type TsadcCompSrc0W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 impl R {
-    #[doc = "Bits 0:11 - TSADC high temperature level. TSADC output is bigger than tsadc_comp, means the temperature is too high. TSHUT will be valid."]
+    #[doc = "Bits 0:11 - TSADC high temperature level.\n\nTSADC output is bigger than tsadc_comp, means the temperature\n\nis too high.\n\nTSHUT will be valid."]
     #[inline(always)]
     pub fn tsadc_comp_src0(&self) -> TsadcCompSrc0R {
         TsadcCompSrc0R::new((self.bits & 0x0fff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:11 - TSADC high temperature level. TSADC output is bigger than tsadc_comp, means the temperature is too high. TSHUT will be valid."]
+    #[doc = "Bits 0:11 - TSADC high temperature level.\n\nTSADC output is bigger than tsadc_comp, means the temperature\n\nis too high.\n\nTSHUT will be valid."]
     #[inline(always)]
     #[must_use]
     pub fn tsadc_comp_src0(&mut self) -> TsadcCompSrc0W<TsadcComp0ShutSpec> {

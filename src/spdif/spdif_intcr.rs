@@ -3,9 +3,10 @@ pub type R = crate::R<SpdifIntcrSpec>;
 #[doc = "Register `SPDIF_INTCR` writer"]
 pub type W = crate::W<SpdifIntcrSpec>;
 #[doc = "User Data Interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Udtie {
-    #[doc = "0: enable If enabled, an interrupt will be asserted when the content of the user data register is fed into the corresponding shadow register"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable If enabled, an interrupt will be asserted when the content of the user data register is fed into the corresponding shadow register"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl UdtieR {
             true => Udtie::B1,
         }
     }
-    #[doc = "enable If enabled, an interrupt will be asserted when the content of the user data register is fed into the corresponding shadow register"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Udtie::B0
@@ -44,7 +45,7 @@ impl<'a, REG> UdtieW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable If enabled, an interrupt will be asserted when the content of the user data register is fed into the corresponding shadow register"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Udtie::B0)
@@ -55,10 +56,11 @@ where
         self.variant(Udtie::B1)
     }
 }
-#[doc = "Block transfer/repetition period end interrupt enable When enabled, an interrupt will be asserted when the block transfer is finished if the channel conveys linear PCM or when the repetition period is reached if the channel conveys non-linear PCM.\n\nValue on reset: 0"]
+#[doc = "Block transfer/repetition period end interrupt enable\n\nWhen enabled, an interrupt will be asserted when the block\n\ntransfer is finished if the channel conveys linear PCM or when the\n\nrepetition period is reached if the channel conveys non-linear\n\nPCM.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bttie {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -69,7 +71,7 @@ impl From<Bttie> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BTTIE` reader - Block transfer/repetition period end interrupt enable When enabled, an interrupt will be asserted when the block transfer is finished if the channel conveys linear PCM or when the repetition period is reached if the channel conveys non-linear PCM."]
+#[doc = "Field `BTTIE` reader - Block transfer/repetition period end interrupt enable\n\nWhen enabled, an interrupt will be asserted when the block\n\ntransfer is finished if the channel conveys linear PCM or when the\n\nrepetition period is reached if the channel conveys non-linear\n\nPCM."]
 pub type BttieR = crate::BitReader<Bttie>;
 impl BttieR {
     #[doc = "Get enumerated values variant"]
@@ -80,7 +82,7 @@ impl BttieR {
             true => Bttie::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Bttie::B0
@@ -91,13 +93,13 @@ impl BttieR {
         *self == Bttie::B1
     }
 }
-#[doc = "Field `BTTIE` writer - Block transfer/repetition period end interrupt enable When enabled, an interrupt will be asserted when the block transfer is finished if the channel conveys linear PCM or when the repetition period is reached if the channel conveys non-linear PCM."]
+#[doc = "Field `BTTIE` writer - Block transfer/repetition period end interrupt enable\n\nWhen enabled, an interrupt will be asserted when the block\n\ntransfer is finished if the channel conveys linear PCM or when the\n\nrepetition period is reached if the channel conveys non-linear\n\nPCM."]
 pub type BttieW<'a, REG> = crate::BitWriter<'a, REG, Bttie>;
 impl<'a, REG> BttieW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Bttie::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "Sample Date Buffer empty interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sdbeie {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl SdbeieR {
             true => Sdbeie::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Sdbeie::B0
@@ -150,7 +153,7 @@ impl<'a, REG> SdbeieW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Sdbeie::B0)
@@ -161,17 +164,17 @@ where
         self.variant(Sdbeie::B1)
     }
 }
-#[doc = "Field `SDBT` reader - Sample Date Buffer Threshold Sample Date Buffer Threshold for empty interrupt"]
+#[doc = "Field `SDBT` reader - Sample Date Buffer Threshold\n\nSample Date Buffer Threshold for empty interrupt"]
 pub type SdbtR = crate::FieldReader;
-#[doc = "Field `SDBT` writer - Sample Date Buffer Threshold Sample Date Buffer Threshold for empty interrupt"]
+#[doc = "Field `SDBT` writer - Sample Date Buffer Threshold\n\nSample Date Buffer Threshold for empty interrupt"]
 pub type SdbtW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Field `BTTIC` reader - Block/Data burst transfer finish interrupt clear Write 1 to clear the interrupt."]
+#[doc = "Field `BTTIC` reader - Block/Data burst transfer finish interrupt clear\n\nWrite 1 to clear the interrupt."]
 pub type BtticR = crate::BitReader;
-#[doc = "Field `BTTIC` writer - Block/Data burst transfer finish interrupt clear Write 1 to clear the interrupt."]
+#[doc = "Field `BTTIC` writer - Block/Data burst transfer finish interrupt clear\n\nWrite 1 to clear the interrupt."]
 pub type BtticW<'a, REG> = crate::BitWriter1C<'a, REG>;
-#[doc = "Field `UDTIC` reader - User Data Interrupt Clear Write '1' to clear the user data interrupt."]
+#[doc = "Field `UDTIC` reader - User Data Interrupt Clear\n\nWrite '1' to clear the user data interrupt."]
 pub type UdticR = crate::BitReader;
-#[doc = "Field `UDTIC` writer - User Data Interrupt Clear Write '1' to clear the user data interrupt."]
+#[doc = "Field `UDTIC` writer - User Data Interrupt Clear\n\nWrite '1' to clear the user data interrupt."]
 pub type UdticW<'a, REG> = crate::BitWriter1C<'a, REG>;
 impl R {
     #[doc = "Bit 2 - User Data Interrupt"]
@@ -179,7 +182,7 @@ impl R {
     pub fn udtie(&self) -> UdtieR {
         UdtieR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - Block transfer/repetition period end interrupt enable When enabled, an interrupt will be asserted when the block transfer is finished if the channel conveys linear PCM or when the repetition period is reached if the channel conveys non-linear PCM."]
+    #[doc = "Bit 3 - Block transfer/repetition period end interrupt enable\n\nWhen enabled, an interrupt will be asserted when the block\n\ntransfer is finished if the channel conveys linear PCM or when the\n\nrepetition period is reached if the channel conveys non-linear\n\nPCM."]
     #[inline(always)]
     pub fn bttie(&self) -> BttieR {
         BttieR::new(((self.bits >> 3) & 1) != 0)
@@ -189,17 +192,17 @@ impl R {
     pub fn sdbeie(&self) -> SdbeieR {
         SdbeieR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bits 5:9 - Sample Date Buffer Threshold Sample Date Buffer Threshold for empty interrupt"]
+    #[doc = "Bits 5:9 - Sample Date Buffer Threshold\n\nSample Date Buffer Threshold for empty interrupt"]
     #[inline(always)]
     pub fn sdbt(&self) -> SdbtR {
         SdbtR::new(((self.bits >> 5) & 0x1f) as u8)
     }
-    #[doc = "Bit 16 - Block/Data burst transfer finish interrupt clear Write 1 to clear the interrupt."]
+    #[doc = "Bit 16 - Block/Data burst transfer finish interrupt clear\n\nWrite 1 to clear the interrupt."]
     #[inline(always)]
     pub fn bttic(&self) -> BtticR {
         BtticR::new(((self.bits >> 16) & 1) != 0)
     }
-    #[doc = "Bit 17 - User Data Interrupt Clear Write '1' to clear the user data interrupt."]
+    #[doc = "Bit 17 - User Data Interrupt Clear\n\nWrite '1' to clear the user data interrupt."]
     #[inline(always)]
     pub fn udtic(&self) -> UdticR {
         UdticR::new(((self.bits >> 17) & 1) != 0)
@@ -212,7 +215,7 @@ impl W {
     pub fn udtie(&mut self) -> UdtieW<SpdifIntcrSpec> {
         UdtieW::new(self, 2)
     }
-    #[doc = "Bit 3 - Block transfer/repetition period end interrupt enable When enabled, an interrupt will be asserted when the block transfer is finished if the channel conveys linear PCM or when the repetition period is reached if the channel conveys non-linear PCM."]
+    #[doc = "Bit 3 - Block transfer/repetition period end interrupt enable\n\nWhen enabled, an interrupt will be asserted when the block\n\ntransfer is finished if the channel conveys linear PCM or when the\n\nrepetition period is reached if the channel conveys non-linear\n\nPCM."]
     #[inline(always)]
     #[must_use]
     pub fn bttie(&mut self) -> BttieW<SpdifIntcrSpec> {
@@ -224,19 +227,19 @@ impl W {
     pub fn sdbeie(&mut self) -> SdbeieW<SpdifIntcrSpec> {
         SdbeieW::new(self, 4)
     }
-    #[doc = "Bits 5:9 - Sample Date Buffer Threshold Sample Date Buffer Threshold for empty interrupt"]
+    #[doc = "Bits 5:9 - Sample Date Buffer Threshold\n\nSample Date Buffer Threshold for empty interrupt"]
     #[inline(always)]
     #[must_use]
     pub fn sdbt(&mut self) -> SdbtW<SpdifIntcrSpec> {
         SdbtW::new(self, 5)
     }
-    #[doc = "Bit 16 - Block/Data burst transfer finish interrupt clear Write 1 to clear the interrupt."]
+    #[doc = "Bit 16 - Block/Data burst transfer finish interrupt clear\n\nWrite 1 to clear the interrupt."]
     #[inline(always)]
     #[must_use]
     pub fn bttic(&mut self) -> BtticW<SpdifIntcrSpec> {
         BtticW::new(self, 16)
     }
-    #[doc = "Bit 17 - User Data Interrupt Clear Write '1' to clear the user data interrupt."]
+    #[doc = "Bit 17 - User Data Interrupt Clear\n\nWrite '1' to clear the user data interrupt."]
     #[inline(always)]
     #[must_use]
     pub fn udtic(&mut self) -> UdticW<SpdifIntcrSpec> {

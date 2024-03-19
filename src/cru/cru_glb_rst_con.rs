@@ -3,9 +3,10 @@ pub type R = crate::R<CruGlbRstConSpec>;
 #[doc = "Register `CRU_GLB_RST_CON` writer"]
 pub type W = crate::W<CruGlbRstConSpec>;
 #[doc = "TSADC trigger global soft reset select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TsadcGlbSrstCtrl {
-    #[doc = "0: tsadc trigger first global reset"]
+    #[doc = "0: tsadc trigger second global reset"]
     B0 = 0,
     #[doc = "1: tsadc trigger first global reset"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl TsadcGlbSrstCtrlR {
             true => TsadcGlbSrstCtrl::B1,
         }
     }
-    #[doc = "tsadc trigger first global reset"]
+    #[doc = "tsadc trigger second global reset"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == TsadcGlbSrstCtrl::B0
@@ -44,7 +45,7 @@ impl<'a, REG> TsadcGlbSrstCtrlW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "tsadc trigger first global reset"]
+    #[doc = "tsadc trigger second global reset"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(TsadcGlbSrstCtrl::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "watch_dog trigger global soft reset select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WdtGlbSrstCtrl {
-    #[doc = "0: watch_dog trigger first global reset"]
+    #[doc = "0: watch_dog trigger second global reset"]
     B0 = 0,
     #[doc = "1: watch_dog trigger first global reset"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl WdtGlbSrstCtrlR {
             true => WdtGlbSrstCtrl::B1,
         }
     }
-    #[doc = "watch_dog trigger first global reset"]
+    #[doc = "watch_dog trigger second global reset"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == WdtGlbSrstCtrl::B0
@@ -97,7 +99,7 @@ impl<'a, REG> WdtGlbSrstCtrlW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "watch_dog trigger first global reset"]
+    #[doc = "watch_dog trigger second global reset"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(WdtGlbSrstCtrl::B0)
@@ -109,12 +111,13 @@ where
     }
 }
 #[doc = "pmu reset by global soft reset select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PmuGlbSrstCtrl {
-    #[doc = "0: pmu not reset by any global soft reset"]
+    #[doc = "0: pmu reset by first global soft reset"]
     B00 = 0,
-    #[doc = "1: pmu not reset by any global soft reset"]
+    #[doc = "1: pmu reset by second global soft reset"]
     B01 = 1,
     #[doc = "2: pmu not reset by any global soft reset"]
     B10 = 2,
@@ -141,12 +144,12 @@ impl PmuGlbSrstCtrlR {
             _ => None,
         }
     }
-    #[doc = "pmu not reset by any global soft reset"]
+    #[doc = "pmu reset by first global soft reset"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == PmuGlbSrstCtrl::B00
     }
-    #[doc = "pmu not reset by any global soft reset"]
+    #[doc = "pmu reset by second global soft reset"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == PmuGlbSrstCtrl::B01
@@ -164,12 +167,12 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "pmu not reset by any global soft reset"]
+    #[doc = "pmu reset by first global soft reset"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(PmuGlbSrstCtrl::B00)
     }
-    #[doc = "pmu not reset by any global soft reset"]
+    #[doc = "pmu reset by second global soft reset"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(PmuGlbSrstCtrl::B01)
@@ -181,9 +184,10 @@ where
     }
 }
 #[doc = "if pmu reset by wdt resetn src select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PmuGlbrstWdtCtrl {
-    #[doc = "0: pmu does not reset by wdt rstn"]
+    #[doc = "0: pmu reset by wdt rstn"]
     B0 = 0,
     #[doc = "1: pmu does not reset by wdt rstn"]
     B1 = 1,
@@ -205,7 +209,7 @@ impl PmuGlbrstWdtCtrlR {
             true => PmuGlbrstWdtCtrl::B1,
         }
     }
-    #[doc = "pmu does not reset by wdt rstn"]
+    #[doc = "pmu reset by wdt rstn"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PmuGlbrstWdtCtrl::B0
@@ -222,7 +226,7 @@ impl<'a, REG> PmuGlbrstWdtCtrlW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "pmu does not reset by wdt rstn"]
+    #[doc = "pmu reset by wdt rstn"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PmuGlbrstWdtCtrl::B0)

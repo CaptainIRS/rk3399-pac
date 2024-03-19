@@ -2,11 +2,12 @@
 pub type R = crate::R<GpioIntenSpec>;
 #[doc = "Register `GPIO_INTEN` writer"]
 pub type W = crate::W<GpioIntenSpec>;
-#[doc = "Allows each bit of Port A to be configured for interrupts. Whenever a 1 is written to a bit of this register, it configures the corresponding bit on Port A to become an interrupt; otherwise, Port A operates as a normal GPIO signal. Interrupts are disabled on the corresponding bits of Port A if the corresponding data direction register is set to Output.\n\nValue on reset: 0"]
+#[doc = "Allows each bit of Port A to be configured for interrupts.\n\nWhenever a 1 is written to a bit of this register, it configures the\n\ncorresponding bit on Port A to become an interrupt; otherwise,\n\nPort A operates as a normal GPIO signal.\n\nInterrupts are disabled on the corresponding bits of Port A if the\n\ncorresponding data direction register is set to Output.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum GpioIntEn {
-    #[doc = "0: Configure Port A bit as interrupt"]
+    #[doc = "0: Configure Port A bit as normal GPIO signal (default)"]
     B0 = 0,
     #[doc = "1: Configure Port A bit as interrupt"]
     B1 = 1,
@@ -20,7 +21,7 @@ impl From<GpioIntEn> for u32 {
 impl crate::FieldSpec for GpioIntEn {
     type Ux = u32;
 }
-#[doc = "Field `GPIO_INT_EN` reader - Allows each bit of Port A to be configured for interrupts. Whenever a 1 is written to a bit of this register, it configures the corresponding bit on Port A to become an interrupt; otherwise, Port A operates as a normal GPIO signal. Interrupts are disabled on the corresponding bits of Port A if the corresponding data direction register is set to Output."]
+#[doc = "Field `GPIO_INT_EN` reader - Allows each bit of Port A to be configured for interrupts.\n\nWhenever a 1 is written to a bit of this register, it configures the\n\ncorresponding bit on Port A to become an interrupt; otherwise,\n\nPort A operates as a normal GPIO signal.\n\nInterrupts are disabled on the corresponding bits of Port A if the\n\ncorresponding data direction register is set to Output."]
 pub type GpioIntEnR = crate::FieldReader<GpioIntEn>;
 impl GpioIntEnR {
     #[doc = "Get enumerated values variant"]
@@ -32,7 +33,7 @@ impl GpioIntEnR {
             _ => None,
         }
     }
-    #[doc = "Configure Port A bit as interrupt"]
+    #[doc = "Configure Port A bit as normal GPIO signal (default)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == GpioIntEn::B0
@@ -43,14 +44,14 @@ impl GpioIntEnR {
         *self == GpioIntEn::B1
     }
 }
-#[doc = "Field `GPIO_INT_EN` writer - Allows each bit of Port A to be configured for interrupts. Whenever a 1 is written to a bit of this register, it configures the corresponding bit on Port A to become an interrupt; otherwise, Port A operates as a normal GPIO signal. Interrupts are disabled on the corresponding bits of Port A if the corresponding data direction register is set to Output."]
+#[doc = "Field `GPIO_INT_EN` writer - Allows each bit of Port A to be configured for interrupts.\n\nWhenever a 1 is written to a bit of this register, it configures the\n\ncorresponding bit on Port A to become an interrupt; otherwise,\n\nPort A operates as a normal GPIO signal.\n\nInterrupts are disabled on the corresponding bits of Port A if the\n\ncorresponding data direction register is set to Output."]
 pub type GpioIntEnW<'a, REG> = crate::FieldWriter<'a, REG, 32, GpioIntEn>;
 impl<'a, REG> GpioIntEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u32>,
 {
-    #[doc = "Configure Port A bit as interrupt"]
+    #[doc = "Configure Port A bit as normal GPIO signal (default)"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(GpioIntEn::B0)
@@ -62,14 +63,14 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 0:31 - Allows each bit of Port A to be configured for interrupts. Whenever a 1 is written to a bit of this register, it configures the corresponding bit on Port A to become an interrupt; otherwise, Port A operates as a normal GPIO signal. Interrupts are disabled on the corresponding bits of Port A if the corresponding data direction register is set to Output."]
+    #[doc = "Bits 0:31 - Allows each bit of Port A to be configured for interrupts.\n\nWhenever a 1 is written to a bit of this register, it configures the\n\ncorresponding bit on Port A to become an interrupt; otherwise,\n\nPort A operates as a normal GPIO signal.\n\nInterrupts are disabled on the corresponding bits of Port A if the\n\ncorresponding data direction register is set to Output."]
     #[inline(always)]
     pub fn gpio_int_en(&self) -> GpioIntEnR {
         GpioIntEnR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Allows each bit of Port A to be configured for interrupts. Whenever a 1 is written to a bit of this register, it configures the corresponding bit on Port A to become an interrupt; otherwise, Port A operates as a normal GPIO signal. Interrupts are disabled on the corresponding bits of Port A if the corresponding data direction register is set to Output."]
+    #[doc = "Bits 0:31 - Allows each bit of Port A to be configured for interrupts.\n\nWhenever a 1 is written to a bit of this register, it configures the\n\ncorresponding bit on Port A to become an interrupt; otherwise,\n\nPort A operates as a normal GPIO signal.\n\nInterrupts are disabled on the corresponding bits of Port A if the\n\ncorresponding data direction register is set to Output."]
     #[inline(always)]
     #[must_use]
     pub fn gpio_int_en(&mut self) -> GpioIntEnW<GpioIntenSpec> {

@@ -6,7 +6,7 @@ pub type W = crate::W<DdrDenaliPhy406Spec>;
 pub type PhyLvlDebugMode3R = crate::BitReader;
 #[doc = "Field `PHY_LVL_DEBUG_MODE_3` writer - Enables leveling debug mode for slice 3. Set to 1 to enable."]
 pub type PhyLvlDebugMode3W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `SC_PHY_LVL_DEBUG_CONT_3` writer - Allows the leveling state machine to advance (when in debug mode) for slice 3. Set to 1 to trigger. WRITE-ONLY"]
+#[doc = "Field `SC_PHY_LVL_DEBUG_CONT_3` writer - Allows the leveling state machine to advance (when in debug mode) for slice 3. Set to 1 to trigger."]
 pub type ScPhyLvlDebugCont3W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PHY_WRLVL_CAPTURE_CNT_3` reader - Number of samples to take at each DQS slave delay setting during write leveling for slice 3."]
 pub type PhyWrlvlCaptureCnt3R = crate::FieldReader;
@@ -40,7 +40,7 @@ impl W {
     pub fn phy_lvl_debug_mode_3(&mut self) -> PhyLvlDebugMode3W<DdrDenaliPhy406Spec> {
         PhyLvlDebugMode3W::new(self, 0)
     }
-    #[doc = "Bit 8 - Allows the leveling state machine to advance (when in debug mode) for slice 3. Set to 1 to trigger. WRITE-ONLY"]
+    #[doc = "Bit 8 - Allows the leveling state machine to advance (when in debug mode) for slice 3. Set to 1 to trigger."]
     #[inline(always)]
     #[must_use]
     pub fn sc_phy_lvl_debug_cont_3(&mut self) -> ScPhyLvlDebugCont3W<DdrDenaliPhy406Spec> {

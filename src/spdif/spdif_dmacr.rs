@@ -2,14 +2,15 @@
 pub type R = crate::R<SpdifDmacrSpec>;
 #[doc = "Register `SPDIF_DMACR` writer"]
 pub type W = crate::W<SpdifDmacrSpec>;
-#[doc = "Field `TDL` reader - Transmit Data Level This bit field controls the level at which a DMA request is made by the transmit logic. It is equal to the watermark level; that is, the dma_tx_req signal is generated when the number of valid data entries in the Sample Date Buffer is equal to or below this field value"]
+#[doc = "Field `TDL` reader - Transmit Data Level\n\nThis bit field controls the level at which a DMA request is made by\n\nthe transmit logic. It is equal to the watermark level; that is, the\n\ndma_tx_req signal is generated when the number of valid data\n\nentries in the Sample Date Buffer is equal to or below this field\n\nvalue"]
 pub type TdlR = crate::FieldReader;
-#[doc = "Field `TDL` writer - Transmit Data Level This bit field controls the level at which a DMA request is made by the transmit logic. It is equal to the watermark level; that is, the dma_tx_req signal is generated when the number of valid data entries in the Sample Date Buffer is equal to or below this field value"]
+#[doc = "Field `TDL` writer - Transmit Data Level\n\nThis bit field controls the level at which a DMA request is made by\n\nthe transmit logic. It is equal to the watermark level; that is, the\n\ndma_tx_req signal is generated when the number of valid data\n\nentries in the Sample Date Buffer is equal to or below this field\n\nvalue"]
 pub type TdlW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Transmit DMA Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tde {
-    #[doc = "0: Transmit DMA enabled"]
+    #[doc = "0: Transmit DMA disabled"]
     B0 = 0,
     #[doc = "1: Transmit DMA enabled"]
     B1 = 1,
@@ -31,7 +32,7 @@ impl TdeR {
             true => Tde::B1,
         }
     }
-    #[doc = "Transmit DMA enabled"]
+    #[doc = "Transmit DMA disabled"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Tde::B0
@@ -48,7 +49,7 @@ impl<'a, REG> TdeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Transmit DMA enabled"]
+    #[doc = "Transmit DMA disabled"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Tde::B0)
@@ -60,7 +61,7 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 0:4 - Transmit Data Level This bit field controls the level at which a DMA request is made by the transmit logic. It is equal to the watermark level; that is, the dma_tx_req signal is generated when the number of valid data entries in the Sample Date Buffer is equal to or below this field value"]
+    #[doc = "Bits 0:4 - Transmit Data Level\n\nThis bit field controls the level at which a DMA request is made by\n\nthe transmit logic. It is equal to the watermark level; that is, the\n\ndma_tx_req signal is generated when the number of valid data\n\nentries in the Sample Date Buffer is equal to or below this field\n\nvalue"]
     #[inline(always)]
     pub fn tdl(&self) -> TdlR {
         TdlR::new((self.bits & 0x1f) as u8)
@@ -72,7 +73,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - Transmit Data Level This bit field controls the level at which a DMA request is made by the transmit logic. It is equal to the watermark level; that is, the dma_tx_req signal is generated when the number of valid data entries in the Sample Date Buffer is equal to or below this field value"]
+    #[doc = "Bits 0:4 - Transmit Data Level\n\nThis bit field controls the level at which a DMA request is made by\n\nthe transmit logic. It is equal to the watermark level; that is, the\n\ndma_tx_req signal is generated when the number of valid data\n\nentries in the Sample Date Buffer is equal to or below this field\n\nvalue"]
     #[inline(always)]
     #[must_use]
     pub fn tdl(&mut self) -> TdlW<SpdifDmacrSpec> {

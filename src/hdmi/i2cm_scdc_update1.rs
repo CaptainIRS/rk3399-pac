@@ -9,7 +9,7 @@ impl R {
         I2cmScdcUpdate1R::new(self.bits)
     }
 }
-#[doc = "Byte 1 of a SCDC I2C update sequential read\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`i2cm_scdc_update1::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "I2C SCDC Read Update Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`i2cm_scdc_update1::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct I2cmScdcUpdate1Spec;
 impl crate::RegisterSpec for I2cmScdcUpdate1Spec {
     type Ux = u8;

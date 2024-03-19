@@ -1,16 +1,16 @@
 #[doc = "Register `DDR_DENALI_PHY_175` reader"]
 pub type R = crate::R<DdrDenaliPhy175Spec>;
-#[doc = "Field `PHY_WDQLVL_DQDM_LE_DLY_OBS_1` reader - Observation register for write data leveling data window leading edge slave delay setting for slice 1. READ-ONLY"]
+#[doc = "Field `PHY_WDQLVL_DQDM_LE_DLY_OBS_1` reader - Observation register for write data leveling data window leading edge slave delay setting for slice 1."]
 pub type PhyWdqlvlDqdmLeDlyObs1R = crate::FieldReader<u16>;
-#[doc = "Field `PHY_WDQLVL_DQDM_TE_DLY_OBS_1` reader - Observation register for write data leveling data window trailing edge slave delay setting for slice 1. READ-ONLY"]
+#[doc = "Field `PHY_WDQLVL_DQDM_TE_DLY_OBS_1` reader - Observation register for write data leveling data window trailing edge slave delay setting for slice 1."]
 pub type PhyWdqlvlDqdmTeDlyObs1R = crate::FieldReader<u16>;
 impl R {
-    #[doc = "Bits 0:10 - Observation register for write data leveling data window leading edge slave delay setting for slice 1. READ-ONLY"]
+    #[doc = "Bits 0:10 - Observation register for write data leveling data window leading edge slave delay setting for slice 1."]
     #[inline(always)]
     pub fn phy_wdqlvl_dqdm_le_dly_obs_1(&self) -> PhyWdqlvlDqdmLeDlyObs1R {
         PhyWdqlvlDqdmLeDlyObs1R::new((self.bits & 0x07ff) as u16)
     }
-    #[doc = "Bits 16:26 - Observation register for write data leveling data window trailing edge slave delay setting for slice 1. READ-ONLY"]
+    #[doc = "Bits 16:26 - Observation register for write data leveling data window trailing edge slave delay setting for slice 1."]
     #[inline(always)]
     pub fn phy_wdqlvl_dqdm_te_dly_obs_1(&self) -> PhyWdqlvlDqdmTeDlyObs1R {
         PhyWdqlvlDqdmTeDlyObs1R::new(((self.bits >> 16) & 0x07ff) as u16)

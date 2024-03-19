@@ -2,49 +2,49 @@
 pub type R = crate::R<DdrPiReg69Spec>;
 #[doc = "Register `DDR_PI_REG_69` writer"]
 pub type W = crate::W<DdrPiReg69Spec>;
-#[doc = "Field `PI_ODT_WR_MAP_CS0` reader - Determines the chip(s) that have termination when a write occurs on chip select 0. Set bit X to enable termination on csX when cs0 is performing a write."]
+#[doc = "Field `PI_ODT_WR_MAP_CS0` reader - Determines the chip(s) that have termination when a write occurs\n\non chip select 0. Set bit X to enable termination on csX when cs0 is\n\nperforming a write."]
 pub type PiOdtWrMapCs0R = crate::FieldReader;
-#[doc = "Field `PI_ODT_WR_MAP_CS0` writer - Determines the chip(s) that have termination when a write occurs on chip select 0. Set bit X to enable termination on csX when cs0 is performing a write."]
+#[doc = "Field `PI_ODT_WR_MAP_CS0` writer - Determines the chip(s) that have termination when a write occurs\n\non chip select 0. Set bit X to enable termination on csX when cs0 is\n\nperforming a write."]
 pub type PiOdtWrMapCs0W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-#[doc = "Field `PI_ODT_RD_MAP_CS1` reader - Determines the chip(s) that have termination when a read occurs on chip select 1. Set bit X to enable termination on csX when cs1 is performing a read."]
+#[doc = "Field `PI_ODT_RD_MAP_CS1` reader - Determines the chip(s) that have termination when a read occurs\n\non chip select 1. Set bit X to enable termination on csX when cs1 is\n\nperforming a read."]
 pub type PiOdtRdMapCs1R = crate::FieldReader;
-#[doc = "Field `PI_ODT_RD_MAP_CS1` writer - Determines the chip(s) that have termination when a read occurs on chip select 1. Set bit X to enable termination on csX when cs1 is performing a read."]
+#[doc = "Field `PI_ODT_RD_MAP_CS1` writer - Determines the chip(s) that have termination when a read occurs\n\non chip select 1. Set bit X to enable termination on csX when cs1 is\n\nperforming a read."]
 pub type PiOdtRdMapCs1W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-#[doc = "Field `PI_ODT_WR_MAP_CS1` reader - Determines the chip(s) that have termination when a write occurs on chip select 1. Set bit X to enable termination on csX when cs1 is performing a write."]
+#[doc = "Field `PI_ODT_WR_MAP_CS1` reader - Determines the chip(s) that have termination when a write occurs\n\non chip select 1. Set bit X to enable termination on csX when cs1 is\n\nperforming a write."]
 pub type PiOdtWrMapCs1R = crate::FieldReader;
-#[doc = "Field `PI_ODT_WR_MAP_CS1` writer - Determines the chip(s) that have termination when a write occurs on chip select 1. Set bit X to enable termination on csX when cs1 is performing a write."]
+#[doc = "Field `PI_ODT_WR_MAP_CS1` writer - Determines the chip(s) that have termination when a write occurs\n\non chip select 1. Set bit X to enable termination on csX when cs1 is\n\nperforming a write."]
 pub type PiOdtWrMapCs1W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
-    #[doc = "Bits 0:1 - Determines the chip(s) that have termination when a write occurs on chip select 0. Set bit X to enable termination on csX when cs0 is performing a write."]
+    #[doc = "Bits 0:1 - Determines the chip(s) that have termination when a write occurs\n\non chip select 0. Set bit X to enable termination on csX when cs0 is\n\nperforming a write."]
     #[inline(always)]
     pub fn pi_odt_wr_map_cs0(&self) -> PiOdtWrMapCs0R {
         PiOdtWrMapCs0R::new((self.bits & 3) as u8)
     }
-    #[doc = "Bits 8:9 - Determines the chip(s) that have termination when a read occurs on chip select 1. Set bit X to enable termination on csX when cs1 is performing a read."]
+    #[doc = "Bits 8:9 - Determines the chip(s) that have termination when a read occurs\n\non chip select 1. Set bit X to enable termination on csX when cs1 is\n\nperforming a read."]
     #[inline(always)]
     pub fn pi_odt_rd_map_cs1(&self) -> PiOdtRdMapCs1R {
         PiOdtRdMapCs1R::new(((self.bits >> 8) & 3) as u8)
     }
-    #[doc = "Bits 16:17 - Determines the chip(s) that have termination when a write occurs on chip select 1. Set bit X to enable termination on csX when cs1 is performing a write."]
+    #[doc = "Bits 16:17 - Determines the chip(s) that have termination when a write occurs\n\non chip select 1. Set bit X to enable termination on csX when cs1 is\n\nperforming a write."]
     #[inline(always)]
     pub fn pi_odt_wr_map_cs1(&self) -> PiOdtWrMapCs1R {
         PiOdtWrMapCs1R::new(((self.bits >> 16) & 3) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:1 - Determines the chip(s) that have termination when a write occurs on chip select 0. Set bit X to enable termination on csX when cs0 is performing a write."]
+    #[doc = "Bits 0:1 - Determines the chip(s) that have termination when a write occurs\n\non chip select 0. Set bit X to enable termination on csX when cs0 is\n\nperforming a write."]
     #[inline(always)]
     #[must_use]
     pub fn pi_odt_wr_map_cs0(&mut self) -> PiOdtWrMapCs0W<DdrPiReg69Spec> {
         PiOdtWrMapCs0W::new(self, 0)
     }
-    #[doc = "Bits 8:9 - Determines the chip(s) that have termination when a read occurs on chip select 1. Set bit X to enable termination on csX when cs1 is performing a read."]
+    #[doc = "Bits 8:9 - Determines the chip(s) that have termination when a read occurs\n\non chip select 1. Set bit X to enable termination on csX when cs1 is\n\nperforming a read."]
     #[inline(always)]
     #[must_use]
     pub fn pi_odt_rd_map_cs1(&mut self) -> PiOdtRdMapCs1W<DdrPiReg69Spec> {
         PiOdtRdMapCs1W::new(self, 8)
     }
-    #[doc = "Bits 16:17 - Determines the chip(s) that have termination when a write occurs on chip select 1. Set bit X to enable termination on csX when cs1 is performing a write."]
+    #[doc = "Bits 16:17 - Determines the chip(s) that have termination when a write occurs\n\non chip select 1. Set bit X to enable termination on csX when cs1 is\n\nperforming a write."]
     #[inline(always)]
     #[must_use]
     pub fn pi_odt_wr_map_cs1(&mut self) -> PiOdtWrMapCs1W<DdrPiReg69Spec> {

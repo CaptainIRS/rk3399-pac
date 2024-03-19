@@ -3,10 +3,11 @@ pub type R = crate::R<PmuGpio0PosIntStSpec>;
 #[doc = "Register `PMU_GPIO0_POS_INT_ST` writer"]
 pub type W = crate::W<PmuGpio0PosIntStSpec>;
 #[doc = "gpio0a posedge pulse interrupt status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gpio0aPosIntStatus {
-    #[doc = "0: wakeup by gpio0a posedge pulse"]
+    #[doc = "0: not wakeup by gpio0a posedge pulse"]
     B0 = 0,
     #[doc = "1: wakeup by gpio0a posedge pulse"]
     B1 = 1,
@@ -32,7 +33,7 @@ impl Gpio0aPosIntStatusR {
             _ => None,
         }
     }
-    #[doc = "wakeup by gpio0a posedge pulse"]
+    #[doc = "not wakeup by gpio0a posedge pulse"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Gpio0aPosIntStatus::B0
@@ -50,7 +51,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "wakeup by gpio0a posedge pulse"]
+    #[doc = "not wakeup by gpio0a posedge pulse"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio0aPosIntStatus::B0)
@@ -62,10 +63,11 @@ where
     }
 }
 #[doc = "gpio0b posedge pulse interrupt status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gpio0bPosIntStatus {
-    #[doc = "0: wakeup by gpio0b posedge pulse"]
+    #[doc = "0: not wakeup by gpio0b posedge pulse"]
     B0 = 0,
     #[doc = "1: wakeup by gpio0b posedge pulse"]
     B1 = 1,
@@ -91,7 +93,7 @@ impl Gpio0bPosIntStatusR {
             _ => None,
         }
     }
-    #[doc = "wakeup by gpio0b posedge pulse"]
+    #[doc = "not wakeup by gpio0b posedge pulse"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Gpio0bPosIntStatus::B0
@@ -109,7 +111,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "wakeup by gpio0b posedge pulse"]
+    #[doc = "not wakeup by gpio0b posedge pulse"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio0bPosIntStatus::B0)
@@ -121,10 +123,11 @@ where
     }
 }
 #[doc = "gpio0c posedge pulse interrupt status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gpio0cPosIntStatus {
-    #[doc = "0: wakeup by gpio0c posedge pulse"]
+    #[doc = "0: not wakeup by gpio0c posedge pulse"]
     B0 = 0,
     #[doc = "1: wakeup by gpio0c posedge pulse"]
     B1 = 1,
@@ -150,7 +153,7 @@ impl Gpio0cPosIntStatusR {
             _ => None,
         }
     }
-    #[doc = "wakeup by gpio0c posedge pulse"]
+    #[doc = "not wakeup by gpio0c posedge pulse"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Gpio0cPosIntStatus::B0
@@ -168,7 +171,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "wakeup by gpio0c posedge pulse"]
+    #[doc = "not wakeup by gpio0c posedge pulse"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio0cPosIntStatus::B0)
@@ -180,10 +183,11 @@ where
     }
 }
 #[doc = "gpio0d posedge pulse interrupt status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gpio0dPosIntStatus {
-    #[doc = "0: wakeup by gpio0d posedge pulse"]
+    #[doc = "0: not wakeup by gpio0d posedge pulse"]
     B0 = 0,
     #[doc = "1: wakeup by gpio0d posedge pulse"]
     B1 = 1,
@@ -209,7 +213,7 @@ impl Gpio0dPosIntStatusR {
             _ => None,
         }
     }
-    #[doc = "wakeup by gpio0d posedge pulse"]
+    #[doc = "not wakeup by gpio0d posedge pulse"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Gpio0dPosIntStatus::B0
@@ -227,7 +231,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "wakeup by gpio0d posedge pulse"]
+    #[doc = "not wakeup by gpio0d posedge pulse"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio0dPosIntStatus::B0)

@@ -3,9 +3,10 @@ pub type R = crate::R<I2sIntcrSpec>;
 #[doc = "Register `I2S_INTCR` writer"]
 pub type W = crate::W<I2sIntcrSpec>;
 #[doc = "TX empty interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Txeie {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl TxeieR {
             true => Txeie::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Txeie::B0
@@ -44,7 +45,7 @@ impl<'a, REG> TxeieW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Txeie::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "TX underrun interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Txuie {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl TxuieR {
             true => Txuie::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Txuie::B0
@@ -97,7 +99,7 @@ impl<'a, REG> TxuieW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Txuie::B0)
@@ -108,16 +110,17 @@ where
         self.variant(Txuie::B1)
     }
 }
-#[doc = "Field `TXUIC` writer - TX underrun interrupt clear Write 1 to clear TX underrun interrupt."]
+#[doc = "Field `TXUIC` writer - TX underrun interrupt clear\n\nWrite 1 to clear TX underrun interrupt."]
 pub type TxuicW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `TFT` reader - Transmit FIFO Threshold When the number of transmit FIFO (TXFIFO0 if TCSR=00; TXFIFO1 if TCSR=01, TXFIFO2 if TCSR=10, TXFIFO3 if TCSR=11) entries is less than or equal to this threshold, the transmit FIFO empty interrupt is triggered."]
+#[doc = "Field `TFT` reader - Transmit FIFO Threshold\n\nWhen the number of transmit FIFO (TXFIFO0 if TCSR=00;\n\nTXFIFO1 if TCSR=01, TXFIFO2 if TCSR=10, TXFIFO3 if TCSR=11)\n\nentries is less than or equal to this threshold, the transmit FIFO\n\nempty interrupt is triggered."]
 pub type TftR = crate::FieldReader;
-#[doc = "Field `TFT` writer - Transmit FIFO Threshold When the number of transmit FIFO (TXFIFO0 if TCSR=00; TXFIFO1 if TCSR=01, TXFIFO2 if TCSR=10, TXFIFO3 if TCSR=11) entries is less than or equal to this threshold, the transmit FIFO empty interrupt is triggered."]
+#[doc = "Field `TFT` writer - Transmit FIFO Threshold\n\nWhen the number of transmit FIFO (TXFIFO0 if TCSR=00;\n\nTXFIFO1 if TCSR=01, TXFIFO2 if TCSR=10, TXFIFO3 if TCSR=11)\n\nentries is less than or equal to this threshold, the transmit FIFO\n\nempty interrupt is triggered."]
 pub type TftW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "RX full interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rxfie {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -139,7 +142,7 @@ impl RxfieR {
             true => Rxfie::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Rxfie::B0
@@ -156,7 +159,7 @@ impl<'a, REG> RxfieW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Rxfie::B0)
@@ -168,9 +171,10 @@ where
     }
 }
 #[doc = "RX overrun interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rxoie {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -192,7 +196,7 @@ impl RxoieR {
             true => Rxoie::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Rxoie::B0
@@ -209,7 +213,7 @@ impl<'a, REG> RxoieW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Rxoie::B0)
@@ -220,11 +224,11 @@ where
         self.variant(Rxoie::B1)
     }
 }
-#[doc = "Field `RXOIC` writer - RX overrun interrupt clear Write 1 to clear RX overrun interrupt."]
+#[doc = "Field `RXOIC` writer - RX overrun interrupt clear\n\nWrite 1 to clear RX overrun interrupt."]
 pub type RxoicW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `RFT` reader - Receive FIFO Threshold When the number of receive FIFO entries (RXFIFO0 if RCSR=00; RXFIFO1 if RCSR=01, RXFIFO2 if RCSR=10, RXFIFO3 if RCSR=11) is more than or equal to this threshold plus 1, the receive FIFO full interrupt is triggered."]
+#[doc = "Field `RFT` reader - Receive FIFO Threshold\n\nWhen the number of receive FIFO entries (RXFIFO0 if RCSR=00;\n\nRXFIFO1 if RCSR=01, RXFIFO2 if RCSR=10, RXFIFO3 if\n\nRCSR=11) is more than or equal to this threshold plus 1, the\n\nreceive FIFO full interrupt is triggered."]
 pub type RftR = crate::FieldReader;
-#[doc = "Field `RFT` writer - Receive FIFO Threshold When the number of receive FIFO entries (RXFIFO0 if RCSR=00; RXFIFO1 if RCSR=01, RXFIFO2 if RCSR=10, RXFIFO3 if RCSR=11) is more than or equal to this threshold plus 1, the receive FIFO full interrupt is triggered."]
+#[doc = "Field `RFT` writer - Receive FIFO Threshold\n\nWhen the number of receive FIFO entries (RXFIFO0 if RCSR=00;\n\nRXFIFO1 if RCSR=01, RXFIFO2 if RCSR=10, RXFIFO3 if\n\nRCSR=11) is more than or equal to this threshold plus 1, the\n\nreceive FIFO full interrupt is triggered."]
 pub type RftW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
     #[doc = "Bit 0 - TX empty interrupt enable"]
@@ -237,7 +241,7 @@ impl R {
     pub fn txuie(&self) -> TxuieR {
         TxuieR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bits 4:8 - Transmit FIFO Threshold When the number of transmit FIFO (TXFIFO0 if TCSR=00; TXFIFO1 if TCSR=01, TXFIFO2 if TCSR=10, TXFIFO3 if TCSR=11) entries is less than or equal to this threshold, the transmit FIFO empty interrupt is triggered."]
+    #[doc = "Bits 4:8 - Transmit FIFO Threshold\n\nWhen the number of transmit FIFO (TXFIFO0 if TCSR=00;\n\nTXFIFO1 if TCSR=01, TXFIFO2 if TCSR=10, TXFIFO3 if TCSR=11)\n\nentries is less than or equal to this threshold, the transmit FIFO\n\nempty interrupt is triggered."]
     #[inline(always)]
     pub fn tft(&self) -> TftR {
         TftR::new(((self.bits >> 4) & 0x1f) as u8)
@@ -252,7 +256,7 @@ impl R {
     pub fn rxoie(&self) -> RxoieR {
         RxoieR::new(((self.bits >> 17) & 1) != 0)
     }
-    #[doc = "Bits 20:24 - Receive FIFO Threshold When the number of receive FIFO entries (RXFIFO0 if RCSR=00; RXFIFO1 if RCSR=01, RXFIFO2 if RCSR=10, RXFIFO3 if RCSR=11) is more than or equal to this threshold plus 1, the receive FIFO full interrupt is triggered."]
+    #[doc = "Bits 20:24 - Receive FIFO Threshold\n\nWhen the number of receive FIFO entries (RXFIFO0 if RCSR=00;\n\nRXFIFO1 if RCSR=01, RXFIFO2 if RCSR=10, RXFIFO3 if\n\nRCSR=11) is more than or equal to this threshold plus 1, the\n\nreceive FIFO full interrupt is triggered."]
     #[inline(always)]
     pub fn rft(&self) -> RftR {
         RftR::new(((self.bits >> 20) & 0x1f) as u8)
@@ -271,13 +275,13 @@ impl W {
     pub fn txuie(&mut self) -> TxuieW<I2sIntcrSpec> {
         TxuieW::new(self, 1)
     }
-    #[doc = "Bit 2 - TX underrun interrupt clear Write 1 to clear TX underrun interrupt."]
+    #[doc = "Bit 2 - TX underrun interrupt clear\n\nWrite 1 to clear TX underrun interrupt."]
     #[inline(always)]
     #[must_use]
     pub fn txuic(&mut self) -> TxuicW<I2sIntcrSpec> {
         TxuicW::new(self, 2)
     }
-    #[doc = "Bits 4:8 - Transmit FIFO Threshold When the number of transmit FIFO (TXFIFO0 if TCSR=00; TXFIFO1 if TCSR=01, TXFIFO2 if TCSR=10, TXFIFO3 if TCSR=11) entries is less than or equal to this threshold, the transmit FIFO empty interrupt is triggered."]
+    #[doc = "Bits 4:8 - Transmit FIFO Threshold\n\nWhen the number of transmit FIFO (TXFIFO0 if TCSR=00;\n\nTXFIFO1 if TCSR=01, TXFIFO2 if TCSR=10, TXFIFO3 if TCSR=11)\n\nentries is less than or equal to this threshold, the transmit FIFO\n\nempty interrupt is triggered."]
     #[inline(always)]
     #[must_use]
     pub fn tft(&mut self) -> TftW<I2sIntcrSpec> {
@@ -295,13 +299,13 @@ impl W {
     pub fn rxoie(&mut self) -> RxoieW<I2sIntcrSpec> {
         RxoieW::new(self, 17)
     }
-    #[doc = "Bit 18 - RX overrun interrupt clear Write 1 to clear RX overrun interrupt."]
+    #[doc = "Bit 18 - RX overrun interrupt clear\n\nWrite 1 to clear RX overrun interrupt."]
     #[inline(always)]
     #[must_use]
     pub fn rxoic(&mut self) -> RxoicW<I2sIntcrSpec> {
         RxoicW::new(self, 18)
     }
-    #[doc = "Bits 20:24 - Receive FIFO Threshold When the number of receive FIFO entries (RXFIFO0 if RCSR=00; RXFIFO1 if RCSR=01, RXFIFO2 if RCSR=10, RXFIFO3 if RCSR=11) is more than or equal to this threshold plus 1, the receive FIFO full interrupt is triggered."]
+    #[doc = "Bits 20:24 - Receive FIFO Threshold\n\nWhen the number of receive FIFO entries (RXFIFO0 if RCSR=00;\n\nRXFIFO1 if RCSR=01, RXFIFO2 if RCSR=10, RXFIFO3 if\n\nRCSR=11) is more than or equal to this threshold plus 1, the\n\nreceive FIFO full interrupt is triggered."]
     #[inline(always)]
     #[must_use]
     pub fn rft(&mut self) -> RftW<I2sIntcrSpec> {

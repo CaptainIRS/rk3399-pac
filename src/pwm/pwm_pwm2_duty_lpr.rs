@@ -2,23 +2,23 @@
 pub type R = crate::R<PwmPwm2DutyLprSpec>;
 #[doc = "Register `PWM_PWM2_DUTY_LPR` writer"]
 pub type W = crate::W<PwmPwm2DutyLprSpec>;
-#[doc = "Field `DUTY_LPR` reader - Output Waveform Duty Cycle/Input Waveform Low Polarity Cycle If PWM is operated at the continuous mode or one-shot mode, this value defines the duty cycle of the output waveform. The PWM starts the output waveform with duty cycle. Note that, if the PWM is operated at the center-aligned mode, the period should be an even one, and therefore only the \\[31:1\\]
-is taken into account. If PWM is operated at the capture mode, this value indicates the effective low polarity cycles of input waveform. This value is based on the PWM clock. The value ranges from 0 to (2^32-1)."]
+#[doc = "Field `DUTY_LPR` reader - Output Waveform Duty Cycle/Input Waveform Low Polarity Cycle\n\nIf PWM is operated at the continuous mode or one-shot mode,\n\nthis value defines the duty cycle of the output waveform. The\n\nPWM starts the output waveform with duty cycle. Note that, if the\n\nPWM is operated at the center-aligned mode, the period should\n\nbe an even one, and therefore only the \\[31:1\\]
+is taken into\n\naccount.\n\nIf PWM is operated at the capture mode, this value indicates the\n\neffective low polarity cycles of input waveform.\n\nThis value is based on the PWM clock. The value ranges from 0 to\n\n(2^32-1)."]
 pub type DutyLprR = crate::FieldReader<u32>;
-#[doc = "Field `DUTY_LPR` writer - Output Waveform Duty Cycle/Input Waveform Low Polarity Cycle If PWM is operated at the continuous mode or one-shot mode, this value defines the duty cycle of the output waveform. The PWM starts the output waveform with duty cycle. Note that, if the PWM is operated at the center-aligned mode, the period should be an even one, and therefore only the \\[31:1\\]
-is taken into account. If PWM is operated at the capture mode, this value indicates the effective low polarity cycles of input waveform. This value is based on the PWM clock. The value ranges from 0 to (2^32-1)."]
+#[doc = "Field `DUTY_LPR` writer - Output Waveform Duty Cycle/Input Waveform Low Polarity Cycle\n\nIf PWM is operated at the continuous mode or one-shot mode,\n\nthis value defines the duty cycle of the output waveform. The\n\nPWM starts the output waveform with duty cycle. Note that, if the\n\nPWM is operated at the center-aligned mode, the period should\n\nbe an even one, and therefore only the \\[31:1\\]
+is taken into\n\naccount.\n\nIf PWM is operated at the capture mode, this value indicates the\n\neffective low polarity cycles of input waveform.\n\nThis value is based on the PWM clock. The value ranges from 0 to\n\n(2^32-1)."]
 pub type DutyLprW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Output Waveform Duty Cycle/Input Waveform Low Polarity Cycle If PWM is operated at the continuous mode or one-shot mode, this value defines the duty cycle of the output waveform. The PWM starts the output waveform with duty cycle. Note that, if the PWM is operated at the center-aligned mode, the period should be an even one, and therefore only the \\[31:1\\]
-is taken into account. If PWM is operated at the capture mode, this value indicates the effective low polarity cycles of input waveform. This value is based on the PWM clock. The value ranges from 0 to (2^32-1)."]
+    #[doc = "Bits 0:31 - Output Waveform Duty Cycle/Input Waveform Low Polarity Cycle\n\nIf PWM is operated at the continuous mode or one-shot mode,\n\nthis value defines the duty cycle of the output waveform. The\n\nPWM starts the output waveform with duty cycle. Note that, if the\n\nPWM is operated at the center-aligned mode, the period should\n\nbe an even one, and therefore only the \\[31:1\\]
+is taken into\n\naccount.\n\nIf PWM is operated at the capture mode, this value indicates the\n\neffective low polarity cycles of input waveform.\n\nThis value is based on the PWM clock. The value ranges from 0 to\n\n(2^32-1)."]
     #[inline(always)]
     pub fn duty_lpr(&self) -> DutyLprR {
         DutyLprR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Output Waveform Duty Cycle/Input Waveform Low Polarity Cycle If PWM is operated at the continuous mode or one-shot mode, this value defines the duty cycle of the output waveform. The PWM starts the output waveform with duty cycle. Note that, if the PWM is operated at the center-aligned mode, the period should be an even one, and therefore only the \\[31:1\\]
-is taken into account. If PWM is operated at the capture mode, this value indicates the effective low polarity cycles of input waveform. This value is based on the PWM clock. The value ranges from 0 to (2^32-1)."]
+    #[doc = "Bits 0:31 - Output Waveform Duty Cycle/Input Waveform Low Polarity Cycle\n\nIf PWM is operated at the continuous mode or one-shot mode,\n\nthis value defines the duty cycle of the output waveform. The\n\nPWM starts the output waveform with duty cycle. Note that, if the\n\nPWM is operated at the center-aligned mode, the period should\n\nbe an even one, and therefore only the \\[31:1\\]
+is taken into\n\naccount.\n\nIf PWM is operated at the capture mode, this value indicates the\n\neffective low polarity cycles of input waveform.\n\nThis value is based on the PWM clock. The value ranges from 0 to\n\n(2^32-1)."]
     #[inline(always)]
     #[must_use]
     pub fn duty_lpr(&mut self) -> DutyLprW<PwmPwm2DutyLprSpec> {

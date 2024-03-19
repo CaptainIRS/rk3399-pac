@@ -2,33 +2,33 @@
 pub type R = crate::R<GmacAnStatusSpec>;
 #[doc = "Register `GMAC_AN_STATUS` writer"]
 pub type W = crate::W<GmacAnStatusSpec>;
-#[doc = "Field `LS` reader - Link Status When set, this bit indicates that the link is up. When cleared, this bit indicates that the link is down."]
+#[doc = "Field `LS` reader - Link Status\n\nWhen set, this bit indicates that the link is up. When cleared, this\n\nbit indicates that the link is down."]
 pub type LsR = crate::BitReader;
-#[doc = "Field `LS` writer - Link Status When set, this bit indicates that the link is up. When cleared, this bit indicates that the link is down."]
+#[doc = "Field `LS` writer - Link Status\n\nWhen set, this bit indicates that the link is up. When cleared, this\n\nbit indicates that the link is down."]
 pub type LsW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ANA` reader - Auto-Negotiation Ability This bit is always high, because the GMAC supports auto- negotiation."]
+#[doc = "Field `ANA` reader - Auto-Negotiation Ability\n\nThis bit is always high, because the GMAC supports auto-\n\nnegotiation."]
 pub type AnaR = crate::BitReader;
-#[doc = "Field `ANC` reader - Auto-Negotiation Complete When set, this bit indicates that the auto-negotiation process is completed. This bit is cleared when auto-negotiation is reinitiated."]
+#[doc = "Field `ANC` reader - Auto-Negotiation Complete\n\nWhen set, this bit indicates that the auto-negotiation process is\n\ncompleted.\n\nThis bit is cleared when auto-negotiation is reinitiated."]
 pub type AncR = crate::BitReader;
 impl R {
-    #[doc = "Bit 2 - Link Status When set, this bit indicates that the link is up. When cleared, this bit indicates that the link is down."]
+    #[doc = "Bit 2 - Link Status\n\nWhen set, this bit indicates that the link is up. When cleared, this\n\nbit indicates that the link is down."]
     #[inline(always)]
     pub fn ls(&self) -> LsR {
         LsR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - Auto-Negotiation Ability This bit is always high, because the GMAC supports auto- negotiation."]
+    #[doc = "Bit 3 - Auto-Negotiation Ability\n\nThis bit is always high, because the GMAC supports auto-\n\nnegotiation."]
     #[inline(always)]
     pub fn ana(&self) -> AnaR {
         AnaR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 5 - Auto-Negotiation Complete When set, this bit indicates that the auto-negotiation process is completed. This bit is cleared when auto-negotiation is reinitiated."]
+    #[doc = "Bit 5 - Auto-Negotiation Complete\n\nWhen set, this bit indicates that the auto-negotiation process is\n\ncompleted.\n\nThis bit is cleared when auto-negotiation is reinitiated."]
     #[inline(always)]
     pub fn anc(&self) -> AncR {
         AncR::new(((self.bits >> 5) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 2 - Link Status When set, this bit indicates that the link is up. When cleared, this bit indicates that the link is down."]
+    #[doc = "Bit 2 - Link Status\n\nWhen set, this bit indicates that the link is up. When cleared, this\n\nbit indicates that the link is down."]
     #[inline(always)]
     #[must_use]
     pub fn ls(&mut self) -> LsW<GmacAnStatusSpec> {

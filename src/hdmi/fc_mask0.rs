@@ -14,13 +14,13 @@ pub type AcrW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type AudsR = crate::BitReader;
 #[doc = "Field `AUDS` writer - Mask bit for FC_INT0.AUDS interrupt bit"]
 pub type AudsW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `NVBI` reader - Mask bit for FC_INT0.NVBI interrupt bit. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
+#[doc = "Field `NVBI` reader - Mask bit for FC_INT0.NVBI interrupt bit. Otherwise,\n\nthis field is a \"spare\" bit with no associated\n\nfunctionality.\n\nReset Value: (HDMI_TX_20== 1) ? 1 : 0"]
 pub type NvbiR = crate::BitReader;
-#[doc = "Field `NVBI` writer - Mask bit for FC_INT0.NVBI interrupt bit. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
+#[doc = "Field `NVBI` writer - Mask bit for FC_INT0.NVBI interrupt bit. Otherwise,\n\nthis field is a \"spare\" bit with no associated\n\nfunctionality.\n\nReset Value: (HDMI_TX_20== 1) ? 1 : 0"]
 pub type NvbiW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `MAS` reader - Mask bit for FC_INT0.MAS interrupt bit. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
+#[doc = "Field `MAS` reader - Mask bit for FC_INT0.MAS interrupt bit. Otherwise,\n\nthis field is a \"spare\" bit with no associated\n\nfunctionality.\n\nReset Value: (HDMI_TX_20== 1) ? 1 : 0"]
 pub type MasR = crate::BitReader;
-#[doc = "Field `MAS` writer - Mask bit for FC_INT0.MAS interrupt bit. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
+#[doc = "Field `MAS` writer - Mask bit for FC_INT0.MAS interrupt bit. Otherwise,\n\nthis field is a \"spare\" bit with no associated\n\nfunctionality.\n\nReset Value: (HDMI_TX_20== 1) ? 1 : 0"]
 pub type MasW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `HBR` reader - Mask bit for FC_INT0.HBR interrupt bit"]
 pub type HbrR = crate::BitReader;
@@ -50,12 +50,12 @@ impl R {
     pub fn auds(&self) -> AudsR {
         AudsR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - Mask bit for FC_INT0.NVBI interrupt bit. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
+    #[doc = "Bit 3 - Mask bit for FC_INT0.NVBI interrupt bit. Otherwise,\n\nthis field is a \"spare\" bit with no associated\n\nfunctionality.\n\nReset Value: (HDMI_TX_20== 1) ? 1 : 0"]
     #[inline(always)]
     pub fn nvbi(&self) -> NvbiR {
         NvbiR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - Mask bit for FC_INT0.MAS interrupt bit. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
+    #[doc = "Bit 4 - Mask bit for FC_INT0.MAS interrupt bit. Otherwise,\n\nthis field is a \"spare\" bit with no associated\n\nfunctionality.\n\nReset Value: (HDMI_TX_20== 1) ? 1 : 0"]
     #[inline(always)]
     pub fn mas(&self) -> MasR {
         MasR::new(((self.bits >> 4) & 1) != 0)
@@ -95,13 +95,13 @@ impl W {
     pub fn auds(&mut self) -> AudsW<FcMask0Spec> {
         AudsW::new(self, 2)
     }
-    #[doc = "Bit 3 - Mask bit for FC_INT0.NVBI interrupt bit. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
+    #[doc = "Bit 3 - Mask bit for FC_INT0.NVBI interrupt bit. Otherwise,\n\nthis field is a \"spare\" bit with no associated\n\nfunctionality.\n\nReset Value: (HDMI_TX_20== 1) ? 1 : 0"]
     #[inline(always)]
     #[must_use]
     pub fn nvbi(&mut self) -> NvbiW<FcMask0Spec> {
         NvbiW::new(self, 3)
     }
-    #[doc = "Bit 4 - Mask bit for FC_INT0.MAS interrupt bit. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
+    #[doc = "Bit 4 - Mask bit for FC_INT0.MAS interrupt bit. Otherwise,\n\nthis field is a \"spare\" bit with no associated\n\nfunctionality.\n\nReset Value: (HDMI_TX_20== 1) ? 1 : 0"]
     #[inline(always)]
     #[must_use]
     pub fn mas(&mut self) -> MasW<FcMask0Spec> {
@@ -126,7 +126,7 @@ impl W {
         AudiW::new(self, 7)
     }
 }
-#[doc = "Mask bit for FC_INT0.NULL interrupt bit\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_mask0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_mask0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer Packet Interrupt Mask Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_mask0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_mask0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcMask0Spec;
 impl crate::RegisterSpec for FcMask0Spec {
     type Ux = u8;

@@ -2,19 +2,19 @@
 pub type R = crate::R<SpdifRepettionSpec>;
 #[doc = "Register `SPDIF_REPETTION` writer"]
 pub type W = crate::W<SpdifRepettionSpec>;
-#[doc = "Field `REPETTION` reader - Repetition This define the repetition period when the channel conveys non- linear PCM"]
+#[doc = "Field `REPETTION` reader - Repetition\n\nThis define the repetition period when the channel conveys non-\n\nlinear PCM"]
 pub type RepettionR = crate::FieldReader<u16>;
-#[doc = "Field `REPETTION` writer - Repetition This define the repetition period when the channel conveys non- linear PCM"]
+#[doc = "Field `REPETTION` writer - Repetition\n\nThis define the repetition period when the channel conveys non-\n\nlinear PCM"]
 pub type RepettionW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:15 - Repetition This define the repetition period when the channel conveys non- linear PCM"]
+    #[doc = "Bits 0:15 - Repetition\n\nThis define the repetition period when the channel conveys non-\n\nlinear PCM"]
     #[inline(always)]
     pub fn repettion(&self) -> RepettionR {
         RepettionR::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - Repetition This define the repetition period when the channel conveys non- linear PCM"]
+    #[doc = "Bits 0:15 - Repetition\n\nThis define the repetition period when the channel conveys non-\n\nlinear PCM"]
     #[inline(always)]
     #[must_use]
     pub fn repettion(&mut self) -> RepettionW<SpdifRepettionSpec> {

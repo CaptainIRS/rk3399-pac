@@ -19,9 +19,10 @@ pub type HsicHubsetupMinR = crate::BitReader;
 #[doc = "Field `HSIC_HUBSETUP_MIN` writer - hubsetup_min"]
 pub type HsicHubsetupMinW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "incr16_en\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HsicIncr16En {
-    #[doc = "1: disable AHB INCR16 burst"]
+    #[doc = "1: enable AHB INCR16 burst"]
     B1 = 1,
     #[doc = "0: disable AHB INCR16 burst"]
     B0 = 0,
@@ -43,7 +44,7 @@ impl HsicIncr16EnR {
             false => HsicIncr16En::B0,
         }
     }
-    #[doc = "disable AHB INCR16 burst"]
+    #[doc = "enable AHB INCR16 burst"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == HsicIncr16En::B1
@@ -60,7 +61,7 @@ impl<'a, REG> HsicIncr16EnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "disable AHB INCR16 burst"]
+    #[doc = "enable AHB INCR16 burst"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(HsicIncr16En::B1)
@@ -72,9 +73,10 @@ where
     }
 }
 #[doc = "incr4_en\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HsicIncr4En {
-    #[doc = "1: disable AHB INCR4 burst"]
+    #[doc = "1: enable AHB INCR4 burst"]
     B1 = 1,
     #[doc = "0: disable AHB INCR4 burst"]
     B0 = 0,
@@ -96,7 +98,7 @@ impl HsicIncr4EnR {
             false => HsicIncr4En::B0,
         }
     }
-    #[doc = "disable AHB INCR4 burst"]
+    #[doc = "enable AHB INCR4 burst"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == HsicIncr4En::B1
@@ -113,7 +115,7 @@ impl<'a, REG> HsicIncr4EnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "disable AHB INCR4 burst"]
+    #[doc = "enable AHB INCR4 burst"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(HsicIncr4En::B1)
@@ -125,9 +127,10 @@ where
     }
 }
 #[doc = "incr8_en\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HsicIncr8En {
-    #[doc = "1: disable AHB INCR8 burst"]
+    #[doc = "1: enable AHB INCR8 burst"]
     B1 = 1,
     #[doc = "0: disable AHB INCR8 burst"]
     B0 = 0,
@@ -149,7 +152,7 @@ impl HsicIncr8EnR {
             false => HsicIncr8En::B0,
         }
     }
-    #[doc = "disable AHB INCR8 burst"]
+    #[doc = "enable AHB INCR8 burst"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == HsicIncr8En::B1
@@ -166,7 +169,7 @@ impl<'a, REG> HsicIncr8EnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "disable AHB INCR8 burst"]
+    #[doc = "enable AHB INCR8 burst"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(HsicIncr8En::B1)
@@ -177,13 +180,11 @@ where
         self.variant(HsicIncr8En::B0)
     }
 }
-#[doc = "Burst Alignment Enable Forces AHB master to start INCR4/8/16 busts only on burst boundaries. AHB requires that double word width burst be addressed-aligned only to the double-word boundary.\n\nValue on reset: 1"]
+#[doc = "Burst Alignment Enable\n\nForces AHB master to start INCR4/8/16 busts\n\nonly on burst boundaries. AHB requires that\n\ndouble word width burst be addressed-aligned\n\nonly to the double-word boundary.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HsicIncrxEn {
-    #[doc = "1: Normal AHB operation; start bursts on any double word boundary Note: When this function is enabled, the burst are started only when the lowest bits of haddr are: INCR4: haddr\\[3:0\\]
-== 4'b0000 INCR8: haddr\\[4:0\\]
-== 5'b00000 INCR16: haddr\\[5:0\\]
-== 6'b000000"]
+    #[doc = "1: Start INCRX burst only on burst x-aligned addresses"]
     B1 = 1,
     #[doc = "0: Normal AHB operation; start bursts on any double word boundary Note: When this function is enabled, the burst are started only when the lowest bits of haddr are: INCR4: haddr\\[3:0\\]
 == 4'b0000 INCR8: haddr\\[4:0\\]
@@ -197,7 +198,7 @@ impl From<HsicIncrxEn> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HSIC_INCRX_EN` reader - Burst Alignment Enable Forces AHB master to start INCR4/8/16 busts only on burst boundaries. AHB requires that double word width burst be addressed-aligned only to the double-word boundary."]
+#[doc = "Field `HSIC_INCRX_EN` reader - Burst Alignment Enable\n\nForces AHB master to start INCR4/8/16 busts\n\nonly on burst boundaries. AHB requires that\n\ndouble word width burst be addressed-aligned\n\nonly to the double-word boundary."]
 pub type HsicIncrxEnR = crate::BitReader<HsicIncrxEn>;
 impl HsicIncrxEnR {
     #[doc = "Get enumerated values variant"]
@@ -208,10 +209,7 @@ impl HsicIncrxEnR {
             false => HsicIncrxEn::B0,
         }
     }
-    #[doc = "Normal AHB operation; start bursts on any double word boundary Note: When this function is enabled, the burst are started only when the lowest bits of haddr are: INCR4: haddr\\[3:0\\]
-== 4'b0000 INCR8: haddr\\[4:0\\]
-== 5'b00000 INCR16: haddr\\[5:0\\]
-== 6'b000000"]
+    #[doc = "Start INCRX burst only on burst x-aligned addresses"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == HsicIncrxEn::B1
@@ -225,16 +223,13 @@ impl HsicIncrxEnR {
         *self == HsicIncrxEn::B0
     }
 }
-#[doc = "Field `HSIC_INCRX_EN` writer - Burst Alignment Enable Forces AHB master to start INCR4/8/16 busts only on burst boundaries. AHB requires that double word width burst be addressed-aligned only to the double-word boundary."]
+#[doc = "Field `HSIC_INCRX_EN` writer - Burst Alignment Enable\n\nForces AHB master to start INCR4/8/16 busts\n\nonly on burst boundaries. AHB requires that\n\ndouble word width burst be addressed-aligned\n\nonly to the double-word boundary."]
 pub type HsicIncrxEnW<'a, REG> = crate::BitWriter<'a, REG, HsicIncrxEn>;
 impl<'a, REG> HsicIncrxEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Normal AHB operation; start bursts on any double word boundary Note: When this function is enabled, the burst are started only when the lowest bits of haddr are: INCR4: haddr\\[3:0\\]
-== 4'b0000 INCR8: haddr\\[4:0\\]
-== 5'b00000 INCR16: haddr\\[5:0\\]
-== 6'b000000"]
+    #[doc = "Start INCRX burst only on burst x-aligned addresses"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(HsicIncrxEn::B1)
@@ -248,14 +243,15 @@ where
         self.variant(HsicIncrxEn::B0)
     }
 }
-#[doc = "Field `HSIC_SIM_MODE` reader - sim_mode Simulation only."]
+#[doc = "Field `HSIC_SIM_MODE` reader - sim_mode\n\nSimulation only."]
 pub type HsicSimModeR = crate::BitReader;
-#[doc = "Field `HSIC_SIM_MODE` writer - sim_mode Simulation only."]
+#[doc = "Field `HSIC_SIM_MODE` writer - sim_mode\n\nSimulation only."]
 pub type HsicSimModeW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "word_if\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HsicWordIf {
-    #[doc = "1: select 8bit utmi interface Note: HSICPHY only support 16bit utmi interface."]
+    #[doc = "1: select 16bit utmi interface"]
     B1 = 1,
     #[doc = "0: select 8bit utmi interface Note: HSICPHY only support 16bit utmi interface."]
     B0 = 0,
@@ -277,7 +273,7 @@ impl HsicWordIfR {
             false => HsicWordIf::B0,
         }
     }
-    #[doc = "select 8bit utmi interface Note: HSICPHY only support 16bit utmi interface."]
+    #[doc = "select 16bit utmi interface"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == HsicWordIf::B1
@@ -294,7 +290,7 @@ impl<'a, REG> HsicWordIfW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "select 8bit utmi interface Note: HSICPHY only support 16bit utmi interface."]
+    #[doc = "select 16bit utmi interface"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(HsicWordIf::B1)
@@ -305,9 +301,9 @@ where
         self.variant(HsicWordIf::B0)
     }
 }
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0 - app_prt_ovrcur"]
@@ -345,12 +341,12 @@ impl R {
     pub fn hsic_incr8_en(&self) -> HsicIncr8EnR {
         HsicIncr8EnR::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 7 - Burst Alignment Enable Forces AHB master to start INCR4/8/16 busts only on burst boundaries. AHB requires that double word width burst be addressed-aligned only to the double-word boundary."]
+    #[doc = "Bit 7 - Burst Alignment Enable\n\nForces AHB master to start INCR4/8/16 busts\n\nonly on burst boundaries. AHB requires that\n\ndouble word width burst be addressed-aligned\n\nonly to the double-word boundary."]
     #[inline(always)]
     pub fn hsic_incrx_en(&self) -> HsicIncrxEnR {
         HsicIncrxEnR::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bit 8 - sim_mode Simulation only."]
+    #[doc = "Bit 8 - sim_mode\n\nSimulation only."]
     #[inline(always)]
     pub fn hsic_sim_mode(&self) -> HsicSimModeR {
         HsicSimModeR::new(((self.bits >> 8) & 1) != 0)
@@ -360,7 +356,7 @@ impl R {
     pub fn hsic_word_if(&self) -> HsicWordIfR {
         HsicWordIfR::new(((self.bits >> 9) & 1) != 0)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
@@ -409,13 +405,13 @@ impl W {
     pub fn hsic_incr8_en(&mut self) -> HsicIncr8EnW<GrfHsicCon0Spec> {
         HsicIncr8EnW::new(self, 6)
     }
-    #[doc = "Bit 7 - Burst Alignment Enable Forces AHB master to start INCR4/8/16 busts only on burst boundaries. AHB requires that double word width burst be addressed-aligned only to the double-word boundary."]
+    #[doc = "Bit 7 - Burst Alignment Enable\n\nForces AHB master to start INCR4/8/16 busts\n\nonly on burst boundaries. AHB requires that\n\ndouble word width burst be addressed-aligned\n\nonly to the double-word boundary."]
     #[inline(always)]
     #[must_use]
     pub fn hsic_incrx_en(&mut self) -> HsicIncrxEnW<GrfHsicCon0Spec> {
         HsicIncrxEnW::new(self, 7)
     }
-    #[doc = "Bit 8 - sim_mode Simulation only."]
+    #[doc = "Bit 8 - sim_mode\n\nSimulation only."]
     #[inline(always)]
     #[must_use]
     pub fn hsic_sim_mode(&mut self) -> HsicSimModeW<GrfHsicCon0Spec> {
@@ -427,7 +423,7 @@ impl W {
     pub fn hsic_word_if(&mut self) -> HsicWordIfW<GrfHsicCon0Spec> {
         HsicWordIfW::new(self, 9)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfHsicCon0Spec> {

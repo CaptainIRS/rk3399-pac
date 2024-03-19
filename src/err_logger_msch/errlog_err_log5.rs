@@ -1,16 +1,16 @@
 #[doc = "Register `ERRLOG_ErrLog5` reader"]
 pub type R = crate::R<ErrlogErrLog5Spec>;
-#[doc = "Field `AXIID` reader - AXI ID for AXI master. It is read as 0 for AHB Master. Unused bits are read as 0."]
+#[doc = "Field `AXIID` reader - AXI ID for AXI master. It is read as 0 for AHB Master. Unused bits\n\nare read as 0."]
 pub type AxiidR = crate::FieldReader<u16>;
-#[doc = "Field `MID` reader - Master ID Master ID for each master."]
+#[doc = "Field `MID` reader - Master ID\n\nMaster ID for each master."]
 pub type MidR = crate::FieldReader;
 impl R {
-    #[doc = "Bits 0:9 - AXI ID for AXI master. It is read as 0 for AHB Master. Unused bits are read as 0."]
+    #[doc = "Bits 0:9 - AXI ID for AXI master. It is read as 0 for AHB Master. Unused bits\n\nare read as 0."]
     #[inline(always)]
     pub fn axiid(&self) -> AxiidR {
         AxiidR::new((self.bits & 0x03ff) as u16)
     }
-    #[doc = "Bits 10:15 - Master ID Master ID for each master."]
+    #[doc = "Bits 10:15 - Master ID\n\nMaster ID for each master."]
     #[inline(always)]
     pub fn mid(&self) -> MidR {
         MidR::new(((self.bits >> 10) & 0x3f) as u8)

@@ -1,11 +1,11 @@
 #[doc = "Register `UART_TFR` reader"]
 pub type R = crate::R<UartTfrSpec>;
-#[doc = "Field `TRANS_FIFO_READ` reader - Transmit FIFO Read. These bits are only valid when FIFO access mode is enabled (FAR\\[0\\]
-is set to one).When FIFOs are implemented and enabled, reading this register gives the data at the top of the transmit FIFO. Each consecutive read pops the transmit FIFO and gives the next data value that is currently at the top of the FIFO."]
+#[doc = "Field `TRANS_FIFO_READ` reader - Transmit FIFO Read.\n\nThese bits are only valid when FIFO access mode is enabled\n\n(FAR\\[0\\]
+is set to one).When FIFOs are implemented and enabled,\n\nreading this register gives the data at the top of the transmit\n\nFIFO. Each consecutive read pops the transmit FIFO and gives\n\nthe next data value that is currently at the top of the FIFO."]
 pub type TransFifoReadR = crate::FieldReader;
 impl R {
-    #[doc = "Bits 0:7 - Transmit FIFO Read. These bits are only valid when FIFO access mode is enabled (FAR\\[0\\]
-is set to one).When FIFOs are implemented and enabled, reading this register gives the data at the top of the transmit FIFO. Each consecutive read pops the transmit FIFO and gives the next data value that is currently at the top of the FIFO."]
+    #[doc = "Bits 0:7 - Transmit FIFO Read.\n\nThese bits are only valid when FIFO access mode is enabled\n\n(FAR\\[0\\]
+is set to one).When FIFOs are implemented and enabled,\n\nreading this register gives the data at the top of the transmit\n\nFIFO. Each consecutive read pops the transmit FIFO and gives\n\nthe next data value that is currently at the top of the FIFO."]
     #[inline(always)]
     pub fn trans_fifo_read(&self) -> TransFifoReadR {
         TransFifoReadR::new((self.bits & 0xff) as u8)

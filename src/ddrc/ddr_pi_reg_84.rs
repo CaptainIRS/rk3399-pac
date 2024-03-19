@@ -2,34 +2,34 @@
 pub type R = crate::R<DdrPiReg84Spec>;
 #[doc = "Register `DDR_PI_REG_84` writer"]
 pub type W = crate::W<DdrPiReg84Spec>;
-#[doc = "Field `PI_RDLVL_STROBE_NUM` reader - Defines the number of back to back MPC command in one read process in read eye training."]
+#[doc = "Field `PI_RDLVL_STROBE_NUM` reader - Defines the number of back to back MPC command in one read\n\nprocess in read eye training."]
 pub type PiRdlvlStrobeNumR = crate::FieldReader;
-#[doc = "Field `PI_RDLVL_STROBE_NUM` writer - Defines the number of back to back MPC command in one read process in read eye training."]
+#[doc = "Field `PI_RDLVL_STROBE_NUM` writer - Defines the number of back to back MPC command in one read\n\nprocess in read eye training."]
 pub type PiRdlvlStrobeNumW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Field `PI_RDLVL_GATE_STROBE_NUM` reader - Defines the number of back-to-back MPC command in one read process in read gate training."]
+#[doc = "Field `PI_RDLVL_GATE_STROBE_NUM` reader - Defines the number of back-to-back MPC command in one read\n\nprocess in read gate training."]
 pub type PiRdlvlGateStrobeNumR = crate::FieldReader;
-#[doc = "Field `PI_RDLVL_GATE_STROBE_NUM` writer - Defines the number of back-to-back MPC command in one read process in read gate training."]
+#[doc = "Field `PI_RDLVL_GATE_STROBE_NUM` writer - Defines the number of back-to-back MPC command in one read\n\nprocess in read gate training."]
 pub type PiRdlvlGateStrobeNumW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
-    #[doc = "Bits 0:4 - Defines the number of back to back MPC command in one read process in read eye training."]
+    #[doc = "Bits 0:4 - Defines the number of back to back MPC command in one read\n\nprocess in read eye training."]
     #[inline(always)]
     pub fn pi_rdlvl_strobe_num(&self) -> PiRdlvlStrobeNumR {
         PiRdlvlStrobeNumR::new((self.bits & 0x1f) as u8)
     }
-    #[doc = "Bits 8:12 - Defines the number of back-to-back MPC command in one read process in read gate training."]
+    #[doc = "Bits 8:12 - Defines the number of back-to-back MPC command in one read\n\nprocess in read gate training."]
     #[inline(always)]
     pub fn pi_rdlvl_gate_strobe_num(&self) -> PiRdlvlGateStrobeNumR {
         PiRdlvlGateStrobeNumR::new(((self.bits >> 8) & 0x1f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - Defines the number of back to back MPC command in one read process in read eye training."]
+    #[doc = "Bits 0:4 - Defines the number of back to back MPC command in one read\n\nprocess in read eye training."]
     #[inline(always)]
     #[must_use]
     pub fn pi_rdlvl_strobe_num(&mut self) -> PiRdlvlStrobeNumW<DdrPiReg84Spec> {
         PiRdlvlStrobeNumW::new(self, 0)
     }
-    #[doc = "Bits 8:12 - Defines the number of back-to-back MPC command in one read process in read gate training."]
+    #[doc = "Bits 8:12 - Defines the number of back-to-back MPC command in one read\n\nprocess in read gate training."]
     #[inline(always)]
     #[must_use]
     pub fn pi_rdlvl_gate_strobe_num(&mut self) -> PiRdlvlGateStrobeNumW<DdrPiReg84Spec> {

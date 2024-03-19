@@ -1,17 +1,17 @@
 #[doc = "Register `CRU_SDMMC_CON1` writer"]
 pub type W = crate::W<CruSdmmcCon1Spec>;
-#[doc = "Field `SDMMC_CON1` writer - sdmmc con1 register refer to chapter SDMMC"]
+#[doc = "Field `SDMMC_CON1` writer - sdmmc con1 register\n\nrefer to chapter SDMMC"]
 pub type SdmmcCon1W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl W {
-    #[doc = "Bits 0:15 - sdmmc con1 register refer to chapter SDMMC"]
+    #[doc = "Bits 0:15 - sdmmc con1 register\n\nrefer to chapter SDMMC"]
     #[inline(always)]
     #[must_use]
     pub fn sdmmc_con1(&mut self) -> SdmmcCon1W<CruSdmmcCon1Spec> {
         SdmmcCon1W::new(self, 0)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruSdmmcCon1Spec> {

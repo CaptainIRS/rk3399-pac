@@ -10,9 +10,9 @@ pub type GcpW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type AviR = crate::BitReader;
 #[doc = "Field `AVI` writer - Mask bit for FC_INT1.AVI interrupt bit"]
 pub type AviW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `AMP` reader - Mask bit for FC_INT1.AMP interrupt bit. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
+#[doc = "Field `AMP` reader - Mask bit for FC_INT1.AMP interrupt bit. Otherwise,\n\nthis field is a \"spare\" bit with no associated\n\nfunctionality.\n\nReset Value: (HDMI_TX_20== 1) ? 1 : 0"]
 pub type AmpR = crate::BitReader;
-#[doc = "Field `AMP` writer - Mask bit for FC_INT1.AMP interrupt bit. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
+#[doc = "Field `AMP` writer - Mask bit for FC_INT1.AMP interrupt bit. Otherwise,\n\nthis field is a \"spare\" bit with no associated\n\nfunctionality.\n\nReset Value: (HDMI_TX_20== 1) ? 1 : 0"]
 pub type AmpW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SPD` reader - Mask bit for FC_INT1.SPD interrupt bit"]
 pub type SpdR = crate::BitReader;
@@ -45,7 +45,7 @@ impl R {
     pub fn avi(&self) -> AviR {
         AviR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - Mask bit for FC_INT1.AMP interrupt bit. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
+    #[doc = "Bit 2 - Mask bit for FC_INT1.AMP interrupt bit. Otherwise,\n\nthis field is a \"spare\" bit with no associated\n\nfunctionality.\n\nReset Value: (HDMI_TX_20== 1) ? 1 : 0"]
     #[inline(always)]
     pub fn amp(&self) -> AmpR {
         AmpR::new(((self.bits >> 2) & 1) != 0)
@@ -89,7 +89,7 @@ impl W {
     pub fn avi(&mut self) -> AviW<FcMask1Spec> {
         AviW::new(self, 1)
     }
-    #[doc = "Bit 2 - Mask bit for FC_INT1.AMP interrupt bit. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
+    #[doc = "Bit 2 - Mask bit for FC_INT1.AMP interrupt bit. Otherwise,\n\nthis field is a \"spare\" bit with no associated\n\nfunctionality.\n\nReset Value: (HDMI_TX_20== 1) ? 1 : 0"]
     #[inline(always)]
     #[must_use]
     pub fn amp(&mut self) -> AmpW<FcMask1Spec> {
@@ -126,7 +126,7 @@ impl W {
         GmdW::new(self, 7)
     }
 }
-#[doc = "Mask bit for FC_INT1.GCP interrupt bit\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_mask1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_mask1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer Packet Interrupt Mask Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_mask1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_mask1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcMask1Spec;
 impl crate::RegisterSpec for FcMask1Spec {
     type Ux = u8;

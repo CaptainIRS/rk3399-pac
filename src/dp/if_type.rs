@@ -2,19 +2,19 @@
 pub type R = crate::R<IfTypeSpec>;
 #[doc = "Register `IF_TYPE` writer"]
 pub type W = crate::W<IfTypeSpec>;
-#[doc = "Field `IF_TYPE` reader - InfoFrame Packet Type Code. It can be set as (0x80 + InfoFrame Type Code) and send any type of infoframe defined in CEA-861C. Commonly, we set it as 0x83(0x80 + 0x03, 0x03 is the type code of SPD InfoFrame) and send SPD infoframe."]
+#[doc = "Field `IF_TYPE` reader - InfoFrame Packet Type Code. It can be set as (0x80 + \n\nInfoFrame Type Code) and send any type of infoframe \n\ndefined in CEA-861C. \n\nCommonly, we set it as 0x83(0x80 + 0x03, 0x03 is the type \n\ncode of SPD InfoFrame) and send SPD infoframe."]
 pub type IfTypeR = crate::FieldReader;
-#[doc = "Field `IF_TYPE` writer - InfoFrame Packet Type Code. It can be set as (0x80 + InfoFrame Type Code) and send any type of infoframe defined in CEA-861C. Commonly, we set it as 0x83(0x80 + 0x03, 0x03 is the type code of SPD InfoFrame) and send SPD infoframe."]
+#[doc = "Field `IF_TYPE` writer - InfoFrame Packet Type Code. It can be set as (0x80 + \n\nInfoFrame Type Code) and send any type of infoframe \n\ndefined in CEA-861C. \n\nCommonly, we set it as 0x83(0x80 + 0x03, 0x03 is the type \n\ncode of SPD InfoFrame) and send SPD infoframe."]
 pub type IfTypeW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - InfoFrame Packet Type Code. It can be set as (0x80 + InfoFrame Type Code) and send any type of infoframe defined in CEA-861C. Commonly, we set it as 0x83(0x80 + 0x03, 0x03 is the type code of SPD InfoFrame) and send SPD infoframe."]
+    #[doc = "Bits 0:7 - InfoFrame Packet Type Code. It can be set as (0x80 + \n\nInfoFrame Type Code) and send any type of infoframe \n\ndefined in CEA-861C. \n\nCommonly, we set it as 0x83(0x80 + 0x03, 0x03 is the type \n\ncode of SPD InfoFrame) and send SPD infoframe."]
     #[inline(always)]
     pub fn if_type(&self) -> IfTypeR {
         IfTypeR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - InfoFrame Packet Type Code. It can be set as (0x80 + InfoFrame Type Code) and send any type of infoframe defined in CEA-861C. Commonly, we set it as 0x83(0x80 + 0x03, 0x03 is the type code of SPD InfoFrame) and send SPD infoframe."]
+    #[doc = "Bits 0:7 - InfoFrame Packet Type Code. It can be set as (0x80 + \n\nInfoFrame Type Code) and send any type of infoframe \n\ndefined in CEA-861C. \n\nCommonly, we set it as 0x83(0x80 + 0x03, 0x03 is the type \n\ncode of SPD InfoFrame) and send SPD infoframe."]
     #[inline(always)]
     #[must_use]
     pub fn if_type(&mut self) -> IfTypeW<IfTypeSpec> {

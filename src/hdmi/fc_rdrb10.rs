@@ -21,7 +21,7 @@ impl W {
         NvbiframeinterpolationW::new(self, 0)
     }
 }
-#[doc = "NTSC VBI frame interpolation\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_rdrb10::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_rdrb10::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer Round Robin NTSC VBI Packet Insertion Register 10\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_rdrb10::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_rdrb10::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcRdrb10Spec;
 impl crate::RegisterSpec for FcRdrb10Spec {
     type Ux = u8;

@@ -2,162 +2,162 @@
 pub type R = crate::R<CruClkgateCon5Spec>;
 #[doc = "Register `CRU_CLKGATE_CON5` writer"]
 pub type W = crate::W<CruClkgateCon5Spec>;
-#[doc = "Field `ACLK_PERIHP_GPLL_SRC_EN` reader - aclk_perihp_gpll clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_PERIHP_GPLL_SRC_EN` reader - aclk_perihp_gpll clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkPerihpGpllSrcEnR = crate::BitReader;
-#[doc = "Field `ACLK_PERIHP_GPLL_SRC_EN` writer - aclk_perihp_gpll clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_PERIHP_GPLL_SRC_EN` writer - aclk_perihp_gpll clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkPerihpGpllSrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_PERIHP_CPLL_SRC_EN` reader - aclk_perihp_cpll clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_PERIHP_CPLL_SRC_EN` reader - aclk_perihp_cpll clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkPerihpCpllSrcEnR = crate::BitReader;
-#[doc = "Field `ACLK_PERIHP_CPLL_SRC_EN` writer - aclk_perihp_cpll clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_PERIHP_CPLL_SRC_EN` writer - aclk_perihp_cpll clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkPerihpCpllSrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_PERIHP_EN` reader - aclk_perihp clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_PERIHP_EN` reader - aclk_perihp clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkPerihpEnR = crate::BitReader;
-#[doc = "Field `ACLK_PERIHP_EN` writer - aclk_perihp clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_PERIHP_EN` writer - aclk_perihp clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkPerihpEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `HCLK_PERIHP_EN` reader - hclk_perihp clock disable bit When HIGH, disable clock"]
+#[doc = "Field `HCLK_PERIHP_EN` reader - hclk_perihp clock disable bit\n\nWhen HIGH, disable clock"]
 pub type HclkPerihpEnR = crate::BitReader;
-#[doc = "Field `HCLK_PERIHP_EN` writer - hclk_perihp clock disable bit When HIGH, disable clock"]
+#[doc = "Field `HCLK_PERIHP_EN` writer - hclk_perihp clock disable bit\n\nWhen HIGH, disable clock"]
 pub type HclkPerihpEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PCLK_PERIHP_EN` reader - pclk_perihp clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLK_PERIHP_EN` reader - pclk_perihp clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkPerihpEnR = crate::BitReader;
-#[doc = "Field `PCLK_PERIHP_EN` writer - pclk_perihp clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLK_PERIHP_EN` writer - pclk_perihp clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkPerihpEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CLK_GMAC_SRC_EN` reader - clk_gmac_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_GMAC_SRC_EN` reader - clk_gmac_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkGmacSrcEnR = crate::BitReader;
-#[doc = "Field `CLK_GMAC_SRC_EN` writer - clk_gmac_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_GMAC_SRC_EN` writer - clk_gmac_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkGmacSrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CLK_MAC_REF_EN` reader - clk_mac_ref clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_MAC_REF_EN` reader - clk_mac_ref clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkMacRefEnR = crate::BitReader;
-#[doc = "Field `CLK_MAC_REF_EN` writer - clk_mac_ref clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_MAC_REF_EN` writer - clk_mac_ref clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkMacRefEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CLK_MAC_REFOUT_EN` reader - clk_mac_refout clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_MAC_REFOUT_EN` reader - clk_mac_refout clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkMacRefoutEnR = crate::BitReader;
-#[doc = "Field `CLK_MAC_REFOUT_EN` writer - clk_mac_refout clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_MAC_REFOUT_EN` writer - clk_mac_refout clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkMacRefoutEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CLK_MAC_RX_EN` reader - clk_mac_rx clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_MAC_RX_EN` reader - clk_mac_rx clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkMacRxEnR = crate::BitReader;
-#[doc = "Field `CLK_MAC_RX_EN` writer - clk_mac_rx clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_MAC_RX_EN` writer - clk_mac_rx clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkMacRxEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CLK_MAC_TX_EN` reader - clk_mac_tx clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_MAC_TX_EN` reader - clk_mac_tx clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkMacTxEnR = crate::BitReader;
-#[doc = "Field `CLK_MAC_TX_EN` writer - clk_mac_tx clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_MAC_TX_EN` writer - clk_mac_tx clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkMacTxEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bit 0 - aclk_perihp_gpll clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 0 - aclk_perihp_gpll clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn aclk_perihp_gpll_src_en(&self) -> AclkPerihpGpllSrcEnR {
         AclkPerihpGpllSrcEnR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - aclk_perihp_cpll clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 1 - aclk_perihp_cpll clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn aclk_perihp_cpll_src_en(&self) -> AclkPerihpCpllSrcEnR {
         AclkPerihpCpllSrcEnR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - aclk_perihp clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 2 - aclk_perihp clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn aclk_perihp_en(&self) -> AclkPerihpEnR {
         AclkPerihpEnR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - hclk_perihp clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 3 - hclk_perihp clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn hclk_perihp_en(&self) -> HclkPerihpEnR {
         HclkPerihpEnR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - pclk_perihp clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 4 - pclk_perihp clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn pclk_perihp_en(&self) -> PclkPerihpEnR {
         PclkPerihpEnR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - clk_gmac_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 5 - clk_gmac_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn clk_gmac_src_en(&self) -> ClkGmacSrcEnR {
         ClkGmacSrcEnR::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 6 - clk_mac_ref clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 6 - clk_mac_ref clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn clk_mac_ref_en(&self) -> ClkMacRefEnR {
         ClkMacRefEnR::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 7 - clk_mac_refout clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 7 - clk_mac_refout clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn clk_mac_refout_en(&self) -> ClkMacRefoutEnR {
         ClkMacRefoutEnR::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bit 8 - clk_mac_rx clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 8 - clk_mac_rx clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn clk_mac_rx_en(&self) -> ClkMacRxEnR {
         ClkMacRxEnR::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bit 9 - clk_mac_tx clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 9 - clk_mac_tx clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn clk_mac_tx_en(&self) -> ClkMacTxEnR {
         ClkMacTxEnR::new(((self.bits >> 9) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - aclk_perihp_gpll clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 0 - aclk_perihp_gpll clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_perihp_gpll_src_en(&mut self) -> AclkPerihpGpllSrcEnW<CruClkgateCon5Spec> {
         AclkPerihpGpllSrcEnW::new(self, 0)
     }
-    #[doc = "Bit 1 - aclk_perihp_cpll clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 1 - aclk_perihp_cpll clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_perihp_cpll_src_en(&mut self) -> AclkPerihpCpllSrcEnW<CruClkgateCon5Spec> {
         AclkPerihpCpllSrcEnW::new(self, 1)
     }
-    #[doc = "Bit 2 - aclk_perihp clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 2 - aclk_perihp clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_perihp_en(&mut self) -> AclkPerihpEnW<CruClkgateCon5Spec> {
         AclkPerihpEnW::new(self, 2)
     }
-    #[doc = "Bit 3 - hclk_perihp clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 3 - hclk_perihp clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn hclk_perihp_en(&mut self) -> HclkPerihpEnW<CruClkgateCon5Spec> {
         HclkPerihpEnW::new(self, 3)
     }
-    #[doc = "Bit 4 - pclk_perihp clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 4 - pclk_perihp clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn pclk_perihp_en(&mut self) -> PclkPerihpEnW<CruClkgateCon5Spec> {
         PclkPerihpEnW::new(self, 4)
     }
-    #[doc = "Bit 5 - clk_gmac_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 5 - clk_gmac_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn clk_gmac_src_en(&mut self) -> ClkGmacSrcEnW<CruClkgateCon5Spec> {
         ClkGmacSrcEnW::new(self, 5)
     }
-    #[doc = "Bit 6 - clk_mac_ref clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 6 - clk_mac_ref clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn clk_mac_ref_en(&mut self) -> ClkMacRefEnW<CruClkgateCon5Spec> {
         ClkMacRefEnW::new(self, 6)
     }
-    #[doc = "Bit 7 - clk_mac_refout clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 7 - clk_mac_refout clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn clk_mac_refout_en(&mut self) -> ClkMacRefoutEnW<CruClkgateCon5Spec> {
         ClkMacRefoutEnW::new(self, 7)
     }
-    #[doc = "Bit 8 - clk_mac_rx clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 8 - clk_mac_rx clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn clk_mac_rx_en(&mut self) -> ClkMacRxEnW<CruClkgateCon5Spec> {
         ClkMacRxEnW::new(self, 8)
     }
-    #[doc = "Bit 9 - clk_mac_tx clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 9 - clk_mac_tx clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn clk_mac_tx_en(&mut self) -> ClkMacTxEnW<CruClkgateCon5Spec> {
         ClkMacTxEnW::new(self, 9)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkgateCon5Spec> {

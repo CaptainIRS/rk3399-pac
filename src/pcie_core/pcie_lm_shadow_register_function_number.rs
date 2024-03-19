@@ -2,39 +2,33 @@
 pub type R = crate::R<PcieLmShadowRegisterFunctionNumberSpec>;
 #[doc = "Register `PCIE_LM_SHADOW_REGISTER_FUNCTION_NUMBER` writer"]
 pub type W = crate::W<PcieLmShadowRegisterFunctionNumberSpec>;
-#[doc = "Field `SHDW_FUNC_NUM` reader - Shadow register target function number \\[SHDW_FUNC_NUM\\]
-The value here will be the target function number when f/w sets any bit in the shadow error register."]
+#[doc = "Field `SHDW_FUNC_NUM` reader - Shadow register target function number \\[SHDW_FUNC_NUM\\]\n\nThe value here will be the target function number when f/w sets any bit in the shadow error register."]
 pub type ShdwFuncNumR = crate::FieldReader;
-#[doc = "Field `SHDW_FUNC_NUM` writer - Shadow register target function number \\[SHDW_FUNC_NUM\\]
-The value here will be the target function number when f/w sets any bit in the shadow error register."]
+#[doc = "Field `SHDW_FUNC_NUM` writer - Shadow register target function number \\[SHDW_FUNC_NUM\\]\n\nThe value here will be the target function number when f/w sets any bit in the shadow error register."]
 pub type ShdwFuncNumW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-#[doc = "Field `R0` reader - Reserved \\[R0\\]
-Reserved"]
+#[doc = "Field `R0` reader - Reserved \\[R0\\]\n\nReserved"]
 pub type R0R = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:7 - Shadow register target function number \\[SHDW_FUNC_NUM\\]
-The value here will be the target function number when f/w sets any bit in the shadow error register."]
+    #[doc = "Bits 0:7 - Shadow register target function number \\[SHDW_FUNC_NUM\\]\n\nThe value here will be the target function number when f/w sets any bit in the shadow error register."]
     #[inline(always)]
     pub fn shdw_func_num(&self) -> ShdwFuncNumR {
         ShdwFuncNumR::new((self.bits & 0xff) as u8)
     }
-    #[doc = "Bits 8:31 - Reserved \\[R0\\]
-Reserved"]
+    #[doc = "Bits 8:31 - Reserved \\[R0\\]\n\nReserved"]
     #[inline(always)]
     pub fn r0(&self) -> R0R {
         R0R::new((self.bits >> 8) & 0x00ff_ffff)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Shadow register target function number \\[SHDW_FUNC_NUM\\]
-The value here will be the target function number when f/w sets any bit in the shadow error register."]
+    #[doc = "Bits 0:7 - Shadow register target function number \\[SHDW_FUNC_NUM\\]\n\nThe value here will be the target function number when f/w sets any bit in the shadow error register."]
     #[inline(always)]
     #[must_use]
     pub fn shdw_func_num(&mut self) -> ShdwFuncNumW<PcieLmShadowRegisterFunctionNumberSpec> {
         ShdwFuncNumW::new(self, 0)
     }
 }
-#[doc = "Shadow register function number. Reserved\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcie_lm_shadow_register_function_number::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcie_lm_shadow_register_function_number::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Shadow register function number.\n\nReserved\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcie_lm_shadow_register_function_number::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcie_lm_shadow_register_function_number::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PcieLmShadowRegisterFunctionNumberSpec;
 impl crate::RegisterSpec for PcieLmShadowRegisterFunctionNumberSpec {
     type Ux = u32;

@@ -2,25 +2,25 @@
 pub type R = crate::R<DdrPiReg41Spec>;
 #[doc = "Register `DDR_PI_REG_41` writer"]
 pub type W = crate::W<DdrPiReg41Spec>;
-#[doc = "Field `PI_WDT_DISABLE` reader - Disables the watchdog caused by phymstr_req/phylvl_req_cs_n response error. Set 1 to disable."]
+#[doc = "Field `PI_WDT_DISABLE` reader - Disables the watchdog caused by phymstr_req/phylvl_req_cs_n\n\nresponse error. Set 1 to disable."]
 pub type PiWdtDisableR = crate::BitReader;
-#[doc = "Field `PI_WDT_DISABLE` writer - Disables the watchdog caused by phymstr_req/phylvl_req_cs_n response error. Set 1 to disable."]
+#[doc = "Field `PI_WDT_DISABLE` writer - Disables the watchdog caused by phymstr_req/phylvl_req_cs_n\n\nresponse error. Set 1 to disable."]
 pub type PiWdtDisableW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PI_SW_RST_N` reader - Indicates user request to reset the whole system except parameter DFFs. Set 0 to reset, set to 1 to release."]
+#[doc = "Field `PI_SW_RST_N` reader - Indicates user request to reset the whole system except parameter\n\nDFFs. Set 0 to reset, set to 1 to release."]
 pub type PiSwRstNR = crate::BitReader;
-#[doc = "Field `PI_SW_RST_N` writer - Indicates user request to reset the whole system except parameter DFFs. Set 0 to reset, set to 1 to release."]
+#[doc = "Field `PI_SW_RST_N` writer - Indicates user request to reset the whole system except parameter\n\nDFFs. Set 0 to reset, set to 1 to release."]
 pub type PiSwRstNW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PI_CS_MAP` reader - Defines the chip selects that are active."]
 pub type PiCsMapR = crate::FieldReader;
 #[doc = "Field `PI_CS_MAP` writer - Defines the chip selects that are active."]
 pub type PiCsMapW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
-    #[doc = "Bit 0 - Disables the watchdog caused by phymstr_req/phylvl_req_cs_n response error. Set 1 to disable."]
+    #[doc = "Bit 0 - Disables the watchdog caused by phymstr_req/phylvl_req_cs_n\n\nresponse error. Set 1 to disable."]
     #[inline(always)]
     pub fn pi_wdt_disable(&self) -> PiWdtDisableR {
         PiWdtDisableR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 8 - Indicates user request to reset the whole system except parameter DFFs. Set 0 to reset, set to 1 to release."]
+    #[doc = "Bit 8 - Indicates user request to reset the whole system except parameter\n\nDFFs. Set 0 to reset, set to 1 to release."]
     #[inline(always)]
     pub fn pi_sw_rst_n(&self) -> PiSwRstNR {
         PiSwRstNR::new(((self.bits >> 8) & 1) != 0)
@@ -32,13 +32,13 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - Disables the watchdog caused by phymstr_req/phylvl_req_cs_n response error. Set 1 to disable."]
+    #[doc = "Bit 0 - Disables the watchdog caused by phymstr_req/phylvl_req_cs_n\n\nresponse error. Set 1 to disable."]
     #[inline(always)]
     #[must_use]
     pub fn pi_wdt_disable(&mut self) -> PiWdtDisableW<DdrPiReg41Spec> {
         PiWdtDisableW::new(self, 0)
     }
-    #[doc = "Bit 8 - Indicates user request to reset the whole system except parameter DFFs. Set 0 to reset, set to 1 to release."]
+    #[doc = "Bit 8 - Indicates user request to reset the whole system except parameter\n\nDFFs. Set 0 to reset, set to 1 to release."]
     #[inline(always)]
     #[must_use]
     pub fn pi_sw_rst_n(&mut self) -> PiSwRstNW<DdrPiReg41Spec> {

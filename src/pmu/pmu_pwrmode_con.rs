@@ -3,9 +3,10 @@ pub type R = crate::R<PmuPwrmodeConSpec>;
 #[doc = "Register `PMU_PWRMODE_CON` writer"]
 pub type W = crate::W<PmuPwrmodeConSpec>;
 #[doc = "enter power mode enable, will auto self-clear when in power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PowerModeEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl PowerModeEnR {
             true => PowerModeEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PowerModeEn::B0
@@ -44,7 +45,7 @@ impl<'a, REG> PowerModeEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PowerModeEn::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "wakeup reset enable when in power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WakeupResetEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl WakeupResetEnR {
             true => WakeupResetEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == WakeupResetEn::B0
@@ -97,7 +99,7 @@ impl<'a, REG> WakeupResetEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(WakeupResetEn::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "clamp vd_logic when in power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum InputClampEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl InputClampEnR {
             true => InputClampEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == InputClampEn::B0
@@ -150,7 +153,7 @@ impl<'a, REG> InputClampEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(InputClampEn::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "osc disable when in power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum OscDisable {
-    #[doc = "1: enable"]
+    #[doc = "1: disable"]
     B1 = 1,
     #[doc = "0: enable"]
     B0 = 0,
@@ -186,7 +190,7 @@ impl OscDisableR {
             false => OscDisable::B0,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == OscDisable::B1
@@ -203,7 +207,7 @@ impl<'a, REG> OscDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(OscDisable::B1)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "alive low frequency mode when in power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AliveUseLf {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -239,7 +244,7 @@ impl AliveUseLfR {
             true => AliveUseLf::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == AliveUseLf::B0
@@ -256,7 +261,7 @@ impl<'a, REG> AliveUseLfW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(AliveUseLf::B0)
@@ -268,9 +273,10 @@ where
     }
 }
 #[doc = "pmu low frequency mode enable when in power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PmuUseLf {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -292,7 +298,7 @@ impl PmuUseLfR {
             true => PmuUseLf::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PmuUseLf::B0
@@ -309,7 +315,7 @@ impl<'a, REG> PmuUseLfW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PmuUseLf::B0)
@@ -321,9 +327,10 @@ where
     }
 }
 #[doc = "send power off request to PMIC when in power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PowerOffReqCfg {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -345,7 +352,7 @@ impl PowerOffReqCfgR {
             true => PowerOffReqCfg::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PowerOffReqCfg::B0
@@ -362,7 +369,7 @@ impl<'a, REG> PowerOffReqCfgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PowerOffReqCfg::B0)
@@ -374,9 +381,10 @@ where
     }
 }
 #[doc = "chip power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ChipPdEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -398,7 +406,7 @@ impl ChipPdEnR {
             true => ChipPdEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ChipPdEn::B0
@@ -415,7 +423,7 @@ impl<'a, REG> ChipPdEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ChipPdEn::B0)
@@ -427,9 +435,10 @@ where
     }
 }
 #[doc = "power down pll when in power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PllPdEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -451,7 +460,7 @@ impl PllPdEnR {
             true => PllPdEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PllPdEn::B0
@@ -468,7 +477,7 @@ impl<'a, REG> PllPdEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PllPdEn::B0)
@@ -480,9 +489,10 @@ where
     }
 }
 #[doc = "power down core0 of cluster_l in power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpu0PdEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -504,7 +514,7 @@ impl Cpu0PdEnR {
             true => Cpu0PdEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cpu0PdEn::B0
@@ -521,7 +531,7 @@ impl<'a, REG> Cpu0PdEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cpu0PdEn::B0)
@@ -533,9 +543,10 @@ where
     }
 }
 #[doc = "flush l2 by hardware when in power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum L2FlushEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -557,7 +568,7 @@ impl L2FlushEnR {
             true => L2FlushEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == L2FlushEn::B0
@@ -574,7 +585,7 @@ impl<'a, REG> L2FlushEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(L2FlushEn::B0)
@@ -586,9 +597,10 @@ where
     }
 }
 #[doc = "wait l2 idle when in power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum L2IdleEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -610,7 +622,7 @@ impl L2IdleEnR {
             true => L2IdleEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == L2IdleEn::B0
@@ -627,7 +639,7 @@ impl<'a, REG> L2IdleEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(L2IdleEn::B0)
@@ -639,9 +651,10 @@ where
     }
 }
 #[doc = "power down main cluster scu when in power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ScuPdEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -663,7 +676,7 @@ impl ScuPdEnR {
             true => ScuPdEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ScuPdEn::B0
@@ -680,7 +693,7 @@ impl<'a, REG> ScuPdEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ScuPdEn::B0)
@@ -692,9 +705,10 @@ where
     }
 }
 #[doc = "power down pd_cci when power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CciPdEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -716,7 +730,7 @@ impl CciPdEnR {
             true => CciPdEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CciPdEn::B0
@@ -733,7 +747,7 @@ impl<'a, REG> CciPdEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CciPdEn::B0)
@@ -745,9 +759,10 @@ where
     }
 }
 #[doc = "power down pd_perilp when power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PerilpPdEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -769,7 +784,7 @@ impl PerilpPdEnR {
             true => PerilpPdEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PerilpPdEn::B0
@@ -786,7 +801,7 @@ impl<'a, REG> PerilpPdEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PerilpPdEn::B0)
@@ -798,9 +813,10 @@ where
     }
 }
 #[doc = "power down pd_center when power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CenterPdEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -822,7 +838,7 @@ impl CenterPdEnR {
             true => CenterPdEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CenterPdEn::B0
@@ -839,7 +855,7 @@ impl<'a, REG> CenterPdEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CenterPdEn::B0)
@@ -851,9 +867,10 @@ where
     }
 }
 #[doc = "ddr0 self_refresh by hardware when in power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sref0EnterEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -875,7 +892,7 @@ impl Sref0EnterEnR {
             true => Sref0EnterEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Sref0EnterEn::B0
@@ -892,7 +909,7 @@ impl<'a, REG> Sref0EnterEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Sref0EnterEn::B0)
@@ -904,9 +921,10 @@ where
     }
 }
 #[doc = "ddr0 controller auto gating when in power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ddrc0GatingEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -928,7 +946,7 @@ impl Ddrc0GatingEnR {
             true => Ddrc0GatingEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Ddrc0GatingEn::B0
@@ -945,7 +963,7 @@ impl<'a, REG> Ddrc0GatingEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Ddrc0GatingEn::B0)
@@ -957,9 +975,10 @@ where
     }
 }
 #[doc = "ddrio0 retention enable when in power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ddrio0RetEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -981,7 +1000,7 @@ impl Ddrio0RetEnR {
             true => Ddrio0RetEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Ddrio0RetEn::B0
@@ -998,7 +1017,7 @@ impl<'a, REG> Ddrio0RetEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Ddrio0RetEn::B0)
@@ -1009,14 +1028,15 @@ where
         self.variant(Ddrio0RetEn::B1)
     }
 }
-#[doc = "Field `DDRIO0_RET_DE_REQ` reader - ddrio0 retention de-assert request write one clear"]
+#[doc = "Field `DDRIO0_RET_DE_REQ` reader - ddrio0 retention de-assert request\n\nwrite one clear"]
 pub type Ddrio0RetDeReqR = crate::BitReader;
-#[doc = "Field `DDRIO0_RET_DE_REQ` writer - ddrio0 retention de-assert request write one clear"]
+#[doc = "Field `DDRIO0_RET_DE_REQ` writer - ddrio0 retention de-assert request\n\nwrite one clear"]
 pub type Ddrio0RetDeReqW<'a, REG> = crate::BitWriter1C<'a, REG>;
 #[doc = "ddr1 self_refresh by hardware when in power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sref1EnterEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1038,7 +1058,7 @@ impl Sref1EnterEnR {
             true => Sref1EnterEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Sref1EnterEn::B0
@@ -1055,7 +1075,7 @@ impl<'a, REG> Sref1EnterEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Sref1EnterEn::B0)
@@ -1067,9 +1087,10 @@ where
     }
 }
 #[doc = "ddr1 controller auto gating when in power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ddrc1GatingEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1091,7 +1112,7 @@ impl Ddrc1GatingEnR {
             true => Ddrc1GatingEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Ddrc1GatingEn::B0
@@ -1108,7 +1129,7 @@ impl<'a, REG> Ddrc1GatingEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Ddrc1GatingEn::B0)
@@ -1120,9 +1141,10 @@ where
     }
 }
 #[doc = "ddrio1 retention enable when in power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ddrio1RetEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1144,7 +1166,7 @@ impl Ddrio1RetEnR {
             true => Ddrio1RetEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Ddrio1RetEn::B0
@@ -1161,7 +1183,7 @@ impl<'a, REG> Ddrio1RetEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Ddrio1RetEn::B0)
@@ -1172,14 +1194,15 @@ where
         self.variant(Ddrio1RetEn::B1)
     }
 }
-#[doc = "Field `DDRIO1_RET_DE_REQ` reader - ddrio1 retention de-assert request write one clear"]
+#[doc = "Field `DDRIO1_RET_DE_REQ` reader - ddrio1 retention de-assert request\n\nwrite one clear"]
 pub type Ddrio1RetDeReqR = crate::BitReader;
-#[doc = "Field `DDRIO1_RET_DE_REQ` writer - ddrio1 retention de-assert request write one clear"]
+#[doc = "Field `DDRIO1_RET_DE_REQ` writer - ddrio1 retention de-assert request\n\nwrite one clear"]
 pub type Ddrio1RetDeReqW<'a, REG> = crate::BitWriter1C<'a, REG>;
 #[doc = "pd_center clock gate enable when in power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClkCenterSrcGateEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1201,7 +1224,7 @@ impl ClkCenterSrcGateEnR {
             true => ClkCenterSrcGateEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClkCenterSrcGateEn::B0
@@ -1218,7 +1241,7 @@ impl<'a, REG> ClkCenterSrcGateEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClkCenterSrcGateEn::B0)
@@ -1230,9 +1253,10 @@ where
     }
 }
 #[doc = "pd_perilp clock gate enable when in power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClkPerilpSrcGateEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1254,7 +1278,7 @@ impl ClkPerilpSrcGateEnR {
             true => ClkPerilpSrcGateEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClkPerilpSrcGateEn::B0
@@ -1271,7 +1295,7 @@ impl<'a, REG> ClkPerilpSrcGateEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClkPerilpSrcGateEn::B0)
@@ -1283,9 +1307,10 @@ where
     }
 }
 #[doc = "cpu clock gate enable when in power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClkCoreSrcGateEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1307,7 +1332,7 @@ impl ClkCoreSrcGateEnR {
             true => ClkCoreSrcGateEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClkCoreSrcGateEn::B0
@@ -1324,7 +1349,7 @@ impl<'a, REG> ClkCoreSrcGateEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClkCoreSrcGateEn::B0)
@@ -1344,9 +1369,10 @@ pub type SleepOutputCfgR = crate::BitReader;
 #[doc = "Field `SLEEP_OUTPUT_CFG` writer - output pmu_sleep instead of ap_pwroff to IO."]
 pub type SleepOutputCfgW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "use core big for main cluster.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MainCluster {
-    #[doc = "0: core_b."]
+    #[doc = "0: core_l ;"]
     B0 = 0,
     #[doc = "1: core_b."]
     B1 = 1,
@@ -1368,7 +1394,7 @@ impl MainClusterR {
             true => MainCluster::B1,
         }
     }
-    #[doc = "core_b."]
+    #[doc = "core_l ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == MainCluster::B0
@@ -1385,7 +1411,7 @@ impl<'a, REG> MainClusterW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "core_b."]
+    #[doc = "core_l ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(MainCluster::B0)
@@ -1492,7 +1518,7 @@ impl R {
     pub fn ddrio0_ret_en(&self) -> Ddrio0RetEnR {
         Ddrio0RetEnR::new(((self.bits >> 18) & 1) != 0)
     }
-    #[doc = "Bit 19 - ddrio0 retention de-assert request write one clear"]
+    #[doc = "Bit 19 - ddrio0 retention de-assert request\n\nwrite one clear"]
     #[inline(always)]
     pub fn ddrio0_ret_de_req(&self) -> Ddrio0RetDeReqR {
         Ddrio0RetDeReqR::new(((self.bits >> 19) & 1) != 0)
@@ -1512,7 +1538,7 @@ impl R {
     pub fn ddrio1_ret_en(&self) -> Ddrio1RetEnR {
         Ddrio1RetEnR::new(((self.bits >> 22) & 1) != 0)
     }
-    #[doc = "Bit 23 - ddrio1 retention de-assert request write one clear"]
+    #[doc = "Bit 23 - ddrio1 retention de-assert request\n\nwrite one clear"]
     #[inline(always)]
     pub fn ddrio1_ret_de_req(&self) -> Ddrio1RetDeReqR {
         Ddrio1RetDeReqR::new(((self.bits >> 23) & 1) != 0)
@@ -1663,7 +1689,7 @@ impl W {
     pub fn ddrio0_ret_en(&mut self) -> Ddrio0RetEnW<PmuPwrmodeConSpec> {
         Ddrio0RetEnW::new(self, 18)
     }
-    #[doc = "Bit 19 - ddrio0 retention de-assert request write one clear"]
+    #[doc = "Bit 19 - ddrio0 retention de-assert request\n\nwrite one clear"]
     #[inline(always)]
     #[must_use]
     pub fn ddrio0_ret_de_req(&mut self) -> Ddrio0RetDeReqW<PmuPwrmodeConSpec> {
@@ -1687,7 +1713,7 @@ impl W {
     pub fn ddrio1_ret_en(&mut self) -> Ddrio1RetEnW<PmuPwrmodeConSpec> {
         Ddrio1RetEnW::new(self, 22)
     }
-    #[doc = "Bit 23 - ddrio1 retention de-assert request write one clear"]
+    #[doc = "Bit 23 - ddrio1 retention de-assert request\n\nwrite one clear"]
     #[inline(always)]
     #[must_use]
     pub fn ddrio1_ret_de_req(&mut self) -> Ddrio1RetDeReqW<PmuPwrmodeConSpec> {

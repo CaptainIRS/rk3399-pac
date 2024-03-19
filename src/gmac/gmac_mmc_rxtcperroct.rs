@@ -2,19 +2,19 @@
 pub type R = crate::R<GmacMmcRxtcperroctSpec>;
 #[doc = "Register `GMAC_MMC_RXTCPERROCT` writer"]
 pub type W = crate::W<GmacMmcRxtcperroctSpec>;
-#[doc = "Field `RXTCP_ERR_OCTETS` reader - Number of bytes received in a TCP segment with checksum errors."]
+#[doc = "Field `RXTCP_ERR_OCTETS` reader - Number of bytes received in a TCP segment with checksum\n\nerrors."]
 pub type RxtcpErrOctetsR = crate::FieldReader<u32>;
-#[doc = "Field `RXTCP_ERR_OCTETS` writer - Number of bytes received in a TCP segment with checksum errors."]
+#[doc = "Field `RXTCP_ERR_OCTETS` writer - Number of bytes received in a TCP segment with checksum\n\nerrors."]
 pub type RxtcpErrOctetsW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Number of bytes received in a TCP segment with checksum errors."]
+    #[doc = "Bits 0:31 - Number of bytes received in a TCP segment with checksum\n\nerrors."]
     #[inline(always)]
     pub fn rxtcp_err_octets(&self) -> RxtcpErrOctetsR {
         RxtcpErrOctetsR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Number of bytes received in a TCP segment with checksum errors."]
+    #[doc = "Bits 0:31 - Number of bytes received in a TCP segment with checksum\n\nerrors."]
     #[inline(always)]
     #[must_use]
     pub fn rxtcp_err_octets(&mut self) -> RxtcpErrOctetsW<GmacMmcRxtcperroctSpec> {

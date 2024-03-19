@@ -3,9 +3,10 @@ pub type R = crate::R<DpLinkDebugCtlSpec>;
 #[doc = "Register `DP_LINK_DEBUG_CTL` writer"]
 pub type W = crate::W<DpLinkDebugCtlSpec>;
 #[doc = "Enable DisplayPort PRBS 31.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Prbs31En {
-    #[doc = "1: Normal mode."]
+    #[doc = "1: Enabled,"]
     B1 = 1,
     #[doc = "0: Normal mode."]
     B0 = 0,
@@ -27,7 +28,7 @@ impl Prbs31EnR {
             false => Prbs31En::B0,
         }
     }
-    #[doc = "Normal mode."]
+    #[doc = "Enabled,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Prbs31En::B1
@@ -44,7 +45,7 @@ impl<'a, REG> Prbs31EnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Normal mode."]
+    #[doc = "Enabled,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Prbs31En::B1)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Disable 8b/10 encoder auto reset\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DisableAutoResetEncoder {
-    #[doc = "1: Auto reset 8b/10 encode before sending Link Training Pattern 2"]
+    #[doc = "1: Disabled auto reset 8b/10 encode before sending Link Training Pattern 2"]
     B1 = 1,
     #[doc = "0: Auto reset 8b/10 encode before sending Link Training Pattern 2"]
     B0 = 0,
@@ -80,7 +82,7 @@ impl DisableAutoResetEncoderR {
             false => DisableAutoResetEncoder::B0,
         }
     }
-    #[doc = "Auto reset 8b/10 encode before sending Link Training Pattern 2"]
+    #[doc = "Disabled auto reset 8b/10 encode before sending Link Training Pattern 2"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == DisableAutoResetEncoder::B1
@@ -97,7 +99,7 @@ impl<'a, REG> DisableAutoResetEncoderW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Auto reset 8b/10 encode before sending Link Training Pattern 2"]
+    #[doc = "Disabled auto reset 8b/10 encode before sending Link Training Pattern 2"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(DisableAutoResetEncoder::B1)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "Disable video FIFO reset every line\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DisFifoRst {
-    #[doc = "1: Reset video FIFO every line."]
+    #[doc = "1: Disable,"]
     B1 = 1,
     #[doc = "0: Reset video FIFO every line."]
     B0 = 0,
@@ -133,7 +136,7 @@ impl DisFifoRstR {
             false => DisFifoRst::B0,
         }
     }
-    #[doc = "Reset video FIFO every line."]
+    #[doc = "Disable,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == DisFifoRst::B1
@@ -150,7 +153,7 @@ impl<'a, REG> DisFifoRstW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Reset video FIFO every line."]
+    #[doc = "Disable,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(DisFifoRst::B1)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "Control the PRBS 7 formula.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum NewPrbs7 {
-    #[doc = "1: Use old PRBS7 formula in DP 1.0 version"]
+    #[doc = "1: Use new PRBS7 formula in DP 1.1 version"]
     B1 = 1,
     #[doc = "0: Use old PRBS7 formula in DP 1.0 version"]
     B0 = 0,
@@ -186,7 +190,7 @@ impl NewPrbs7R {
             false => NewPrbs7::B0,
         }
     }
-    #[doc = "Use old PRBS7 formula in DP 1.0 version"]
+    #[doc = "Use new PRBS7 formula in DP 1.1 version"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == NewPrbs7::B1
@@ -203,7 +207,7 @@ impl<'a, REG> NewPrbs7W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Use old PRBS7 formula in DP 1.0 version"]
+    #[doc = "Use new PRBS7 formula in DP 1.1 version"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(NewPrbs7::B1)

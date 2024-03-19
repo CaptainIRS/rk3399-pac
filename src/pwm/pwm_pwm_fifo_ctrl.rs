@@ -2,17 +2,17 @@
 pub type R = crate::R<PwmPwmFifoCtrlSpec>;
 #[doc = "Register `PWM_PWM_FIFO_CTRL` writer"]
 pub type W = crate::W<PwmPwmFifoCtrlSpec>;
-#[doc = "Field `FIFO_MODE_SEL` reader - FIFO MODE Sel When high, PWM FIFO mode is activated"]
+#[doc = "Field `FIFO_MODE_SEL` reader - FIFO MODE Sel\n\nWhen high, PWM FIFO mode is activated"]
 pub type FifoModeSelR = crate::BitReader;
-#[doc = "Field `FIFO_MODE_SEL` writer - FIFO MODE Sel When high, PWM FIFO mode is activated"]
+#[doc = "Field `FIFO_MODE_SEL` writer - FIFO MODE Sel\n\nWhen high, PWM FIFO mode is activated"]
 pub type FifoModeSelW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `FULL_INT_EN` reader - FIFO Full Interrupt Enable When high, an interrupt asserts when the channel 3 FIFO is full."]
+#[doc = "Field `FULL_INT_EN` reader - FIFO Full Interrupt Enable\n\nWhen high, an interrupt asserts when the channel 3 FIFO is full."]
 pub type FullIntEnR = crate::BitReader;
-#[doc = "Field `FULL_INT_EN` writer - FIFO Full Interrupt Enable When high, an interrupt asserts when the channel 3 FIFO is full."]
+#[doc = "Field `FULL_INT_EN` writer - FIFO Full Interrupt Enable\n\nWhen high, an interrupt asserts when the channel 3 FIFO is full."]
 pub type FullIntEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `OVERFLOW_INT_EN` reader - FIFO Overflow Interrupt Enable When high, an interrupt asserts when the channel 3 FIFO is overflow."]
+#[doc = "Field `OVERFLOW_INT_EN` reader - FIFO Overflow Interrupt Enable\n\nWhen high, an interrupt asserts when the channel 3 FIFO is\n\noverflow."]
 pub type OverflowIntEnR = crate::BitReader;
-#[doc = "Field `OVERFLOW_INT_EN` writer - FIFO Overflow Interrupt Enable When high, an interrupt asserts when the channel 3 FIFO is overflow."]
+#[doc = "Field `OVERFLOW_INT_EN` writer - FIFO Overflow Interrupt Enable\n\nWhen high, an interrupt asserts when the channel 3 FIFO is\n\noverflow."]
 pub type OverflowIntEnW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `WATERMARK_INT_EN` reader - Watermark Full Interrupt"]
 pub type WatermarkIntEnR = crate::BitReader;
@@ -23,9 +23,10 @@ pub type AlmostFullWatermarkR = crate::FieldReader;
 #[doc = "Field `ALMOST_FULL_WATERMARK` writer - Almost Full Watermark Level"]
 pub type AlmostFullWatermarkW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "DMA Mode Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DmaModeEn {
-    #[doc = "1: disable"]
+    #[doc = "1: enable"]
     B1 = 1,
     #[doc = "0: disable"]
     B0 = 0,
@@ -47,7 +48,7 @@ impl DmaModeEnR {
             false => DmaModeEn::B0,
         }
     }
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == DmaModeEn::B1
@@ -64,7 +65,7 @@ impl<'a, REG> DmaModeEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(DmaModeEn::B1)
@@ -80,17 +81,17 @@ pub type TimeoutEnR = crate::BitReader;
 #[doc = "Field `TIMEOUT_EN` writer - FIFO Timeout Enable"]
 pub type TimeoutEnW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - FIFO MODE Sel When high, PWM FIFO mode is activated"]
+    #[doc = "Bit 0 - FIFO MODE Sel\n\nWhen high, PWM FIFO mode is activated"]
     #[inline(always)]
     pub fn fifo_mode_sel(&self) -> FifoModeSelR {
         FifoModeSelR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - FIFO Full Interrupt Enable When high, an interrupt asserts when the channel 3 FIFO is full."]
+    #[doc = "Bit 1 - FIFO Full Interrupt Enable\n\nWhen high, an interrupt asserts when the channel 3 FIFO is full."]
     #[inline(always)]
     pub fn full_int_en(&self) -> FullIntEnR {
         FullIntEnR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - FIFO Overflow Interrupt Enable When high, an interrupt asserts when the channel 3 FIFO is overflow."]
+    #[doc = "Bit 2 - FIFO Overflow Interrupt Enable\n\nWhen high, an interrupt asserts when the channel 3 FIFO is\n\noverflow."]
     #[inline(always)]
     pub fn overflow_int_en(&self) -> OverflowIntEnR {
         OverflowIntEnR::new(((self.bits >> 2) & 1) != 0)
@@ -117,19 +118,19 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - FIFO MODE Sel When high, PWM FIFO mode is activated"]
+    #[doc = "Bit 0 - FIFO MODE Sel\n\nWhen high, PWM FIFO mode is activated"]
     #[inline(always)]
     #[must_use]
     pub fn fifo_mode_sel(&mut self) -> FifoModeSelW<PwmPwmFifoCtrlSpec> {
         FifoModeSelW::new(self, 0)
     }
-    #[doc = "Bit 1 - FIFO Full Interrupt Enable When high, an interrupt asserts when the channel 3 FIFO is full."]
+    #[doc = "Bit 1 - FIFO Full Interrupt Enable\n\nWhen high, an interrupt asserts when the channel 3 FIFO is full."]
     #[inline(always)]
     #[must_use]
     pub fn full_int_en(&mut self) -> FullIntEnW<PwmPwmFifoCtrlSpec> {
         FullIntEnW::new(self, 1)
     }
-    #[doc = "Bit 2 - FIFO Overflow Interrupt Enable When high, an interrupt asserts when the channel 3 FIFO is overflow."]
+    #[doc = "Bit 2 - FIFO Overflow Interrupt Enable\n\nWhen high, an interrupt asserts when the channel 3 FIFO is\n\noverflow."]
     #[inline(always)]
     #[must_use]
     pub fn overflow_int_en(&mut self) -> OverflowIntEnW<PwmPwmFifoCtrlSpec> {

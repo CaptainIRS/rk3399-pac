@@ -2,18 +2,19 @@
 pub type R = crate::R<Usb3GrxthrcfgSpec>;
 #[doc = "Register `USB3_GRXTHRCFG` writer"]
 pub type W = crate::W<Usb3GrxthrcfgSpec>;
-#[doc = "Field `USBMAXRXBURSTSIZE` reader - USB Maximum Receive Burst Size In host mode, this field specifies the Maximum Bulk IN burst the usb3 controller can perform. When the system bus is slower than the USB, RX FIFO can overrun during a long burst. You can program a smaller value to this field to limit the RX burst size that the core can perform. It only applies to SS Bulk, Isochronous, and Interrupt IN endpoints in the host mode. In device mode, this field specifies the NUMP value that is sent in ERDY for an OUT endpoint. This field is valid only when USBRxPktCntSel is one. The valid values for this field are from 1 to 16."]
+#[doc = "Field `USBMAXRXBURSTSIZE` reader - USB Maximum Receive Burst Size\n\nIn host mode, this field specifies the Maximum Bulk IN burst the\n\nusb3 controller can perform.\n\nWhen the system bus is slower than the USB, RX FIFO can\n\noverrun during a long burst.\n\nYou can program a smaller value to this field to limit the RX burst\n\nsize that the core can perform. It only applies to SS Bulk,\n\nIsochronous, and Interrupt IN endpoints in the host mode.\n\nIn device mode, this field specifies the NUMP value that is sent in\n\nERDY for an OUT endpoint.\n\nThis field is valid only when USBRxPktCntSel is one. The valid\n\nvalues for this field are from 1 to 16."]
 pub type UsbmaxrxburstsizeR = crate::FieldReader;
-#[doc = "Field `USBMAXRXBURSTSIZE` writer - USB Maximum Receive Burst Size In host mode, this field specifies the Maximum Bulk IN burst the usb3 controller can perform. When the system bus is slower than the USB, RX FIFO can overrun during a long burst. You can program a smaller value to this field to limit the RX burst size that the core can perform. It only applies to SS Bulk, Isochronous, and Interrupt IN endpoints in the host mode. In device mode, this field specifies the NUMP value that is sent in ERDY for an OUT endpoint. This field is valid only when USBRxPktCntSel is one. The valid values for this field are from 1 to 16."]
+#[doc = "Field `USBMAXRXBURSTSIZE` writer - USB Maximum Receive Burst Size\n\nIn host mode, this field specifies the Maximum Bulk IN burst the\n\nusb3 controller can perform.\n\nWhen the system bus is slower than the USB, RX FIFO can\n\noverrun during a long burst.\n\nYou can program a smaller value to this field to limit the RX burst\n\nsize that the core can perform. It only applies to SS Bulk,\n\nIsochronous, and Interrupt IN endpoints in the host mode.\n\nIn device mode, this field specifies the NUMP value that is sent in\n\nERDY for an OUT endpoint.\n\nThis field is valid only when USBRxPktCntSel is one. The valid\n\nvalues for this field are from 1 to 16."]
 pub type UsbmaxrxburstsizeW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Field `USBRXPKTCNT` reader - USB Receive Packet Count In host mode, this field specifies the space (in terms of the number of packets) that must be available in the RX FIFO before the core can start the corresponding USB RX transaction (burst). In device mode, this field specifies the space (in terms of the number of packets) that must be available in the RX FIFO before the core can send ERDY for a flow-controlled endpoint. This field is valid only when the USB Receive Packet Count Enable field is set to 1. The valid values for this field are from 1 to 15. Note: This field must be less than or equal to the USB Maximum Receive Burst Size field."]
+#[doc = "Field `USBRXPKTCNT` reader - USB Receive Packet Count\n\nIn host mode, this field specifies the space (in terms of the\n\nnumber of packets) that must be available in the RX FIFO before\n\nthe core can start the corresponding USB RX transaction (burst).\n\nIn device mode, this field specifies the space (in terms of the\n\nnumber of packets) that must be available in the RX FIFO before\n\nthe core can send ERDY for a flow-controlled endpoint.\n\nThis field is valid only when the USB Receive Packet Count Enable\n\nfield is set to 1. The valid values for this field are from 1 to 15.\n\nNote: This field must be less than or equal to the USB Maximum\n\nReceive Burst Size field."]
 pub type UsbrxpktcntR = crate::FieldReader;
-#[doc = "Field `USBRXPKTCNT` writer - USB Receive Packet Count In host mode, this field specifies the space (in terms of the number of packets) that must be available in the RX FIFO before the core can start the corresponding USB RX transaction (burst). In device mode, this field specifies the space (in terms of the number of packets) that must be available in the RX FIFO before the core can send ERDY for a flow-controlled endpoint. This field is valid only when the USB Receive Packet Count Enable field is set to 1. The valid values for this field are from 1 to 15. Note: This field must be less than or equal to the USB Maximum Receive Burst Size field."]
+#[doc = "Field `USBRXPKTCNT` writer - USB Receive Packet Count\n\nIn host mode, this field specifies the space (in terms of the\n\nnumber of packets) that must be available in the RX FIFO before\n\nthe core can start the corresponding USB RX transaction (burst).\n\nIn device mode, this field specifies the space (in terms of the\n\nnumber of packets) that must be available in the RX FIFO before\n\nthe core can send ERDY for a flow-controlled endpoint.\n\nThis field is valid only when the USB Receive Packet Count Enable\n\nfield is set to 1. The valid values for this field are from 1 to 15.\n\nNote: This field must be less than or equal to the USB Maximum\n\nReceive Burst Size field."]
 pub type UsbrxpktcntW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-#[doc = "USB ReceivePacket Count Enable This field enables/disables the USB reception multi-packet thresholding:\n\nValue on reset: 0"]
+#[doc = "USB ReceivePacket Count Enable\n\nThis field enables/disables the USB reception multi-packet\n\nthresholding:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Usbrxpktcntsel {
-    #[doc = "0: The core can only start reception on the USB when the RX FIFO has space for at least USBRxPktCnt amount of packets. This mode is valid in both host and device mode. It is only used for SuperSpeed. In device mode, Setting this bit to 1 also enables the functionality of reporting NUMP in the ACK TP based on the RX FIFO space instead of reporting a fixed NUMP derived from DCFG.NUMP If you are using external buffer control (EBC) feature, disable this mode by setting USBRxPktCntSel to 0."]
+    #[doc = "0: The core can only start reception on the USB when the RX FIFO has space for at least one packet."]
     B0 = 0,
     #[doc = "1: The core can only start reception on the USB when the RX FIFO has space for at least USBRxPktCnt amount of packets. This mode is valid in both host and device mode. It is only used for SuperSpeed. In device mode, Setting this bit to 1 also enables the functionality of reporting NUMP in the ACK TP based on the RX FIFO space instead of reporting a fixed NUMP derived from DCFG.NUMP If you are using external buffer control (EBC) feature, disable this mode by setting USBRxPktCntSel to 0."]
     B1 = 1,
@@ -24,7 +25,7 @@ impl From<Usbrxpktcntsel> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `USBRXPKTCNTSEL` reader - USB ReceivePacket Count Enable This field enables/disables the USB reception multi-packet thresholding:"]
+#[doc = "Field `USBRXPKTCNTSEL` reader - USB ReceivePacket Count Enable\n\nThis field enables/disables the USB reception multi-packet\n\nthresholding:"]
 pub type UsbrxpktcntselR = crate::BitReader<Usbrxpktcntsel>;
 impl UsbrxpktcntselR {
     #[doc = "Get enumerated values variant"]
@@ -35,7 +36,7 @@ impl UsbrxpktcntselR {
             true => Usbrxpktcntsel::B1,
         }
     }
-    #[doc = "The core can only start reception on the USB when the RX FIFO has space for at least USBRxPktCnt amount of packets. This mode is valid in both host and device mode. It is only used for SuperSpeed. In device mode, Setting this bit to 1 also enables the functionality of reporting NUMP in the ACK TP based on the RX FIFO space instead of reporting a fixed NUMP derived from DCFG.NUMP If you are using external buffer control (EBC) feature, disable this mode by setting USBRxPktCntSel to 0."]
+    #[doc = "The core can only start reception on the USB when the RX FIFO has space for at least one packet."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Usbrxpktcntsel::B0
@@ -46,13 +47,13 @@ impl UsbrxpktcntselR {
         *self == Usbrxpktcntsel::B1
     }
 }
-#[doc = "Field `USBRXPKTCNTSEL` writer - USB ReceivePacket Count Enable This field enables/disables the USB reception multi-packet thresholding:"]
+#[doc = "Field `USBRXPKTCNTSEL` writer - USB ReceivePacket Count Enable\n\nThis field enables/disables the USB reception multi-packet\n\nthresholding:"]
 pub type UsbrxpktcntselW<'a, REG> = crate::BitWriter<'a, REG, Usbrxpktcntsel>;
 impl<'a, REG> UsbrxpktcntselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "The core can only start reception on the USB when the RX FIFO has space for at least USBRxPktCnt amount of packets. This mode is valid in both host and device mode. It is only used for SuperSpeed. In device mode, Setting this bit to 1 also enables the functionality of reporting NUMP in the ACK TP based on the RX FIFO space instead of reporting a fixed NUMP derived from DCFG.NUMP If you are using external buffer control (EBC) feature, disable this mode by setting USBRxPktCntSel to 0."]
+    #[doc = "The core can only start reception on the USB when the RX FIFO has space for at least one packet."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Usbrxpktcntsel::B0)
@@ -64,36 +65,36 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 19:23 - USB Maximum Receive Burst Size In host mode, this field specifies the Maximum Bulk IN burst the usb3 controller can perform. When the system bus is slower than the USB, RX FIFO can overrun during a long burst. You can program a smaller value to this field to limit the RX burst size that the core can perform. It only applies to SS Bulk, Isochronous, and Interrupt IN endpoints in the host mode. In device mode, this field specifies the NUMP value that is sent in ERDY for an OUT endpoint. This field is valid only when USBRxPktCntSel is one. The valid values for this field are from 1 to 16."]
+    #[doc = "Bits 19:23 - USB Maximum Receive Burst Size\n\nIn host mode, this field specifies the Maximum Bulk IN burst the\n\nusb3 controller can perform.\n\nWhen the system bus is slower than the USB, RX FIFO can\n\noverrun during a long burst.\n\nYou can program a smaller value to this field to limit the RX burst\n\nsize that the core can perform. It only applies to SS Bulk,\n\nIsochronous, and Interrupt IN endpoints in the host mode.\n\nIn device mode, this field specifies the NUMP value that is sent in\n\nERDY for an OUT endpoint.\n\nThis field is valid only when USBRxPktCntSel is one. The valid\n\nvalues for this field are from 1 to 16."]
     #[inline(always)]
     pub fn usbmaxrxburstsize(&self) -> UsbmaxrxburstsizeR {
         UsbmaxrxburstsizeR::new(((self.bits >> 19) & 0x1f) as u8)
     }
-    #[doc = "Bits 24:27 - USB Receive Packet Count In host mode, this field specifies the space (in terms of the number of packets) that must be available in the RX FIFO before the core can start the corresponding USB RX transaction (burst). In device mode, this field specifies the space (in terms of the number of packets) that must be available in the RX FIFO before the core can send ERDY for a flow-controlled endpoint. This field is valid only when the USB Receive Packet Count Enable field is set to 1. The valid values for this field are from 1 to 15. Note: This field must be less than or equal to the USB Maximum Receive Burst Size field."]
+    #[doc = "Bits 24:27 - USB Receive Packet Count\n\nIn host mode, this field specifies the space (in terms of the\n\nnumber of packets) that must be available in the RX FIFO before\n\nthe core can start the corresponding USB RX transaction (burst).\n\nIn device mode, this field specifies the space (in terms of the\n\nnumber of packets) that must be available in the RX FIFO before\n\nthe core can send ERDY for a flow-controlled endpoint.\n\nThis field is valid only when the USB Receive Packet Count Enable\n\nfield is set to 1. The valid values for this field are from 1 to 15.\n\nNote: This field must be less than or equal to the USB Maximum\n\nReceive Burst Size field."]
     #[inline(always)]
     pub fn usbrxpktcnt(&self) -> UsbrxpktcntR {
         UsbrxpktcntR::new(((self.bits >> 24) & 0x0f) as u8)
     }
-    #[doc = "Bit 29 - USB ReceivePacket Count Enable This field enables/disables the USB reception multi-packet thresholding:"]
+    #[doc = "Bit 29 - USB ReceivePacket Count Enable\n\nThis field enables/disables the USB reception multi-packet\n\nthresholding:"]
     #[inline(always)]
     pub fn usbrxpktcntsel(&self) -> UsbrxpktcntselR {
         UsbrxpktcntselR::new(((self.bits >> 29) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 19:23 - USB Maximum Receive Burst Size In host mode, this field specifies the Maximum Bulk IN burst the usb3 controller can perform. When the system bus is slower than the USB, RX FIFO can overrun during a long burst. You can program a smaller value to this field to limit the RX burst size that the core can perform. It only applies to SS Bulk, Isochronous, and Interrupt IN endpoints in the host mode. In device mode, this field specifies the NUMP value that is sent in ERDY for an OUT endpoint. This field is valid only when USBRxPktCntSel is one. The valid values for this field are from 1 to 16."]
+    #[doc = "Bits 19:23 - USB Maximum Receive Burst Size\n\nIn host mode, this field specifies the Maximum Bulk IN burst the\n\nusb3 controller can perform.\n\nWhen the system bus is slower than the USB, RX FIFO can\n\noverrun during a long burst.\n\nYou can program a smaller value to this field to limit the RX burst\n\nsize that the core can perform. It only applies to SS Bulk,\n\nIsochronous, and Interrupt IN endpoints in the host mode.\n\nIn device mode, this field specifies the NUMP value that is sent in\n\nERDY for an OUT endpoint.\n\nThis field is valid only when USBRxPktCntSel is one. The valid\n\nvalues for this field are from 1 to 16."]
     #[inline(always)]
     #[must_use]
     pub fn usbmaxrxburstsize(&mut self) -> UsbmaxrxburstsizeW<Usb3GrxthrcfgSpec> {
         UsbmaxrxburstsizeW::new(self, 19)
     }
-    #[doc = "Bits 24:27 - USB Receive Packet Count In host mode, this field specifies the space (in terms of the number of packets) that must be available in the RX FIFO before the core can start the corresponding USB RX transaction (burst). In device mode, this field specifies the space (in terms of the number of packets) that must be available in the RX FIFO before the core can send ERDY for a flow-controlled endpoint. This field is valid only when the USB Receive Packet Count Enable field is set to 1. The valid values for this field are from 1 to 15. Note: This field must be less than or equal to the USB Maximum Receive Burst Size field."]
+    #[doc = "Bits 24:27 - USB Receive Packet Count\n\nIn host mode, this field specifies the space (in terms of the\n\nnumber of packets) that must be available in the RX FIFO before\n\nthe core can start the corresponding USB RX transaction (burst).\n\nIn device mode, this field specifies the space (in terms of the\n\nnumber of packets) that must be available in the RX FIFO before\n\nthe core can send ERDY for a flow-controlled endpoint.\n\nThis field is valid only when the USB Receive Packet Count Enable\n\nfield is set to 1. The valid values for this field are from 1 to 15.\n\nNote: This field must be less than or equal to the USB Maximum\n\nReceive Burst Size field."]
     #[inline(always)]
     #[must_use]
     pub fn usbrxpktcnt(&mut self) -> UsbrxpktcntW<Usb3GrxthrcfgSpec> {
         UsbrxpktcntW::new(self, 24)
     }
-    #[doc = "Bit 29 - USB ReceivePacket Count Enable This field enables/disables the USB reception multi-packet thresholding:"]
+    #[doc = "Bit 29 - USB ReceivePacket Count Enable\n\nThis field enables/disables the USB reception multi-packet\n\nthresholding:"]
     #[inline(always)]
     #[must_use]
     pub fn usbrxpktcntsel(&mut self) -> UsbrxpktcntselW<Usb3GrxthrcfgSpec> {

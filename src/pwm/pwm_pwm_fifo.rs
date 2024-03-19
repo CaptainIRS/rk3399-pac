@@ -2,12 +2,13 @@
 pub type R = crate::R<PwmPwmFifoSpec>;
 #[doc = "Register `PWM_PWM_FIFO%s` writer"]
 pub type W = crate::W<PwmPwmFifoSpec>;
-#[doc = "Field `CYCLE_CNT` reader - High/Low Cycle Counter This 31-bit counter indicates the effective cycles of high/low waveform."]
+#[doc = "Field `CYCLE_CNT` reader - High/Low Cycle Counter\n\nThis 31-bit counter indicates the effective cycles of high/low\n\nwaveform."]
 pub type CycleCntR = crate::FieldReader<u32>;
-#[doc = "Polarity This bit indicates the polarity of the lower 31-bit counter.\n\nValue on reset: 0"]
+#[doc = "Polarity\n\nThis bit indicates the polarity of the lower 31-bit counter.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pol {
-    #[doc = "0: High"]
+    #[doc = "0: Low"]
     B0 = 0,
     #[doc = "1: High"]
     B1 = 1,
@@ -18,7 +19,7 @@ impl From<Pol> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `POL` reader - Polarity This bit indicates the polarity of the lower 31-bit counter."]
+#[doc = "Field `POL` reader - Polarity\n\nThis bit indicates the polarity of the lower 31-bit counter."]
 pub type PolR = crate::BitReader<Pol>;
 impl PolR {
     #[doc = "Get enumerated values variant"]
@@ -29,7 +30,7 @@ impl PolR {
             true => Pol::B1,
         }
     }
-    #[doc = "High"]
+    #[doc = "Low"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Pol::B0
@@ -40,13 +41,13 @@ impl PolR {
         *self == Pol::B1
     }
 }
-#[doc = "Field `POL` writer - Polarity This bit indicates the polarity of the lower 31-bit counter."]
+#[doc = "Field `POL` writer - Polarity\n\nThis bit indicates the polarity of the lower 31-bit counter."]
 pub type PolW<'a, REG> = crate::BitWriter<'a, REG, Pol>;
 impl<'a, REG> PolW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "High"]
+    #[doc = "Low"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Pol::B0)
@@ -58,19 +59,19 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 0:30 - High/Low Cycle Counter This 31-bit counter indicates the effective cycles of high/low waveform."]
+    #[doc = "Bits 0:30 - High/Low Cycle Counter\n\nThis 31-bit counter indicates the effective cycles of high/low\n\nwaveform."]
     #[inline(always)]
     pub fn cycle_cnt(&self) -> CycleCntR {
         CycleCntR::new(self.bits & 0x7fff_ffff)
     }
-    #[doc = "Bit 31 - Polarity This bit indicates the polarity of the lower 31-bit counter."]
+    #[doc = "Bit 31 - Polarity\n\nThis bit indicates the polarity of the lower 31-bit counter."]
     #[inline(always)]
     pub fn pol(&self) -> PolR {
         PolR::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 31 - Polarity This bit indicates the polarity of the lower 31-bit counter."]
+    #[doc = "Bit 31 - Polarity\n\nThis bit indicates the polarity of the lower 31-bit counter."]
     #[inline(always)]
     #[must_use]
     pub fn pol(&mut self) -> PolW<PwmPwmFifoSpec> {

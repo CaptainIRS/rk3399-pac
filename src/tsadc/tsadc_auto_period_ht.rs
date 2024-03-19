@@ -2,19 +2,19 @@
 pub type R = crate::R<TsadcAutoPeriodHtSpec>;
 #[doc = "Register `TSADC_AUTO_PERIOD_HT` writer"]
 pub type W = crate::W<TsadcAutoPeriodHtSpec>;
-#[doc = "Field `AUTO_PERIOD` reader - This register controls the interleave between every two accessing of TSADC after the temperature is higher than COMP_SHUT or COMP_INT"]
+#[doc = "Field `AUTO_PERIOD` reader - This register controls the interleave between every two accessing\n\nof TSADC after the temperature is higher than COMP_SHUT or\n\nCOMP_INT"]
 pub type AutoPeriodR = crate::FieldReader<u32>;
-#[doc = "Field `AUTO_PERIOD` writer - This register controls the interleave between every two accessing of TSADC after the temperature is higher than COMP_SHUT or COMP_INT"]
+#[doc = "Field `AUTO_PERIOD` writer - This register controls the interleave between every two accessing\n\nof TSADC after the temperature is higher than COMP_SHUT or\n\nCOMP_INT"]
 pub type AutoPeriodW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - This register controls the interleave between every two accessing of TSADC after the temperature is higher than COMP_SHUT or COMP_INT"]
+    #[doc = "Bits 0:31 - This register controls the interleave between every two accessing\n\nof TSADC after the temperature is higher than COMP_SHUT or\n\nCOMP_INT"]
     #[inline(always)]
     pub fn auto_period(&self) -> AutoPeriodR {
         AutoPeriodR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - This register controls the interleave between every two accessing of TSADC after the temperature is higher than COMP_SHUT or COMP_INT"]
+    #[doc = "Bits 0:31 - This register controls the interleave between every two accessing\n\nof TSADC after the temperature is higher than COMP_SHUT or\n\nCOMP_INT"]
     #[inline(always)]
     #[must_use]
     pub fn auto_period(&mut self) -> AutoPeriodW<TsadcAutoPeriodHtSpec> {

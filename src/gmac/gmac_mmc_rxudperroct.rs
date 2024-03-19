@@ -2,19 +2,19 @@
 pub type R = crate::R<GmacMmcRxudperroctSpec>;
 #[doc = "Register `GMAC_MMC_RXUDPERROCT` writer"]
 pub type W = crate::W<GmacMmcRxudperroctSpec>;
-#[doc = "Field `RXUDP_ERR_OCTETS` reader - Number of bytes received in a UDP segment that had checksum errors."]
+#[doc = "Field `RXUDP_ERR_OCTETS` reader - Number of bytes received in a UDP segment that had checksum\n\nerrors."]
 pub type RxudpErrOctetsR = crate::FieldReader<u32>;
-#[doc = "Field `RXUDP_ERR_OCTETS` writer - Number of bytes received in a UDP segment that had checksum errors."]
+#[doc = "Field `RXUDP_ERR_OCTETS` writer - Number of bytes received in a UDP segment that had checksum\n\nerrors."]
 pub type RxudpErrOctetsW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Number of bytes received in a UDP segment that had checksum errors."]
+    #[doc = "Bits 0:31 - Number of bytes received in a UDP segment that had checksum\n\nerrors."]
     #[inline(always)]
     pub fn rxudp_err_octets(&self) -> RxudpErrOctetsR {
         RxudpErrOctetsR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Number of bytes received in a UDP segment that had checksum errors."]
+    #[doc = "Bits 0:31 - Number of bytes received in a UDP segment that had checksum\n\nerrors."]
     #[inline(always)]
     #[must_use]
     pub fn rxudp_err_octets(&mut self) -> RxudpErrOctetsW<GmacMmcRxudperroctSpec> {

@@ -2,30 +2,26 @@
 pub type R = crate::R<PcieDmaChannel0AttributeUpperSpec>;
 #[doc = "Register `PCIE_DMA_CHANNEL_0_ATTRIBUTE_UPPER` writer"]
 pub type W = crate::W<PcieDmaChannel0AttributeUpperSpec>;
-#[doc = "Field `attr` reader - Descriptor Attributes Upper DWORD \\[attr\\]
-Upper 32-bit Attribute Values used when fetching and returning link list descriptors"]
+#[doc = "Field `attr` reader - Descriptor Attributes Upper DWORD \\[attr\\]\n\nUpper 32-bit Attribute Values used\n\nwhen fetching and returning link list\n\ndescriptors"]
 pub type AttrR = crate::FieldReader<u32>;
-#[doc = "Field `attr` writer - Descriptor Attributes Upper DWORD \\[attr\\]
-Upper 32-bit Attribute Values used when fetching and returning link list descriptors"]
+#[doc = "Field `attr` writer - Descriptor Attributes Upper DWORD \\[attr\\]\n\nUpper 32-bit Attribute Values used\n\nwhen fetching and returning link list\n\ndescriptors"]
 pub type AttrW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Descriptor Attributes Upper DWORD \\[attr\\]
-Upper 32-bit Attribute Values used when fetching and returning link list descriptors"]
+    #[doc = "Bits 0:31 - Descriptor Attributes Upper DWORD \\[attr\\]\n\nUpper 32-bit Attribute Values used\n\nwhen fetching and returning link list\n\ndescriptors"]
     #[inline(always)]
     pub fn attr(&self) -> AttrR {
         AttrR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Descriptor Attributes Upper DWORD \\[attr\\]
-Upper 32-bit Attribute Values used when fetching and returning link list descriptors"]
+    #[doc = "Bits 0:31 - Descriptor Attributes Upper DWORD \\[attr\\]\n\nUpper 32-bit Attribute Values used\n\nwhen fetching and returning link list\n\ndescriptors"]
     #[inline(always)]
     #[must_use]
     pub fn attr(&mut self) -> AttrW<PcieDmaChannel0AttributeUpperSpec> {
         AttrW::new(self, 0)
     }
 }
-#[doc = "PCIe DMA Channel 0 Attribute Upper Register Upper 32-bit Attribute Values used when fetching and returning link list descriptors\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcie_dma_channel_0_attribute_upper::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcie_dma_channel_0_attribute_upper::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PCIe DMA Channel 0 Attribute Upper Register\n\nUpper 32-bit Attribute Values used\n\nwhen fetching and returning link list\n\ndescriptors\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcie_dma_channel_0_attribute_upper::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcie_dma_channel_0_attribute_upper::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PcieDmaChannel0AttributeUpperSpec;
 impl crate::RegisterSpec for PcieDmaChannel0AttributeUpperSpec {
     type Ux = u32;

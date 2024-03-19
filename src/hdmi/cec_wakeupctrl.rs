@@ -126,7 +126,10 @@ impl W {
         Opcode0x86enW::new(self, 7)
     }
 }
-#[doc = "OPCODE 0x04 wake up enable\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cec_wakeupctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cec_wakeupctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "CEC Wake-up Control Register\n\nAfter receiving a message in the CEC_RX_DATA1 (OPCODE) registers, the CEC engine\n\nverifies the message opcode\\[7:0\\]
+against one of the previously defined values to generate\n\nthe wake-up status:\n\nWakeupstatus is 1 when:\n\nreceived opcode is 0x04 and opcode0x04en is 1 or\n\nreceived opcode is 0x0D and opcode0x0Den is 1 or\n\nreceived opcode is 0x41 and opcode0x41en is 1 or\n\nreceived opcode is 0x42 and opcode0x42en is 1 or\n\nreceived opcode is 0x44 and opcode0x44en is 1 or\n\nreceived opcode is 0x70 and opcode0x70en is 1 or\n\nreceived opcode is 0x82 and opcode0x82en is 1 or\n\nreceived opcode is 0x86 and opcode0x86en is 1\n\nWakeupstatus is 0 when none of the previous conditions are true.\n\nThis formula means that the wake-up status (on CEC_STAT\\[6\\]
+register) is only '1' if the\n\nopcode\\[7:0\\]
+received is equal to one of the defined values and the corresponding enable bit\n\nof that defined value is set to '1'.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cec_wakeupctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cec_wakeupctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CecWakeupctrlSpec;
 impl crate::RegisterSpec for CecWakeupctrlSpec {
     type Ux = u8;

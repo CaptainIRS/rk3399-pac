@@ -2,41 +2,41 @@
 pub type R = crate::R<AudSpdif0Spec>;
 #[doc = "Register `AUD_SPDIF0` writer"]
 pub type W = crate::W<AudSpdif0Spec>;
-#[doc = "Field `SPARE` reader - Reserved as \"spare\" bit with no associated functionality."]
+#[doc = "Field `SPARE` reader - Reserved as \"spare\" bit with no associated\n\nfunctionality."]
 pub type SpareR = crate::FieldReader;
-#[doc = "Field `SPARE` writer - Reserved as \"spare\" bit with no associated functionality."]
+#[doc = "Field `SPARE` writer - Reserved as \"spare\" bit with no associated\n\nfunctionality."]
 pub type SpareW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
-#[doc = "Field `SW_AUDIO_FIFO_RST` reader - Audio FIFOs software reset Writing 0b: no action taken Writing 1b: Resets all audio FIFOs Reading from this register always returns 0b. Note: If a FIFO reset request (via register write command) lands in the middle of an SPDIF audio transaction, the samples become misaligned (left- right sequence lost). As a solution, for each FIFO reset, an associated SPDIF reset must be issued (writing 8'hEF to MC_SWRSTZ register)."]
+#[doc = "Field `SW_AUDIO_FIFO_RST` reader - Audio FIFOs software reset Writing 0b: no action\n\ntaken\n\nWriting 1b: Resets all audio FIFOs\n\nReading from this register always returns 0b.\n\nNote: If a FIFO reset request (via register write\n\ncommand) lands in the middle of an SPDIF audio\n\ntransaction, the samples become misaligned (left-\n\nright sequence lost). As a solution, for each FIFO\n\nreset, an associated SPDIF reset must be issued\n\n(writing 8'hEF to MC_SWRSTZ register)."]
 pub type SwAudioFifoRstR = crate::BitReader;
-#[doc = "Field `SW_AUDIO_FIFO_RST` writer - Audio FIFOs software reset Writing 0b: no action taken Writing 1b: Resets all audio FIFOs Reading from this register always returns 0b. Note: If a FIFO reset request (via register write command) lands in the middle of an SPDIF audio transaction, the samples become misaligned (left- right sequence lost). As a solution, for each FIFO reset, an associated SPDIF reset must be issued (writing 8'hEF to MC_SWRSTZ register)."]
+#[doc = "Field `SW_AUDIO_FIFO_RST` writer - Audio FIFOs software reset Writing 0b: no action\n\ntaken\n\nWriting 1b: Resets all audio FIFOs\n\nReading from this register always returns 0b.\n\nNote: If a FIFO reset request (via register write\n\ncommand) lands in the middle of an SPDIF audio\n\ntransaction, the samples become misaligned (left-\n\nright sequence lost). As a solution, for each FIFO\n\nreset, an associated SPDIF reset must be issued\n\n(writing 8'hEF to MC_SWRSTZ register)."]
 pub type SwAudioFifoRstW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bits 0:6 - Reserved as \"spare\" bit with no associated functionality."]
+    #[doc = "Bits 0:6 - Reserved as \"spare\" bit with no associated\n\nfunctionality."]
     #[inline(always)]
     pub fn spare(&self) -> SpareR {
         SpareR::new(self.bits & 0x7f)
     }
-    #[doc = "Bit 7 - Audio FIFOs software reset Writing 0b: no action taken Writing 1b: Resets all audio FIFOs Reading from this register always returns 0b. Note: If a FIFO reset request (via register write command) lands in the middle of an SPDIF audio transaction, the samples become misaligned (left- right sequence lost). As a solution, for each FIFO reset, an associated SPDIF reset must be issued (writing 8'hEF to MC_SWRSTZ register)."]
+    #[doc = "Bit 7 - Audio FIFOs software reset Writing 0b: no action\n\ntaken\n\nWriting 1b: Resets all audio FIFOs\n\nReading from this register always returns 0b.\n\nNote: If a FIFO reset request (via register write\n\ncommand) lands in the middle of an SPDIF audio\n\ntransaction, the samples become misaligned (left-\n\nright sequence lost). As a solution, for each FIFO\n\nreset, an associated SPDIF reset must be issued\n\n(writing 8'hEF to MC_SWRSTZ register)."]
     #[inline(always)]
     pub fn sw_audio_fifo_rst(&self) -> SwAudioFifoRstR {
         SwAudioFifoRstR::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:6 - Reserved as \"spare\" bit with no associated functionality."]
+    #[doc = "Bits 0:6 - Reserved as \"spare\" bit with no associated\n\nfunctionality."]
     #[inline(always)]
     #[must_use]
     pub fn spare(&mut self) -> SpareW<AudSpdif0Spec> {
         SpareW::new(self, 0)
     }
-    #[doc = "Bit 7 - Audio FIFOs software reset Writing 0b: no action taken Writing 1b: Resets all audio FIFOs Reading from this register always returns 0b. Note: If a FIFO reset request (via register write command) lands in the middle of an SPDIF audio transaction, the samples become misaligned (left- right sequence lost). As a solution, for each FIFO reset, an associated SPDIF reset must be issued (writing 8'hEF to MC_SWRSTZ register)."]
+    #[doc = "Bit 7 - Audio FIFOs software reset Writing 0b: no action\n\ntaken\n\nWriting 1b: Resets all audio FIFOs\n\nReading from this register always returns 0b.\n\nNote: If a FIFO reset request (via register write\n\ncommand) lands in the middle of an SPDIF audio\n\ntransaction, the samples become misaligned (left-\n\nright sequence lost). As a solution, for each FIFO\n\nreset, an associated SPDIF reset must be issued\n\n(writing 8'hEF to MC_SWRSTZ register)."]
     #[inline(always)]
     #[must_use]
     pub fn sw_audio_fifo_rst(&mut self) -> SwAudioFifoRstW<AudSpdif0Spec> {
         SwAudioFifoRstW::new(self, 7)
     }
 }
-#[doc = "Reserved as \"spare\" bit with no associated functionality.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aud_spdif0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`aud_spdif0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Audio SPDIF Software FIFO Reset Control Register 0\n\nThis register allows the system processor to reset audio FIFOs upon underflow/overflow\n\nerror detection.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aud_spdif0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`aud_spdif0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AudSpdif0Spec;
 impl crate::RegisterSpec for AudSpdif0Spec {
     type Ux = u8;

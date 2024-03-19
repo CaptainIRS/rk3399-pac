@@ -2,56 +2,56 @@
 pub type R = crate::R<IhFcStat2Spec>;
 #[doc = "Register `IH_FC_STAT2` writer"]
 pub type W = crate::W<IhFcStat2Spec>;
-#[doc = "Field `HIGHPRIORITY_OVERFLOW` reader - Frame Composer high priority packet queue descriptor overflow indication"]
+#[doc = "Field `HIGHPRIORITY_OVERFLOW` reader - Frame Composer high priority packet queue\n\ndescriptor overflow indication"]
 pub type HighpriorityOverflowR = crate::BitReader;
-#[doc = "Field `HIGHPRIORITY_OVERFLOW` writer - Frame Composer high priority packet queue descriptor overflow indication"]
+#[doc = "Field `HIGHPRIORITY_OVERFLOW` writer - Frame Composer high priority packet queue\n\ndescriptor overflow indication"]
 pub type HighpriorityOverflowW<'a, REG> = crate::BitWriter1C<'a, REG>;
-#[doc = "Field `LOWPRIORITY_OVERFLOW` reader - Frame Composer low priority packet queue descriptor overflow indication"]
+#[doc = "Field `LOWPRIORITY_OVERFLOW` reader - Frame Composer low priority packet queue\n\ndescriptor overflow indication"]
 pub type LowpriorityOverflowR = crate::BitReader;
-#[doc = "Field `LOWPRIORITY_OVERFLOW` writer - Frame Composer low priority packet queue descriptor overflow indication"]
+#[doc = "Field `LOWPRIORITY_OVERFLOW` writer - Frame Composer low priority packet queue\n\ndescriptor overflow indication"]
 pub type LowpriorityOverflowW<'a, REG> = crate::BitWriter1C<'a, REG>;
-#[doc = "Field `DRM` reader - Active after successful transmission of an DRM packet"]
+#[doc = "Field `DRM` reader - Active after successful transmission of an DRM\n\npacket"]
 pub type DrmR = crate::BitReader;
-#[doc = "Field `DRM` writer - Active after successful transmission of an DRM packet"]
+#[doc = "Field `DRM` writer - Active after successful transmission of an DRM\n\npacket"]
 pub type DrmW<'a, REG> = crate::BitWriter1C<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - Frame Composer high priority packet queue descriptor overflow indication"]
+    #[doc = "Bit 0 - Frame Composer high priority packet queue\n\ndescriptor overflow indication"]
     #[inline(always)]
     pub fn highpriority_overflow(&self) -> HighpriorityOverflowR {
         HighpriorityOverflowR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - Frame Composer low priority packet queue descriptor overflow indication"]
+    #[doc = "Bit 1 - Frame Composer low priority packet queue\n\ndescriptor overflow indication"]
     #[inline(always)]
     pub fn lowpriority_overflow(&self) -> LowpriorityOverflowR {
         LowpriorityOverflowR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 4 - Active after successful transmission of an DRM packet"]
+    #[doc = "Bit 4 - Active after successful transmission of an DRM\n\npacket"]
     #[inline(always)]
     pub fn drm(&self) -> DrmR {
         DrmR::new(((self.bits >> 4) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Frame Composer high priority packet queue descriptor overflow indication"]
+    #[doc = "Bit 0 - Frame Composer high priority packet queue\n\ndescriptor overflow indication"]
     #[inline(always)]
     #[must_use]
     pub fn highpriority_overflow(&mut self) -> HighpriorityOverflowW<IhFcStat2Spec> {
         HighpriorityOverflowW::new(self, 0)
     }
-    #[doc = "Bit 1 - Frame Composer low priority packet queue descriptor overflow indication"]
+    #[doc = "Bit 1 - Frame Composer low priority packet queue\n\ndescriptor overflow indication"]
     #[inline(always)]
     #[must_use]
     pub fn lowpriority_overflow(&mut self) -> LowpriorityOverflowW<IhFcStat2Spec> {
         LowpriorityOverflowW::new(self, 1)
     }
-    #[doc = "Bit 4 - Active after successful transmission of an DRM packet"]
+    #[doc = "Bit 4 - Active after successful transmission of an DRM\n\npacket"]
     #[inline(always)]
     #[must_use]
     pub fn drm(&mut self) -> DrmW<IhFcStat2Spec> {
         DrmW::new(self, 4)
     }
 }
-#[doc = "Frame Composer high priority packet queue descriptor overflow indication\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ih_fc_stat2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ih_fc_stat2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer Interrupt Status Register 2 (Packet Interrupts)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ih_fc_stat2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ih_fc_stat2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IhFcStat2Spec;
 impl crate::RegisterSpec for IhFcStat2Spec {
     type Ux = u8;

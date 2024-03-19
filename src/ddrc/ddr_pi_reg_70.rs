@@ -2,19 +2,19 @@
 pub type R = crate::R<DdrPiReg70Spec>;
 #[doc = "Register `DDR_PI_REG_70` writer"]
 pub type W = crate::W<DdrPiReg70Spec>;
-#[doc = "Field `PI_EN_ODT_ASSERT_EXCEPT_RD` reader - Enables controller to assert ODT at all times except during reads. Assumes a single ODT pin is connected. Set to 1 to enable."]
+#[doc = "Field `PI_EN_ODT_ASSERT_EXCEPT_RD` reader - Enables controller to assert ODT at all times except during reads.\n\nAssumes a single ODT pin is connected. Set to 1 to enable."]
 pub type PiEnOdtAssertExceptRdR = crate::BitReader;
-#[doc = "Field `PI_EN_ODT_ASSERT_EXCEPT_RD` writer - Enables controller to assert ODT at all times except during reads. Assumes a single ODT pin is connected. Set to 1 to enable."]
+#[doc = "Field `PI_EN_ODT_ASSERT_EXCEPT_RD` writer - Enables controller to assert ODT at all times except during reads.\n\nAssumes a single ODT pin is connected. Set to 1 to enable."]
 pub type PiEnOdtAssertExceptRdW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 24 - Enables controller to assert ODT at all times except during reads. Assumes a single ODT pin is connected. Set to 1 to enable."]
+    #[doc = "Bit 24 - Enables controller to assert ODT at all times except during reads.\n\nAssumes a single ODT pin is connected. Set to 1 to enable."]
     #[inline(always)]
     pub fn pi_en_odt_assert_except_rd(&self) -> PiEnOdtAssertExceptRdR {
         PiEnOdtAssertExceptRdR::new(((self.bits >> 24) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 24 - Enables controller to assert ODT at all times except during reads. Assumes a single ODT pin is connected. Set to 1 to enable."]
+    #[doc = "Bit 24 - Enables controller to assert ODT at all times except during reads.\n\nAssumes a single ODT pin is connected. Set to 1 to enable."]
     #[inline(always)]
     #[must_use]
     pub fn pi_en_odt_assert_except_rd(&mut self) -> PiEnOdtAssertExceptRdW<DdrPiReg70Spec> {

@@ -2,34 +2,34 @@
 pub type R = crate::R<DdrPiReg138Spec>;
 #[doc = "Register `DDR_PI_REG_138` writer"]
 pub type W = crate::W<DdrPiReg138Spec>;
-#[doc = "Field `PI_MR1_DATA_F2_1` reader - Indicates data to program into memory mode register 1 for chip select 1. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_MR1_DATA_F2_1` reader - Indicates data to program into memory mode register 1 for chip\n\nselect 1. The suffix \"_f2\" of the parameter name is omitted when in\n\nnon-DFS mode."]
 pub type PiMr1DataF2_1R = crate::FieldReader<u16>;
-#[doc = "Field `PI_MR1_DATA_F2_1` writer - Indicates data to program into memory mode register 1 for chip select 1. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_MR1_DATA_F2_1` writer - Indicates data to program into memory mode register 1 for chip\n\nselect 1. The suffix \"_f2\" of the parameter name is omitted when in\n\nnon-DFS mode."]
 pub type PiMr1DataF2_1W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-#[doc = "Field `PI_MR2_DATA_F2_1` reader - Indicates data to program into memory mode register 2 for chip select 1. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_MR2_DATA_F2_1` reader - Indicates data to program into memory mode register 2 for chip\n\nselect 1. The suffix \"_f2\" of the parameter name is omitted when in\n\nnon-DFS mode."]
 pub type PiMr2DataF2_1R = crate::FieldReader<u16>;
-#[doc = "Field `PI_MR2_DATA_F2_1` writer - Indicates data to program into memory mode register 2 for chip select 1. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_MR2_DATA_F2_1` writer - Indicates data to program into memory mode register 2 for chip\n\nselect 1. The suffix \"_f2\" of the parameter name is omitted when in\n\nnon-DFS mode."]
 pub type PiMr2DataF2_1W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:15 - Indicates data to program into memory mode register 1 for chip select 1. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:15 - Indicates data to program into memory mode register 1 for chip\n\nselect 1. The suffix \"_f2\" of the parameter name is omitted when in\n\nnon-DFS mode."]
     #[inline(always)]
     pub fn pi_mr1_data_f2_1(&self) -> PiMr1DataF2_1R {
         PiMr1DataF2_1R::new((self.bits & 0xffff) as u16)
     }
-    #[doc = "Bits 16:31 - Indicates data to program into memory mode register 2 for chip select 1. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 16:31 - Indicates data to program into memory mode register 2 for chip\n\nselect 1. The suffix \"_f2\" of the parameter name is omitted when in\n\nnon-DFS mode."]
     #[inline(always)]
     pub fn pi_mr2_data_f2_1(&self) -> PiMr2DataF2_1R {
         PiMr2DataF2_1R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - Indicates data to program into memory mode register 1 for chip select 1. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:15 - Indicates data to program into memory mode register 1 for chip\n\nselect 1. The suffix \"_f2\" of the parameter name is omitted when in\n\nnon-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_mr1_data_f2_1(&mut self) -> PiMr1DataF2_1W<DdrPiReg138Spec> {
         PiMr1DataF2_1W::new(self, 0)
     }
-    #[doc = "Bits 16:31 - Indicates data to program into memory mode register 2 for chip select 1. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 16:31 - Indicates data to program into memory mode register 2 for chip\n\nselect 1. The suffix \"_f2\" of the parameter name is omitted when in\n\nnon-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_mr2_data_f2_1(&mut self) -> PiMr2DataF2_1W<DdrPiReg138Spec> {

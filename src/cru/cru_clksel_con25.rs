@@ -2,14 +2,15 @@
 pub type R = crate::R<CruClkselCon25Spec>;
 #[doc = "Register `CRU_CLKSEL_CON25` writer"]
 pub type W = crate::W<CruClkselCon25Spec>;
-#[doc = "Field `HCLK_PERILP1_DIV_CON` reader - hclk_perilp1 divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `HCLK_PERILP1_DIV_CON` reader - hclk_perilp1 divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type HclkPerilp1DivConR = crate::FieldReader;
-#[doc = "Field `HCLK_PERILP1_DIV_CON` writer - hclk_perilp1 divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `HCLK_PERILP1_DIV_CON` writer - hclk_perilp1 divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type HclkPerilp1DivConW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "hclk_perilp1 clock source select control register\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HclkPerilp1PllSel {
-    #[doc = "0: GPLL"]
+    #[doc = "0: CPLL"]
     B0 = 0,
     #[doc = "1: GPLL"]
     B1 = 1,
@@ -31,7 +32,7 @@ impl HclkPerilp1PllSelR {
             true => HclkPerilp1PllSel::B1,
         }
     }
-    #[doc = "GPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == HclkPerilp1PllSel::B0
@@ -48,7 +49,7 @@ impl<'a, REG> HclkPerilp1PllSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "GPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(HclkPerilp1PllSel::B0)
@@ -59,14 +60,14 @@ where
         self.variant(HclkPerilp1PllSel::B1)
     }
 }
-#[doc = "Field `PCLK_PERILP1_DIV_CON` reader - pclk_perilp1 divider control register clk=hclk_perilp1/(div_con+1)"]
+#[doc = "Field `PCLK_PERILP1_DIV_CON` reader - pclk_perilp1 divider control register\n\nclk=hclk_perilp1/(div_con+1)"]
 pub type PclkPerilp1DivConR = crate::FieldReader;
-#[doc = "Field `PCLK_PERILP1_DIV_CON` writer - pclk_perilp1 divider control register clk=hclk_perilp1/(div_con+1)"]
+#[doc = "Field `PCLK_PERILP1_DIV_CON` writer - pclk_perilp1 divider control register\n\nclk=hclk_perilp1/(div_con+1)"]
 pub type PclkPerilp1DivConW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:4 - hclk_perilp1 divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:4 - hclk_perilp1 divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn hclk_perilp1_div_con(&self) -> HclkPerilp1DivConR {
         HclkPerilp1DivConR::new((self.bits & 0x1f) as u8)
@@ -76,14 +77,14 @@ impl R {
     pub fn hclk_perilp1_pll_sel(&self) -> HclkPerilp1PllSelR {
         HclkPerilp1PllSelR::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bits 8:10 - pclk_perilp1 divider control register clk=hclk_perilp1/(div_con+1)"]
+    #[doc = "Bits 8:10 - pclk_perilp1 divider control register\n\nclk=hclk_perilp1/(div_con+1)"]
     #[inline(always)]
     pub fn pclk_perilp1_div_con(&self) -> PclkPerilp1DivConR {
         PclkPerilp1DivConR::new(((self.bits >> 8) & 7) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - hclk_perilp1 divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:4 - hclk_perilp1 divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn hclk_perilp1_div_con(&mut self) -> HclkPerilp1DivConW<CruClkselCon25Spec> {
@@ -95,13 +96,13 @@ impl W {
     pub fn hclk_perilp1_pll_sel(&mut self) -> HclkPerilp1PllSelW<CruClkselCon25Spec> {
         HclkPerilp1PllSelW::new(self, 7)
     }
-    #[doc = "Bits 8:10 - pclk_perilp1 divider control register clk=hclk_perilp1/(div_con+1)"]
+    #[doc = "Bits 8:10 - pclk_perilp1 divider control register\n\nclk=hclk_perilp1/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn pclk_perilp1_div_con(&mut self) -> PclkPerilp1DivConW<CruClkselCon25Spec> {
         PclkPerilp1DivConW::new(self, 8)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkselCon25Spec> {

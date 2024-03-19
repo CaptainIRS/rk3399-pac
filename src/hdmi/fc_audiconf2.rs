@@ -21,7 +21,7 @@ impl W {
         CaW::new(self, 0)
     }
 }
-#[doc = "Channel allocation\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_audiconf2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_audiconf2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer AUD Packet Configuration Register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_audiconf2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_audiconf2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcAudiconf2Spec;
 impl crate::RegisterSpec for FcAudiconf2Spec {
     type Ux = u8;

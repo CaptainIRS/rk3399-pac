@@ -4,7 +4,7 @@ pub type R = crate::R<DdrPiReg57Spec>;
 pub type W = crate::W<DdrPiReg57Spec>;
 #[doc = "Field `PI_SWLVL_SM2_RD` writer - Indicates software leveling read command for stage 2."]
 pub type PiSwlvlSm2RdW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PI_SEQUENTIAL_LVL_REQ` writer - Indicates user request to initiate the leveling sequence. Set to 1 to trigger."]
+#[doc = "Field `PI_SEQUENTIAL_LVL_REQ` writer - Indicates user request to initiate the leveling sequence. Set to 1 to\n\ntrigger."]
 pub type PiSequentialLvlReqW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PI_DFS_PERIOD_EN` reader - Enables the DFS-triggered periodic leveling."]
 pub type PiDfsPeriodEnR = crate::BitReader;
@@ -33,7 +33,7 @@ impl W {
     pub fn pi_swlvl_sm2_rd(&mut self) -> PiSwlvlSm2RdW<DdrPiReg57Spec> {
         PiSwlvlSm2RdW::new(self, 0)
     }
-    #[doc = "Bit 8 - Indicates user request to initiate the leveling sequence. Set to 1 to trigger."]
+    #[doc = "Bit 8 - Indicates user request to initiate the leveling sequence. Set to 1 to\n\ntrigger."]
     #[inline(always)]
     #[must_use]
     pub fn pi_sequential_lvl_req(&mut self) -> PiSequentialLvlReqW<DdrPiReg57Spec> {

@@ -2,49 +2,49 @@
 pub type R = crate::R<PcieClientErrCntSpec>;
 #[doc = "Register `PCIE_CLIENT_ERR_CNT` writer"]
 pub type W = crate::W<PcieClientErrCntSpec>;
-#[doc = "Field `FATAL_ERR_CNT` reader - Fatal error counter Fatal error counter, write all one(8'hff) clear the counter."]
+#[doc = "Field `FATAL_ERR_CNT` reader - Fatal error counter\n\nFatal error counter, write all one(8'hff) clear the counter."]
 pub type FatalErrCntR = crate::FieldReader;
-#[doc = "Field `FATAL_ERR_CNT` writer - Fatal error counter Fatal error counter, write all one(8'hff) clear the counter."]
+#[doc = "Field `FATAL_ERR_CNT` writer - Fatal error counter\n\nFatal error counter, write all one(8'hff) clear the counter."]
 pub type FatalErrCntW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-#[doc = "Field `NFATAL_ERR_CNT` reader - Non-fatal error counter Non-fatal error counter, write all one(8'hff) clear the counter."]
+#[doc = "Field `NFATAL_ERR_CNT` reader - Non-fatal error counter\n\nNon-fatal error counter, write all one(8'hff) clear the counter."]
 pub type NfatalErrCntR = crate::FieldReader;
-#[doc = "Field `NFATAL_ERR_CNT` writer - Non-fatal error counter Non-fatal error counter, write all one(8'hff) clear the counter."]
+#[doc = "Field `NFATAL_ERR_CNT` writer - Non-fatal error counter\n\nNon-fatal error counter, write all one(8'hff) clear the counter."]
 pub type NfatalErrCntW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-#[doc = "Field `CORR_ERR_CNT` reader - Correctable error counter Correctable error counter, write all one(8'hff) clear the counter."]
+#[doc = "Field `CORR_ERR_CNT` reader - Correctable error counter\n\nCorrectable error counter, write all one(8'hff) clear the counter."]
 pub type CorrErrCntR = crate::FieldReader;
-#[doc = "Field `CORR_ERR_CNT` writer - Correctable error counter Correctable error counter, write all one(8'hff) clear the counter."]
+#[doc = "Field `CORR_ERR_CNT` writer - Correctable error counter\n\nCorrectable error counter, write all one(8'hff) clear the counter."]
 pub type CorrErrCntW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - Fatal error counter Fatal error counter, write all one(8'hff) clear the counter."]
+    #[doc = "Bits 0:7 - Fatal error counter\n\nFatal error counter, write all one(8'hff) clear the counter."]
     #[inline(always)]
     pub fn fatal_err_cnt(&self) -> FatalErrCntR {
         FatalErrCntR::new((self.bits & 0xff) as u8)
     }
-    #[doc = "Bits 8:15 - Non-fatal error counter Non-fatal error counter, write all one(8'hff) clear the counter."]
+    #[doc = "Bits 8:15 - Non-fatal error counter\n\nNon-fatal error counter, write all one(8'hff) clear the counter."]
     #[inline(always)]
     pub fn nfatal_err_cnt(&self) -> NfatalErrCntR {
         NfatalErrCntR::new(((self.bits >> 8) & 0xff) as u8)
     }
-    #[doc = "Bits 16:23 - Correctable error counter Correctable error counter, write all one(8'hff) clear the counter."]
+    #[doc = "Bits 16:23 - Correctable error counter\n\nCorrectable error counter, write all one(8'hff) clear the counter."]
     #[inline(always)]
     pub fn corr_err_cnt(&self) -> CorrErrCntR {
         CorrErrCntR::new(((self.bits >> 16) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Fatal error counter Fatal error counter, write all one(8'hff) clear the counter."]
+    #[doc = "Bits 0:7 - Fatal error counter\n\nFatal error counter, write all one(8'hff) clear the counter."]
     #[inline(always)]
     #[must_use]
     pub fn fatal_err_cnt(&mut self) -> FatalErrCntW<PcieClientErrCntSpec> {
         FatalErrCntW::new(self, 0)
     }
-    #[doc = "Bits 8:15 - Non-fatal error counter Non-fatal error counter, write all one(8'hff) clear the counter."]
+    #[doc = "Bits 8:15 - Non-fatal error counter\n\nNon-fatal error counter, write all one(8'hff) clear the counter."]
     #[inline(always)]
     #[must_use]
     pub fn nfatal_err_cnt(&mut self) -> NfatalErrCntW<PcieClientErrCntSpec> {
         NfatalErrCntW::new(self, 8)
     }
-    #[doc = "Bits 16:23 - Correctable error counter Correctable error counter, write all one(8'hff) clear the counter."]
+    #[doc = "Bits 16:23 - Correctable error counter\n\nCorrectable error counter, write all one(8'hff) clear the counter."]
     #[inline(always)]
     #[must_use]
     pub fn corr_err_cnt(&mut self) -> CorrErrCntW<PcieClientErrCntSpec> {

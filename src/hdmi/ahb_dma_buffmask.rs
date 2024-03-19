@@ -51,7 +51,7 @@ impl W {
         MaskFifoOverrunW::new(self, 4)
     }
 }
-#[doc = "Buffer empty flag mask\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ahb_dma_buffmask::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ahb_dma_buffmask::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Audio DMA Buffer Mask Interrupt Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ahb_dma_buffmask::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ahb_dma_buffmask::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AhbDmaBuffmaskSpec;
 impl crate::RegisterSpec for AhbDmaBuffmaskSpec {
     type Ux = u8;

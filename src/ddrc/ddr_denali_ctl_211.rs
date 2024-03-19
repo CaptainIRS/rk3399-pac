@@ -2,7 +2,7 @@
 pub type R = crate::R<DdrDenaliCtl211Spec>;
 #[doc = "Register `DDR_DENALI_CTL_211` writer"]
 pub type W = crate::W<DdrDenaliCtl211Spec>;
-#[doc = "Field `OUT_OF_RANGE_SOURCE_ID` reader - Source ID of command that caused an out-of-range interrupt. READ- ONLY"]
+#[doc = "Field `OUT_OF_RANGE_SOURCE_ID` reader - Source ID of command that caused an out-of-range interrupt."]
 pub type OutOfRangeSourceIdR = crate::FieldReader;
 #[doc = "Field `ODT_RD_MAP_CS0` reader - Determines which chip(s) will have termination when a read occurs on chip select 0. Set bit X to enable termination on csX when cs0 is performing a read."]
 pub type OdtRdMapCs0R = crate::FieldReader;
@@ -17,7 +17,7 @@ pub type OdtRdMapCs1R = crate::FieldReader;
 #[doc = "Field `ODT_RD_MAP_CS1` writer - Determines which chip(s) will have termination when a read occurs on chip select 1. Set bit X to enable termination on csX when cs1 is performing a read."]
 pub type OdtRdMapCs1W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
-    #[doc = "Bits 0:3 - Source ID of command that caused an out-of-range interrupt. READ- ONLY"]
+    #[doc = "Bits 0:3 - Source ID of command that caused an out-of-range interrupt."]
     #[inline(always)]
     pub fn out_of_range_source_id(&self) -> OutOfRangeSourceIdR {
         OutOfRangeSourceIdR::new((self.bits & 0x0f) as u8)

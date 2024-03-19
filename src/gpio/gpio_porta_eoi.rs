@@ -1,10 +1,11 @@
 #[doc = "Register `GPIO_PORTA_EOI` writer"]
 pub type W = crate::W<GpioPortaEoiSpec>;
-#[doc = "Controls the clearing of edge type interrupts from Port A. When a 1 is written into a corresponding bit of this register, the interrupt is cleared. All interrupts are cleared when Port A is not configured for interrupts.\n\nValue on reset: 0"]
+#[doc = "Controls the clearing of edge type interrupts from Port A. When a\n\n1 is written into a corresponding bit of this register, the interrupt\n\nis cleared. All interrupts are cleared when Port A is not configured\n\nfor interrupts.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum GpioPortaEoi {
-    #[doc = "0: Clear interrupt"]
+    #[doc = "0: No interrupt clear (default)"]
     B0 = 0,
     #[doc = "1: Clear interrupt"]
     B1 = 1,
@@ -18,14 +19,14 @@ impl From<GpioPortaEoi> for u32 {
 impl crate::FieldSpec for GpioPortaEoi {
     type Ux = u32;
 }
-#[doc = "Field `GPIO_PORTA_EOI` writer - Controls the clearing of edge type interrupts from Port A. When a 1 is written into a corresponding bit of this register, the interrupt is cleared. All interrupts are cleared when Port A is not configured for interrupts."]
+#[doc = "Field `GPIO_PORTA_EOI` writer - Controls the clearing of edge type interrupts from Port A. When a\n\n1 is written into a corresponding bit of this register, the interrupt\n\nis cleared. All interrupts are cleared when Port A is not configured\n\nfor interrupts."]
 pub type GpioPortaEoiW<'a, REG> = crate::FieldWriter<'a, REG, 32, GpioPortaEoi>;
 impl<'a, REG> GpioPortaEoiW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u32>,
 {
-    #[doc = "Clear interrupt"]
+    #[doc = "No interrupt clear (default)"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(GpioPortaEoi::B0)
@@ -37,7 +38,7 @@ where
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Controls the clearing of edge type interrupts from Port A. When a 1 is written into a corresponding bit of this register, the interrupt is cleared. All interrupts are cleared when Port A is not configured for interrupts."]
+    #[doc = "Bits 0:31 - Controls the clearing of edge type interrupts from Port A. When a\n\n1 is written into a corresponding bit of this register, the interrupt\n\nis cleared. All interrupts are cleared when Port A is not configured\n\nfor interrupts."]
     #[inline(always)]
     #[must_use]
     pub fn gpio_porta_eoi(&mut self) -> GpioPortaEoiW<GpioPortaEoiSpec> {

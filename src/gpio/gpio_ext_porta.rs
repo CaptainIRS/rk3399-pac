@@ -1,9 +1,9 @@
 #[doc = "Register `GPIO_EXT_PORTA` reader"]
 pub type R = crate::R<GpioExtPortaSpec>;
-#[doc = "Field `GPIO_EXT_PORTA` reader - When Port A is configured as Input, then reading this location reads the values on the signal. When the data direction of Port A is set as Output, reading this location reads the data register for Port A."]
+#[doc = "Field `GPIO_EXT_PORTA` reader - When Port A is configured as Input, then reading this location\n\nreads the values on the signal. When the data direction of Port A\n\nis set as Output, reading this location reads the data register for\n\nPort A."]
 pub type GpioExtPortaR = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - When Port A is configured as Input, then reading this location reads the values on the signal. When the data direction of Port A is set as Output, reading this location reads the data register for Port A."]
+    #[doc = "Bits 0:31 - When Port A is configured as Input, then reading this location\n\nreads the values on the signal. When the data direction of Port A\n\nis set as Output, reading this location reads the data register for\n\nPort A."]
     #[inline(always)]
     pub fn gpio_ext_porta(&self) -> GpioExtPortaR {
         GpioExtPortaR::new(self.bits)

@@ -2,19 +2,19 @@
 pub type R = crate::R<EmmccoreCqtdlbauSpec>;
 #[doc = "Register `EMMCCORE_CQTDLBAU` writer"]
 pub type W = crate::W<EmmccoreCqtdlbauSpec>;
-#[doc = "Field `TDLBA` reader - Task Descriptor List Base Address This register stores the MSB bits (bits 63:32) of the byte address of the head of the Task Descriptor List in system memory. The size of the task descriptor list is 32 * (Task Descriptor size + Transfer Descriptor size) as configured by Host driver. This register is reserved when using 32-bit addressing mode."]
+#[doc = "Field `TDLBA` reader - Task Descriptor List Base Address\n\nThis register stores the MSB bits (bits 63:32) of the byte address\n\nof the head of the Task Descriptor List in system memory.\n\nThe size of the task descriptor list is 32 * (Task Descriptor size +\n\nTransfer Descriptor size) as configured by Host driver.\n\nThis register is reserved when using 32-bit addressing mode."]
 pub type TdlbaR = crate::FieldReader<u32>;
-#[doc = "Field `TDLBA` writer - Task Descriptor List Base Address This register stores the MSB bits (bits 63:32) of the byte address of the head of the Task Descriptor List in system memory. The size of the task descriptor list is 32 * (Task Descriptor size + Transfer Descriptor size) as configured by Host driver. This register is reserved when using 32-bit addressing mode."]
+#[doc = "Field `TDLBA` writer - Task Descriptor List Base Address\n\nThis register stores the MSB bits (bits 63:32) of the byte address\n\nof the head of the Task Descriptor List in system memory.\n\nThe size of the task descriptor list is 32 * (Task Descriptor size +\n\nTransfer Descriptor size) as configured by Host driver.\n\nThis register is reserved when using 32-bit addressing mode."]
 pub type TdlbaW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Task Descriptor List Base Address This register stores the MSB bits (bits 63:32) of the byte address of the head of the Task Descriptor List in system memory. The size of the task descriptor list is 32 * (Task Descriptor size + Transfer Descriptor size) as configured by Host driver. This register is reserved when using 32-bit addressing mode."]
+    #[doc = "Bits 0:31 - Task Descriptor List Base Address\n\nThis register stores the MSB bits (bits 63:32) of the byte address\n\nof the head of the Task Descriptor List in system memory.\n\nThe size of the task descriptor list is 32 * (Task Descriptor size +\n\nTransfer Descriptor size) as configured by Host driver.\n\nThis register is reserved when using 32-bit addressing mode."]
     #[inline(always)]
     pub fn tdlba(&self) -> TdlbaR {
         TdlbaR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Task Descriptor List Base Address This register stores the MSB bits (bits 63:32) of the byte address of the head of the Task Descriptor List in system memory. The size of the task descriptor list is 32 * (Task Descriptor size + Transfer Descriptor size) as configured by Host driver. This register is reserved when using 32-bit addressing mode."]
+    #[doc = "Bits 0:31 - Task Descriptor List Base Address\n\nThis register stores the MSB bits (bits 63:32) of the byte address\n\nof the head of the Task Descriptor List in system memory.\n\nThe size of the task descriptor list is 32 * (Task Descriptor size +\n\nTransfer Descriptor size) as configured by Host driver.\n\nThis register is reserved when using 32-bit addressing mode."]
     #[inline(always)]
     #[must_use]
     pub fn tdlba(&mut self) -> TdlbaW<EmmccoreCqtdlbauSpec> {

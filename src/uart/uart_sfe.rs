@@ -2,19 +2,19 @@
 pub type R = crate::R<UartSfeSpec>;
 #[doc = "Register `UART_SFE` writer"]
 pub type W = crate::W<UartSfeSpec>;
-#[doc = "Field `SHADOW_FIFO_EN` reader - Shadow FIFO Enable. Shadow FIFO Enable. This is a shadow register for the FIFO enable bit (FCR\\[0\\])."]
+#[doc = "Field `SHADOW_FIFO_EN` reader - Shadow FIFO Enable.\n\nShadow FIFO Enable. This is a shadow register for the FIFO\n\nenable bit (FCR\\[0\\])."]
 pub type ShadowFifoEnR = crate::BitReader;
-#[doc = "Field `SHADOW_FIFO_EN` writer - Shadow FIFO Enable. Shadow FIFO Enable. This is a shadow register for the FIFO enable bit (FCR\\[0\\])."]
+#[doc = "Field `SHADOW_FIFO_EN` writer - Shadow FIFO Enable.\n\nShadow FIFO Enable. This is a shadow register for the FIFO\n\nenable bit (FCR\\[0\\])."]
 pub type ShadowFifoEnW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - Shadow FIFO Enable. Shadow FIFO Enable. This is a shadow register for the FIFO enable bit (FCR\\[0\\])."]
+    #[doc = "Bit 0 - Shadow FIFO Enable.\n\nShadow FIFO Enable. This is a shadow register for the FIFO\n\nenable bit (FCR\\[0\\])."]
     #[inline(always)]
     pub fn shadow_fifo_en(&self) -> ShadowFifoEnR {
         ShadowFifoEnR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Shadow FIFO Enable. Shadow FIFO Enable. This is a shadow register for the FIFO enable bit (FCR\\[0\\])."]
+    #[doc = "Bit 0 - Shadow FIFO Enable.\n\nShadow FIFO Enable. This is a shadow register for the FIFO\n\nenable bit (FCR\\[0\\])."]
     #[inline(always)]
     #[must_use]
     pub fn shadow_fifo_en(&mut self) -> ShadowFifoEnW<UartSfeSpec> {

@@ -2,16 +2,16 @@
 pub type R = crate::R<FcDatauto2Spec>;
 #[doc = "Register `FC_DATAUTO2` writer"]
 pub type W = crate::W<FcDatauto2Spec>;
-#[doc = "Field `AUTO_LINE_SPACING` reader - Packets line spacing, for automatic packet scheduling"]
+#[doc = "Field `AUTO_LINE_SPACING` reader - Packets line spacing, for automatic packet\n\nscheduling"]
 pub type AutoLineSpacingR = crate::FieldReader;
-#[doc = "Field `AUTO_LINE_SPACING` writer - Packets line spacing, for automatic packet scheduling"]
+#[doc = "Field `AUTO_LINE_SPACING` writer - Packets line spacing, for automatic packet\n\nscheduling"]
 pub type AutoLineSpacingW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `AUTO_FRAME_PACKETS` reader - Packets per frame, for automatic packet scheduling"]
 pub type AutoFramePacketsR = crate::FieldReader;
 #[doc = "Field `AUTO_FRAME_PACKETS` writer - Packets per frame, for automatic packet scheduling"]
 pub type AutoFramePacketsW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
-    #[doc = "Bits 0:3 - Packets line spacing, for automatic packet scheduling"]
+    #[doc = "Bits 0:3 - Packets line spacing, for automatic packet\n\nscheduling"]
     #[inline(always)]
     pub fn auto_line_spacing(&self) -> AutoLineSpacingR {
         AutoLineSpacingR::new(self.bits & 0x0f)
@@ -23,7 +23,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - Packets line spacing, for automatic packet scheduling"]
+    #[doc = "Bits 0:3 - Packets line spacing, for automatic packet\n\nscheduling"]
     #[inline(always)]
     #[must_use]
     pub fn auto_line_spacing(&mut self) -> AutoLineSpacingW<FcDatauto2Spec> {
@@ -36,7 +36,7 @@ impl W {
         AutoFramePacketsW::new(self, 4)
     }
 }
-#[doc = "Packets line spacing, for automatic packet scheduling\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_datauto2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_datauto2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer Data Island Auto packet scheduling Register 2\n\nConfigures the Frame Composer (FC) RDRB line interpolation and number of packets in\n\nframe for SPD, VSD, ISRC2, ISRC1 and ACP packet insertion on data island when FC is on\n\nRDRB mode for the listed packets.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_datauto2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_datauto2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcDatauto2Spec;
 impl crate::RegisterSpec for FcDatauto2Spec {
     type Ux = u8;

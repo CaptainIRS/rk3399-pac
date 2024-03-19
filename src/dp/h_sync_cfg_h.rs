@@ -2,19 +2,19 @@
 pub type R = crate::R<HSyncCfgHSpec>;
 #[doc = "Register `H_SYNC_CFG_H` writer"]
 pub type W = crate::W<HSyncCfgHSpec>;
-#[doc = "Field `H_SYNC_CFG_H` reader - H_SYNC_CFG is used to specify the number of pixels in HSYNC period. This register is H_SYNC_CFG \\[11:8\\]. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+#[doc = "Field `H_SYNC_CFG_H` reader - H_SYNC_CFG is used to specify the number of \n\npixels in HSYNC period. This register is \n\nH_SYNC_CFG \\[11:8\\]. \n\nWhen F_SEL is 1, this value is sent in main stream \n\nattribute packet. \n\nWhen BIST_EN is 1, this bit field is used to specify \n\nthe BIST video stream format."]
 pub type HSyncCfgHR = crate::FieldReader;
-#[doc = "Field `H_SYNC_CFG_H` writer - H_SYNC_CFG is used to specify the number of pixels in HSYNC period. This register is H_SYNC_CFG \\[11:8\\]. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+#[doc = "Field `H_SYNC_CFG_H` writer - H_SYNC_CFG is used to specify the number of \n\npixels in HSYNC period. This register is \n\nH_SYNC_CFG \\[11:8\\]. \n\nWhen F_SEL is 1, this value is sent in main stream \n\nattribute packet. \n\nWhen BIST_EN is 1, this bit field is used to specify \n\nthe BIST video stream format."]
 pub type HSyncCfgHW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
-    #[doc = "Bits 0:3 - H_SYNC_CFG is used to specify the number of pixels in HSYNC period. This register is H_SYNC_CFG \\[11:8\\]. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+    #[doc = "Bits 0:3 - H_SYNC_CFG is used to specify the number of \n\npixels in HSYNC period. This register is \n\nH_SYNC_CFG \\[11:8\\]. \n\nWhen F_SEL is 1, this value is sent in main stream \n\nattribute packet. \n\nWhen BIST_EN is 1, this bit field is used to specify \n\nthe BIST video stream format."]
     #[inline(always)]
     pub fn h_sync_cfg_h(&self) -> HSyncCfgHR {
         HSyncCfgHR::new((self.bits & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - H_SYNC_CFG is used to specify the number of pixels in HSYNC period. This register is H_SYNC_CFG \\[11:8\\]. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+    #[doc = "Bits 0:3 - H_SYNC_CFG is used to specify the number of \n\npixels in HSYNC period. This register is \n\nH_SYNC_CFG \\[11:8\\]. \n\nWhen F_SEL is 1, this value is sent in main stream \n\nattribute packet. \n\nWhen BIST_EN is 1, this bit field is used to specify \n\nthe BIST video stream format."]
     #[inline(always)]
     #[must_use]
     pub fn h_sync_cfg_h(&mut self) -> HSyncCfgHW<HSyncCfgHSpec> {

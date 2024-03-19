@@ -2,19 +2,19 @@
 pub type R = crate::R<Usb3Gevntcount0Spec>;
 #[doc = "Register `USB3_GEVNTCOUNT0` writer"]
 pub type W = crate::W<Usb3Gevntcount0Spec>;
-#[doc = "Field `EVNTCOUNT` reader - Event Count When read, returns the number of valid events in the Event Buffer (in bytes). When written, hardware decrements the count by the value written. The interrupt line remains high when count is not 0."]
+#[doc = "Field `EVNTCOUNT` reader - Event Count\n\nWhen read, returns the number of valid events in the Event\n\nBuffer (in bytes).\n\nWhen written, hardware decrements the count by the value\n\nwritten. The interrupt line remains high when count is not 0."]
 pub type EvntcountR = crate::FieldReader<u16>;
-#[doc = "Field `EVNTCOUNT` writer - Event Count When read, returns the number of valid events in the Event Buffer (in bytes). When written, hardware decrements the count by the value written. The interrupt line remains high when count is not 0."]
+#[doc = "Field `EVNTCOUNT` writer - Event Count\n\nWhen read, returns the number of valid events in the Event\n\nBuffer (in bytes).\n\nWhen written, hardware decrements the count by the value\n\nwritten. The interrupt line remains high when count is not 0."]
 pub type EvntcountW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:15 - Event Count When read, returns the number of valid events in the Event Buffer (in bytes). When written, hardware decrements the count by the value written. The interrupt line remains high when count is not 0."]
+    #[doc = "Bits 0:15 - Event Count\n\nWhen read, returns the number of valid events in the Event\n\nBuffer (in bytes).\n\nWhen written, hardware decrements the count by the value\n\nwritten. The interrupt line remains high when count is not 0."]
     #[inline(always)]
     pub fn evntcount(&self) -> EvntcountR {
         EvntcountR::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - Event Count When read, returns the number of valid events in the Event Buffer (in bytes). When written, hardware decrements the count by the value written. The interrupt line remains high when count is not 0."]
+    #[doc = "Bits 0:15 - Event Count\n\nWhen read, returns the number of valid events in the Event\n\nBuffer (in bytes).\n\nWhen written, hardware decrements the count by the value\n\nwritten. The interrupt line remains high when count is not 0."]
     #[inline(always)]
     #[must_use]
     pub fn evntcount(&mut self) -> EvntcountW<Usb3Gevntcount0Spec> {

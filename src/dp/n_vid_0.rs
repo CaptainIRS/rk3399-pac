@@ -3,14 +3,14 @@ pub type R = crate::R<NVid0Spec>;
 #[doc = "Register `N_VID_0` writer"]
 pub type W = crate::W<NVid0Spec>;
 #[doc = "Field `N_VID_0` reader - N_VID\\[7:0\\]
-The maximum value of M_VID is 0xFFFF in ASYNC mode."]
+\n\nThe maximum value of M_VID is 0xFFFF in \n\nASYNC mode."]
 pub type NVid0R = crate::FieldReader;
 #[doc = "Field `N_VID_0` writer - N_VID\\[7:0\\]
-The maximum value of M_VID is 0xFFFF in ASYNC mode."]
+\n\nThe maximum value of M_VID is 0xFFFF in \n\nASYNC mode."]
 pub type NVid0W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - N_VID\\[7:0\\]
-The maximum value of M_VID is 0xFFFF in ASYNC mode."]
+\n\nThe maximum value of M_VID is 0xFFFF in \n\nASYNC mode."]
     #[inline(always)]
     pub fn n_vid_0(&self) -> NVid0R {
         NVid0R::new((self.bits & 0xff) as u8)
@@ -18,7 +18,7 @@ The maximum value of M_VID is 0xFFFF in ASYNC mode."]
 }
 impl W {
     #[doc = "Bits 0:7 - N_VID\\[7:0\\]
-The maximum value of M_VID is 0xFFFF in ASYNC mode."]
+\n\nThe maximum value of M_VID is 0xFFFF in \n\nASYNC mode."]
     #[inline(always)]
     #[must_use]
     pub fn n_vid_0(&mut self) -> NVid0W<NVid0Spec> {

@@ -1,17 +1,17 @@
 #[doc = "Register `CRU_SDIO0_CON0` writer"]
 pub type W = crate::W<CruSdio0Con0Spec>;
-#[doc = "Field `SDIO_CON0` writer - sdio_con0 register refer to chapter SDIO"]
+#[doc = "Field `SDIO_CON0` writer - sdio_con0 register\n\nrefer to chapter SDIO"]
 pub type SdioCon0W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl W {
-    #[doc = "Bits 0:15 - sdio_con0 register refer to chapter SDIO"]
+    #[doc = "Bits 0:15 - sdio_con0 register\n\nrefer to chapter SDIO"]
     #[inline(always)]
     #[must_use]
     pub fn sdio_con0(&mut self) -> SdioCon0W<CruSdio0Con0Spec> {
         SdioCon0W::new(self, 0)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruSdio0Con0Spec> {

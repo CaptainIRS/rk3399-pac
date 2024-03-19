@@ -10,7 +10,7 @@ impl W {
         DrmpacketupdateW::new(self, 0)
     }
 }
-#[doc = "DRM packet update\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_drm_up::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer DRM Packet Update Register\n\nThis register performs an DRM packet content update according to the configured packet\n\nbody (FC_DRM_PB0 to FC_DRM_PB27) and packet header (FC_DRM_HB). This active high\n\nauto clear register reflects the body and header configurations on the DRM packets change\n\nto be performed.\n\nAttention packet update request must only be done after correct configuration of DRM\n\npacket body and header registers.\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_drm_up::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcDrmUpSpec;
 impl crate::RegisterSpec for FcDrmUpSpec {
     type Ux = u8;

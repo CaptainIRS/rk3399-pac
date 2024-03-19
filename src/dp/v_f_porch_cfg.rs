@@ -2,19 +2,19 @@
 pub type R = crate::R<VFPorchCfgSpec>;
 #[doc = "Register `V_F_PORCH_CFG` writer"]
 pub type W = crate::W<VFPorchCfgSpec>;
-#[doc = "Field `V_F_PORCH_CFG` reader - This is used to specify the number of lines in vertical front porch part. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+#[doc = "Field `V_F_PORCH_CFG` reader - This is used to specify the number of \n\nlines in vertical front porch part. \n\nWhen F_SEL is 1, this value is sent in \n\nmain stream attribute packet. \n\nWhen BIST_EN is 1, this bit field is \n\nused to specify the BIST video stream \n\nformat."]
 pub type VFPorchCfgR = crate::FieldReader;
-#[doc = "Field `V_F_PORCH_CFG` writer - This is used to specify the number of lines in vertical front porch part. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+#[doc = "Field `V_F_PORCH_CFG` writer - This is used to specify the number of \n\nlines in vertical front porch part. \n\nWhen F_SEL is 1, this value is sent in \n\nmain stream attribute packet. \n\nWhen BIST_EN is 1, this bit field is \n\nused to specify the BIST video stream \n\nformat."]
 pub type VFPorchCfgW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - This is used to specify the number of lines in vertical front porch part. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+    #[doc = "Bits 0:7 - This is used to specify the number of \n\nlines in vertical front porch part. \n\nWhen F_SEL is 1, this value is sent in \n\nmain stream attribute packet. \n\nWhen BIST_EN is 1, this bit field is \n\nused to specify the BIST video stream \n\nformat."]
     #[inline(always)]
     pub fn v_f_porch_cfg(&self) -> VFPorchCfgR {
         VFPorchCfgR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - This is used to specify the number of lines in vertical front porch part. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+    #[doc = "Bits 0:7 - This is used to specify the number of \n\nlines in vertical front porch part. \n\nWhen F_SEL is 1, this value is sent in \n\nmain stream attribute packet. \n\nWhen BIST_EN is 1, this bit field is \n\nused to specify the BIST video stream \n\nformat."]
     #[inline(always)]
     #[must_use]
     pub fn v_f_porch_cfg(&mut self) -> VFPorchCfgW<VFPorchCfgSpec> {

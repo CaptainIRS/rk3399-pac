@@ -2,19 +2,19 @@
 pub type R = crate::R<TimerNIntstatusSpec>;
 #[doc = "Register `TIMER_n_INTSTATUS` writer"]
 pub type W = crate::W<TimerNIntstatusSpec>;
-#[doc = "Field `INT_PD` reader - This register contains the interrupt status for timer n. Write 1 to this register will clear the interrupt."]
+#[doc = "Field `INT_PD` reader - This register contains the interrupt status for timer n.\n\nWrite 1 to this register will clear the interrupt."]
 pub type IntPdR = crate::BitReader;
-#[doc = "Field `INT_PD` writer - This register contains the interrupt status for timer n. Write 1 to this register will clear the interrupt."]
+#[doc = "Field `INT_PD` writer - This register contains the interrupt status for timer n.\n\nWrite 1 to this register will clear the interrupt."]
 pub type IntPdW<'a, REG> = crate::BitWriter1C<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - This register contains the interrupt status for timer n. Write 1 to this register will clear the interrupt."]
+    #[doc = "Bit 0 - This register contains the interrupt status for timer n.\n\nWrite 1 to this register will clear the interrupt."]
     #[inline(always)]
     pub fn int_pd(&self) -> IntPdR {
         IntPdR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - This register contains the interrupt status for timer n. Write 1 to this register will clear the interrupt."]
+    #[doc = "Bit 0 - This register contains the interrupt status for timer n.\n\nWrite 1 to this register will clear the interrupt."]
     #[inline(always)]
     #[must_use]
     pub fn int_pd(&mut self) -> IntPdW<TimerNIntstatusSpec> {

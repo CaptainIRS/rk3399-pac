@@ -1,9 +1,9 @@
 #[doc = "Register `DDR_DENALI_PHY_34` reader"]
 pub type R = crate::R<DdrDenaliPhy34Spec>;
-#[doc = "Field `PHY_LPBK_RESULT_OBS_0` reader - Observation register containing loopback status/results for slice 0. READ-ONLY"]
+#[doc = "Field `PHY_LPBK_RESULT_OBS_0` reader - Observation register containing loopback status/results for slice 0."]
 pub type PhyLpbkResultObs0R = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Observation register containing loopback status/results for slice 0. READ-ONLY"]
+    #[doc = "Bits 0:31 - Observation register containing loopback status/results for slice 0."]
     #[inline(always)]
     pub fn phy_lpbk_result_obs_0(&self) -> PhyLpbkResultObs0R {
         PhyLpbkResultObs0R::new(self.bits)

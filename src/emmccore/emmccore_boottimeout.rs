@@ -2,19 +2,19 @@
 pub type R = crate::R<EmmccoreBoottimeoutSpec>;
 #[doc = "Register `EMMCCORE_BOOTTIMEOUT` writer"]
 pub type W = crate::W<EmmccoreBoottimeoutSpec>;
-#[doc = "Field `BOOTTIMEOUT` reader - Boot Data Timeout Counter Value This value determines the interval by which DAT line time-outs are detected during boot operation for eMMC card. The value is in number of sd clock."]
+#[doc = "Field `BOOTTIMEOUT` reader - Boot Data Timeout Counter Value\n\nThis value determines the interval by which DAT line time-outs\n\nare detected during boot operation for eMMC card.\n\nThe value is in number of sd clock."]
 pub type BoottimeoutR = crate::FieldReader<u32>;
-#[doc = "Field `BOOTTIMEOUT` writer - Boot Data Timeout Counter Value This value determines the interval by which DAT line time-outs are detected during boot operation for eMMC card. The value is in number of sd clock."]
+#[doc = "Field `BOOTTIMEOUT` writer - Boot Data Timeout Counter Value\n\nThis value determines the interval by which DAT line time-outs\n\nare detected during boot operation for eMMC card.\n\nThe value is in number of sd clock."]
 pub type BoottimeoutW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Boot Data Timeout Counter Value This value determines the interval by which DAT line time-outs are detected during boot operation for eMMC card. The value is in number of sd clock."]
+    #[doc = "Bits 0:31 - Boot Data Timeout Counter Value\n\nThis value determines the interval by which DAT line time-outs\n\nare detected during boot operation for eMMC card.\n\nThe value is in number of sd clock."]
     #[inline(always)]
     pub fn boottimeout(&self) -> BoottimeoutR {
         BoottimeoutR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Boot Data Timeout Counter Value This value determines the interval by which DAT line time-outs are detected during boot operation for eMMC card. The value is in number of sd clock."]
+    #[doc = "Bits 0:31 - Boot Data Timeout Counter Value\n\nThis value determines the interval by which DAT line time-outs\n\nare detected during boot operation for eMMC card.\n\nThe value is in number of sd clock."]
     #[inline(always)]
     #[must_use]
     pub fn boottimeout(&mut self) -> BoottimeoutW<EmmccoreBoottimeoutSpec> {

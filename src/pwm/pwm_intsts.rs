@@ -3,9 +3,10 @@ pub type R = crate::R<PwmIntstsSpec>;
 #[doc = "Register `PWM_INTSTS` writer"]
 pub type W = crate::W<PwmIntstsSpec>;
 #[doc = "Channel 0 Raw Interrupt Status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ch0Intsts {
-    #[doc = "0: Channel 0 Interrupt generated"]
+    #[doc = "0: Channel 0 Interrupt not generated"]
     B0 = 0,
     #[doc = "1: Channel 0 Interrupt generated"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl Ch0IntstsR {
             true => Ch0Intsts::B1,
         }
     }
-    #[doc = "Channel 0 Interrupt generated"]
+    #[doc = "Channel 0 Interrupt not generated"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Ch0Intsts::B0
@@ -44,7 +45,7 @@ impl<'a, REG> Ch0IntstsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Channel 0 Interrupt generated"]
+    #[doc = "Channel 0 Interrupt not generated"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Ch0Intsts::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Channel 1 Interrupt Status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ch1Intsts {
-    #[doc = "0: Channel 1 Interrupt generated"]
+    #[doc = "0: Channel 1 Interrupt not generated"]
     B0 = 0,
     #[doc = "1: Channel 1 Interrupt generated"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl Ch1IntstsR {
             true => Ch1Intsts::B1,
         }
     }
-    #[doc = "Channel 1 Interrupt generated"]
+    #[doc = "Channel 1 Interrupt not generated"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Ch1Intsts::B0
@@ -97,7 +99,7 @@ impl<'a, REG> Ch1IntstsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Channel 1 Interrupt generated"]
+    #[doc = "Channel 1 Interrupt not generated"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Ch1Intsts::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "Channel 2 Interrupt Status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ch2Intsts {
-    #[doc = "0: Channel 2 Interrupt generated"]
+    #[doc = "0: Channel 2 Interrupt not generated"]
     B0 = 0,
     #[doc = "1: Channel 2 Interrupt generated"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl Ch2IntstsR {
             true => Ch2Intsts::B1,
         }
     }
-    #[doc = "Channel 2 Interrupt generated"]
+    #[doc = "Channel 2 Interrupt not generated"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Ch2Intsts::B0
@@ -150,7 +153,7 @@ impl<'a, REG> Ch2IntstsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Channel 2 Interrupt generated"]
+    #[doc = "Channel 2 Interrupt not generated"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Ch2Intsts::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "Channel 3 Interrupt Status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ch3Intsts {
-    #[doc = "0: Channel 3 Interrupt generated"]
+    #[doc = "0: Channel 3 Interrupt not generated"]
     B0 = 0,
     #[doc = "1: Channel 3 Interrupt generated"]
     B1 = 1,
@@ -186,7 +190,7 @@ impl Ch3IntstsR {
             true => Ch3Intsts::B1,
         }
     }
-    #[doc = "Channel 3 Interrupt generated"]
+    #[doc = "Channel 3 Interrupt not generated"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Ch3Intsts::B0
@@ -203,7 +207,7 @@ impl<'a, REG> Ch3IntstsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Channel 3 Interrupt generated"]
+    #[doc = "Channel 3 Interrupt not generated"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Ch3Intsts::B0)
@@ -214,13 +218,13 @@ where
         self.variant(Ch3Intsts::B1)
     }
 }
-#[doc = "Field `CH0_POL` reader - Channel 0 Interrupt Polarity Flag This bit is used in capture mode in order to identify the transition of the input waveform when interrupt is generated. When bit is 1, please refer to PWM0_PERIOD_HPR to know the effective high cycle of Channel 0 input waveform. Otherwise, please refer to PWM0_PERIOD_LPR to know the effective low cycle of Channel 0 input waveform. Write 1 to CH0_IntSts will clear this bit."]
+#[doc = "Field `CH0_POL` reader - Channel 0 Interrupt Polarity Flag\n\nThis bit is used in capture mode in order to identify the transition\n\nof the input waveform when interrupt is generated. When bit is 1,\n\nplease refer to PWM0_PERIOD_HPR to know the effective high\n\ncycle of Channel 0 input waveform. Otherwise, please refer to\n\nPWM0_PERIOD_LPR to know the effective low cycle of Channel 0\n\ninput waveform. Write 1 to CH0_IntSts will clear this bit."]
 pub type Ch0PolR = crate::BitReader;
-#[doc = "Field `CH1_POL` reader - Channel 1 Interrupt Polarity Flag This bit is used in capture mode in order to identify the transition of the input waveform when interrupt is generated. When bit is 1, please refer to PWM1_PERIOD_HPR to know the effective high cycle of Channel 1 input waveform. Otherwise, please refer to PWM1_PERIOD_LPR to know the effective low cycle of Channel 1 input waveform. Write 1 to CH1_IntSts will clear this bit."]
+#[doc = "Field `CH1_POL` reader - Channel 1 Interrupt Polarity Flag\n\nThis bit is used in capture mode in order to identify the transition\n\nof the input waveform when interrupt is generated. When bit is 1,\n\nplease refer to PWM1_PERIOD_HPR to know the effective high\n\ncycle of Channel 1 input waveform. Otherwise, please refer to\n\nPWM1_PERIOD_LPR to know the effective low cycle of Channel 1\n\ninput waveform. Write 1 to CH1_IntSts will clear this bit."]
 pub type Ch1PolR = crate::BitReader;
-#[doc = "Field `CH2_POL` reader - Channel 2 Interrupt Polarity Flag This bit is used in capture mode in order to identify the transition of the input waveform when interrupt is generated. When bit is 1, please refer to PWM2_PERIOD_HPR to know the effective high cycle of Channel 2 input waveform. Otherwise, please refer to PWM2_PERIOD_LPR to know the effective low cycle of Channel 2 input waveform. Write 1 to CH2_IntSts will clear this bit."]
+#[doc = "Field `CH2_POL` reader - Channel 2 Interrupt Polarity Flag\n\nThis bit is used in capture mode in order to identify the transition\n\nof the input waveform when interrupt is generated. When bit is 1,\n\nplease refer to PWM2_PERIOD_HPR to know the effective high\n\ncycle of Channel 2 input waveform. Otherwise, please refer to\n\nPWM2_PERIOD_LPR to know the effective low cycle of Channel 2\n\ninput waveform. Write 1 to CH2_IntSts will clear this bit."]
 pub type Ch2PolR = crate::BitReader;
-#[doc = "Field `CH3_POL` reader - Channel 3 Interrupt Polarity Flag This bit is used in capture mode in order to identify the transition of the input waveform when interrupt is generated. When bit is 1, please refer to PWM3_PERIOD_HPR to know the effective high cycle of Channel 3 input waveform. Otherwise, please refer to PWM3_PERIOD_LPR to know the effective low cycle of Channel 3 input waveform. Write 1 to CH3_IntSts will clear this bit."]
+#[doc = "Field `CH3_POL` reader - Channel 3 Interrupt Polarity Flag\n\nThis bit is used in capture mode in order to identify the transition\n\nof the input waveform when interrupt is generated. When bit is 1,\n\nplease refer to PWM3_PERIOD_HPR to know the effective high\n\ncycle of Channel 3 input waveform. Otherwise, please refer to\n\nPWM3_PERIOD_LPR to know the effective low cycle of Channel 3\n\ninput waveform. Write 1 to CH3_IntSts will clear this bit."]
 pub type Ch3PolR = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Channel 0 Raw Interrupt Status"]
@@ -243,22 +247,22 @@ impl R {
     pub fn ch3_intsts(&self) -> Ch3IntstsR {
         Ch3IntstsR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 8 - Channel 0 Interrupt Polarity Flag This bit is used in capture mode in order to identify the transition of the input waveform when interrupt is generated. When bit is 1, please refer to PWM0_PERIOD_HPR to know the effective high cycle of Channel 0 input waveform. Otherwise, please refer to PWM0_PERIOD_LPR to know the effective low cycle of Channel 0 input waveform. Write 1 to CH0_IntSts will clear this bit."]
+    #[doc = "Bit 8 - Channel 0 Interrupt Polarity Flag\n\nThis bit is used in capture mode in order to identify the transition\n\nof the input waveform when interrupt is generated. When bit is 1,\n\nplease refer to PWM0_PERIOD_HPR to know the effective high\n\ncycle of Channel 0 input waveform. Otherwise, please refer to\n\nPWM0_PERIOD_LPR to know the effective low cycle of Channel 0\n\ninput waveform. Write 1 to CH0_IntSts will clear this bit."]
     #[inline(always)]
     pub fn ch0_pol(&self) -> Ch0PolR {
         Ch0PolR::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bit 9 - Channel 1 Interrupt Polarity Flag This bit is used in capture mode in order to identify the transition of the input waveform when interrupt is generated. When bit is 1, please refer to PWM1_PERIOD_HPR to know the effective high cycle of Channel 1 input waveform. Otherwise, please refer to PWM1_PERIOD_LPR to know the effective low cycle of Channel 1 input waveform. Write 1 to CH1_IntSts will clear this bit."]
+    #[doc = "Bit 9 - Channel 1 Interrupt Polarity Flag\n\nThis bit is used in capture mode in order to identify the transition\n\nof the input waveform when interrupt is generated. When bit is 1,\n\nplease refer to PWM1_PERIOD_HPR to know the effective high\n\ncycle of Channel 1 input waveform. Otherwise, please refer to\n\nPWM1_PERIOD_LPR to know the effective low cycle of Channel 1\n\ninput waveform. Write 1 to CH1_IntSts will clear this bit."]
     #[inline(always)]
     pub fn ch1_pol(&self) -> Ch1PolR {
         Ch1PolR::new(((self.bits >> 9) & 1) != 0)
     }
-    #[doc = "Bit 10 - Channel 2 Interrupt Polarity Flag This bit is used in capture mode in order to identify the transition of the input waveform when interrupt is generated. When bit is 1, please refer to PWM2_PERIOD_HPR to know the effective high cycle of Channel 2 input waveform. Otherwise, please refer to PWM2_PERIOD_LPR to know the effective low cycle of Channel 2 input waveform. Write 1 to CH2_IntSts will clear this bit."]
+    #[doc = "Bit 10 - Channel 2 Interrupt Polarity Flag\n\nThis bit is used in capture mode in order to identify the transition\n\nof the input waveform when interrupt is generated. When bit is 1,\n\nplease refer to PWM2_PERIOD_HPR to know the effective high\n\ncycle of Channel 2 input waveform. Otherwise, please refer to\n\nPWM2_PERIOD_LPR to know the effective low cycle of Channel 2\n\ninput waveform. Write 1 to CH2_IntSts will clear this bit."]
     #[inline(always)]
     pub fn ch2_pol(&self) -> Ch2PolR {
         Ch2PolR::new(((self.bits >> 10) & 1) != 0)
     }
-    #[doc = "Bit 11 - Channel 3 Interrupt Polarity Flag This bit is used in capture mode in order to identify the transition of the input waveform when interrupt is generated. When bit is 1, please refer to PWM3_PERIOD_HPR to know the effective high cycle of Channel 3 input waveform. Otherwise, please refer to PWM3_PERIOD_LPR to know the effective low cycle of Channel 3 input waveform. Write 1 to CH3_IntSts will clear this bit."]
+    #[doc = "Bit 11 - Channel 3 Interrupt Polarity Flag\n\nThis bit is used in capture mode in order to identify the transition\n\nof the input waveform when interrupt is generated. When bit is 1,\n\nplease refer to PWM3_PERIOD_HPR to know the effective high\n\ncycle of Channel 3 input waveform. Otherwise, please refer to\n\nPWM3_PERIOD_LPR to know the effective low cycle of Channel 3\n\ninput waveform. Write 1 to CH3_IntSts will clear this bit."]
     #[inline(always)]
     pub fn ch3_pol(&self) -> Ch3PolR {
         Ch3PolR::new(((self.bits >> 11) & 1) != 0)

@@ -3,9 +3,10 @@ pub type R = crate::R<Hdcp22regCtrlSpec>;
 #[doc = "Register `HDCP22REG_CTRL` writer"]
 pub type W = crate::W<Hdcp22regCtrlSpec>;
 #[doc = "HDCP 2.2 switch lock\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hdcp22SwitchLck {
-    #[doc = "0: You can still write to hdcp22_ovr_en and hdcp22_ovr_val but has no effect over the HDCP 2.2 versus 1.4 switch, that keeps as it was configured by hdcp22_ovr_en and hdcp22_ovr_val at the time the 1'b1 was written to this bit field. Once you set the value to 1'b1, you can change the value back to 1'b0 only by issuing a master reset to the Hdmi_tx."]
+    #[doc = "0: Enables you to change the direction of the HDCP 2.2 versus 1.4 switch by using the hdcp22_ovr_en and hdcp22_ovr_val."]
     B0 = 0,
     #[doc = "1: You can still write to hdcp22_ovr_en and hdcp22_ovr_val but has no effect over the HDCP 2.2 versus 1.4 switch, that keeps as it was configured by hdcp22_ovr_en and hdcp22_ovr_val at the time the 1'b1 was written to this bit field. Once you set the value to 1'b1, you can change the value back to 1'b0 only by issuing a master reset to the Hdmi_tx."]
     B1 = 1,
@@ -27,7 +28,7 @@ impl Hdcp22SwitchLckR {
             true => Hdcp22SwitchLck::B1,
         }
     }
-    #[doc = "You can still write to hdcp22_ovr_en and hdcp22_ovr_val but has no effect over the HDCP 2.2 versus 1.4 switch, that keeps as it was configured by hdcp22_ovr_en and hdcp22_ovr_val at the time the 1'b1 was written to this bit field. Once you set the value to 1'b1, you can change the value back to 1'b0 only by issuing a master reset to the Hdmi_tx."]
+    #[doc = "Enables you to change the direction of the HDCP 2.2 versus 1.4 switch by using the hdcp22_ovr_en and hdcp22_ovr_val."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Hdcp22SwitchLck::B0
@@ -44,7 +45,7 @@ impl<'a, REG> Hdcp22SwitchLckW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "You can still write to hdcp22_ovr_en and hdcp22_ovr_val but has no effect over the HDCP 2.2 versus 1.4 switch, that keeps as it was configured by hdcp22_ovr_en and hdcp22_ovr_val at the time the 1'b1 was written to this bit field. Once you set the value to 1'b1, you can change the value back to 1'b0 only by issuing a master reset to the Hdmi_tx."]
+    #[doc = "Enables you to change the direction of the HDCP 2.2 versus 1.4 switch by using the hdcp22_ovr_en and hdcp22_ovr_val."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Hdcp22SwitchLck::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "HDCP 2.2 versus 1.4 switch override enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hdcp22OvrEn {
-    #[doc = "0: The HDCP 2.2 ist_hdcp2_capable and ist_hdcp2_not_capable values are ignored, and the direction of the HDCP 2.2 versus 1.4 switch is directly controlled by the hdcp22_ovr_val."]
+    #[doc = "0: The switch is automatically controlled by the HDCP 2.2 controller using the ist_hdcp2_capable and ist_hdcp2_not_capable status level indications. If the HDCP 2.2 controller indicates ist_hdcp2_capable at 1'b1, the switch is routed to HDCP 2.2 signals. If the HDCP 2.2 controller indicates ist_hdcp2_not_capable at 1'b1, the switch is routed to HDCP 1.4 signals."]
     B0 = 0,
     #[doc = "1: The HDCP 2.2 ist_hdcp2_capable and ist_hdcp2_not_capable values are ignored, and the direction of the HDCP 2.2 versus 1.4 switch is directly controlled by the hdcp22_ovr_val."]
     B1 = 1,
@@ -80,7 +82,7 @@ impl Hdcp22OvrEnR {
             true => Hdcp22OvrEn::B1,
         }
     }
-    #[doc = "The HDCP 2.2 ist_hdcp2_capable and ist_hdcp2_not_capable values are ignored, and the direction of the HDCP 2.2 versus 1.4 switch is directly controlled by the hdcp22_ovr_val."]
+    #[doc = "The switch is automatically controlled by the HDCP 2.2 controller using the ist_hdcp2_capable and ist_hdcp2_not_capable status level indications. If the HDCP 2.2 controller indicates ist_hdcp2_capable at 1'b1, the switch is routed to HDCP 2.2 signals. If the HDCP 2.2 controller indicates ist_hdcp2_not_capable at 1'b1, the switch is routed to HDCP 1.4 signals."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Hdcp22OvrEn::B0
@@ -97,7 +99,7 @@ impl<'a, REG> Hdcp22OvrEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "The HDCP 2.2 ist_hdcp2_capable and ist_hdcp2_not_capable values are ignored, and the direction of the HDCP 2.2 versus 1.4 switch is directly controlled by the hdcp22_ovr_val."]
+    #[doc = "The switch is automatically controlled by the HDCP 2.2 controller using the ist_hdcp2_capable and ist_hdcp2_not_capable status level indications. If the HDCP 2.2 controller indicates ist_hdcp2_capable at 1'b1, the switch is routed to HDCP 2.2 signals. If the HDCP 2.2 controller indicates ist_hdcp2_not_capable at 1'b1, the switch is routed to HDCP 1.4 signals."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Hdcp22OvrEn::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "HDCP 2.2 versus 1.4 switch override value\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hdcp22OvrVal {
-    #[doc = "0: The switch is routed to HDCP 2.2 signals when hdcp22_ovr_en is 1'b1 and hdcp22_switch_lock is not set to 1'b1."]
+    #[doc = "0: The switch is routed to HDCP 1.4 signals when hdcp22_ovr_en is 1'b1 and hdcp22_switch_lock is not set to 1'b1."]
     B0 = 0,
     #[doc = "1: The switch is routed to HDCP 2.2 signals when hdcp22_ovr_en is 1'b1 and hdcp22_switch_lock is not set to 1'b1."]
     B1 = 1,
@@ -133,7 +136,7 @@ impl Hdcp22OvrValR {
             true => Hdcp22OvrVal::B1,
         }
     }
-    #[doc = "The switch is routed to HDCP 2.2 signals when hdcp22_ovr_en is 1'b1 and hdcp22_switch_lock is not set to 1'b1."]
+    #[doc = "The switch is routed to HDCP 1.4 signals when hdcp22_ovr_en is 1'b1 and hdcp22_switch_lock is not set to 1'b1."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Hdcp22OvrVal::B0
@@ -150,7 +153,7 @@ impl<'a, REG> Hdcp22OvrValW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "The switch is routed to HDCP 2.2 signals when hdcp22_ovr_en is 1'b1 and hdcp22_switch_lock is not set to 1'b1."]
+    #[doc = "The switch is routed to HDCP 1.4 signals when hdcp22_ovr_en is 1'b1 and hdcp22_switch_lock is not set to 1'b1."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Hdcp22OvrVal::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "HPD Override enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HpdOvrEn {
-    #[doc = "0: The HPD value to the HDCP 2.2 external interface comes from hpd_ovr_val bit field."]
+    #[doc = "0: The HPD value to the HDCP 2.2 external interface comes from the PHY as in phy_stat0.HPD."]
     B0 = 0,
     #[doc = "1: The HPD value to the HDCP 2.2 external interface comes from hpd_ovr_val bit field."]
     B1 = 1,
@@ -186,7 +190,7 @@ impl HpdOvrEnR {
             true => HpdOvrEn::B1,
         }
     }
-    #[doc = "The HPD value to the HDCP 2.2 external interface comes from hpd_ovr_val bit field."]
+    #[doc = "The HPD value to the HDCP 2.2 external interface comes from the PHY as in phy_stat0.HPD."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == HpdOvrEn::B0
@@ -203,7 +207,7 @@ impl<'a, REG> HpdOvrEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "The HPD value to the HDCP 2.2 external interface comes from hpd_ovr_val bit field."]
+    #[doc = "The HPD value to the HDCP 2.2 external interface comes from the PHY as in phy_stat0.HPD."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(HpdOvrEn::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "HPD Override Value\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HpdOvrVal {
-    #[doc = "0: If hpd_ovr_en is 1'b1 the HPD value to the HDCP 2.2 external interface is set to 1'b1."]
+    #[doc = "0: If hpd_ovr_en is 1'b1 the HPD value to the HDCP 2.2 external interface is set to 1'b0."]
     B0 = 0,
     #[doc = "1: If hpd_ovr_en is 1'b1 the HPD value to the HDCP 2.2 external interface is set to 1'b1."]
     B1 = 1,
@@ -239,7 +244,7 @@ impl HpdOvrValR {
             true => HpdOvrVal::B1,
         }
     }
-    #[doc = "If hpd_ovr_en is 1'b1 the HPD value to the HDCP 2.2 external interface is set to 1'b1."]
+    #[doc = "If hpd_ovr_en is 1'b1 the HPD value to the HDCP 2.2 external interface is set to 1'b0."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == HpdOvrVal::B0
@@ -256,7 +261,7 @@ impl<'a, REG> HpdOvrValW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "If hpd_ovr_en is 1'b1 the HPD value to the HDCP 2.2 external interface is set to 1'b1."]
+    #[doc = "If hpd_ovr_en is 1'b1 the HPD value to the HDCP 2.2 external interface is set to 1'b0."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(HpdOvrVal::B0)
@@ -326,7 +331,7 @@ impl W {
         HpdOvrValW::new(self, 5)
     }
 }
-#[doc = "HDCP 2.2 switch lock 1'b0: Enables you to change the direction of the HDCP 2.2 versus 1.4 switch by using the hdcp22_ovr_en and hdcp22_ovr_val. 1'b1: You can still write to hdcp22_ovr_en and hdcp22_ovr_val but has no effect over the HDCP 2.2 versus 1.4 switch, that keeps as it was configured by hdcp22_ovr_en and hdcp22_ovr_val at the time the 1'b1 was written to this bit field. Once you set the value to 1'b1, you can change the value back to 1'b0 only by issuing a master reset to the Hdmi_tx.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hdcp22reg_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hdcp22reg_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "HDCP 2.2 Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hdcp22reg_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hdcp22reg_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Hdcp22regCtrlSpec;
 impl crate::RegisterSpec for Hdcp22regCtrlSpec {
     type Ux = u8;

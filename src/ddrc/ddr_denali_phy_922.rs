@@ -2,7 +2,7 @@
 pub type R = crate::R<DdrDenaliPhy922Spec>;
 #[doc = "Register `DDR_DENALI_PHY_922` writer"]
 pub type W = crate::W<DdrDenaliPhy922Spec>;
-#[doc = "Field `PHY_PLL_OBS_3` reader - PHY TOP level clock PLL_3 observe values. READ-ONLY"]
+#[doc = "Field `PHY_PLL_OBS_3` reader - PHY TOP level clock PLL_3 observe values."]
 pub type PhyPllObs3R = crate::FieldReader<u16>;
 #[doc = "Field `PHY_PLL_TESTOUT_SEL` reader - PHY PLL testout select."]
 pub type PhyPllTestoutSelR = crate::FieldReader;
@@ -13,7 +13,7 @@ pub type PhyTcksreWaitR = crate::FieldReader;
 #[doc = "Field `PHY_TCKSRE_WAIT` writer - Specifies the number of cycles the PHY should wait before turning off the PLL for a deep sleep or DFS event."]
 pub type PhyTcksreWaitW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
-    #[doc = "Bits 0:15 - PHY TOP level clock PLL_3 observe values. READ-ONLY"]
+    #[doc = "Bits 0:15 - PHY TOP level clock PLL_3 observe values."]
     #[inline(always)]
     pub fn phy_pll_obs_3(&self) -> PhyPllObs3R {
         PhyPllObs3R::new((self.bits & 0xffff) as u16)

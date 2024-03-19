@@ -2,27 +2,27 @@
 pub type R = crate::R<UartRbrSpec>;
 #[doc = "Register `UART_RBR` writer"]
 pub type W = crate::W<UartRbrSpec>;
-#[doc = "Field `DATA_INPUT` reader - Data byte received on the serial input port (sin) in UART mode, or the serial infrared input (sir_in) in infrared mode. The data in this register is valid only if the Data Ready (DR) bit in the Line Status Register (LCR) is set. If in non-FIFO mode (FIFO_MODE == NONE) or FIFOs are disabled (FCR\\[0\\]
-set to zero), the data in the RBR must be read before the next data arrives, otherwise it is overwritten, resulting in an over-run error. If in FIFO mode (FIFO_MODE != NONE) and FIFOs are enabled (FCR\\[0\\]
-set to one), this register accesses the head of the receive FIFO. If the receive FIFO is full and this register is not read before the next data character arrives, then the data already in the FIFO is preserved, but any incoming data are lost and an over-run error occurs."]
+#[doc = "Field `DATA_INPUT` reader - Data byte received on the serial input port (sin) in UART mode, or\n\nthe serial infrared input (sir_in) in infrared mode. The data in this\n\nregister is valid only if the Data Ready (DR) bit in the Line Status\n\nRegister (LCR) is set.\n\nIf in non-FIFO mode (FIFO_MODE == NONE) or FIFOs are\n\ndisabled (FCR\\[0\\]
+set to zero), the data in the RBR must be read\n\nbefore the next data arrives, otherwise it is overwritten, resulting\n\nin an over-run error.\n\nIf in FIFO mode (FIFO_MODE != NONE) and FIFOs are enabled\n\n(FCR\\[0\\]
+set to one), this register accesses the head of the receive\n\nFIFO.\n\nIf the receive FIFO is full and this register is not read before the\n\nnext data character arrives, then the data already in the FIFO is\n\npreserved, but any incoming data are lost and an\n\nover-run error occurs."]
 pub type DataInputR = crate::FieldReader;
-#[doc = "Field `DATA_INPUT` writer - Data byte received on the serial input port (sin) in UART mode, or the serial infrared input (sir_in) in infrared mode. The data in this register is valid only if the Data Ready (DR) bit in the Line Status Register (LCR) is set. If in non-FIFO mode (FIFO_MODE == NONE) or FIFOs are disabled (FCR\\[0\\]
-set to zero), the data in the RBR must be read before the next data arrives, otherwise it is overwritten, resulting in an over-run error. If in FIFO mode (FIFO_MODE != NONE) and FIFOs are enabled (FCR\\[0\\]
-set to one), this register accesses the head of the receive FIFO. If the receive FIFO is full and this register is not read before the next data character arrives, then the data already in the FIFO is preserved, but any incoming data are lost and an over-run error occurs."]
+#[doc = "Field `DATA_INPUT` writer - Data byte received on the serial input port (sin) in UART mode, or\n\nthe serial infrared input (sir_in) in infrared mode. The data in this\n\nregister is valid only if the Data Ready (DR) bit in the Line Status\n\nRegister (LCR) is set.\n\nIf in non-FIFO mode (FIFO_MODE == NONE) or FIFOs are\n\ndisabled (FCR\\[0\\]
+set to zero), the data in the RBR must be read\n\nbefore the next data arrives, otherwise it is overwritten, resulting\n\nin an over-run error.\n\nIf in FIFO mode (FIFO_MODE != NONE) and FIFOs are enabled\n\n(FCR\\[0\\]
+set to one), this register accesses the head of the receive\n\nFIFO.\n\nIf the receive FIFO is full and this register is not read before the\n\nnext data character arrives, then the data already in the FIFO is\n\npreserved, but any incoming data are lost and an\n\nover-run error occurs."]
 pub type DataInputW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - Data byte received on the serial input port (sin) in UART mode, or the serial infrared input (sir_in) in infrared mode. The data in this register is valid only if the Data Ready (DR) bit in the Line Status Register (LCR) is set. If in non-FIFO mode (FIFO_MODE == NONE) or FIFOs are disabled (FCR\\[0\\]
-set to zero), the data in the RBR must be read before the next data arrives, otherwise it is overwritten, resulting in an over-run error. If in FIFO mode (FIFO_MODE != NONE) and FIFOs are enabled (FCR\\[0\\]
-set to one), this register accesses the head of the receive FIFO. If the receive FIFO is full and this register is not read before the next data character arrives, then the data already in the FIFO is preserved, but any incoming data are lost and an over-run error occurs."]
+    #[doc = "Bits 0:7 - Data byte received on the serial input port (sin) in UART mode, or\n\nthe serial infrared input (sir_in) in infrared mode. The data in this\n\nregister is valid only if the Data Ready (DR) bit in the Line Status\n\nRegister (LCR) is set.\n\nIf in non-FIFO mode (FIFO_MODE == NONE) or FIFOs are\n\ndisabled (FCR\\[0\\]
+set to zero), the data in the RBR must be read\n\nbefore the next data arrives, otherwise it is overwritten, resulting\n\nin an over-run error.\n\nIf in FIFO mode (FIFO_MODE != NONE) and FIFOs are enabled\n\n(FCR\\[0\\]
+set to one), this register accesses the head of the receive\n\nFIFO.\n\nIf the receive FIFO is full and this register is not read before the\n\nnext data character arrives, then the data already in the FIFO is\n\npreserved, but any incoming data are lost and an\n\nover-run error occurs."]
     #[inline(always)]
     pub fn data_input(&self) -> DataInputR {
         DataInputR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Data byte received on the serial input port (sin) in UART mode, or the serial infrared input (sir_in) in infrared mode. The data in this register is valid only if the Data Ready (DR) bit in the Line Status Register (LCR) is set. If in non-FIFO mode (FIFO_MODE == NONE) or FIFOs are disabled (FCR\\[0\\]
-set to zero), the data in the RBR must be read before the next data arrives, otherwise it is overwritten, resulting in an over-run error. If in FIFO mode (FIFO_MODE != NONE) and FIFOs are enabled (FCR\\[0\\]
-set to one), this register accesses the head of the receive FIFO. If the receive FIFO is full and this register is not read before the next data character arrives, then the data already in the FIFO is preserved, but any incoming data are lost and an over-run error occurs."]
+    #[doc = "Bits 0:7 - Data byte received on the serial input port (sin) in UART mode, or\n\nthe serial infrared input (sir_in) in infrared mode. The data in this\n\nregister is valid only if the Data Ready (DR) bit in the Line Status\n\nRegister (LCR) is set.\n\nIf in non-FIFO mode (FIFO_MODE == NONE) or FIFOs are\n\ndisabled (FCR\\[0\\]
+set to zero), the data in the RBR must be read\n\nbefore the next data arrives, otherwise it is overwritten, resulting\n\nin an over-run error.\n\nIf in FIFO mode (FIFO_MODE != NONE) and FIFOs are enabled\n\n(FCR\\[0\\]
+set to one), this register accesses the head of the receive\n\nFIFO.\n\nIf the receive FIFO is full and this register is not read before the\n\nnext data character arrives, then the data already in the FIFO is\n\npreserved, but any incoming data are lost and an\n\nover-run error occurs."]
     #[inline(always)]
     #[must_use]
     pub fn data_input(&mut self) -> DataInputW<UartRbrSpec> {

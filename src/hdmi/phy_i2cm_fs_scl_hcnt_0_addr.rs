@@ -2,19 +2,19 @@
 pub type R = crate::R<PhyI2cmFsSclHcnt0AddrSpec>;
 #[doc = "Register `PHY_I2CM_FS_SCL_HCNT_0_ADDR` writer"]
 pub type W = crate::W<PhyI2cmFsSclHcnt0AddrSpec>;
-#[doc = "Field `I2CMP_FS_SCL_HCNT0` reader - PHY I2C Fast Speed SCL High Level Control Register 0"]
+#[doc = "Field `I2CMP_FS_SCL_HCNT0` reader - PHY I2C Fast Speed SCL High Level Control Register\n\n0"]
 pub type I2cmpFsSclHcnt0R = crate::FieldReader;
-#[doc = "Field `I2CMP_FS_SCL_HCNT0` writer - PHY I2C Fast Speed SCL High Level Control Register 0"]
+#[doc = "Field `I2CMP_FS_SCL_HCNT0` writer - PHY I2C Fast Speed SCL High Level Control Register\n\n0"]
 pub type I2cmpFsSclHcnt0W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - PHY I2C Fast Speed SCL High Level Control Register 0"]
+    #[doc = "Bits 0:7 - PHY I2C Fast Speed SCL High Level Control Register\n\n0"]
     #[inline(always)]
     pub fn i2cmp_fs_scl_hcnt0(&self) -> I2cmpFsSclHcnt0R {
         I2cmpFsSclHcnt0R::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - PHY I2C Fast Speed SCL High Level Control Register 0"]
+    #[doc = "Bits 0:7 - PHY I2C Fast Speed SCL High Level Control Register\n\n0"]
     #[inline(always)]
     #[must_use]
     pub fn i2cmp_fs_scl_hcnt0(&mut self) -> I2cmpFsSclHcnt0W<PhyI2cmFsSclHcnt0AddrSpec> {

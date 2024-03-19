@@ -2,19 +2,19 @@
 pub type R = crate::R<SpdifSdblrSpec>;
 #[doc = "Register `SPDIF_SDBLR` writer"]
 pub type W = crate::W<SpdifSdblrSpec>;
-#[doc = "Field `SDBLR` reader - Sample Date Buffer Level Register Contains the number of valid data entries in the sample data buffer."]
+#[doc = "Field `SDBLR` reader - Sample Date Buffer Level Register\n\nContains the number of valid data entries in the sample data\n\nbuffer."]
 pub type SdblrR = crate::FieldReader;
-#[doc = "Field `SDBLR` writer - Sample Date Buffer Level Register Contains the number of valid data entries in the sample data buffer."]
+#[doc = "Field `SDBLR` writer - Sample Date Buffer Level Register\n\nContains the number of valid data entries in the sample data\n\nbuffer."]
 pub type SdblrW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
-    #[doc = "Bits 0:5 - Sample Date Buffer Level Register Contains the number of valid data entries in the sample data buffer."]
+    #[doc = "Bits 0:5 - Sample Date Buffer Level Register\n\nContains the number of valid data entries in the sample data\n\nbuffer."]
     #[inline(always)]
     pub fn sdblr(&self) -> SdblrR {
         SdblrR::new((self.bits & 0x3f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:5 - Sample Date Buffer Level Register Contains the number of valid data entries in the sample data buffer."]
+    #[doc = "Bits 0:5 - Sample Date Buffer Level Register\n\nContains the number of valid data entries in the sample data\n\nbuffer."]
     #[inline(always)]
     #[must_use]
     pub fn sdblr(&mut self) -> SdblrW<SpdifSdblrSpec> {

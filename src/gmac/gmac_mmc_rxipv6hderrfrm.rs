@@ -2,19 +2,19 @@
 pub type R = crate::R<GmacMmcRxipv6hderrfrmSpec>;
 #[doc = "Register `GMAC_MMC_RXIPV6HDERRFRM` writer"]
 pub type W = crate::W<GmacMmcRxipv6hderrfrmSpec>;
-#[doc = "Field `RXIPV6_HDRERR_FRMS` reader - Number of IPv6 datagrams received with header errors (length or version mismatch)."]
+#[doc = "Field `RXIPV6_HDRERR_FRMS` reader - Number of IPv6 datagrams received with header errors (length or\n\nversion mismatch)."]
 pub type Rxipv6HdrerrFrmsR = crate::FieldReader<u32>;
-#[doc = "Field `RXIPV6_HDRERR_FRMS` writer - Number of IPv6 datagrams received with header errors (length or version mismatch)."]
+#[doc = "Field `RXIPV6_HDRERR_FRMS` writer - Number of IPv6 datagrams received with header errors (length or\n\nversion mismatch)."]
 pub type Rxipv6HdrerrFrmsW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Number of IPv6 datagrams received with header errors (length or version mismatch)."]
+    #[doc = "Bits 0:31 - Number of IPv6 datagrams received with header errors (length or\n\nversion mismatch)."]
     #[inline(always)]
     pub fn rxipv6_hdrerr_frms(&self) -> Rxipv6HdrerrFrmsR {
         Rxipv6HdrerrFrmsR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Number of IPv6 datagrams received with header errors (length or version mismatch)."]
+    #[doc = "Bits 0:31 - Number of IPv6 datagrams received with header errors (length or\n\nversion mismatch)."]
     #[inline(always)]
     #[must_use]
     pub fn rxipv6_hdrerr_frms(&mut self) -> Rxipv6HdrerrFrmsW<GmacMmcRxipv6hderrfrmSpec> {

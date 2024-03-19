@@ -2,19 +2,19 @@
 pub type R = crate::R<IfPktDbSpec>;
 #[doc = "Register `IF_PKT_DB%s` writer"]
 pub type W = crate::W<IfPktDbSpec>;
-#[doc = "Field `IF_PKT_DB1_IF_PKT_DB25` reader - InfoFrame Packet Data Byte 1 ~ 25. The registers define the data in the InfoFrame and the InfoFrame type is defined by IF_TYPE."]
+#[doc = "Field `IF_PKT_DB1_IF_PKT_DB25` reader - InfoFrame Packet Data Byte 1 ~ 25. The \n\nregisters define the data in the InfoFrame and \n\nthe InfoFrame type is defined by IF_TYPE."]
 pub type IfPktDb1IfPktDb25R = crate::FieldReader;
-#[doc = "Field `IF_PKT_DB1_IF_PKT_DB25` writer - InfoFrame Packet Data Byte 1 ~ 25. The registers define the data in the InfoFrame and the InfoFrame type is defined by IF_TYPE."]
+#[doc = "Field `IF_PKT_DB1_IF_PKT_DB25` writer - InfoFrame Packet Data Byte 1 ~ 25. The \n\nregisters define the data in the InfoFrame and \n\nthe InfoFrame type is defined by IF_TYPE."]
 pub type IfPktDb1IfPktDb25W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - InfoFrame Packet Data Byte 1 ~ 25. The registers define the data in the InfoFrame and the InfoFrame type is defined by IF_TYPE."]
+    #[doc = "Bits 0:7 - InfoFrame Packet Data Byte 1 ~ 25. The \n\nregisters define the data in the InfoFrame and \n\nthe InfoFrame type is defined by IF_TYPE."]
     #[inline(always)]
     pub fn if_pkt_db1_if_pkt_db25(&self) -> IfPktDb1IfPktDb25R {
         IfPktDb1IfPktDb25R::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - InfoFrame Packet Data Byte 1 ~ 25. The registers define the data in the InfoFrame and the InfoFrame type is defined by IF_TYPE."]
+    #[doc = "Bits 0:7 - InfoFrame Packet Data Byte 1 ~ 25. The \n\nregisters define the data in the InfoFrame and \n\nthe InfoFrame type is defined by IF_TYPE."]
     #[inline(always)]
     #[must_use]
     pub fn if_pkt_db1_if_pkt_db25(&mut self) -> IfPktDb1IfPktDb25W<IfPktDbSpec> {

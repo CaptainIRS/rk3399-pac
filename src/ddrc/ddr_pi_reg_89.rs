@@ -2,24 +2,24 @@
 pub type R = crate::R<DdrPiReg89Spec>;
 #[doc = "Register `DDR_PI_REG_89` writer"]
 pub type W = crate::W<DdrPiReg89Spec>;
-#[doc = "Field `PI_RD_PREAMBLE_TRAINING_EN` reader - Enables read preamble training during data eye training. Set to 1 to enable."]
+#[doc = "Field `PI_RD_PREAMBLE_TRAINING_EN` reader - Enables read preamble training during data eye training. Set to 1 to\n\nenable."]
 pub type PiRdPreambleTrainingEnR = crate::BitReader;
-#[doc = "Field `PI_RD_PREAMBLE_TRAINING_EN` writer - Enables read preamble training during data eye training. Set to 1 to enable."]
+#[doc = "Field `PI_RD_PREAMBLE_TRAINING_EN` writer - Enables read preamble training during data eye training. Set to 1 to\n\nenable."]
 pub type PiRdPreambleTrainingEnW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PI_REG_DIMM_ENABLE` reader - Enables registered DIMM operation. Set to 1 to enable."]
 pub type PiRegDimmEnableR = crate::BitReader;
 #[doc = "Field `PI_REG_DIMM_ENABLE` writer - Enables registered DIMM operation. Set to 1 to enable."]
 pub type PiRegDimmEnableW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PI_RDLVL_ADJ_F0` reader - Indicates the adjustment value for PHY read timing. The suffix \"_f0\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_RDLVL_ADJ_F0` reader - Indicates the adjustment value for PHY read timing. The suffix \"_f0\"\n\nof the parameter name is omitted when in non-DFS mode."]
 pub type PiRdlvlAdjF0R = crate::FieldReader;
-#[doc = "Field `PI_RDLVL_ADJ_F0` writer - Indicates the adjustment value for PHY read timing. The suffix \"_f0\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_RDLVL_ADJ_F0` writer - Indicates the adjustment value for PHY read timing. The suffix \"_f0\"\n\nof the parameter name is omitted when in non-DFS mode."]
 pub type PiRdlvlAdjF0W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-#[doc = "Field `PI_RDLVL_ADJ_F1` reader - Indicates the adjustment value for PHY read timing. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_RDLVL_ADJ_F1` reader - Indicates the adjustment value for PHY read timing. The suffix \"_f1\"\n\nof the parameter name is omitted when in non-DFS mode."]
 pub type PiRdlvlAdjF1R = crate::FieldReader;
-#[doc = "Field `PI_RDLVL_ADJ_F1` writer - Indicates the adjustment value for PHY read timing. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_RDLVL_ADJ_F1` writer - Indicates the adjustment value for PHY read timing. The suffix \"_f1\"\n\nof the parameter name is omitted when in non-DFS mode."]
 pub type PiRdlvlAdjF1W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bit 0 - Enables read preamble training during data eye training. Set to 1 to enable."]
+    #[doc = "Bit 0 - Enables read preamble training during data eye training. Set to 1 to\n\nenable."]
     #[inline(always)]
     pub fn pi_rd_preamble_training_en(&self) -> PiRdPreambleTrainingEnR {
         PiRdPreambleTrainingEnR::new((self.bits & 1) != 0)
@@ -29,19 +29,19 @@ impl R {
     pub fn pi_reg_dimm_enable(&self) -> PiRegDimmEnableR {
         PiRegDimmEnableR::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bits 16:23 - Indicates the adjustment value for PHY read timing. The suffix \"_f0\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 16:23 - Indicates the adjustment value for PHY read timing. The suffix \"_f0\"\n\nof the parameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_rdlvl_adj_f0(&self) -> PiRdlvlAdjF0R {
         PiRdlvlAdjF0R::new(((self.bits >> 16) & 0xff) as u8)
     }
-    #[doc = "Bits 24:31 - Indicates the adjustment value for PHY read timing. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 24:31 - Indicates the adjustment value for PHY read timing. The suffix \"_f1\"\n\nof the parameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_rdlvl_adj_f1(&self) -> PiRdlvlAdjF1R {
         PiRdlvlAdjF1R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Enables read preamble training during data eye training. Set to 1 to enable."]
+    #[doc = "Bit 0 - Enables read preamble training during data eye training. Set to 1 to\n\nenable."]
     #[inline(always)]
     #[must_use]
     pub fn pi_rd_preamble_training_en(&mut self) -> PiRdPreambleTrainingEnW<DdrPiReg89Spec> {
@@ -53,13 +53,13 @@ impl W {
     pub fn pi_reg_dimm_enable(&mut self) -> PiRegDimmEnableW<DdrPiReg89Spec> {
         PiRegDimmEnableW::new(self, 8)
     }
-    #[doc = "Bits 16:23 - Indicates the adjustment value for PHY read timing. The suffix \"_f0\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 16:23 - Indicates the adjustment value for PHY read timing. The suffix \"_f0\"\n\nof the parameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_rdlvl_adj_f0(&mut self) -> PiRdlvlAdjF0W<DdrPiReg89Spec> {
         PiRdlvlAdjF0W::new(self, 16)
     }
-    #[doc = "Bits 24:31 - Indicates the adjustment value for PHY read timing. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 24:31 - Indicates the adjustment value for PHY read timing. The suffix \"_f1\"\n\nof the parameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_rdlvl_adj_f1(&mut self) -> PiRdlvlAdjF1W<DdrPiReg89Spec> {

@@ -3,9 +3,10 @@ pub type R = crate::R<AnalogCtl49Spec>;
 #[doc = "Register `ANALOG_CTL_49` writer"]
 pub type W = crate::W<AnalogCtl49Spec>;
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RForceCh2Pc2 {
-    #[doc = "1: The result of ch2 swing bit is decide by different V_diff and Pre_emphasis"]
+    #[doc = "1: The result of ch2 pc2 bit is decide by R_CH1_PC2_FORCE_VALUE value"]
     H1 = 1,
     #[doc = "0: The result of ch2 swing bit is decide by different V_diff and Pre_emphasis"]
     H0 = 0,
@@ -27,7 +28,7 @@ impl RForceCh2Pc2R {
             false => RForceCh2Pc2::H0,
         }
     }
-    #[doc = "The result of ch2 swing bit is decide by different V_diff and Pre_emphasis"]
+    #[doc = "The result of ch2 pc2 bit is decide by R_CH1_PC2_FORCE_VALUE value"]
     #[inline(always)]
     pub fn is_h1(&self) -> bool {
         *self == RForceCh2Pc2::H1
@@ -44,7 +45,7 @@ impl<'a, REG> RForceCh2Pc2W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "The result of ch2 swing bit is decide by different V_diff and Pre_emphasis"]
+    #[doc = "The result of ch2 pc2 bit is decide by R_CH1_PC2_FORCE_VALUE value"]
     #[inline(always)]
     pub fn h1(self) -> &'a mut crate::W<REG> {
         self.variant(RForceCh2Pc2::H1)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RForceCh2Emp {
-    #[doc = "1: The result of ch2 swing bit is decide by different V_diff and Pre_emphasis"]
+    #[doc = "1: The result of ch2 pre emphasis bit is decide by R_CH1_EMP_FORCE_VALUE value"]
     H1 = 1,
     #[doc = "0: The result of ch2 swing bit is decide by different V_diff and Pre_emphasis"]
     H0 = 0,
@@ -80,7 +82,7 @@ impl RForceCh2EmpR {
             false => RForceCh2Emp::H0,
         }
     }
-    #[doc = "The result of ch2 swing bit is decide by different V_diff and Pre_emphasis"]
+    #[doc = "The result of ch2 pre emphasis bit is decide by R_CH1_EMP_FORCE_VALUE value"]
     #[inline(always)]
     pub fn is_h1(&self) -> bool {
         *self == RForceCh2Emp::H1
@@ -97,7 +99,7 @@ impl<'a, REG> RForceCh2EmpW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "The result of ch2 swing bit is decide by different V_diff and Pre_emphasis"]
+    #[doc = "The result of ch2 pre emphasis bit is decide by R_CH1_EMP_FORCE_VALUE value"]
     #[inline(always)]
     pub fn h1(self) -> &'a mut crate::W<REG> {
         self.variant(RForceCh2Emp::H1)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RForceCh2Amp {
-    #[doc = "1: The result of ch2 swing bit is decide by different V_diff and Pre_emphasis"]
+    #[doc = "1: The result of ch2 swing bit is decide by R_CH1_AMP_FORCE_VALUE value"]
     H1 = 1,
     #[doc = "0: The result of ch2 swing bit is decide by different V_diff and Pre_emphasis"]
     H0 = 0,
@@ -133,7 +136,7 @@ impl RForceCh2AmpR {
             false => RForceCh2Amp::H0,
         }
     }
-    #[doc = "The result of ch2 swing bit is decide by different V_diff and Pre_emphasis"]
+    #[doc = "The result of ch2 swing bit is decide by R_CH1_AMP_FORCE_VALUE value"]
     #[inline(always)]
     pub fn is_h1(&self) -> bool {
         *self == RForceCh2Amp::H1
@@ -150,7 +153,7 @@ impl<'a, REG> RForceCh2AmpW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "The result of ch2 swing bit is decide by different V_diff and Pre_emphasis"]
+    #[doc = "The result of ch2 swing bit is decide by R_CH1_AMP_FORCE_VALUE value"]
     #[inline(always)]
     pub fn h1(self) -> &'a mut crate::W<REG> {
         self.variant(RForceCh2Amp::H1)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RForceCh3Pc2 {
-    #[doc = "1: The result of ch3 swing bit is decide by different V_diff and Pre_emphasis"]
+    #[doc = "1: The result of ch3 pc2 bit is decide by R_CH1_PC2_FORCE_VALUE value"]
     H1 = 1,
     #[doc = "0: The result of ch3 swing bit is decide by different V_diff and Pre_emphasis"]
     H0 = 0,
@@ -186,7 +190,7 @@ impl RForceCh3Pc2R {
             false => RForceCh3Pc2::H0,
         }
     }
-    #[doc = "The result of ch3 swing bit is decide by different V_diff and Pre_emphasis"]
+    #[doc = "The result of ch3 pc2 bit is decide by R_CH1_PC2_FORCE_VALUE value"]
     #[inline(always)]
     pub fn is_h1(&self) -> bool {
         *self == RForceCh3Pc2::H1
@@ -203,7 +207,7 @@ impl<'a, REG> RForceCh3Pc2W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "The result of ch3 swing bit is decide by different V_diff and Pre_emphasis"]
+    #[doc = "The result of ch3 pc2 bit is decide by R_CH1_PC2_FORCE_VALUE value"]
     #[inline(always)]
     pub fn h1(self) -> &'a mut crate::W<REG> {
         self.variant(RForceCh3Pc2::H1)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RForceCh3Emp {
-    #[doc = "1: The result of ch3 swing bit is decide by different V_diff and Pre_emphasis"]
+    #[doc = "1: The result of ch3 pre emphasis bit is decide by R_CH1_EMP_FORCE_VALUE value"]
     H1 = 1,
     #[doc = "0: The result of ch3 swing bit is decide by different V_diff and Pre_emphasis"]
     H0 = 0,
@@ -239,7 +244,7 @@ impl RForceCh3EmpR {
             false => RForceCh3Emp::H0,
         }
     }
-    #[doc = "The result of ch3 swing bit is decide by different V_diff and Pre_emphasis"]
+    #[doc = "The result of ch3 pre emphasis bit is decide by R_CH1_EMP_FORCE_VALUE value"]
     #[inline(always)]
     pub fn is_h1(&self) -> bool {
         *self == RForceCh3Emp::H1
@@ -256,7 +261,7 @@ impl<'a, REG> RForceCh3EmpW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "The result of ch3 swing bit is decide by different V_diff and Pre_emphasis"]
+    #[doc = "The result of ch3 pre emphasis bit is decide by R_CH1_EMP_FORCE_VALUE value"]
     #[inline(always)]
     pub fn h1(self) -> &'a mut crate::W<REG> {
         self.variant(RForceCh3Emp::H1)
@@ -268,9 +273,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RForceCh3Amp {
-    #[doc = "1: The result of ch3 swing bit is decide by different V_diff and Pre_emphasis"]
+    #[doc = "1: The result of ch3 swing bit is decide by R_CH1_AMP_FORCE_VALUE value"]
     H1 = 1,
     #[doc = "0: The result of ch3 swing bit is decide by different V_diff and Pre_emphasis"]
     H0 = 0,
@@ -292,7 +298,7 @@ impl RForceCh3AmpR {
             false => RForceCh3Amp::H0,
         }
     }
-    #[doc = "The result of ch3 swing bit is decide by different V_diff and Pre_emphasis"]
+    #[doc = "The result of ch3 swing bit is decide by R_CH1_AMP_FORCE_VALUE value"]
     #[inline(always)]
     pub fn is_h1(&self) -> bool {
         *self == RForceCh3Amp::H1
@@ -309,7 +315,7 @@ impl<'a, REG> RForceCh3AmpW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "The result of ch3 swing bit is decide by different V_diff and Pre_emphasis"]
+    #[doc = "The result of ch3 swing bit is decide by R_CH1_AMP_FORCE_VALUE value"]
     #[inline(always)]
     pub fn h1(self) -> &'a mut crate::W<REG> {
         self.variant(RForceCh3Amp::H1)

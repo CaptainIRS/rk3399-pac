@@ -1,13 +1,13 @@
 #[doc = "Register `DMAC_FSRC` reader"]
 pub type R = crate::R<DmacFsrcSpec>;
-#[doc = "Field `DMAC_FSRC_BITS_0` reader - Each bit provides the fault status of the corresponding channel. Read as: Bit \\[N\\]
-= 0 No fault is present on DMA channel N. Bit \\[N\\]
-= 1 DMA channel N is in the Faulting or Faulting completing state."]
+#[doc = "Field `DMAC_FSRC_BITS_0` reader - Each bit provides the fault status of the corresponding channel.\n\nRead as:\n\nBit \\[N\\]
+= 0 No fault is present on DMA channel N.\n\nBit \\[N\\]
+= 1 DMA channel N is in the Faulting or Faulting completing\n\nstate."]
 pub type DmacFsrcBits0R = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Each bit provides the fault status of the corresponding channel. Read as: Bit \\[N\\]
-= 0 No fault is present on DMA channel N. Bit \\[N\\]
-= 1 DMA channel N is in the Faulting or Faulting completing state."]
+    #[doc = "Bits 0:31 - Each bit provides the fault status of the corresponding channel.\n\nRead as:\n\nBit \\[N\\]
+= 0 No fault is present on DMA channel N.\n\nBit \\[N\\]
+= 1 DMA channel N is in the Faulting or Faulting completing\n\nstate."]
     #[inline(always)]
     pub fn dmac_fsrc_bits_0(&self) -> DmacFsrcBits0R {
         DmacFsrcBits0R::new(self.bits)

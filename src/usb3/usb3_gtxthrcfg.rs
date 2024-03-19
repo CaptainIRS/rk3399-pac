@@ -2,18 +2,19 @@
 pub type R = crate::R<Usb3GtxthrcfgSpec>;
 #[doc = "Register `USB3_GTXTHRCFG` writer"]
 pub type W = crate::W<Usb3GtxthrcfgSpec>;
-#[doc = "Field `USBMAXTXBURSTSIZE` reader - USB Maximum TX Burst Size When USBTxPktCntSel is 1, this field specifies the Maximum Bulk OUT burst the core can execute. When the system bus is slower than the USB, TX FIFO can underrun during a long burst. You can program a smaller value to this field to limit the TX burst size that the core can execute. It only applies to SS Bulk, Isochronous, and Interrupt OUT endpoints in the host mode. Valid values are from 1 to 16."]
+#[doc = "Field `USBMAXTXBURSTSIZE` reader - USB Maximum TX Burst Size\n\nWhen USBTxPktCntSel is 1, this field specifies the Maximum Bulk\n\nOUT burst the core can execute. When the system bus is slower\n\nthan the USB, TX FIFO can underrun during a long burst.\n\nYou can program a smaller value to this field to limit the TX burst\n\nsize that the core can execute.\n\nIt only applies to SS Bulk, Isochronous, and Interrupt OUT\n\nendpoints in the host mode. Valid values are from 1 to 16."]
 pub type UsbmaxtxburstsizeR = crate::FieldReader;
-#[doc = "Field `USBMAXTXBURSTSIZE` writer - USB Maximum TX Burst Size When USBTxPktCntSel is 1, this field specifies the Maximum Bulk OUT burst the core can execute. When the system bus is slower than the USB, TX FIFO can underrun during a long burst. You can program a smaller value to this field to limit the TX burst size that the core can execute. It only applies to SS Bulk, Isochronous, and Interrupt OUT endpoints in the host mode. Valid values are from 1 to 16."]
+#[doc = "Field `USBMAXTXBURSTSIZE` writer - USB Maximum TX Burst Size\n\nWhen USBTxPktCntSel is 1, this field specifies the Maximum Bulk\n\nOUT burst the core can execute. When the system bus is slower\n\nthan the USB, TX FIFO can underrun during a long burst.\n\nYou can program a smaller value to this field to limit the TX burst\n\nsize that the core can execute.\n\nIt only applies to SS Bulk, Isochronous, and Interrupt OUT\n\nendpoints in the host mode. Valid values are from 1 to 16."]
 pub type UsbmaxtxburstsizeW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-#[doc = "Field `USBTXPKTCNT` reader - USB Transmit Packet Count This field specifies the number of packets that must be in the TXFIFO before the core can start transmission for the corresponding USB transaction (burst). This field is only valid when the USB Transmit Packet Count Enable field is set to one. Valid values are from 1 to 15. Note: This field must be less than or equal to the USB Maximum TX Burst Size field."]
+#[doc = "Field `USBTXPKTCNT` reader - USB Transmit Packet Count\n\nThis field specifies the number of packets that must be in the\n\nTXFIFO before the core can start transmission for the\n\ncorresponding USB transaction (burst). This field is only valid\n\nwhen the USB Transmit Packet Count Enable field is set to one.\n\nValid values are from 1 to 15.\n\nNote: This field must be less than or equal to the USB Maximum\n\nTX Burst Size field."]
 pub type UsbtxpktcntR = crate::FieldReader;
-#[doc = "Field `USBTXPKTCNT` writer - USB Transmit Packet Count This field specifies the number of packets that must be in the TXFIFO before the core can start transmission for the corresponding USB transaction (burst). This field is only valid when the USB Transmit Packet Count Enable field is set to one. Valid values are from 1 to 15. Note: This field must be less than or equal to the USB Maximum TX Burst Size field."]
+#[doc = "Field `USBTXPKTCNT` writer - USB Transmit Packet Count\n\nThis field specifies the number of packets that must be in the\n\nTXFIFO before the core can start transmission for the\n\ncorresponding USB transaction (burst). This field is only valid\n\nwhen the USB Transmit Packet Count Enable field is set to one.\n\nValid values are from 1 to 15.\n\nNote: This field must be less than or equal to the USB Maximum\n\nTX Burst Size field."]
 pub type UsbtxpktcntW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-#[doc = "USB Transmit Packet Count Enable This field enables/disables the USB transmission multi-packet thresholding:\n\nValue on reset: 0"]
+#[doc = "USB Transmit Packet Count Enable\n\nThis field enables/disables the USB transmission multi-packet\n\nthresholding:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Usbtxpktcntsel {
-    #[doc = "0: USB transmission multi-packet thresholding is enabled. The core can only start transmission on the USB after USB Transmit Packet Count amount of packets for the USB transaction (burst) are already in the corresponding TXFIFO. This mode is only valid in the host mode. It is only used for SuperSpeed."]
+    #[doc = "0: USB transmission multi-packet thresholding is disabled; the core can only start transmission on the USB after the entire packet has been fetched into the corresponding TXFIFO."]
     B0 = 0,
     #[doc = "1: USB transmission multi-packet thresholding is enabled. The core can only start transmission on the USB after USB Transmit Packet Count amount of packets for the USB transaction (burst) are already in the corresponding TXFIFO. This mode is only valid in the host mode. It is only used for SuperSpeed."]
     B1 = 1,
@@ -24,7 +25,7 @@ impl From<Usbtxpktcntsel> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `USBTXPKTCNTSEL` reader - USB Transmit Packet Count Enable This field enables/disables the USB transmission multi-packet thresholding:"]
+#[doc = "Field `USBTXPKTCNTSEL` reader - USB Transmit Packet Count Enable\n\nThis field enables/disables the USB transmission multi-packet\n\nthresholding:"]
 pub type UsbtxpktcntselR = crate::BitReader<Usbtxpktcntsel>;
 impl UsbtxpktcntselR {
     #[doc = "Get enumerated values variant"]
@@ -35,7 +36,7 @@ impl UsbtxpktcntselR {
             true => Usbtxpktcntsel::B1,
         }
     }
-    #[doc = "USB transmission multi-packet thresholding is enabled. The core can only start transmission on the USB after USB Transmit Packet Count amount of packets for the USB transaction (burst) are already in the corresponding TXFIFO. This mode is only valid in the host mode. It is only used for SuperSpeed."]
+    #[doc = "USB transmission multi-packet thresholding is disabled; the core can only start transmission on the USB after the entire packet has been fetched into the corresponding TXFIFO."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Usbtxpktcntsel::B0
@@ -47,30 +48,30 @@ impl UsbtxpktcntselR {
     }
 }
 impl R {
-    #[doc = "Bits 16:23 - USB Maximum TX Burst Size When USBTxPktCntSel is 1, this field specifies the Maximum Bulk OUT burst the core can execute. When the system bus is slower than the USB, TX FIFO can underrun during a long burst. You can program a smaller value to this field to limit the TX burst size that the core can execute. It only applies to SS Bulk, Isochronous, and Interrupt OUT endpoints in the host mode. Valid values are from 1 to 16."]
+    #[doc = "Bits 16:23 - USB Maximum TX Burst Size\n\nWhen USBTxPktCntSel is 1, this field specifies the Maximum Bulk\n\nOUT burst the core can execute. When the system bus is slower\n\nthan the USB, TX FIFO can underrun during a long burst.\n\nYou can program a smaller value to this field to limit the TX burst\n\nsize that the core can execute.\n\nIt only applies to SS Bulk, Isochronous, and Interrupt OUT\n\nendpoints in the host mode. Valid values are from 1 to 16."]
     #[inline(always)]
     pub fn usbmaxtxburstsize(&self) -> UsbmaxtxburstsizeR {
         UsbmaxtxburstsizeR::new(((self.bits >> 16) & 0xff) as u8)
     }
-    #[doc = "Bits 24:27 - USB Transmit Packet Count This field specifies the number of packets that must be in the TXFIFO before the core can start transmission for the corresponding USB transaction (burst). This field is only valid when the USB Transmit Packet Count Enable field is set to one. Valid values are from 1 to 15. Note: This field must be less than or equal to the USB Maximum TX Burst Size field."]
+    #[doc = "Bits 24:27 - USB Transmit Packet Count\n\nThis field specifies the number of packets that must be in the\n\nTXFIFO before the core can start transmission for the\n\ncorresponding USB transaction (burst). This field is only valid\n\nwhen the USB Transmit Packet Count Enable field is set to one.\n\nValid values are from 1 to 15.\n\nNote: This field must be less than or equal to the USB Maximum\n\nTX Burst Size field."]
     #[inline(always)]
     pub fn usbtxpktcnt(&self) -> UsbtxpktcntR {
         UsbtxpktcntR::new(((self.bits >> 24) & 0x0f) as u8)
     }
-    #[doc = "Bit 29 - USB Transmit Packet Count Enable This field enables/disables the USB transmission multi-packet thresholding:"]
+    #[doc = "Bit 29 - USB Transmit Packet Count Enable\n\nThis field enables/disables the USB transmission multi-packet\n\nthresholding:"]
     #[inline(always)]
     pub fn usbtxpktcntsel(&self) -> UsbtxpktcntselR {
         UsbtxpktcntselR::new(((self.bits >> 29) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 16:23 - USB Maximum TX Burst Size When USBTxPktCntSel is 1, this field specifies the Maximum Bulk OUT burst the core can execute. When the system bus is slower than the USB, TX FIFO can underrun during a long burst. You can program a smaller value to this field to limit the TX burst size that the core can execute. It only applies to SS Bulk, Isochronous, and Interrupt OUT endpoints in the host mode. Valid values are from 1 to 16."]
+    #[doc = "Bits 16:23 - USB Maximum TX Burst Size\n\nWhen USBTxPktCntSel is 1, this field specifies the Maximum Bulk\n\nOUT burst the core can execute. When the system bus is slower\n\nthan the USB, TX FIFO can underrun during a long burst.\n\nYou can program a smaller value to this field to limit the TX burst\n\nsize that the core can execute.\n\nIt only applies to SS Bulk, Isochronous, and Interrupt OUT\n\nendpoints in the host mode. Valid values are from 1 to 16."]
     #[inline(always)]
     #[must_use]
     pub fn usbmaxtxburstsize(&mut self) -> UsbmaxtxburstsizeW<Usb3GtxthrcfgSpec> {
         UsbmaxtxburstsizeW::new(self, 16)
     }
-    #[doc = "Bits 24:27 - USB Transmit Packet Count This field specifies the number of packets that must be in the TXFIFO before the core can start transmission for the corresponding USB transaction (burst). This field is only valid when the USB Transmit Packet Count Enable field is set to one. Valid values are from 1 to 15. Note: This field must be less than or equal to the USB Maximum TX Burst Size field."]
+    #[doc = "Bits 24:27 - USB Transmit Packet Count\n\nThis field specifies the number of packets that must be in the\n\nTXFIFO before the core can start transmission for the\n\ncorresponding USB transaction (burst). This field is only valid\n\nwhen the USB Transmit Packet Count Enable field is set to one.\n\nValid values are from 1 to 15.\n\nNote: This field must be less than or equal to the USB Maximum\n\nTX Burst Size field."]
     #[inline(always)]
     #[must_use]
     pub fn usbtxpktcnt(&mut self) -> UsbtxpktcntW<Usb3GtxthrcfgSpec> {

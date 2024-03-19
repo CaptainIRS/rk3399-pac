@@ -36,7 +36,7 @@ impl W {
         NackMaskW::new(self, 6)
     }
 }
-#[doc = "Arbitration error interrupt mask signal.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`i2cm_ctlint::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`i2cm_ctlint::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "I2C DDC error Interrupt Register\n\nThis register configures the I2C master arbitration lost and not acknowledge error\n\ninterrupts.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`i2cm_ctlint::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`i2cm_ctlint::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct I2cmCtlintSpec;
 impl crate::RegisterSpec for I2cmCtlintSpec {
     type Ux = u8;

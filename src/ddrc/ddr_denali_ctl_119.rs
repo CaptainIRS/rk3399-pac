@@ -1,9 +1,9 @@
 #[doc = "Register `DDR_DENALI_CTL_119` reader"]
 pub type R = crate::R<DdrDenaliCtl119Spec>;
-#[doc = "Field `PERIPHERAL_MRR_DATA` reader - Data and chip returned from memory mode register read requested by the READ_MODEREG parameter. Bits (7:0) indicate the read data and bits (15:8) indicate the chip. READ- ONLY"]
+#[doc = "Field `PERIPHERAL_MRR_DATA` reader - Data and chip returned from memory mode register read requested by the READ_MODEREG parameter. Bits (7:0) indicate the read data and bits (15:8) indicate the chip."]
 pub type PeripheralMrrDataR = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Data and chip returned from memory mode register read requested by the READ_MODEREG parameter. Bits (7:0) indicate the read data and bits (15:8) indicate the chip. READ- ONLY"]
+    #[doc = "Bits 0:31 - Data and chip returned from memory mode register read requested by the READ_MODEREG parameter. Bits (7:0) indicate the read data and bits (15:8) indicate the chip."]
     #[inline(always)]
     pub fn peripheral_mrr_data(&self) -> PeripheralMrrDataR {
         PeripheralMrrDataR::new(self.bits)

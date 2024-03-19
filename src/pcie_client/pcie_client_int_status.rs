@@ -3,9 +3,10 @@ pub type R = crate::R<PcieClientIntStatusSpec>;
 #[doc = "Register `PCIE_CLIENT_INT_STATUS` writer"]
 pub type W = crate::W<PcieClientIntStatusSpec>;
 #[doc = "Power state change interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PwrStcgInt {
-    #[doc = "0: interrupt The core asserts this output when the power state of a Physical or Virtual Function is being changed to the D1 or D3 states by a write into its Power Management Control Register. The core maintains this output high until the client asserts the pwr_stcg_ack input to the core. While interrupt remains high, the core will not return completions for any pending configuration read or write transaction received by the core. The intent is to delay the completion for the configuration write transaction that caused the state change until the client is ready to transition to the low- power state. When interrupt is asserted, the Function number associated with the configuration write transaction is provided on the pwr_stcg_fc_num. When the client asserts pwr_stcg_ack, the new state of the Function that underwent the state change will be reflected on the fc_pwr_st (for PFs) or the vf_pwr_st (for VFs) outputs of the core."]
+    #[doc = "0: no interrupt"]
     B0 = 0,
     #[doc = "1: interrupt The core asserts this output when the power state of a Physical or Virtual Function is being changed to the D1 or D3 states by a write into its Power Management Control Register. The core maintains this output high until the client asserts the pwr_stcg_ack input to the core. While interrupt remains high, the core will not return completions for any pending configuration read or write transaction received by the core. The intent is to delay the completion for the configuration write transaction that caused the state change until the client is ready to transition to the low- power state. When interrupt is asserted, the Function number associated with the configuration write transaction is provided on the pwr_stcg_fc_num. When the client asserts pwr_stcg_ack, the new state of the Function that underwent the state change will be reflected on the fc_pwr_st (for PFs) or the vf_pwr_st (for VFs) outputs of the core."]
     B1 = 1,
@@ -27,7 +28,7 @@ impl PwrStcgIntR {
             true => PwrStcgInt::B1,
         }
     }
-    #[doc = "interrupt The core asserts this output when the power state of a Physical or Virtual Function is being changed to the D1 or D3 states by a write into its Power Management Control Register. The core maintains this output high until the client asserts the pwr_stcg_ack input to the core. While interrupt remains high, the core will not return completions for any pending configuration read or write transaction received by the core. The intent is to delay the completion for the configuration write transaction that caused the state change until the client is ready to transition to the low- power state. When interrupt is asserted, the Function number associated with the configuration write transaction is provided on the pwr_stcg_fc_num. When the client asserts pwr_stcg_ack, the new state of the Function that underwent the state change will be reflected on the fc_pwr_st (for PFs) or the vf_pwr_st (for VFs) outputs of the core."]
+    #[doc = "no interrupt"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PwrStcgInt::B0
@@ -39,9 +40,10 @@ impl PwrStcgIntR {
     }
 }
 #[doc = "Hot plug interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HotPlugInt {
-    #[doc = "0: interrupt Hot Plug Interrupt Output for Software Notification of Hot Plug events. Currently, this interrupt reserved"]
+    #[doc = "0: no interrupt"]
     B0 = 0,
     #[doc = "1: interrupt Hot Plug Interrupt Output for Software Notification of Hot Plug events. Currently, this interrupt reserved"]
     B1 = 1,
@@ -63,7 +65,7 @@ impl HotPlugIntR {
             true => HotPlugInt::B1,
         }
     }
-    #[doc = "interrupt Hot Plug Interrupt Output for Software Notification of Hot Plug events. Currently, this interrupt reserved"]
+    #[doc = "no interrupt"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == HotPlugInt::B0
@@ -75,9 +77,10 @@ impl HotPlugIntR {
     }
 }
 #[doc = "Phy interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PhyInt {
-    #[doc = "0: interrupt This interrupt is used by the core in the RP mode to signal one of the following link training-related events: 1. The link bandwidth changed as a result of the change in the link width or operating speed and the change was initiated locally (not by the link partner), without the link going down. This interrupt is enabled by the Link Bandwidth Management Interrupt Enable bit in the Link Control Register. The status of this interrupt can be read from the Link Bandwidth Management Status bit of the Link Status Register. 2. The link bandwidth changed autonomously as a result of the change in the link width or operating speed and the change was initiated by the remote node. This interrupt is enabled by the Link Autonomous Bandwidth Interrupt Enable bit in the Link Control Register. The status of this interrupt can be read from the Link Autonomous Bandwidth Status bit of the Link Status Register. The phy interrupt is not active when the core is configured as an EndPoint."]
+    #[doc = "0: no interrupt"]
     B0 = 0,
     #[doc = "1: interrupt This interrupt is used by the core in the RP mode to signal one of the following link training-related events: 1. The link bandwidth changed as a result of the change in the link width or operating speed and the change was initiated locally (not by the link partner), without the link going down. This interrupt is enabled by the Link Bandwidth Management Interrupt Enable bit in the Link Control Register. The status of this interrupt can be read from the Link Bandwidth Management Status bit of the Link Status Register. 2. The link bandwidth changed autonomously as a result of the change in the link width or operating speed and the change was initiated by the remote node. This interrupt is enabled by the Link Autonomous Bandwidth Interrupt Enable bit in the Link Control Register. The status of this interrupt can be read from the Link Autonomous Bandwidth Status bit of the Link Status Register. The phy interrupt is not active when the core is configured as an EndPoint."]
     B1 = 1,
@@ -99,7 +102,7 @@ impl PhyIntR {
             true => PhyInt::B1,
         }
     }
-    #[doc = "interrupt This interrupt is used by the core in the RP mode to signal one of the following link training-related events: 1. The link bandwidth changed as a result of the change in the link width or operating speed and the change was initiated locally (not by the link partner), without the link going down. This interrupt is enabled by the Link Bandwidth Management Interrupt Enable bit in the Link Control Register. The status of this interrupt can be read from the Link Bandwidth Management Status bit of the Link Status Register. 2. The link bandwidth changed autonomously as a result of the change in the link width or operating speed and the change was initiated by the remote node. This interrupt is enabled by the Link Autonomous Bandwidth Interrupt Enable bit in the Link Control Register. The status of this interrupt can be read from the Link Autonomous Bandwidth Status bit of the Link Status Register. The phy interrupt is not active when the core is configured as an EndPoint."]
+    #[doc = "no interrupt"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PhyInt::B0
@@ -111,9 +114,10 @@ impl PhyIntR {
     }
 }
 #[doc = "uDMA interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UdmaInt {
-    #[doc = "0: interrupt DMA Interrupt to the system processor. Will be asserted on a \"DMA Done\" or a \"DMA Error\" event"]
+    #[doc = "0: no interrupt"]
     B0 = 0,
     #[doc = "1: interrupt DMA Interrupt to the system processor. Will be asserted on a \"DMA Done\" or a \"DMA Error\" event"]
     B1 = 1,
@@ -135,7 +139,7 @@ impl UdmaIntR {
             true => UdmaInt::B1,
         }
     }
-    #[doc = "interrupt DMA Interrupt to the system processor. Will be asserted on a \"DMA Done\" or a \"DMA Error\" event"]
+    #[doc = "no interrupt"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == UdmaInt::B0
@@ -147,9 +151,10 @@ impl UdmaIntR {
     }
 }
 #[doc = "Local interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LocalInt {
-    #[doc = "0: interrupt Local Error and Status Register Interrupt. This is a level interrupt till cleared by software Detail information refers to Local Error and Status Register description in PCIe Core register section \"Local Management Registers\""]
+    #[doc = "0: no interrupt"]
     B0 = 0,
     #[doc = "1: interrupt Local Error and Status Register Interrupt. This is a level interrupt till cleared by software Detail information refers to Local Error and Status Register description in PCIe Core register section \"Local Management Registers\""]
     B1 = 1,
@@ -171,7 +176,7 @@ impl LocalIntR {
             true => LocalInt::B1,
         }
     }
-    #[doc = "interrupt Local Error and Status Register Interrupt. This is a level interrupt till cleared by software Detail information refers to Local Error and Status Register description in PCIe Core register section \"Local Management Registers\""]
+    #[doc = "no interrupt"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == LocalInt::B0
@@ -183,9 +188,10 @@ impl LocalIntR {
     }
 }
 #[doc = "INTA interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Inta {
-    #[doc = "0: interrupt When the core is configured as RC, this interrupt emulate the PCI legacy interrupts INTA. The core asserts an interrupt output when it has received an Assert_INTA message from the link, and deasserts it when it receives a Deassert_INTA message."]
+    #[doc = "0: no interrupt"]
     B0 = 0,
     #[doc = "1: interrupt When the core is configured as RC, this interrupt emulate the PCI legacy interrupts INTA. The core asserts an interrupt output when it has received an Assert_INTA message from the link, and deasserts it when it receives a Deassert_INTA message."]
     B1 = 1,
@@ -207,7 +213,7 @@ impl IntaR {
             true => Inta::B1,
         }
     }
-    #[doc = "interrupt When the core is configured as RC, this interrupt emulate the PCI legacy interrupts INTA. The core asserts an interrupt output when it has received an Assert_INTA message from the link, and deasserts it when it receives a Deassert_INTA message."]
+    #[doc = "no interrupt"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Inta::B0
@@ -219,9 +225,10 @@ impl IntaR {
     }
 }
 #[doc = "INTB interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Intb {
-    #[doc = "0: interrupt When the core is configured as RC, this interrupt emulate the PCI legacy interrupts INTB. The core asserts an interrupt output when it has received an Assert_INTB message from the link, and deasserts it when it receives a Deassert_INTB message."]
+    #[doc = "0: no interrupt"]
     B0 = 0,
     #[doc = "1: interrupt When the core is configured as RC, this interrupt emulate the PCI legacy interrupts INTB. The core asserts an interrupt output when it has received an Assert_INTB message from the link, and deasserts it when it receives a Deassert_INTB message."]
     B1 = 1,
@@ -243,7 +250,7 @@ impl IntbR {
             true => Intb::B1,
         }
     }
-    #[doc = "interrupt When the core is configured as RC, this interrupt emulate the PCI legacy interrupts INTB. The core asserts an interrupt output when it has received an Assert_INTB message from the link, and deasserts it when it receives a Deassert_INTB message."]
+    #[doc = "no interrupt"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Intb::B0
@@ -255,9 +262,10 @@ impl IntbR {
     }
 }
 #[doc = "INTC interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Intc {
-    #[doc = "0: interrupt When the core is configured as RC, this interrupt emulate the PCI legacy interrupts INTC. The core asserts an interrupt output when it has received an Assert_INTC message from the link, and deasserts it when it receives a Deassert_INTC message."]
+    #[doc = "0: no interrupt"]
     B0 = 0,
     #[doc = "1: interrupt When the core is configured as RC, this interrupt emulate the PCI legacy interrupts INTC. The core asserts an interrupt output when it has received an Assert_INTC message from the link, and deasserts it when it receives a Deassert_INTC message."]
     B1 = 1,
@@ -279,7 +287,7 @@ impl IntcR {
             true => Intc::B1,
         }
     }
-    #[doc = "interrupt When the core is configured as RC, this interrupt emulate the PCI legacy interrupts INTC. The core asserts an interrupt output when it has received an Assert_INTC message from the link, and deasserts it when it receives a Deassert_INTC message."]
+    #[doc = "no interrupt"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Intc::B0
@@ -291,9 +299,10 @@ impl IntcR {
     }
 }
 #[doc = "INTD interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Intd {
-    #[doc = "0: interrupt When the core is configured as RC, this interrupt emulate the PCI legacy interrupts INTD. The core asserts an interrupt output when it has received an Assert_INTD message from the link, and deasserts it when it receives a Deassert_INTD message."]
+    #[doc = "0: no interrupt"]
     B0 = 0,
     #[doc = "1: interrupt When the core is configured as RC, this interrupt emulate the PCI legacy interrupts INTD. The core asserts an interrupt output when it has received an Assert_INTD message from the link, and deasserts it when it receives a Deassert_INTD message."]
     B1 = 1,
@@ -315,7 +324,7 @@ impl IntdR {
             true => Intd::B1,
         }
     }
-    #[doc = "interrupt When the core is configured as RC, this interrupt emulate the PCI legacy interrupts INTD. The core asserts an interrupt output when it has received an Assert_INTD message from the link, and deasserts it when it receives a Deassert_INTD message."]
+    #[doc = "no interrupt"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Intd::B0
@@ -327,9 +336,10 @@ impl IntdR {
     }
 }
 #[doc = "Correctable error interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CorrErrInt {
-    #[doc = "0: interrupt In the EP mode, the core activates this output for one cycle when it has detected a correctable error and its reporting is not masked. In multi-Function cores, this is the logical OR of the correctable error status bits in the Device Status Registers of all Functions. In the RC mode, this output is activated on detection of a local correctable error, when its reporting is not masked. This signal also gets activated in response to an error message received from the link if Correctable Error Reporting is enabled in the Root Error Command register."]
+    #[doc = "0: no interrupt"]
     B0 = 0,
     #[doc = "1: interrupt In the EP mode, the core activates this output for one cycle when it has detected a correctable error and its reporting is not masked. In multi-Function cores, this is the logical OR of the correctable error status bits in the Device Status Registers of all Functions. In the RC mode, this output is activated on detection of a local correctable error, when its reporting is not masked. This signal also gets activated in response to an error message received from the link if Correctable Error Reporting is enabled in the Root Error Command register."]
     B1 = 1,
@@ -351,7 +361,7 @@ impl CorrErrIntR {
             true => CorrErrInt::B1,
         }
     }
-    #[doc = "interrupt In the EP mode, the core activates this output for one cycle when it has detected a correctable error and its reporting is not masked. In multi-Function cores, this is the logical OR of the correctable error status bits in the Device Status Registers of all Functions. In the RC mode, this output is activated on detection of a local correctable error, when its reporting is not masked. This signal also gets activated in response to an error message received from the link if Correctable Error Reporting is enabled in the Root Error Command register."]
+    #[doc = "no interrupt"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CorrErrInt::B0
@@ -368,7 +378,7 @@ impl<'a, REG> CorrErrIntW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "interrupt In the EP mode, the core activates this output for one cycle when it has detected a correctable error and its reporting is not masked. In multi-Function cores, this is the logical OR of the correctable error status bits in the Device Status Registers of all Functions. In the RC mode, this output is activated on detection of a local correctable error, when its reporting is not masked. This signal also gets activated in response to an error message received from the link if Correctable Error Reporting is enabled in the Root Error Command register."]
+    #[doc = "no interrupt"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CorrErrInt::B0)
@@ -380,9 +390,10 @@ where
     }
 }
 #[doc = "Non-fatal error interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum NfatalErrInt {
-    #[doc = "0: interrupt In the EP mode, the core activates this output for one cycle when it has detected a non-fatal error and its reporting is not masked. In multi-Function cores, this is the logical OR of the non-fatal error status bits in the Device Status Registers of all Functions. In the RC mode, this output is activated on detection of a local fatal error, when its reporting is not masked. This signal also gets activated in response to an error message received from the link if Fatal Error Reporting is enabled in the Root Error Command register."]
+    #[doc = "0: no interrupt"]
     B0 = 0,
     #[doc = "1: interrupt In the EP mode, the core activates this output for one cycle when it has detected a non-fatal error and its reporting is not masked. In multi-Function cores, this is the logical OR of the non-fatal error status bits in the Device Status Registers of all Functions. In the RC mode, this output is activated on detection of a local fatal error, when its reporting is not masked. This signal also gets activated in response to an error message received from the link if Fatal Error Reporting is enabled in the Root Error Command register."]
     B1 = 1,
@@ -404,7 +415,7 @@ impl NfatalErrIntR {
             true => NfatalErrInt::B1,
         }
     }
-    #[doc = "interrupt In the EP mode, the core activates this output for one cycle when it has detected a non-fatal error and its reporting is not masked. In multi-Function cores, this is the logical OR of the non-fatal error status bits in the Device Status Registers of all Functions. In the RC mode, this output is activated on detection of a local fatal error, when its reporting is not masked. This signal also gets activated in response to an error message received from the link if Fatal Error Reporting is enabled in the Root Error Command register."]
+    #[doc = "no interrupt"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == NfatalErrInt::B0
@@ -421,7 +432,7 @@ impl<'a, REG> NfatalErrIntW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "interrupt In the EP mode, the core activates this output for one cycle when it has detected a non-fatal error and its reporting is not masked. In multi-Function cores, this is the logical OR of the non-fatal error status bits in the Device Status Registers of all Functions. In the RC mode, this output is activated on detection of a local fatal error, when its reporting is not masked. This signal also gets activated in response to an error message received from the link if Fatal Error Reporting is enabled in the Root Error Command register."]
+    #[doc = "no interrupt"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(NfatalErrInt::B0)
@@ -433,9 +444,10 @@ where
     }
 }
 #[doc = "Fatal error interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FatalErrInt {
-    #[doc = "0: interrupt In the EP mode, the core activates this output for one cycle when it has detected a fatal error and its reporting is not masked. In multi-Function cores, this is the logical OR of the fatal error status bits in the Device Status Registers of all Functions. In the RP mode, this output is activated on detection of a local fatal error, when its reporting is not masked. This signal also gets activated in response to an error message received from the link if Fatal Error Reporting is enabled in the Root Error Command register."]
+    #[doc = "0: no interrupt"]
     B0 = 0,
     #[doc = "1: interrupt In the EP mode, the core activates this output for one cycle when it has detected a fatal error and its reporting is not masked. In multi-Function cores, this is the logical OR of the fatal error status bits in the Device Status Registers of all Functions. In the RP mode, this output is activated on detection of a local fatal error, when its reporting is not masked. This signal also gets activated in response to an error message received from the link if Fatal Error Reporting is enabled in the Root Error Command register."]
     B1 = 1,
@@ -457,7 +469,7 @@ impl FatalErrIntR {
             true => FatalErrInt::B1,
         }
     }
-    #[doc = "interrupt In the EP mode, the core activates this output for one cycle when it has detected a fatal error and its reporting is not masked. In multi-Function cores, this is the logical OR of the fatal error status bits in the Device Status Registers of all Functions. In the RP mode, this output is activated on detection of a local fatal error, when its reporting is not masked. This signal also gets activated in response to an error message received from the link if Fatal Error Reporting is enabled in the Root Error Command register."]
+    #[doc = "no interrupt"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == FatalErrInt::B0
@@ -474,7 +486,7 @@ impl<'a, REG> FatalErrIntW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "interrupt In the EP mode, the core activates this output for one cycle when it has detected a fatal error and its reporting is not masked. In multi-Function cores, this is the logical OR of the fatal error status bits in the Device Status Registers of all Functions. In the RP mode, this output is activated on detection of a local fatal error, when its reporting is not masked. This signal also gets activated in response to an error message received from the link if Fatal Error Reporting is enabled in the Root Error Command register."]
+    #[doc = "no interrupt"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(FatalErrInt::B0)
@@ -486,9 +498,10 @@ where
     }
 }
 #[doc = "DPA interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DpaInt {
-    #[doc = "0: interrupt The core generates an interrupt when a Configuration Write transaction writes into the Dynamic Power Allocation Control Register to modify the DPA power state of the device. A interrupt indicates such a DPA event for PF 0, and so on. The local software running on the End Point must read the DPA Control Register of the corresponding Function to determine the DPA substate requested by the host and set the power state of the device accordingly"]
+    #[doc = "0: no interrupt"]
     B0 = 0,
     #[doc = "1: interrupt The core generates an interrupt when a Configuration Write transaction writes into the Dynamic Power Allocation Control Register to modify the DPA power state of the device. A interrupt indicates such a DPA event for PF 0, and so on. The local software running on the End Point must read the DPA Control Register of the corresponding Function to determine the DPA substate requested by the host and set the power state of the device accordingly"]
     B1 = 1,
@@ -510,7 +523,7 @@ impl DpaIntR {
             true => DpaInt::B1,
         }
     }
-    #[doc = "interrupt The core generates an interrupt when a Configuration Write transaction writes into the Dynamic Power Allocation Control Register to modify the DPA power state of the device. A interrupt indicates such a DPA event for PF 0, and so on. The local software running on the End Point must read the DPA Control Register of the corresponding Function to determine the DPA substate requested by the host and set the power state of the device accordingly"]
+    #[doc = "no interrupt"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == DpaInt::B0
@@ -527,7 +540,7 @@ impl<'a, REG> DpaIntW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "interrupt The core generates an interrupt when a Configuration Write transaction writes into the Dynamic Power Allocation Control Register to modify the DPA power state of the device. A interrupt indicates such a DPA event for PF 0, and so on. The local software running on the End Point must read the DPA Control Register of the corresponding Function to determine the DPA substate requested by the host and set the power state of the device accordingly"]
+    #[doc = "no interrupt"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(DpaInt::B0)
@@ -539,9 +552,10 @@ where
     }
 }
 #[doc = "Hot reset interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HotResetInt {
-    #[doc = "0: interrupt When a hot reset send done interrupt generated in RC mode, it indicates that the Endpoint Device has also received the Hot Reset, and then the hot_reset_in can be de-assert"]
+    #[doc = "0: no interrupt"]
     B0 = 0,
     #[doc = "1: interrupt When a hot reset send done interrupt generated in RC mode, it indicates that the Endpoint Device has also received the Hot Reset, and then the hot_reset_in can be de-assert"]
     B1 = 1,
@@ -563,7 +577,7 @@ impl HotResetIntR {
             true => HotResetInt::B1,
         }
     }
-    #[doc = "interrupt When a hot reset send done interrupt generated in RC mode, it indicates that the Endpoint Device has also received the Hot Reset, and then the hot_reset_in can be de-assert"]
+    #[doc = "no interrupt"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == HotResetInt::B0
@@ -580,7 +594,7 @@ impl<'a, REG> HotResetIntW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "interrupt When a hot reset send done interrupt generated in RC mode, it indicates that the Endpoint Device has also received the Hot Reset, and then the hot_reset_in can be de-assert"]
+    #[doc = "no interrupt"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(HotResetInt::B0)
@@ -592,9 +606,10 @@ where
     }
 }
 #[doc = "Message receive done interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MsgInt {
-    #[doc = "0: interrupt When a message received done by Client message FIFO, an interrupt will generate"]
+    #[doc = "0: no interrupt"]
     B0 = 0,
     #[doc = "1: interrupt When a message received done by Client message FIFO, an interrupt will generate"]
     B1 = 1,
@@ -616,7 +631,7 @@ impl MsgIntR {
             true => MsgInt::B1,
         }
     }
-    #[doc = "interrupt When a message received done by Client message FIFO, an interrupt will generate"]
+    #[doc = "no interrupt"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == MsgInt::B0
@@ -633,7 +648,7 @@ impl<'a, REG> MsgIntW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "interrupt When a message received done by Client message FIFO, an interrupt will generate"]
+    #[doc = "no interrupt"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(MsgInt::B0)
@@ -645,9 +660,10 @@ where
     }
 }
 #[doc = "Legacy interrupt send done interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LegacyDoneInt {
-    #[doc = "0: interrupt A pulse on this output indicates that the core has sent an INTx Assert or Deassert message in response to a change in the state of one of the int_in"]
+    #[doc = "0: no interrupt"]
     B0 = 0,
     #[doc = "1: interrupt A pulse on this output indicates that the core has sent an INTx Assert or Deassert message in response to a change in the state of one of the int_in"]
     B1 = 1,
@@ -669,7 +685,7 @@ impl LegacyDoneIntR {
             true => LegacyDoneInt::B1,
         }
     }
-    #[doc = "interrupt A pulse on this output indicates that the core has sent an INTx Assert or Deassert message in response to a change in the state of one of the int_in"]
+    #[doc = "no interrupt"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == LegacyDoneInt::B0
@@ -686,7 +702,7 @@ impl<'a, REG> LegacyDoneIntW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "interrupt A pulse on this output indicates that the core has sent an INTx Assert or Deassert message in response to a change in the state of one of the int_in"]
+    #[doc = "no interrupt"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(LegacyDoneInt::B0)

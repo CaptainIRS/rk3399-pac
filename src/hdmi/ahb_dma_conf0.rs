@@ -3,9 +3,11 @@ pub type R = crate::R<AhbDmaConf0Spec>;
 #[doc = "Register `AHB_DMA_CONF0` writer"]
 pub type W = crate::W<AhbDmaConf0Spec>;
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BurstMode {
-    #[doc = "1: Normal operation is unspecified length, incremental burst. It corresponds to INCR AHB burst mode."]
+    #[doc = "1: Forces the burst mode to be fixed beat, incremental burst mode designated by the incr_type\\[1:0\\]
+signal."]
     B1 = 1,
     #[doc = "0: Normal operation is unspecified length, incremental burst. It corresponds to INCR AHB burst mode."]
     B0 = 0,
@@ -27,7 +29,8 @@ impl BurstModeR {
             false => BurstMode::B0,
         }
     }
-    #[doc = "Normal operation is unspecified length, incremental burst. It corresponds to INCR AHB burst mode."]
+    #[doc = "Forces the burst mode to be fixed beat, incremental burst mode designated by the incr_type\\[1:0\\]
+signal."]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == BurstMode::B1
@@ -44,7 +47,8 @@ impl<'a, REG> BurstModeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Normal operation is unspecified length, incremental burst. It corresponds to INCR AHB burst mode."]
+    #[doc = "Forces the burst mode to be fixed beat, incremental burst mode designated by the incr_type\\[1:0\\]
+signal."]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(BurstMode::B1)
@@ -56,12 +60,13 @@ where
     }
 }
 #[doc = "Selects the preferred burst length size\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum IncrType {
-    #[doc = "0: Corresponds to INCR16 fixed 16 beat incremental AHB burst mode. Only valid when burst_mode is high."]
+    #[doc = "0: Corresponds to INCR4 fixed four beat, incremental AHB burst mode. Only valid when burst_mode is high."]
     B00 = 0,
-    #[doc = "1: Corresponds to INCR16 fixed 16 beat incremental AHB burst mode. Only valid when burst_mode is high."]
+    #[doc = "1: Corresponds to INCR8 fixed eight beat incremental AHB burst mode. Only valid when burst_mode is high."]
     B01 = 1,
     #[doc = "2: Corresponds to INCR16 fixed 16 beat incremental AHB burst mode. Only valid when burst_mode is high."]
     B10 = 2,
@@ -91,12 +96,12 @@ impl IncrTypeR {
             _ => unreachable!(),
         }
     }
-    #[doc = "Corresponds to INCR16 fixed 16 beat incremental AHB burst mode. Only valid when burst_mode is high."]
+    #[doc = "Corresponds to INCR4 fixed four beat, incremental AHB burst mode. Only valid when burst_mode is high."]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == IncrType::B00
     }
-    #[doc = "Corresponds to INCR16 fixed 16 beat incremental AHB burst mode. Only valid when burst_mode is high."]
+    #[doc = "Corresponds to INCR8 fixed eight beat incremental AHB burst mode. Only valid when burst_mode is high."]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == IncrType::B01
@@ -119,12 +124,12 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Corresponds to INCR16 fixed 16 beat incremental AHB burst mode. Only valid when burst_mode is high."]
+    #[doc = "Corresponds to INCR4 fixed four beat, incremental AHB burst mode. Only valid when burst_mode is high."]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(IncrType::B00)
     }
-    #[doc = "Corresponds to INCR16 fixed 16 beat incremental AHB burst mode. Only valid when burst_mode is high."]
+    #[doc = "Corresponds to INCR8 fixed eight beat incremental AHB burst mode. Only valid when burst_mode is high."]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(IncrType::B01)
@@ -141,9 +146,10 @@ where
     }
 }
 #[doc = "Enable request of locked burst AHB mechanism.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EnableHlock {
-    #[doc = "1: Disables request of locked burst AHB mechanism"]
+    #[doc = "1: Enables the usage of hlock for master request to arbiter of a locked complete burst."]
     B1 = 1,
     #[doc = "0: Disables request of locked burst AHB mechanism"]
     B0 = 0,
@@ -165,7 +171,7 @@ impl EnableHlockR {
             false => EnableHlock::B0,
         }
     }
-    #[doc = "Disables request of locked burst AHB mechanism"]
+    #[doc = "Enables the usage of hlock for master request to arbiter of a locked complete burst."]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == EnableHlock::B1
@@ -182,7 +188,7 @@ impl<'a, REG> EnableHlockW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disables request of locked burst AHB mechanism"]
+    #[doc = "Enables the usage of hlock for master request to arbiter of a locked complete burst."]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(EnableHlock::B1)
@@ -193,17 +199,17 @@ where
         self.variant(EnableHlock::B0)
     }
 }
-#[doc = "Field `HBR` reader - HBR packet enable The Hdmi_tx sends the HBR packets. This bit must be enabled when transmitting non-linear audio of frequency higher than 192 kHz. If this bit is enabled, the number of channels configured in AHB_DMA_CONF1 is always 8."]
+#[doc = "Field `HBR` reader - HBR packet enable\n\nThe Hdmi_tx sends the HBR packets. This bit must be\n\nenabled when transmitting non-linear audio of frequency\n\nhigher than 192 kHz. If this bit is enabled, the number of\n\nchannels configured in AHB_DMA_CONF1 is always 8."]
 pub type HbrR = crate::BitReader;
-#[doc = "Field `HBR` writer - HBR packet enable The Hdmi_tx sends the HBR packets. This bit must be enabled when transmitting non-linear audio of frequency higher than 192 kHz. If this bit is enabled, the number of channels configured in AHB_DMA_CONF1 is always 8."]
+#[doc = "Field `HBR` writer - HBR packet enable\n\nThe Hdmi_tx sends the HBR packets. This bit must be\n\nenabled when transmitting non-linear audio of frequency\n\nhigher than 192 kHz. If this bit is enabled, the number of\n\nchannels configured in AHB_DMA_CONF1 is always 8."]
 pub type HbrW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `INSERT_PCUV` reader - Enables the insertion of PCUV data"]
 pub type InsertPcuvR = crate::BitReader;
 #[doc = "Field `INSERT_PCUV` writer - Enables the insertion of PCUV data"]
 pub type InsertPcuvW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `SW_FIFO_RST` reader - This is the software reset bit for the audio and FIFO clear. Writing 0'b does not result in any action. Writing 1'b to this register resets all audio FIFOs. Reading from this register always returns 0'b."]
+#[doc = "Field `SW_FIFO_RST` reader - This is the software reset bit for the audio and FIFO\n\nclear.\n\nWriting 0'b does not result in any action.\n\nWriting 1'b to this register resets all audio FIFOs.\n\nReading from this register always returns 0'b."]
 pub type SwFifoRstR = crate::BitReader;
-#[doc = "Field `SW_FIFO_RST` writer - This is the software reset bit for the audio and FIFO clear. Writing 0'b does not result in any action. Writing 1'b to this register resets all audio FIFOs. Reading from this register always returns 0'b."]
+#[doc = "Field `SW_FIFO_RST` writer - This is the software reset bit for the audio and FIFO\n\nclear.\n\nWriting 0'b does not result in any action.\n\nWriting 1'b to this register resets all audio FIFOs.\n\nReading from this register always returns 0'b."]
 pub type SwFifoRstW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0"]
@@ -221,7 +227,7 @@ impl R {
     pub fn enable_hlock(&self) -> EnableHlockR {
         EnableHlockR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - HBR packet enable The Hdmi_tx sends the HBR packets. This bit must be enabled when transmitting non-linear audio of frequency higher than 192 kHz. If this bit is enabled, the number of channels configured in AHB_DMA_CONF1 is always 8."]
+    #[doc = "Bit 4 - HBR packet enable\n\nThe Hdmi_tx sends the HBR packets. This bit must be\n\nenabled when transmitting non-linear audio of frequency\n\nhigher than 192 kHz. If this bit is enabled, the number of\n\nchannels configured in AHB_DMA_CONF1 is always 8."]
     #[inline(always)]
     pub fn hbr(&self) -> HbrR {
         HbrR::new(((self.bits >> 4) & 1) != 0)
@@ -231,7 +237,7 @@ impl R {
     pub fn insert_pcuv(&self) -> InsertPcuvR {
         InsertPcuvR::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 7 - This is the software reset bit for the audio and FIFO clear. Writing 0'b does not result in any action. Writing 1'b to this register resets all audio FIFOs. Reading from this register always returns 0'b."]
+    #[doc = "Bit 7 - This is the software reset bit for the audio and FIFO\n\nclear.\n\nWriting 0'b does not result in any action.\n\nWriting 1'b to this register resets all audio FIFOs.\n\nReading from this register always returns 0'b."]
     #[inline(always)]
     pub fn sw_fifo_rst(&self) -> SwFifoRstR {
         SwFifoRstR::new(((self.bits >> 7) & 1) != 0)
@@ -256,7 +262,7 @@ impl W {
     pub fn enable_hlock(&mut self) -> EnableHlockW<AhbDmaConf0Spec> {
         EnableHlockW::new(self, 3)
     }
-    #[doc = "Bit 4 - HBR packet enable The Hdmi_tx sends the HBR packets. This bit must be enabled when transmitting non-linear audio of frequency higher than 192 kHz. If this bit is enabled, the number of channels configured in AHB_DMA_CONF1 is always 8."]
+    #[doc = "Bit 4 - HBR packet enable\n\nThe Hdmi_tx sends the HBR packets. This bit must be\n\nenabled when transmitting non-linear audio of frequency\n\nhigher than 192 kHz. If this bit is enabled, the number of\n\nchannels configured in AHB_DMA_CONF1 is always 8."]
     #[inline(always)]
     #[must_use]
     pub fn hbr(&mut self) -> HbrW<AhbDmaConf0Spec> {
@@ -268,15 +274,14 @@ impl W {
     pub fn insert_pcuv(&mut self) -> InsertPcuvW<AhbDmaConf0Spec> {
         InsertPcuvW::new(self, 6)
     }
-    #[doc = "Bit 7 - This is the software reset bit for the audio and FIFO clear. Writing 0'b does not result in any action. Writing 1'b to this register resets all audio FIFOs. Reading from this register always returns 0'b."]
+    #[doc = "Bit 7 - This is the software reset bit for the audio and FIFO\n\nclear.\n\nWriting 0'b does not result in any action.\n\nWriting 1'b to this register resets all audio FIFOs.\n\nReading from this register always returns 0'b."]
     #[inline(always)]
     #[must_use]
     pub fn sw_fifo_rst(&mut self) -> SwFifoRstW<AhbDmaConf0Spec> {
         SwFifoRstW::new(self, 7)
     }
 }
-#[doc = "1'b: Forces the burst mode to be fixed beat, incremental burst mode designated by the incr_type\\[1:0\\]
-signal. 0'b: Normal operation is unspecified length, incremental burst. It corresponds to INCR AHB burst mode.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ahb_dma_conf0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ahb_dma_conf0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Audio DMA SW FIFO reset and DMA Configuration Register 0\n\nThis register contains the software reset bit for the audio FIFOs. It also configures\n\noperating modes of the AHB master.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ahb_dma_conf0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ahb_dma_conf0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AhbDmaConf0Spec;
 impl crate::RegisterSpec for AhbDmaConf0Spec {
     type Ux = u8;

@@ -2,64 +2,64 @@
 pub type R = crate::R<DdrPiReg80Spec>;
 #[doc = "Register `DDR_PI_REG_80` writer"]
 pub type W = crate::W<DdrPiReg80Spec>;
-#[doc = "Field `PI_RDLVL_RESP_MASK` reader - Indicates mask for the dfi_rdlvl_resp signal during data eye training."]
+#[doc = "Field `PI_RDLVL_RESP_MASK` reader - Indicates mask for the dfi_rdlvl_resp signal during data eye\n\ntraining."]
 pub type PiRdlvlRespMaskR = crate::FieldReader;
-#[doc = "Field `PI_RDLVL_RESP_MASK` writer - Indicates mask for the dfi_rdlvl_resp signal during data eye training."]
+#[doc = "Field `PI_RDLVL_RESP_MASK` writer - Indicates mask for the dfi_rdlvl_resp signal during data eye\n\ntraining."]
 pub type PiRdlvlRespMaskW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-#[doc = "Field `PI_TDFI_RDLVL_EN` reader - Defines the DFI tRDLVL_EN timing parameter (in DFI clocks), the minimum cycles from a dfi_rdlvl_en or dfi_rdlvl_gate_en assertion to the first read or MRR."]
+#[doc = "Field `PI_TDFI_RDLVL_EN` reader - Defines the DFI tRDLVL_EN timing parameter (in DFI clocks), the\n\nminimum cycles from a dfi_rdlvl_en or dfi_rdlvl_gate_en assertion\n\nto the first read or MRR."]
 pub type PiTdfiRdlvlEnR = crate::FieldReader;
-#[doc = "Field `PI_TDFI_RDLVL_EN` writer - Defines the DFI tRDLVL_EN timing parameter (in DFI clocks), the minimum cycles from a dfi_rdlvl_en or dfi_rdlvl_gate_en assertion to the first read or MRR."]
+#[doc = "Field `PI_TDFI_RDLVL_EN` writer - Defines the DFI tRDLVL_EN timing parameter (in DFI clocks), the\n\nminimum cycles from a dfi_rdlvl_en or dfi_rdlvl_gate_en assertion\n\nto the first read or MRR."]
 pub type PiTdfiRdlvlEnW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-#[doc = "Field `PI_RDLVL_EN` reader - Enables the PI data eye training module. Bit1 represents the support when non-initialization. Bit0 represents the support when initialization. Set to 1 to enable."]
+#[doc = "Field `PI_RDLVL_EN` reader - Enables the PI data eye training module. Bit1 represents the\n\nsupport when non-initialization. Bit0 represents the support when\n\ninitialization. Set to 1 to enable."]
 pub type PiRdlvlEnR = crate::FieldReader;
-#[doc = "Field `PI_RDLVL_EN` writer - Enables the PI data eye training module. Bit1 represents the support when non-initialization. Bit0 represents the support when initialization. Set to 1 to enable."]
+#[doc = "Field `PI_RDLVL_EN` writer - Enables the PI data eye training module. Bit1 represents the\n\nsupport when non-initialization. Bit0 represents the support when\n\ninitialization. Set to 1 to enable."]
 pub type PiRdlvlEnW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-#[doc = "Field `PI_RDLVL_GATE_EN` reader - Enables the PI gate training module. Bit1 represents the support when non-initialization. Bit0 represents the support when initialization. Set to 1 to enable."]
+#[doc = "Field `PI_RDLVL_GATE_EN` reader - Enables the PI gate training module. Bit1 represents the support\n\nwhen non-initialization. Bit0 represents the support when\n\ninitialization. Set to 1 to enable."]
 pub type PiRdlvlGateEnR = crate::FieldReader;
-#[doc = "Field `PI_RDLVL_GATE_EN` writer - Enables the PI gate training module. Bit1 represents the support when non-initialization. Bit0 represents the support when initialization. Set to 1 to enable."]
+#[doc = "Field `PI_RDLVL_GATE_EN` writer - Enables the PI gate training module. Bit1 represents the support\n\nwhen non-initialization. Bit0 represents the support when\n\ninitialization. Set to 1 to enable."]
 pub type PiRdlvlGateEnW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
-    #[doc = "Bits 0:3 - Indicates mask for the dfi_rdlvl_resp signal during data eye training."]
+    #[doc = "Bits 0:3 - Indicates mask for the dfi_rdlvl_resp signal during data eye\n\ntraining."]
     #[inline(always)]
     pub fn pi_rdlvl_resp_mask(&self) -> PiRdlvlRespMaskR {
         PiRdlvlRespMaskR::new((self.bits & 0x0f) as u8)
     }
-    #[doc = "Bits 8:15 - Defines the DFI tRDLVL_EN timing parameter (in DFI clocks), the minimum cycles from a dfi_rdlvl_en or dfi_rdlvl_gate_en assertion to the first read or MRR."]
+    #[doc = "Bits 8:15 - Defines the DFI tRDLVL_EN timing parameter (in DFI clocks), the\n\nminimum cycles from a dfi_rdlvl_en or dfi_rdlvl_gate_en assertion\n\nto the first read or MRR."]
     #[inline(always)]
     pub fn pi_tdfi_rdlvl_en(&self) -> PiTdfiRdlvlEnR {
         PiTdfiRdlvlEnR::new(((self.bits >> 8) & 0xff) as u8)
     }
-    #[doc = "Bits 16:17 - Enables the PI data eye training module. Bit1 represents the support when non-initialization. Bit0 represents the support when initialization. Set to 1 to enable."]
+    #[doc = "Bits 16:17 - Enables the PI data eye training module. Bit1 represents the\n\nsupport when non-initialization. Bit0 represents the support when\n\ninitialization. Set to 1 to enable."]
     #[inline(always)]
     pub fn pi_rdlvl_en(&self) -> PiRdlvlEnR {
         PiRdlvlEnR::new(((self.bits >> 16) & 3) as u8)
     }
-    #[doc = "Bits 24:25 - Enables the PI gate training module. Bit1 represents the support when non-initialization. Bit0 represents the support when initialization. Set to 1 to enable."]
+    #[doc = "Bits 24:25 - Enables the PI gate training module. Bit1 represents the support\n\nwhen non-initialization. Bit0 represents the support when\n\ninitialization. Set to 1 to enable."]
     #[inline(always)]
     pub fn pi_rdlvl_gate_en(&self) -> PiRdlvlGateEnR {
         PiRdlvlGateEnR::new(((self.bits >> 24) & 3) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - Indicates mask for the dfi_rdlvl_resp signal during data eye training."]
+    #[doc = "Bits 0:3 - Indicates mask for the dfi_rdlvl_resp signal during data eye\n\ntraining."]
     #[inline(always)]
     #[must_use]
     pub fn pi_rdlvl_resp_mask(&mut self) -> PiRdlvlRespMaskW<DdrPiReg80Spec> {
         PiRdlvlRespMaskW::new(self, 0)
     }
-    #[doc = "Bits 8:15 - Defines the DFI tRDLVL_EN timing parameter (in DFI clocks), the minimum cycles from a dfi_rdlvl_en or dfi_rdlvl_gate_en assertion to the first read or MRR."]
+    #[doc = "Bits 8:15 - Defines the DFI tRDLVL_EN timing parameter (in DFI clocks), the\n\nminimum cycles from a dfi_rdlvl_en or dfi_rdlvl_gate_en assertion\n\nto the first read or MRR."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tdfi_rdlvl_en(&mut self) -> PiTdfiRdlvlEnW<DdrPiReg80Spec> {
         PiTdfiRdlvlEnW::new(self, 8)
     }
-    #[doc = "Bits 16:17 - Enables the PI data eye training module. Bit1 represents the support when non-initialization. Bit0 represents the support when initialization. Set to 1 to enable."]
+    #[doc = "Bits 16:17 - Enables the PI data eye training module. Bit1 represents the\n\nsupport when non-initialization. Bit0 represents the support when\n\ninitialization. Set to 1 to enable."]
     #[inline(always)]
     #[must_use]
     pub fn pi_rdlvl_en(&mut self) -> PiRdlvlEnW<DdrPiReg80Spec> {
         PiRdlvlEnW::new(self, 16)
     }
-    #[doc = "Bits 24:25 - Enables the PI gate training module. Bit1 represents the support when non-initialization. Bit0 represents the support when initialization. Set to 1 to enable."]
+    #[doc = "Bits 24:25 - Enables the PI gate training module. Bit1 represents the support\n\nwhen non-initialization. Bit0 represents the support when\n\ninitialization. Set to 1 to enable."]
     #[inline(always)]
     #[must_use]
     pub fn pi_rdlvl_gate_en(&mut self) -> PiRdlvlGateEnW<DdrPiReg80Spec> {

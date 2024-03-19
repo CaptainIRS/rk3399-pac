@@ -1,9 +1,9 @@
 #[doc = "Register `DDRMON_CH0_DFI_ACCESS_NUM` reader"]
 pub type R = crate::R<DdrmonCh0DfiAccessNumSpec>;
-#[doc = "Field `CH0_DFI_ACCESS_NUM` reader - DFI read and write command number in the statistics range of the channel 0"]
+#[doc = "Field `CH0_DFI_ACCESS_NUM` reader - DFI read and write command number in the statistics range of the\n\nchannel 0"]
 pub type Ch0DfiAccessNumR = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - DFI read and write command number in the statistics range of the channel 0"]
+    #[doc = "Bits 0:31 - DFI read and write command number in the statistics range of the\n\nchannel 0"]
     #[inline(always)]
     pub fn ch0_dfi_access_num(&self) -> Ch0DfiAccessNumR {
         Ch0DfiAccessNumR::new(self.bits)

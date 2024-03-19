@@ -1,16 +1,16 @@
 #[doc = "Register `PCIE_CLIENT_DEBUG_OUT_0` reader"]
 pub type R = crate::R<PcieClientDebugOut0Spec>;
-#[doc = "Field `LTSSM_STATE` reader - Link training and status state Current state of the Link Training and Status State Machine within the core. The encodings of this output are described in Appendix B"]
+#[doc = "Field `LTSSM_STATE` reader - Link training and status state\n\nCurrent state of the Link Training and Status State\n\nMachine within the core. The encodings of this\n\noutput are described in Appendix B"]
 pub type LtssmStateR = crate::FieldReader;
-#[doc = "Field `DEBUG_DATA_OUT` reader - Output data from the debug bus 16-bit output data from the debug bus, described in Appendix A"]
+#[doc = "Field `DEBUG_DATA_OUT` reader - Output data from the debug bus\n\n16-bit output data from the debug bus, described in Appendix A"]
 pub type DebugDataOutR = crate::FieldReader<u16>;
 impl R {
-    #[doc = "Bits 0:5 - Link training and status state Current state of the Link Training and Status State Machine within the core. The encodings of this output are described in Appendix B"]
+    #[doc = "Bits 0:5 - Link training and status state\n\nCurrent state of the Link Training and Status State\n\nMachine within the core. The encodings of this\n\noutput are described in Appendix B"]
     #[inline(always)]
     pub fn ltssm_state(&self) -> LtssmStateR {
         LtssmStateR::new((self.bits & 0x3f) as u8)
     }
-    #[doc = "Bits 16:31 - Output data from the debug bus 16-bit output data from the debug bus, described in Appendix A"]
+    #[doc = "Bits 16:31 - Output data from the debug bus\n\n16-bit output data from the debug bus, described in Appendix A"]
     #[inline(always)]
     pub fn debug_data_out(&self) -> DebugDataOutR {
         DebugDataOutR::new(((self.bits >> 16) & 0xffff) as u16)

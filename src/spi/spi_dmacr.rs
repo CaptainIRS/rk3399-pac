@@ -3,9 +3,10 @@ pub type R = crate::R<SpiDmacrSpec>;
 #[doc = "Register `SPI_DMACR` writer"]
 pub type W = crate::W<SpiDmacrSpec>;
 #[doc = "Receive DMA Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rde {
-    #[doc = "0: Receive DMA enabled"]
+    #[doc = "0: Receive DMA disabled"]
     B0 = 0,
     #[doc = "1: Receive DMA enabled"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl RdeR {
             true => Rde::B1,
         }
     }
-    #[doc = "Receive DMA enabled"]
+    #[doc = "Receive DMA disabled"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Rde::B0
@@ -44,7 +45,7 @@ impl<'a, REG> RdeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Receive DMA enabled"]
+    #[doc = "Receive DMA disabled"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Rde::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Transmit DMA Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tde {
-    #[doc = "0: Transmit DMA enabled"]
+    #[doc = "0: Transmit DMA disabled"]
     B0 = 0,
     #[doc = "1: Transmit DMA enabled"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl TdeR {
             true => Tde::B1,
         }
     }
-    #[doc = "Transmit DMA enabled"]
+    #[doc = "Transmit DMA disabled"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Tde::B0
@@ -97,7 +99,7 @@ impl<'a, REG> TdeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Transmit DMA enabled"]
+    #[doc = "Transmit DMA disabled"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Tde::B0)

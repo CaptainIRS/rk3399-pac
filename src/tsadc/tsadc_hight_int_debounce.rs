@@ -2,19 +2,19 @@
 pub type R = crate::R<TsadcHightIntDebounceSpec>;
 #[doc = "Register `TSADC_HIGHT_INT_DEBOUNCE` writer"]
 pub type W = crate::W<TsadcHightIntDebounceSpec>;
-#[doc = "Field `DEBOUNCE` reader - TSADC controller will only generate interrupt or TSHUT when temperature is higher than COMP_INT for \"debounce\" times."]
+#[doc = "Field `DEBOUNCE` reader - TSADC controller will only generate interrupt or TSHUT when\n\ntemperature is higher than COMP_INT for \"debounce\" times."]
 pub type DebounceR = crate::FieldReader;
-#[doc = "Field `DEBOUNCE` writer - TSADC controller will only generate interrupt or TSHUT when temperature is higher than COMP_INT for \"debounce\" times."]
+#[doc = "Field `DEBOUNCE` writer - TSADC controller will only generate interrupt or TSHUT when\n\ntemperature is higher than COMP_INT for \"debounce\" times."]
 pub type DebounceW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - TSADC controller will only generate interrupt or TSHUT when temperature is higher than COMP_INT for \"debounce\" times."]
+    #[doc = "Bits 0:7 - TSADC controller will only generate interrupt or TSHUT when\n\ntemperature is higher than COMP_INT for \"debounce\" times."]
     #[inline(always)]
     pub fn debounce(&self) -> DebounceR {
         DebounceR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - TSADC controller will only generate interrupt or TSHUT when temperature is higher than COMP_INT for \"debounce\" times."]
+    #[doc = "Bits 0:7 - TSADC controller will only generate interrupt or TSHUT when\n\ntemperature is higher than COMP_INT for \"debounce\" times."]
     #[inline(always)]
     #[must_use]
     pub fn debounce(&mut self) -> DebounceW<TsadcHightIntDebounceSpec> {

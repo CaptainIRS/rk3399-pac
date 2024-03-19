@@ -2,19 +2,19 @@
 pub type R = crate::R<DdrPiReg79Spec>;
 #[doc = "Register `DDR_PI_REG_79` writer"]
 pub type W = crate::W<DdrPiReg79Spec>;
-#[doc = "Field `PI_TDFI_RDLVL_RESP` reader - Defines the DFI tRDLVL_RESP timing parameter (in DFI clocks), the maximum cycles between a dfi_rdlvl_req or dfi_rdlvl_gate_req assertion and a dfi_rdlvl_en or dfi_rdlvl_gate_en assertion."]
+#[doc = "Field `PI_TDFI_RDLVL_RESP` reader - Defines the DFI tRDLVL_RESP timing parameter (in DFI clocks), the\n\nmaximum cycles between a dfi_rdlvl_req or dfi_rdlvl_gate_req\n\nassertion and a dfi_rdlvl_en or dfi_rdlvl_gate_en assertion."]
 pub type PiTdfiRdlvlRespR = crate::FieldReader<u32>;
-#[doc = "Field `PI_TDFI_RDLVL_RESP` writer - Defines the DFI tRDLVL_RESP timing parameter (in DFI clocks), the maximum cycles between a dfi_rdlvl_req or dfi_rdlvl_gate_req assertion and a dfi_rdlvl_en or dfi_rdlvl_gate_en assertion."]
+#[doc = "Field `PI_TDFI_RDLVL_RESP` writer - Defines the DFI tRDLVL_RESP timing parameter (in DFI clocks), the\n\nmaximum cycles between a dfi_rdlvl_req or dfi_rdlvl_gate_req\n\nassertion and a dfi_rdlvl_en or dfi_rdlvl_gate_en assertion."]
 pub type PiTdfiRdlvlRespW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Defines the DFI tRDLVL_RESP timing parameter (in DFI clocks), the maximum cycles between a dfi_rdlvl_req or dfi_rdlvl_gate_req assertion and a dfi_rdlvl_en or dfi_rdlvl_gate_en assertion."]
+    #[doc = "Bits 0:31 - Defines the DFI tRDLVL_RESP timing parameter (in DFI clocks), the\n\nmaximum cycles between a dfi_rdlvl_req or dfi_rdlvl_gate_req\n\nassertion and a dfi_rdlvl_en or dfi_rdlvl_gate_en assertion."]
     #[inline(always)]
     pub fn pi_tdfi_rdlvl_resp(&self) -> PiTdfiRdlvlRespR {
         PiTdfiRdlvlRespR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Defines the DFI tRDLVL_RESP timing parameter (in DFI clocks), the maximum cycles between a dfi_rdlvl_req or dfi_rdlvl_gate_req assertion and a dfi_rdlvl_en or dfi_rdlvl_gate_en assertion."]
+    #[doc = "Bits 0:31 - Defines the DFI tRDLVL_RESP timing parameter (in DFI clocks), the\n\nmaximum cycles between a dfi_rdlvl_req or dfi_rdlvl_gate_req\n\nassertion and a dfi_rdlvl_en or dfi_rdlvl_gate_en assertion."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tdfi_rdlvl_resp(&mut self) -> PiTdfiRdlvlRespW<DdrPiReg79Spec> {

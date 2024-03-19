@@ -2,19 +2,19 @@
 pub type R = crate::R<EmmccoreCqtdbnSpec>;
 #[doc = "Register `EMMCCORE_CQTDBN` writer"]
 pub type W = crate::W<EmmccoreCqtdbnSpec>;
-#[doc = "Field `TCN` reader - Task Complete Notification CQE shall set bit n of this register (at the same time it clears bit n of CQTDBR) when a task execution is completed (with success or error). When receiving interrupt for task completion, software may read this register to know which tasks have finished. After reading this register, software may clear the relevant bit fields by writing 1 to the corresponding bits."]
+#[doc = "Field `TCN` reader - Task Complete Notification\n\nCQE shall set bit n of this register (at the same time it clears bit n\n\nof CQTDBR) when a task execution is completed (with success or\n\nerror).\n\nWhen receiving interrupt for task completion, software may read\n\nthis register to know which tasks have finished.\n\nAfter reading this register, software may clear the relevant bit\n\nfields by writing 1 to the corresponding bits."]
 pub type TcnR = crate::FieldReader<u32>;
-#[doc = "Field `TCN` writer - Task Complete Notification CQE shall set bit n of this register (at the same time it clears bit n of CQTDBR) when a task execution is completed (with success or error). When receiving interrupt for task completion, software may read this register to know which tasks have finished. After reading this register, software may clear the relevant bit fields by writing 1 to the corresponding bits."]
+#[doc = "Field `TCN` writer - Task Complete Notification\n\nCQE shall set bit n of this register (at the same time it clears bit n\n\nof CQTDBR) when a task execution is completed (with success or\n\nerror).\n\nWhen receiving interrupt for task completion, software may read\n\nthis register to know which tasks have finished.\n\nAfter reading this register, software may clear the relevant bit\n\nfields by writing 1 to the corresponding bits."]
 pub type TcnW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Task Complete Notification CQE shall set bit n of this register (at the same time it clears bit n of CQTDBR) when a task execution is completed (with success or error). When receiving interrupt for task completion, software may read this register to know which tasks have finished. After reading this register, software may clear the relevant bit fields by writing 1 to the corresponding bits."]
+    #[doc = "Bits 0:31 - Task Complete Notification\n\nCQE shall set bit n of this register (at the same time it clears bit n\n\nof CQTDBR) when a task execution is completed (with success or\n\nerror).\n\nWhen receiving interrupt for task completion, software may read\n\nthis register to know which tasks have finished.\n\nAfter reading this register, software may clear the relevant bit\n\nfields by writing 1 to the corresponding bits."]
     #[inline(always)]
     pub fn tcn(&self) -> TcnR {
         TcnR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Task Complete Notification CQE shall set bit n of this register (at the same time it clears bit n of CQTDBR) when a task execution is completed (with success or error). When receiving interrupt for task completion, software may read this register to know which tasks have finished. After reading this register, software may clear the relevant bit fields by writing 1 to the corresponding bits."]
+    #[doc = "Bits 0:31 - Task Complete Notification\n\nCQE shall set bit n of this register (at the same time it clears bit n\n\nof CQTDBR) when a task execution is completed (with success or\n\nerror).\n\nWhen receiving interrupt for task completion, software may read\n\nthis register to know which tasks have finished.\n\nAfter reading this register, software may clear the relevant bit\n\nfields by writing 1 to the corresponding bits."]
     #[inline(always)]
     #[must_use]
     pub fn tcn(&mut self) -> TcnW<EmmccoreCqtdbnSpec> {

@@ -3,9 +3,10 @@ pub type R = crate::R<Usb3DevtenSpec>;
 #[doc = "Register `USB3_DEVTEN` writer"]
 pub type W = crate::W<Usb3DevtenSpec>;
 #[doc = "Disconnect Detected Event Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dissconnevten {
-    #[doc = "1: Disable this event"]
+    #[doc = "1: Enable this event"]
     B1 = 1,
     #[doc = "0: Disable this event"]
     B0 = 0,
@@ -27,7 +28,7 @@ impl DissconnevtenR {
             false => Dissconnevten::B0,
         }
     }
-    #[doc = "Disable this event"]
+    #[doc = "Enable this event"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Dissconnevten::B1
@@ -44,7 +45,7 @@ impl<'a, REG> DissconnevtenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disable this event"]
+    #[doc = "Enable this event"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Dissconnevten::B1)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "USB Reset Event Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Usbrstevten {
-    #[doc = "1: Disable this event"]
+    #[doc = "1: Enable this event"]
     B1 = 1,
     #[doc = "0: Disable this event"]
     B0 = 0,
@@ -80,7 +82,7 @@ impl UsbrstevtenR {
             false => Usbrstevten::B0,
         }
     }
-    #[doc = "Disable this event"]
+    #[doc = "Enable this event"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Usbrstevten::B1
@@ -97,7 +99,7 @@ impl<'a, REG> UsbrstevtenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disable this event"]
+    #[doc = "Enable this event"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Usbrstevten::B1)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "Connection Done Event Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Connectdoneevten {
-    #[doc = "1: Disable this event"]
+    #[doc = "1: Enable this event"]
     B1 = 1,
     #[doc = "0: Disable this event"]
     B0 = 0,
@@ -133,7 +136,7 @@ impl ConnectdoneevtenR {
             false => Connectdoneevten::B0,
         }
     }
-    #[doc = "Disable this event"]
+    #[doc = "Enable this event"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Connectdoneevten::B1
@@ -150,7 +153,7 @@ impl<'a, REG> ConnectdoneevtenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disable this event"]
+    #[doc = "Enable this event"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Connectdoneevten::B1)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "USB/Link State Change Event Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ulstcngen {
-    #[doc = "1: Disable this event"]
+    #[doc = "1: Enable this event"]
     B1 = 1,
     #[doc = "0: Disable this event"]
     B0 = 0,
@@ -186,7 +190,7 @@ impl UlstcngenR {
             false => Ulstcngen::B0,
         }
     }
-    #[doc = "Disable this event"]
+    #[doc = "Enable this event"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Ulstcngen::B1
@@ -203,7 +207,7 @@ impl<'a, REG> UlstcngenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disable this event"]
+    #[doc = "Enable this event"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Ulstcngen::B1)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "Resume/Remote Wakeup Detected Event Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wkupevten {
-    #[doc = "1: Disable this event"]
+    #[doc = "1: Enable this event"]
     B1 = 1,
     #[doc = "0: Disable this event"]
     B0 = 0,
@@ -239,7 +244,7 @@ impl WkupevtenR {
             false => Wkupevten::B0,
         }
     }
-    #[doc = "Disable this event"]
+    #[doc = "Enable this event"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Wkupevten::B1
@@ -256,7 +261,7 @@ impl<'a, REG> WkupevtenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disable this event"]
+    #[doc = "Enable this event"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Wkupevten::B1)
@@ -268,9 +273,10 @@ where
     }
 }
 #[doc = "Hibernation Request Event Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hibernationreqevten {
-    #[doc = "1: Disable this event"]
+    #[doc = "1: Enable this event"]
     B1 = 1,
     #[doc = "0: Disable this event"]
     B0 = 0,
@@ -292,7 +298,7 @@ impl HibernationreqevtenR {
             false => Hibernationreqevten::B0,
         }
     }
-    #[doc = "Disable this event"]
+    #[doc = "Enable this event"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Hibernationreqevten::B1
@@ -309,7 +315,7 @@ impl<'a, REG> HibernationreqevtenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disable this event"]
+    #[doc = "Enable this event"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Hibernationreqevten::B1)
@@ -321,9 +327,10 @@ where
     }
 }
 #[doc = "U3/L2-L1 Suspend Event Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum U3l2l1suspen {
-    #[doc = "1: Disable this event"]
+    #[doc = "1: Enable this event"]
     B1 = 1,
     #[doc = "0: Disable this event"]
     B0 = 0,
@@ -345,7 +352,7 @@ impl U3l2l1suspenR {
             false => U3l2l1suspen::B0,
         }
     }
-    #[doc = "Disable this event"]
+    #[doc = "Enable this event"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == U3l2l1suspen::B1
@@ -362,7 +369,7 @@ impl<'a, REG> U3l2l1suspenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disable this event"]
+    #[doc = "Enable this event"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(U3l2l1suspen::B1)
@@ -374,9 +381,10 @@ where
     }
 }
 #[doc = "Start of (u)frame Event Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Softevten {
-    #[doc = "1: Disable this event"]
+    #[doc = "1: Enable this event"]
     B1 = 1,
     #[doc = "0: Disable this event"]
     B0 = 0,
@@ -398,7 +406,7 @@ impl SoftevtenR {
             false => Softevten::B0,
         }
     }
-    #[doc = "Disable this event"]
+    #[doc = "Enable this event"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Softevten::B1
@@ -415,7 +423,7 @@ impl<'a, REG> SoftevtenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disable this event"]
+    #[doc = "Enable this event"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Softevten::B1)
@@ -427,9 +435,10 @@ where
     }
 }
 #[doc = "Erratic Error Event Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Errticerrevten {
-    #[doc = "1: Disable this event"]
+    #[doc = "1: Enable this event"]
     B1 = 1,
     #[doc = "0: Disable this event"]
     B0 = 0,
@@ -451,7 +460,7 @@ impl ErrticerrevtenR {
             false => Errticerrevten::B0,
         }
     }
-    #[doc = "Disable this event"]
+    #[doc = "Enable this event"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Errticerrevten::B1
@@ -468,7 +477,7 @@ impl<'a, REG> ErrticerrevtenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disable this event"]
+    #[doc = "Enable this event"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Errticerrevten::B1)
@@ -480,9 +489,10 @@ where
     }
 }
 #[doc = "Vendor Device Test LMP Received Event\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vendevtstrcvden {
-    #[doc = "1: Disable this event"]
+    #[doc = "1: Enable this event"]
     B1 = 1,
     #[doc = "0: Disable this event"]
     B0 = 0,
@@ -504,7 +514,7 @@ impl VendevtstrcvdenR {
             false => Vendevtstrcvden::B0,
         }
     }
-    #[doc = "Disable this event"]
+    #[doc = "Enable this event"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Vendevtstrcvden::B1
@@ -521,7 +531,7 @@ impl<'a, REG> VendevtstrcvdenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disable this event"]
+    #[doc = "Enable this event"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Vendevtstrcvden::B1)

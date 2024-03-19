@@ -2,19 +2,19 @@
 pub type R = crate::R<DdrPiReg78Spec>;
 #[doc = "Register `DDR_PI_REG_78` writer"]
 pub type W = crate::W<DdrPiReg78Spec>;
-#[doc = "Field `PI_TDFI_RDLVL_RR` reader - Defines the DFI tRDLVL_RR timing parameter (in DFI clocks), the minimum cycles between read commands."]
+#[doc = "Field `PI_TDFI_RDLVL_RR` reader - Defines the DFI tRDLVL_RR timing parameter (in DFI clocks), the\n\nminimum cycles between read commands."]
 pub type PiTdfiRdlvlRrR = crate::FieldReader<u16>;
-#[doc = "Field `PI_TDFI_RDLVL_RR` writer - Defines the DFI tRDLVL_RR timing parameter (in DFI clocks), the minimum cycles between read commands."]
+#[doc = "Field `PI_TDFI_RDLVL_RR` writer - Defines the DFI tRDLVL_RR timing parameter (in DFI clocks), the\n\nminimum cycles between read commands."]
 pub type PiTdfiRdlvlRrW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 impl R {
-    #[doc = "Bits 0:9 - Defines the DFI tRDLVL_RR timing parameter (in DFI clocks), the minimum cycles between read commands."]
+    #[doc = "Bits 0:9 - Defines the DFI tRDLVL_RR timing parameter (in DFI clocks), the\n\nminimum cycles between read commands."]
     #[inline(always)]
     pub fn pi_tdfi_rdlvl_rr(&self) -> PiTdfiRdlvlRrR {
         PiTdfiRdlvlRrR::new((self.bits & 0x03ff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:9 - Defines the DFI tRDLVL_RR timing parameter (in DFI clocks), the minimum cycles between read commands."]
+    #[doc = "Bits 0:9 - Defines the DFI tRDLVL_RR timing parameter (in DFI clocks), the\n\nminimum cycles between read commands."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tdfi_rdlvl_rr(&mut self) -> PiTdfiRdlvlRrW<DdrPiReg78Spec> {

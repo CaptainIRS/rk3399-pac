@@ -2,13 +2,13 @@
 pub type R = crate::R<IhMuteVpStat0Spec>;
 #[doc = "Register `IH_MUTE_VP_STAT0` writer"]
 pub type W = crate::W<IhMuteVpStat0Spec>;
-#[doc = "Field `SPARE_1` reader - Reserved as “spare” bit with no associated functionality."]
+#[doc = "Field `SPARE_1` reader - Reserved as “spare” bit with no associated\n\nfunctionality."]
 pub type Spare1R = crate::BitReader;
-#[doc = "Field `SPARE_1` writer - Reserved as “spare” bit with no associated functionality."]
+#[doc = "Field `SPARE_1` writer - Reserved as “spare” bit with no associated\n\nfunctionality."]
 pub type Spare1W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `SPARE_2` reader - Reserved as “spare” bit with no associated functionality."]
+#[doc = "Field `SPARE_2` reader - Reserved as “spare” bit with no associated\n\nfunctionality."]
 pub type Spare2R = crate::BitReader;
-#[doc = "Field `SPARE_2` writer - Reserved as “spare” bit with no associated functionality."]
+#[doc = "Field `SPARE_2` writer - Reserved as “spare” bit with no associated\n\nfunctionality."]
 pub type Spare2W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FIFOEMPTYREMAP` reader - When set to 1, mutes ih_vp_stat0\\[2\\]"]
 pub type FifoemptyremapR = crate::BitReader;
@@ -35,12 +35,12 @@ pub type FifofullrepetR = crate::BitReader;
 #[doc = "Field `FIFOFULLREPET` writer - When set to 1, mutes ih_vp_stat0\\[7\\]"]
 pub type FifofullrepetW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - Reserved as “spare” bit with no associated functionality."]
+    #[doc = "Bit 0 - Reserved as “spare” bit with no associated\n\nfunctionality."]
     #[inline(always)]
     pub fn spare_1(&self) -> Spare1R {
         Spare1R::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - Reserved as “spare” bit with no associated functionality."]
+    #[doc = "Bit 1 - Reserved as “spare” bit with no associated\n\nfunctionality."]
     #[inline(always)]
     pub fn spare_2(&self) -> Spare2R {
         Spare2R::new(((self.bits >> 1) & 1) != 0)
@@ -77,13 +77,13 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - Reserved as “spare” bit with no associated functionality."]
+    #[doc = "Bit 0 - Reserved as “spare” bit with no associated\n\nfunctionality."]
     #[inline(always)]
     #[must_use]
     pub fn spare_1(&mut self) -> Spare1W<IhMuteVpStat0Spec> {
         Spare1W::new(self, 0)
     }
-    #[doc = "Bit 1 - Reserved as “spare” bit with no associated functionality."]
+    #[doc = "Bit 1 - Reserved as “spare” bit with no associated\n\nfunctionality."]
     #[inline(always)]
     #[must_use]
     pub fn spare_2(&mut self) -> Spare2W<IhMuteVpStat0Spec> {
@@ -126,7 +126,7 @@ impl W {
         FifofullrepetW::new(self, 7)
     }
 }
-#[doc = "Reserved as “spare” bit with no associated functionality.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ih_mute_vp_stat0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ih_mute_vp_stat0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Video Packetizer Interrupt Mute Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ih_mute_vp_stat0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ih_mute_vp_stat0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IhMuteVpStat0Spec;
 impl crate::RegisterSpec for IhMuteVpStat0Spec {
     type Ux = u8;

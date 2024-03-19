@@ -2,109 +2,109 @@
 pub type R = crate::R<TsadcIntPdSpec>;
 #[doc = "Register `TSADC_INT_PD` writer"]
 pub type W = crate::W<TsadcIntPdSpec>;
-#[doc = "Field `HT_IRQ_SRC0` reader - When TSADC output is bigger than COMP_INT, this bit will be valid, which means temperature is high, and the application should in charge of this. write 1 to it , this bit will be cleared."]
+#[doc = "Field `HT_IRQ_SRC0` reader - When TSADC output is bigger than COMP_INT, this bit will be valid,\n\nwhich means temperature is high, and the application should in\n\ncharge of this.\n\nwrite 1 to it , this bit will be cleared."]
 pub type HtIrqSrc0R = crate::BitReader;
-#[doc = "Field `HT_IRQ_SRC0` writer - When TSADC output is bigger than COMP_INT, this bit will be valid, which means temperature is high, and the application should in charge of this. write 1 to it , this bit will be cleared."]
+#[doc = "Field `HT_IRQ_SRC0` writer - When TSADC output is bigger than COMP_INT, this bit will be valid,\n\nwhich means temperature is high, and the application should in\n\ncharge of this.\n\nwrite 1 to it , this bit will be cleared."]
 pub type HtIrqSrc0W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `HT_IRQ_SRC1` reader - When TSADC output is bigger than COMP_INT, this bit will be valid, which means temperature is high, and the application should in charge of this. write 1 to it , this bit will be cleared."]
+#[doc = "Field `HT_IRQ_SRC1` reader - When TSADC output is bigger than COMP_INT, this bit will be valid,\n\nwhich means temperature is high, and the application should in\n\ncharge of this.\n\nwrite 1 to it , this bit will be cleared."]
 pub type HtIrqSrc1R = crate::BitReader;
-#[doc = "Field `HT_IRQ_SRC1` writer - When TSADC output is bigger than COMP_INT, this bit will be valid, which means temperature is high, and the application should in charge of this. write 1 to it , this bit will be cleared."]
+#[doc = "Field `HT_IRQ_SRC1` writer - When TSADC output is bigger than COMP_INT, this bit will be valid,\n\nwhich means temperature is high, and the application should in\n\ncharge of this.\n\nwrite 1 to it , this bit will be cleared."]
 pub type HtIrqSrc1W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `TSHUT_O_SRC0` reader - TSHUT output status When TSADC output is bigger than COMP_SHUT, this bit will be valid, which means temperature is VERY high, and the application should in charge of this. write 1 to it , this bit will be cleared."]
+#[doc = "Field `TSHUT_O_SRC0` reader - TSHUT output status\n\nWhen TSADC output is bigger than COMP_SHUT, this bit will be\n\nvalid, which means temperature is VERY high, and the application\n\nshould in charge of this.\n\nwrite 1 to it , this bit will be cleared."]
 pub type TshutOSrc0R = crate::BitReader;
-#[doc = "Field `TSHUT_O_SRC0` writer - TSHUT output status When TSADC output is bigger than COMP_SHUT, this bit will be valid, which means temperature is VERY high, and the application should in charge of this. write 1 to it , this bit will be cleared."]
+#[doc = "Field `TSHUT_O_SRC0` writer - TSHUT output status\n\nWhen TSADC output is bigger than COMP_SHUT, this bit will be\n\nvalid, which means temperature is VERY high, and the application\n\nshould in charge of this.\n\nwrite 1 to it , this bit will be cleared."]
 pub type TshutOSrc0W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `TSHUT_O_SRC1` reader - TSHUT output status When TSADC output is bigger than COMP_SHUT, this bit will be valid, which means temperature is VERY high, and the application should in charge of this. write 1 to it , this bit will be cleared."]
+#[doc = "Field `TSHUT_O_SRC1` reader - TSHUT output status\n\nWhen TSADC output is bigger than COMP_SHUT, this bit will be\n\nvalid, which means temperature is VERY high, and the application\n\nshould in charge of this.\n\nwrite 1 to it , this bit will be cleared."]
 pub type TshutOSrc1R = crate::BitReader;
-#[doc = "Field `TSHUT_O_SRC1` writer - TSHUT output status When TSADC output is bigger than COMP_SHUT, this bit will be valid, which means temperature is VERY high, and the application should in charge of this. write 1 to it , this bit will be cleared."]
+#[doc = "Field `TSHUT_O_SRC1` writer - TSHUT output status\n\nWhen TSADC output is bigger than COMP_SHUT, this bit will be\n\nvalid, which means temperature is VERY high, and the application\n\nshould in charge of this.\n\nwrite 1 to it , this bit will be cleared."]
 pub type TshutOSrc1W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `LT_IRQ_SRC0` reader - When TSADC output is lower than COMP_INT_LOW, this bit will be valid, which means temperature is low, and the application should in charge of this. write 1 to it , this bit will be cleared."]
+#[doc = "Field `LT_IRQ_SRC0` reader - When TSADC output is lower than COMP_INT_LOW, this bit will be\n\nvalid, which means temperature is low, and the application should\n\nin charge of this.\n\nwrite 1 to it , this bit will be cleared."]
 pub type LtIrqSrc0R = crate::BitReader;
-#[doc = "Field `LT_IRQ_SRC0` writer - When TSADC output is lower than COMP_INT_LOW, this bit will be valid, which means temperature is low, and the application should in charge of this. write 1 to it , this bit will be cleared."]
+#[doc = "Field `LT_IRQ_SRC0` writer - When TSADC output is lower than COMP_INT_LOW, this bit will be\n\nvalid, which means temperature is low, and the application should\n\nin charge of this.\n\nwrite 1 to it , this bit will be cleared."]
 pub type LtIrqSrc0W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `LT_IRQ_SRC1` reader - When TSADC output is lower than COMP_INT_LOW, this bit will be valid, which means temperature is low, and the application should in charge of this. write 1 to it , this bit will be cleared."]
+#[doc = "Field `LT_IRQ_SRC1` reader - When TSADC output is lower than COMP_INT_LOW, this bit will be\n\nvalid, which means temperature is low, and the application should\n\nin charge of this.\n\nwrite 1 to it , this bit will be cleared."]
 pub type LtIrqSrc1R = crate::BitReader;
-#[doc = "Field `LT_IRQ_SRC1` writer - When TSADC output is lower than COMP_INT_LOW, this bit will be valid, which means temperature is low, and the application should in charge of this. write 1 to it , this bit will be cleared."]
+#[doc = "Field `LT_IRQ_SRC1` writer - When TSADC output is lower than COMP_INT_LOW, this bit will be\n\nvalid, which means temperature is low, and the application should\n\nin charge of this.\n\nwrite 1 to it , this bit will be cleared."]
 pub type LtIrqSrc1W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `EOC_INT_PD` reader - Interrupt status. This bit will be set to 1 when end-of-conversion. Set 0 to clear the interrupt."]
+#[doc = "Field `EOC_INT_PD` reader - Interrupt status.\n\nThis bit will be set to 1 when end-of-conversion.\n\nSet 0 to clear the interrupt."]
 pub type EocIntPdR = crate::BitReader;
-#[doc = "Field `EOC_INT_PD` writer - Interrupt status. This bit will be set to 1 when end-of-conversion. Set 0 to clear the interrupt."]
+#[doc = "Field `EOC_INT_PD` writer - Interrupt status.\n\nThis bit will be set to 1 when end-of-conversion.\n\nSet 0 to clear the interrupt."]
 pub type EocIntPdW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - When TSADC output is bigger than COMP_INT, this bit will be valid, which means temperature is high, and the application should in charge of this. write 1 to it , this bit will be cleared."]
+    #[doc = "Bit 0 - When TSADC output is bigger than COMP_INT, this bit will be valid,\n\nwhich means temperature is high, and the application should in\n\ncharge of this.\n\nwrite 1 to it , this bit will be cleared."]
     #[inline(always)]
     pub fn ht_irq_src0(&self) -> HtIrqSrc0R {
         HtIrqSrc0R::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - When TSADC output is bigger than COMP_INT, this bit will be valid, which means temperature is high, and the application should in charge of this. write 1 to it , this bit will be cleared."]
+    #[doc = "Bit 1 - When TSADC output is bigger than COMP_INT, this bit will be valid,\n\nwhich means temperature is high, and the application should in\n\ncharge of this.\n\nwrite 1 to it , this bit will be cleared."]
     #[inline(always)]
     pub fn ht_irq_src1(&self) -> HtIrqSrc1R {
         HtIrqSrc1R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 4 - TSHUT output status When TSADC output is bigger than COMP_SHUT, this bit will be valid, which means temperature is VERY high, and the application should in charge of this. write 1 to it , this bit will be cleared."]
+    #[doc = "Bit 4 - TSHUT output status\n\nWhen TSADC output is bigger than COMP_SHUT, this bit will be\n\nvalid, which means temperature is VERY high, and the application\n\nshould in charge of this.\n\nwrite 1 to it , this bit will be cleared."]
     #[inline(always)]
     pub fn tshut_o_src0(&self) -> TshutOSrc0R {
         TshutOSrc0R::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - TSHUT output status When TSADC output is bigger than COMP_SHUT, this bit will be valid, which means temperature is VERY high, and the application should in charge of this. write 1 to it , this bit will be cleared."]
+    #[doc = "Bit 5 - TSHUT output status\n\nWhen TSADC output is bigger than COMP_SHUT, this bit will be\n\nvalid, which means temperature is VERY high, and the application\n\nshould in charge of this.\n\nwrite 1 to it , this bit will be cleared."]
     #[inline(always)]
     pub fn tshut_o_src1(&self) -> TshutOSrc1R {
         TshutOSrc1R::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 12 - When TSADC output is lower than COMP_INT_LOW, this bit will be valid, which means temperature is low, and the application should in charge of this. write 1 to it , this bit will be cleared."]
+    #[doc = "Bit 12 - When TSADC output is lower than COMP_INT_LOW, this bit will be\n\nvalid, which means temperature is low, and the application should\n\nin charge of this.\n\nwrite 1 to it , this bit will be cleared."]
     #[inline(always)]
     pub fn lt_irq_src0(&self) -> LtIrqSrc0R {
         LtIrqSrc0R::new(((self.bits >> 12) & 1) != 0)
     }
-    #[doc = "Bit 13 - When TSADC output is lower than COMP_INT_LOW, this bit will be valid, which means temperature is low, and the application should in charge of this. write 1 to it , this bit will be cleared."]
+    #[doc = "Bit 13 - When TSADC output is lower than COMP_INT_LOW, this bit will be\n\nvalid, which means temperature is low, and the application should\n\nin charge of this.\n\nwrite 1 to it , this bit will be cleared."]
     #[inline(always)]
     pub fn lt_irq_src1(&self) -> LtIrqSrc1R {
         LtIrqSrc1R::new(((self.bits >> 13) & 1) != 0)
     }
-    #[doc = "Bit 16 - Interrupt status. This bit will be set to 1 when end-of-conversion. Set 0 to clear the interrupt."]
+    #[doc = "Bit 16 - Interrupt status.\n\nThis bit will be set to 1 when end-of-conversion.\n\nSet 0 to clear the interrupt."]
     #[inline(always)]
     pub fn eoc_int_pd(&self) -> EocIntPdR {
         EocIntPdR::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - When TSADC output is bigger than COMP_INT, this bit will be valid, which means temperature is high, and the application should in charge of this. write 1 to it , this bit will be cleared."]
+    #[doc = "Bit 0 - When TSADC output is bigger than COMP_INT, this bit will be valid,\n\nwhich means temperature is high, and the application should in\n\ncharge of this.\n\nwrite 1 to it , this bit will be cleared."]
     #[inline(always)]
     #[must_use]
     pub fn ht_irq_src0(&mut self) -> HtIrqSrc0W<TsadcIntPdSpec> {
         HtIrqSrc0W::new(self, 0)
     }
-    #[doc = "Bit 1 - When TSADC output is bigger than COMP_INT, this bit will be valid, which means temperature is high, and the application should in charge of this. write 1 to it , this bit will be cleared."]
+    #[doc = "Bit 1 - When TSADC output is bigger than COMP_INT, this bit will be valid,\n\nwhich means temperature is high, and the application should in\n\ncharge of this.\n\nwrite 1 to it , this bit will be cleared."]
     #[inline(always)]
     #[must_use]
     pub fn ht_irq_src1(&mut self) -> HtIrqSrc1W<TsadcIntPdSpec> {
         HtIrqSrc1W::new(self, 1)
     }
-    #[doc = "Bit 4 - TSHUT output status When TSADC output is bigger than COMP_SHUT, this bit will be valid, which means temperature is VERY high, and the application should in charge of this. write 1 to it , this bit will be cleared."]
+    #[doc = "Bit 4 - TSHUT output status\n\nWhen TSADC output is bigger than COMP_SHUT, this bit will be\n\nvalid, which means temperature is VERY high, and the application\n\nshould in charge of this.\n\nwrite 1 to it , this bit will be cleared."]
     #[inline(always)]
     #[must_use]
     pub fn tshut_o_src0(&mut self) -> TshutOSrc0W<TsadcIntPdSpec> {
         TshutOSrc0W::new(self, 4)
     }
-    #[doc = "Bit 5 - TSHUT output status When TSADC output is bigger than COMP_SHUT, this bit will be valid, which means temperature is VERY high, and the application should in charge of this. write 1 to it , this bit will be cleared."]
+    #[doc = "Bit 5 - TSHUT output status\n\nWhen TSADC output is bigger than COMP_SHUT, this bit will be\n\nvalid, which means temperature is VERY high, and the application\n\nshould in charge of this.\n\nwrite 1 to it , this bit will be cleared."]
     #[inline(always)]
     #[must_use]
     pub fn tshut_o_src1(&mut self) -> TshutOSrc1W<TsadcIntPdSpec> {
         TshutOSrc1W::new(self, 5)
     }
-    #[doc = "Bit 12 - When TSADC output is lower than COMP_INT_LOW, this bit will be valid, which means temperature is low, and the application should in charge of this. write 1 to it , this bit will be cleared."]
+    #[doc = "Bit 12 - When TSADC output is lower than COMP_INT_LOW, this bit will be\n\nvalid, which means temperature is low, and the application should\n\nin charge of this.\n\nwrite 1 to it , this bit will be cleared."]
     #[inline(always)]
     #[must_use]
     pub fn lt_irq_src0(&mut self) -> LtIrqSrc0W<TsadcIntPdSpec> {
         LtIrqSrc0W::new(self, 12)
     }
-    #[doc = "Bit 13 - When TSADC output is lower than COMP_INT_LOW, this bit will be valid, which means temperature is low, and the application should in charge of this. write 1 to it , this bit will be cleared."]
+    #[doc = "Bit 13 - When TSADC output is lower than COMP_INT_LOW, this bit will be\n\nvalid, which means temperature is low, and the application should\n\nin charge of this.\n\nwrite 1 to it , this bit will be cleared."]
     #[inline(always)]
     #[must_use]
     pub fn lt_irq_src1(&mut self) -> LtIrqSrc1W<TsadcIntPdSpec> {
         LtIrqSrc1W::new(self, 13)
     }
-    #[doc = "Bit 16 - Interrupt status. This bit will be set to 1 when end-of-conversion. Set 0 to clear the interrupt."]
+    #[doc = "Bit 16 - Interrupt status.\n\nThis bit will be set to 1 when end-of-conversion.\n\nSet 0 to clear the interrupt."]
     #[inline(always)]
     #[must_use]
     pub fn eoc_int_pd(&mut self) -> EocIntPdW<TsadcIntPdSpec> {

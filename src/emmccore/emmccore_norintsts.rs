@@ -3,9 +3,10 @@ pub type R = crate::R<EmmccoreNorintstsSpec>;
 #[doc = "Register `EMMCCORE_NORINTSTS` writer"]
 pub type W = crate::W<EmmccoreNorintstsSpec>;
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Commandcomplete {
-    #[doc = "0: Command Complete This bit is set when we get the end bit of the command response (Except Auto CMD12 and Auto CMD23) Note: Command Time-out Error has higher priority than Command Complete. If both are set to 1, it can be considered that the response was not received correctly."]
+    #[doc = "0: No Command Complete"]
     B0 = 0,
     #[doc = "1: Command Complete This bit is set when we get the end bit of the command response (Except Auto CMD12 and Auto CMD23) Note: Command Time-out Error has higher priority than Command Complete. If both are set to 1, it can be considered that the response was not received correctly."]
     B1 = 1,
@@ -27,7 +28,7 @@ impl CommandcompleteR {
             true => Commandcomplete::B1,
         }
     }
-    #[doc = "Command Complete This bit is set when we get the end bit of the command response (Except Auto CMD12 and Auto CMD23) Note: Command Time-out Error has higher priority than Command Complete. If both are set to 1, it can be considered that the response was not received correctly."]
+    #[doc = "No Command Complete"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Commandcomplete::B0
@@ -44,7 +45,7 @@ impl<'a, REG> CommandcompleteW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Command Complete This bit is set when we get the end bit of the command response (Except Auto CMD12 and Auto CMD23) Note: Command Time-out Error has higher priority than Command Complete. If both are set to 1, it can be considered that the response was not received correctly."]
+    #[doc = "No Command Complete"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Commandcomplete::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Transfercomplete {
-    #[doc = "0: Data Transfer Complete This bit is set when a read / write transaction is completed. a. Read Transaction: This bit is set at the falling edge of Read Transfer Active Status. There are two cases in which the Interrupt is generated. The first is when a data transfer is completed as specified by data length (After the last data has been read to the Host System). The second is when data has stopped at the block gap and completed the data transfer by setting the Stop At Block Gap Request in the Block Gap Control Register (After valid data has been read to the Host System). b. Write Transaction: This bit is set at the falling edge of the DAT Line Active Status. There are two cases in which the Interrupt is generated. The first is when the last data is written to the card as specified by data length and Busy signal is released. The second is when data transfers are stopped at the block gap by setting Stop At Block Gap Request in the Block Gap Control Register and data transfers completed. (Aftervalid data is written to the SD card and the busy signal is released). c. In case of command with busy This bit is set when busy is deasserted. Note: a. Transfer Complete has higher priority than Data Time-out Error. If both bits are set to 1, the data transfer can be considered complete b. While performing tuning procedure (Execute Tuning is set to 1), Transfer Complete is not set to 1"]
+    #[doc = "0: No Data Transfer Complete"]
     B0 = 0,
     #[doc = "1: Data Transfer Complete This bit is set when a read / write transaction is completed. a. Read Transaction: This bit is set at the falling edge of Read Transfer Active Status. There are two cases in which the Interrupt is generated. The first is when a data transfer is completed as specified by data length (After the last data has been read to the Host System). The second is when data has stopped at the block gap and completed the data transfer by setting the Stop At Block Gap Request in the Block Gap Control Register (After valid data has been read to the Host System). b. Write Transaction: This bit is set at the falling edge of the DAT Line Active Status. There are two cases in which the Interrupt is generated. The first is when the last data is written to the card as specified by data length and Busy signal is released. The second is when data transfers are stopped at the block gap by setting Stop At Block Gap Request in the Block Gap Control Register and data transfers completed. (Aftervalid data is written to the SD card and the busy signal is released). c. In case of command with busy This bit is set when busy is deasserted. Note: a. Transfer Complete has higher priority than Data Time-out Error. If both bits are set to 1, the data transfer can be considered complete b. While performing tuning procedure (Execute Tuning is set to 1), Transfer Complete is not set to 1"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl TransfercompleteR {
             true => Transfercomplete::B1,
         }
     }
-    #[doc = "Data Transfer Complete This bit is set when a read / write transaction is completed. a. Read Transaction: This bit is set at the falling edge of Read Transfer Active Status. There are two cases in which the Interrupt is generated. The first is when a data transfer is completed as specified by data length (After the last data has been read to the Host System). The second is when data has stopped at the block gap and completed the data transfer by setting the Stop At Block Gap Request in the Block Gap Control Register (After valid data has been read to the Host System). b. Write Transaction: This bit is set at the falling edge of the DAT Line Active Status. There are two cases in which the Interrupt is generated. The first is when the last data is written to the card as specified by data length and Busy signal is released. The second is when data transfers are stopped at the block gap by setting Stop At Block Gap Request in the Block Gap Control Register and data transfers completed. (Aftervalid data is written to the SD card and the busy signal is released). c. In case of command with busy This bit is set when busy is deasserted. Note: a. Transfer Complete has higher priority than Data Time-out Error. If both bits are set to 1, the data transfer can be considered complete b. While performing tuning procedure (Execute Tuning is set to 1), Transfer Complete is not set to 1"]
+    #[doc = "No Data Transfer Complete"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Transfercomplete::B0
@@ -97,7 +99,7 @@ impl<'a, REG> TransfercompleteW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Data Transfer Complete This bit is set when a read / write transaction is completed. a. Read Transaction: This bit is set at the falling edge of Read Transfer Active Status. There are two cases in which the Interrupt is generated. The first is when a data transfer is completed as specified by data length (After the last data has been read to the Host System). The second is when data has stopped at the block gap and completed the data transfer by setting the Stop At Block Gap Request in the Block Gap Control Register (After valid data has been read to the Host System). b. Write Transaction: This bit is set at the falling edge of the DAT Line Active Status. There are two cases in which the Interrupt is generated. The first is when the last data is written to the card as specified by data length and Busy signal is released. The second is when data transfers are stopped at the block gap by setting Stop At Block Gap Request in the Block Gap Control Register and data transfers completed. (Aftervalid data is written to the SD card and the busy signal is released). c. In case of command with busy This bit is set when busy is deasserted. Note: a. Transfer Complete has higher priority than Data Time-out Error. If both bits are set to 1, the data transfer can be considered complete b. While performing tuning procedure (Execute Tuning is set to 1), Transfer Complete is not set to 1"]
+    #[doc = "No Data Transfer Complete"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Transfercomplete::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Blockgapevent {
-    #[doc = "0: Transaction stopped at Block Gap If the Stop At Block Gap Request in the Block Gap Control Register is set, this bit is set. a. Read Transaction: This bit is set at the falling edge of the DAT Line Active Status (When the transaction is stopped at SD Bus timing. The Read Wait must be supported inorder to use this function). b. Write Transaction: This bit is set at the falling edge of Write Transfer Active Status (After getting CRC status at SD Bus timing)."]
+    #[doc = "0: No Block Gap Event"]
     B0 = 0,
     #[doc = "1: Transaction stopped at Block Gap If the Stop At Block Gap Request in the Block Gap Control Register is set, this bit is set. a. Read Transaction: This bit is set at the falling edge of the DAT Line Active Status (When the transaction is stopped at SD Bus timing. The Read Wait must be supported inorder to use this function). b. Write Transaction: This bit is set at the falling edge of Write Transfer Active Status (After getting CRC status at SD Bus timing)."]
     B1 = 1,
@@ -133,7 +136,7 @@ impl BlockgapeventR {
             true => Blockgapevent::B1,
         }
     }
-    #[doc = "Transaction stopped at Block Gap If the Stop At Block Gap Request in the Block Gap Control Register is set, this bit is set. a. Read Transaction: This bit is set at the falling edge of the DAT Line Active Status (When the transaction is stopped at SD Bus timing. The Read Wait must be supported inorder to use this function). b. Write Transaction: This bit is set at the falling edge of Write Transfer Active Status (After getting CRC status at SD Bus timing)."]
+    #[doc = "No Block Gap Event"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Blockgapevent::B0
@@ -150,7 +153,7 @@ impl<'a, REG> BlockgapeventW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Transaction stopped at Block Gap If the Stop At Block Gap Request in the Block Gap Control Register is set, this bit is set. a. Read Transaction: This bit is set at the falling edge of the DAT Line Active Status (When the transaction is stopped at SD Bus timing. The Read Wait must be supported inorder to use this function). b. Write Transaction: This bit is set at the falling edge of Write Transfer Active Status (After getting CRC status at SD Bus timing)."]
+    #[doc = "No Block Gap Event"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Blockgapevent::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmainterrupt {
-    #[doc = "0: DMA Interrupt is Generated This status is set if the HC detects the Host DMA Buffer Boundary in the Block Size regiser."]
+    #[doc = "0: No DMA Interrupt"]
     B0 = 0,
     #[doc = "1: DMA Interrupt is Generated This status is set if the HC detects the Host DMA Buffer Boundary in the Block Size regiser."]
     B1 = 1,
@@ -186,7 +190,7 @@ impl DmainterruptR {
             true => Dmainterrupt::B1,
         }
     }
-    #[doc = "DMA Interrupt is Generated This status is set if the HC detects the Host DMA Buffer Boundary in the Block Size regiser."]
+    #[doc = "No DMA Interrupt"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Dmainterrupt::B0
@@ -203,7 +207,7 @@ impl<'a, REG> DmainterruptW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "DMA Interrupt is Generated This status is set if the HC detects the Host DMA Buffer Boundary in the Block Size regiser."]
+    #[doc = "No DMA Interrupt"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Dmainterrupt::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bufferwriteready {
-    #[doc = "0: Ready to Write Buffer This status is set if the Buffer Write Enable changes from 0 to 1."]
+    #[doc = "0: Not Ready to Write Buffer"]
     B0 = 0,
     #[doc = "1: Ready to Write Buffer This status is set if the Buffer Write Enable changes from 0 to 1."]
     B1 = 1,
@@ -239,7 +244,7 @@ impl BufferwritereadyR {
             true => Bufferwriteready::B1,
         }
     }
-    #[doc = "Ready to Write Buffer This status is set if the Buffer Write Enable changes from 0 to 1."]
+    #[doc = "Not Ready to Write Buffer"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Bufferwriteready::B0
@@ -256,7 +261,7 @@ impl<'a, REG> BufferwritereadyW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Ready to Write Buffer This status is set if the Buffer Write Enable changes from 0 to 1."]
+    #[doc = "Not Ready to Write Buffer"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Bufferwriteready::B0)
@@ -268,9 +273,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bufferreadready {
-    #[doc = "0: Ready to read Buffer This status is set if the Buffer Read Enable changes from 0 to 1. Buffer Read Ready is set to 1 for every CMD19 execution in tuning procedure."]
+    #[doc = "0: Not Ready to read Buffer"]
     B0 = 0,
     #[doc = "1: Ready to read Buffer This status is set if the Buffer Read Enable changes from 0 to 1. Buffer Read Ready is set to 1 for every CMD19 execution in tuning procedure."]
     B1 = 1,
@@ -292,7 +298,7 @@ impl BufferreadreadyR {
             true => Bufferreadready::B1,
         }
     }
-    #[doc = "Ready to read Buffer This status is set if the Buffer Read Enable changes from 0 to 1. Buffer Read Ready is set to 1 for every CMD19 execution in tuning procedure."]
+    #[doc = "Not Ready to read Buffer"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Bufferreadready::B0
@@ -309,7 +315,7 @@ impl<'a, REG> BufferreadreadyW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Ready to read Buffer This status is set if the Buffer Read Enable changes from 0 to 1. Buffer Read Ready is set to 1 for every CMD19 execution in tuning procedure."]
+    #[doc = "Not Ready to read Buffer"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Bufferreadready::B0)
@@ -321,9 +327,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cardinsertion {
-    #[doc = "0: Card Inserted This status is set if the Card Inserted in the Present State register changes from 0 to 1. When the HD writes this bit to 1 to clear this status the status of the Card Inserted in the Present State registershould be confirmed. Because the card detect may possibly be changed when the HD clear this bit an Interrupt event may not be generated."]
+    #[doc = "0: Card State Stable or Debouncing"]
     B0 = 0,
     #[doc = "1: Card Inserted This status is set if the Card Inserted in the Present State register changes from 0 to 1. When the HD writes this bit to 1 to clear this status the status of the Card Inserted in the Present State registershould be confirmed. Because the card detect may possibly be changed when the HD clear this bit an Interrupt event may not be generated."]
     B1 = 1,
@@ -345,7 +352,7 @@ impl CardinsertionR {
             true => Cardinsertion::B1,
         }
     }
-    #[doc = "Card Inserted This status is set if the Card Inserted in the Present State register changes from 0 to 1. When the HD writes this bit to 1 to clear this status the status of the Card Inserted in the Present State registershould be confirmed. Because the card detect may possibly be changed when the HD clear this bit an Interrupt event may not be generated."]
+    #[doc = "Card State Stable or Debouncing"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cardinsertion::B0
@@ -362,7 +369,7 @@ impl<'a, REG> CardinsertionW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Card Inserted This status is set if the Card Inserted in the Present State register changes from 0 to 1. When the HD writes this bit to 1 to clear this status the status of the Card Inserted in the Present State registershould be confirmed. Because the card detect may possibly be changed when the HD clear this bit an Interrupt event may not be generated."]
+    #[doc = "Card State Stable or Debouncing"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cardinsertion::B0)
@@ -374,9 +381,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cardremoval {
-    #[doc = "0: Card Removed This status is set if the Card Inserted in the Present State register changes from 1 to 0. When the HD writes this bit to 1 to clear this status the status of the Card Inserted in the Present State registershould be confirmed. Because the card detect may possibly be changed when the HD clear this bit an Interrupt event may not be generated."]
+    #[doc = "0: Card State Stable or Debouncing"]
     B0 = 0,
     #[doc = "1: Card Removed This status is set if the Card Inserted in the Present State register changes from 1 to 0. When the HD writes this bit to 1 to clear this status the status of the Card Inserted in the Present State registershould be confirmed. Because the card detect may possibly be changed when the HD clear this bit an Interrupt event may not be generated."]
     B1 = 1,
@@ -398,7 +406,7 @@ impl CardremovalR {
             true => Cardremoval::B1,
         }
     }
-    #[doc = "Card Removed This status is set if the Card Inserted in the Present State register changes from 1 to 0. When the HD writes this bit to 1 to clear this status the status of the Card Inserted in the Present State registershould be confirmed. Because the card detect may possibly be changed when the HD clear this bit an Interrupt event may not be generated."]
+    #[doc = "Card State Stable or Debouncing"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cardremoval::B0
@@ -415,7 +423,7 @@ impl<'a, REG> CardremovalW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Card Removed This status is set if the Card Inserted in the Present State register changes from 1 to 0. When the HD writes this bit to 1 to clear this status the status of the Card Inserted in the Present State registershould be confirmed. Because the card detect may possibly be changed when the HD clear this bit an Interrupt event may not be generated."]
+    #[doc = "Card State Stable or Debouncing"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cardremoval::B0)
@@ -427,10 +435,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cardinterrupt {
-    #[doc = "0: Generate Card Interrupt Writing this bit to 1 does not clear this bit. It is cleared by resetting the SD card interrupt factor. In 1-bit mode, the HC shall detect the Card Interrupt without SD Clock to support wakeup. In 4-bit mode, the card interrupt signal is sampled during the interrupt cycle, so there are some sample delays between the interrupt signal from the card and the interrupt to the Host system. when this status has been set and the HD needs to start this interrupt service, Card Interrupt Status Enable in the Normal Interrupt Status register shall be set to 0 in order to clear the card interrupt statuses latched in the HC and stop driving the Host System. After completion of the card interrupt service (the reset factor in the SD card and the interrupt signal may not be asserted), set Card Interrupt Status Enable to 1 and start sampling the interrupt signal again. Interrupt detected by DAT\\[1\\]
-is supported when there is a card per slot."]
+    #[doc = "0: No Card Interrupt"]
     B0 = 0,
     #[doc = "1: Generate Card Interrupt Writing this bit to 1 does not clear this bit. It is cleared by resetting the SD card interrupt factor. In 1-bit mode, the HC shall detect the Card Interrupt without SD Clock to support wakeup. In 4-bit mode, the card interrupt signal is sampled during the interrupt cycle, so there are some sample delays between the interrupt signal from the card and the interrupt to the Host system. when this status has been set and the HD needs to start this interrupt service, Card Interrupt Status Enable in the Normal Interrupt Status register shall be set to 0 in order to clear the card interrupt statuses latched in the HC and stop driving the Host System. After completion of the card interrupt service (the reset factor in the SD card and the interrupt signal may not be asserted), set Card Interrupt Status Enable to 1 and start sampling the interrupt signal again. Interrupt detected by DAT\\[1\\]
 is supported when there is a card per slot."]
@@ -453,8 +461,7 @@ impl CardinterruptR {
             true => Cardinterrupt::B1,
         }
     }
-    #[doc = "Generate Card Interrupt Writing this bit to 1 does not clear this bit. It is cleared by resetting the SD card interrupt factor. In 1-bit mode, the HC shall detect the Card Interrupt without SD Clock to support wakeup. In 4-bit mode, the card interrupt signal is sampled during the interrupt cycle, so there are some sample delays between the interrupt signal from the card and the interrupt to the Host system. when this status has been set and the HD needs to start this interrupt service, Card Interrupt Status Enable in the Normal Interrupt Status register shall be set to 0 in order to clear the card interrupt statuses latched in the HC and stop driving the Host System. After completion of the card interrupt service (the reset factor in the SD card and the interrupt signal may not be asserted), set Card Interrupt Status Enable to 1 and start sampling the interrupt signal again. Interrupt detected by DAT\\[1\\]
-is supported when there is a card per slot."]
+    #[doc = "No Card Interrupt"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cardinterrupt::B0
@@ -467,9 +474,10 @@ is supported when there is a card per slot."]
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Retuningevent {
-    #[doc = "1: Re-Tuning is not required This status is set if Re-Tuning Request in the Present State register changes from 0 to 1. Host Controller requestsHost Driver to perform re-tuning for next data transfer. Current data transfer (not large block count) can be completed without re-tuning."]
+    #[doc = "1: Re-Tuning should be performed"]
     B1 = 1,
     #[doc = "0: Re-Tuning is not required This status is set if Re-Tuning Request in the Present State register changes from 0 to 1. Host Controller requestsHost Driver to perform re-tuning for next data transfer. Current data transfer (not large block count) can be completed without re-tuning."]
     B0 = 0,
@@ -491,7 +499,7 @@ impl RetuningeventR {
             false => Retuningevent::B0,
         }
     }
-    #[doc = "Re-Tuning is not required This status is set if Re-Tuning Request in the Present State register changes from 0 to 1. Host Controller requestsHost Driver to perform re-tuning for next data transfer. Current data transfer (not large block count) can be completed without re-tuning."]
+    #[doc = "Re-Tuning should be performed"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Retuningevent::B1
@@ -503,9 +511,10 @@ impl RetuningeventR {
     }
 }
 #[doc = "This status is set if the boot acknowledge is received from device.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bootackrcv {
-    #[doc = "0: Boot ack is received"]
+    #[doc = "0: Boot ack is not received"]
     B0 = 0,
     #[doc = "1: Boot ack is received"]
     B1 = 1,
@@ -527,7 +536,7 @@ impl BootackrcvR {
             true => Bootackrcv::B1,
         }
     }
-    #[doc = "Boot ack is received"]
+    #[doc = "Boot ack is not received"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Bootackrcv::B0
@@ -544,7 +553,7 @@ impl<'a, REG> BootackrcvW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Boot ack is received"]
+    #[doc = "Boot ack is not received"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Bootackrcv::B0)
@@ -556,9 +565,10 @@ where
     }
 }
 #[doc = "This status is set if the boot operation get terminated\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bootterminateinterrupt {
-    #[doc = "0: Boot operation is terminated"]
+    #[doc = "0: Boot operation is not terminated"]
     B0 = 0,
     #[doc = "1: Boot operation is terminated"]
     B1 = 1,
@@ -580,7 +590,7 @@ impl BootterminateinterruptR {
             true => Bootterminateinterrupt::B1,
         }
     }
-    #[doc = "Boot operation is terminated"]
+    #[doc = "Boot operation is not terminated"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Bootterminateinterrupt::B0
@@ -597,7 +607,7 @@ impl<'a, REG> BootterminateinterruptW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Boot operation is terminated"]
+    #[doc = "Boot operation is not terminated"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Bootterminateinterrupt::B0)
@@ -609,9 +619,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Errorinterrupt {
-    #[doc = "0: Error If any of the bits inthe Error Interrupt Status Register are set, then this bit is set. Therefore the HD can test for an error by checking this bit first."]
+    #[doc = "0: No Error"]
     B0 = 0,
     #[doc = "1: Error If any of the bits inthe Error Interrupt Status Register are set, then this bit is set. Therefore the HD can test for an error by checking this bit first."]
     B1 = 1,
@@ -633,7 +644,7 @@ impl ErrorinterruptR {
             true => Errorinterrupt::B1,
         }
     }
-    #[doc = "Error If any of the bits inthe Error Interrupt Status Register are set, then this bit is set. Therefore the HD can test for an error by checking this bit first."]
+    #[doc = "No Error"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Errorinterrupt::B0

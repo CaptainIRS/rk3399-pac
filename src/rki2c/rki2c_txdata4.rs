@@ -2,19 +2,19 @@
 pub type R = crate::R<Rki2cTxdata4Spec>;
 #[doc = "Register `RKI2C_TXDATA4` writer"]
 pub type W = crate::W<Rki2cTxdata4Spec>;
-#[doc = "Field `TXDATA4` reader - data4 to be transmitted 32 bits data"]
+#[doc = "Field `TXDATA4` reader - data4 to be transmitted\n\n32 bits data"]
 pub type Txdata4R = crate::FieldReader<u32>;
-#[doc = "Field `TXDATA4` writer - data4 to be transmitted 32 bits data"]
+#[doc = "Field `TXDATA4` writer - data4 to be transmitted\n\n32 bits data"]
 pub type Txdata4W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - data4 to be transmitted 32 bits data"]
+    #[doc = "Bits 0:31 - data4 to be transmitted\n\n32 bits data"]
     #[inline(always)]
     pub fn txdata4(&self) -> Txdata4R {
         Txdata4R::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - data4 to be transmitted 32 bits data"]
+    #[doc = "Bits 0:31 - data4 to be transmitted\n\n32 bits data"]
     #[inline(always)]
     #[must_use]
     pub fn txdata4(&mut self) -> Txdata4W<Rki2cTxdata4Spec> {

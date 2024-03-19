@@ -3,14 +3,14 @@ pub type R = crate::R<HSyncStaLSpec>;
 #[doc = "Register `H_SYNC_STA_L` writer"]
 pub type W = crate::W<HSyncStaLSpec>;
 #[doc = "Field `H_SYNC_STA_L` reader - H_SYNC \\[7:0\\]
-(horizon sync width) which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+(horizon sync width) which is \n\ndetected by video capture module. \n\nThis bit field is valid only when STRM_VALID is high. \n\nAnd STRM_VALID becomes high when two \n\nsuccessive frames are determined as stable."]
 pub type HSyncStaLR = crate::FieldReader;
 #[doc = "Field `H_SYNC_STA_L` writer - H_SYNC \\[7:0\\]
-(horizon sync width) which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+(horizon sync width) which is \n\ndetected by video capture module. \n\nThis bit field is valid only when STRM_VALID is high. \n\nAnd STRM_VALID becomes high when two \n\nsuccessive frames are determined as stable."]
 pub type HSyncStaLW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - H_SYNC \\[7:0\\]
-(horizon sync width) which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+(horizon sync width) which is \n\ndetected by video capture module. \n\nThis bit field is valid only when STRM_VALID is high. \n\nAnd STRM_VALID becomes high when two \n\nsuccessive frames are determined as stable."]
     #[inline(always)]
     pub fn h_sync_sta_l(&self) -> HSyncStaLR {
         HSyncStaLR::new((self.bits & 0xff) as u8)
@@ -18,7 +18,7 @@ impl R {
 }
 impl W {
     #[doc = "Bits 0:7 - H_SYNC \\[7:0\\]
-(horizon sync width) which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+(horizon sync width) which is \n\ndetected by video capture module. \n\nThis bit field is valid only when STRM_VALID is high. \n\nAnd STRM_VALID becomes high when two \n\nsuccessive frames are determined as stable."]
     #[inline(always)]
     #[must_use]
     pub fn h_sync_sta_l(&mut self) -> HSyncStaLW<HSyncStaLSpec> {

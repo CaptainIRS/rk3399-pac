@@ -2,19 +2,19 @@
 pub type R = crate::R<UartSrtsSpec>;
 #[doc = "Register `UART_SRTS` writer"]
 pub type W = crate::W<UartSrtsSpec>;
-#[doc = "Field `SHADOW_REQ_TO_SEND` reader - Shadow Request to Send. This is a shadow register for the RTS bit (MCR\\[1\\]), this can be used to remove the burden of having to performing a read- modify-write on the MCR."]
+#[doc = "Field `SHADOW_REQ_TO_SEND` reader - Shadow Request to Send.\n\nThis is a shadow register for the RTS bit (MCR\\[1\\]), this can be\n\nused to remove the burden of having to performing a read-\n\nmodify-write on the MCR."]
 pub type ShadowReqToSendR = crate::BitReader;
-#[doc = "Field `SHADOW_REQ_TO_SEND` writer - Shadow Request to Send. This is a shadow register for the RTS bit (MCR\\[1\\]), this can be used to remove the burden of having to performing a read- modify-write on the MCR."]
+#[doc = "Field `SHADOW_REQ_TO_SEND` writer - Shadow Request to Send.\n\nThis is a shadow register for the RTS bit (MCR\\[1\\]), this can be\n\nused to remove the burden of having to performing a read-\n\nmodify-write on the MCR."]
 pub type ShadowReqToSendW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - Shadow Request to Send. This is a shadow register for the RTS bit (MCR\\[1\\]), this can be used to remove the burden of having to performing a read- modify-write on the MCR."]
+    #[doc = "Bit 0 - Shadow Request to Send.\n\nThis is a shadow register for the RTS bit (MCR\\[1\\]), this can be\n\nused to remove the burden of having to performing a read-\n\nmodify-write on the MCR."]
     #[inline(always)]
     pub fn shadow_req_to_send(&self) -> ShadowReqToSendR {
         ShadowReqToSendR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Shadow Request to Send. This is a shadow register for the RTS bit (MCR\\[1\\]), this can be used to remove the burden of having to performing a read- modify-write on the MCR."]
+    #[doc = "Bit 0 - Shadow Request to Send.\n\nThis is a shadow register for the RTS bit (MCR\\[1\\]), this can be\n\nused to remove the burden of having to performing a read-\n\nmodify-write on the MCR."]
     #[inline(always)]
     #[must_use]
     pub fn shadow_req_to_send(&mut self) -> ShadowReqToSendW<UartSrtsSpec> {

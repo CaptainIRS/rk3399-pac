@@ -2,10 +2,11 @@
 pub type R = crate::R<SdmmcEmmcDdrRegSpec>;
 #[doc = "Register `SDMMC_EMMC_DDR_REG` writer"]
 pub type W = crate::W<SdmmcEmmcDdrRegSpec>;
-#[doc = "Control for start bit detection mechanism inside Mobile Storage Host Controller based on duration of start bit; each bit refers to one slot. For eMMC 4.5, start bit can be:\n\nValue on reset: 0"]
+#[doc = "Control for start bit detection mechanism inside Mobile Storage\n\nHost Controller based on duration of start bit; each bit refers to\n\none slot. For eMMC 4.5, start bit can be:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HalfStartBit {
-    #[doc = "0: Less than one full cycle (HALF_START_BIT = 1) Set HALF_START_BIT=1 for eMMC 4.5 and above; set to 0 for SD applications."]
+    #[doc = "0: Full cycle (HALF_START_BIT = 0)"]
     B0 = 0,
     #[doc = "1: Less than one full cycle (HALF_START_BIT = 1) Set HALF_START_BIT=1 for eMMC 4.5 and above; set to 0 for SD applications."]
     B1 = 1,
@@ -16,7 +17,7 @@ impl From<HalfStartBit> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HALF_START_BIT` reader - Control for start bit detection mechanism inside Mobile Storage Host Controller based on duration of start bit; each bit refers to one slot. For eMMC 4.5, start bit can be:"]
+#[doc = "Field `HALF_START_BIT` reader - Control for start bit detection mechanism inside Mobile Storage\n\nHost Controller based on duration of start bit; each bit refers to\n\none slot. For eMMC 4.5, start bit can be:"]
 pub type HalfStartBitR = crate::BitReader<HalfStartBit>;
 impl HalfStartBitR {
     #[doc = "Get enumerated values variant"]
@@ -27,7 +28,7 @@ impl HalfStartBitR {
             true => HalfStartBit::B1,
         }
     }
-    #[doc = "Less than one full cycle (HALF_START_BIT = 1) Set HALF_START_BIT=1 for eMMC 4.5 and above; set to 0 for SD applications."]
+    #[doc = "Full cycle (HALF_START_BIT = 0)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == HalfStartBit::B0
@@ -38,13 +39,13 @@ impl HalfStartBitR {
         *self == HalfStartBit::B1
     }
 }
-#[doc = "Field `HALF_START_BIT` writer - Control for start bit detection mechanism inside Mobile Storage Host Controller based on duration of start bit; each bit refers to one slot. For eMMC 4.5, start bit can be:"]
+#[doc = "Field `HALF_START_BIT` writer - Control for start bit detection mechanism inside Mobile Storage\n\nHost Controller based on duration of start bit; each bit refers to\n\none slot. For eMMC 4.5, start bit can be:"]
 pub type HalfStartBitW<'a, REG> = crate::BitWriter<'a, REG, HalfStartBit>;
 impl<'a, REG> HalfStartBitW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Less than one full cycle (HALF_START_BIT = 1) Set HALF_START_BIT=1 for eMMC 4.5 and above; set to 0 for SD applications."]
+    #[doc = "Full cycle (HALF_START_BIT = 0)"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(HalfStartBit::B0)
@@ -56,14 +57,14 @@ where
     }
 }
 impl R {
-    #[doc = "Bit 0 - Control for start bit detection mechanism inside Mobile Storage Host Controller based on duration of start bit; each bit refers to one slot. For eMMC 4.5, start bit can be:"]
+    #[doc = "Bit 0 - Control for start bit detection mechanism inside Mobile Storage\n\nHost Controller based on duration of start bit; each bit refers to\n\none slot. For eMMC 4.5, start bit can be:"]
     #[inline(always)]
     pub fn half_start_bit(&self) -> HalfStartBitR {
         HalfStartBitR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Control for start bit detection mechanism inside Mobile Storage Host Controller based on duration of start bit; each bit refers to one slot. For eMMC 4.5, start bit can be:"]
+    #[doc = "Bit 0 - Control for start bit detection mechanism inside Mobile Storage\n\nHost Controller based on duration of start bit; each bit refers to\n\none slot. For eMMC 4.5, start bit can be:"]
     #[inline(always)]
     #[must_use]
     pub fn half_start_bit(&mut self) -> HalfStartBitW<SdmmcEmmcDdrRegSpec> {

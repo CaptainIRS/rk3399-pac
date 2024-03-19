@@ -2,11 +2,12 @@
 pub type R = crate::R<GpioIntPolaritySpec>;
 #[doc = "Register `GPIO_INT_POLARITY` writer"]
 pub type W = crate::W<GpioIntPolaritySpec>;
-#[doc = "Controls the polarity of edge or level sensitivity that can occur on input of Port A.\n\nValue on reset: 0"]
+#[doc = "Controls the polarity of edge or level sensitivity that can occur on\n\ninput of Port A.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum GpioIntPolarity {
-    #[doc = "0: Active-high"]
+    #[doc = "0: Active-low (default)"]
     B0 = 0,
     #[doc = "1: Active-high"]
     B1 = 1,
@@ -20,7 +21,7 @@ impl From<GpioIntPolarity> for u32 {
 impl crate::FieldSpec for GpioIntPolarity {
     type Ux = u32;
 }
-#[doc = "Field `GPIO_INT_POLARITY` reader - Controls the polarity of edge or level sensitivity that can occur on input of Port A."]
+#[doc = "Field `GPIO_INT_POLARITY` reader - Controls the polarity of edge or level sensitivity that can occur on\n\ninput of Port A."]
 pub type GpioIntPolarityR = crate::FieldReader<GpioIntPolarity>;
 impl GpioIntPolarityR {
     #[doc = "Get enumerated values variant"]
@@ -32,7 +33,7 @@ impl GpioIntPolarityR {
             _ => None,
         }
     }
-    #[doc = "Active-high"]
+    #[doc = "Active-low (default)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == GpioIntPolarity::B0
@@ -43,14 +44,14 @@ impl GpioIntPolarityR {
         *self == GpioIntPolarity::B1
     }
 }
-#[doc = "Field `GPIO_INT_POLARITY` writer - Controls the polarity of edge or level sensitivity that can occur on input of Port A."]
+#[doc = "Field `GPIO_INT_POLARITY` writer - Controls the polarity of edge or level sensitivity that can occur on\n\ninput of Port A."]
 pub type GpioIntPolarityW<'a, REG> = crate::FieldWriter<'a, REG, 32, GpioIntPolarity>;
 impl<'a, REG> GpioIntPolarityW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u32>,
 {
-    #[doc = "Active-high"]
+    #[doc = "Active-low (default)"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(GpioIntPolarity::B0)
@@ -62,14 +63,14 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 0:31 - Controls the polarity of edge or level sensitivity that can occur on input of Port A."]
+    #[doc = "Bits 0:31 - Controls the polarity of edge or level sensitivity that can occur on\n\ninput of Port A."]
     #[inline(always)]
     pub fn gpio_int_polarity(&self) -> GpioIntPolarityR {
         GpioIntPolarityR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Controls the polarity of edge or level sensitivity that can occur on input of Port A."]
+    #[doc = "Bits 0:31 - Controls the polarity of edge or level sensitivity that can occur on\n\ninput of Port A."]
     #[inline(always)]
     #[must_use]
     pub fn gpio_int_polarity(&mut self) -> GpioIntPolarityW<GpioIntPolaritySpec> {

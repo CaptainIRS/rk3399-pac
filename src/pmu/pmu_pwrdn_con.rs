@@ -3,9 +3,10 @@ pub type R = crate::R<PmuPwrdnConSpec>;
 #[doc = "Register `PMU_PWRDN_CON` writer"]
 pub type W = crate::W<PmuPwrdnConSpec>;
 #[doc = "pd_a53_l0 power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdA53L0PwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl PdA53L0PwrdwnEnR {
             true => PdA53L0PwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdA53L0PwrdwnEn::B0
@@ -44,7 +45,7 @@ impl<'a, REG> PdA53L0PwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdA53L0PwrdwnEn::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "pd_a53_l1 power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdA53L1Pwrdwn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl PdA53L1PwrdwnR {
             true => PdA53L1Pwrdwn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdA53L1Pwrdwn::B0
@@ -97,7 +99,7 @@ impl<'a, REG> PdA53L1PwrdwnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdA53L1Pwrdwn::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "pd_a53_l2 power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdA53L2Pwrdwn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl PdA53L2PwrdwnR {
             true => PdA53L2Pwrdwn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdA53L2Pwrdwn::B0
@@ -150,7 +153,7 @@ impl<'a, REG> PdA53L2PwrdwnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdA53L2Pwrdwn::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "pd_a53_l3 power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdA53L3Pwrdwn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -186,7 +190,7 @@ impl PdA53L3PwrdwnR {
             true => PdA53L3Pwrdwn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdA53L3Pwrdwn::B0
@@ -203,7 +207,7 @@ impl<'a, REG> PdA53L3PwrdwnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdA53L3Pwrdwn::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "pd_a72_b0 power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdA72B0PwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -239,7 +244,7 @@ impl PdA72B0PwrdwnEnR {
             true => PdA72B0PwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdA72B0PwrdwnEn::B0
@@ -256,7 +261,7 @@ impl<'a, REG> PdA72B0PwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdA72B0PwrdwnEn::B0)
@@ -268,9 +273,10 @@ where
     }
 }
 #[doc = "pd_a72_b0 power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdA72B1PwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -292,7 +298,7 @@ impl PdA72B1PwrdwnEnR {
             true => PdA72B1PwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdA72B1PwrdwnEn::B0
@@ -309,7 +315,7 @@ impl<'a, REG> PdA72B1PwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdA72B1PwrdwnEn::B0)
@@ -321,9 +327,10 @@ where
     }
 }
 #[doc = "pd_scu_l power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdScuLPwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -345,7 +352,7 @@ impl PdScuLPwrdwnEnR {
             true => PdScuLPwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdScuLPwrdwnEn::B0
@@ -362,7 +369,7 @@ impl<'a, REG> PdScuLPwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdScuLPwrdwnEn::B0)
@@ -374,9 +381,10 @@ where
     }
 }
 #[doc = "pd_scu_b power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdScuBPwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -398,7 +406,7 @@ impl PdScuBPwrdwnEnR {
             true => PdScuBPwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdScuBPwrdwnEn::B0
@@ -415,7 +423,7 @@ impl<'a, REG> PdScuBPwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdScuBPwrdwnEn::B0)
@@ -427,9 +435,10 @@ where
     }
 }
 #[doc = "pd_tcpd0 power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdTcpd0PwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -451,7 +460,7 @@ impl PdTcpd0PwrdwnEnR {
             true => PdTcpd0PwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdTcpd0PwrdwnEn::B0
@@ -468,7 +477,7 @@ impl<'a, REG> PdTcpd0PwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdTcpd0PwrdwnEn::B0)
@@ -480,9 +489,10 @@ where
     }
 }
 #[doc = "pd_tcpd1 power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdTcpd1PwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -504,7 +514,7 @@ impl PdTcpd1PwrdwnEnR {
             true => PdTcpd1PwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdTcpd1PwrdwnEn::B0
@@ -521,7 +531,7 @@ impl<'a, REG> PdTcpd1PwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdTcpd1PwrdwnEn::B0)
@@ -533,9 +543,10 @@ where
     }
 }
 #[doc = "pd_cci power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdCciPwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -557,7 +568,7 @@ impl PdCciPwrdwnEnR {
             true => PdCciPwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdCciPwrdwnEn::B0
@@ -574,7 +585,7 @@ impl<'a, REG> PdCciPwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdCciPwrdwnEn::B0)
@@ -586,9 +597,10 @@ where
     }
 }
 #[doc = "pd_perilp power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdPerilpPwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -610,7 +622,7 @@ impl PdPerilpPwrdwnEnR {
             true => PdPerilpPwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdPerilpPwrdwnEn::B0
@@ -627,7 +639,7 @@ impl<'a, REG> PdPerilpPwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdPerilpPwrdwnEn::B0)
@@ -639,9 +651,10 @@ where
     }
 }
 #[doc = "pd_perihp power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdPerihpPwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -663,7 +676,7 @@ impl PdPerihpPwrdwnEnR {
             true => PdPerihpPwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdPerihpPwrdwnEn::B0
@@ -680,7 +693,7 @@ impl<'a, REG> PdPerihpPwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdPerihpPwrdwnEn::B0)
@@ -692,9 +705,10 @@ where
     }
 }
 #[doc = "pd_center power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdCenterPwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -716,7 +730,7 @@ impl PdCenterPwrdwnEnR {
             true => PdCenterPwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdCenterPwrdwnEn::B0
@@ -733,7 +747,7 @@ impl<'a, REG> PdCenterPwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdCenterPwrdwnEn::B0)
@@ -745,9 +759,10 @@ where
     }
 }
 #[doc = "pd_vio power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdVioPwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -769,7 +784,7 @@ impl PdVioPwrdwnEnR {
             true => PdVioPwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdVioPwrdwnEn::B0
@@ -786,7 +801,7 @@ impl<'a, REG> PdVioPwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdVioPwrdwnEn::B0)
@@ -798,9 +813,10 @@ where
     }
 }
 #[doc = "pd_gpu power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdGpuPwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -822,7 +838,7 @@ impl PdGpuPwrdwnEnR {
             true => PdGpuPwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdGpuPwrdwnEn::B0
@@ -839,7 +855,7 @@ impl<'a, REG> PdGpuPwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdGpuPwrdwnEn::B0)
@@ -851,9 +867,10 @@ where
     }
 }
 #[doc = "pd_perihp power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdVcodecPwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -875,7 +892,7 @@ impl PdVcodecPwrdwnEnR {
             true => PdVcodecPwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdVcodecPwrdwnEn::B0
@@ -892,7 +909,7 @@ impl<'a, REG> PdVcodecPwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdVcodecPwrdwnEn::B0)
@@ -904,9 +921,10 @@ where
     }
 }
 #[doc = "pd_vdu power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdVduPwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -928,7 +946,7 @@ impl PdVduPwrdwnEnR {
             true => PdVduPwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdVduPwrdwnEn::B0
@@ -945,7 +963,7 @@ impl<'a, REG> PdVduPwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdVduPwrdwnEn::B0)
@@ -957,9 +975,10 @@ where
     }
 }
 #[doc = "pd_rga power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdRgaPwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -981,7 +1000,7 @@ impl PdRgaPwrdwnEnR {
             true => PdRgaPwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdRgaPwrdwnEn::B0
@@ -998,7 +1017,7 @@ impl<'a, REG> PdRgaPwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdRgaPwrdwnEn::B0)
@@ -1010,9 +1029,10 @@ where
     }
 }
 #[doc = "pd_perihp power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdIepPwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1034,7 +1054,7 @@ impl PdIepPwrdwnEnR {
             true => PdIepPwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdIepPwrdwnEn::B0
@@ -1051,7 +1071,7 @@ impl<'a, REG> PdIepPwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdIepPwrdwnEn::B0)
@@ -1063,9 +1083,10 @@ where
     }
 }
 #[doc = "pd_vo power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdVoPwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1087,7 +1108,7 @@ impl PdVoPwrdwnEnR {
             true => PdVoPwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdVoPwrdwnEn::B0
@@ -1104,7 +1125,7 @@ impl<'a, REG> PdVoPwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdVoPwrdwnEn::B0)
@@ -1116,9 +1137,10 @@ where
     }
 }
 #[doc = "pd_isp0 power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdIsp0PwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1140,7 +1162,7 @@ impl PdIsp0PwrdwnEnR {
             true => PdIsp0PwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdIsp0PwrdwnEn::B0
@@ -1157,7 +1179,7 @@ impl<'a, REG> PdIsp0PwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdIsp0PwrdwnEn::B0)
@@ -1169,9 +1191,10 @@ where
     }
 }
 #[doc = "pd_isp1 power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdIsp1PwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1193,7 +1216,7 @@ impl PdIsp1PwrdwnEnR {
             true => PdIsp1PwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdIsp1PwrdwnEn::B0
@@ -1210,7 +1233,7 @@ impl<'a, REG> PdIsp1PwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdIsp1PwrdwnEn::B0)
@@ -1222,9 +1245,10 @@ where
     }
 }
 #[doc = "pd_hdcp power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdHdcpPwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1246,7 +1270,7 @@ impl PdHdcpPwrdwnEnR {
             true => PdHdcpPwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdHdcpPwrdwnEn::B0
@@ -1263,7 +1287,7 @@ impl<'a, REG> PdHdcpPwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdHdcpPwrdwnEn::B0)
@@ -1275,9 +1299,10 @@ where
     }
 }
 #[doc = "pd_gmac power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdGmacPwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1299,7 +1324,7 @@ impl PdGmacPwrdwnEnR {
             true => PdGmacPwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdGmacPwrdwnEn::B0
@@ -1316,7 +1341,7 @@ impl<'a, REG> PdGmacPwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdGmacPwrdwnEn::B0)
@@ -1328,9 +1353,10 @@ where
     }
 }
 #[doc = "pd_emmc power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdEmmcPwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1352,7 +1378,7 @@ impl PdEmmcPwrdwnEnR {
             true => PdEmmcPwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdEmmcPwrdwnEn::B0
@@ -1369,7 +1395,7 @@ impl<'a, REG> PdEmmcPwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdEmmcPwrdwnEn::B0)
@@ -1381,9 +1407,10 @@ where
     }
 }
 #[doc = "pd_usb3 power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdUsb3PwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1405,7 +1432,7 @@ impl PdUsb3PwrdwnEnR {
             true => PdUsb3PwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdUsb3PwrdwnEn::B0
@@ -1422,7 +1449,7 @@ impl<'a, REG> PdUsb3PwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdUsb3PwrdwnEn::B0)
@@ -1434,9 +1461,10 @@ where
     }
 }
 #[doc = "pd_edp power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdEdpPwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1458,7 +1486,7 @@ impl PdEdpPwrdwnEnR {
             true => PdEdpPwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdEdpPwrdwnEn::B0
@@ -1475,7 +1503,7 @@ impl<'a, REG> PdEdpPwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdEdpPwrdwnEn::B0)
@@ -1487,9 +1515,10 @@ where
     }
 }
 #[doc = "pd_gic power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdGicPwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1511,7 +1540,7 @@ impl PdGicPwrdwnEnR {
             true => PdGicPwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdGicPwrdwnEn::B0
@@ -1528,7 +1557,7 @@ impl<'a, REG> PdGicPwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdGicPwrdwnEn::B0)
@@ -1540,9 +1569,10 @@ where
     }
 }
 #[doc = "pd_sd power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdSdPwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1564,7 +1594,7 @@ impl PdSdPwrdwnEnR {
             true => PdSdPwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdSdPwrdwnEn::B0
@@ -1581,7 +1611,7 @@ impl<'a, REG> PdSdPwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdSdPwrdwnEn::B0)
@@ -1593,9 +1623,10 @@ where
     }
 }
 #[doc = "pd_sdioaudio power down enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdSdioaudioPwrdwnEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1617,7 +1648,7 @@ impl PdSdioaudioPwrdwnEnR {
             true => PdSdioaudioPwrdwnEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PdSdioaudioPwrdwnEn::B0
@@ -1634,7 +1665,7 @@ impl<'a, REG> PdSdioaudioPwrdwnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PdSdioaudioPwrdwnEn::B0)

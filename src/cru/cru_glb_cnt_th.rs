@@ -2,19 +2,19 @@
 pub type R = crate::R<CruGlbCntThSpec>;
 #[doc = "Register `CRU_GLB_CNT_TH` writer"]
 pub type W = crate::W<CruGlbCntThSpec>;
-#[doc = "Field `GLB_RST_CNT_TH` reader - global reset wait counter threshold wait cycles n(at xin_24m)"]
+#[doc = "Field `GLB_RST_CNT_TH` reader - global reset wait counter threshold\n\nwait cycles n(at xin_24m)"]
 pub type GlbRstCntThR = crate::FieldReader<u16>;
-#[doc = "Field `GLB_RST_CNT_TH` writer - global reset wait counter threshold wait cycles n(at xin_24m)"]
+#[doc = "Field `GLB_RST_CNT_TH` writer - global reset wait counter threshold\n\nwait cycles n(at xin_24m)"]
 pub type GlbRstCntThW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 impl R {
-    #[doc = "Bits 0:9 - global reset wait counter threshold wait cycles n(at xin_24m)"]
+    #[doc = "Bits 0:9 - global reset wait counter threshold\n\nwait cycles n(at xin_24m)"]
     #[inline(always)]
     pub fn glb_rst_cnt_th(&self) -> GlbRstCntThR {
         GlbRstCntThR::new((self.bits & 0x03ff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:9 - global reset wait counter threshold wait cycles n(at xin_24m)"]
+    #[doc = "Bits 0:9 - global reset wait counter threshold\n\nwait cycles n(at xin_24m)"]
     #[inline(always)]
     #[must_use]
     pub fn glb_rst_cnt_th(&mut self) -> GlbRstCntThW<CruGlbCntThSpec> {

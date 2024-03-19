@@ -6,21 +6,21 @@ pub type W = crate::W<McClkdisSpec>;
 pub type AudclkDisableR = crate::BitReader;
 #[doc = "Field `AUDCLK_DISABLE` writer - Audio Sampler clock synchronous disable signal."]
 pub type AudclkDisableW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CSCCLK_DISABLE` reader - Color Space Converter clock synchronous disable signal."]
+#[doc = "Field `CSCCLK_DISABLE` reader - Color Space Converter clock synchronous disable\n\nsignal."]
 pub type CscclkDisableR = crate::BitReader;
-#[doc = "Field `CSCCLK_DISABLE` writer - Color Space Converter clock synchronous disable signal."]
+#[doc = "Field `CSCCLK_DISABLE` writer - Color Space Converter clock synchronous disable\n\nsignal."]
 pub type CscclkDisableW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CECCLK_DISABLE` reader - CEC Engine clock synchronous disable signal."]
 pub type CecclkDisableR = crate::BitReader;
 #[doc = "Field `CECCLK_DISABLE` writer - CEC Engine clock synchronous disable signal."]
 pub type CecclkDisableW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `HDCPCLK_DISABLE` reader - HDCP clock synchronous disable signal. When active (1b), simultaneously bypasses HDCP."]
+#[doc = "Field `HDCPCLK_DISABLE` reader - HDCP clock synchronous disable signal. When active\n\n(1b), simultaneously bypasses HDCP."]
 pub type HdcpclkDisableR = crate::BitReader;
-#[doc = "Field `HDCPCLK_DISABLE` writer - HDCP clock synchronous disable signal. When active (1b), simultaneously bypasses HDCP."]
+#[doc = "Field `HDCPCLK_DISABLE` writer - HDCP clock synchronous disable signal. When active\n\n(1b), simultaneously bypasses HDCP."]
 pub type HdcpclkDisableW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `H22SCLK_DISABLE` reader - HDCP22 clock synchronous disable signal. When active (1b), simultaneously bypasses HDCP22."]
+#[doc = "Field `H22SCLK_DISABLE` reader - HDCP22 clock synchronous disable signal. When active\n\n(1b), simultaneously bypasses HDCP22."]
 pub type H22sclkDisableR = crate::BitReader;
-#[doc = "Field `H22SCLK_DISABLE` writer - HDCP22 clock synchronous disable signal. When active (1b), simultaneously bypasses HDCP22."]
+#[doc = "Field `H22SCLK_DISABLE` writer - HDCP22 clock synchronous disable signal. When active\n\n(1b), simultaneously bypasses HDCP22."]
 pub type H22sclkDisableW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 3 - Audio Sampler clock synchronous disable signal."]
@@ -28,7 +28,7 @@ impl R {
     pub fn audclk_disable(&self) -> AudclkDisableR {
         AudclkDisableR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - Color Space Converter clock synchronous disable signal."]
+    #[doc = "Bit 4 - Color Space Converter clock synchronous disable\n\nsignal."]
     #[inline(always)]
     pub fn cscclk_disable(&self) -> CscclkDisableR {
         CscclkDisableR::new(((self.bits >> 4) & 1) != 0)
@@ -38,12 +38,12 @@ impl R {
     pub fn cecclk_disable(&self) -> CecclkDisableR {
         CecclkDisableR::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 6 - HDCP clock synchronous disable signal. When active (1b), simultaneously bypasses HDCP."]
+    #[doc = "Bit 6 - HDCP clock synchronous disable signal. When active\n\n(1b), simultaneously bypasses HDCP."]
     #[inline(always)]
     pub fn hdcpclk_disable(&self) -> HdcpclkDisableR {
         HdcpclkDisableR::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 7 - HDCP22 clock synchronous disable signal. When active (1b), simultaneously bypasses HDCP22."]
+    #[doc = "Bit 7 - HDCP22 clock synchronous disable signal. When active\n\n(1b), simultaneously bypasses HDCP22."]
     #[inline(always)]
     pub fn h22sclk_disable(&self) -> H22sclkDisableR {
         H22sclkDisableR::new(((self.bits >> 7) & 1) != 0)
@@ -56,7 +56,7 @@ impl W {
     pub fn audclk_disable(&mut self) -> AudclkDisableW<McClkdisSpec> {
         AudclkDisableW::new(self, 3)
     }
-    #[doc = "Bit 4 - Color Space Converter clock synchronous disable signal."]
+    #[doc = "Bit 4 - Color Space Converter clock synchronous disable\n\nsignal."]
     #[inline(always)]
     #[must_use]
     pub fn cscclk_disable(&mut self) -> CscclkDisableW<McClkdisSpec> {
@@ -68,20 +68,20 @@ impl W {
     pub fn cecclk_disable(&mut self) -> CecclkDisableW<McClkdisSpec> {
         CecclkDisableW::new(self, 5)
     }
-    #[doc = "Bit 6 - HDCP clock synchronous disable signal. When active (1b), simultaneously bypasses HDCP."]
+    #[doc = "Bit 6 - HDCP clock synchronous disable signal. When active\n\n(1b), simultaneously bypasses HDCP."]
     #[inline(always)]
     #[must_use]
     pub fn hdcpclk_disable(&mut self) -> HdcpclkDisableW<McClkdisSpec> {
         HdcpclkDisableW::new(self, 6)
     }
-    #[doc = "Bit 7 - HDCP22 clock synchronous disable signal. When active (1b), simultaneously bypasses HDCP22."]
+    #[doc = "Bit 7 - HDCP22 clock synchronous disable signal. When active\n\n(1b), simultaneously bypasses HDCP22."]
     #[inline(always)]
     #[must_use]
     pub fn h22sclk_disable(&mut self) -> H22sclkDisableW<McClkdisSpec> {
         H22sclkDisableW::new(self, 7)
     }
 }
-#[doc = "Audio Sampler clock synchronous disable signal.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mc_clkdis::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mc_clkdis::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Main Controller Synchronous Clock Domain Disable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mc_clkdis::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mc_clkdis::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct McClkdisSpec;
 impl crate::RegisterSpec for McClkdisSpec {
     type Ux = u8;

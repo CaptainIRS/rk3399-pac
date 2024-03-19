@@ -2,132 +2,132 @@
 pub type R = crate::R<CruClkgateCon30Spec>;
 #[doc = "Register `CRU_CLKGATE_CON30` writer"]
 pub type W = crate::W<CruClkgateCon30Spec>;
-#[doc = "Field `ACLK_USB3_NOC_EN` reader - aclk_usb3_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `ACLK_USB3_NOC_EN` reader - aclk_usb3_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type AclkUsb3NocEnR = crate::BitReader;
-#[doc = "Field `ACLK_USB3_NOC_EN` writer - aclk_usb3_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `ACLK_USB3_NOC_EN` writer - aclk_usb3_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type AclkUsb3NocEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_USB3OTG0_EN` reader - aclk_usb3otg0 clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_USB3OTG0_EN` reader - aclk_usb3otg0 clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkUsb3otg0EnR = crate::BitReader;
-#[doc = "Field `ACLK_USB3OTG0_EN` writer - aclk_usb3otg0 clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_USB3OTG0_EN` writer - aclk_usb3otg0 clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkUsb3otg0EnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_USB3OTG1_EN` reader - aclk_usb3otg1 clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_USB3OTG1_EN` reader - aclk_usb3otg1 clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkUsb3otg1EnR = crate::BitReader;
-#[doc = "Field `ACLK_USB3OTG1_EN` writer - aclk_usb3otg1 clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_USB3OTG1_EN` writer - aclk_usb3otg1 clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkUsb3otg1EnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_USB3_RKSOC_AXI_PERF_EN` reader - aclk_usb3_rksoc_axi_perf clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_USB3_RKSOC_AXI_PERF_EN` reader - aclk_usb3_rksoc_axi_perf clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkUsb3RksocAxiPerfEnR = crate::BitReader;
-#[doc = "Field `ACLK_USB3_RKSOC_AXI_PERF_EN` writer - aclk_usb3_rksoc_axi_perf clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_USB3_RKSOC_AXI_PERF_EN` writer - aclk_usb3_rksoc_axi_perf clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkUsb3RksocAxiPerfEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_USB3_GRF_EN` reader - aclk_usb3_grf clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `ACLK_USB3_GRF_EN` reader - aclk_usb3_grf clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type AclkUsb3GrfEnR = crate::BitReader;
-#[doc = "Field `ACLK_USB3_GRF_EN` writer - aclk_usb3_grf clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `ACLK_USB3_GRF_EN` writer - aclk_usb3_grf clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type AclkUsb3GrfEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_GPU_EN` reader - aclk_gpu clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_GPU_EN` reader - aclk_gpu clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkGpuEnR = crate::BitReader;
-#[doc = "Field `ACLK_GPU_EN` writer - aclk_gpu clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_GPU_EN` writer - aclk_gpu clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkGpuEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_PERF_GPU_EN` reader - aclk_perf_gpu clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_PERF_GPU_EN` reader - aclk_perf_gpu clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkPerfGpuEnR = crate::BitReader;
-#[doc = "Field `ACLK_PERF_GPU_EN` writer - aclk_perf_gpu clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_PERF_GPU_EN` writer - aclk_perf_gpu clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkPerfGpuEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_GPU_GRF_EN` reader - aclk_gpu_grf clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `ACLK_GPU_GRF_EN` reader - aclk_gpu_grf clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type AclkGpuGrfEnR = crate::BitReader;
-#[doc = "Field `ACLK_GPU_GRF_EN` writer - aclk_gpu_grf clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `ACLK_GPU_GRF_EN` writer - aclk_gpu_grf clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type AclkGpuGrfEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bit 0 - aclk_usb3_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 0 - aclk_usb3_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     pub fn aclk_usb3_noc_en(&self) -> AclkUsb3NocEnR {
         AclkUsb3NocEnR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - aclk_usb3otg0 clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 1 - aclk_usb3otg0 clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn aclk_usb3otg0_en(&self) -> AclkUsb3otg0EnR {
         AclkUsb3otg0EnR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - aclk_usb3otg1 clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 2 - aclk_usb3otg1 clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn aclk_usb3otg1_en(&self) -> AclkUsb3otg1EnR {
         AclkUsb3otg1EnR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - aclk_usb3_rksoc_axi_perf clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 3 - aclk_usb3_rksoc_axi_perf clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn aclk_usb3_rksoc_axi_perf_en(&self) -> AclkUsb3RksocAxiPerfEnR {
         AclkUsb3RksocAxiPerfEnR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - aclk_usb3_grf clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 4 - aclk_usb3_grf clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     pub fn aclk_usb3_grf_en(&self) -> AclkUsb3GrfEnR {
         AclkUsb3GrfEnR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 8 - aclk_gpu clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 8 - aclk_gpu clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn aclk_gpu_en(&self) -> AclkGpuEnR {
         AclkGpuEnR::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bit 10 - aclk_perf_gpu clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 10 - aclk_perf_gpu clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn aclk_perf_gpu_en(&self) -> AclkPerfGpuEnR {
         AclkPerfGpuEnR::new(((self.bits >> 10) & 1) != 0)
     }
-    #[doc = "Bit 11 - aclk_gpu_grf clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 11 - aclk_gpu_grf clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     pub fn aclk_gpu_grf_en(&self) -> AclkGpuGrfEnR {
         AclkGpuGrfEnR::new(((self.bits >> 11) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - aclk_usb3_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 0 - aclk_usb3_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_usb3_noc_en(&mut self) -> AclkUsb3NocEnW<CruClkgateCon30Spec> {
         AclkUsb3NocEnW::new(self, 0)
     }
-    #[doc = "Bit 1 - aclk_usb3otg0 clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 1 - aclk_usb3otg0 clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_usb3otg0_en(&mut self) -> AclkUsb3otg0EnW<CruClkgateCon30Spec> {
         AclkUsb3otg0EnW::new(self, 1)
     }
-    #[doc = "Bit 2 - aclk_usb3otg1 clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 2 - aclk_usb3otg1 clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_usb3otg1_en(&mut self) -> AclkUsb3otg1EnW<CruClkgateCon30Spec> {
         AclkUsb3otg1EnW::new(self, 2)
     }
-    #[doc = "Bit 3 - aclk_usb3_rksoc_axi_perf clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 3 - aclk_usb3_rksoc_axi_perf clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_usb3_rksoc_axi_perf_en(&mut self) -> AclkUsb3RksocAxiPerfEnW<CruClkgateCon30Spec> {
         AclkUsb3RksocAxiPerfEnW::new(self, 3)
     }
-    #[doc = "Bit 4 - aclk_usb3_grf clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 4 - aclk_usb3_grf clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_usb3_grf_en(&mut self) -> AclkUsb3GrfEnW<CruClkgateCon30Spec> {
         AclkUsb3GrfEnW::new(self, 4)
     }
-    #[doc = "Bit 8 - aclk_gpu clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 8 - aclk_gpu clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_gpu_en(&mut self) -> AclkGpuEnW<CruClkgateCon30Spec> {
         AclkGpuEnW::new(self, 8)
     }
-    #[doc = "Bit 10 - aclk_perf_gpu clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 10 - aclk_perf_gpu clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_perf_gpu_en(&mut self) -> AclkPerfGpuEnW<CruClkgateCon30Spec> {
         AclkPerfGpuEnW::new(self, 10)
     }
-    #[doc = "Bit 11 - aclk_gpu_grf clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 11 - aclk_gpu_grf clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_gpu_grf_en(&mut self) -> AclkGpuGrfEnW<CruClkgateCon30Spec> {
         AclkGpuGrfEnW::new(self, 11)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkgateCon30Spec> {

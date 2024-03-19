@@ -2,79 +2,79 @@
 pub type R = crate::R<Cci500PfmmonCtrlSpec>;
 #[doc = "Register `CCI500_PFMMON_CTRL` writer"]
 pub type W = crate::W<Cci500PfmmonCtrlSpec>;
-#[doc = "Field `CEN` reader - Enable bit: 0b0 Disable all counters, including CCNT. 0b1 Enable all counters, including CCNT."]
+#[doc = "Field `CEN` reader - Enable bit:\n\n0b0 Disable all counters, including CCNT.\n\n0b1 Enable all counters, including CCNT."]
 pub type CenR = crate::BitReader;
-#[doc = "Field `CEN` writer - Enable bit: 0b0 Disable all counters, including CCNT. 0b1 Enable all counters, including CCNT."]
+#[doc = "Field `CEN` writer - Enable bit:\n\n0b0 Disable all counters, including CCNT.\n\n0b1 Enable all counters, including CCNT."]
 pub type CenW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `RST` reader - Performance counter reset: 0b0 No action. 0b1 Reset all performance counters to zero, not including CCNT."]
+#[doc = "Field `RST` reader - Performance counter reset:\n\n0b0 No action.\n\n0b1 Reset all performance counters to zero,\n\nnot including CCNT."]
 pub type RstR = crate::BitReader;
-#[doc = "Field `RST` writer - Performance counter reset: 0b0 No action. 0b1 Reset all performance counters to zero, not including CCNT."]
+#[doc = "Field `RST` writer - Performance counter reset:\n\n0b0 No action.\n\n0b1 Reset all performance counters to zero,\n\nnot including CCNT."]
 pub type RstW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `EX` reader - Enable export of the events to the event bus, EVNTBUS, for an external monitoring block to trace events: 0b0 Do not export EVNTBUS. 0b1 Export EVNTBUS."]
+#[doc = "Field `EX` reader - Enable export of the events to the event bus,\n\nEVNTBUS, for an external monitoring\n\nblock to trace events:\n\n0b0 Do not export EVNTBUS.\n\n0b1 Export EVNTBUS."]
 pub type ExR = crate::BitReader;
-#[doc = "Field `EX` writer - Enable export of the events to the event bus, EVNTBUS, for an external monitoring block to trace events: 0b0 Do not export EVNTBUS. 0b1 Export EVNTBUS."]
+#[doc = "Field `EX` writer - Enable export of the events to the event bus,\n\nEVNTBUS, for an external monitoring\n\nblock to trace events:\n\n0b0 Do not export EVNTBUS.\n\n0b1 Export EVNTBUS."]
 pub type ExW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `DP` reader - Disables cycle counter, CCNT, if non-invasive debug is prohibited: 0b0 Count is not disabled when NIDEN input is LOW. 0b1 Count is disabled when NIDEN input is LOW."]
+#[doc = "Field `DP` reader - Disables cycle counter, CCNT, if non-invasive\n\ndebug is prohibited:\n\n0b0 Count is not disabled when NIDEN input\n\nis LOW.\n\n0b1 Count is disabled when NIDEN input is\n\nLOW."]
 pub type DpR = crate::BitReader;
-#[doc = "Field `DP` writer - Disables cycle counter, CCNT, if non-invasive debug is prohibited: 0b0 Count is not disabled when NIDEN input is LOW. 0b1 Count is disabled when NIDEN input is LOW."]
+#[doc = "Field `DP` writer - Disables cycle counter, CCNT, if non-invasive\n\ndebug is prohibited:\n\n0b0 Count is not disabled when NIDEN input\n\nis LOW.\n\n0b1 Count is disabled when NIDEN input is\n\nLOW."]
 pub type DpW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `COUNTER_NUM` reader - Specifies the number of counters implemented."]
+#[doc = "Field `COUNTER_NUM` reader - Specifies the number of counters\n\nimplemented."]
 pub type CounterNumR = crate::FieldReader;
-#[doc = "Field `COUNTER_NUM` writer - Specifies the number of counters implemented."]
+#[doc = "Field `COUNTER_NUM` writer - Specifies the number of counters\n\nimplemented."]
 pub type CounterNumW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
-    #[doc = "Bit 0 - Enable bit: 0b0 Disable all counters, including CCNT. 0b1 Enable all counters, including CCNT."]
+    #[doc = "Bit 0 - Enable bit:\n\n0b0 Disable all counters, including CCNT.\n\n0b1 Enable all counters, including CCNT."]
     #[inline(always)]
     pub fn cen(&self) -> CenR {
         CenR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - Performance counter reset: 0b0 No action. 0b1 Reset all performance counters to zero, not including CCNT."]
+    #[doc = "Bit 1 - Performance counter reset:\n\n0b0 No action.\n\n0b1 Reset all performance counters to zero,\n\nnot including CCNT."]
     #[inline(always)]
     pub fn rst(&self) -> RstR {
         RstR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 4 - Enable export of the events to the event bus, EVNTBUS, for an external monitoring block to trace events: 0b0 Do not export EVNTBUS. 0b1 Export EVNTBUS."]
+    #[doc = "Bit 4 - Enable export of the events to the event bus,\n\nEVNTBUS, for an external monitoring\n\nblock to trace events:\n\n0b0 Do not export EVNTBUS.\n\n0b1 Export EVNTBUS."]
     #[inline(always)]
     pub fn ex(&self) -> ExR {
         ExR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - Disables cycle counter, CCNT, if non-invasive debug is prohibited: 0b0 Count is not disabled when NIDEN input is LOW. 0b1 Count is disabled when NIDEN input is LOW."]
+    #[doc = "Bit 5 - Disables cycle counter, CCNT, if non-invasive\n\ndebug is prohibited:\n\n0b0 Count is not disabled when NIDEN input\n\nis LOW.\n\n0b1 Count is disabled when NIDEN input is\n\nLOW."]
     #[inline(always)]
     pub fn dp(&self) -> DpR {
         DpR::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bits 11:15 - Specifies the number of counters implemented."]
+    #[doc = "Bits 11:15 - Specifies the number of counters\n\nimplemented."]
     #[inline(always)]
     pub fn counter_num(&self) -> CounterNumR {
         CounterNumR::new(((self.bits >> 11) & 0x1f) as u8)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Enable bit: 0b0 Disable all counters, including CCNT. 0b1 Enable all counters, including CCNT."]
+    #[doc = "Bit 0 - Enable bit:\n\n0b0 Disable all counters, including CCNT.\n\n0b1 Enable all counters, including CCNT."]
     #[inline(always)]
     #[must_use]
     pub fn cen(&mut self) -> CenW<Cci500PfmmonCtrlSpec> {
         CenW::new(self, 0)
     }
-    #[doc = "Bit 1 - Performance counter reset: 0b0 No action. 0b1 Reset all performance counters to zero, not including CCNT."]
+    #[doc = "Bit 1 - Performance counter reset:\n\n0b0 No action.\n\n0b1 Reset all performance counters to zero,\n\nnot including CCNT."]
     #[inline(always)]
     #[must_use]
     pub fn rst(&mut self) -> RstW<Cci500PfmmonCtrlSpec> {
         RstW::new(self, 1)
     }
-    #[doc = "Bit 4 - Enable export of the events to the event bus, EVNTBUS, for an external monitoring block to trace events: 0b0 Do not export EVNTBUS. 0b1 Export EVNTBUS."]
+    #[doc = "Bit 4 - Enable export of the events to the event bus,\n\nEVNTBUS, for an external monitoring\n\nblock to trace events:\n\n0b0 Do not export EVNTBUS.\n\n0b1 Export EVNTBUS."]
     #[inline(always)]
     #[must_use]
     pub fn ex(&mut self) -> ExW<Cci500PfmmonCtrlSpec> {
         ExW::new(self, 4)
     }
-    #[doc = "Bit 5 - Disables cycle counter, CCNT, if non-invasive debug is prohibited: 0b0 Count is not disabled when NIDEN input is LOW. 0b1 Count is disabled when NIDEN input is LOW."]
+    #[doc = "Bit 5 - Disables cycle counter, CCNT, if non-invasive\n\ndebug is prohibited:\n\n0b0 Count is not disabled when NIDEN input\n\nis LOW.\n\n0b1 Count is disabled when NIDEN input is\n\nLOW."]
     #[inline(always)]
     #[must_use]
     pub fn dp(&mut self) -> DpW<Cci500PfmmonCtrlSpec> {
         DpW::new(self, 5)
     }
-    #[doc = "Bits 11:15 - Specifies the number of counters implemented."]
+    #[doc = "Bits 11:15 - Specifies the number of counters\n\nimplemented."]
     #[inline(always)]
     #[must_use]
     pub fn counter_num(&mut self) -> CounterNumW<Cci500PfmmonCtrlSpec> {

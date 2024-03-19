@@ -2,19 +2,19 @@
 pub type R = crate::R<TsadcAutoPeriodSpec>;
 #[doc = "Register `TSADC_AUTO_PERIOD` writer"]
 pub type W = crate::W<TsadcAutoPeriodSpec>;
-#[doc = "Field `AUTO_PERIOD` reader - when auto mode is enabled, this register controls the interleave between every two accessing of TSADC."]
+#[doc = "Field `AUTO_PERIOD` reader - when auto mode is enabled, this register controls the interleave\n\nbetween every two accessing of TSADC."]
 pub type AutoPeriodR = crate::FieldReader<u32>;
-#[doc = "Field `AUTO_PERIOD` writer - when auto mode is enabled, this register controls the interleave between every two accessing of TSADC."]
+#[doc = "Field `AUTO_PERIOD` writer - when auto mode is enabled, this register controls the interleave\n\nbetween every two accessing of TSADC."]
 pub type AutoPeriodW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - when auto mode is enabled, this register controls the interleave between every two accessing of TSADC."]
+    #[doc = "Bits 0:31 - when auto mode is enabled, this register controls the interleave\n\nbetween every two accessing of TSADC."]
     #[inline(always)]
     pub fn auto_period(&self) -> AutoPeriodR {
         AutoPeriodR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - when auto mode is enabled, this register controls the interleave between every two accessing of TSADC."]
+    #[doc = "Bits 0:31 - when auto mode is enabled, this register controls the interleave\n\nbetween every two accessing of TSADC."]
     #[inline(always)]
     #[must_use]
     pub fn auto_period(&mut self) -> AutoPeriodW<TsadcAutoPeriodSpec> {

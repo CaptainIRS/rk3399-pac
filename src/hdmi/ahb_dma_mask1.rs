@@ -36,7 +36,7 @@ impl W {
         FifoUnderrunMaskW::new(self, 1)
     }
 }
-#[doc = "AHB DMA FIFO overrun mask\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ahb_dma_mask1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ahb_dma_mask1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Audio DMA Mask Interrupt Register 1\n\nThis register masks interrupts present in the AHB audio DMA module.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ahb_dma_mask1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ahb_dma_mask1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AhbDmaMask1Spec;
 impl crate::RegisterSpec for AhbDmaMask1Spec {
     type Ux = u8;

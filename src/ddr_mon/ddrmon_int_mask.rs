@@ -2,19 +2,19 @@
 pub type R = crate::R<DdrmonIntMaskSpec>;
 #[doc = "Register `DDRMON_INT_MASK` writer"]
 pub type W = crate::W<DdrmonIntMaskSpec>;
-#[doc = "Field `INT_MASK` reader - Interrupt mask control, when bit set to 1'b1, the corresponding interrupt will disable"]
+#[doc = "Field `INT_MASK` reader - Interrupt mask control, when bit set to 1'b1, the corresponding\n\ninterrupt will disable"]
 pub type IntMaskR = crate::FieldReader<u16>;
-#[doc = "Field `INT_MASK` writer - Interrupt mask control, when bit set to 1'b1, the corresponding interrupt will disable"]
+#[doc = "Field `INT_MASK` writer - Interrupt mask control, when bit set to 1'b1, the corresponding\n\ninterrupt will disable"]
 pub type IntMaskW<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
 impl R {
-    #[doc = "Bits 0:8 - Interrupt mask control, when bit set to 1'b1, the corresponding interrupt will disable"]
+    #[doc = "Bits 0:8 - Interrupt mask control, when bit set to 1'b1, the corresponding\n\ninterrupt will disable"]
     #[inline(always)]
     pub fn int_mask(&self) -> IntMaskR {
         IntMaskR::new((self.bits & 0x01ff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:8 - Interrupt mask control, when bit set to 1'b1, the corresponding interrupt will disable"]
+    #[doc = "Bits 0:8 - Interrupt mask control, when bit set to 1'b1, the corresponding\n\ninterrupt will disable"]
     #[inline(always)]
     #[must_use]
     pub fn int_mask(&mut self) -> IntMaskW<DdrmonIntMaskSpec> {

@@ -3,9 +3,10 @@ pub type R = crate::R<PmuAdb400ConSpec>;
 #[doc = "Register `PMU_ADB400_CON` writer"]
 pub type W = crate::W<PmuAdb400ConSpec>;
 #[doc = "software send idle request to cxcs low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PwrdwnReqCxcs {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl PwrdwnReqCxcsR {
             true => PwrdwnReqCxcs::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PwrdwnReqCxcs::B0
@@ -44,7 +45,7 @@ impl<'a, REG> PwrdwnReqCxcsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PwrdwnReqCxcs::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "software send idle request from core_l to cci low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PwrdwnReqCoreL {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl PwrdwnReqCoreLR {
             true => PwrdwnReqCoreL::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PwrdwnReqCoreL::B0
@@ -97,7 +99,7 @@ impl<'a, REG> PwrdwnReqCoreLW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PwrdwnReqCoreL::B0)
@@ -108,10 +110,11 @@ where
         self.variant(PwrdwnReqCoreL::B1)
     }
 }
-#[doc = "software send idle request to path from core_l to gic low power interface\n\nValue on reset: 0"]
+#[doc = "software send idle request to path from core_l to gic low power\n\ninterface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PwrdwnReqCoreL2gic {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -122,7 +125,7 @@ impl From<PwrdwnReqCoreL2gic> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PWRDWN_REQ_CORE_L_2GIC` reader - software send idle request to path from core_l to gic low power interface"]
+#[doc = "Field `PWRDWN_REQ_CORE_L_2GIC` reader - software send idle request to path from core_l to gic low power\n\ninterface"]
 pub type PwrdwnReqCoreL2gicR = crate::BitReader<PwrdwnReqCoreL2gic>;
 impl PwrdwnReqCoreL2gicR {
     #[doc = "Get enumerated values variant"]
@@ -133,7 +136,7 @@ impl PwrdwnReqCoreL2gicR {
             true => PwrdwnReqCoreL2gic::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PwrdwnReqCoreL2gic::B0
@@ -144,13 +147,13 @@ impl PwrdwnReqCoreL2gicR {
         *self == PwrdwnReqCoreL2gic::B1
     }
 }
-#[doc = "Field `PWRDWN_REQ_CORE_L_2GIC` writer - software send idle request to path from core_l to gic low power interface"]
+#[doc = "Field `PWRDWN_REQ_CORE_L_2GIC` writer - software send idle request to path from core_l to gic low power\n\ninterface"]
 pub type PwrdwnReqCoreL2gicW<'a, REG> = crate::BitWriter<'a, REG, PwrdwnReqCoreL2gic>;
 impl<'a, REG> PwrdwnReqCoreL2gicW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PwrdwnReqCoreL2gic::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "send idle request to path from gic to core_l low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PwrdwnReqGic2CoreL {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -186,7 +190,7 @@ impl PwrdwnReqGic2CoreLR {
             true => PwrdwnReqGic2CoreL::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PwrdwnReqGic2CoreL::B0
@@ -203,7 +207,7 @@ impl<'a, REG> PwrdwnReqGic2CoreLW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PwrdwnReqGic2CoreL::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "software send idle request from core_b to cci low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PwrdwnReqCoreB {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -239,7 +244,7 @@ impl PwrdwnReqCoreBR {
             true => PwrdwnReqCoreB::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PwrdwnReqCoreB::B0
@@ -256,7 +261,7 @@ impl<'a, REG> PwrdwnReqCoreBW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PwrdwnReqCoreB::B0)
@@ -267,10 +272,11 @@ where
         self.variant(PwrdwnReqCoreB::B1)
     }
 }
-#[doc = "software send idle request to path from core_b to gic low power interface\n\nValue on reset: 0"]
+#[doc = "software send idle request to path from core_b to gic low power\n\ninterface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PwrdwnReqCoreB2gic {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -281,7 +287,7 @@ impl From<PwrdwnReqCoreB2gic> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PWRDWN_REQ_CORE_B_2GIC` reader - software send idle request to path from core_b to gic low power interface"]
+#[doc = "Field `PWRDWN_REQ_CORE_B_2GIC` reader - software send idle request to path from core_b to gic low power\n\ninterface"]
 pub type PwrdwnReqCoreB2gicR = crate::BitReader<PwrdwnReqCoreB2gic>;
 impl PwrdwnReqCoreB2gicR {
     #[doc = "Get enumerated values variant"]
@@ -292,7 +298,7 @@ impl PwrdwnReqCoreB2gicR {
             true => PwrdwnReqCoreB2gic::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PwrdwnReqCoreB2gic::B0
@@ -303,13 +309,13 @@ impl PwrdwnReqCoreB2gicR {
         *self == PwrdwnReqCoreB2gic::B1
     }
 }
-#[doc = "Field `PWRDWN_REQ_CORE_B_2GIC` writer - software send idle request to path from core_b to gic low power interface"]
+#[doc = "Field `PWRDWN_REQ_CORE_B_2GIC` writer - software send idle request to path from core_b to gic low power\n\ninterface"]
 pub type PwrdwnReqCoreB2gicW<'a, REG> = crate::BitWriter<'a, REG, PwrdwnReqCoreB2gic>;
 impl<'a, REG> PwrdwnReqCoreB2gicW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PwrdwnReqCoreB2gic::B0)
@@ -321,9 +327,10 @@ where
     }
 }
 #[doc = "send idle request to path from gic to core_b low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PwrdwnReqGic2CoreB {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -345,7 +352,7 @@ impl PwrdwnReqGic2CoreBR {
             true => PwrdwnReqGic2CoreB::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PwrdwnReqGic2CoreB::B0
@@ -362,7 +369,7 @@ impl<'a, REG> PwrdwnReqGic2CoreBW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PwrdwnReqGic2CoreB::B0)
@@ -374,9 +381,10 @@ where
     }
 }
 #[doc = "hardware send idle request to cxcs low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClrCxcs {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -398,7 +406,7 @@ impl ClrCxcsR {
             true => ClrCxcs::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClrCxcs::B0
@@ -415,7 +423,7 @@ impl<'a, REG> ClrCxcsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClrCxcs::B0)
@@ -427,9 +435,10 @@ where
     }
 }
 #[doc = "software send idle request from core_l to cci low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClrCoreL {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -451,7 +460,7 @@ impl ClrCoreLR {
             true => ClrCoreL::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClrCoreL::B0
@@ -468,7 +477,7 @@ impl<'a, REG> ClrCoreLW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClrCoreL::B0)
@@ -479,10 +488,11 @@ where
         self.variant(ClrCoreL::B1)
     }
 }
-#[doc = "hardware send idle request to path from core_l to gic low power interface\n\nValue on reset: 0"]
+#[doc = "hardware send idle request to path from core_l to gic low power\n\ninterface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClrCoreL2gic {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -493,7 +503,7 @@ impl From<ClrCoreL2gic> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CLR_CORE_L_2GIC` reader - hardware send idle request to path from core_l to gic low power interface"]
+#[doc = "Field `CLR_CORE_L_2GIC` reader - hardware send idle request to path from core_l to gic low power\n\ninterface"]
 pub type ClrCoreL2gicR = crate::BitReader<ClrCoreL2gic>;
 impl ClrCoreL2gicR {
     #[doc = "Get enumerated values variant"]
@@ -504,7 +514,7 @@ impl ClrCoreL2gicR {
             true => ClrCoreL2gic::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClrCoreL2gic::B0
@@ -515,13 +525,13 @@ impl ClrCoreL2gicR {
         *self == ClrCoreL2gic::B1
     }
 }
-#[doc = "Field `CLR_CORE_L_2GIC` writer - hardware send idle request to path from core_l to gic low power interface"]
+#[doc = "Field `CLR_CORE_L_2GIC` writer - hardware send idle request to path from core_l to gic low power\n\ninterface"]
 pub type ClrCoreL2gicW<'a, REG> = crate::BitWriter<'a, REG, ClrCoreL2gic>;
 impl<'a, REG> ClrCoreL2gicW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClrCoreL2gic::B0)
@@ -532,10 +542,11 @@ where
         self.variant(ClrCoreL2gic::B1)
     }
 }
-#[doc = "hardware send idle request to path from gic to core_l low power interface\n\nValue on reset: 0"]
+#[doc = "hardware send idle request to path from gic to core_l low power\n\ninterface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClrGic2CoreL {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -546,7 +557,7 @@ impl From<ClrGic2CoreL> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CLR_GIC2_CORE_L` reader - hardware send idle request to path from gic to core_l low power interface"]
+#[doc = "Field `CLR_GIC2_CORE_L` reader - hardware send idle request to path from gic to core_l low power\n\ninterface"]
 pub type ClrGic2CoreLR = crate::BitReader<ClrGic2CoreL>;
 impl ClrGic2CoreLR {
     #[doc = "Get enumerated values variant"]
@@ -557,7 +568,7 @@ impl ClrGic2CoreLR {
             true => ClrGic2CoreL::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClrGic2CoreL::B0
@@ -568,13 +579,13 @@ impl ClrGic2CoreLR {
         *self == ClrGic2CoreL::B1
     }
 }
-#[doc = "Field `CLR_GIC2_CORE_L` writer - hardware send idle request to path from gic to core_l low power interface"]
+#[doc = "Field `CLR_GIC2_CORE_L` writer - hardware send idle request to path from gic to core_l low power\n\ninterface"]
 pub type ClrGic2CoreLW<'a, REG> = crate::BitWriter<'a, REG, ClrGic2CoreL>;
 impl<'a, REG> ClrGic2CoreLW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClrGic2CoreL::B0)
@@ -586,9 +597,10 @@ where
     }
 }
 #[doc = "hardware send idle request from core_b to cci low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClrCoreB {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -610,7 +622,7 @@ impl ClrCoreBR {
             true => ClrCoreB::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClrCoreB::B0
@@ -627,7 +639,7 @@ impl<'a, REG> ClrCoreBW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClrCoreB::B0)
@@ -638,10 +650,11 @@ where
         self.variant(ClrCoreB::B1)
     }
 }
-#[doc = "hardware send idle request to path from core_b to gic low power interface\n\nValue on reset: 0"]
+#[doc = "hardware send idle request to path from core_b to gic low power\n\ninterface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClrCoreB2gic {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -652,7 +665,7 @@ impl From<ClrCoreB2gic> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CLR_CORE_B_2GIC` reader - hardware send idle request to path from core_b to gic low power interface"]
+#[doc = "Field `CLR_CORE_B_2GIC` reader - hardware send idle request to path from core_b to gic low power\n\ninterface"]
 pub type ClrCoreB2gicR = crate::BitReader<ClrCoreB2gic>;
 impl ClrCoreB2gicR {
     #[doc = "Get enumerated values variant"]
@@ -663,7 +676,7 @@ impl ClrCoreB2gicR {
             true => ClrCoreB2gic::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClrCoreB2gic::B0
@@ -674,13 +687,13 @@ impl ClrCoreB2gicR {
         *self == ClrCoreB2gic::B1
     }
 }
-#[doc = "Field `CLR_CORE_B_2GIC` writer - hardware send idle request to path from core_b to gic low power interface"]
+#[doc = "Field `CLR_CORE_B_2GIC` writer - hardware send idle request to path from core_b to gic low power\n\ninterface"]
 pub type ClrCoreB2gicW<'a, REG> = crate::BitWriter<'a, REG, ClrCoreB2gic>;
 impl<'a, REG> ClrCoreB2gicW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClrCoreB2gic::B0)
@@ -691,10 +704,11 @@ where
         self.variant(ClrCoreB2gic::B1)
     }
 }
-#[doc = "hardware send idle request to path from gic to core_b low power interface\n\nValue on reset: 0"]
+#[doc = "hardware send idle request to path from gic to core_b low power\n\ninterface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClrGic2CoreB {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -705,7 +719,7 @@ impl From<ClrGic2CoreB> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CLR_GIC2_CORE_B` reader - hardware send idle request to path from gic to core_b low power interface"]
+#[doc = "Field `CLR_GIC2_CORE_B` reader - hardware send idle request to path from gic to core_b low power\n\ninterface"]
 pub type ClrGic2CoreBR = crate::BitReader<ClrGic2CoreB>;
 impl ClrGic2CoreBR {
     #[doc = "Get enumerated values variant"]
@@ -716,7 +730,7 @@ impl ClrGic2CoreBR {
             true => ClrGic2CoreB::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClrGic2CoreB::B0
@@ -727,13 +741,13 @@ impl ClrGic2CoreBR {
         *self == ClrGic2CoreB::B1
     }
 }
-#[doc = "Field `CLR_GIC2_CORE_B` writer - hardware send idle request to path from gic to core_b low power interface"]
+#[doc = "Field `CLR_GIC2_CORE_B` writer - hardware send idle request to path from gic to core_b low power\n\ninterface"]
 pub type ClrGic2CoreBW<'a, REG> = crate::BitWriter<'a, REG, ClrGic2CoreB>;
 impl<'a, REG> ClrGic2CoreBW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClrGic2CoreB::B0)
@@ -744,9 +758,9 @@ where
         self.variant(ClrGic2CoreB::B1)
     }
 }
-#[doc = "Field `WRITE_ENABLE` reader - When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - When bit 16=1, bit 0 can be written by software .\n\nWhen bit 16=0, bit 0 cannot be written by software;\n\nWhen bit 17=1, bit 1 can be written by software .\n\nWhen bit 17=0, bit 1 cannot be written by software;\n\n......\n\nWhen bit 31=1, bit 15 can be written by software .\n\nWhen bit 31=0, bit 15 cannot be written by software;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - When bit 16=1, bit 0 can be written by software .\n\nWhen bit 16=0, bit 0 cannot be written by software;\n\nWhen bit 17=1, bit 1 can be written by software .\n\nWhen bit 17=0, bit 1 cannot be written by software;\n\n......\n\nWhen bit 31=1, bit 15 can be written by software .\n\nWhen bit 31=0, bit 15 cannot be written by software;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0 - software send idle request to cxcs low power interface"]
@@ -759,7 +773,7 @@ impl R {
     pub fn pwrdwn_req_core_l(&self) -> PwrdwnReqCoreLR {
         PwrdwnReqCoreLR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - software send idle request to path from core_l to gic low power interface"]
+    #[doc = "Bit 2 - software send idle request to path from core_l to gic low power\n\ninterface"]
     #[inline(always)]
     pub fn pwrdwn_req_core_l_2gic(&self) -> PwrdwnReqCoreL2gicR {
         PwrdwnReqCoreL2gicR::new(((self.bits >> 2) & 1) != 0)
@@ -774,7 +788,7 @@ impl R {
     pub fn pwrdwn_req_core_b(&self) -> PwrdwnReqCoreBR {
         PwrdwnReqCoreBR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - software send idle request to path from core_b to gic low power interface"]
+    #[doc = "Bit 5 - software send idle request to path from core_b to gic low power\n\ninterface"]
     #[inline(always)]
     pub fn pwrdwn_req_core_b_2gic(&self) -> PwrdwnReqCoreB2gicR {
         PwrdwnReqCoreB2gicR::new(((self.bits >> 5) & 1) != 0)
@@ -794,12 +808,12 @@ impl R {
     pub fn clr_core_l(&self) -> ClrCoreLR {
         ClrCoreLR::new(((self.bits >> 9) & 1) != 0)
     }
-    #[doc = "Bit 10 - hardware send idle request to path from core_l to gic low power interface"]
+    #[doc = "Bit 10 - hardware send idle request to path from core_l to gic low power\n\ninterface"]
     #[inline(always)]
     pub fn clr_core_l_2gic(&self) -> ClrCoreL2gicR {
         ClrCoreL2gicR::new(((self.bits >> 10) & 1) != 0)
     }
-    #[doc = "Bit 11 - hardware send idle request to path from gic to core_l low power interface"]
+    #[doc = "Bit 11 - hardware send idle request to path from gic to core_l low power\n\ninterface"]
     #[inline(always)]
     pub fn clr_gic2_core_l(&self) -> ClrGic2CoreLR {
         ClrGic2CoreLR::new(((self.bits >> 11) & 1) != 0)
@@ -809,17 +823,17 @@ impl R {
     pub fn clr_core_b(&self) -> ClrCoreBR {
         ClrCoreBR::new(((self.bits >> 12) & 1) != 0)
     }
-    #[doc = "Bit 13 - hardware send idle request to path from core_b to gic low power interface"]
+    #[doc = "Bit 13 - hardware send idle request to path from core_b to gic low power\n\ninterface"]
     #[inline(always)]
     pub fn clr_core_b_2gic(&self) -> ClrCoreB2gicR {
         ClrCoreB2gicR::new(((self.bits >> 13) & 1) != 0)
     }
-    #[doc = "Bit 14 - hardware send idle request to path from gic to core_b low power interface"]
+    #[doc = "Bit 14 - hardware send idle request to path from gic to core_b low power\n\ninterface"]
     #[inline(always)]
     pub fn clr_gic2_core_b(&self) -> ClrGic2CoreBR {
         ClrGic2CoreBR::new(((self.bits >> 14) & 1) != 0)
     }
-    #[doc = "Bits 16:31 - When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - When bit 16=1, bit 0 can be written by software .\n\nWhen bit 16=0, bit 0 cannot be written by software;\n\nWhen bit 17=1, bit 1 can be written by software .\n\nWhen bit 17=0, bit 1 cannot be written by software;\n\n......\n\nWhen bit 31=1, bit 15 can be written by software .\n\nWhen bit 31=0, bit 15 cannot be written by software;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
@@ -838,7 +852,7 @@ impl W {
     pub fn pwrdwn_req_core_l(&mut self) -> PwrdwnReqCoreLW<PmuAdb400ConSpec> {
         PwrdwnReqCoreLW::new(self, 1)
     }
-    #[doc = "Bit 2 - software send idle request to path from core_l to gic low power interface"]
+    #[doc = "Bit 2 - software send idle request to path from core_l to gic low power\n\ninterface"]
     #[inline(always)]
     #[must_use]
     pub fn pwrdwn_req_core_l_2gic(&mut self) -> PwrdwnReqCoreL2gicW<PmuAdb400ConSpec> {
@@ -856,7 +870,7 @@ impl W {
     pub fn pwrdwn_req_core_b(&mut self) -> PwrdwnReqCoreBW<PmuAdb400ConSpec> {
         PwrdwnReqCoreBW::new(self, 4)
     }
-    #[doc = "Bit 5 - software send idle request to path from core_b to gic low power interface"]
+    #[doc = "Bit 5 - software send idle request to path from core_b to gic low power\n\ninterface"]
     #[inline(always)]
     #[must_use]
     pub fn pwrdwn_req_core_b_2gic(&mut self) -> PwrdwnReqCoreB2gicW<PmuAdb400ConSpec> {
@@ -880,13 +894,13 @@ impl W {
     pub fn clr_core_l(&mut self) -> ClrCoreLW<PmuAdb400ConSpec> {
         ClrCoreLW::new(self, 9)
     }
-    #[doc = "Bit 10 - hardware send idle request to path from core_l to gic low power interface"]
+    #[doc = "Bit 10 - hardware send idle request to path from core_l to gic low power\n\ninterface"]
     #[inline(always)]
     #[must_use]
     pub fn clr_core_l_2gic(&mut self) -> ClrCoreL2gicW<PmuAdb400ConSpec> {
         ClrCoreL2gicW::new(self, 10)
     }
-    #[doc = "Bit 11 - hardware send idle request to path from gic to core_l low power interface"]
+    #[doc = "Bit 11 - hardware send idle request to path from gic to core_l low power\n\ninterface"]
     #[inline(always)]
     #[must_use]
     pub fn clr_gic2_core_l(&mut self) -> ClrGic2CoreLW<PmuAdb400ConSpec> {
@@ -898,19 +912,19 @@ impl W {
     pub fn clr_core_b(&mut self) -> ClrCoreBW<PmuAdb400ConSpec> {
         ClrCoreBW::new(self, 12)
     }
-    #[doc = "Bit 13 - hardware send idle request to path from core_b to gic low power interface"]
+    #[doc = "Bit 13 - hardware send idle request to path from core_b to gic low power\n\ninterface"]
     #[inline(always)]
     #[must_use]
     pub fn clr_core_b_2gic(&mut self) -> ClrCoreB2gicW<PmuAdb400ConSpec> {
         ClrCoreB2gicW::new(self, 13)
     }
-    #[doc = "Bit 14 - hardware send idle request to path from gic to core_b low power interface"]
+    #[doc = "Bit 14 - hardware send idle request to path from gic to core_b low power\n\ninterface"]
     #[inline(always)]
     #[must_use]
     pub fn clr_gic2_core_b(&mut self) -> ClrGic2CoreBW<PmuAdb400ConSpec> {
         ClrGic2CoreBW::new(self, 14)
     }
-    #[doc = "Bits 16:31 - When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - When bit 16=1, bit 0 can be written by software .\n\nWhen bit 16=0, bit 0 cannot be written by software;\n\nWhen bit 17=1, bit 1 can be written by software .\n\nWhen bit 17=0, bit 1 cannot be written by software;\n\n......\n\nWhen bit 31=1, bit 15 can be written by software .\n\nWhen bit 31=0, bit 15 cannot be written by software;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<PmuAdb400ConSpec> {

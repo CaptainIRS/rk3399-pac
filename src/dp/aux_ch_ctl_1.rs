@@ -2,16 +2,16 @@
 pub type R = crate::R<AuxChCtl1Spec>;
 #[doc = "Register `AUX_CH_CTL_1` writer"]
 pub type W = crate::W<AuxChCtl1Spec>;
-#[doc = "Field `AUX_TX_COMM` reader - Register control AUX CH transaction command."]
+#[doc = "Field `AUX_TX_COMM` reader - Register control AUX CH transaction \n\ncommand."]
 pub type AuxTxCommR = crate::FieldReader;
-#[doc = "Field `AUX_TX_COMM` writer - Register control AUX CH transaction command."]
+#[doc = "Field `AUX_TX_COMM` writer - Register control AUX CH transaction \n\ncommand."]
 pub type AuxTxCommW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `AUX_LENGTH` reader - Register control AUX CH transaction length."]
 pub type AuxLengthR = crate::FieldReader;
 #[doc = "Field `AUX_LENGTH` writer - Register control AUX CH transaction length."]
 pub type AuxLengthW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
-    #[doc = "Bits 0:3 - Register control AUX CH transaction command."]
+    #[doc = "Bits 0:3 - Register control AUX CH transaction \n\ncommand."]
     #[inline(always)]
     pub fn aux_tx_comm(&self) -> AuxTxCommR {
         AuxTxCommR::new((self.bits & 0x0f) as u8)
@@ -23,7 +23,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - Register control AUX CH transaction command."]
+    #[doc = "Bits 0:3 - Register control AUX CH transaction \n\ncommand."]
     #[inline(always)]
     #[must_use]
     pub fn aux_tx_comm(&mut self) -> AuxTxCommW<AuxChCtl1Spec> {

@@ -3,10 +3,11 @@ pub type R = crate::R<PmugrfGpio0lHeSpec>;
 #[doc = "Register `PMUGRF_GPIO0L_HE` writer"]
 pub type W = crate::W<PmugrfGpio0lHeSpec>;
 #[doc = "GPIO0A slew rate control for each bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gpio0aSr {
-    #[doc = "0: fast"]
+    #[doc = "0: slow (half frequency)"]
     B0 = 0,
     #[doc = "1: fast"]
     B1 = 1,
@@ -32,7 +33,7 @@ impl Gpio0aSrR {
             _ => None,
         }
     }
-    #[doc = "fast"]
+    #[doc = "slow (half frequency)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Gpio0aSr::B0
@@ -50,7 +51,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "fast"]
+    #[doc = "slow (half frequency)"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio0aSr::B0)
@@ -62,10 +63,11 @@ where
     }
 }
 #[doc = "GPIO0B slew rate control for each bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gpio0bSr {
-    #[doc = "0: fast"]
+    #[doc = "0: slow (half frequency)"]
     B0 = 0,
     #[doc = "1: fast"]
     B1 = 1,
@@ -91,7 +93,7 @@ impl Gpio0bSrR {
             _ => None,
         }
     }
-    #[doc = "fast"]
+    #[doc = "slow (half frequency)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Gpio0bSr::B0
@@ -109,7 +111,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "fast"]
+    #[doc = "slow (half frequency)"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio0bSr::B0)
@@ -120,7 +122,7 @@ where
         self.variant(Gpio0bSr::B1)
     }
 }
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:7 - GPIO0A slew rate control for each bit"]
@@ -147,7 +149,7 @@ impl W {
     pub fn gpio0b_sr(&mut self) -> Gpio0bSrW<PmugrfGpio0lHeSpec> {
         Gpio0bSrW::new(self, 8)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<PmugrfGpio0lHeSpec> {

@@ -1,9 +1,10 @@
 #[doc = "Register `PCIE_CLIENT_MSG_STATUS` reader"]
 pub type R = crate::R<PcieClientMsgStatusSpec>;
 #[doc = "Message fifo almost full flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AlmostFull {
-    #[doc = "0: almost full"]
+    #[doc = "0: non-almost full"]
     B0 = 0,
     #[doc = "1: almost full"]
     B1 = 1,
@@ -25,7 +26,7 @@ impl AlmostFullR {
             true => AlmostFull::B1,
         }
     }
-    #[doc = "almost full"]
+    #[doc = "non-almost full"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == AlmostFull::B0
@@ -37,9 +38,10 @@ impl AlmostFullR {
     }
 }
 #[doc = "Message fifo empty\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FifoEmpty {
-    #[doc = "0: fifo_empty"]
+    #[doc = "0: non-full empty"]
     B0 = 0,
     #[doc = "1: fifo_empty"]
     B1 = 1,
@@ -61,7 +63,7 @@ impl FifoEmptyR {
             true => FifoEmpty::B1,
         }
     }
-    #[doc = "fifo_empty"]
+    #[doc = "non-full empty"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == FifoEmpty::B0
@@ -73,9 +75,10 @@ impl FifoEmptyR {
     }
 }
 #[doc = "Message fifo full\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FifoFull {
-    #[doc = "0: fifo full"]
+    #[doc = "0: non-full"]
     B0 = 0,
     #[doc = "1: fifo full"]
     B1 = 1,
@@ -97,7 +100,7 @@ impl FifoFullR {
             true => FifoFull::B1,
         }
     }
-    #[doc = "fifo full"]
+    #[doc = "non-full"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == FifoFull::B0
@@ -108,7 +111,7 @@ impl FifoFullR {
         *self == FifoFull::B1
     }
 }
-#[doc = "Field `SPACE2EMPTY` reader - Space to empty Data length before empty"]
+#[doc = "Field `SPACE2EMPTY` reader - Space to empty\n\nData length before empty"]
 pub type Space2emptyR = crate::FieldReader;
 impl R {
     #[doc = "Bit 0 - Message fifo almost full flag"]
@@ -126,7 +129,7 @@ impl R {
     pub fn fifo_full(&self) -> FifoFullR {
         FifoFullR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bits 8:12 - Space to empty Data length before empty"]
+    #[doc = "Bits 8:12 - Space to empty\n\nData length before empty"]
     #[inline(always)]
     pub fn space2empty(&self) -> Space2emptyR {
         Space2emptyR::new(((self.bits >> 8) & 0x1f) as u8)

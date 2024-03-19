@@ -1,9 +1,9 @@
 #[doc = "Register `ERRLOG_ErrLog6` reader"]
 pub type R = crate::R<ErrlogErrLog6Spec>;
-#[doc = "Field `REQUSERH` reader - High 8 LSB AXI user bits for cci_m0 and pcie master. It is read as 0 for the other master.Unused bits are read as 0."]
+#[doc = "Field `REQUSERH` reader - High 8 LSB AXI user bits for cci_m0 and pcie master. It is read as 0\n\nfor the other master.Unused bits are read as 0."]
 pub type RequserhR = crate::FieldReader;
 impl R {
-    #[doc = "Bits 0:7 - High 8 LSB AXI user bits for cci_m0 and pcie master. It is read as 0 for the other master.Unused bits are read as 0."]
+    #[doc = "Bits 0:7 - High 8 LSB AXI user bits for cci_m0 and pcie master. It is read as 0\n\nfor the other master.Unused bits are read as 0."]
     #[inline(always)]
     pub fn requserh(&self) -> RequserhR {
         RequserhR::new((self.bits & 0xff) as u8)

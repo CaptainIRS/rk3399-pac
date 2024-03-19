@@ -2,9 +2,9 @@
 pub type R = crate::R<DdrPiReg83Spec>;
 #[doc = "Register `DDR_PI_REG_83` writer"]
 pub type W = crate::W<DdrPiReg83Spec>;
-#[doc = "Field `PI_RDLVL_GATE_INTERVAL` reader - The number of long count sequences that are counted between automatic gate training commands."]
+#[doc = "Field `PI_RDLVL_GATE_INTERVAL` reader - The number of long count sequences that are counted between\n\nautomatic gate training commands."]
 pub type PiRdlvlGateIntervalR = crate::FieldReader<u16>;
-#[doc = "Field `PI_RDLVL_GATE_INTERVAL` writer - The number of long count sequences that are counted between automatic gate training commands."]
+#[doc = "Field `PI_RDLVL_GATE_INTERVAL` writer - The number of long count sequences that are counted between\n\nautomatic gate training commands."]
 pub type PiRdlvlGateIntervalW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `PI_RDLVL_PATTERN_START` reader - Defines the start pattern in read leveling."]
 pub type PiRdlvlPatternStartR = crate::FieldReader;
@@ -15,7 +15,7 @@ pub type PiRdlvlPatternNumR = crate::FieldReader;
 #[doc = "Field `PI_RDLVL_PATTERN_NUM` writer - Defines the number of patterns that are supported in read leveling."]
 pub type PiRdlvlPatternNumW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
-    #[doc = "Bits 0:15 - The number of long count sequences that are counted between automatic gate training commands."]
+    #[doc = "Bits 0:15 - The number of long count sequences that are counted between\n\nautomatic gate training commands."]
     #[inline(always)]
     pub fn pi_rdlvl_gate_interval(&self) -> PiRdlvlGateIntervalR {
         PiRdlvlGateIntervalR::new((self.bits & 0xffff) as u16)
@@ -32,7 +32,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - The number of long count sequences that are counted between automatic gate training commands."]
+    #[doc = "Bits 0:15 - The number of long count sequences that are counted between\n\nautomatic gate training commands."]
     #[inline(always)]
     #[must_use]
     pub fn pi_rdlvl_gate_interval(&mut self) -> PiRdlvlGateIntervalW<DdrPiReg83Spec> {

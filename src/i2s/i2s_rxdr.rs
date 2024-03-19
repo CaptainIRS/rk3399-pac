@@ -1,9 +1,9 @@
 #[doc = "Register `I2S_RXDR` reader"]
 pub type R = crate::R<I2sRxdrSpec>;
-#[doc = "Field `RXDR` reader - Receive FIFO Data Register When the register is read, data in the receive FIFO is accessed."]
+#[doc = "Field `RXDR` reader - Receive FIFO Data Register\n\nWhen the register is read, data in the receive FIFO is accessed."]
 pub type RxdrR = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Receive FIFO Data Register When the register is read, data in the receive FIFO is accessed."]
+    #[doc = "Bits 0:31 - Receive FIFO Data Register\n\nWhen the register is read, data in the receive FIFO is accessed."]
     #[inline(always)]
     pub fn rxdr(&self) -> RxdrR {
         RxdrR::new(self.bits)

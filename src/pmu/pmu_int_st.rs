@@ -3,9 +3,10 @@ pub type R = crate::R<PmuIntStSpec>;
 #[doc = "Register `PMU_INT_ST` writer"]
 pub type W = crate::W<PmuIntStSpec>;
 #[doc = "power mode wakeup status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PwrmodeWakeupStatus {
-    #[doc = "0: wakeup from power mode"]
+    #[doc = "0: not wakeup from power mode"]
     B0 = 0,
     #[doc = "1: wakeup from power mode"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl PwrmodeWakeupStatusR {
             true => PwrmodeWakeupStatus::B1,
         }
     }
-    #[doc = "wakeup from power mode"]
+    #[doc = "not wakeup from power mode"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PwrmodeWakeupStatus::B0
@@ -44,7 +45,7 @@ impl<'a, REG> PwrmodeWakeupStatusW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "wakeup from power mode"]
+    #[doc = "not wakeup from power mode"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PwrmodeWakeupStatus::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "gpio0 negedge pulse wakeup status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WakeupGpio0NegStatus {
-    #[doc = "0: wakeup by gpio negedge pulse"]
+    #[doc = "0: not wakeup by gpio negedge pulse"]
     B0 = 0,
     #[doc = "1: wakeup by gpio negedge pulse"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl WakeupGpio0NegStatusR {
             true => WakeupGpio0NegStatus::B1,
         }
     }
-    #[doc = "wakeup by gpio negedge pulse"]
+    #[doc = "not wakeup by gpio negedge pulse"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == WakeupGpio0NegStatus::B0
@@ -97,7 +99,7 @@ impl<'a, REG> WakeupGpio0NegStatusW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "wakeup by gpio negedge pulse"]
+    #[doc = "not wakeup by gpio negedge pulse"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(WakeupGpio0NegStatus::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "gpio0 posedge pulse wakeup status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WakeupGpio0PosStatus {
-    #[doc = "0: wakeup by gpio0 posedge pulse"]
+    #[doc = "0: not wakeup by gpio0 posedge pulse"]
     B0 = 0,
     #[doc = "1: wakeup by gpio0 posedge pulse"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl WakeupGpio0PosStatusR {
             true => WakeupGpio0PosStatus::B1,
         }
     }
-    #[doc = "wakeup by gpio0 posedge pulse"]
+    #[doc = "not wakeup by gpio0 posedge pulse"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == WakeupGpio0PosStatus::B0
@@ -150,7 +153,7 @@ impl<'a, REG> WakeupGpio0PosStatusW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "wakeup by gpio0 posedge pulse"]
+    #[doc = "not wakeup by gpio0 posedge pulse"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(WakeupGpio0PosStatus::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "gpio1 posedge pulse wakeup status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WakeupGpio1PosStatus {
-    #[doc = "0: wakeup by gpio1 posedge pulse"]
+    #[doc = "0: not wakeup by gpio1 posedge pulse"]
     B0 = 0,
     #[doc = "1: wakeup by gpio1 posedge pulse"]
     B1 = 1,
@@ -186,7 +190,7 @@ impl WakeupGpio1PosStatusR {
             true => WakeupGpio1PosStatus::B1,
         }
     }
-    #[doc = "wakeup by gpio1 posedge pulse"]
+    #[doc = "not wakeup by gpio1 posedge pulse"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == WakeupGpio1PosStatus::B0
@@ -203,7 +207,7 @@ impl<'a, REG> WakeupGpio1PosStatusW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "wakeup by gpio1 posedge pulse"]
+    #[doc = "not wakeup by gpio1 posedge pulse"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(WakeupGpio1PosStatus::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "gpio1 negedge pulse wakeup status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WakeupGpio1NegStatus {
-    #[doc = "0: wakeup by gpio1 negedge pulse"]
+    #[doc = "0: not wakeup by gpio1 negedge pulse"]
     B0 = 0,
     #[doc = "1: wakeup by gpio1 negedge pulse"]
     B1 = 1,
@@ -239,7 +244,7 @@ impl WakeupGpio1NegStatusR {
             true => WakeupGpio1NegStatus::B1,
         }
     }
-    #[doc = "wakeup by gpio1 negedge pulse"]
+    #[doc = "not wakeup by gpio1 negedge pulse"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == WakeupGpio1NegStatus::B0
@@ -256,7 +261,7 @@ impl<'a, REG> WakeupGpio1NegStatusW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "wakeup by gpio1 negedge pulse"]
+    #[doc = "not wakeup by gpio1 negedge pulse"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(WakeupGpio1NegStatus::B0)

@@ -1,9 +1,9 @@
 #[doc = "Register `USB3_GBUSERRADDRHI` reader"]
 pub type R = crate::R<Usb3GbuserraddrhiSpec>;
-#[doc = "Field `BUSERRADDR` reader - Bus Address - High his register contains the higher 32 bits of the first bus address that encountered a SoC bus error. It is valid when the GSTS.BusErrAddrVld field is 1. It can only be cleared by resetting the core. Note: Only supported in AHB and AXI configurations."]
+#[doc = "Field `BUSERRADDR` reader - Bus Address - High\n\nhis register contains the higher 32 bits of the first bus address\n\nthat encountered a SoC bus error. It is valid when the\n\nGSTS.BusErrAddrVld field is 1. It can only be cleared by resetting\n\nthe core.\n\nNote: Only supported in AHB and AXI configurations."]
 pub type BuserraddrR = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Bus Address - High his register contains the higher 32 bits of the first bus address that encountered a SoC bus error. It is valid when the GSTS.BusErrAddrVld field is 1. It can only be cleared by resetting the core. Note: Only supported in AHB and AXI configurations."]
+    #[doc = "Bits 0:31 - Bus Address - High\n\nhis register contains the higher 32 bits of the first bus address\n\nthat encountered a SoC bus error. It is valid when the\n\nGSTS.BusErrAddrVld field is 1. It can only be cleared by resetting\n\nthe core.\n\nNote: Only supported in AHB and AXI configurations."]
     #[inline(always)]
     pub fn buserraddr(&self) -> BuserraddrR {
         BuserraddrR::new(self.bits)

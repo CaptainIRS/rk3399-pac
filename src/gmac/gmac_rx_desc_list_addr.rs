@@ -2,23 +2,23 @@
 pub type R = crate::R<GmacRxDescListAddrSpec>;
 #[doc = "Register `GMAC_RX_DESC_LIST_ADDR` writer"]
 pub type W = crate::W<GmacRxDescListAddrSpec>;
-#[doc = "Field `SRL` reader - Start of Receive List This field contains the base address of the First Descriptor in the Receive Descriptor list. The LSB bits \\[1/2/3:0\\]
-for 32/64/128-bit bus width) will be ignored and taken as all-zero by the DMA internally. Hence these LSB bits are Read Only."]
+#[doc = "Field `SRL` reader - Start of Receive List\n\nThis field contains the base address of the First Descriptor in the\n\nReceive Descriptor list. The LSB bits \\[1/2/3:0\\]
+for 32/64/128-bit\n\nbus width) will be ignored and taken as all-zero by the DMA\n\ninternally. Hence these LSB bits are Read Only."]
 pub type SrlR = crate::FieldReader<u32>;
-#[doc = "Field `SRL` writer - Start of Receive List This field contains the base address of the First Descriptor in the Receive Descriptor list. The LSB bits \\[1/2/3:0\\]
-for 32/64/128-bit bus width) will be ignored and taken as all-zero by the DMA internally. Hence these LSB bits are Read Only."]
+#[doc = "Field `SRL` writer - Start of Receive List\n\nThis field contains the base address of the First Descriptor in the\n\nReceive Descriptor list. The LSB bits \\[1/2/3:0\\]
+for 32/64/128-bit\n\nbus width) will be ignored and taken as all-zero by the DMA\n\ninternally. Hence these LSB bits are Read Only."]
 pub type SrlW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Start of Receive List This field contains the base address of the First Descriptor in the Receive Descriptor list. The LSB bits \\[1/2/3:0\\]
-for 32/64/128-bit bus width) will be ignored and taken as all-zero by the DMA internally. Hence these LSB bits are Read Only."]
+    #[doc = "Bits 0:31 - Start of Receive List\n\nThis field contains the base address of the First Descriptor in the\n\nReceive Descriptor list. The LSB bits \\[1/2/3:0\\]
+for 32/64/128-bit\n\nbus width) will be ignored and taken as all-zero by the DMA\n\ninternally. Hence these LSB bits are Read Only."]
     #[inline(always)]
     pub fn srl(&self) -> SrlR {
         SrlR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Start of Receive List This field contains the base address of the First Descriptor in the Receive Descriptor list. The LSB bits \\[1/2/3:0\\]
-for 32/64/128-bit bus width) will be ignored and taken as all-zero by the DMA internally. Hence these LSB bits are Read Only."]
+    #[doc = "Bits 0:31 - Start of Receive List\n\nThis field contains the base address of the First Descriptor in the\n\nReceive Descriptor list. The LSB bits \\[1/2/3:0\\]
+for 32/64/128-bit\n\nbus width) will be ignored and taken as all-zero by the DMA\n\ninternally. Hence these LSB bits are Read Only."]
     #[inline(always)]
     #[must_use]
     pub fn srl(&mut self) -> SrlW<GmacRxDescListAddrSpec> {

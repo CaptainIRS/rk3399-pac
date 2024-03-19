@@ -126,7 +126,7 @@ impl W {
         CecAddrL7W::new(self, 7)
     }
 }
-#[doc = "Logical address 0 - Device TV\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cec_addr_l::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cec_addr_l::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "CEC Logical Address Register Low\n\nThis register indicates the logical address(es) allocated to the CEC device.\n\nThis register is written by software when the logical allocation is finished. Bit value 1 means\n\nthe corresponding logical address is allocated to this device. Bit value 0 means the\n\ncorresponding logical address is not allocated to this device.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cec_addr_l::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cec_addr_l::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CecAddrLSpec;
 impl crate::RegisterSpec for CecAddrLSpec {
     type Ux = u8;

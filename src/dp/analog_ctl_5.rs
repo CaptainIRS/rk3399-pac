@@ -2,15 +2,16 @@
 pub type R = crate::R<AnalogCtl5Spec>;
 #[doc = "Register `ANALOG_CTL_5` writer"]
 pub type W = crate::W<AnalogCtl5Spec>;
-#[doc = "Ch0 post cursor2 setting: CH0_PC2_SEL: post cursor2\n\nValue on reset: 0"]
+#[doc = "Ch0 post cursor2 setting: \n\nCH0_PC2_SEL: post cursor2\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ch3Pc2SelBits3 {
-    #[doc = "0: 0.15"]
+    #[doc = "0: 0"]
     H0 = 0,
-    #[doc = "1: 0.15"]
+    #[doc = "1: 0.05"]
     H1 = 1,
-    #[doc = "2: 0.15"]
+    #[doc = "2: 0.1"]
     H2 = 2,
     #[doc = "3: 0.15"]
     H3 = 3,
@@ -24,7 +25,7 @@ impl From<Ch3Pc2SelBits3> for u8 {
 impl crate::FieldSpec for Ch3Pc2SelBits3 {
     type Ux = u8;
 }
-#[doc = "Field `CH3_PC2_SEL_BITS_3` reader - Ch0 post cursor2 setting: CH0_PC2_SEL: post cursor2"]
+#[doc = "Field `CH3_PC2_SEL_BITS_3` reader - Ch0 post cursor2 setting: \n\nCH0_PC2_SEL: post cursor2"]
 pub type Ch3Pc2SelBits3R = crate::FieldReader<Ch3Pc2SelBits3>;
 impl Ch3Pc2SelBits3R {
     #[doc = "Get enumerated values variant"]
@@ -38,17 +39,17 @@ impl Ch3Pc2SelBits3R {
             _ => unreachable!(),
         }
     }
-    #[doc = "0.15"]
+    #[doc = "0"]
     #[inline(always)]
     pub fn is_h0(&self) -> bool {
         *self == Ch3Pc2SelBits3::H0
     }
-    #[doc = "0.15"]
+    #[doc = "0.05"]
     #[inline(always)]
     pub fn is_h1(&self) -> bool {
         *self == Ch3Pc2SelBits3::H1
     }
-    #[doc = "0.15"]
+    #[doc = "0.1"]
     #[inline(always)]
     pub fn is_h2(&self) -> bool {
         *self == Ch3Pc2SelBits3::H2
@@ -59,24 +60,24 @@ impl Ch3Pc2SelBits3R {
         *self == Ch3Pc2SelBits3::H3
     }
 }
-#[doc = "Field `CH3_PC2_SEL_BITS_3` writer - Ch0 post cursor2 setting: CH0_PC2_SEL: post cursor2"]
+#[doc = "Field `CH3_PC2_SEL_BITS_3` writer - Ch0 post cursor2 setting: \n\nCH0_PC2_SEL: post cursor2"]
 pub type Ch3Pc2SelBits3W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Ch3Pc2SelBits3>;
 impl<'a, REG> Ch3Pc2SelBits3W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "0.15"]
+    #[doc = "0"]
     #[inline(always)]
     pub fn h0(self) -> &'a mut crate::W<REG> {
         self.variant(Ch3Pc2SelBits3::H0)
     }
-    #[doc = "0.15"]
+    #[doc = "0.05"]
     #[inline(always)]
     pub fn h1(self) -> &'a mut crate::W<REG> {
         self.variant(Ch3Pc2SelBits3::H1)
     }
-    #[doc = "0.15"]
+    #[doc = "0.1"]
     #[inline(always)]
     pub fn h2(self) -> &'a mut crate::W<REG> {
         self.variant(Ch3Pc2SelBits3::H2)
@@ -87,15 +88,16 @@ where
         self.variant(Ch3Pc2SelBits3::H3)
     }
 }
-#[doc = "Ch1 post cursor2 setting: CH1_PC2_SEL: post cursor2\n\nValue on reset: 0"]
+#[doc = "Ch1 post cursor2 setting: \n\nCH1_PC2_SEL: post cursor2\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ch3Pc2SelBits2 {
-    #[doc = "0: 0.15"]
+    #[doc = "0: 0"]
     H0 = 0,
-    #[doc = "1: 0.15"]
+    #[doc = "1: 0.05"]
     H1 = 1,
-    #[doc = "2: 0.15"]
+    #[doc = "2: 0.1"]
     H2 = 2,
     #[doc = "3: 0.15"]
     H3 = 3,
@@ -109,7 +111,7 @@ impl From<Ch3Pc2SelBits2> for u8 {
 impl crate::FieldSpec for Ch3Pc2SelBits2 {
     type Ux = u8;
 }
-#[doc = "Field `CH3_PC2_SEL_BITS_2` reader - Ch1 post cursor2 setting: CH1_PC2_SEL: post cursor2"]
+#[doc = "Field `CH3_PC2_SEL_BITS_2` reader - Ch1 post cursor2 setting: \n\nCH1_PC2_SEL: post cursor2"]
 pub type Ch3Pc2SelBits2R = crate::FieldReader<Ch3Pc2SelBits2>;
 impl Ch3Pc2SelBits2R {
     #[doc = "Get enumerated values variant"]
@@ -123,17 +125,17 @@ impl Ch3Pc2SelBits2R {
             _ => unreachable!(),
         }
     }
-    #[doc = "0.15"]
+    #[doc = "0"]
     #[inline(always)]
     pub fn is_h0(&self) -> bool {
         *self == Ch3Pc2SelBits2::H0
     }
-    #[doc = "0.15"]
+    #[doc = "0.05"]
     #[inline(always)]
     pub fn is_h1(&self) -> bool {
         *self == Ch3Pc2SelBits2::H1
     }
-    #[doc = "0.15"]
+    #[doc = "0.1"]
     #[inline(always)]
     pub fn is_h2(&self) -> bool {
         *self == Ch3Pc2SelBits2::H2
@@ -144,24 +146,24 @@ impl Ch3Pc2SelBits2R {
         *self == Ch3Pc2SelBits2::H3
     }
 }
-#[doc = "Field `CH3_PC2_SEL_BITS_2` writer - Ch1 post cursor2 setting: CH1_PC2_SEL: post cursor2"]
+#[doc = "Field `CH3_PC2_SEL_BITS_2` writer - Ch1 post cursor2 setting: \n\nCH1_PC2_SEL: post cursor2"]
 pub type Ch3Pc2SelBits2W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Ch3Pc2SelBits2>;
 impl<'a, REG> Ch3Pc2SelBits2W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "0.15"]
+    #[doc = "0"]
     #[inline(always)]
     pub fn h0(self) -> &'a mut crate::W<REG> {
         self.variant(Ch3Pc2SelBits2::H0)
     }
-    #[doc = "0.15"]
+    #[doc = "0.05"]
     #[inline(always)]
     pub fn h1(self) -> &'a mut crate::W<REG> {
         self.variant(Ch3Pc2SelBits2::H1)
     }
-    #[doc = "0.15"]
+    #[doc = "0.1"]
     #[inline(always)]
     pub fn h2(self) -> &'a mut crate::W<REG> {
         self.variant(Ch3Pc2SelBits2::H2)
@@ -172,15 +174,16 @@ where
         self.variant(Ch3Pc2SelBits2::H3)
     }
 }
-#[doc = "Ch2 post cursor2 setting: CH2_PC2_SEL: post cursor2\n\nValue on reset: 0"]
+#[doc = "Ch2 post cursor2 setting: \n\nCH2_PC2_SEL: post cursor2\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ch3Pc2SelBits1 {
-    #[doc = "0: 0.15"]
+    #[doc = "0: 0"]
     H0 = 0,
-    #[doc = "1: 0.15"]
+    #[doc = "1: 0.05"]
     H1 = 1,
-    #[doc = "2: 0.15"]
+    #[doc = "2: 0.1"]
     H2 = 2,
     #[doc = "3: 0.15"]
     H3 = 3,
@@ -194,7 +197,7 @@ impl From<Ch3Pc2SelBits1> for u8 {
 impl crate::FieldSpec for Ch3Pc2SelBits1 {
     type Ux = u8;
 }
-#[doc = "Field `CH3_PC2_SEL_BITS_1` reader - Ch2 post cursor2 setting: CH2_PC2_SEL: post cursor2"]
+#[doc = "Field `CH3_PC2_SEL_BITS_1` reader - Ch2 post cursor2 setting: \n\nCH2_PC2_SEL: post cursor2"]
 pub type Ch3Pc2SelBits1R = crate::FieldReader<Ch3Pc2SelBits1>;
 impl Ch3Pc2SelBits1R {
     #[doc = "Get enumerated values variant"]
@@ -208,17 +211,17 @@ impl Ch3Pc2SelBits1R {
             _ => unreachable!(),
         }
     }
-    #[doc = "0.15"]
+    #[doc = "0"]
     #[inline(always)]
     pub fn is_h0(&self) -> bool {
         *self == Ch3Pc2SelBits1::H0
     }
-    #[doc = "0.15"]
+    #[doc = "0.05"]
     #[inline(always)]
     pub fn is_h1(&self) -> bool {
         *self == Ch3Pc2SelBits1::H1
     }
-    #[doc = "0.15"]
+    #[doc = "0.1"]
     #[inline(always)]
     pub fn is_h2(&self) -> bool {
         *self == Ch3Pc2SelBits1::H2
@@ -229,24 +232,24 @@ impl Ch3Pc2SelBits1R {
         *self == Ch3Pc2SelBits1::H3
     }
 }
-#[doc = "Field `CH3_PC2_SEL_BITS_1` writer - Ch2 post cursor2 setting: CH2_PC2_SEL: post cursor2"]
+#[doc = "Field `CH3_PC2_SEL_BITS_1` writer - Ch2 post cursor2 setting: \n\nCH2_PC2_SEL: post cursor2"]
 pub type Ch3Pc2SelBits1W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Ch3Pc2SelBits1>;
 impl<'a, REG> Ch3Pc2SelBits1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "0.15"]
+    #[doc = "0"]
     #[inline(always)]
     pub fn h0(self) -> &'a mut crate::W<REG> {
         self.variant(Ch3Pc2SelBits1::H0)
     }
-    #[doc = "0.15"]
+    #[doc = "0.05"]
     #[inline(always)]
     pub fn h1(self) -> &'a mut crate::W<REG> {
         self.variant(Ch3Pc2SelBits1::H1)
     }
-    #[doc = "0.15"]
+    #[doc = "0.1"]
     #[inline(always)]
     pub fn h2(self) -> &'a mut crate::W<REG> {
         self.variant(Ch3Pc2SelBits1::H2)
@@ -257,15 +260,16 @@ where
         self.variant(Ch3Pc2SelBits1::H3)
     }
 }
-#[doc = "Ch3 post cursor2 setting: CH3_PC2_SEL: post cursor2\n\nValue on reset: 0"]
+#[doc = "Ch3 post cursor2 setting: \n\nCH3_PC2_SEL: post cursor2\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ch3Pc2SelBits0 {
-    #[doc = "0: 0.15"]
+    #[doc = "0: 0"]
     H0 = 0,
-    #[doc = "1: 0.15"]
+    #[doc = "1: 0.05"]
     H1 = 1,
-    #[doc = "2: 0.15"]
+    #[doc = "2: 0.1"]
     H2 = 2,
     #[doc = "3: 0.15"]
     H3 = 3,
@@ -279,7 +283,7 @@ impl From<Ch3Pc2SelBits0> for u8 {
 impl crate::FieldSpec for Ch3Pc2SelBits0 {
     type Ux = u8;
 }
-#[doc = "Field `CH3_PC2_SEL_BITS_0` reader - Ch3 post cursor2 setting: CH3_PC2_SEL: post cursor2"]
+#[doc = "Field `CH3_PC2_SEL_BITS_0` reader - Ch3 post cursor2 setting: \n\nCH3_PC2_SEL: post cursor2"]
 pub type Ch3Pc2SelBits0R = crate::FieldReader<Ch3Pc2SelBits0>;
 impl Ch3Pc2SelBits0R {
     #[doc = "Get enumerated values variant"]
@@ -293,17 +297,17 @@ impl Ch3Pc2SelBits0R {
             _ => unreachable!(),
         }
     }
-    #[doc = "0.15"]
+    #[doc = "0"]
     #[inline(always)]
     pub fn is_h0(&self) -> bool {
         *self == Ch3Pc2SelBits0::H0
     }
-    #[doc = "0.15"]
+    #[doc = "0.05"]
     #[inline(always)]
     pub fn is_h1(&self) -> bool {
         *self == Ch3Pc2SelBits0::H1
     }
-    #[doc = "0.15"]
+    #[doc = "0.1"]
     #[inline(always)]
     pub fn is_h2(&self) -> bool {
         *self == Ch3Pc2SelBits0::H2
@@ -314,24 +318,24 @@ impl Ch3Pc2SelBits0R {
         *self == Ch3Pc2SelBits0::H3
     }
 }
-#[doc = "Field `CH3_PC2_SEL_BITS_0` writer - Ch3 post cursor2 setting: CH3_PC2_SEL: post cursor2"]
+#[doc = "Field `CH3_PC2_SEL_BITS_0` writer - Ch3 post cursor2 setting: \n\nCH3_PC2_SEL: post cursor2"]
 pub type Ch3Pc2SelBits0W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Ch3Pc2SelBits0>;
 impl<'a, REG> Ch3Pc2SelBits0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "0.15"]
+    #[doc = "0"]
     #[inline(always)]
     pub fn h0(self) -> &'a mut crate::W<REG> {
         self.variant(Ch3Pc2SelBits0::H0)
     }
-    #[doc = "0.15"]
+    #[doc = "0.05"]
     #[inline(always)]
     pub fn h1(self) -> &'a mut crate::W<REG> {
         self.variant(Ch3Pc2SelBits0::H1)
     }
-    #[doc = "0.15"]
+    #[doc = "0.1"]
     #[inline(always)]
     pub fn h2(self) -> &'a mut crate::W<REG> {
         self.variant(Ch3Pc2SelBits0::H2)
@@ -343,47 +347,47 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 0:1 - Ch0 post cursor2 setting: CH0_PC2_SEL: post cursor2"]
+    #[doc = "Bits 0:1 - Ch0 post cursor2 setting: \n\nCH0_PC2_SEL: post cursor2"]
     #[inline(always)]
     pub fn ch3_pc2_sel_bits_3(&self) -> Ch3Pc2SelBits3R {
         Ch3Pc2SelBits3R::new((self.bits & 3) as u8)
     }
-    #[doc = "Bits 2:3 - Ch1 post cursor2 setting: CH1_PC2_SEL: post cursor2"]
+    #[doc = "Bits 2:3 - Ch1 post cursor2 setting: \n\nCH1_PC2_SEL: post cursor2"]
     #[inline(always)]
     pub fn ch3_pc2_sel_bits_2(&self) -> Ch3Pc2SelBits2R {
         Ch3Pc2SelBits2R::new(((self.bits >> 2) & 3) as u8)
     }
-    #[doc = "Bits 4:5 - Ch2 post cursor2 setting: CH2_PC2_SEL: post cursor2"]
+    #[doc = "Bits 4:5 - Ch2 post cursor2 setting: \n\nCH2_PC2_SEL: post cursor2"]
     #[inline(always)]
     pub fn ch3_pc2_sel_bits_1(&self) -> Ch3Pc2SelBits1R {
         Ch3Pc2SelBits1R::new(((self.bits >> 4) & 3) as u8)
     }
-    #[doc = "Bits 6:7 - Ch3 post cursor2 setting: CH3_PC2_SEL: post cursor2"]
+    #[doc = "Bits 6:7 - Ch3 post cursor2 setting: \n\nCH3_PC2_SEL: post cursor2"]
     #[inline(always)]
     pub fn ch3_pc2_sel_bits_0(&self) -> Ch3Pc2SelBits0R {
         Ch3Pc2SelBits0R::new(((self.bits >> 6) & 3) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:1 - Ch0 post cursor2 setting: CH0_PC2_SEL: post cursor2"]
+    #[doc = "Bits 0:1 - Ch0 post cursor2 setting: \n\nCH0_PC2_SEL: post cursor2"]
     #[inline(always)]
     #[must_use]
     pub fn ch3_pc2_sel_bits_3(&mut self) -> Ch3Pc2SelBits3W<AnalogCtl5Spec> {
         Ch3Pc2SelBits3W::new(self, 0)
     }
-    #[doc = "Bits 2:3 - Ch1 post cursor2 setting: CH1_PC2_SEL: post cursor2"]
+    #[doc = "Bits 2:3 - Ch1 post cursor2 setting: \n\nCH1_PC2_SEL: post cursor2"]
     #[inline(always)]
     #[must_use]
     pub fn ch3_pc2_sel_bits_2(&mut self) -> Ch3Pc2SelBits2W<AnalogCtl5Spec> {
         Ch3Pc2SelBits2W::new(self, 2)
     }
-    #[doc = "Bits 4:5 - Ch2 post cursor2 setting: CH2_PC2_SEL: post cursor2"]
+    #[doc = "Bits 4:5 - Ch2 post cursor2 setting: \n\nCH2_PC2_SEL: post cursor2"]
     #[inline(always)]
     #[must_use]
     pub fn ch3_pc2_sel_bits_1(&mut self) -> Ch3Pc2SelBits1W<AnalogCtl5Spec> {
         Ch3Pc2SelBits1W::new(self, 4)
     }
-    #[doc = "Bits 6:7 - Ch3 post cursor2 setting: CH3_PC2_SEL: post cursor2"]
+    #[doc = "Bits 6:7 - Ch3 post cursor2 setting: \n\nCH3_PC2_SEL: post cursor2"]
     #[inline(always)]
     #[must_use]
     pub fn ch3_pc2_sel_bits_0(&mut self) -> Ch3Pc2SelBits0W<AnalogCtl5Spec> {

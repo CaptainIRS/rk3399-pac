@@ -2,11 +2,12 @@
 pub type R = crate::R<GrfGpio2dHeSpec>;
 #[doc = "Register `GRF_GPIO2D_HE` writer"]
 pub type W = crate::W<GrfGpio2dHeSpec>;
-#[doc = "GPIO2D gpio keep privous state control, every GPIO bit corresponding to 1bit\n\nValue on reset: 0"]
+#[doc = "GPIO2D gpio keep privous state control, every\n\nGPIO bit corresponding to 1bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gpio2dHe {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -20,7 +21,7 @@ impl From<Gpio2dHe> for u8 {
 impl crate::FieldSpec for Gpio2dHe {
     type Ux = u8;
 }
-#[doc = "Field `GPIO2D_HE` reader - GPIO2D gpio keep privous state control, every GPIO bit corresponding to 1bit"]
+#[doc = "Field `GPIO2D_HE` reader - GPIO2D gpio keep privous state control, every\n\nGPIO bit corresponding to 1bit"]
 pub type Gpio2dHeR = crate::FieldReader<Gpio2dHe>;
 impl Gpio2dHeR {
     #[doc = "Get enumerated values variant"]
@@ -32,7 +33,7 @@ impl Gpio2dHeR {
             _ => None,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Gpio2dHe::B0
@@ -43,14 +44,14 @@ impl Gpio2dHeR {
         *self == Gpio2dHe::B1
     }
 }
-#[doc = "Field `GPIO2D_HE` writer - GPIO2D gpio keep privous state control, every GPIO bit corresponding to 1bit"]
+#[doc = "Field `GPIO2D_HE` writer - GPIO2D gpio keep privous state control, every\n\nGPIO bit corresponding to 1bit"]
 pub type Gpio2dHeW<'a, REG> = crate::FieldWriter<'a, REG, 5, Gpio2dHe>;
 impl<'a, REG> Gpio2dHeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio2dHe::B0)
@@ -61,30 +62,30 @@ where
         self.variant(Gpio2dHe::B1)
     }
 }
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:4 - GPIO2D gpio keep privous state control, every GPIO bit corresponding to 1bit"]
+    #[doc = "Bits 0:4 - GPIO2D gpio keep privous state control, every\n\nGPIO bit corresponding to 1bit"]
     #[inline(always)]
     pub fn gpio2d_he(&self) -> Gpio2dHeR {
         Gpio2dHeR::new((self.bits & 0x1f) as u8)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - GPIO2D gpio keep privous state control, every GPIO bit corresponding to 1bit"]
+    #[doc = "Bits 0:4 - GPIO2D gpio keep privous state control, every\n\nGPIO bit corresponding to 1bit"]
     #[inline(always)]
     #[must_use]
     pub fn gpio2d_he(&mut self) -> Gpio2dHeW<GrfGpio2dHeSpec> {
         Gpio2dHeW::new(self, 0)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfGpio2dHeSpec> {

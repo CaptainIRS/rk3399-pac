@@ -21,7 +21,7 @@ impl W {
         FifoOverrunMaskW::new(self, 4)
     }
 }
-#[doc = "Reserved for future use.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aud_spdifint1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`aud_spdifint1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Audio SPDIF Mask Interrupt Register 1\n\nThis register masks interrupts present in the SPDIF module.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aud_spdifint1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`aud_spdifint1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AudSpdifint1Spec;
 impl crate::RegisterSpec for AudSpdifint1Spec {
     type Ux = u8;

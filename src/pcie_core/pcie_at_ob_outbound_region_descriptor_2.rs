@@ -3,17 +3,14 @@ pub type R = crate::R<PcieAtObOutboundRegionDescriptor2Spec>;
 #[doc = "Register `PCIE_AT_OB_OUTBOUND_REGION_DESCRIPTOR_2` writer"]
 pub type W = crate::W<PcieAtObOutboundRegionDescriptor2Spec>;
 #[doc = "Field `data` reader - Descriptor bits \\[95:64\\]
-\\[data\\]
-Upper middle 32-bits of Address Register for region N"]
+\\[data\\]\n\nUpper middle 32-bits of Address\n\nRegister for region N"]
 pub type DataR = crate::FieldReader<u16>;
 #[doc = "Field `data` writer - Descriptor bits \\[95:64\\]
-\\[data\\]
-Upper middle 32-bits of Address Register for region N"]
+\\[data\\]\n\nUpper middle 32-bits of Address\n\nRegister for region N"]
 pub type DataW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Descriptor bits \\[95:64\\]
-\\[data\\]
-Upper middle 32-bits of Address Register for region N"]
+\\[data\\]\n\nUpper middle 32-bits of Address\n\nRegister for region N"]
     #[inline(always)]
     pub fn data(&self) -> DataR {
         DataR::new((self.bits & 0xffff) as u16)
@@ -21,15 +18,14 @@ Upper middle 32-bits of Address Register for region N"]
 }
 impl W {
     #[doc = "Bits 0:15 - Descriptor bits \\[95:64\\]
-\\[data\\]
-Upper middle 32-bits of Address Register for region N"]
+\\[data\\]\n\nUpper middle 32-bits of Address\n\nRegister for region N"]
     #[inline(always)]
     #[must_use]
     pub fn data(&mut self) -> DataW<PcieAtObOutboundRegionDescriptor2Spec> {
         DataW::new(self, 0)
     }
 }
-#[doc = "Outbound Region Descriptor 2 Upper middle 32-bits of Address Register for region N\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcie_at_ob_outbound_region_descriptor_2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcie_at_ob_outbound_region_descriptor_2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Outbound Region Descriptor 2\n\nUpper middle 32-bits of Address\n\nRegister for region N\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcie_at_ob_outbound_region_descriptor_2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcie_at_ob_outbound_region_descriptor_2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PcieAtObOutboundRegionDescriptor2Spec;
 impl crate::RegisterSpec for PcieAtObOutboundRegionDescriptor2Spec {
     type Ux = u32;

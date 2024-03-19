@@ -2,9 +2,9 @@
 pub type R = crate::R<CommonIntSta1Spec>;
 #[doc = "Register `COMMON_INT_STA_1` writer"]
 pub type W = crate::W<CommonIntSta1Spec>;
-#[doc = "Field `SW_INT` reader - 1: Software-induced interrupt. Write 1 to clear."]
+#[doc = "Field `SW_INT` reader - 1: Software-induced interrupt. \n\nWrite 1 to clear."]
 pub type SwIntR = crate::BitReader;
-#[doc = "Field `SW_INT` writer - 1: Software-induced interrupt. Write 1 to clear."]
+#[doc = "Field `SW_INT` writer - 1: Software-induced interrupt. \n\nWrite 1 to clear."]
 pub type SwIntW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `VID_CLK_CHG` reader - 1: Video input clock change is detected."]
 pub type VidClkChgR = crate::BitReader;
@@ -14,20 +14,20 @@ pub type VidClkChgW<'a, REG> = crate::BitWriter1C<'a, REG>;
 pub type PsrVidCrcValidR = crate::BitReader;
 #[doc = "Field `PSR_VID_CRC_VALID` writer - 1: PSR video CRC value is valid."]
 pub type PsrVidCrcValidW<'a, REG> = crate::BitWriter1C<'a, REG>;
-#[doc = "Field `VID_FORMAT_CHG` reader - 1: Video input format change is detected. Write 1 to clear."]
+#[doc = "Field `VID_FORMAT_CHG` reader - 1: Video input format change is detected. \n\nWrite 1 to clear."]
 pub type VidFormatChgR = crate::BitReader;
-#[doc = "Field `VID_FORMAT_CHG` writer - 1: Video input format change is detected. Write 1 to clear."]
+#[doc = "Field `VID_FORMAT_CHG` writer - 1: Video input format change is detected. \n\nWrite 1 to clear."]
 pub type VidFormatChgW<'a, REG> = crate::BitWriter1C<'a, REG>;
-#[doc = "Field `PLL_LOCK_CHG` reader - 1: PLL lock state is changed. Write 1 to clear. Check PLL_LOCK of register DP_DEBUG_CTL for PLL lock status."]
+#[doc = "Field `PLL_LOCK_CHG` reader - 1: PLL lock state is changed. \n\nWrite 1 to clear. \n\nCheck PLL_LOCK of register \n\nDP_DEBUG_CTL for PLL lock status."]
 pub type PllLockChgR = crate::BitReader;
-#[doc = "Field `PLL_LOCK_CHG` writer - 1: PLL lock state is changed. Write 1 to clear. Check PLL_LOCK of register DP_DEBUG_CTL for PLL lock status."]
+#[doc = "Field `PLL_LOCK_CHG` writer - 1: PLL lock state is changed. \n\nWrite 1 to clear. \n\nCheck PLL_LOCK of register \n\nDP_DEBUG_CTL for PLL lock status."]
 pub type PllLockChgW<'a, REG> = crate::BitWriter1C<'a, REG>;
-#[doc = "Field `VSYNC_DET` reader - 1: VSYNC active edge has been detected. Write 1 to clear."]
+#[doc = "Field `VSYNC_DET` reader - 1: VSYNC active edge has been detected. \n\nWrite 1 to clear."]
 pub type VsyncDetR = crate::BitReader;
-#[doc = "Field `VSYNC_DET` writer - 1: VSYNC active edge has been detected. Write 1 to clear."]
+#[doc = "Field `VSYNC_DET` writer - 1: VSYNC active edge has been detected. \n\nWrite 1 to clear."]
 pub type VsyncDetW<'a, REG> = crate::BitWriter1C<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - 1: Software-induced interrupt. Write 1 to clear."]
+    #[doc = "Bit 0 - 1: Software-induced interrupt. \n\nWrite 1 to clear."]
     #[inline(always)]
     pub fn sw_int(&self) -> SwIntR {
         SwIntR::new((self.bits & 1) != 0)
@@ -42,24 +42,24 @@ impl R {
     pub fn psr_vid_crc_valid(&self) -> PsrVidCrcValidR {
         PsrVidCrcValidR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - 1: Video input format change is detected. Write 1 to clear."]
+    #[doc = "Bit 3 - 1: Video input format change is detected. \n\nWrite 1 to clear."]
     #[inline(always)]
     pub fn vid_format_chg(&self) -> VidFormatChgR {
         VidFormatChgR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 6 - 1: PLL lock state is changed. Write 1 to clear. Check PLL_LOCK of register DP_DEBUG_CTL for PLL lock status."]
+    #[doc = "Bit 6 - 1: PLL lock state is changed. \n\nWrite 1 to clear. \n\nCheck PLL_LOCK of register \n\nDP_DEBUG_CTL for PLL lock status."]
     #[inline(always)]
     pub fn pll_lock_chg(&self) -> PllLockChgR {
         PllLockChgR::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 7 - 1: VSYNC active edge has been detected. Write 1 to clear."]
+    #[doc = "Bit 7 - 1: VSYNC active edge has been detected. \n\nWrite 1 to clear."]
     #[inline(always)]
     pub fn vsync_det(&self) -> VsyncDetR {
         VsyncDetR::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - 1: Software-induced interrupt. Write 1 to clear."]
+    #[doc = "Bit 0 - 1: Software-induced interrupt. \n\nWrite 1 to clear."]
     #[inline(always)]
     #[must_use]
     pub fn sw_int(&mut self) -> SwIntW<CommonIntSta1Spec> {
@@ -77,19 +77,19 @@ impl W {
     pub fn psr_vid_crc_valid(&mut self) -> PsrVidCrcValidW<CommonIntSta1Spec> {
         PsrVidCrcValidW::new(self, 2)
     }
-    #[doc = "Bit 3 - 1: Video input format change is detected. Write 1 to clear."]
+    #[doc = "Bit 3 - 1: Video input format change is detected. \n\nWrite 1 to clear."]
     #[inline(always)]
     #[must_use]
     pub fn vid_format_chg(&mut self) -> VidFormatChgW<CommonIntSta1Spec> {
         VidFormatChgW::new(self, 3)
     }
-    #[doc = "Bit 6 - 1: PLL lock state is changed. Write 1 to clear. Check PLL_LOCK of register DP_DEBUG_CTL for PLL lock status."]
+    #[doc = "Bit 6 - 1: PLL lock state is changed. \n\nWrite 1 to clear. \n\nCheck PLL_LOCK of register \n\nDP_DEBUG_CTL for PLL lock status."]
     #[inline(always)]
     #[must_use]
     pub fn pll_lock_chg(&mut self) -> PllLockChgW<CommonIntSta1Spec> {
         PllLockChgW::new(self, 6)
     }
-    #[doc = "Bit 7 - 1: VSYNC active edge has been detected. Write 1 to clear."]
+    #[doc = "Bit 7 - 1: VSYNC active edge has been detected. \n\nWrite 1 to clear."]
     #[inline(always)]
     #[must_use]
     pub fn vsync_det(&mut self) -> VsyncDetW<CommonIntSta1Spec> {

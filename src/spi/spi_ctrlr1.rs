@@ -2,19 +2,19 @@
 pub type R = crate::R<SpiCtrlr1Spec>;
 #[doc = "Register `SPI_CTRLR1` writer"]
 pub type W = crate::W<SpiCtrlr1Spec>;
-#[doc = "Field `NDM` reader - Number of Data Frames When Transfer Mode is receive only, this register field sets the number of data frames to be continuously received by the SPI. The SPI continues to receive serial data until the number of data frames received is equal to this register value plus 1, which enables you to receive up to 64 KB of data in a continuous transfer."]
+#[doc = "Field `NDM` reader - Number of Data Frames\n\nWhen Transfer Mode is receive only, this register field sets the\n\nnumber of data frames to be continuously received by the SPI.\n\nThe SPI continues to receive serial data until the number of data\n\nframes received is equal to this register value plus 1, which\n\nenables you to receive up to 64 KB of data in a continuous\n\ntransfer."]
 pub type NdmR = crate::FieldReader<u16>;
-#[doc = "Field `NDM` writer - Number of Data Frames When Transfer Mode is receive only, this register field sets the number of data frames to be continuously received by the SPI. The SPI continues to receive serial data until the number of data frames received is equal to this register value plus 1, which enables you to receive up to 64 KB of data in a continuous transfer."]
+#[doc = "Field `NDM` writer - Number of Data Frames\n\nWhen Transfer Mode is receive only, this register field sets the\n\nnumber of data frames to be continuously received by the SPI.\n\nThe SPI continues to receive serial data until the number of data\n\nframes received is equal to this register value plus 1, which\n\nenables you to receive up to 64 KB of data in a continuous\n\ntransfer."]
 pub type NdmW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:15 - Number of Data Frames When Transfer Mode is receive only, this register field sets the number of data frames to be continuously received by the SPI. The SPI continues to receive serial data until the number of data frames received is equal to this register value plus 1, which enables you to receive up to 64 KB of data in a continuous transfer."]
+    #[doc = "Bits 0:15 - Number of Data Frames\n\nWhen Transfer Mode is receive only, this register field sets the\n\nnumber of data frames to be continuously received by the SPI.\n\nThe SPI continues to receive serial data until the number of data\n\nframes received is equal to this register value plus 1, which\n\nenables you to receive up to 64 KB of data in a continuous\n\ntransfer."]
     #[inline(always)]
     pub fn ndm(&self) -> NdmR {
         NdmR::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - Number of Data Frames When Transfer Mode is receive only, this register field sets the number of data frames to be continuously received by the SPI. The SPI continues to receive serial data until the number of data frames received is equal to this register value plus 1, which enables you to receive up to 64 KB of data in a continuous transfer."]
+    #[doc = "Bits 0:15 - Number of Data Frames\n\nWhen Transfer Mode is receive only, this register field sets the\n\nnumber of data frames to be continuously received by the SPI.\n\nThe SPI continues to receive serial data until the number of data\n\nframes received is equal to this register value plus 1, which\n\nenables you to receive up to 64 KB of data in a continuous\n\ntransfer."]
     #[inline(always)]
     #[must_use]
     pub fn ndm(&mut self) -> NdmW<SpiCtrlr1Spec> {

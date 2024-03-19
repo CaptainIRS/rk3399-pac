@@ -21,7 +21,7 @@ impl W {
         GmdenabletxW::new(self, 0)
     }
 }
-#[doc = "Gamut Metadata packet transmission enable (1b)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_gmd_en::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_gmd_en::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer GMD Packet Enable Register\n\nThis register enables Gamut metadata (GMD) packet transmission. Packets are inserted in\n\nthe incoming frame, starting in the line where active Vsync indication starts. After enable of\n\nGMD packets the outgoing packet is sent with no_current_gmd active indication until\n\nupdate GMD request is performed in the controller.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_gmd_en::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_gmd_en::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcGmdEnSpec;
 impl crate::RegisterSpec for FcGmdEnSpec {
     type Ux = u8;

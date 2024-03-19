@@ -2,19 +2,19 @@
 pub type R = crate::R<WdtCrrSpec>;
 #[doc = "Register `WDT_CRR` writer"]
 pub type W = crate::W<WdtCrrSpec>;
-#[doc = "Field `CNT_RESTART` reader - Counter restart This register is used to restart the WDT counter. As a safety feature to prevent accidental restarts, the value 0x76 must be written. A restart also clears the WDT interrupt. Reading this register returns zero."]
+#[doc = "Field `CNT_RESTART` reader - Counter restart\n\nThis register is used to restart the WDT counter. As a safety feature\n\nto prevent accidental restarts, the value 0x76 must be written. A\n\nrestart also clears the WDT interrupt. Reading this register returns\n\nzero."]
 pub type CntRestartR = crate::FieldReader;
-#[doc = "Field `CNT_RESTART` writer - Counter restart This register is used to restart the WDT counter. As a safety feature to prevent accidental restarts, the value 0x76 must be written. A restart also clears the WDT interrupt. Reading this register returns zero."]
+#[doc = "Field `CNT_RESTART` writer - Counter restart\n\nThis register is used to restart the WDT counter. As a safety feature\n\nto prevent accidental restarts, the value 0x76 must be written. A\n\nrestart also clears the WDT interrupt. Reading this register returns\n\nzero."]
 pub type CntRestartW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - Counter restart This register is used to restart the WDT counter. As a safety feature to prevent accidental restarts, the value 0x76 must be written. A restart also clears the WDT interrupt. Reading this register returns zero."]
+    #[doc = "Bits 0:7 - Counter restart\n\nThis register is used to restart the WDT counter. As a safety feature\n\nto prevent accidental restarts, the value 0x76 must be written. A\n\nrestart also clears the WDT interrupt. Reading this register returns\n\nzero."]
     #[inline(always)]
     pub fn cnt_restart(&self) -> CntRestartR {
         CntRestartR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Counter restart This register is used to restart the WDT counter. As a safety feature to prevent accidental restarts, the value 0x76 must be written. A restart also clears the WDT interrupt. Reading this register returns zero."]
+    #[doc = "Bits 0:7 - Counter restart\n\nThis register is used to restart the WDT counter. As a safety feature\n\nto prevent accidental restarts, the value 0x76 must be written. A\n\nrestart also clears the WDT interrupt. Reading this register returns\n\nzero."]
     #[inline(always)]
     #[must_use]
     pub fn cnt_restart(&mut self) -> CntRestartW<WdtCrrSpec> {

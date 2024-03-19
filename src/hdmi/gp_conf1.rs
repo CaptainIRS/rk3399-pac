@@ -2,26 +2,26 @@
 pub type R = crate::R<GpConf1Spec>;
 #[doc = "Register `GP_CONF1` writer"]
 pub type W = crate::W<GpConf1Spec>;
-#[doc = "Field `CH_IN_EN` reader - Each bit controls the enabling of the respective audio channel. For instance, bit 1, when set (1'b1), the audio Channel 1 is enabled. When cleared, the referred channel is disabled."]
+#[doc = "Field `CH_IN_EN` reader - Each bit controls the enabling of the respective audio\n\nchannel. For instance, bit 1, when set (1'b1), the\n\naudio Channel 1 is enabled. When cleared, the\n\nreferred channel is disabled."]
 pub type ChInEnR = crate::FieldReader;
-#[doc = "Field `CH_IN_EN` writer - Each bit controls the enabling of the respective audio channel. For instance, bit 1, when set (1'b1), the audio Channel 1 is enabled. When cleared, the referred channel is disabled."]
+#[doc = "Field `CH_IN_EN` writer - Each bit controls the enabling of the respective audio\n\nchannel. For instance, bit 1, when set (1'b1), the\n\naudio Channel 1 is enabled. When cleared, the\n\nreferred channel is disabled."]
 pub type ChInEnW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - Each bit controls the enabling of the respective audio channel. For instance, bit 1, when set (1'b1), the audio Channel 1 is enabled. When cleared, the referred channel is disabled."]
+    #[doc = "Bits 0:7 - Each bit controls the enabling of the respective audio\n\nchannel. For instance, bit 1, when set (1'b1), the\n\naudio Channel 1 is enabled. When cleared, the\n\nreferred channel is disabled."]
     #[inline(always)]
     pub fn ch_in_en(&self) -> ChInEnR {
         ChInEnR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Each bit controls the enabling of the respective audio channel. For instance, bit 1, when set (1'b1), the audio Channel 1 is enabled. When cleared, the referred channel is disabled."]
+    #[doc = "Bits 0:7 - Each bit controls the enabling of the respective audio\n\nchannel. For instance, bit 1, when set (1'b1), the\n\naudio Channel 1 is enabled. When cleared, the\n\nreferred channel is disabled."]
     #[inline(always)]
     #[must_use]
     pub fn ch_in_en(&mut self) -> ChInEnW<GpConf1Spec> {
         ChInEnW::new(self, 0)
     }
 }
-#[doc = "Each bit controls the enabling of the respective audio channel. For instance, bit 1, when set (1'b1), the audio Channel 1 is enabled. When cleared, the referred channel is disabled.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gp_conf1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gp_conf1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Audio GPA Channel Enable Configuration Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gp_conf1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gp_conf1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct GpConf1Spec;
 impl crate::RegisterSpec for GpConf1Spec {
     type Ux = u8;

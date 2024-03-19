@@ -6,7 +6,7 @@ pub type W = crate::W<DdrDenaliPhy514Spec>;
 pub type PhyAdrClkBypassOverride0R = crate::BitReader;
 #[doc = "Field `PHY_ADR_CLK_BYPASS_OVERRIDE_0` writer - Bypass mode override setting for address slice 0. Set to 1 to enable."]
 pub type PhyAdrClkBypassOverride0W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `SC_PHY_ADR_MANUAL_CLEAR_0` writer - Manual reset/clear of internal logic for address slice 0. Bit (0) is reset of master delay min/max lock values. Bit (1) is manual reset of master delay unlock counter. Bit (2) clears the loopback error/results registers. Set each bit to 1 to reset. WRITE-ONLY"]
+#[doc = "Field `SC_PHY_ADR_MANUAL_CLEAR_0` writer - Manual reset/clear of internal logic for address slice 0. Bit (0) is reset of master delay min/max lock values. Bit (1) is manual reset of master delay unlock counter. Bit (2) clears the loopback error/results registers. Set each bit to 1 to reset."]
 pub type ScPhyAdrManualClear0W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bit 0 - Bypass mode override setting for address slice 0. Set to 1 to enable."]
@@ -24,7 +24,7 @@ impl W {
     ) -> PhyAdrClkBypassOverride0W<DdrDenaliPhy514Spec> {
         PhyAdrClkBypassOverride0W::new(self, 0)
     }
-    #[doc = "Bits 8:10 - Manual reset/clear of internal logic for address slice 0. Bit (0) is reset of master delay min/max lock values. Bit (1) is manual reset of master delay unlock counter. Bit (2) clears the loopback error/results registers. Set each bit to 1 to reset. WRITE-ONLY"]
+    #[doc = "Bits 8:10 - Manual reset/clear of internal logic for address slice 0. Bit (0) is reset of master delay min/max lock values. Bit (1) is manual reset of master delay unlock counter. Bit (2) clears the loopback error/results registers. Set each bit to 1 to reset."]
     #[inline(always)]
     #[must_use]
     pub fn sc_phy_adr_manual_clear_0(&mut self) -> ScPhyAdrManualClear0W<DdrDenaliPhy514Spec> {

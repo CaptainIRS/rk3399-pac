@@ -3,9 +3,10 @@ pub type R = crate::R<GrfUsb3PerfCon0Spec>;
 #[doc = "Register `GRF_USB3_PERF_CON0` writer"]
 pub type W = crate::W<GrfUsb3PerfCon0Spec>;
 #[doc = "axi_perf enable bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Usb3SwAxiPerfWork {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl Usb3SwAxiPerfWorkR {
             true => Usb3SwAxiPerfWork::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Usb3SwAxiPerfWork::B0
@@ -44,7 +45,7 @@ impl<'a, REG> Usb3SwAxiPerfWorkW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Usb3SwAxiPerfWork::B0)
@@ -55,10 +56,11 @@ where
         self.variant(Usb3SwAxiPerfWork::B1)
     }
 }
-#[doc = "Fi axi_perf clear bit\n\nValue on reset: 0"]
+#[doc = "Fi\n\naxi_perf clear bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Usb3SwAxiPerfClr {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -69,7 +71,7 @@ impl From<Usb3SwAxiPerfClr> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `USB3_SW_AXI_PERF_CLR` reader - Fi axi_perf clear bit"]
+#[doc = "Field `USB3_SW_AXI_PERF_CLR` reader - Fi\n\naxi_perf clear bit"]
 pub type Usb3SwAxiPerfClrR = crate::BitReader<Usb3SwAxiPerfClr>;
 impl Usb3SwAxiPerfClrR {
     #[doc = "Get enumerated values variant"]
@@ -80,7 +82,7 @@ impl Usb3SwAxiPerfClrR {
             true => Usb3SwAxiPerfClr::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Usb3SwAxiPerfClr::B0
@@ -91,13 +93,13 @@ impl Usb3SwAxiPerfClrR {
         *self == Usb3SwAxiPerfClr::B1
     }
 }
-#[doc = "Field `USB3_SW_AXI_PERF_CLR` writer - Fi axi_perf clear bit"]
+#[doc = "Field `USB3_SW_AXI_PERF_CLR` writer - Fi\n\naxi_perf clear bit"]
 pub type Usb3SwAxiPerfClrW<'a, REG> = crate::BitWriter<'a, REG, Usb3SwAxiPerfClr>;
 impl<'a, REG> Usb3SwAxiPerfClrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Usb3SwAxiPerfClr::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "axi_perf counter type\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Usb3SwAxiCntType {
-    #[doc = "0: ddr align transfer test"]
+    #[doc = "0: axi transfer test"]
     B0 = 0,
     #[doc = "1: ddr align transfer test"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl Usb3SwAxiCntTypeR {
             true => Usb3SwAxiCntType::B1,
         }
     }
-    #[doc = "ddr align transfer test"]
+    #[doc = "axi transfer test"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Usb3SwAxiCntType::B0
@@ -150,7 +153,7 @@ impl<'a, REG> Usb3SwAxiCntTypeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "ddr align transfer test"]
+    #[doc = "axi transfer test"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Usb3SwAxiCntType::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "axi_perf counter id control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Usb3SwArCntIdType {
-    #[doc = "0: count sw_ar_count_id read channel only"]
+    #[doc = "0: count all read channel id"]
     B0 = 0,
     #[doc = "1: count sw_ar_count_id read channel only"]
     B1 = 1,
@@ -186,7 +190,7 @@ impl Usb3SwArCntIdTypeR {
             true => Usb3SwArCntIdType::B1,
         }
     }
-    #[doc = "count sw_ar_count_id read channel only"]
+    #[doc = "count all read channel id"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Usb3SwArCntIdType::B0
@@ -203,7 +207,7 @@ impl<'a, REG> Usb3SwArCntIdTypeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "count sw_ar_count_id read channel only"]
+    #[doc = "count all read channel id"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Usb3SwArCntIdType::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "axi_perf counter id control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Usb3SwAwCntIdType {
-    #[doc = "0: count sw_ar_count_id read channel only"]
+    #[doc = "0: count all read channel id"]
     B0 = 0,
     #[doc = "1: count sw_ar_count_id read channel only"]
     B1 = 1,
@@ -239,7 +244,7 @@ impl Usb3SwAwCntIdTypeR {
             true => Usb3SwAwCntIdType::B1,
         }
     }
-    #[doc = "count sw_ar_count_id read channel only"]
+    #[doc = "count all read channel id"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Usb3SwAwCntIdType::B0
@@ -256,7 +261,7 @@ impl<'a, REG> Usb3SwAwCntIdTypeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "count sw_ar_count_id read channel only"]
+    #[doc = "count all read channel id"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Usb3SwAwCntIdType::B0)
@@ -268,14 +273,15 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Usb3SwDdrAlignType {
-    #[doc = "0: 128-Byte align"]
+    #[doc = "0: 16-Byte align"]
     D0 = 0,
-    #[doc = "1: 128-Byte align"]
+    #[doc = "1: 32-Byte align"]
     D1 = 1,
-    #[doc = "2: 128-Byte align"]
+    #[doc = "2: 64-Byte align"]
     D2 = 2,
     #[doc = "3: 128-Byte align"]
     D3 = 3,
@@ -303,17 +309,17 @@ impl Usb3SwDdrAlignTypeR {
             _ => unreachable!(),
         }
     }
-    #[doc = "128-Byte align"]
+    #[doc = "16-Byte align"]
     #[inline(always)]
     pub fn is_d0(&self) -> bool {
         *self == Usb3SwDdrAlignType::D0
     }
-    #[doc = "128-Byte align"]
+    #[doc = "32-Byte align"]
     #[inline(always)]
     pub fn is_d1(&self) -> bool {
         *self == Usb3SwDdrAlignType::D1
     }
-    #[doc = "128-Byte align"]
+    #[doc = "64-Byte align"]
     #[inline(always)]
     pub fn is_d2(&self) -> bool {
         *self == Usb3SwDdrAlignType::D2
@@ -331,17 +337,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "128-Byte align"]
+    #[doc = "16-Byte align"]
     #[inline(always)]
     pub fn d0(self) -> &'a mut crate::W<REG> {
         self.variant(Usb3SwDdrAlignType::D0)
     }
-    #[doc = "128-Byte align"]
+    #[doc = "32-Byte align"]
     #[inline(always)]
     pub fn d1(self) -> &'a mut crate::W<REG> {
         self.variant(Usb3SwDdrAlignType::D1)
     }
-    #[doc = "128-Byte align"]
+    #[doc = "64-Byte align"]
     #[inline(always)]
     pub fn d2(self) -> &'a mut crate::W<REG> {
         self.variant(Usb3SwDdrAlignType::D2)
@@ -352,14 +358,15 @@ where
         self.variant(Usb3SwDdrAlignType::D3)
     }
 }
-#[doc = "Field `USB3_SW_RD_LATENCY_ID` reader - Axi read channel id for latency AXI_PERFormance test"]
+#[doc = "Field `USB3_SW_RD_LATENCY_ID` reader - Axi read channel id for latency\n\nAXI_PERFormance test"]
 pub type Usb3SwRdLatencyIdR = crate::FieldReader;
-#[doc = "Field `USB3_SW_RD_LATENCY_ID` writer - Axi read channel id for latency AXI_PERFormance test"]
+#[doc = "Field `USB3_SW_RD_LATENCY_ID` writer - Axi read channel id for latency\n\nAXI_PERFormance test"]
 pub type Usb3SwRdLatencyIdW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Usb3RksocAxiPerfSel {
-    #[doc = "0: usb3otg1"]
+    #[doc = "0: usb3otg0"]
     B0 = 0,
     #[doc = "1: usb3otg1"]
     B1 = 1,
@@ -381,7 +388,7 @@ impl Usb3RksocAxiPerfSelR {
             true => Usb3RksocAxiPerfSel::B1,
         }
     }
-    #[doc = "usb3otg1"]
+    #[doc = "usb3otg0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Usb3RksocAxiPerfSel::B0
@@ -398,7 +405,7 @@ impl<'a, REG> Usb3RksocAxiPerfSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "usb3otg1"]
+    #[doc = "usb3otg0"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Usb3RksocAxiPerfSel::B0)
@@ -409,9 +416,9 @@ where
         self.variant(Usb3RksocAxiPerfSel::B1)
     }
 }
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0 - axi_perf enable bit"]
@@ -419,7 +426,7 @@ impl R {
     pub fn usb3_sw_axi_perf_work(&self) -> Usb3SwAxiPerfWorkR {
         Usb3SwAxiPerfWorkR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - Fi axi_perf clear bit"]
+    #[doc = "Bit 1 - Fi\n\naxi_perf clear bit"]
     #[inline(always)]
     pub fn usb3_sw_axi_perf_clr(&self) -> Usb3SwAxiPerfClrR {
         Usb3SwAxiPerfClrR::new(((self.bits >> 1) & 1) != 0)
@@ -444,7 +451,7 @@ impl R {
     pub fn usb3_sw_ddr_align_type(&self) -> Usb3SwDdrAlignTypeR {
         Usb3SwDdrAlignTypeR::new(((self.bits >> 5) & 3) as u8)
     }
-    #[doc = "Bits 8:11 - Axi read channel id for latency AXI_PERFormance test"]
+    #[doc = "Bits 8:11 - Axi read channel id for latency\n\nAXI_PERFormance test"]
     #[inline(always)]
     pub fn usb3_sw_rd_latency_id(&self) -> Usb3SwRdLatencyIdR {
         Usb3SwRdLatencyIdR::new(((self.bits >> 8) & 0x0f) as u8)
@@ -454,7 +461,7 @@ impl R {
     pub fn usb3_rksoc_axi_perf_sel(&self) -> Usb3RksocAxiPerfSelR {
         Usb3RksocAxiPerfSelR::new(((self.bits >> 15) & 1) != 0)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
@@ -467,7 +474,7 @@ impl W {
     pub fn usb3_sw_axi_perf_work(&mut self) -> Usb3SwAxiPerfWorkW<GrfUsb3PerfCon0Spec> {
         Usb3SwAxiPerfWorkW::new(self, 0)
     }
-    #[doc = "Bit 1 - Fi axi_perf clear bit"]
+    #[doc = "Bit 1 - Fi\n\naxi_perf clear bit"]
     #[inline(always)]
     #[must_use]
     pub fn usb3_sw_axi_perf_clr(&mut self) -> Usb3SwAxiPerfClrW<GrfUsb3PerfCon0Spec> {
@@ -497,7 +504,7 @@ impl W {
     pub fn usb3_sw_ddr_align_type(&mut self) -> Usb3SwDdrAlignTypeW<GrfUsb3PerfCon0Spec> {
         Usb3SwDdrAlignTypeW::new(self, 5)
     }
-    #[doc = "Bits 8:11 - Axi read channel id for latency AXI_PERFormance test"]
+    #[doc = "Bits 8:11 - Axi read channel id for latency\n\nAXI_PERFormance test"]
     #[inline(always)]
     #[must_use]
     pub fn usb3_sw_rd_latency_id(&mut self) -> Usb3SwRdLatencyIdW<GrfUsb3PerfCon0Spec> {
@@ -509,7 +516,7 @@ impl W {
     pub fn usb3_rksoc_axi_perf_sel(&mut self) -> Usb3RksocAxiPerfSelW<GrfUsb3PerfCon0Spec> {
         Usb3RksocAxiPerfSelW::new(self, 15)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfUsb3PerfCon0Spec> {

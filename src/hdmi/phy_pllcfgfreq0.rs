@@ -21,7 +21,7 @@ impl W {
         PllcfgfreqW::new(self, 0)
     }
 }
-#[doc = "PLL Configuration Frequency (pllcfgfreq\\[7:0\\]).\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`phy_pllcfgfreq0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`phy_pllcfgfreq0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PHY PLL Test Interface Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`phy_pllcfgfreq0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`phy_pllcfgfreq0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PhyPllcfgfreq0Spec;
 impl crate::RegisterSpec for PhyPllcfgfreq0Spec {
     type Ux = u8;

@@ -81,7 +81,7 @@ impl W {
         SpdAutoW::new(self, 4)
     }
 }
-#[doc = "Enables ACP automatic packet scheduling\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_datauto0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_datauto0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer Data Island Auto Packet Scheduling Register 0\n\nConfigures the Frame Composer RDRB(1)/Manual(0) data island packet insertion for SPD,\n\nVSD, ISRC2, ISRC1 and ACP packets. On RDRB mode the described packet scheduling is\n\ncontrolled by registers FC_DATAUTO1 and FC_DATAUTO2, while in Manual mode register\n\nFC_DATMAN requests to FC the insertion of the requested packet.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_datauto0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_datauto0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcDatauto0Spec;
 impl crate::RegisterSpec for FcDatauto0Spec {
     type Ux = u8;

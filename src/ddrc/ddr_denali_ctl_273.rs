@@ -10,7 +10,7 @@ pub type CalvlDfiPromoteThresholdF2W<'a, REG> = crate::FieldWriter<'a, REG, 16, 
 pub type Denali0AlldatausedEnableR = crate::BitReader;
 #[doc = "Field `DENALI0_ALLDATAUSED_ENABLE` writer - Enables use of the ALLDATAUSED signal for DENALI port 0. Set to 1 to enable."]
 pub type Denali0AlldatausedEnableW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CKE_STATUS` reader - Register access to cke_status signal. READ-ONLY"]
+#[doc = "Field `CKE_STATUS` reader - Register access to cke_status signal."]
 pub type CkeStatusR = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:15 - CA training promotion number of long counts until the high priority request is asserted. Applies to DFI commands."]
@@ -23,7 +23,7 @@ impl R {
     pub fn denali0_alldataused_enable(&self) -> Denali0AlldatausedEnableR {
         Denali0AlldatausedEnableR::new(((self.bits >> 16) & 1) != 0)
     }
-    #[doc = "Bits 24:25 - Register access to cke_status signal. READ-ONLY"]
+    #[doc = "Bits 24:25 - Register access to cke_status signal."]
     #[inline(always)]
     pub fn cke_status(&self) -> CkeStatusR {
         CkeStatusR::new(((self.bits >> 24) & 3) as u8)

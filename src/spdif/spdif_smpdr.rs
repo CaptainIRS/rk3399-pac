@@ -2,19 +2,19 @@
 pub type R = crate::R<SpdifSmpdrSpec>;
 #[doc = "Register `SPDIF_SMPDR` writer"]
 pub type W = crate::W<SpdifSmpdrSpec>;
-#[doc = "Field `SMPDR` reader - Sample Data Register Sample Data Register"]
+#[doc = "Field `SMPDR` reader - Sample Data Register\n\nSample Data Register"]
 pub type SmpdrR = crate::FieldReader<u32>;
-#[doc = "Field `SMPDR` writer - Sample Data Register Sample Data Register"]
+#[doc = "Field `SMPDR` writer - Sample Data Register\n\nSample Data Register"]
 pub type SmpdrW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Sample Data Register Sample Data Register"]
+    #[doc = "Bits 0:31 - Sample Data Register\n\nSample Data Register"]
     #[inline(always)]
     pub fn smpdr(&self) -> SmpdrR {
         SmpdrR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Sample Data Register Sample Data Register"]
+    #[doc = "Bits 0:31 - Sample Data Register\n\nSample Data Register"]
     #[inline(always)]
     #[must_use]
     pub fn smpdr(&mut self) -> SmpdrW<SpdifSmpdrSpec> {

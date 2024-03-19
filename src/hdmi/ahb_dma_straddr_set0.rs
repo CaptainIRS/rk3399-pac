@@ -25,8 +25,8 @@ to initiate DMA burst transactions"]
         InitialAddrW::new(self, 0)
     }
 }
-#[doc = "Defines init_addr\\[7:0\\]
-to initiate DMA burst transactions\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ahb_dma_straddr_set0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ahb_dma_straddr_set0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Audio DMA Start Address Set0 Register Array Address offset: i = 0 to 3\n\nThese registers define the initial_addr\\[31:0\\]
+used to initiate the DMA burst read\n\ntransactions upon start_dma_transaction configuration.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ahb_dma_straddr_set0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ahb_dma_straddr_set0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AhbDmaStraddrSet0Spec;
 impl crate::RegisterSpec for AhbDmaStraddrSet0Spec {
     type Ux = u8;

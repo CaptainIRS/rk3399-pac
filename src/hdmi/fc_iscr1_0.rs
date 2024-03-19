@@ -2,9 +2,9 @@
 pub type R = crate::R<FcIscr1_0Spec>;
 #[doc = "Register `FC_ISCR1_0` writer"]
 pub type W = crate::W<FcIscr1_0Spec>;
-#[doc = "Field `ISRC_CONT` reader - ISRC1 Indication of packet continuation (ISRC2 will be transmitted)"]
+#[doc = "Field `ISRC_CONT` reader - ISRC1 Indication of packet continuation (ISRC2 will\n\nbe transmitted)"]
 pub type IsrcContR = crate::BitReader;
-#[doc = "Field `ISRC_CONT` writer - ISRC1 Indication of packet continuation (ISRC2 will be transmitted)"]
+#[doc = "Field `ISRC_CONT` writer - ISRC1 Indication of packet continuation (ISRC2 will\n\nbe transmitted)"]
 pub type IsrcContW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ISRC_VALID` reader - ISRC1 Valid control signal"]
 pub type IsrcValidR = crate::BitReader;
@@ -15,7 +15,7 @@ pub type IsrcStatusR = crate::FieldReader;
 #[doc = "Field `ISRC_STATUS` writer - ISRC1 Status signal"]
 pub type IsrcStatusW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
-    #[doc = "Bit 0 - ISRC1 Indication of packet continuation (ISRC2 will be transmitted)"]
+    #[doc = "Bit 0 - ISRC1 Indication of packet continuation (ISRC2 will\n\nbe transmitted)"]
     #[inline(always)]
     pub fn isrc_cont(&self) -> IsrcContR {
         IsrcContR::new((self.bits & 1) != 0)
@@ -32,7 +32,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - ISRC1 Indication of packet continuation (ISRC2 will be transmitted)"]
+    #[doc = "Bit 0 - ISRC1 Indication of packet continuation (ISRC2 will\n\nbe transmitted)"]
     #[inline(always)]
     #[must_use]
     pub fn isrc_cont(&mut self) -> IsrcContW<FcIscr1_0Spec> {
@@ -51,7 +51,7 @@ impl W {
         IsrcStatusW::new(self, 2)
     }
 }
-#[doc = "ISRC1 Indication of packet continuation (ISRC2 will be transmitted)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_iscr1_0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_iscr1_0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer ISRC1 Packet Status, Valid, and Continue Configuration\n\nRegister\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_iscr1_0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_iscr1_0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcIscr1_0Spec;
 impl crate::RegisterSpec for FcIscr1_0Spec {
     type Ux = u8;

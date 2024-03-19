@@ -2,20 +2,20 @@
 pub type R = crate::R<DdrPiReg104Spec>;
 #[doc = "Register `DDR_PI_REG_104` writer"]
 pub type W = crate::W<DdrPiReg104Spec>;
-#[doc = "Field `PI_TCAENT_F2` reader - Indicates DRAM TCAENT value in cycles. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TCAENT_F2` reader - Indicates DRAM TCAENT value in cycles. The suffix \"_f2\" of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTcaentF2R = crate::FieldReader<u16>;
-#[doc = "Field `PI_TCAENT_F2` writer - Indicates DRAM TCAENT value in cycles. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TCAENT_F2` writer - Indicates DRAM TCAENT value in cycles. The suffix \"_f2\" of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTcaentF2W<'a, REG> = crate::FieldWriter<'a, REG, 14, u16>;
 #[doc = "Field `PI_TCAEXT` reader - Indicates DRAM TCAEXT value in cycles."]
 pub type PiTcaextR = crate::FieldReader;
 #[doc = "Field `PI_TCAEXT` writer - Indicates DRAM TCAEXT value in cycles."]
 pub type PiTcaextW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Field `PI_CA_TRAIN_VREF_EN` reader - Indicates whether to do VREF training during non-power-on-initial CA training or not. Set to 1 to go through the VREF from start-point for non-power-on-initial CA training. Set to 0 to not update VREF for non-power-on-initial CA training."]
+#[doc = "Field `PI_CA_TRAIN_VREF_EN` reader - Indicates whether to do VREF training during non-power-on-initial\n\nCA training or not. Set to 1 to go through the VREF from start-point\n\nfor non-power-on-initial CA training. Set to 0 to not update VREF\n\nfor non-power-on-initial CA training."]
 pub type PiCaTrainVrefEnR = crate::BitReader;
-#[doc = "Field `PI_CA_TRAIN_VREF_EN` writer - Indicates whether to do VREF training during non-power-on-initial CA training or not. Set to 1 to go through the VREF from start-point for non-power-on-initial CA training. Set to 0 to not update VREF for non-power-on-initial CA training."]
+#[doc = "Field `PI_CA_TRAIN_VREF_EN` writer - Indicates whether to do VREF training during non-power-on-initial\n\nCA training or not. Set to 1 to go through the VREF from start-point\n\nfor non-power-on-initial CA training. Set to 0 to not update VREF\n\nfor non-power-on-initial CA training."]
 pub type PiCaTrainVrefEnW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bits 0:13 - Indicates DRAM TCAENT value in cycles. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:13 - Indicates DRAM TCAENT value in cycles. The suffix \"_f2\" of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tcaent_f2(&self) -> PiTcaentF2R {
         PiTcaentF2R::new((self.bits & 0x3fff) as u16)
@@ -25,14 +25,14 @@ impl R {
     pub fn pi_tcaext(&self) -> PiTcaextR {
         PiTcaextR::new(((self.bits >> 16) & 0x1f) as u8)
     }
-    #[doc = "Bit 24 - Indicates whether to do VREF training during non-power-on-initial CA training or not. Set to 1 to go through the VREF from start-point for non-power-on-initial CA training. Set to 0 to not update VREF for non-power-on-initial CA training."]
+    #[doc = "Bit 24 - Indicates whether to do VREF training during non-power-on-initial\n\nCA training or not. Set to 1 to go through the VREF from start-point\n\nfor non-power-on-initial CA training. Set to 0 to not update VREF\n\nfor non-power-on-initial CA training."]
     #[inline(always)]
     pub fn pi_ca_train_vref_en(&self) -> PiCaTrainVrefEnR {
         PiCaTrainVrefEnR::new(((self.bits >> 24) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:13 - Indicates DRAM TCAENT value in cycles. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:13 - Indicates DRAM TCAENT value in cycles. The suffix \"_f2\" of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tcaent_f2(&mut self) -> PiTcaentF2W<DdrPiReg104Spec> {
@@ -44,7 +44,7 @@ impl W {
     pub fn pi_tcaext(&mut self) -> PiTcaextW<DdrPiReg104Spec> {
         PiTcaextW::new(self, 16)
     }
-    #[doc = "Bit 24 - Indicates whether to do VREF training during non-power-on-initial CA training or not. Set to 1 to go through the VREF from start-point for non-power-on-initial CA training. Set to 0 to not update VREF for non-power-on-initial CA training."]
+    #[doc = "Bit 24 - Indicates whether to do VREF training during non-power-on-initial\n\nCA training or not. Set to 1 to go through the VREF from start-point\n\nfor non-power-on-initial CA training. Set to 0 to not update VREF\n\nfor non-power-on-initial CA training."]
     #[inline(always)]
     #[must_use]
     pub fn pi_ca_train_vref_en(&mut self) -> PiCaTrainVrefEnW<DdrPiReg104Spec> {

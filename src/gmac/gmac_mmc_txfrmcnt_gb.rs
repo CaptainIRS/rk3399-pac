@@ -2,19 +2,19 @@
 pub type R = crate::R<GmacMmcTxfrmcntGbSpec>;
 #[doc = "Register `GMAC_MMC_TXFRMCNT_GB` writer"]
 pub type W = crate::W<GmacMmcTxfrmcntGbSpec>;
-#[doc = "Field `TXFRAMECOUNT_GB` reader - Number of good and bad frames transmitted, exclusive of retried frames."]
+#[doc = "Field `TXFRAMECOUNT_GB` reader - Number of good and bad frames transmitted, exclusive of retried\n\nframes."]
 pub type TxframecountGbR = crate::FieldReader<u32>;
-#[doc = "Field `TXFRAMECOUNT_GB` writer - Number of good and bad frames transmitted, exclusive of retried frames."]
+#[doc = "Field `TXFRAMECOUNT_GB` writer - Number of good and bad frames transmitted, exclusive of retried\n\nframes."]
 pub type TxframecountGbW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Number of good and bad frames transmitted, exclusive of retried frames."]
+    #[doc = "Bits 0:31 - Number of good and bad frames transmitted, exclusive of retried\n\nframes."]
     #[inline(always)]
     pub fn txframecount_gb(&self) -> TxframecountGbR {
         TxframecountGbR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Number of good and bad frames transmitted, exclusive of retried frames."]
+    #[doc = "Bits 0:31 - Number of good and bad frames transmitted, exclusive of retried\n\nframes."]
     #[inline(always)]
     #[must_use]
     pub fn txframecount_gb(&mut self) -> TxframecountGbW<GmacMmcTxfrmcntGbSpec> {

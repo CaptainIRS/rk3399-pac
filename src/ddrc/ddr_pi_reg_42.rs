@@ -2,34 +2,34 @@
 pub type R = crate::R<DdrPiReg42Spec>;
 #[doc = "Register `DDR_PI_REG_42` writer"]
 pub type W = crate::W<DdrPiReg42Spec>;
-#[doc = "Field `PI_TDELAY_RDWR_2_BUS_IDLE_F0` reader - Indicates the delay from read or write to bus idle. Recommended setting is delay time from read command that issued to the last read data received. The suffix \"_f0\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TDELAY_RDWR_2_BUS_IDLE_F0` reader - Indicates the delay from read or write to bus idle. Recommended\n\nsetting is delay time from read command that issued to the last\n\nread data received. The suffix \"_f0\" of the parameter name is\n\nomitted when in non-DFS mode."]
 pub type PiTdelayRdwr2BusIdleF0R = crate::FieldReader;
-#[doc = "Field `PI_TDELAY_RDWR_2_BUS_IDLE_F0` writer - Indicates the delay from read or write to bus idle. Recommended setting is delay time from read command that issued to the last read data received. The suffix \"_f0\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TDELAY_RDWR_2_BUS_IDLE_F0` writer - Indicates the delay from read or write to bus idle. Recommended\n\nsetting is delay time from read command that issued to the last\n\nread data received. The suffix \"_f0\" of the parameter name is\n\nomitted when in non-DFS mode."]
 pub type PiTdelayRdwr2BusIdleF0W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-#[doc = "Field `PI_TDELAY_RDWR_2_BUS_IDLE_F1` reader - Indicates the delay from read or write to bus idle. Recommended setting is delay time from read command that issued to the last read data received. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TDELAY_RDWR_2_BUS_IDLE_F1` reader - Indicates the delay from read or write to bus idle. Recommended\n\nsetting is delay time from read command that issued to the last\n\nread data received. The suffix \"_f1\" of the parameter name is\n\nomitted when in non-DFS mode."]
 pub type PiTdelayRdwr2BusIdleF1R = crate::FieldReader;
-#[doc = "Field `PI_TDELAY_RDWR_2_BUS_IDLE_F1` writer - Indicates the delay from read or write to bus idle. Recommended setting is delay time from read command that issued to the last read data received. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TDELAY_RDWR_2_BUS_IDLE_F1` writer - Indicates the delay from read or write to bus idle. Recommended\n\nsetting is delay time from read command that issued to the last\n\nread data received. The suffix \"_f1\" of the parameter name is\n\nomitted when in non-DFS mode."]
 pub type PiTdelayRdwr2BusIdleF1W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-#[doc = "Field `PI_TDELAY_RDWR_2_BUS_IDLE_F2` reader - Indicates the delay from read or write to bus idle. Recommended setting is delay time from read command that issued to the last read data received. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TDELAY_RDWR_2_BUS_IDLE_F2` reader - Indicates the delay from read or write to bus idle. Recommended\n\nsetting is delay time from read command that issued to the last\n\nread data received. The suffix \"_f2\" of the parameter name is\n\nomitted when in non-DFS mode."]
 pub type PiTdelayRdwr2BusIdleF2R = crate::FieldReader;
-#[doc = "Field `PI_TDELAY_RDWR_2_BUS_IDLE_F2` writer - Indicates the delay from read or write to bus idle. Recommended setting is delay time from read command that issued to the last read data received. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TDELAY_RDWR_2_BUS_IDLE_F2` writer - Indicates the delay from read or write to bus idle. Recommended\n\nsetting is delay time from read command that issued to the last\n\nread data received. The suffix \"_f2\" of the parameter name is\n\nomitted when in non-DFS mode."]
 pub type PiTdelayRdwr2BusIdleF2W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `PI_TMRR` reader - Indicates DRAM TMRR value in cycles."]
 pub type PiTmrrR = crate::FieldReader;
 #[doc = "Field `PI_TMRR` writer - Indicates DRAM TMRR value in cycles."]
 pub type PiTmrrW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
-    #[doc = "Bits 0:7 - Indicates the delay from read or write to bus idle. Recommended setting is delay time from read command that issued to the last read data received. The suffix \"_f0\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:7 - Indicates the delay from read or write to bus idle. Recommended\n\nsetting is delay time from read command that issued to the last\n\nread data received. The suffix \"_f0\" of the parameter name is\n\nomitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tdelay_rdwr_2_bus_idle_f0(&self) -> PiTdelayRdwr2BusIdleF0R {
         PiTdelayRdwr2BusIdleF0R::new((self.bits & 0xff) as u8)
     }
-    #[doc = "Bits 8:15 - Indicates the delay from read or write to bus idle. Recommended setting is delay time from read command that issued to the last read data received. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 8:15 - Indicates the delay from read or write to bus idle. Recommended\n\nsetting is delay time from read command that issued to the last\n\nread data received. The suffix \"_f1\" of the parameter name is\n\nomitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tdelay_rdwr_2_bus_idle_f1(&self) -> PiTdelayRdwr2BusIdleF1R {
         PiTdelayRdwr2BusIdleF1R::new(((self.bits >> 8) & 0xff) as u8)
     }
-    #[doc = "Bits 16:23 - Indicates the delay from read or write to bus idle. Recommended setting is delay time from read command that issued to the last read data received. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 16:23 - Indicates the delay from read or write to bus idle. Recommended\n\nsetting is delay time from read command that issued to the last\n\nread data received. The suffix \"_f2\" of the parameter name is\n\nomitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tdelay_rdwr_2_bus_idle_f2(&self) -> PiTdelayRdwr2BusIdleF2R {
         PiTdelayRdwr2BusIdleF2R::new(((self.bits >> 16) & 0xff) as u8)
@@ -41,19 +41,19 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Indicates the delay from read or write to bus idle. Recommended setting is delay time from read command that issued to the last read data received. The suffix \"_f0\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:7 - Indicates the delay from read or write to bus idle. Recommended\n\nsetting is delay time from read command that issued to the last\n\nread data received. The suffix \"_f0\" of the parameter name is\n\nomitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tdelay_rdwr_2_bus_idle_f0(&mut self) -> PiTdelayRdwr2BusIdleF0W<DdrPiReg42Spec> {
         PiTdelayRdwr2BusIdleF0W::new(self, 0)
     }
-    #[doc = "Bits 8:15 - Indicates the delay from read or write to bus idle. Recommended setting is delay time from read command that issued to the last read data received. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 8:15 - Indicates the delay from read or write to bus idle. Recommended\n\nsetting is delay time from read command that issued to the last\n\nread data received. The suffix \"_f1\" of the parameter name is\n\nomitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tdelay_rdwr_2_bus_idle_f1(&mut self) -> PiTdelayRdwr2BusIdleF1W<DdrPiReg42Spec> {
         PiTdelayRdwr2BusIdleF1W::new(self, 8)
     }
-    #[doc = "Bits 16:23 - Indicates the delay from read or write to bus idle. Recommended setting is delay time from read command that issued to the last read data received. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 16:23 - Indicates the delay from read or write to bus idle. Recommended\n\nsetting is delay time from read command that issued to the last\n\nread data received. The suffix \"_f2\" of the parameter name is\n\nomitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tdelay_rdwr_2_bus_idle_f2(&mut self) -> PiTdelayRdwr2BusIdleF2W<DdrPiReg42Spec> {

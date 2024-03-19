@@ -7,12 +7,13 @@ pub type PiStartR = crate::BitReader;
 #[doc = "Field `PI_START` writer - Initiates command processing in the PI. Set to 1 to initiate."]
 pub type PiStartW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Defines the mode of operation of the PI.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PiDramClass {
-    #[doc = "6: LPDDR4 other value: reserved"]
+    #[doc = "6: DDR3"]
     B0110 = 6,
-    #[doc = "7: LPDDR4 other value: reserved"]
+    #[doc = "7: LPDDR3"]
     B0111 = 7,
     #[doc = "11: LPDDR4 other value: reserved"]
     B1011 = 11,
@@ -39,12 +40,12 @@ impl PiDramClassR {
             _ => None,
         }
     }
-    #[doc = "LPDDR4 other value: reserved"]
+    #[doc = "DDR3"]
     #[inline(always)]
     pub fn is_b0110(&self) -> bool {
         *self == PiDramClass::B0110
     }
-    #[doc = "LPDDR4 other value: reserved"]
+    #[doc = "LPDDR3"]
     #[inline(always)]
     pub fn is_b0111(&self) -> bool {
         *self == PiDramClass::B0111
@@ -62,12 +63,12 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "LPDDR4 other value: reserved"]
+    #[doc = "DDR3"]
     #[inline(always)]
     pub fn b0110(self) -> &'a mut crate::W<REG> {
         self.variant(PiDramClass::B0110)
     }
-    #[doc = "LPDDR4 other value: reserved"]
+    #[doc = "LPDDR3"]
     #[inline(always)]
     pub fn b0111(self) -> &'a mut crate::W<REG> {
         self.variant(PiDramClass::B0111)

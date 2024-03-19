@@ -3,9 +3,10 @@ pub type R = crate::R<PmugrfSocCon0Spec>;
 #[doc = "Register `PMUGRF_SOC_CON0` writer"]
 pub type W = crate::W<PmugrfSocCon0Spec>;
 #[doc = "chip 32K clock source select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Chip32kSrc {
-    #[doc = "0: from internal, pvtm"]
+    #[doc = "0: from external"]
     B0 = 0,
     #[doc = "1: from internal, pvtm"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl Chip32kSrcR {
             true => Chip32kSrc::B1,
         }
     }
-    #[doc = "from internal, pvtm"]
+    #[doc = "from external"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Chip32kSrc::B0
@@ -44,7 +45,7 @@ impl<'a, REG> Chip32kSrcW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "from internal, pvtm"]
+    #[doc = "from external"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Chip32kSrc::B0)
@@ -55,10 +56,11 @@ where
         self.variant(Chip32kSrc::B1)
     }
 }
-#[doc = "When pmu noc meet illegal access, the noc will\n\nValue on reset: 0"]
+#[doc = "When pmu noc meet illegal access, the noc\n\nwill\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PmuNocStall {
-    #[doc = "0: stall"]
+    #[doc = "0: error reponse"]
     B0 = 0,
     #[doc = "1: stall"]
     B1 = 1,
@@ -69,7 +71,7 @@ impl From<PmuNocStall> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PMU_NOC_STALL` reader - When pmu noc meet illegal access, the noc will"]
+#[doc = "Field `PMU_NOC_STALL` reader - When pmu noc meet illegal access, the noc\n\nwill"]
 pub type PmuNocStallR = crate::BitReader<PmuNocStall>;
 impl PmuNocStallR {
     #[doc = "Get enumerated values variant"]
@@ -80,7 +82,7 @@ impl PmuNocStallR {
             true => PmuNocStall::B1,
         }
     }
-    #[doc = "stall"]
+    #[doc = "error reponse"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PmuNocStall::B0
@@ -91,13 +93,13 @@ impl PmuNocStallR {
         *self == PmuNocStall::B1
     }
 }
-#[doc = "Field `PMU_NOC_STALL` writer - When pmu noc meet illegal access, the noc will"]
+#[doc = "Field `PMU_NOC_STALL` writer - When pmu noc meet illegal access, the noc\n\nwill"]
 pub type PmuNocStallW<'a, REG> = crate::BitWriter<'a, REG, PmuNocStall>;
 impl<'a, REG> PmuNocStallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall"]
+    #[doc = "error reponse"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PmuNocStall::B0)
@@ -117,9 +119,10 @@ pub type PmuNocObsrvR = crate::BitReader;
 #[doc = "Field `PMU_NOC_OBSRV` writer - pmu_noc_obsrv"]
 pub type PmuNocObsrvW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CruPmuPclkGate {
-    #[doc = "1: not gate ."]
+    #[doc = "1: gate clock ;"]
     B1 = 1,
     #[doc = "0: not gate ."]
     B0 = 0,
@@ -141,7 +144,7 @@ impl CruPmuPclkGateR {
             false => CruPmuPclkGate::B0,
         }
     }
-    #[doc = "not gate ."]
+    #[doc = "gate clock ;"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == CruPmuPclkGate::B1
@@ -158,7 +161,7 @@ impl<'a, REG> CruPmuPclkGateW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "not gate ."]
+    #[doc = "gate clock ;"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(CruPmuPclkGate::B1)
@@ -170,9 +173,10 @@ where
     }
 }
 #[doc = "Use 2 optional IOs for pwm3.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pwm3Sel {
-    #[doc = "0: pwm3b"]
+    #[doc = "0: pwm3a"]
     B0 = 0,
     #[doc = "1: pwm3b"]
     B1 = 1,
@@ -194,7 +198,7 @@ impl Pwm3SelR {
             true => Pwm3Sel::B1,
         }
     }
-    #[doc = "pwm3b"]
+    #[doc = "pwm3a"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Pwm3Sel::B0
@@ -211,7 +215,7 @@ impl<'a, REG> Pwm3SelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "pwm3b"]
+    #[doc = "pwm3a"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Pwm3Sel::B0)
@@ -223,9 +227,10 @@ where
     }
 }
 #[doc = "pd_alive pclk_niu gating.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PclkAliveNiuEn {
-    #[doc = "1: not gating ."]
+    #[doc = "1: gating ;"]
     B1 = 1,
     #[doc = "0: not gating ."]
     B0 = 0,
@@ -247,7 +252,7 @@ impl PclkAliveNiuEnR {
             false => PclkAliveNiuEn::B0,
         }
     }
-    #[doc = "not gating ."]
+    #[doc = "gating ;"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == PclkAliveNiuEn::B1
@@ -264,7 +269,7 @@ impl<'a, REG> PclkAliveNiuEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "not gating ."]
+    #[doc = "gating ;"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(PclkAliveNiuEn::B1)
@@ -276,9 +281,10 @@ where
     }
 }
 #[doc = "pmu GPIO1 1.8v/3.0v control source select.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pmu1830Volsel {
-    #[doc = "0: controlled by PMUGRF.SOC_CON0.pmu1830_vol"]
+    #[doc = "0: controlled by IO_GPIO0B1 ;"]
     B0 = 0,
     #[doc = "1: controlled by PMUGRF.SOC_CON0.pmu1830_vol"]
     B1 = 1,
@@ -300,7 +306,7 @@ impl Pmu1830VolselR {
             true => Pmu1830Volsel::B1,
         }
     }
-    #[doc = "controlled by PMUGRF.SOC_CON0.pmu1830_vol"]
+    #[doc = "controlled by IO_GPIO0B1 ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Pmu1830Volsel::B0
@@ -317,7 +323,7 @@ impl<'a, REG> Pmu1830VolselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "controlled by PMUGRF.SOC_CON0.pmu1830_vol"]
+    #[doc = "controlled by IO_GPIO0B1 ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Pmu1830Volsel::B0)
@@ -329,9 +335,10 @@ where
     }
 }
 #[doc = "pmu IO 1.8v/3.0v select.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pmu1830Vol {
-    #[doc = "0: 1.8v ;"]
+    #[doc = "0: 3.0v ;"]
     B0 = 0,
     #[doc = "1: 1.8v ;"]
     B1 = 1,
@@ -353,7 +360,7 @@ impl Pmu1830VolR {
             true => Pmu1830Vol::B1,
         }
     }
-    #[doc = "1.8v ;"]
+    #[doc = "3.0v ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Pmu1830Vol::B0
@@ -370,7 +377,7 @@ impl<'a, REG> Pmu1830VolW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "1.8v ;"]
+    #[doc = "3.0v ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Pmu1830Vol::B0)
@@ -381,9 +388,9 @@ where
         self.variant(Pmu1830Vol::B1)
     }
 }
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0 - chip 32K clock source select"]
@@ -391,7 +398,7 @@ impl R {
     pub fn chip_32k_src(&self) -> Chip32kSrcR {
         Chip32kSrcR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - When pmu noc meet illegal access, the noc will"]
+    #[doc = "Bit 1 - When pmu noc meet illegal access, the noc\n\nwill"]
     #[inline(always)]
     pub fn pmu_noc_stall(&self) -> PmuNocStallR {
         PmuNocStallR::new(((self.bits >> 1) & 1) != 0)
@@ -431,7 +438,7 @@ impl R {
     pub fn pmu1830_vol(&self) -> Pmu1830VolR {
         Pmu1830VolR::new(((self.bits >> 9) & 1) != 0)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
@@ -444,7 +451,7 @@ impl W {
     pub fn chip_32k_src(&mut self) -> Chip32kSrcW<PmugrfSocCon0Spec> {
         Chip32kSrcW::new(self, 0)
     }
-    #[doc = "Bit 1 - When pmu noc meet illegal access, the noc will"]
+    #[doc = "Bit 1 - When pmu noc meet illegal access, the noc\n\nwill"]
     #[inline(always)]
     #[must_use]
     pub fn pmu_noc_stall(&mut self) -> PmuNocStallW<PmugrfSocCon0Spec> {
@@ -492,7 +499,7 @@ impl W {
     pub fn pmu1830_vol(&mut self) -> Pmu1830VolW<PmugrfSocCon0Spec> {
         Pmu1830VolW::new(self, 9)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<PmugrfSocCon0Spec> {

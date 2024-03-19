@@ -1,15 +1,15 @@
 #[doc = "Register `DMAC_INTMIS` reader"]
 pub type R = crate::R<DmacIntmisSpec>;
-#[doc = "Field `DMAC_INTMIS_BITS_0` reader - Provides the status of the interrupts that are active in the DMAC: Bit \\[N\\]
+#[doc = "Field `DMAC_INTMIS_BITS_0` reader - Provides the status of the interrupts that are active in the DMAC:\n\nBit \\[N\\]
 = 0 Interrupt N is inactive and therefore irq\\[N\\]
-is LOW. Bit \\[N\\]
+is LOW.\n\nBit \\[N\\]
 = 1 Interrupt N is active and therefore irq\\[N\\]
 is HIGH"]
 pub type DmacIntmisBits0R = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Provides the status of the interrupts that are active in the DMAC: Bit \\[N\\]
+    #[doc = "Bits 0:31 - Provides the status of the interrupts that are active in the DMAC:\n\nBit \\[N\\]
 = 0 Interrupt N is inactive and therefore irq\\[N\\]
-is LOW. Bit \\[N\\]
+is LOW.\n\nBit \\[N\\]
 = 1 Interrupt N is active and therefore irq\\[N\\]
 is HIGH"]
     #[inline(always)]

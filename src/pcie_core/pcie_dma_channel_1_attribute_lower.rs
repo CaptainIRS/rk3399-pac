@@ -2,30 +2,26 @@
 pub type R = crate::R<PcieDmaChannel1AttributeLowerSpec>;
 #[doc = "Register `PCIE_DMA_CHANNEL_1_ATTRIBUTE_LOWER` writer"]
 pub type W = crate::W<PcieDmaChannel1AttributeLowerSpec>;
-#[doc = "Field `attr` reader - Descriptor Attributes Lower DWORD \\[attr\\]
-Lower 32-bits Attribute Values used when fetching and returning link list descriptors"]
+#[doc = "Field `attr` reader - Descriptor Attributes Lower DWORD \\[attr\\]\n\nLower 32-bits Attribute Values used\n\nwhen fetching and returning link list\n\ndescriptors"]
 pub type AttrR = crate::FieldReader<u32>;
-#[doc = "Field `attr` writer - Descriptor Attributes Lower DWORD \\[attr\\]
-Lower 32-bits Attribute Values used when fetching and returning link list descriptors"]
+#[doc = "Field `attr` writer - Descriptor Attributes Lower DWORD \\[attr\\]\n\nLower 32-bits Attribute Values used\n\nwhen fetching and returning link list\n\ndescriptors"]
 pub type AttrW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Descriptor Attributes Lower DWORD \\[attr\\]
-Lower 32-bits Attribute Values used when fetching and returning link list descriptors"]
+    #[doc = "Bits 0:31 - Descriptor Attributes Lower DWORD \\[attr\\]\n\nLower 32-bits Attribute Values used\n\nwhen fetching and returning link list\n\ndescriptors"]
     #[inline(always)]
     pub fn attr(&self) -> AttrR {
         AttrR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Descriptor Attributes Lower DWORD \\[attr\\]
-Lower 32-bits Attribute Values used when fetching and returning link list descriptors"]
+    #[doc = "Bits 0:31 - Descriptor Attributes Lower DWORD \\[attr\\]\n\nLower 32-bits Attribute Values used\n\nwhen fetching and returning link list\n\ndescriptors"]
     #[inline(always)]
     #[must_use]
     pub fn attr(&mut self) -> AttrW<PcieDmaChannel1AttributeLowerSpec> {
         AttrW::new(self, 0)
     }
 }
-#[doc = "PCIe DMA Channel 1 Attribute Lower Register Lower 32-bits Attribute Values used when fetching and returning link list descriptors\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcie_dma_channel_1_attribute_lower::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcie_dma_channel_1_attribute_lower::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PCIe DMA Channel 1 Attribute Lower Register\n\nLower 32-bits Attribute Values used\n\nwhen fetching and returning link list\n\ndescriptors\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcie_dma_channel_1_attribute_lower::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcie_dma_channel_1_attribute_lower::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PcieDmaChannel1AttributeLowerSpec;
 impl crate::RegisterSpec for PcieDmaChannel1AttributeLowerSpec {
     type Ux = u32;

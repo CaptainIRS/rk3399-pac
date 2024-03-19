@@ -3,9 +3,10 @@ pub type R = crate::R<CruVpllCon3Spec>;
 #[doc = "Register `CRU_VPLL_CON3` writer"]
 pub type W = crate::W<CruVpllCon3Spec>;
 #[doc = "Global power down\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PowerDown {
-    #[doc = "0: power down"]
+    #[doc = "0: no power down"]
     B0 = 0,
     #[doc = "1: power down"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl PowerDownR {
             true => PowerDown::B1,
         }
     }
-    #[doc = "power down"]
+    #[doc = "no power down"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PowerDown::B0
@@ -44,7 +45,7 @@ impl<'a, REG> PowerDownW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "power down"]
+    #[doc = "no power down"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PowerDown::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "PLL Bypass. FREF bypasses PLL to FOUTPOSTDIV\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bypass {
-    #[doc = "0: bypass"]
+    #[doc = "0: no bypass"]
     B0 = 0,
     #[doc = "1: bypass"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl BypassR {
             true => Bypass::B1,
         }
     }
-    #[doc = "bypass"]
+    #[doc = "no bypass"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Bypass::B0
@@ -97,7 +99,7 @@ impl<'a, REG> BypassW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "bypass"]
+    #[doc = "no bypass"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Bypass::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "Power down quantization noise cancellation DAC\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dacpd {
-    #[doc = "0: power down"]
+    #[doc = "0: no power down"]
     B0 = 0,
     #[doc = "1: power down"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl DacpdR {
             true => Dacpd::B1,
         }
     }
-    #[doc = "power down"]
+    #[doc = "no power down"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Dacpd::B0
@@ -150,7 +153,7 @@ impl<'a, REG> DacpdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "power down"]
+    #[doc = "no power down"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Dacpd::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "PLL saturation behavior enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dsmpd {
-    #[doc = "0: power down DSMPD = 1'b1 ( modulator is disabled, \"integer mode\")"]
+    #[doc = "0: no power down"]
     B0 = 0,
     #[doc = "1: power down DSMPD = 1'b1 ( modulator is disabled, \"integer mode\")"]
     B1 = 1,
@@ -186,7 +190,7 @@ impl DsmpdR {
             true => Dsmpd::B1,
         }
     }
-    #[doc = "power down DSMPD = 1'b1 ( modulator is disabled, \"integer mode\")"]
+    #[doc = "no power down"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Dsmpd::B0
@@ -203,7 +207,7 @@ impl<'a, REG> DsmpdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "power down DSMPD = 1'b1 ( modulator is disabled, \"integer mode\")"]
+    #[doc = "no power down"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Dsmpd::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "Power down all outputs except for buffered VCO clock\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Foutpostdivpd {
-    #[doc = "0: power down"]
+    #[doc = "0: no power down"]
     B0 = 0,
     #[doc = "1: power down"]
     B1 = 1,
@@ -239,7 +244,7 @@ impl FoutpostdivpdR {
             true => Foutpostdivpd::B1,
         }
     }
-    #[doc = "power down"]
+    #[doc = "no power down"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Foutpostdivpd::B0
@@ -256,7 +261,7 @@ impl<'a, REG> FoutpostdivpdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "power down"]
+    #[doc = "no power down"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Foutpostdivpd::B0)
@@ -268,9 +273,10 @@ where
     }
 }
 #[doc = "Power down buffered VCO clock\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Foutvcopd {
-    #[doc = "0: power down"]
+    #[doc = "0: no power down"]
     B0 = 0,
     #[doc = "1: power down"]
     B1 = 1,
@@ -292,7 +298,7 @@ impl FoutvcopdR {
             true => Foutvcopd::B1,
         }
     }
-    #[doc = "power down"]
+    #[doc = "no power down"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Foutvcopd::B0
@@ -309,7 +315,7 @@ impl<'a, REG> FoutvcopdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "power down"]
+    #[doc = "no power down"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Foutvcopd::B0)
@@ -321,9 +327,10 @@ where
     }
 }
 #[doc = "Power down 4-phase clocks and 2X, 3X, 4X clocks\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fout4phasepd {
-    #[doc = "0: power down"]
+    #[doc = "0: no power down"]
     B0 = 0,
     #[doc = "1: power down"]
     B1 = 1,
@@ -345,7 +352,7 @@ impl Fout4phasepdR {
             true => Fout4phasepd::B1,
         }
     }
-    #[doc = "power down"]
+    #[doc = "no power down"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Fout4phasepd::B0
@@ -362,7 +369,7 @@ impl<'a, REG> Fout4phasepdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "power down"]
+    #[doc = "no power down"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Fout4phasepd::B0)
@@ -374,12 +381,13 @@ where
     }
 }
 #[doc = "PLL work mode select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PllWorkMode {
-    #[doc = "0: Deep slow mode, clock from external 32.768kHz"]
+    #[doc = "0: Slow mode, clock from external 24MHz/26MHz OSC (default)"]
     B00 = 0,
-    #[doc = "1: Deep slow mode, clock from external 32.768kHz"]
+    #[doc = "1: Normal mode, clock from PLL output"]
     B01 = 1,
     #[doc = "2: Deep slow mode, clock from external 32.768kHz"]
     B10 = 2,
@@ -406,12 +414,12 @@ impl PllWorkModeR {
             _ => None,
         }
     }
-    #[doc = "Deep slow mode, clock from external 32.768kHz"]
+    #[doc = "Slow mode, clock from external 24MHz/26MHz OSC (default)"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == PllWorkMode::B00
     }
-    #[doc = "Deep slow mode, clock from external 32.768kHz"]
+    #[doc = "Normal mode, clock from PLL output"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == PllWorkMode::B01
@@ -429,12 +437,12 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Deep slow mode, clock from external 32.768kHz"]
+    #[doc = "Slow mode, clock from external 24MHz/26MHz OSC (default)"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(PllWorkMode::B00)
     }
-    #[doc = "Deep slow mode, clock from external 32.768kHz"]
+    #[doc = "Normal mode, clock from PLL output"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(PllWorkMode::B01)
@@ -445,7 +453,7 @@ where
         self.variant(PllWorkMode::B10)
     }
 }
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0 - Global power down"]
@@ -538,7 +546,7 @@ impl W {
     pub fn pll_work_mode(&mut self) -> PllWorkModeW<CruVpllCon3Spec> {
         PllWorkModeW::new(self, 8)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruVpllCon3Spec> {

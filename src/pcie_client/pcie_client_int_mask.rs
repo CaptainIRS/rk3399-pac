@@ -3,9 +3,10 @@ pub type R = crate::R<PcieClientIntMaskSpec>;
 #[doc = "Register `PCIE_CLIENT_INT_MASK` writer"]
 pub type W = crate::W<PcieClientIntMaskSpec>;
 #[doc = "Power state change interrupt mask\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PwrStcgIntMask {
-    #[doc = "0: interrupt mask"]
+    #[doc = "0: interrupt enable"]
     B0 = 0,
     #[doc = "1: interrupt mask"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl PwrStcgIntMaskR {
             true => PwrStcgIntMask::B1,
         }
     }
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PwrStcgIntMask::B0
@@ -44,7 +45,7 @@ impl<'a, REG> PwrStcgIntMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PwrStcgIntMask::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Hot plug interrupt mask\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HotPlugIntMask {
-    #[doc = "0: interrupt mask reserved"]
+    #[doc = "0: interrupt enable"]
     B0 = 0,
     #[doc = "1: interrupt mask reserved"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl HotPlugIntMaskR {
             true => HotPlugIntMask::B1,
         }
     }
-    #[doc = "interrupt mask reserved"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == HotPlugIntMask::B0
@@ -97,7 +99,7 @@ impl<'a, REG> HotPlugIntMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "interrupt mask reserved"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(HotPlugIntMask::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "Phy interrupt mask\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PhyIntMask {
-    #[doc = "0: interrupt mask"]
+    #[doc = "0: interrupt enable"]
     B0 = 0,
     #[doc = "1: interrupt mask"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl PhyIntMaskR {
             true => PhyIntMask::B1,
         }
     }
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PhyIntMask::B0
@@ -150,7 +153,7 @@ impl<'a, REG> PhyIntMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PhyIntMask::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "uDMA interrupt mask\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UdmaIntMask {
-    #[doc = "0: interrupt mask"]
+    #[doc = "0: interrupt enable"]
     B0 = 0,
     #[doc = "1: interrupt mask"]
     B1 = 1,
@@ -186,7 +190,7 @@ impl UdmaIntMaskR {
             true => UdmaIntMask::B1,
         }
     }
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == UdmaIntMask::B0
@@ -203,7 +207,7 @@ impl<'a, REG> UdmaIntMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(UdmaIntMask::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "Local interrupt mask\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LocalIntMask {
-    #[doc = "0: interrupt mask"]
+    #[doc = "0: interrupt enable"]
     B0 = 0,
     #[doc = "1: interrupt mask"]
     B1 = 1,
@@ -239,7 +244,7 @@ impl LocalIntMaskR {
             true => LocalIntMask::B1,
         }
     }
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == LocalIntMask::B0
@@ -256,7 +261,7 @@ impl<'a, REG> LocalIntMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(LocalIntMask::B0)
@@ -268,9 +273,10 @@ where
     }
 }
 #[doc = "INTA interrupt mask\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IntaMask {
-    #[doc = "0: interrupt mask"]
+    #[doc = "0: interrupt enable"]
     B0 = 0,
     #[doc = "1: interrupt mask"]
     B1 = 1,
@@ -292,7 +298,7 @@ impl IntaMaskR {
             true => IntaMask::B1,
         }
     }
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IntaMask::B0
@@ -309,7 +315,7 @@ impl<'a, REG> IntaMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IntaMask::B0)
@@ -321,9 +327,10 @@ where
     }
 }
 #[doc = "INTB interrupt mask\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IntbMask {
-    #[doc = "0: interrupt mask"]
+    #[doc = "0: interrupt enable"]
     B0 = 0,
     #[doc = "1: interrupt mask"]
     B1 = 1,
@@ -345,7 +352,7 @@ impl IntbMaskR {
             true => IntbMask::B1,
         }
     }
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IntbMask::B0
@@ -362,7 +369,7 @@ impl<'a, REG> IntbMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IntbMask::B0)
@@ -374,9 +381,10 @@ where
     }
 }
 #[doc = "INTC interrupt mask\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IntcMask {
-    #[doc = "0: interrupt mask"]
+    #[doc = "0: interrupt enable"]
     B0 = 0,
     #[doc = "1: interrupt mask"]
     B1 = 1,
@@ -398,7 +406,7 @@ impl IntcMaskR {
             true => IntcMask::B1,
         }
     }
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IntcMask::B0
@@ -415,7 +423,7 @@ impl<'a, REG> IntcMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IntcMask::B0)
@@ -427,9 +435,10 @@ where
     }
 }
 #[doc = "INTD interrupt mask\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IntdMask {
-    #[doc = "0: interrupt mask"]
+    #[doc = "0: interrupt enable"]
     B0 = 0,
     #[doc = "1: interrupt mask"]
     B1 = 1,
@@ -451,7 +460,7 @@ impl IntdMaskR {
             true => IntdMask::B1,
         }
     }
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IntdMask::B0
@@ -468,7 +477,7 @@ impl<'a, REG> IntdMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IntdMask::B0)
@@ -480,9 +489,10 @@ where
     }
 }
 #[doc = "Correctable error interrupt mask\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CorrErrIntMask {
-    #[doc = "0: interrupt mask"]
+    #[doc = "0: interrupt enable"]
     B0 = 0,
     #[doc = "1: interrupt mask"]
     B1 = 1,
@@ -504,7 +514,7 @@ impl CorrErrIntMaskR {
             true => CorrErrIntMask::B1,
         }
     }
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CorrErrIntMask::B0
@@ -521,7 +531,7 @@ impl<'a, REG> CorrErrIntMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CorrErrIntMask::B0)
@@ -533,9 +543,10 @@ where
     }
 }
 #[doc = "Non-fatal error interrupt mask\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum NfatalErrIntMask {
-    #[doc = "0: interrupt mask"]
+    #[doc = "0: interrupt enable"]
     B0 = 0,
     #[doc = "1: interrupt mask"]
     B1 = 1,
@@ -557,7 +568,7 @@ impl NfatalErrIntMaskR {
             true => NfatalErrIntMask::B1,
         }
     }
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == NfatalErrIntMask::B0
@@ -574,7 +585,7 @@ impl<'a, REG> NfatalErrIntMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(NfatalErrIntMask::B0)
@@ -586,9 +597,10 @@ where
     }
 }
 #[doc = "Fatal error interrupt mask\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FatalErrIntMask {
-    #[doc = "0: interrupt mask"]
+    #[doc = "0: interrupt enable"]
     B0 = 0,
     #[doc = "1: interrupt mask"]
     B1 = 1,
@@ -610,7 +622,7 @@ impl FatalErrIntMaskR {
             true => FatalErrIntMask::B1,
         }
     }
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == FatalErrIntMask::B0
@@ -627,7 +639,7 @@ impl<'a, REG> FatalErrIntMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(FatalErrIntMask::B0)
@@ -639,9 +651,10 @@ where
     }
 }
 #[doc = "DPA interrupt mask\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DpaIntMask {
-    #[doc = "0: interrupt mask"]
+    #[doc = "0: interrupt enable"]
     B0 = 0,
     #[doc = "1: interrupt mask"]
     B1 = 1,
@@ -663,7 +676,7 @@ impl DpaIntMaskR {
             true => DpaIntMask::B1,
         }
     }
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == DpaIntMask::B0
@@ -680,7 +693,7 @@ impl<'a, REG> DpaIntMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(DpaIntMask::B0)
@@ -692,9 +705,10 @@ where
     }
 }
 #[doc = "Hot reset interrupt mask\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HotResetIntMask {
-    #[doc = "0: interrupt mask"]
+    #[doc = "0: interrupt enable"]
     B0 = 0,
     #[doc = "1: interrupt mask"]
     B1 = 1,
@@ -716,7 +730,7 @@ impl HotResetIntMaskR {
             true => HotResetIntMask::B1,
         }
     }
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == HotResetIntMask::B0
@@ -733,7 +747,7 @@ impl<'a, REG> HotResetIntMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(HotResetIntMask::B0)
@@ -745,9 +759,10 @@ where
     }
 }
 #[doc = "Message receive done interrupt mask\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MsgIntMask {
-    #[doc = "0: interrupt mask"]
+    #[doc = "0: interrupt enable"]
     B0 = 0,
     #[doc = "1: interrupt mask"]
     B1 = 1,
@@ -769,7 +784,7 @@ impl MsgIntMaskR {
             true => MsgIntMask::B1,
         }
     }
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == MsgIntMask::B0
@@ -786,7 +801,7 @@ impl<'a, REG> MsgIntMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(MsgIntMask::B0)
@@ -798,9 +813,10 @@ where
     }
 }
 #[doc = "Legacy interrupt send done interrupt mask\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LegacyDoneIntMask {
-    #[doc = "0: interrupt mask"]
+    #[doc = "0: interrupt enable"]
     B0 = 0,
     #[doc = "1: interrupt mask"]
     B1 = 1,
@@ -822,7 +838,7 @@ impl LegacyDoneIntMaskR {
             true => LegacyDoneIntMask::B1,
         }
     }
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == LegacyDoneIntMask::B0
@@ -839,7 +855,7 @@ impl<'a, REG> LegacyDoneIntMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "interrupt mask"]
+    #[doc = "interrupt enable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(LegacyDoneIntMask::B0)
@@ -850,11 +866,12 @@ where
         self.variant(LegacyDoneIntMask::B1)
     }
 }
-#[doc = "Write mask For each served bit\n\nValue on reset: 0"]
+#[doc = "Write mask\n\nFor each served bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum WriteMask {
-    #[doc = "0: write enable"]
+    #[doc = "0: write mask"]
     B0 = 0,
     #[doc = "1: write enable"]
     B1 = 1,
@@ -868,14 +885,14 @@ impl From<WriteMask> for u16 {
 impl crate::FieldSpec for WriteMask {
     type Ux = u16;
 }
-#[doc = "Field `WRITE_MASK` writer - Write mask For each served bit"]
+#[doc = "Field `WRITE_MASK` writer - Write mask\n\nFor each served bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, WriteMask>;
 impl<'a, REG> WriteMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u16>,
 {
-    #[doc = "write enable"]
+    #[doc = "write mask"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(WriteMask::B0)
@@ -1065,7 +1082,7 @@ impl W {
     pub fn legacy_done_int_mask(&mut self) -> LegacyDoneIntMaskW<PcieClientIntMaskSpec> {
         LegacyDoneIntMaskW::new(self, 15)
     }
-    #[doc = "Bits 16:31 - Write mask For each served bit"]
+    #[doc = "Bits 16:31 - Write mask\n\nFor each served bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<PcieClientIntMaskSpec> {

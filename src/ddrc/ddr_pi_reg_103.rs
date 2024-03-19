@@ -2,49 +2,49 @@
 pub type R = crate::R<DdrPiReg103Spec>;
 #[doc = "Register `DDR_PI_REG_103` writer"]
 pub type W = crate::W<DdrPiReg103Spec>;
-#[doc = "Field `PI_TMRZ_F1` reader - Indicates DRAM TMRZ value in cycles. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TMRZ_F1` reader - Indicates DRAM TMRZ value in cycles. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTmrzF1R = crate::FieldReader;
-#[doc = "Field `PI_TMRZ_F1` writer - Indicates DRAM TMRZ value in cycles. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TMRZ_F1` writer - Indicates DRAM TMRZ value in cycles. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTmrzF1W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Field `PI_TCAENT_F1` reader - Indicates DRAM TCAENT value in cycles. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TCAENT_F1` reader - Indicates DRAM TCAENT value in cycles. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTcaentF1R = crate::FieldReader<u16>;
-#[doc = "Field `PI_TCAENT_F1` writer - Indicates DRAM TCAENT value in cycles. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TCAENT_F1` writer - Indicates DRAM TCAENT value in cycles. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTcaentF1W<'a, REG> = crate::FieldWriter<'a, REG, 14, u16>;
-#[doc = "Field `PI_TMRZ_F2` reader - Indicates DRAM TMRZ value in cycles. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TMRZ_F2` reader - Indicates DRAM TMRZ value in cycles. The suffix \"_f2\" of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTmrzF2R = crate::FieldReader;
-#[doc = "Field `PI_TMRZ_F2` writer - Indicates DRAM TMRZ value in cycles. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TMRZ_F2` writer - Indicates DRAM TMRZ value in cycles. The suffix \"_f2\" of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTmrzF2W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
-    #[doc = "Bits 0:4 - Indicates DRAM TMRZ value in cycles. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:4 - Indicates DRAM TMRZ value in cycles. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tmrz_f1(&self) -> PiTmrzF1R {
         PiTmrzF1R::new((self.bits & 0x1f) as u8)
     }
-    #[doc = "Bits 8:21 - Indicates DRAM TCAENT value in cycles. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 8:21 - Indicates DRAM TCAENT value in cycles. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tcaent_f1(&self) -> PiTcaentF1R {
         PiTcaentF1R::new(((self.bits >> 8) & 0x3fff) as u16)
     }
-    #[doc = "Bits 24:28 - Indicates DRAM TMRZ value in cycles. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 24:28 - Indicates DRAM TMRZ value in cycles. The suffix \"_f2\" of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tmrz_f2(&self) -> PiTmrzF2R {
         PiTmrzF2R::new(((self.bits >> 24) & 0x1f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - Indicates DRAM TMRZ value in cycles. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:4 - Indicates DRAM TMRZ value in cycles. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tmrz_f1(&mut self) -> PiTmrzF1W<DdrPiReg103Spec> {
         PiTmrzF1W::new(self, 0)
     }
-    #[doc = "Bits 8:21 - Indicates DRAM TCAENT value in cycles. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 8:21 - Indicates DRAM TCAENT value in cycles. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tcaent_f1(&mut self) -> PiTcaentF1W<DdrPiReg103Spec> {
         PiTcaentF1W::new(self, 8)
     }
-    #[doc = "Bits 24:28 - Indicates DRAM TMRZ value in cycles. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 24:28 - Indicates DRAM TMRZ value in cycles. The suffix \"_f2\" of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tmrz_f2(&mut self) -> PiTmrzF2W<DdrPiReg103Spec> {

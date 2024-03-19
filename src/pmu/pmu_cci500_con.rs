@@ -26,9 +26,9 @@ pub type ClrQreqCci500W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type QgatingCci500CfgR = crate::BitReader;
 #[doc = "Field `QGATING_CCI500_CFG` writer - CCI-500 Q-channel clock gating enable."]
 pub type QgatingCci500CfgW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `WRITE_ENABLE` reader - When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - When bit 16=1, bit 0 can be written by software .\n\nWhen bit 16=0, bit 0 cannot be written by software;\n\nWhen bit 17=1, bit 1 can be written by software .\n\nWhen bit 17=0, bit 1 cannot be written by software;\n\n......\n\nWhen bit 31=1, bit 15 can be written by software .\n\nWhen bit 31=0, bit 15 cannot be written by software;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - When bit 16=1, bit 0 can be written by software .\n\nWhen bit 16=0, bit 0 cannot be written by software;\n\nWhen bit 17=1, bit 1 can be written by software .\n\nWhen bit 17=0, bit 1 cannot be written by software;\n\n......\n\nWhen bit 31=1, bit 15 can be written by software .\n\nWhen bit 31=0, bit 15 cannot be written by software;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0 - CCI-500 P-channel request sent by software"]
@@ -61,7 +61,7 @@ impl R {
     pub fn qgating_cci500_cfg(&self) -> QgatingCci500CfgR {
         QgatingCci500CfgR::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bits 16:31 - When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - When bit 16=1, bit 0 can be written by software .\n\nWhen bit 16=0, bit 0 cannot be written by software;\n\nWhen bit 17=1, bit 1 can be written by software .\n\nWhen bit 17=0, bit 1 cannot be written by software;\n\n......\n\nWhen bit 31=1, bit 15 can be written by software .\n\nWhen bit 31=0, bit 15 cannot be written by software;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
@@ -104,7 +104,7 @@ impl W {
     pub fn qgating_cci500_cfg(&mut self) -> QgatingCci500CfgW<PmuCci500ConSpec> {
         QgatingCci500CfgW::new(self, 7)
     }
-    #[doc = "Bits 16:31 - When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - When bit 16=1, bit 0 can be written by software .\n\nWhen bit 16=0, bit 0 cannot be written by software;\n\nWhen bit 17=1, bit 1 can be written by software .\n\nWhen bit 17=0, bit 1 cannot be written by software;\n\n......\n\nWhen bit 31=1, bit 15 can be written by software .\n\nWhen bit 31=0, bit 15 cannot be written by software;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<PmuCci500ConSpec> {

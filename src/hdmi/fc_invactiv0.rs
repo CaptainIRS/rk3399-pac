@@ -2,26 +2,26 @@
 pub type R = crate::R<FcInvactiv0Spec>;
 #[doc = "Register `FC_INVACTIV0` writer"]
 pub type W = crate::W<FcInvactiv0Spec>;
-#[doc = "Field `V_IN_ACTIV` reader - Input video Vertical active pixel region width. This bit field holds bits 7:0 of number of Vertical active pixels."]
+#[doc = "Field `V_IN_ACTIV` reader - Input video Vertical active pixel region width. This\n\nbit field holds bits 7:0 of number of Vertical active\n\npixels."]
 pub type VInActivR = crate::FieldReader;
-#[doc = "Field `V_IN_ACTIV` writer - Input video Vertical active pixel region width. This bit field holds bits 7:0 of number of Vertical active pixels."]
+#[doc = "Field `V_IN_ACTIV` writer - Input video Vertical active pixel region width. This\n\nbit field holds bits 7:0 of number of Vertical active\n\npixels."]
 pub type VInActivW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - Input video Vertical active pixel region width. This bit field holds bits 7:0 of number of Vertical active pixels."]
+    #[doc = "Bits 0:7 - Input video Vertical active pixel region width. This\n\nbit field holds bits 7:0 of number of Vertical active\n\npixels."]
     #[inline(always)]
     pub fn v_in_activ(&self) -> VInActivR {
         VInActivR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Input video Vertical active pixel region width. This bit field holds bits 7:0 of number of Vertical active pixels."]
+    #[doc = "Bits 0:7 - Input video Vertical active pixel region width. This\n\nbit field holds bits 7:0 of number of Vertical active\n\npixels."]
     #[inline(always)]
     #[must_use]
     pub fn v_in_activ(&mut self) -> VInActivW<FcInvactiv0Spec> {
         VInActivW::new(self, 0)
     }
 }
-#[doc = "Input video Vertical active pixel region width. This bit field holds bits 7:0 of number of Vertical active pixels.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_invactiv0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_invactiv0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer Input Video VActive Pixels Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_invactiv0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_invactiv0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcInvactiv0Spec;
 impl crate::RegisterSpec for FcInvactiv0Spec {
     type Ux = u8;

@@ -1,9 +1,9 @@
 #[doc = "Register `USB3_GDBGLSP` reader"]
 pub type R = crate::R<Usb3GdbglspSpec>;
-#[doc = "Field `LSPDEBUG` reader - LSP Debug Information LSP Debug Information"]
+#[doc = "Field `LSPDEBUG` reader - LSP Debug Information\n\nLSP Debug Information"]
 pub type LspdebugR = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - LSP Debug Information LSP Debug Information"]
+    #[doc = "Bits 0:31 - LSP Debug Information\n\nLSP Debug Information"]
     #[inline(always)]
     pub fn lspdebug(&self) -> LspdebugR {
         LspdebugR::new(self.bits)

@@ -1,9 +1,9 @@
 #[doc = "Register `DDR_DENALI_PHY_521` reader"]
 pub type R = crate::R<DdrDenaliPhy521Spec>;
-#[doc = "Field `PHY_ADR_DDL_TEST_OBS_0` reader - DDL test observation for address slice 0. READ-ONLY"]
+#[doc = "Field `PHY_ADR_DDL_TEST_OBS_0` reader - DDL test observation for address slice 0."]
 pub type PhyAdrDdlTestObs0R = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - DDL test observation for address slice 0. READ-ONLY"]
+    #[doc = "Bits 0:31 - DDL test observation for address slice 0."]
     #[inline(always)]
     pub fn phy_adr_ddl_test_obs_0(&self) -> PhyAdrDdlTestObs0R {
         PhyAdrDdlTestObs0R::new(self.bits)

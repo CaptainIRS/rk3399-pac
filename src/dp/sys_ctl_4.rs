@@ -3,14 +3,15 @@ pub type R = crate::R<SysCtl4Spec>;
 #[doc = "Register `SYS_CTL_4` writer"]
 pub type W = crate::W<SysCtl4Spec>;
 #[doc = "Control M_VID update frequency\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MVidUpdateCtrl {
-    #[doc = "3: Normal rate."]
+    #[doc = "3: 1/8 X update rate,"]
     B11 = 3,
-    #[doc = "2: Normal rate."]
+    #[doc = "2: 1/4 X update rate,"]
     B10 = 2,
-    #[doc = "1: Normal rate."]
+    #[doc = "1: 1/2 X update rate,"]
     B01 = 1,
     #[doc = "0: Normal rate."]
     B00 = 0,
@@ -38,17 +39,17 @@ impl MVidUpdateCtrlR {
             _ => unreachable!(),
         }
     }
-    #[doc = "Normal rate."]
+    #[doc = "1/8 X update rate,"]
     #[inline(always)]
     pub fn is_b11(&self) -> bool {
         *self == MVidUpdateCtrl::B11
     }
-    #[doc = "Normal rate."]
+    #[doc = "1/4 X update rate,"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == MVidUpdateCtrl::B10
     }
-    #[doc = "Normal rate."]
+    #[doc = "1/2 X update rate,"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == MVidUpdateCtrl::B01
@@ -66,17 +67,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Normal rate."]
+    #[doc = "1/8 X update rate,"]
     #[inline(always)]
     pub fn b11(self) -> &'a mut crate::W<REG> {
         self.variant(MVidUpdateCtrl::B11)
     }
-    #[doc = "Normal rate."]
+    #[doc = "1/4 X update rate,"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(MVidUpdateCtrl::B10)
     }
-    #[doc = "Normal rate."]
+    #[doc = "1/2 X update rate,"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(MVidUpdateCtrl::B01)
@@ -88,9 +89,10 @@ where
     }
 }
 #[doc = "Fix M_VID value\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FixMVid {
-    #[doc = "1: Use calculates M_VID value to be sent out."]
+    #[doc = "1: Use register M_VID value to be sent out,"]
     B1 = 1,
     #[doc = "0: Use calculates M_VID value to be sent out."]
     B0 = 0,
@@ -112,7 +114,7 @@ impl FixMVidR {
             false => FixMVid::B0,
         }
     }
-    #[doc = "Use calculates M_VID value to be sent out."]
+    #[doc = "Use register M_VID value to be sent out,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == FixMVid::B1
@@ -129,7 +131,7 @@ impl<'a, REG> FixMVidW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Use calculates M_VID value to be sent out."]
+    #[doc = "Use register M_VID value to be sent out,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(FixMVid::B1)
@@ -141,9 +143,10 @@ where
     }
 }
 #[doc = "DisplayPort Enhanced mode enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Enhanced {
-    #[doc = "1: Normal mode."]
+    #[doc = "1: Enhanced mode,"]
     B1 = 1,
     #[doc = "0: Normal mode."]
     B0 = 0,
@@ -165,7 +168,7 @@ impl EnhancedR {
             false => Enhanced::B0,
         }
     }
-    #[doc = "Normal mode."]
+    #[doc = "Enhanced mode,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Enhanced::B1
@@ -182,7 +185,7 @@ impl<'a, REG> EnhancedW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Normal mode."]
+    #[doc = "Enhanced mode,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Enhanced::B1)

@@ -21,7 +21,7 @@ impl W {
         DatabyteW::new(self, 0)
     }
 }
-#[doc = "Data byte\\[x\\], where x is 0 to 15\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cec_tx_data::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cec_tx_data::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "CEC TX Data Register Array Address offset: i = 0 to 15\n\nThese registers (8 bits each) are the buffers used for storing the data waiting for\n\ntransmission (including header and data blocks).\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cec_tx_data::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cec_tx_data::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CecTxDataSpec;
 impl crate::RegisterSpec for CecTxDataSpec {
     type Ux = u8;

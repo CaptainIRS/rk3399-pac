@@ -2,19 +2,19 @@
 pub type R = crate::R<AnalogCtl36Spec>;
 #[doc = "Register `ANALOG_CTL_36` writer"]
 pub type W = crate::W<AnalogCtl36Spec>;
-#[doc = "Field `R_CH0_AMP_FORCE_VALUE` reader - The forced ch0 amp value (for calculating ch0_swing_bit) value in specific V_diff and Pre_emphasis."]
+#[doc = "Field `R_CH0_AMP_FORCE_VALUE` reader - The forced ch0 amp value (for \n\ncalculating ch0_swing_bit) value in \n\nspecific V_diff and Pre_emphasis."]
 pub type RCh0AmpForceValueR = crate::FieldReader;
-#[doc = "Field `R_CH0_AMP_FORCE_VALUE` writer - The forced ch0 amp value (for calculating ch0_swing_bit) value in specific V_diff and Pre_emphasis."]
+#[doc = "Field `R_CH0_AMP_FORCE_VALUE` writer - The forced ch0 amp value (for \n\ncalculating ch0_swing_bit) value in \n\nspecific V_diff and Pre_emphasis."]
 pub type RCh0AmpForceValueW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - The forced ch0 amp value (for calculating ch0_swing_bit) value in specific V_diff and Pre_emphasis."]
+    #[doc = "Bits 0:7 - The forced ch0 amp value (for \n\ncalculating ch0_swing_bit) value in \n\nspecific V_diff and Pre_emphasis."]
     #[inline(always)]
     pub fn r_ch0_amp_force_value(&self) -> RCh0AmpForceValueR {
         RCh0AmpForceValueR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - The forced ch0 amp value (for calculating ch0_swing_bit) value in specific V_diff and Pre_emphasis."]
+    #[doc = "Bits 0:7 - The forced ch0 amp value (for \n\ncalculating ch0_swing_bit) value in \n\nspecific V_diff and Pre_emphasis."]
     #[inline(always)]
     #[must_use]
     pub fn r_ch0_amp_force_value(&mut self) -> RCh0AmpForceValueW<AnalogCtl36Spec> {

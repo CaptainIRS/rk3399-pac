@@ -2,38 +2,38 @@
 pub type R = crate::R<Usb3GdbgfifospaceSpec>;
 #[doc = "Register `USB3_GDBGFIFOSPACE` writer"]
 pub type W = crate::W<Usb3GdbgfifospaceSpec>;
-#[doc = "Field `FIFO_QUEUE_SELECT` reader - FIFO/Queue Select (or) Port-Select FIFO/Queue Select\\[8:5\\]
-indicates the FIFO/Queue Type FIFO/Queue Select\\[4:0\\]
-indicates the FIFO/Queue Number Port-Select\\[3:0\\]
-selects the port-number when accessing GDBGLTSSM register."]
+#[doc = "Field `FIFO_QUEUE_SELECT` reader - FIFO/Queue Select (or) Port-Select\n\nFIFO/Queue Select\\[8:5\\]
+indicates the FIFO/Queue Type\n\nFIFO/Queue Select\\[4:0\\]
+indicates the FIFO/Queue Number\n\nPort-Select\\[3:0\\]
+selects the port-number when accessing\n\nGDBGLTSSM register."]
 pub type FifoQueueSelectR = crate::FieldReader<u16>;
-#[doc = "Field `FIFO_QUEUE_SELECT` writer - FIFO/Queue Select (or) Port-Select FIFO/Queue Select\\[8:5\\]
-indicates the FIFO/Queue Type FIFO/Queue Select\\[4:0\\]
-indicates the FIFO/Queue Number Port-Select\\[3:0\\]
-selects the port-number when accessing GDBGLTSSM register."]
+#[doc = "Field `FIFO_QUEUE_SELECT` writer - FIFO/Queue Select (or) Port-Select\n\nFIFO/Queue Select\\[8:5\\]
+indicates the FIFO/Queue Type\n\nFIFO/Queue Select\\[4:0\\]
+indicates the FIFO/Queue Number\n\nPort-Select\\[3:0\\]
+selects the port-number when accessing\n\nGDBGLTSSM register."]
 pub type FifoQueueSelectW<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
-#[doc = "Field `SPACE_AVAILABLE` reader - Space Avalible Space Avalible"]
+#[doc = "Field `SPACE_AVAILABLE` reader - Space Avalible\n\nSpace Avalible"]
 pub type SpaceAvailableR = crate::FieldReader<u16>;
 impl R {
-    #[doc = "Bits 0:8 - FIFO/Queue Select (or) Port-Select FIFO/Queue Select\\[8:5\\]
-indicates the FIFO/Queue Type FIFO/Queue Select\\[4:0\\]
-indicates the FIFO/Queue Number Port-Select\\[3:0\\]
-selects the port-number when accessing GDBGLTSSM register."]
+    #[doc = "Bits 0:8 - FIFO/Queue Select (or) Port-Select\n\nFIFO/Queue Select\\[8:5\\]
+indicates the FIFO/Queue Type\n\nFIFO/Queue Select\\[4:0\\]
+indicates the FIFO/Queue Number\n\nPort-Select\\[3:0\\]
+selects the port-number when accessing\n\nGDBGLTSSM register."]
     #[inline(always)]
     pub fn fifo_queue_select(&self) -> FifoQueueSelectR {
         FifoQueueSelectR::new((self.bits & 0x01ff) as u16)
     }
-    #[doc = "Bits 16:31 - Space Avalible Space Avalible"]
+    #[doc = "Bits 16:31 - Space Avalible\n\nSpace Avalible"]
     #[inline(always)]
     pub fn space_available(&self) -> SpaceAvailableR {
         SpaceAvailableR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:8 - FIFO/Queue Select (or) Port-Select FIFO/Queue Select\\[8:5\\]
-indicates the FIFO/Queue Type FIFO/Queue Select\\[4:0\\]
-indicates the FIFO/Queue Number Port-Select\\[3:0\\]
-selects the port-number when accessing GDBGLTSSM register."]
+    #[doc = "Bits 0:8 - FIFO/Queue Select (or) Port-Select\n\nFIFO/Queue Select\\[8:5\\]
+indicates the FIFO/Queue Type\n\nFIFO/Queue Select\\[4:0\\]
+indicates the FIFO/Queue Number\n\nPort-Select\\[3:0\\]
+selects the port-number when accessing\n\nGDBGLTSSM register."]
     #[inline(always)]
     #[must_use]
     pub fn fifo_queue_select(&mut self) -> FifoQueueSelectW<Usb3GdbgfifospaceSpec> {

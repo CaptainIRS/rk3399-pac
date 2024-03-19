@@ -2,7 +2,7 @@
 pub type R = crate::R<DdrDenaliCtl47Spec>;
 #[doc = "Register `DDR_DENALI_CTL_47` writer"]
 pub type W = crate::W<DdrDenaliCtl47Spec>;
-#[doc = "Field `AREFRESH` writer - Initiate auto-refresh at the end of the current burst boundary. Set to 1 to trigger. WRITE-ONLY"]
+#[doc = "Field `AREFRESH` writer - Initiate auto-refresh at the end of the current burst boundary. Set to 1 to trigger."]
 pub type ArefreshW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TREF_ENABLE` reader - Issue auto-refresh commands to the DRAMs at the interval defined in the TREF parameter. Set to 1 to enable."]
 pub type TrefEnableR = crate::BitReader;
@@ -16,7 +16,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - Initiate auto-refresh at the end of the current burst boundary. Set to 1 to trigger. WRITE-ONLY"]
+    #[doc = "Bit 0 - Initiate auto-refresh at the end of the current burst boundary. Set to 1 to trigger."]
     #[inline(always)]
     #[must_use]
     pub fn arefresh(&mut self) -> ArefreshW<DdrDenaliCtl47Spec> {

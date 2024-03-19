@@ -2,14 +2,15 @@
 pub type R = crate::R<CruClkselCon14Spec>;
 #[doc = "Register `CRU_CLKSEL_CON14` writer"]
 pub type W = crate::W<CruClkselCon14Spec>;
-#[doc = "Field `ACLK_PERIHP_DIV_CON` reader - aclk_perihp divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `ACLK_PERIHP_DIV_CON` reader - aclk_perihp divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type AclkPerihpDivConR = crate::FieldReader;
-#[doc = "Field `ACLK_PERIHP_DIV_CON` writer - aclk_perihp divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `ACLK_PERIHP_DIV_CON` writer - aclk_perihp divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type AclkPerihpDivConW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "clk_usbphy_480m clock channel select control register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClkUsbphy480mChSel {
-    #[doc = "0: usb_phy1_480m"]
+    #[doc = "0: usb_phy0_480m"]
     B0 = 0,
     #[doc = "1: usb_phy1_480m"]
     B1 = 1,
@@ -31,7 +32,7 @@ impl ClkUsbphy480mChSelR {
             true => ClkUsbphy480mChSel::B1,
         }
     }
-    #[doc = "usb_phy1_480m"]
+    #[doc = "usb_phy0_480m"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClkUsbphy480mChSel::B0
@@ -48,7 +49,7 @@ impl<'a, REG> ClkUsbphy480mChSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "usb_phy1_480m"]
+    #[doc = "usb_phy0_480m"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClkUsbphy480mChSel::B0)
@@ -60,9 +61,10 @@ where
     }
 }
 #[doc = "aclk_perihp clock source select control register\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AclkPerihpPllSel {
-    #[doc = "0: GPLL"]
+    #[doc = "0: CPLL"]
     B0 = 0,
     #[doc = "1: GPLL"]
     B1 = 1,
@@ -84,7 +86,7 @@ impl AclkPerihpPllSelR {
             true => AclkPerihpPllSel::B1,
         }
     }
-    #[doc = "GPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == AclkPerihpPllSel::B0
@@ -101,7 +103,7 @@ impl<'a, REG> AclkPerihpPllSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "GPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(AclkPerihpPllSel::B0)
@@ -112,18 +114,19 @@ where
         self.variant(AclkPerihpPllSel::B1)
     }
 }
-#[doc = "Field `HCLK_PERIHP_DIV_CON` reader - hclk_perihp divider control register clk=aclk_perihp/(div_con+1)"]
+#[doc = "Field `HCLK_PERIHP_DIV_CON` reader - hclk_perihp divider control register\n\nclk=aclk_perihp/(div_con+1)"]
 pub type HclkPerihpDivConR = crate::FieldReader;
-#[doc = "Field `HCLK_PERIHP_DIV_CON` writer - hclk_perihp divider control register clk=aclk_perihp/(div_con+1)"]
+#[doc = "Field `HCLK_PERIHP_DIV_CON` writer - hclk_perihp divider control register\n\nclk=aclk_perihp/(div_con+1)"]
 pub type HclkPerihpDivConW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-#[doc = "Field `PCLK_PERIHP_DIV_CON` reader - pclk_perihp divider control register clk=aclk_perihp/(div_con+1)"]
+#[doc = "Field `PCLK_PERIHP_DIV_CON` reader - pclk_perihp divider control register\n\nclk=aclk_perihp/(div_con+1)"]
 pub type PclkPerihpDivConR = crate::FieldReader;
-#[doc = "Field `PCLK_PERIHP_DIV_CON` writer - pclk_perihp divider control register clk=aclk_perihp/(div_con+1)"]
+#[doc = "Field `PCLK_PERIHP_DIV_CON` writer - pclk_perihp divider control register\n\nclk=aclk_perihp/(div_con+1)"]
 pub type PclkPerihpDivConW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "clk_usbpll_480m_sel clock select control register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClkUsbpll480mSel {
-    #[doc = "0: clk_usbphy_480m"]
+    #[doc = "0: xin_24m"]
     B0 = 0,
     #[doc = "1: clk_usbphy_480m"]
     B1 = 1,
@@ -145,7 +148,7 @@ impl ClkUsbpll480mSelR {
             true => ClkUsbpll480mSel::B1,
         }
     }
-    #[doc = "clk_usbphy_480m"]
+    #[doc = "xin_24m"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClkUsbpll480mSel::B0
@@ -162,7 +165,7 @@ impl<'a, REG> ClkUsbpll480mSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clk_usbphy_480m"]
+    #[doc = "xin_24m"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClkUsbpll480mSel::B0)
@@ -173,10 +176,10 @@ where
         self.variant(ClkUsbpll480mSel::B1)
     }
 }
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:4 - aclk_perihp divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:4 - aclk_perihp divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn aclk_perihp_div_con(&self) -> AclkPerihpDivConR {
         AclkPerihpDivConR::new((self.bits & 0x1f) as u8)
@@ -191,12 +194,12 @@ impl R {
     pub fn aclk_perihp_pll_sel(&self) -> AclkPerihpPllSelR {
         AclkPerihpPllSelR::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bits 8:9 - hclk_perihp divider control register clk=aclk_perihp/(div_con+1)"]
+    #[doc = "Bits 8:9 - hclk_perihp divider control register\n\nclk=aclk_perihp/(div_con+1)"]
     #[inline(always)]
     pub fn hclk_perihp_div_con(&self) -> HclkPerihpDivConR {
         HclkPerihpDivConR::new(((self.bits >> 8) & 3) as u8)
     }
-    #[doc = "Bits 12:14 - pclk_perihp divider control register clk=aclk_perihp/(div_con+1)"]
+    #[doc = "Bits 12:14 - pclk_perihp divider control register\n\nclk=aclk_perihp/(div_con+1)"]
     #[inline(always)]
     pub fn pclk_perihp_div_con(&self) -> PclkPerihpDivConR {
         PclkPerihpDivConR::new(((self.bits >> 12) & 7) as u8)
@@ -208,7 +211,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - aclk_perihp divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:4 - aclk_perihp divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_perihp_div_con(&mut self) -> AclkPerihpDivConW<CruClkselCon14Spec> {
@@ -226,13 +229,13 @@ impl W {
     pub fn aclk_perihp_pll_sel(&mut self) -> AclkPerihpPllSelW<CruClkselCon14Spec> {
         AclkPerihpPllSelW::new(self, 7)
     }
-    #[doc = "Bits 8:9 - hclk_perihp divider control register clk=aclk_perihp/(div_con+1)"]
+    #[doc = "Bits 8:9 - hclk_perihp divider control register\n\nclk=aclk_perihp/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn hclk_perihp_div_con(&mut self) -> HclkPerihpDivConW<CruClkselCon14Spec> {
         HclkPerihpDivConW::new(self, 8)
     }
-    #[doc = "Bits 12:14 - pclk_perihp divider control register clk=aclk_perihp/(div_con+1)"]
+    #[doc = "Bits 12:14 - pclk_perihp divider control register\n\nclk=aclk_perihp/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn pclk_perihp_div_con(&mut self) -> PclkPerihpDivConW<CruClkselCon14Spec> {
@@ -244,7 +247,7 @@ impl W {
     pub fn clk_usbpll_480m_sel(&mut self) -> ClkUsbpll480mSelW<CruClkselCon14Spec> {
         ClkUsbpll480mSelW::new(self, 15)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkselCon14Spec> {

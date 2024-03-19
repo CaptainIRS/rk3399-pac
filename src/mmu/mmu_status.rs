@@ -1,9 +1,10 @@
 #[doc = "Register `MMU_STATUS` reader"]
 pub type R = crate::R<MmuStatusSpec>;
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MmuPagingEnabled {
-    #[doc = "0: Paging is enabled"]
+    #[doc = "0: paging is disabled"]
     B0 = 0,
     #[doc = "1: Paging is enabled"]
     B1 = 1,
@@ -25,7 +26,7 @@ impl MmuPagingEnabledR {
             true => MmuPagingEnabled::B1,
         }
     }
-    #[doc = "Paging is enabled"]
+    #[doc = "paging is disabled"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == MmuPagingEnabled::B0
@@ -36,18 +37,19 @@ impl MmuPagingEnabledR {
         *self == MmuPagingEnabled::B1
     }
 }
-#[doc = "Field `MMU_PAGE_FAULT_ACTIVE` reader - MMU page fault mode currently enabled.The mode is enabled by command 1: page fault is active"]
+#[doc = "Field `MMU_PAGE_FAULT_ACTIVE` reader - MMU page fault mode currently enabled.The\n\nmode is enabled by command\n\n1: page fault is active"]
 pub type MmuPageFaultActiveR = crate::BitReader;
-#[doc = "Field `MMU_STALL_ACTIVE` reader - MMU stall mode currently enabled. The mode is enabled by command. 1: MMU is in stall active status"]
+#[doc = "Field `MMU_STALL_ACTIVE` reader - MMU stall mode currently enabled. The mode\n\nis enabled by command.\n\n1: MMU is in stall active status"]
 pub type MmuStallActiveR = crate::BitReader;
-#[doc = "Field `MMU_IDLE` reader - the MMu is idle when accesses are being translated and there are no unfinished translated access. The MMU_IDLE signal only reports idle when the MMU processor is idle and accesses are active on the external bus. Note: the MMU can be idle in page fault mode. 1: MMU is idle"]
+#[doc = "Field `MMU_IDLE` reader - the MMu is idle when accesses are being\n\ntranslated and there are no unfinished\n\ntranslated access. The MMU_IDLE signal only\n\nreports idle when the MMU processor is idle\n\nand accesses are active on the external bus.\n\nNote: the MMU can be idle in page fault mode.\n\n1: MMU is idle"]
 pub type MmuIdleR = crate::BitReader;
 #[doc = "Field `MMU_REPLAY_BUFFER_EMPTY` reader - 1:The MMU replay buffer is empty."]
 pub type MmuReplayBufferEmptyR = crate::BitReader;
 #[doc = "The direction of access for last page fault:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MmuPageFaultIsWrite {
-    #[doc = "0: write"]
+    #[doc = "0: read"]
     B0 = 0,
     #[doc = "1: write"]
     B1 = 1,
@@ -69,7 +71,7 @@ impl MmuPageFaultIsWriteR {
             true => MmuPageFaultIsWrite::B1,
         }
     }
-    #[doc = "write"]
+    #[doc = "read"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == MmuPageFaultIsWrite::B0
@@ -80,7 +82,7 @@ impl MmuPageFaultIsWriteR {
         *self == MmuPageFaultIsWrite::B1
     }
 }
-#[doc = "Field `MMU_PAGE_FAULT_BUS_ID` reader - Index of master responsible for the last page fault"]
+#[doc = "Field `MMU_PAGE_FAULT_BUS_ID` reader - Index of master responsible for the last page\n\nfault"]
 pub type MmuPageFaultBusIdR = crate::FieldReader;
 impl R {
     #[doc = "Bit 0"]
@@ -88,17 +90,17 @@ impl R {
     pub fn mmu_paging_enabled(&self) -> MmuPagingEnabledR {
         MmuPagingEnabledR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - MMU page fault mode currently enabled.The mode is enabled by command 1: page fault is active"]
+    #[doc = "Bit 1 - MMU page fault mode currently enabled.The\n\nmode is enabled by command\n\n1: page fault is active"]
     #[inline(always)]
     pub fn mmu_page_fault_active(&self) -> MmuPageFaultActiveR {
         MmuPageFaultActiveR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - MMU stall mode currently enabled. The mode is enabled by command. 1: MMU is in stall active status"]
+    #[doc = "Bit 2 - MMU stall mode currently enabled. The mode\n\nis enabled by command.\n\n1: MMU is in stall active status"]
     #[inline(always)]
     pub fn mmu_stall_active(&self) -> MmuStallActiveR {
         MmuStallActiveR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - the MMu is idle when accesses are being translated and there are no unfinished translated access. The MMU_IDLE signal only reports idle when the MMU processor is idle and accesses are active on the external bus. Note: the MMU can be idle in page fault mode. 1: MMU is idle"]
+    #[doc = "Bit 3 - the MMu is idle when accesses are being\n\ntranslated and there are no unfinished\n\ntranslated access. The MMU_IDLE signal only\n\nreports idle when the MMU processor is idle\n\nand accesses are active on the external bus.\n\nNote: the MMU can be idle in page fault mode.\n\n1: MMU is idle"]
     #[inline(always)]
     pub fn mmu_idle(&self) -> MmuIdleR {
         MmuIdleR::new(((self.bits >> 3) & 1) != 0)
@@ -113,7 +115,7 @@ impl R {
     pub fn mmu_page_fault_is_write(&self) -> MmuPageFaultIsWriteR {
         MmuPageFaultIsWriteR::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bits 6:10 - Index of master responsible for the last page fault"]
+    #[doc = "Bits 6:10 - Index of master responsible for the last page\n\nfault"]
     #[inline(always)]
     pub fn mmu_page_fault_bus_id(&self) -> MmuPageFaultBusIdR {
         MmuPageFaultBusIdR::new(((self.bits >> 6) & 0x1f) as u8)

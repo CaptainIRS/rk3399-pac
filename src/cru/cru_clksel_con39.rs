@@ -2,17 +2,18 @@
 pub type R = crate::R<CruClkselCon39Spec>;
 #[doc = "Register `CRU_CLKSEL_CON39` writer"]
 pub type W = crate::W<CruClkselCon39Spec>;
-#[doc = "Field `ACLK_USB3_DIV_CON` reader - aclk_usb3 divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `ACLK_USB3_DIV_CON` reader - aclk_usb3 divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type AclkUsb3DivConR = crate::FieldReader;
-#[doc = "Field `ACLK_USB3_DIV_CON` writer - aclk_usb3 divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `ACLK_USB3_DIV_CON` writer - aclk_usb3 divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type AclkUsb3DivConW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "aclk_usb3 clock source select control register\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AclkUsb3PllSel {
-    #[doc = "0: NPLL"]
+    #[doc = "0: CPLL"]
     B00 = 0,
-    #[doc = "1: NPLL"]
+    #[doc = "1: GPLL"]
     B01 = 1,
     #[doc = "2: NPLL"]
     B1x = 2,
@@ -39,12 +40,12 @@ impl AclkUsb3PllSelR {
             _ => None,
         }
     }
-    #[doc = "NPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == AclkUsb3PllSel::B00
     }
-    #[doc = "NPLL"]
+    #[doc = "GPLL"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == AclkUsb3PllSel::B01
@@ -62,12 +63,12 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "NPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(AclkUsb3PllSel::B00)
     }
-    #[doc = "NPLL"]
+    #[doc = "GPLL"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(AclkUsb3PllSel::B01)
@@ -78,10 +79,10 @@ where
         self.variant(AclkUsb3PllSel::B1x)
     }
 }
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:4 - aclk_usb3 divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:4 - aclk_usb3 divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn aclk_usb3_div_con(&self) -> AclkUsb3DivConR {
         AclkUsb3DivConR::new((self.bits & 0x1f) as u8)
@@ -93,7 +94,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - aclk_usb3 divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:4 - aclk_usb3 divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_usb3_div_con(&mut self) -> AclkUsb3DivConW<CruClkselCon39Spec> {
@@ -105,7 +106,7 @@ impl W {
     pub fn aclk_usb3_pll_sel(&mut self) -> AclkUsb3PllSelW<CruClkselCon39Spec> {
         AclkUsb3PllSelW::new(self, 6)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkselCon39Spec> {

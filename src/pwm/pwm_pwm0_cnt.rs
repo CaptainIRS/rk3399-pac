@@ -1,9 +1,9 @@
 #[doc = "Register `PWM_PWM0_CNT` reader"]
 pub type R = crate::R<PwmPwm0CntSpec>;
-#[doc = "Field `CNT` reader - Timer Counter The 32-bit indicates current value of PWM Channel 0 counter. The counter runs at the rate of PWM clock. The value ranges from 0 to (2^32-1)."]
+#[doc = "Field `CNT` reader - Timer Counter\n\nThe 32-bit indicates current value of PWM Channel 0 counter. The\n\ncounter runs at the rate of PWM clock.\n\nThe value ranges from 0 to (2^32-1)."]
 pub type CntR = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Timer Counter The 32-bit indicates current value of PWM Channel 0 counter. The counter runs at the rate of PWM clock. The value ranges from 0 to (2^32-1)."]
+    #[doc = "Bits 0:31 - Timer Counter\n\nThe 32-bit indicates current value of PWM Channel 0 counter. The\n\ncounter runs at the rate of PWM clock.\n\nThe value ranges from 0 to (2^32-1)."]
     #[inline(always)]
     pub fn cnt(&self) -> CntR {
         CntR::new(self.bits)

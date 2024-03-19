@@ -3,9 +3,10 @@ pub type R = crate::R<TsadcAutoConSpec>;
 #[doc = "Register `TSADC_AUTO_CON` writer"]
 pub type W = crate::W<TsadcAutoConSpec>;
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AutoEn {
-    #[doc = "0: TSADC controller works at auto mode"]
+    #[doc = "0: TSADC controller works at user-define mode"]
     B0 = 0,
     #[doc = "1: TSADC controller works at auto mode"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl AutoEnR {
             true => AutoEn::B1,
         }
     }
-    #[doc = "TSADC controller works at auto mode"]
+    #[doc = "TSADC controller works at user-define mode"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == AutoEn::B0
@@ -44,7 +45,7 @@ impl<'a, REG> AutoEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "TSADC controller works at auto mode"]
+    #[doc = "TSADC controller works at user-define mode"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(AutoEn::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "temperature coefficient\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TsadcQSel {
-    #[doc = "0: use(1024 - tsadc_q) as output (negative temperature coefficient) RK3399 is negative temprature coefficient, so please set this bit as 1'b1"]
+    #[doc = "0: use tsadc_q as output(positive temperature coefficient)"]
     B0 = 0,
     #[doc = "1: use(1024 - tsadc_q) as output (negative temperature coefficient) RK3399 is negative temprature coefficient, so please set this bit as 1'b1"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl TsadcQSelR {
             true => TsadcQSel::B1,
         }
     }
-    #[doc = "use(1024 - tsadc_q) as output (negative temperature coefficient) RK3399 is negative temprature coefficient, so please set this bit as 1'b1"]
+    #[doc = "use tsadc_q as output(positive temperature coefficient)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == TsadcQSel::B0
@@ -97,7 +99,7 @@ impl<'a, REG> TsadcQSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "use(1024 - tsadc_q) as output (negative temperature coefficient) RK3399 is negative temprature coefficient, so please set this bit as 1'b1"]
+    #[doc = "use tsadc_q as output(positive temperature coefficient)"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(TsadcQSel::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Src0En {
-    #[doc = "0: if the temperature of source 0 is too high , TSHUT will be valid"]
+    #[doc = "0: do not care the temperature of source 0"]
     B0 = 0,
     #[doc = "1: if the temperature of source 0 is too high , TSHUT will be valid"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl Src0EnR {
             true => Src0En::B1,
         }
     }
-    #[doc = "if the temperature of source 0 is too high , TSHUT will be valid"]
+    #[doc = "do not care the temperature of source 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Src0En::B0
@@ -150,7 +153,7 @@ impl<'a, REG> Src0EnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "if the temperature of source 0 is too high , TSHUT will be valid"]
+    #[doc = "do not care the temperature of source 0"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Src0En::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Src1En {
-    #[doc = "0: if the temperature of source 0 is too high , TSHUT will be valid"]
+    #[doc = "0: do not care the temperature of source 1"]
     B0 = 0,
     #[doc = "1: if the temperature of source 0 is too high , TSHUT will be valid"]
     B1 = 1,
@@ -186,7 +190,7 @@ impl Src1EnR {
             true => Src1En::B1,
         }
     }
-    #[doc = "if the temperature of source 0 is too high , TSHUT will be valid"]
+    #[doc = "do not care the temperature of source 1"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Src1En::B0
@@ -203,7 +207,7 @@ impl<'a, REG> Src1EnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "if the temperature of source 0 is too high , TSHUT will be valid"]
+    #[doc = "do not care the temperature of source 1"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Src1En::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TshutProlarity {
-    #[doc = "0: high active"]
+    #[doc = "0: low active"]
     B0 = 0,
     #[doc = "1: high active"]
     B1 = 1,
@@ -239,7 +244,7 @@ impl TshutProlarityR {
             true => TshutProlarity::B1,
         }
     }
-    #[doc = "high active"]
+    #[doc = "low active"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == TshutProlarity::B0
@@ -256,7 +261,7 @@ impl<'a, REG> TshutProlarityW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "high active"]
+    #[doc = "low active"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(TshutProlarity::B0)
@@ -268,9 +273,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Src0LtEn {
-    #[doc = "0: enable the low temperature monitor of source 0"]
+    #[doc = "0: do not care low temperature of source 0"]
     B0 = 0,
     #[doc = "1: enable the low temperature monitor of source 0"]
     B1 = 1,
@@ -292,7 +298,7 @@ impl Src0LtEnR {
             true => Src0LtEn::B1,
         }
     }
-    #[doc = "enable the low temperature monitor of source 0"]
+    #[doc = "do not care low temperature of source 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Src0LtEn::B0
@@ -309,7 +315,7 @@ impl<'a, REG> Src0LtEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable the low temperature monitor of source 0"]
+    #[doc = "do not care low temperature of source 0"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Src0LtEn::B0)
@@ -321,9 +327,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Src1LtEn {
-    #[doc = "0: enable the low temperature monitor of source 0"]
+    #[doc = "0: do not care low temperature of source 0"]
     B0 = 0,
     #[doc = "1: enable the low temperature monitor of source 0"]
     B1 = 1,
@@ -345,7 +352,7 @@ impl Src1LtEnR {
             true => Src1LtEn::B1,
         }
     }
-    #[doc = "enable the low temperature monitor of source 0"]
+    #[doc = "do not care low temperature of source 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Src1LtEn::B0
@@ -362,7 +369,7 @@ impl<'a, REG> Src1LtEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable the low temperature monitor of source 0"]
+    #[doc = "do not care low temperature of source 0"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Src1LtEn::B0)
@@ -374,9 +381,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AutoStatus {
-    #[doc = "0: auto mode in progress."]
+    #[doc = "0: auto mode stop;"]
     B0 = 0,
     #[doc = "1: auto mode in progress."]
     B1 = 1,
@@ -398,7 +406,7 @@ impl AutoStatusR {
             true => AutoStatus::B1,
         }
     }
-    #[doc = "auto mode in progress."]
+    #[doc = "auto mode stop;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == AutoStatus::B0
@@ -410,9 +418,10 @@ impl AutoStatusR {
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SampleDlySel {
-    #[doc = "0: AUTO_PERIOD_HT is used"]
+    #[doc = "0: AUTO_PERIOD is used"]
     B0 = 0,
     #[doc = "1: AUTO_PERIOD_HT is used"]
     B1 = 1,
@@ -434,7 +443,7 @@ impl SampleDlySelR {
             true => SampleDlySel::B1,
         }
     }
-    #[doc = "AUTO_PERIOD_HT is used"]
+    #[doc = "AUTO_PERIOD is used"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SampleDlySel::B0
@@ -445,13 +454,13 @@ impl SampleDlySelR {
         *self == SampleDlySel::B1
     }
 }
-#[doc = "Field `LAST_TSHUT_2GPIO` reader - last_tshut_2gpio for hardware reset TSHUT status. This bit will set to 1 when tshut is valid, and only be cleared when application write 1 to it. This bit will not be cleared by system reset."]
+#[doc = "Field `LAST_TSHUT_2GPIO` reader - last_tshut_2gpio for hardware reset\n\nTSHUT status.\n\nThis bit will set to 1 when tshut is valid, and only be cleared when\n\napplication write 1 to it.\n\nThis bit will not be cleared by system reset."]
 pub type LastTshut2gpioR = crate::BitReader;
-#[doc = "Field `LAST_TSHUT_2GPIO` writer - last_tshut_2gpio for hardware reset TSHUT status. This bit will set to 1 when tshut is valid, and only be cleared when application write 1 to it. This bit will not be cleared by system reset."]
+#[doc = "Field `LAST_TSHUT_2GPIO` writer - last_tshut_2gpio for hardware reset\n\nTSHUT status.\n\nThis bit will set to 1 when tshut is valid, and only be cleared when\n\napplication write 1 to it.\n\nThis bit will not be cleared by system reset."]
 pub type LastTshut2gpioW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `LAST_TSHUT_2CRU` reader - last_tshut_2cru for cru first/second reset TSHUT status. This bit will set to 1 when tshut is valid, and only be cleared when application write 1 to it. This bit will not be cleared by system reset."]
+#[doc = "Field `LAST_TSHUT_2CRU` reader - last_tshut_2cru for cru first/second reset\n\nTSHUT status.\n\nThis bit will set to 1 when tshut is valid, and only be cleared when\n\napplication write 1 to it.\n\nThis bit will not be cleared by system reset."]
 pub type LastTshut2cruR = crate::BitReader;
-#[doc = "Field `LAST_TSHUT_2CRU` writer - last_tshut_2cru for cru first/second reset TSHUT status. This bit will set to 1 when tshut is valid, and only be cleared when application write 1 to it. This bit will not be cleared by system reset."]
+#[doc = "Field `LAST_TSHUT_2CRU` writer - last_tshut_2cru for cru first/second reset\n\nTSHUT status.\n\nThis bit will set to 1 when tshut is valid, and only be cleared when\n\napplication write 1 to it.\n\nThis bit will not be cleared by system reset."]
 pub type LastTshut2cruW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0"]
@@ -499,12 +508,12 @@ impl R {
     pub fn sample_dly_sel(&self) -> SampleDlySelR {
         SampleDlySelR::new(((self.bits >> 17) & 1) != 0)
     }
-    #[doc = "Bit 24 - last_tshut_2gpio for hardware reset TSHUT status. This bit will set to 1 when tshut is valid, and only be cleared when application write 1 to it. This bit will not be cleared by system reset."]
+    #[doc = "Bit 24 - last_tshut_2gpio for hardware reset\n\nTSHUT status.\n\nThis bit will set to 1 when tshut is valid, and only be cleared when\n\napplication write 1 to it.\n\nThis bit will not be cleared by system reset."]
     #[inline(always)]
     pub fn last_tshut_2gpio(&self) -> LastTshut2gpioR {
         LastTshut2gpioR::new(((self.bits >> 24) & 1) != 0)
     }
-    #[doc = "Bit 25 - last_tshut_2cru for cru first/second reset TSHUT status. This bit will set to 1 when tshut is valid, and only be cleared when application write 1 to it. This bit will not be cleared by system reset."]
+    #[doc = "Bit 25 - last_tshut_2cru for cru first/second reset\n\nTSHUT status.\n\nThis bit will set to 1 when tshut is valid, and only be cleared when\n\napplication write 1 to it.\n\nThis bit will not be cleared by system reset."]
     #[inline(always)]
     pub fn last_tshut_2cru(&self) -> LastTshut2cruR {
         LastTshut2cruR::new(((self.bits >> 25) & 1) != 0)
@@ -553,13 +562,13 @@ impl W {
     pub fn src1_lt_en(&mut self) -> Src1LtEnW<TsadcAutoConSpec> {
         Src1LtEnW::new(self, 13)
     }
-    #[doc = "Bit 24 - last_tshut_2gpio for hardware reset TSHUT status. This bit will set to 1 when tshut is valid, and only be cleared when application write 1 to it. This bit will not be cleared by system reset."]
+    #[doc = "Bit 24 - last_tshut_2gpio for hardware reset\n\nTSHUT status.\n\nThis bit will set to 1 when tshut is valid, and only be cleared when\n\napplication write 1 to it.\n\nThis bit will not be cleared by system reset."]
     #[inline(always)]
     #[must_use]
     pub fn last_tshut_2gpio(&mut self) -> LastTshut2gpioW<TsadcAutoConSpec> {
         LastTshut2gpioW::new(self, 24)
     }
-    #[doc = "Bit 25 - last_tshut_2cru for cru first/second reset TSHUT status. This bit will set to 1 when tshut is valid, and only be cleared when application write 1 to it. This bit will not be cleared by system reset."]
+    #[doc = "Bit 25 - last_tshut_2cru for cru first/second reset\n\nTSHUT status.\n\nThis bit will set to 1 when tshut is valid, and only be cleared when\n\napplication write 1 to it.\n\nThis bit will not be cleared by system reset."]
     #[inline(always)]
     #[must_use]
     pub fn last_tshut_2cru(&mut self) -> LastTshut2cruW<TsadcAutoConSpec> {

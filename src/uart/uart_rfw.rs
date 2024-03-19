@@ -1,30 +1,30 @@
 #[doc = "Register `UART_RFW` writer"]
 pub type W = crate::W<UartRfwSpec>;
-#[doc = "Field `RECEIVE_FIFO_WRITE` writer - Receive FIFO Write Data. These bits are only valid when FIFO access mode is enabled (FAR\\[0\\]
-is set to one). When FIFOs are enabled, the data that is written to the RFWD is pushed into the receive FIFO. Each consecutive write pushes the new data to the next write location in the receive FIFO. When FIFOs not enabled, the data that is written to the RFWD is pushed into the RBR."]
+#[doc = "Field `RECEIVE_FIFO_WRITE` writer - Receive FIFO Write Data.\n\nThese bits are only valid when FIFO access mode is enabled\n\n(FAR\\[0\\]
+is set to one).\n\nWhen FIFOs are enabled, the data that is written to the RFWD is\n\npushed into the receive FIFO. Each consecutive write pushes the\n\nnew data to the next write location in the receive FIFO.\n\nWhen FIFOs not enabled, the data that is written to the RFWD is\n\npushed into the RBR."]
 pub type ReceiveFifoWriteW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-#[doc = "Field `RECEIVE_FIFO_PARITY_ERROR` writer - Receive FIFO Parity Error. These bits are only valid when FIFO access mode is enabled (FAR\\[0\\]
+#[doc = "Field `RECEIVE_FIFO_PARITY_ERROR` writer - Receive FIFO Parity Error.\n\nThese bits are only valid when FIFO access mode is enabled\n\n(FAR\\[0\\]
 is set to one)."]
 pub type ReceiveFifoParityErrorW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `RECEIVE_FIFO_FRAMING_ERROR` writer - Receive FIFO Framing Error. These bits are only valid when FIFO access mode is enabled (FAR\\[0\\]
+#[doc = "Field `RECEIVE_FIFO_FRAMING_ERROR` writer - Receive FIFO Framing Error.\n\nThese bits are only valid when FIFO access mode is enabled\n\n(FAR\\[0\\]
 is set to one)."]
 pub type ReceiveFifoFramingErrorW<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
-    #[doc = "Bits 0:7 - Receive FIFO Write Data. These bits are only valid when FIFO access mode is enabled (FAR\\[0\\]
-is set to one). When FIFOs are enabled, the data that is written to the RFWD is pushed into the receive FIFO. Each consecutive write pushes the new data to the next write location in the receive FIFO. When FIFOs not enabled, the data that is written to the RFWD is pushed into the RBR."]
+    #[doc = "Bits 0:7 - Receive FIFO Write Data.\n\nThese bits are only valid when FIFO access mode is enabled\n\n(FAR\\[0\\]
+is set to one).\n\nWhen FIFOs are enabled, the data that is written to the RFWD is\n\npushed into the receive FIFO. Each consecutive write pushes the\n\nnew data to the next write location in the receive FIFO.\n\nWhen FIFOs not enabled, the data that is written to the RFWD is\n\npushed into the RBR."]
     #[inline(always)]
     #[must_use]
     pub fn receive_fifo_write(&mut self) -> ReceiveFifoWriteW<UartRfwSpec> {
         ReceiveFifoWriteW::new(self, 0)
     }
-    #[doc = "Bit 8 - Receive FIFO Parity Error. These bits are only valid when FIFO access mode is enabled (FAR\\[0\\]
+    #[doc = "Bit 8 - Receive FIFO Parity Error.\n\nThese bits are only valid when FIFO access mode is enabled\n\n(FAR\\[0\\]
 is set to one)."]
     #[inline(always)]
     #[must_use]
     pub fn receive_fifo_parity_error(&mut self) -> ReceiveFifoParityErrorW<UartRfwSpec> {
         ReceiveFifoParityErrorW::new(self, 8)
     }
-    #[doc = "Bit 9 - Receive FIFO Framing Error. These bits are only valid when FIFO access mode is enabled (FAR\\[0\\]
+    #[doc = "Bit 9 - Receive FIFO Framing Error.\n\nThese bits are only valid when FIFO access mode is enabled\n\n(FAR\\[0\\]
 is set to one)."]
     #[inline(always)]
     #[must_use]

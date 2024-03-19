@@ -2,10 +2,11 @@
 pub type R = crate::R<PllReg5Spec>;
 #[doc = "Register `PLL_REG_5` writer"]
 pub type W = crate::W<PllReg5Spec>;
-#[doc = "option to control charge pump input voltage for 0.95V master regulator\n\nValue on reset: 0"]
+#[doc = "option to control charge pump input \n\nvoltage for 0.95V master regulator\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ChgPumpInputCtrlOp {
-    #[doc = "0: 1.8V"]
+    #[doc = "0: set by pll_reg5&lt;2:1>(default)"]
     B0 = 0,
     #[doc = "1: 1.8V"]
     B1 = 1,
@@ -16,7 +17,7 @@ impl From<ChgPumpInputCtrlOp> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CHG_PUMP_INPUT_CTRL_OP` reader - option to control charge pump input voltage for 0.95V master regulator"]
+#[doc = "Field `CHG_PUMP_INPUT_CTRL_OP` reader - option to control charge pump input \n\nvoltage for 0.95V master regulator"]
 pub type ChgPumpInputCtrlOpR = crate::BitReader<ChgPumpInputCtrlOp>;
 impl ChgPumpInputCtrlOpR {
     #[doc = "Get enumerated values variant"]
@@ -27,7 +28,7 @@ impl ChgPumpInputCtrlOpR {
             true => ChgPumpInputCtrlOp::B1,
         }
     }
-    #[doc = "1.8V"]
+    #[doc = "set by pll_reg5&lt;2:1>(default)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ChgPumpInputCtrlOp::B0
@@ -38,13 +39,13 @@ impl ChgPumpInputCtrlOpR {
         *self == ChgPumpInputCtrlOp::B1
     }
 }
-#[doc = "Field `CHG_PUMP_INPUT_CTRL_OP` writer - option to control charge pump input voltage for 0.95V master regulator"]
+#[doc = "Field `CHG_PUMP_INPUT_CTRL_OP` writer - option to control charge pump input \n\nvoltage for 0.95V master regulator"]
 pub type ChgPumpInputCtrlOpW<'a, REG> = crate::BitWriter1C<'a, REG, ChgPumpInputCtrlOp>;
 impl<'a, REG> ChgPumpInputCtrlOpW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "1.8V"]
+    #[doc = "set by pll_reg5&lt;2:1>(default)"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ChgPumpInputCtrlOp::B0)
@@ -55,15 +56,16 @@ where
         self.variant(ChgPumpInputCtrlOp::B1)
     }
 }
-#[doc = "control charge pump input voltage for 0.95V master regulator\n\nValue on reset: 0"]
+#[doc = "control charge pump input voltage for \n\n0.95V master regulator\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ChgPumpInputCtrl {
-    #[doc = "0: 1.4V"]
+    #[doc = "0: 1.1V"]
     B00 = 0,
-    #[doc = "1: 1.4V"]
+    #[doc = "1: 1.2V(default)"]
     B01 = 1,
-    #[doc = "2: 1.4V"]
+    #[doc = "2: 1.3V"]
     B10 = 2,
     #[doc = "3: 1.4V"]
     B11 = 3,
@@ -77,7 +79,7 @@ impl From<ChgPumpInputCtrl> for u8 {
 impl crate::FieldSpec for ChgPumpInputCtrl {
     type Ux = u8;
 }
-#[doc = "Field `CHG_PUMP_INPUT_CTRL` reader - control charge pump input voltage for 0.95V master regulator"]
+#[doc = "Field `CHG_PUMP_INPUT_CTRL` reader - control charge pump input voltage for \n\n0.95V master regulator"]
 pub type ChgPumpInputCtrlR = crate::FieldReader<ChgPumpInputCtrl>;
 impl ChgPumpInputCtrlR {
     #[doc = "Get enumerated values variant"]
@@ -91,17 +93,17 @@ impl ChgPumpInputCtrlR {
             _ => unreachable!(),
         }
     }
-    #[doc = "1.4V"]
+    #[doc = "1.1V"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == ChgPumpInputCtrl::B00
     }
-    #[doc = "1.4V"]
+    #[doc = "1.2V(default)"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == ChgPumpInputCtrl::B01
     }
-    #[doc = "1.4V"]
+    #[doc = "1.3V"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == ChgPumpInputCtrl::B10
@@ -112,24 +114,24 @@ impl ChgPumpInputCtrlR {
         *self == ChgPumpInputCtrl::B11
     }
 }
-#[doc = "Field `CHG_PUMP_INPUT_CTRL` writer - control charge pump input voltage for 0.95V master regulator"]
+#[doc = "Field `CHG_PUMP_INPUT_CTRL` writer - control charge pump input voltage for \n\n0.95V master regulator"]
 pub type ChgPumpInputCtrlW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ChgPumpInputCtrl>;
 impl<'a, REG> ChgPumpInputCtrlW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "1.4V"]
+    #[doc = "1.1V"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(ChgPumpInputCtrl::B00)
     }
-    #[doc = "1.4V"]
+    #[doc = "1.2V(default)"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(ChgPumpInputCtrl::B01)
     }
-    #[doc = "1.4V"]
+    #[doc = "1.3V"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(ChgPumpInputCtrl::B10)
@@ -141,9 +143,10 @@ where
     }
 }
 #[doc = "slave standby current select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum StandbyCurrentSel {
-    #[doc = "1: keep 300uA standby current (default)"]
+    #[doc = "1: adding 200uA standby current"]
     B1 = 1,
     #[doc = "0: keep 300uA standby current (default)"]
     B0 = 0,
@@ -165,7 +168,7 @@ impl StandbyCurrentSelR {
             false => StandbyCurrentSel::B0,
         }
     }
-    #[doc = "keep 300uA standby current (default)"]
+    #[doc = "adding 200uA standby current"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == StandbyCurrentSel::B1
@@ -182,7 +185,7 @@ impl<'a, REG> StandbyCurrentSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "keep 300uA standby current (default)"]
+    #[doc = "adding 200uA standby current"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(StandbyCurrentSel::B1)
@@ -193,17 +196,17 @@ where
         self.variant(StandbyCurrentSel::B0)
     }
 }
-#[doc = "Field `REGULATOR_V_SEL` reader - slave regulator output voltage select 000 900V 001 0.925V 010 0.950V(default) 011 0.975V 100 1.000V 101 1.025V 110 1.050V"]
+#[doc = "Field `REGULATOR_V_SEL` reader - slave regulator output voltage select \n\n000 900V \n\n001 0.925V \n\n010 0.950V(default) \n\n011 0.975V \n\n100 1.000V \n\n101 1.025V \n\n110 1.050V"]
 pub type RegulatorVSelR = crate::FieldReader;
-#[doc = "Field `REGULATOR_V_SEL` writer - slave regulator output voltage select 000 900V 001 0.925V 010 0.950V(default) 011 0.975V 100 1.000V 101 1.025V 110 1.050V"]
+#[doc = "Field `REGULATOR_V_SEL` writer - slave regulator output voltage select \n\n000 900V \n\n001 0.925V \n\n010 0.950V(default) \n\n011 0.975V \n\n100 1.000V \n\n101 1.025V \n\n110 1.050V"]
 pub type RegulatorVSelW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
-    #[doc = "Bit 0 - option to control charge pump input voltage for 0.95V master regulator"]
+    #[doc = "Bit 0 - option to control charge pump input \n\nvoltage for 0.95V master regulator"]
     #[inline(always)]
     pub fn chg_pump_input_ctrl_op(&self) -> ChgPumpInputCtrlOpR {
         ChgPumpInputCtrlOpR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bits 1:2 - control charge pump input voltage for 0.95V master regulator"]
+    #[doc = "Bits 1:2 - control charge pump input voltage for \n\n0.95V master regulator"]
     #[inline(always)]
     pub fn chg_pump_input_ctrl(&self) -> ChgPumpInputCtrlR {
         ChgPumpInputCtrlR::new(((self.bits >> 1) & 3) as u8)
@@ -213,20 +216,20 @@ impl R {
     pub fn standby_current_sel(&self) -> StandbyCurrentSelR {
         StandbyCurrentSelR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bits 4:6 - slave regulator output voltage select 000 900V 001 0.925V 010 0.950V(default) 011 0.975V 100 1.000V 101 1.025V 110 1.050V"]
+    #[doc = "Bits 4:6 - slave regulator output voltage select \n\n000 900V \n\n001 0.925V \n\n010 0.950V(default) \n\n011 0.975V \n\n100 1.000V \n\n101 1.025V \n\n110 1.050V"]
     #[inline(always)]
     pub fn regulator_v_sel(&self) -> RegulatorVSelR {
         RegulatorVSelR::new(((self.bits >> 4) & 7) as u8)
     }
 }
 impl W {
-    #[doc = "Bit 0 - option to control charge pump input voltage for 0.95V master regulator"]
+    #[doc = "Bit 0 - option to control charge pump input \n\nvoltage for 0.95V master regulator"]
     #[inline(always)]
     #[must_use]
     pub fn chg_pump_input_ctrl_op(&mut self) -> ChgPumpInputCtrlOpW<PllReg5Spec> {
         ChgPumpInputCtrlOpW::new(self, 0)
     }
-    #[doc = "Bits 1:2 - control charge pump input voltage for 0.95V master regulator"]
+    #[doc = "Bits 1:2 - control charge pump input voltage for \n\n0.95V master regulator"]
     #[inline(always)]
     #[must_use]
     pub fn chg_pump_input_ctrl(&mut self) -> ChgPumpInputCtrlW<PllReg5Spec> {
@@ -238,7 +241,7 @@ impl W {
     pub fn standby_current_sel(&mut self) -> StandbyCurrentSelW<PllReg5Spec> {
         StandbyCurrentSelW::new(self, 3)
     }
-    #[doc = "Bits 4:6 - slave regulator output voltage select 000 900V 001 0.925V 010 0.950V(default) 011 0.975V 100 1.000V 101 1.025V 110 1.050V"]
+    #[doc = "Bits 4:6 - slave regulator output voltage select \n\n000 900V \n\n001 0.925V \n\n010 0.950V(default) \n\n011 0.975V \n\n100 1.000V \n\n101 1.025V \n\n110 1.050V"]
     #[inline(always)]
     #[must_use]
     pub fn regulator_v_sel(&mut self) -> RegulatorVSelW<PllReg5Spec> {

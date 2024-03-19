@@ -2,11 +2,11 @@
 pub type R = crate::R<SdmmcUhsRegSpec>;
 #[doc = "Register `SDMMC_UHS_REG` writer"]
 pub type W = crate::W<SdmmcUhsRegSpec>;
-#[doc = "DDR mode. Determines the voltage fed to the buffers by an external voltage regulator.\n\nValue on reset: 0"]
+#[doc = "DDR mode. Determines the voltage fed to the buffers by an\n\nexternal voltage regulator.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DdrReg {
-    #[doc = "0: DDR mode UHS_REG \\[16\\]
-should be set for card."]
+    #[doc = "0: non-DDR mode"]
     B0 = 0,
     #[doc = "1: DDR mode UHS_REG \\[16\\]
 should be set for card."]
@@ -18,7 +18,7 @@ impl From<DdrReg> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DDR_REG` reader - DDR mode. Determines the voltage fed to the buffers by an external voltage regulator."]
+#[doc = "Field `DDR_REG` reader - DDR mode. Determines the voltage fed to the buffers by an\n\nexternal voltage regulator."]
 pub type DdrRegR = crate::BitReader<DdrReg>;
 impl DdrRegR {
     #[doc = "Get enumerated values variant"]
@@ -29,8 +29,7 @@ impl DdrRegR {
             true => DdrReg::B1,
         }
     }
-    #[doc = "DDR mode UHS_REG \\[16\\]
-should be set for card."]
+    #[doc = "non-DDR mode"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == DdrReg::B0
@@ -42,14 +41,13 @@ should be set for card."]
         *self == DdrReg::B1
     }
 }
-#[doc = "Field `DDR_REG` writer - DDR mode. Determines the voltage fed to the buffers by an external voltage regulator."]
+#[doc = "Field `DDR_REG` writer - DDR mode. Determines the voltage fed to the buffers by an\n\nexternal voltage regulator."]
 pub type DdrRegW<'a, REG> = crate::BitWriter<'a, REG, DdrReg>;
 impl<'a, REG> DdrRegW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "DDR mode UHS_REG \\[16\\]
-should be set for card."]
+    #[doc = "non-DDR mode"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(DdrReg::B0)
@@ -62,14 +60,14 @@ should be set for card."]
     }
 }
 impl R {
-    #[doc = "Bit 16 - DDR mode. Determines the voltage fed to the buffers by an external voltage regulator."]
+    #[doc = "Bit 16 - DDR mode. Determines the voltage fed to the buffers by an\n\nexternal voltage regulator."]
     #[inline(always)]
     pub fn ddr_reg(&self) -> DdrRegR {
         DdrRegR::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 16 - DDR mode. Determines the voltage fed to the buffers by an external voltage regulator."]
+    #[doc = "Bit 16 - DDR mode. Determines the voltage fed to the buffers by an\n\nexternal voltage regulator."]
     #[inline(always)]
     #[must_use]
     pub fn ddr_reg(&mut self) -> DdrRegW<SdmmcUhsRegSpec> {

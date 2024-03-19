@@ -1,9 +1,10 @@
 #[doc = "Register `SARADC_STAS` reader"]
 pub type R = crate::R<SaradcStasSpec>;
 #[doc = "ADC status (EOC)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AdcStatus {
-    #[doc = "0: Conversion in progress"]
+    #[doc = "0: ADC stop"]
     B0 = 0,
     #[doc = "1: Conversion in progress"]
     B1 = 1,
@@ -25,7 +26,7 @@ impl AdcStatusR {
             true => AdcStatus::B1,
         }
     }
-    #[doc = "Conversion in progress"]
+    #[doc = "ADC stop"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == AdcStatus::B0

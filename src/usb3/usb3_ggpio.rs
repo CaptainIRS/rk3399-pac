@@ -2,32 +2,32 @@
 pub type R = crate::R<Usb3GgpioSpec>;
 #[doc = "Register `USB3_GGPIO` writer"]
 pub type W = crate::W<Usb3GgpioSpec>;
-#[doc = "Field `GPI` reader - General Purpose Input This field's read value reflects the gp_in\\[15:0\\]
+#[doc = "Field `GPI` reader - General Purpose Input\n\nThis field's read value reflects the gp_in\\[15:0\\]
 core input value."]
 pub type GpiR = crate::FieldReader<u16>;
-#[doc = "Field `GPO` reader - General Purpose Output This field's value is driven out on the gp_out\\[15:0\\]
-core output port."]
+#[doc = "Field `GPO` reader - General Purpose Output\n\nThis field's value is driven out on the gp_out\\[15:0\\]
+core output\n\nport."]
 pub type GpoR = crate::FieldReader<u16>;
-#[doc = "Field `GPO` writer - General Purpose Output This field's value is driven out on the gp_out\\[15:0\\]
-core output port."]
+#[doc = "Field `GPO` writer - General Purpose Output\n\nThis field's value is driven out on the gp_out\\[15:0\\]
+core output\n\nport."]
 pub type GpoW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:15 - General Purpose Input This field's read value reflects the gp_in\\[15:0\\]
+    #[doc = "Bits 0:15 - General Purpose Input\n\nThis field's read value reflects the gp_in\\[15:0\\]
 core input value."]
     #[inline(always)]
     pub fn gpi(&self) -> GpiR {
         GpiR::new((self.bits & 0xffff) as u16)
     }
-    #[doc = "Bits 16:31 - General Purpose Output This field's value is driven out on the gp_out\\[15:0\\]
-core output port."]
+    #[doc = "Bits 16:31 - General Purpose Output\n\nThis field's value is driven out on the gp_out\\[15:0\\]
+core output\n\nport."]
     #[inline(always)]
     pub fn gpo(&self) -> GpoR {
         GpoR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 16:31 - General Purpose Output This field's value is driven out on the gp_out\\[15:0\\]
-core output port."]
+    #[doc = "Bits 16:31 - General Purpose Output\n\nThis field's value is driven out on the gp_out\\[15:0\\]
+core output\n\nport."]
     #[inline(always)]
     #[must_use]
     pub fn gpo(&mut self) -> GpoW<Usb3GgpioSpec> {

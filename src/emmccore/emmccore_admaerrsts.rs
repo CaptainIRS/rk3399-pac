@@ -1,14 +1,15 @@
 #[doc = "Register `EMMCCORE_ADMAERRSTS` reader"]
 pub type R = crate::R<EmmccoreAdmaerrstsSpec>;
-#[doc = "This field indicates the state of ADMA when error is occurred during ADMA data transfer. This field never indicates \"10\" because ADMA never stops in this state.\n\nValue on reset: 0"]
+#[doc = "This field indicates the state of ADMA when error is occurred\n\nduring ADMA data transfer. This field never indicates \"10\"\n\nbecause ADMA never stops in this state.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Admaerrorstate {
-    #[doc = "0: ST_TFR (Transfer Data) Points to the next of the error descriptor"]
+    #[doc = "0: ST_STOP (Stop DMA) Points to next of the error descriptor"]
     D0 = 0,
-    #[doc = "1: ST_TFR (Transfer Data) Points to the next of the error descriptor"]
+    #[doc = "1: ST_FDS (Fetch Descriptor) Points to the error descriptor"]
     D1 = 1,
-    #[doc = "2: ST_TFR (Transfer Data) Points to the next of the error descriptor"]
+    #[doc = "2: Never set this state (Not used)"]
     D2 = 2,
     #[doc = "3: ST_TFR (Transfer Data) Points to the next of the error descriptor"]
     D3 = 3,
@@ -22,7 +23,7 @@ impl From<Admaerrorstate> for u8 {
 impl crate::FieldSpec for Admaerrorstate {
     type Ux = u8;
 }
-#[doc = "Field `ADMAERRORSTATE` reader - This field indicates the state of ADMA when error is occurred during ADMA data transfer. This field never indicates \"10\" because ADMA never stops in this state."]
+#[doc = "Field `ADMAERRORSTATE` reader - This field indicates the state of ADMA when error is occurred\n\nduring ADMA data transfer. This field never indicates \"10\"\n\nbecause ADMA never stops in this state."]
 pub type AdmaerrorstateR = crate::FieldReader<Admaerrorstate>;
 impl AdmaerrorstateR {
     #[doc = "Get enumerated values variant"]
@@ -36,17 +37,17 @@ impl AdmaerrorstateR {
             _ => unreachable!(),
         }
     }
-    #[doc = "ST_TFR (Transfer Data) Points to the next of the error descriptor"]
+    #[doc = "ST_STOP (Stop DMA) Points to next of the error descriptor"]
     #[inline(always)]
     pub fn is_d0(&self) -> bool {
         *self == Admaerrorstate::D0
     }
-    #[doc = "ST_TFR (Transfer Data) Points to the next of the error descriptor"]
+    #[doc = "ST_FDS (Fetch Descriptor) Points to the error descriptor"]
     #[inline(always)]
     pub fn is_d1(&self) -> bool {
         *self == Admaerrorstate::D1
     }
-    #[doc = "ST_TFR (Transfer Data) Points to the next of the error descriptor"]
+    #[doc = "Never set this state (Not used)"]
     #[inline(always)]
     pub fn is_d2(&self) -> bool {
         *self == Admaerrorstate::D2
@@ -57,10 +58,11 @@ impl AdmaerrorstateR {
         *self == Admaerrorstate::D3
     }
 }
-#[doc = "ADMA Length Mismatch Error. While Block Count Enable being set, the total data length specified by the Descriptor table is different from that specified by the Block Count and Block Length. Total data length can not be divided by the block length.\n\nValue on reset: 0"]
+#[doc = "ADMA Length Mismatch Error.\n\nWhile Block Count Enable being set, the total data length\n\nspecified by the Descriptor table is different from that specified\n\nby the Block Count and Block Length. Total data length can not\n\nbe divided by the block length.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Lenmismatch {
-    #[doc = "1: No error"]
+    #[doc = "1: Error"]
     B1 = 1,
     #[doc = "0: No error"]
     B0 = 0,
@@ -71,7 +73,7 @@ impl From<Lenmismatch> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LENMISMATCH` reader - ADMA Length Mismatch Error. While Block Count Enable being set, the total data length specified by the Descriptor table is different from that specified by the Block Count and Block Length. Total data length can not be divided by the block length."]
+#[doc = "Field `LENMISMATCH` reader - ADMA Length Mismatch Error.\n\nWhile Block Count Enable being set, the total data length\n\nspecified by the Descriptor table is different from that specified\n\nby the Block Count and Block Length. Total data length can not\n\nbe divided by the block length."]
 pub type LenmismatchR = crate::BitReader<Lenmismatch>;
 impl LenmismatchR {
     #[doc = "Get enumerated values variant"]
@@ -82,7 +84,7 @@ impl LenmismatchR {
             false => Lenmismatch::B0,
         }
     }
-    #[doc = "No error"]
+    #[doc = "Error"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Lenmismatch::B1
@@ -94,12 +96,12 @@ impl LenmismatchR {
     }
 }
 impl R {
-    #[doc = "Bits 0:1 - This field indicates the state of ADMA when error is occurred during ADMA data transfer. This field never indicates \"10\" because ADMA never stops in this state."]
+    #[doc = "Bits 0:1 - This field indicates the state of ADMA when error is occurred\n\nduring ADMA data transfer. This field never indicates \"10\"\n\nbecause ADMA never stops in this state."]
     #[inline(always)]
     pub fn admaerrorstate(&self) -> AdmaerrorstateR {
         AdmaerrorstateR::new((self.bits & 3) as u8)
     }
-    #[doc = "Bit 2 - ADMA Length Mismatch Error. While Block Count Enable being set, the total data length specified by the Descriptor table is different from that specified by the Block Count and Block Length. Total data length can not be divided by the block length."]
+    #[doc = "Bit 2 - ADMA Length Mismatch Error.\n\nWhile Block Count Enable being set, the total data length\n\nspecified by the Descriptor table is different from that specified\n\nby the Block Count and Block Length. Total data length can not\n\nbe divided by the block length."]
     #[inline(always)]
     pub fn lenmismatch(&self) -> LenmismatchR {
         LenmismatchR::new(((self.bits >> 2) & 1) != 0)

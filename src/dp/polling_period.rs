@@ -2,19 +2,19 @@
 pub type R = crate::R<PollingPeriodSpec>;
 #[doc = "Register `POLLING_PERIOD` writer"]
 pub type W = crate::W<PollingPeriodSpec>;
-#[doc = "Field `POLLING_PERIOD` reader - This register controls the interval between each time of polling operation. Interval time = POLLING_PERIOD * 2^16 * Period of 24M clock."]
+#[doc = "Field `POLLING_PERIOD` reader - This register controls the interval between \n\neach time of polling operation. Interval \n\ntime = POLLING_PERIOD * 2^16 * Period \n\nof 24M clock."]
 pub type PollingPeriodR = crate::FieldReader;
-#[doc = "Field `POLLING_PERIOD` writer - This register controls the interval between each time of polling operation. Interval time = POLLING_PERIOD * 2^16 * Period of 24M clock."]
+#[doc = "Field `POLLING_PERIOD` writer - This register controls the interval between \n\neach time of polling operation. Interval \n\ntime = POLLING_PERIOD * 2^16 * Period \n\nof 24M clock."]
 pub type PollingPeriodW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - This register controls the interval between each time of polling operation. Interval time = POLLING_PERIOD * 2^16 * Period of 24M clock."]
+    #[doc = "Bits 0:7 - This register controls the interval between \n\neach time of polling operation. Interval \n\ntime = POLLING_PERIOD * 2^16 * Period \n\nof 24M clock."]
     #[inline(always)]
     pub fn polling_period(&self) -> PollingPeriodR {
         PollingPeriodR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - This register controls the interval between each time of polling operation. Interval time = POLLING_PERIOD * 2^16 * Period of 24M clock."]
+    #[doc = "Bits 0:7 - This register controls the interval between \n\neach time of polling operation. Interval \n\ntime = POLLING_PERIOD * 2^16 * Period \n\nof 24M clock."]
     #[inline(always)]
     #[must_use]
     pub fn polling_period(&mut self) -> PollingPeriodW<PollingPeriodSpec> {

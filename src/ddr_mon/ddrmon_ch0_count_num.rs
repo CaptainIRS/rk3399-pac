@@ -1,9 +1,9 @@
 #[doc = "Register `DDRMON_CH0_COUNT_NUM` reader"]
 pub type R = crate::R<DdrmonCh0CountNumSpec>;
-#[doc = "Field `CH0_DFI_COUNT_NUM` reader - Timer count number in the statistics range of the channel 0, the value should be divided by 2 as actual timer count."]
+#[doc = "Field `CH0_DFI_COUNT_NUM` reader - Timer count number in the statistics range of the channel 0, the\n\nvalue should be divided by 2 as actual timer count."]
 pub type Ch0DfiCountNumR = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Timer count number in the statistics range of the channel 0, the value should be divided by 2 as actual timer count."]
+    #[doc = "Bits 0:31 - Timer count number in the statistics range of the channel 0, the\n\nvalue should be divided by 2 as actual timer count."]
     #[inline(always)]
     pub fn ch0_dfi_count_num(&self) -> Ch0DfiCountNumR {
         Ch0DfiCountNumR::new(self.bits)

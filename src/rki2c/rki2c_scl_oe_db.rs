@@ -2,19 +2,19 @@
 pub type R = crate::R<Rki2cSclOeDbSpec>;
 #[doc = "Register `RKI2C_SCL_OE_DB` writer"]
 pub type W = crate::W<Rki2cSclOeDbSpec>;
-#[doc = "Field `SCL_OE_DB` reader - slave hold scl debounce cycles for debounce (unit: Tclk_i2c)"]
+#[doc = "Field `SCL_OE_DB` reader - slave hold scl debounce\n\ncycles for debounce (unit: Tclk_i2c)"]
 pub type SclOeDbR = crate::FieldReader;
-#[doc = "Field `SCL_OE_DB` writer - slave hold scl debounce cycles for debounce (unit: Tclk_i2c)"]
+#[doc = "Field `SCL_OE_DB` writer - slave hold scl debounce\n\ncycles for debounce (unit: Tclk_i2c)"]
 pub type SclOeDbW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - slave hold scl debounce cycles for debounce (unit: Tclk_i2c)"]
+    #[doc = "Bits 0:7 - slave hold scl debounce\n\ncycles for debounce (unit: Tclk_i2c)"]
     #[inline(always)]
     pub fn scl_oe_db(&self) -> SclOeDbR {
         SclOeDbR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - slave hold scl debounce cycles for debounce (unit: Tclk_i2c)"]
+    #[doc = "Bits 0:7 - slave hold scl debounce\n\ncycles for debounce (unit: Tclk_i2c)"]
     #[inline(always)]
     #[must_use]
     pub fn scl_oe_db(&mut self) -> SclOeDbW<Rki2cSclOeDbSpec> {

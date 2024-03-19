@@ -1,9 +1,10 @@
 #[doc = "Register `HDCP22REG_STS` reader"]
 pub type R = crate::R<Hdcp22regStsSpec>;
-#[doc = "HDCP 2.2 HPD external interface status after lock mechanism (hdcp22reg_ctrl.hdcp22_switch_lock, hdcp22reg_ctrl.hdcp22_ovr_en and hdcp22reg_ctrl.hdcp22_ovr_val).\n\nValue on reset: 0"]
+#[doc = "HDCP 2.2 HPD external interface status after lock\n\nmechanism (hdcp22reg_ctrl.hdcp22_switch_lock,\n\nhdcp22reg_ctrl.hdcp22_ovr_en and\n\nhdcp22reg_ctrl.hdcp22_ovr_val).\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HdmiHpdSts {
-    #[doc = "0: Sink detected (HPD line set)"]
+    #[doc = "0: Sink not detected (HPD line clear )"]
     B0 = 0,
     #[doc = "1: Sink detected (HPD line set)"]
     B1 = 1,
@@ -14,7 +15,7 @@ impl From<HdmiHpdSts> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HDMI_HPD_STS` reader - HDCP 2.2 HPD external interface status after lock mechanism (hdcp22reg_ctrl.hdcp22_switch_lock, hdcp22reg_ctrl.hdcp22_ovr_en and hdcp22reg_ctrl.hdcp22_ovr_val)."]
+#[doc = "Field `HDMI_HPD_STS` reader - HDCP 2.2 HPD external interface status after lock\n\nmechanism (hdcp22reg_ctrl.hdcp22_switch_lock,\n\nhdcp22reg_ctrl.hdcp22_ovr_en and\n\nhdcp22reg_ctrl.hdcp22_ovr_val)."]
 pub type HdmiHpdStsR = crate::BitReader<HdmiHpdSts>;
 impl HdmiHpdStsR {
     #[doc = "Get enumerated values variant"]
@@ -25,7 +26,7 @@ impl HdmiHpdStsR {
             true => HdmiHpdSts::B1,
         }
     }
-    #[doc = "Sink detected (HPD line set)"]
+    #[doc = "Sink not detected (HPD line clear )"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == HdmiHpdSts::B0
@@ -37,9 +38,10 @@ impl HdmiHpdStsR {
     }
 }
 #[doc = "HDCP 2.2 AVMUTE external interface status.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HdcpAvmuteSts {
-    #[doc = "0: External HDCP AVMUTE is set (audio/video should be muted)"]
+    #[doc = "0: External HDCP used AVMUTE is clear"]
     B0 = 0,
     #[doc = "1: External HDCP AVMUTE is set (audio/video should be muted)"]
     B1 = 1,
@@ -61,7 +63,7 @@ impl HdcpAvmuteStsR {
             true => HdcpAvmuteSts::B1,
         }
     }
-    #[doc = "External HDCP AVMUTE is set (audio/video should be muted)"]
+    #[doc = "External HDCP used AVMUTE is clear"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == HdcpAvmuteSts::B0
@@ -72,10 +74,11 @@ impl HdcpAvmuteStsR {
         *self == HdcpAvmuteSts::B1
     }
 }
-#[doc = "HDCP 2.2 HDCP 2.2 versus 1.4 switch status after lock mechanism (hdcp22reg_ctrl.hdcp22_switch_lock, hdcp22reg_ctrl.hdcp22_ovr_en and hdcp22reg_ctrl.hdcp22_ovr_val).\n\nValue on reset: 0"]
+#[doc = "HDCP 2.2 HDCP 2.2 versus 1.4 switch status after\n\nlock mechanism\n\n(hdcp22reg_ctrl.hdcp22_switch_lock,\n\nhdcp22reg_ctrl.hdcp22_ovr_en and\n\nhdcp22reg_ctrl.hdcp22_ovr_val).\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hdcp22SwitchSts {
-    #[doc = "0: HDCP 2.2 selected"]
+    #[doc = "0: HDCP 1.4 selected"]
     B0 = 0,
     #[doc = "1: HDCP 2.2 selected"]
     B1 = 1,
@@ -86,7 +89,7 @@ impl From<Hdcp22SwitchSts> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HDCP22_SWITCH_STS` reader - HDCP 2.2 HDCP 2.2 versus 1.4 switch status after lock mechanism (hdcp22reg_ctrl.hdcp22_switch_lock, hdcp22reg_ctrl.hdcp22_ovr_en and hdcp22reg_ctrl.hdcp22_ovr_val)."]
+#[doc = "Field `HDCP22_SWITCH_STS` reader - HDCP 2.2 HDCP 2.2 versus 1.4 switch status after\n\nlock mechanism\n\n(hdcp22reg_ctrl.hdcp22_switch_lock,\n\nhdcp22reg_ctrl.hdcp22_ovr_en and\n\nhdcp22reg_ctrl.hdcp22_ovr_val)."]
 pub type Hdcp22SwitchStsR = crate::BitReader<Hdcp22SwitchSts>;
 impl Hdcp22SwitchStsR {
     #[doc = "Get enumerated values variant"]
@@ -97,7 +100,7 @@ impl Hdcp22SwitchStsR {
             true => Hdcp22SwitchSts::B1,
         }
     }
-    #[doc = "HDCP 2.2 selected"]
+    #[doc = "HDCP 1.4 selected"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Hdcp22SwitchSts::B0
@@ -108,10 +111,10 @@ impl Hdcp22SwitchStsR {
         *self == Hdcp22SwitchSts::B1
     }
 }
-#[doc = "Field `HDCP_DECRYPTED_STS` reader - Value of HDCP 2.2 ist_hdcp_decrypted line. Provided for debug only"]
+#[doc = "Field `HDCP_DECRYPTED_STS` reader - Value of HDCP 2.2 ist_hdcp_decrypted line. Provided\n\nfor debug only"]
 pub type HdcpDecryptedStsR = crate::BitReader;
 impl R {
-    #[doc = "Bit 0 - HDCP 2.2 HPD external interface status after lock mechanism (hdcp22reg_ctrl.hdcp22_switch_lock, hdcp22reg_ctrl.hdcp22_ovr_en and hdcp22reg_ctrl.hdcp22_ovr_val)."]
+    #[doc = "Bit 0 - HDCP 2.2 HPD external interface status after lock\n\nmechanism (hdcp22reg_ctrl.hdcp22_switch_lock,\n\nhdcp22reg_ctrl.hdcp22_ovr_en and\n\nhdcp22reg_ctrl.hdcp22_ovr_val)."]
     #[inline(always)]
     pub fn hdmi_hpd_sts(&self) -> HdmiHpdStsR {
         HdmiHpdStsR::new((self.bits & 1) != 0)
@@ -121,18 +124,18 @@ impl R {
     pub fn hdcp_avmute_sts(&self) -> HdcpAvmuteStsR {
         HdcpAvmuteStsR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - HDCP 2.2 HDCP 2.2 versus 1.4 switch status after lock mechanism (hdcp22reg_ctrl.hdcp22_switch_lock, hdcp22reg_ctrl.hdcp22_ovr_en and hdcp22reg_ctrl.hdcp22_ovr_val)."]
+    #[doc = "Bit 2 - HDCP 2.2 HDCP 2.2 versus 1.4 switch status after\n\nlock mechanism\n\n(hdcp22reg_ctrl.hdcp22_switch_lock,\n\nhdcp22reg_ctrl.hdcp22_ovr_en and\n\nhdcp22reg_ctrl.hdcp22_ovr_val)."]
     #[inline(always)]
     pub fn hdcp22_switch_sts(&self) -> Hdcp22SwitchStsR {
         Hdcp22SwitchStsR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - Value of HDCP 2.2 ist_hdcp_decrypted line. Provided for debug only"]
+    #[doc = "Bit 3 - Value of HDCP 2.2 ist_hdcp_decrypted line. Provided\n\nfor debug only"]
     #[inline(always)]
     pub fn hdcp_decrypted_sts(&self) -> HdcpDecryptedStsR {
         HdcpDecryptedStsR::new(((self.bits >> 3) & 1) != 0)
     }
 }
-#[doc = "HDCP 2.2 HPD external interface status after lock mechanism (hdcp22reg_ctrl.hdcp22_switch_lock, hdcp22reg_ctrl.hdcp22_ovr_en and hdcp22reg_ctrl.hdcp22_ovr_val). 1'b0: Sink not detected (HPD line clear ) 1'b1: Sink detected (HPD line set)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hdcp22reg_sts::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "HDCP 2.2 Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hdcp22reg_sts::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Hdcp22regStsSpec;
 impl crate::RegisterSpec for Hdcp22regStsSpec {
     type Ux = u8;

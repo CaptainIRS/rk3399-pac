@@ -23,14 +23,15 @@ pub type DphyTx1rx1MasterslavezR = crate::BitReader;
 #[doc = "Field `DPHY_TX1RX1_MASTERSLAVEZ` writer - dphy_tx1rx1_masterslavez bit control"]
 pub type DphyTx1rx1MasterslavezW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "vopb_dsi_halt_sel bit control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum VopbDsiHaltSel {
-    #[doc = "0: high"]
+    #[doc = "0: mipi_dsi0_edpihalt"]
     D0 = 0,
-    #[doc = "1: high"]
+    #[doc = "1: mipi_dsi0_edpihalt"]
     D1 = 1,
-    #[doc = "2: high"]
+    #[doc = "2: low"]
     D2 = 2,
     #[doc = "3: high"]
     D3 = 3,
@@ -58,17 +59,17 @@ impl VopbDsiHaltSelR {
             _ => unreachable!(),
         }
     }
-    #[doc = "high"]
+    #[doc = "mipi_dsi0_edpihalt"]
     #[inline(always)]
     pub fn is_d0(&self) -> bool {
         *self == VopbDsiHaltSel::D0
     }
-    #[doc = "high"]
+    #[doc = "mipi_dsi0_edpihalt"]
     #[inline(always)]
     pub fn is_d1(&self) -> bool {
         *self == VopbDsiHaltSel::D1
     }
-    #[doc = "high"]
+    #[doc = "low"]
     #[inline(always)]
     pub fn is_d2(&self) -> bool {
         *self == VopbDsiHaltSel::D2
@@ -86,17 +87,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "high"]
+    #[doc = "mipi_dsi0_edpihalt"]
     #[inline(always)]
     pub fn d0(self) -> &'a mut crate::W<REG> {
         self.variant(VopbDsiHaltSel::D0)
     }
-    #[doc = "high"]
+    #[doc = "mipi_dsi0_edpihalt"]
     #[inline(always)]
     pub fn d1(self) -> &'a mut crate::W<REG> {
         self.variant(VopbDsiHaltSel::D1)
     }
-    #[doc = "high"]
+    #[doc = "low"]
     #[inline(always)]
     pub fn d2(self) -> &'a mut crate::W<REG> {
         self.variant(VopbDsiHaltSel::D2)
@@ -108,14 +109,15 @@ where
     }
 }
 #[doc = "vopl_dsi_halt_sel bit control\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum VoplDsiHaltSel {
-    #[doc = "0: high"]
+    #[doc = "0: mipi_dsi0_edpihalt"]
     D0 = 0,
-    #[doc = "1: high"]
+    #[doc = "1: mipi_dsi0_edpihalt"]
     D1 = 1,
-    #[doc = "2: high"]
+    #[doc = "2: low"]
     D2 = 2,
     #[doc = "3: high"]
     D3 = 3,
@@ -143,17 +145,17 @@ impl VoplDsiHaltSelR {
             _ => unreachable!(),
         }
     }
-    #[doc = "high"]
+    #[doc = "mipi_dsi0_edpihalt"]
     #[inline(always)]
     pub fn is_d0(&self) -> bool {
         *self == VoplDsiHaltSel::D0
     }
-    #[doc = "high"]
+    #[doc = "mipi_dsi0_edpihalt"]
     #[inline(always)]
     pub fn is_d1(&self) -> bool {
         *self == VoplDsiHaltSel::D1
     }
-    #[doc = "high"]
+    #[doc = "low"]
     #[inline(always)]
     pub fn is_d2(&self) -> bool {
         *self == VoplDsiHaltSel::D2
@@ -171,17 +173,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "high"]
+    #[doc = "mipi_dsi0_edpihalt"]
     #[inline(always)]
     pub fn d0(self) -> &'a mut crate::W<REG> {
         self.variant(VoplDsiHaltSel::D0)
     }
-    #[doc = "high"]
+    #[doc = "mipi_dsi0_edpihalt"]
     #[inline(always)]
     pub fn d1(self) -> &'a mut crate::W<REG> {
         self.variant(VoplDsiHaltSel::D1)
     }
-    #[doc = "high"]
+    #[doc = "low"]
     #[inline(always)]
     pub fn d2(self) -> &'a mut crate::W<REG> {
         self.variant(VoplDsiHaltSel::D2)
@@ -193,14 +195,15 @@ where
     }
 }
 #[doc = "vopb_dsi_ite_sel bit control\n\nValue on reset: 3"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum VopbDsiIteSel {
-    #[doc = "0: 1"]
+    #[doc = "0: mipi_dsi0_edpite"]
     D0 = 0,
-    #[doc = "1: 1"]
+    #[doc = "1: mipi_dsi1_edpite"]
     D1 = 1,
-    #[doc = "2: 1"]
+    #[doc = "2: 0"]
     D2 = 2,
     #[doc = "3: 1"]
     D3 = 3,
@@ -228,17 +231,17 @@ impl VopbDsiIteSelR {
             _ => unreachable!(),
         }
     }
-    #[doc = "1"]
+    #[doc = "mipi_dsi0_edpite"]
     #[inline(always)]
     pub fn is_d0(&self) -> bool {
         *self == VopbDsiIteSel::D0
     }
-    #[doc = "1"]
+    #[doc = "mipi_dsi1_edpite"]
     #[inline(always)]
     pub fn is_d1(&self) -> bool {
         *self == VopbDsiIteSel::D1
     }
-    #[doc = "1"]
+    #[doc = "0"]
     #[inline(always)]
     pub fn is_d2(&self) -> bool {
         *self == VopbDsiIteSel::D2
@@ -256,17 +259,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "1"]
+    #[doc = "mipi_dsi0_edpite"]
     #[inline(always)]
     pub fn d0(self) -> &'a mut crate::W<REG> {
         self.variant(VopbDsiIteSel::D0)
     }
-    #[doc = "1"]
+    #[doc = "mipi_dsi1_edpite"]
     #[inline(always)]
     pub fn d1(self) -> &'a mut crate::W<REG> {
         self.variant(VopbDsiIteSel::D1)
     }
-    #[doc = "1"]
+    #[doc = "0"]
     #[inline(always)]
     pub fn d2(self) -> &'a mut crate::W<REG> {
         self.variant(VopbDsiIteSel::D2)
@@ -278,14 +281,15 @@ where
     }
 }
 #[doc = "vopl_dsi_ite_sel bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum VoplDsiIteSel {
-    #[doc = "0: 1"]
+    #[doc = "0: mipi_dsi0_edpite"]
     D0 = 0,
-    #[doc = "1: 1"]
+    #[doc = "1: mipi_dsi1_edpite"]
     D1 = 1,
-    #[doc = "2: 1"]
+    #[doc = "2: 0"]
     D2 = 2,
     #[doc = "3: 1"]
     D3 = 3,
@@ -313,17 +317,17 @@ impl VoplDsiIteSelR {
             _ => unreachable!(),
         }
     }
-    #[doc = "1"]
+    #[doc = "mipi_dsi0_edpite"]
     #[inline(always)]
     pub fn is_d0(&self) -> bool {
         *self == VoplDsiIteSel::D0
     }
-    #[doc = "1"]
+    #[doc = "mipi_dsi1_edpite"]
     #[inline(always)]
     pub fn is_d1(&self) -> bool {
         *self == VoplDsiIteSel::D1
     }
-    #[doc = "1"]
+    #[doc = "0"]
     #[inline(always)]
     pub fn is_d2(&self) -> bool {
         *self == VoplDsiIteSel::D2
@@ -341,17 +345,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "1"]
+    #[doc = "mipi_dsi0_edpite"]
     #[inline(always)]
     pub fn d0(self) -> &'a mut crate::W<REG> {
         self.variant(VoplDsiIteSel::D0)
     }
-    #[doc = "1"]
+    #[doc = "mipi_dsi1_edpite"]
     #[inline(always)]
     pub fn d1(self) -> &'a mut crate::W<REG> {
         self.variant(VoplDsiIteSel::D1)
     }
-    #[doc = "1"]
+    #[doc = "0"]
     #[inline(always)]
     pub fn d2(self) -> &'a mut crate::W<REG> {
         self.variant(VoplDsiIteSel::D2)
@@ -362,9 +366,9 @@ where
         self.variant(VoplDsiIteSel::D3)
     }
 }
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:3 - dphy_tx1tx1_turnrequest bit control"]
@@ -412,7 +416,7 @@ impl R {
     pub fn vopl_dsi_ite_sel(&self) -> VoplDsiIteSelR {
         VoplDsiIteSelR::new(((self.bits >> 14) & 3) as u8)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
@@ -473,7 +477,7 @@ impl W {
     pub fn vopl_dsi_ite_sel(&mut self) -> VoplDsiIteSelW<GrfSocCon24Spec> {
         VoplDsiIteSelW::new(self, 14)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfSocCon24Spec> {

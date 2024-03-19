@@ -2,19 +2,19 @@
 pub type R = crate::R<DdrPiReg2Spec>;
 #[doc = "Register `DDR_PI_REG_2` writer"]
 pub type W = crate::W<DdrPiReg2Spec>;
-#[doc = "Field `PI_TDFI_PHYMSTR_MAX_F0` reader - Defines the DFI tPHYMSTR_MAX timing parameter (in DFI clocks), the maximum cycles that dfi_phymstr_req following the assertion of dfi_phymstr_ack can be asserted. If programmed to a non-zero, a timing violation causes an interrupt and bit0 set in the PI_REG_22.pi_control_error_status parameter. The suffix f0 of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TDFI_PHYMSTR_MAX_F0` reader - Defines the DFI tPHYMSTR_MAX timing parameter (in DFI clocks),\n\nthe maximum cycles that dfi_phymstr_req following the assertion\n\nof dfi_phymstr_ack can be asserted. If programmed to a non-zero,\n\na timing violation causes an interrupt and bit0 set in the\n\nPI_REG_22.pi_control_error_status parameter. The suffix f0 of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTdfiPhymstrMaxF0R = crate::FieldReader<u32>;
-#[doc = "Field `PI_TDFI_PHYMSTR_MAX_F0` writer - Defines the DFI tPHYMSTR_MAX timing parameter (in DFI clocks), the maximum cycles that dfi_phymstr_req following the assertion of dfi_phymstr_ack can be asserted. If programmed to a non-zero, a timing violation causes an interrupt and bit0 set in the PI_REG_22.pi_control_error_status parameter. The suffix f0 of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TDFI_PHYMSTR_MAX_F0` writer - Defines the DFI tPHYMSTR_MAX timing parameter (in DFI clocks),\n\nthe maximum cycles that dfi_phymstr_req following the assertion\n\nof dfi_phymstr_ack can be asserted. If programmed to a non-zero,\n\na timing violation causes an interrupt and bit0 set in the\n\nPI_REG_22.pi_control_error_status parameter. The suffix f0 of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTdfiPhymstrMaxF0W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Defines the DFI tPHYMSTR_MAX timing parameter (in DFI clocks), the maximum cycles that dfi_phymstr_req following the assertion of dfi_phymstr_ack can be asserted. If programmed to a non-zero, a timing violation causes an interrupt and bit0 set in the PI_REG_22.pi_control_error_status parameter. The suffix f0 of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:31 - Defines the DFI tPHYMSTR_MAX timing parameter (in DFI clocks),\n\nthe maximum cycles that dfi_phymstr_req following the assertion\n\nof dfi_phymstr_ack can be asserted. If programmed to a non-zero,\n\na timing violation causes an interrupt and bit0 set in the\n\nPI_REG_22.pi_control_error_status parameter. The suffix f0 of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tdfi_phymstr_max_f0(&self) -> PiTdfiPhymstrMaxF0R {
         PiTdfiPhymstrMaxF0R::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Defines the DFI tPHYMSTR_MAX timing parameter (in DFI clocks), the maximum cycles that dfi_phymstr_req following the assertion of dfi_phymstr_ack can be asserted. If programmed to a non-zero, a timing violation causes an interrupt and bit0 set in the PI_REG_22.pi_control_error_status parameter. The suffix f0 of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:31 - Defines the DFI tPHYMSTR_MAX timing parameter (in DFI clocks),\n\nthe maximum cycles that dfi_phymstr_req following the assertion\n\nof dfi_phymstr_ack can be asserted. If programmed to a non-zero,\n\na timing violation causes an interrupt and bit0 set in the\n\nPI_REG_22.pi_control_error_status parameter. The suffix f0 of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tdfi_phymstr_max_f0(&mut self) -> PiTdfiPhymstrMaxF0W<DdrPiReg2Spec> {

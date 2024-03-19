@@ -2,19 +2,19 @@
 pub type R = crate::R<EmmccoreCqtdlbaSpec>;
 #[doc = "Register `EMMCCORE_CQTDLBA` writer"]
 pub type W = crate::W<EmmccoreCqtdlbaSpec>;
-#[doc = "Field `TDLBA` reader - Task Descriptor List Base Address This register stores the LSB bits (bits 31:0) of the byte address of the head of the Task Descriptor List in system memory. The size of the task descriptor list is 32 * (Task Descriptor size + Transfer Descriptor size) as configured by Host driver. This address shall be set on Byte1 KByte boundary. The lower 10 bits of this register shall be set to 0 by software and shall be ignored by CQE."]
+#[doc = "Field `TDLBA` reader - Task Descriptor List Base Address\n\nThis register stores the LSB bits (bits 31:0) of the byte address of\n\nthe head of the Task Descriptor List in system memory.\n\nThe size of the task descriptor list is 32 * (Task Descriptor size +\n\nTransfer Descriptor size) as configured by Host driver.\n\nThis address shall be set on Byte1 KByte boundary. The lower 10\n\nbits of this register shall be set to 0 by software and shall be\n\nignored by CQE."]
 pub type TdlbaR = crate::FieldReader<u32>;
-#[doc = "Field `TDLBA` writer - Task Descriptor List Base Address This register stores the LSB bits (bits 31:0) of the byte address of the head of the Task Descriptor List in system memory. The size of the task descriptor list is 32 * (Task Descriptor size + Transfer Descriptor size) as configured by Host driver. This address shall be set on Byte1 KByte boundary. The lower 10 bits of this register shall be set to 0 by software and shall be ignored by CQE."]
+#[doc = "Field `TDLBA` writer - Task Descriptor List Base Address\n\nThis register stores the LSB bits (bits 31:0) of the byte address of\n\nthe head of the Task Descriptor List in system memory.\n\nThe size of the task descriptor list is 32 * (Task Descriptor size +\n\nTransfer Descriptor size) as configured by Host driver.\n\nThis address shall be set on Byte1 KByte boundary. The lower 10\n\nbits of this register shall be set to 0 by software and shall be\n\nignored by CQE."]
 pub type TdlbaW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Task Descriptor List Base Address This register stores the LSB bits (bits 31:0) of the byte address of the head of the Task Descriptor List in system memory. The size of the task descriptor list is 32 * (Task Descriptor size + Transfer Descriptor size) as configured by Host driver. This address shall be set on Byte1 KByte boundary. The lower 10 bits of this register shall be set to 0 by software and shall be ignored by CQE."]
+    #[doc = "Bits 0:31 - Task Descriptor List Base Address\n\nThis register stores the LSB bits (bits 31:0) of the byte address of\n\nthe head of the Task Descriptor List in system memory.\n\nThe size of the task descriptor list is 32 * (Task Descriptor size +\n\nTransfer Descriptor size) as configured by Host driver.\n\nThis address shall be set on Byte1 KByte boundary. The lower 10\n\nbits of this register shall be set to 0 by software and shall be\n\nignored by CQE."]
     #[inline(always)]
     pub fn tdlba(&self) -> TdlbaR {
         TdlbaR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Task Descriptor List Base Address This register stores the LSB bits (bits 31:0) of the byte address of the head of the Task Descriptor List in system memory. The size of the task descriptor list is 32 * (Task Descriptor size + Transfer Descriptor size) as configured by Host driver. This address shall be set on Byte1 KByte boundary. The lower 10 bits of this register shall be set to 0 by software and shall be ignored by CQE."]
+    #[doc = "Bits 0:31 - Task Descriptor List Base Address\n\nThis register stores the LSB bits (bits 31:0) of the byte address of\n\nthe head of the Task Descriptor List in system memory.\n\nThe size of the task descriptor list is 32 * (Task Descriptor size +\n\nTransfer Descriptor size) as configured by Host driver.\n\nThis address shall be set on Byte1 KByte boundary. The lower 10\n\nbits of this register shall be set to 0 by software and shall be\n\nignored by CQE."]
     #[inline(always)]
     #[must_use]
     pub fn tdlba(&mut self) -> TdlbaW<EmmccoreCqtdlbaSpec> {

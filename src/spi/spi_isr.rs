@@ -1,9 +1,10 @@
 #[doc = "Register `SPI_ISR` reader"]
 pub type R = crate::R<SpiIsrSpec>;
 #[doc = "Transmit FIFO Empty Interrupt Status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tfeis {
-    #[doc = "0: spi_txe_intr interrupt is active after masking"]
+    #[doc = "0: spi_txe_intr interrupt is not active after masking"]
     B0 = 0,
     #[doc = "1: spi_txe_intr interrupt is active after masking"]
     B1 = 1,
@@ -25,7 +26,7 @@ impl TfeisR {
             true => Tfeis::B1,
         }
     }
-    #[doc = "spi_txe_intr interrupt is active after masking"]
+    #[doc = "spi_txe_intr interrupt is not active after masking"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Tfeis::B0
@@ -37,9 +38,10 @@ impl TfeisR {
     }
 }
 #[doc = "Transmit FIFO Overflow Interrupt Status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tfois {
-    #[doc = "0: spi_txo_intr interrupt is active after masking"]
+    #[doc = "0: spi_txo_intr interrupt is not active after masking"]
     B0 = 0,
     #[doc = "1: spi_txo_intr interrupt is active after masking"]
     B1 = 1,
@@ -61,7 +63,7 @@ impl TfoisR {
             true => Tfois::B1,
         }
     }
-    #[doc = "spi_txo_intr interrupt is active after masking"]
+    #[doc = "spi_txo_intr interrupt is not active after masking"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Tfois::B0
@@ -73,9 +75,10 @@ impl TfoisR {
     }
 }
 #[doc = "Receive FIFO Underflow Interrupt Status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rfuis {
-    #[doc = "0: spi_rxu_intr interrupt is active after masking"]
+    #[doc = "0: spi_rxu_intr interrupt is not active after masking"]
     B0 = 0,
     #[doc = "1: spi_rxu_intr interrupt is active after masking"]
     B1 = 1,
@@ -97,7 +100,7 @@ impl RfuisR {
             true => Rfuis::B1,
         }
     }
-    #[doc = "spi_rxu_intr interrupt is active after masking"]
+    #[doc = "spi_rxu_intr interrupt is not active after masking"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Rfuis::B0
@@ -109,9 +112,10 @@ impl RfuisR {
     }
 }
 #[doc = "Receive FIFO Overflow Interrupt Status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rfois {
-    #[doc = "0: spi_rxo_intr interrupt is active after masking"]
+    #[doc = "0: spi_rxo_intr interrupt is not active after masking"]
     B0 = 0,
     #[doc = "1: spi_rxo_intr interrupt is active after masking"]
     B1 = 1,
@@ -133,7 +137,7 @@ impl RfoisR {
             true => Rfois::B1,
         }
     }
-    #[doc = "spi_rxo_intr interrupt is active after masking"]
+    #[doc = "spi_rxo_intr interrupt is not active after masking"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Rfois::B0
@@ -145,9 +149,10 @@ impl RfoisR {
     }
 }
 #[doc = "Receive FIFO Full Interrupt Status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rffis {
-    #[doc = "0: spi_rxf_intr interrupt is full after masking"]
+    #[doc = "0: spi_rxf_intr interrupt is not active after masking"]
     B0 = 0,
     #[doc = "1: spi_rxf_intr interrupt is full after masking"]
     B1 = 1,
@@ -169,7 +174,7 @@ impl RffisR {
             true => Rffis::B1,
         }
     }
-    #[doc = "spi_rxf_intr interrupt is full after masking"]
+    #[doc = "spi_rxf_intr interrupt is not active after masking"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Rffis::B0

@@ -9,7 +9,7 @@ impl R {
         DatabyteR::new(self.bits)
     }
 }
-#[doc = "Data byte\\[x\\], where x is 0 to 15\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cec_rx_data::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "CEC RX Data Register Array Address offset: i =0 to 15\n\nThese registers (8 bit each) are the buffers used for storing the received data (including\n\nheader and data blocks).\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cec_rx_data::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CecRxDataSpec;
 impl crate::RegisterSpec for CecRxDataSpec {
     type Ux = u8;

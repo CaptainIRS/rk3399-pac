@@ -1,9 +1,9 @@
 #[doc = "Register `DDR_DENALI_PHY_788` reader"]
 pub type R = crate::R<DdrDenaliPhy788Spec>;
-#[doc = "Field `PHY_ADR_CALVL_OBS1_2` reader - Observation register for CA training for slice 2. READ-ONLY"]
+#[doc = "Field `PHY_ADR_CALVL_OBS1_2` reader - Observation register for CA training for slice 2."]
 pub type PhyAdrCalvlObs1_2R = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Observation register for CA training for slice 2. READ-ONLY"]
+    #[doc = "Bits 0:31 - Observation register for CA training for slice 2."]
     #[inline(always)]
     pub fn phy_adr_calvl_obs1_2(&self) -> PhyAdrCalvlObs1_2R {
         PhyAdrCalvlObs1_2R::new(self.bits)

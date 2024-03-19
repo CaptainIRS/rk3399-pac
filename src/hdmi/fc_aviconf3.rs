@@ -6,9 +6,9 @@ pub type W = crate::W<FcAviconf3Spec>;
 pub type CnR = crate::FieldReader;
 #[doc = "Field `CN` writer - IT content type according to CEA the specification"]
 pub type CnW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-#[doc = "Field `YQ` reader - YCC Quantization range according to the CEA specification"]
+#[doc = "Field `YQ` reader - YCC Quantization range according to the CEA\n\nspecification"]
 pub type YqR = crate::FieldReader;
-#[doc = "Field `YQ` writer - YCC Quantization range according to the CEA specification"]
+#[doc = "Field `YQ` writer - YCC Quantization range according to the CEA\n\nspecification"]
 pub type YqW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
     #[doc = "Bits 0:1 - IT content type according to CEA the specification"]
@@ -16,7 +16,7 @@ impl R {
     pub fn cn(&self) -> CnR {
         CnR::new(self.bits & 3)
     }
-    #[doc = "Bits 2:3 - YCC Quantization range according to the CEA specification"]
+    #[doc = "Bits 2:3 - YCC Quantization range according to the CEA\n\nspecification"]
     #[inline(always)]
     pub fn yq(&self) -> YqR {
         YqR::new((self.bits >> 2) & 3)
@@ -29,14 +29,14 @@ impl W {
     pub fn cn(&mut self) -> CnW<FcAviconf3Spec> {
         CnW::new(self, 0)
     }
-    #[doc = "Bits 2:3 - YCC Quantization range according to the CEA specification"]
+    #[doc = "Bits 2:3 - YCC Quantization range according to the CEA\n\nspecification"]
     #[inline(always)]
     #[must_use]
     pub fn yq(&mut self) -> YqW<FcAviconf3Spec> {
         YqW::new(self, 2)
     }
 }
-#[doc = "IT content type according to CEA the specification\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_aviconf3::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_aviconf3::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer AVI Packet Configuration Register 3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_aviconf3::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_aviconf3::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcAviconf3Spec;
 impl crate::RegisterSpec for FcAviconf3Spec {
     type Ux = u8;

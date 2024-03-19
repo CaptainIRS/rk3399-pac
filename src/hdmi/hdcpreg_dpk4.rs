@@ -10,7 +10,7 @@ impl W {
         DpkDataW::new(self, 0)
     }
 }
-#[doc = "Byte of the encrypted DPK value. dpk\\[39:32\\]\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hdcpreg_dpk4::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "HDCP Encrypted DPK Data Register 4\n\nThis register contains an HDCP DPK byte.\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hdcpreg_dpk4::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HdcpregDpk4Spec;
 impl crate::RegisterSpec for HdcpregDpk4Spec {
     type Ux = u8;

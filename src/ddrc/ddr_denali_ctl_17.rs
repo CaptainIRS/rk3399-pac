@@ -2,7 +2,7 @@
 pub type R = crate::R<DdrDenaliCtl17Spec>;
 #[doc = "Register `DDR_DENALI_CTL_17` writer"]
 pub type W = crate::W<DdrDenaliCtl17Spec>;
-#[doc = "Field `MRR_ERROR_STATUS` reader - Identifies the source of any MRR errors. Value of 1 indicates a violation. READ-ONLY"]
+#[doc = "Field `MRR_ERROR_STATUS` reader - Identifies the source of any MRR errors. Value of 1 indicates a violation."]
 pub type MrrErrorStatusR = crate::FieldReader;
 #[doc = "Field `DFI_INV_DATA_CS` reader - Forces the inversion of the dfi_rddata_cs_n_X and dfi_wrdata_cs_n_X signals. Set to 1 to force inversion."]
 pub type DfiInvDataCsR = crate::BitReader;
@@ -17,7 +17,7 @@ pub type NoMrwInitR = crate::BitReader;
 #[doc = "Field `NO_MRW_INIT` writer - Disable MRW commands after training during initialization. Set to 1 to disable."]
 pub type NoMrwInitW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bits 0:1 - Identifies the source of any MRR errors. Value of 1 indicates a violation. READ-ONLY"]
+    #[doc = "Bits 0:1 - Identifies the source of any MRR errors. Value of 1 indicates a violation."]
     #[inline(always)]
     pub fn mrr_error_status(&self) -> MrrErrorStatusR {
         MrrErrorStatusR::new((self.bits & 3) as u8)

@@ -1,9 +1,9 @@
 #[doc = "Register `RKI2C_RXDATA3` reader"]
 pub type R = crate::R<Rki2cRxdata3Spec>;
-#[doc = "Field `RXDATA3` reader - data3 received 32 bits data"]
+#[doc = "Field `RXDATA3` reader - data3 received\n\n32 bits data"]
 pub type Rxdata3R = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - data3 received 32 bits data"]
+    #[doc = "Bits 0:31 - data3 received\n\n32 bits data"]
     #[inline(always)]
     pub fn rxdata3(&self) -> Rxdata3R {
         Rxdata3R::new(self.bits)

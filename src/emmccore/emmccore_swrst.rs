@@ -3,9 +3,10 @@ pub type R = crate::R<EmmccoreSwrstSpec>;
 #[doc = "Register `EMMCCORE_SWRST` writer"]
 pub type W = crate::W<EmmccoreSwrstSpec>;
 #[doc = "Software Reset for All\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Softwareresetall {
-    #[doc = "1: Work This reset affects the entire HC except for the card detection circuit. Register bits of type ROC, RW, RW1C, RWAC are cleared to 0. During its initialization, the HD shall set this bit to 1 to reset the HC. The HC shall reset this bit to 0 when capabilities registers are valid and the HD can read them. Additional use of Software Reset For All may not affect the value of the Capabilities registers. If this bit is set to 1, the SD card shall reset itself and must be reinitialized by the HD."]
+    #[doc = "1: Reset"]
     B1 = 1,
     #[doc = "0: Work This reset affects the entire HC except for the card detection circuit. Register bits of type ROC, RW, RW1C, RWAC are cleared to 0. During its initialization, the HD shall set this bit to 1 to reset the HC. The HC shall reset this bit to 0 when capabilities registers are valid and the HD can read them. Additional use of Software Reset For All may not affect the value of the Capabilities registers. If this bit is set to 1, the SD card shall reset itself and must be reinitialized by the HD."]
     B0 = 0,
@@ -27,7 +28,7 @@ impl SoftwareresetallR {
             false => Softwareresetall::B0,
         }
     }
-    #[doc = "Work This reset affects the entire HC except for the card detection circuit. Register bits of type ROC, RW, RW1C, RWAC are cleared to 0. During its initialization, the HD shall set this bit to 1 to reset the HC. The HC shall reset this bit to 0 when capabilities registers are valid and the HD can read them. Additional use of Software Reset For All may not affect the value of the Capabilities registers. If this bit is set to 1, the SD card shall reset itself and must be reinitialized by the HD."]
+    #[doc = "Reset"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Softwareresetall::B1
@@ -44,7 +45,7 @@ impl<'a, REG> SoftwareresetallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Work This reset affects the entire HC except for the card detection circuit. Register bits of type ROC, RW, RW1C, RWAC are cleared to 0. During its initialization, the HD shall set this bit to 1 to reset the HC. The HC shall reset this bit to 0 when capabilities registers are valid and the HD can read them. Additional use of Software Reset For All may not affect the value of the Capabilities registers. If this bit is set to 1, the SD card shall reset itself and must be reinitialized by the HD."]
+    #[doc = "Reset"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Softwareresetall::B1)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Only part of command circuit is reset.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Softwareresetcmd {
-    #[doc = "1: Work The following registers and bits are cleared by this bit: a. Present State register: Command Inhibit (CMD) b. Normal Interrupt Status register: Command Complete"]
+    #[doc = "1: Reset"]
     B1 = 1,
     #[doc = "0: Work The following registers and bits are cleared by this bit: a. Present State register: Command Inhibit (CMD) b. Normal Interrupt Status register: Command Complete"]
     B0 = 0,
@@ -80,7 +82,7 @@ impl SoftwareresetcmdR {
             false => Softwareresetcmd::B0,
         }
     }
-    #[doc = "Work The following registers and bits are cleared by this bit: a. Present State register: Command Inhibit (CMD) b. Normal Interrupt Status register: Command Complete"]
+    #[doc = "Reset"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Softwareresetcmd::B1
@@ -97,7 +99,7 @@ impl<'a, REG> SoftwareresetcmdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Work The following registers and bits are cleared by this bit: a. Present State register: Command Inhibit (CMD) b. Normal Interrupt Status register: Command Complete"]
+    #[doc = "Reset"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Softwareresetcmd::B1)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "Software Reset for DAT Line.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Softwareresetdat {
-    #[doc = "1: Work Only part of data circuit is reset. The following registers and bits are cleared by this bit: a. Buffer Data Port Register: Buffer is cleared and Initialized b. Present State register: Buffer read Enable Buffer write Enable Read Transfer Active Write Transfer Active DAT Line Active Command Inhibit (DAT) c. Block Gap Control register: Continue Request Stop At Block Gap Request d. Normal Interrupt Status register: Buffer Read Ready Buffer Write Ready Block Gap Event Transfer Complete"]
+    #[doc = "1: Reset"]
     B1 = 1,
     #[doc = "0: Work Only part of data circuit is reset. The following registers and bits are cleared by this bit: a. Buffer Data Port Register: Buffer is cleared and Initialized b. Present State register: Buffer read Enable Buffer write Enable Read Transfer Active Write Transfer Active DAT Line Active Command Inhibit (DAT) c. Block Gap Control register: Continue Request Stop At Block Gap Request d. Normal Interrupt Status register: Buffer Read Ready Buffer Write Ready Block Gap Event Transfer Complete"]
     B0 = 0,
@@ -133,7 +136,7 @@ impl SoftwareresetdatR {
             false => Softwareresetdat::B0,
         }
     }
-    #[doc = "Work Only part of data circuit is reset. The following registers and bits are cleared by this bit: a. Buffer Data Port Register: Buffer is cleared and Initialized b. Present State register: Buffer read Enable Buffer write Enable Read Transfer Active Write Transfer Active DAT Line Active Command Inhibit (DAT) c. Block Gap Control register: Continue Request Stop At Block Gap Request d. Normal Interrupt Status register: Buffer Read Ready Buffer Write Ready Block Gap Event Transfer Complete"]
+    #[doc = "Reset"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Softwareresetdat::B1
@@ -150,7 +153,7 @@ impl<'a, REG> SoftwareresetdatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Work Only part of data circuit is reset. The following registers and bits are cleared by this bit: a. Buffer Data Port Register: Buffer is cleared and Initialized b. Present State register: Buffer read Enable Buffer write Enable Read Transfer Active Write Transfer Active DAT Line Active Command Inhibit (DAT) c. Block Gap Control register: Continue Request Stop At Block Gap Request d. Normal Interrupt Status register: Buffer Read Ready Buffer Write Ready Block Gap Event Transfer Complete"]
+    #[doc = "Reset"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Softwareresetdat::B1)

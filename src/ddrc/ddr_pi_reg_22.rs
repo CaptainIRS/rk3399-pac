@@ -2,34 +2,34 @@
 pub type R = crate::R<DdrPiReg22Spec>;
 #[doc = "Register `DDR_PI_REG_22` writer"]
 pub type W = crate::W<DdrPiReg22Spec>;
-#[doc = "Field `PI_CONTROL_ERROR_STATUS` reader - Identifies the source of any pi_control phyupd_req/ phylvl_req_cs_n errors. Value of 1 indicates a timing violation of the associated timing parameter Bit 8: pi_control triggered phyupd_resp_error. Bit 7: pi_control triggered phyupd_type3_error. Bit 6: pi_control triggered phyupd_type2_error. Bit 5: pi_control triggered phyupd_type1_error. Bit 4: pi_control triggered phyupd_type0_error. Bit 3: phylvl_resp_error. Bit 2: phylvl_max_error. Bit 1: phymstr_resp_error. Bit 0: phymstr_max_error."]
+#[doc = "Field `PI_CONTROL_ERROR_STATUS` reader - Identifies the source of any pi_control phyupd_req/\n\nphylvl_req_cs_n errors. Value of 1 indicates a timing violation of\n\nthe associated timing parameter\n\nBit 8: pi_control triggered phyupd_resp_error.\n\nBit 7: pi_control triggered phyupd_type3_error.\n\nBit 6: pi_control triggered phyupd_type2_error.\n\nBit 5: pi_control triggered phyupd_type1_error.\n\nBit 4: pi_control triggered phyupd_type0_error.\n\nBit 3: phylvl_resp_error.\n\nBit 2: phylvl_max_error.\n\nBit 1: phymstr_resp_error.\n\nBit 0: phymstr_max_error."]
 pub type PiControlErrorStatusR = crate::FieldReader<u16>;
-#[doc = "Field `PI_CONTROL_ERROR_STATUS` writer - Identifies the source of any pi_control phyupd_req/ phylvl_req_cs_n errors. Value of 1 indicates a timing violation of the associated timing parameter Bit 8: pi_control triggered phyupd_resp_error. Bit 7: pi_control triggered phyupd_type3_error. Bit 6: pi_control triggered phyupd_type2_error. Bit 5: pi_control triggered phyupd_type1_error. Bit 4: pi_control triggered phyupd_type0_error. Bit 3: phylvl_resp_error. Bit 2: phylvl_max_error. Bit 1: phymstr_resp_error. Bit 0: phymstr_max_error."]
+#[doc = "Field `PI_CONTROL_ERROR_STATUS` writer - Identifies the source of any pi_control phyupd_req/\n\nphylvl_req_cs_n errors. Value of 1 indicates a timing violation of\n\nthe associated timing parameter\n\nBit 8: pi_control triggered phyupd_resp_error.\n\nBit 7: pi_control triggered phyupd_type3_error.\n\nBit 6: pi_control triggered phyupd_type2_error.\n\nBit 5: pi_control triggered phyupd_type1_error.\n\nBit 4: pi_control triggered phyupd_type0_error.\n\nBit 3: phylvl_resp_error.\n\nBit 2: phylvl_max_error.\n\nBit 1: phymstr_resp_error.\n\nBit 0: phymstr_max_error."]
 pub type PiControlErrorStatusW<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
-#[doc = "Field `PI_EXIT_AFTER_INIT_CALVL` reader - Releases the DFI bus after complete initialization CA training and requests DFI bus again for the remaining initialization training. The DFI bus release is for the controller to issue MRW/ZQ after the PI completes initialization CA leveling, based on the JEDEC protocol requirement."]
+#[doc = "Field `PI_EXIT_AFTER_INIT_CALVL` reader - Releases the DFI bus after complete initialization CA training and\n\nrequests DFI bus again for the remaining initialization training. The\n\nDFI bus release is for the controller to issue MRW/ZQ after the PI\n\ncompletes initialization CA leveling, based on the JEDEC protocol\n\nrequirement."]
 pub type PiExitAfterInitCalvlR = crate::BitReader;
-#[doc = "Field `PI_EXIT_AFTER_INIT_CALVL` writer - Releases the DFI bus after complete initialization CA training and requests DFI bus again for the remaining initialization training. The DFI bus release is for the controller to issue MRW/ZQ after the PI completes initialization CA leveling, based on the JEDEC protocol requirement."]
+#[doc = "Field `PI_EXIT_AFTER_INIT_CALVL` writer - Releases the DFI bus after complete initialization CA training and\n\nrequests DFI bus again for the remaining initialization training. The\n\nDFI bus release is for the controller to issue MRW/ZQ after the PI\n\ncompletes initialization CA leveling, based on the JEDEC protocol\n\nrequirement."]
 pub type PiExitAfterInitCalvlW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bits 0:8 - Identifies the source of any pi_control phyupd_req/ phylvl_req_cs_n errors. Value of 1 indicates a timing violation of the associated timing parameter Bit 8: pi_control triggered phyupd_resp_error. Bit 7: pi_control triggered phyupd_type3_error. Bit 6: pi_control triggered phyupd_type2_error. Bit 5: pi_control triggered phyupd_type1_error. Bit 4: pi_control triggered phyupd_type0_error. Bit 3: phylvl_resp_error. Bit 2: phylvl_max_error. Bit 1: phymstr_resp_error. Bit 0: phymstr_max_error."]
+    #[doc = "Bits 0:8 - Identifies the source of any pi_control phyupd_req/\n\nphylvl_req_cs_n errors. Value of 1 indicates a timing violation of\n\nthe associated timing parameter\n\nBit 8: pi_control triggered phyupd_resp_error.\n\nBit 7: pi_control triggered phyupd_type3_error.\n\nBit 6: pi_control triggered phyupd_type2_error.\n\nBit 5: pi_control triggered phyupd_type1_error.\n\nBit 4: pi_control triggered phyupd_type0_error.\n\nBit 3: phylvl_resp_error.\n\nBit 2: phylvl_max_error.\n\nBit 1: phymstr_resp_error.\n\nBit 0: phymstr_max_error."]
     #[inline(always)]
     pub fn pi_control_error_status(&self) -> PiControlErrorStatusR {
         PiControlErrorStatusR::new((self.bits & 0x01ff) as u16)
     }
-    #[doc = "Bit 16 - Releases the DFI bus after complete initialization CA training and requests DFI bus again for the remaining initialization training. The DFI bus release is for the controller to issue MRW/ZQ after the PI completes initialization CA leveling, based on the JEDEC protocol requirement."]
+    #[doc = "Bit 16 - Releases the DFI bus after complete initialization CA training and\n\nrequests DFI bus again for the remaining initialization training. The\n\nDFI bus release is for the controller to issue MRW/ZQ after the PI\n\ncompletes initialization CA leveling, based on the JEDEC protocol\n\nrequirement."]
     #[inline(always)]
     pub fn pi_exit_after_init_calvl(&self) -> PiExitAfterInitCalvlR {
         PiExitAfterInitCalvlR::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:8 - Identifies the source of any pi_control phyupd_req/ phylvl_req_cs_n errors. Value of 1 indicates a timing violation of the associated timing parameter Bit 8: pi_control triggered phyupd_resp_error. Bit 7: pi_control triggered phyupd_type3_error. Bit 6: pi_control triggered phyupd_type2_error. Bit 5: pi_control triggered phyupd_type1_error. Bit 4: pi_control triggered phyupd_type0_error. Bit 3: phylvl_resp_error. Bit 2: phylvl_max_error. Bit 1: phymstr_resp_error. Bit 0: phymstr_max_error."]
+    #[doc = "Bits 0:8 - Identifies the source of any pi_control phyupd_req/\n\nphylvl_req_cs_n errors. Value of 1 indicates a timing violation of\n\nthe associated timing parameter\n\nBit 8: pi_control triggered phyupd_resp_error.\n\nBit 7: pi_control triggered phyupd_type3_error.\n\nBit 6: pi_control triggered phyupd_type2_error.\n\nBit 5: pi_control triggered phyupd_type1_error.\n\nBit 4: pi_control triggered phyupd_type0_error.\n\nBit 3: phylvl_resp_error.\n\nBit 2: phylvl_max_error.\n\nBit 1: phymstr_resp_error.\n\nBit 0: phymstr_max_error."]
     #[inline(always)]
     #[must_use]
     pub fn pi_control_error_status(&mut self) -> PiControlErrorStatusW<DdrPiReg22Spec> {
         PiControlErrorStatusW::new(self, 0)
     }
-    #[doc = "Bit 16 - Releases the DFI bus after complete initialization CA training and requests DFI bus again for the remaining initialization training. The DFI bus release is for the controller to issue MRW/ZQ after the PI completes initialization CA leveling, based on the JEDEC protocol requirement."]
+    #[doc = "Bit 16 - Releases the DFI bus after complete initialization CA training and\n\nrequests DFI bus again for the remaining initialization training. The\n\nDFI bus release is for the controller to issue MRW/ZQ after the PI\n\ncompletes initialization CA leveling, based on the JEDEC protocol\n\nrequirement."]
     #[inline(always)]
     #[must_use]
     pub fn pi_exit_after_init_calvl(&mut self) -> PiExitAfterInitCalvlW<DdrPiReg22Spec> {

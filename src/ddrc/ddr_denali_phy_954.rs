@@ -2,7 +2,7 @@
 pub type R = crate::R<DdrDenaliPhy954Spec>;
 #[doc = "Register `DDR_DENALI_PHY_954` writer"]
 pub type W = crate::W<DdrDenaliPhy954Spec>;
-#[doc = "Field `PHY_AC_CLK_LPBK_RESULT_OBS` reader - Observation register for mem clk blocks. READ-ONLY"]
+#[doc = "Field `PHY_AC_CLK_LPBK_RESULT_OBS` reader - Observation register for mem clk blocks."]
 pub type PhyAcClkLpbkResultObsR = crate::FieldReader<u16>;
 #[doc = "Field `PHY_AC_PWR_RDC_DISABLE` reader - ac slice power reduction disable."]
 pub type PhyAcPwrRdcDisableR = crate::BitReader;
@@ -13,7 +13,7 @@ pub type PhyDataByteOrderSelR = crate::FieldReader;
 #[doc = "Field `PHY_DATA_BYTE_ORDER_SEL` writer - Used to define the data slicesbyteswap.'"]
 pub type PhyDataByteOrderSelW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:15 - Observation register for mem clk blocks. READ-ONLY"]
+    #[doc = "Bits 0:15 - Observation register for mem clk blocks."]
     #[inline(always)]
     pub fn phy_ac_clk_lpbk_result_obs(&self) -> PhyAcClkLpbkResultObsR {
         PhyAcClkLpbkResultObsR::new((self.bits & 0xffff) as u16)

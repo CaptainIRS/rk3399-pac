@@ -2,26 +2,26 @@
 pub type R = crate::R<FcMultistreamCtrlSpec>;
 #[doc = "Register `FC_MULTISTREAM_CTRL` writer"]
 pub type W = crate::W<FcMultistreamCtrlSpec>;
-#[doc = "Field `FC_MAS_PACKET_EN` reader - This field, when set (1'b1), activates the HDMI 2.0 Multi- Stream support. The audio stream present at the input of the Hdmi_tx controller is transported using Multi-Stream Audio Sample Packets."]
+#[doc = "Field `FC_MAS_PACKET_EN` reader - This field, when set (1'b1), activates the HDMI 2.0\n\nMulti- Stream support. The audio stream present at\n\nthe input of the Hdmi_tx controller is transported\n\nusing Multi-Stream Audio Sample Packets."]
 pub type FcMasPacketEnR = crate::BitReader;
-#[doc = "Field `FC_MAS_PACKET_EN` writer - This field, when set (1'b1), activates the HDMI 2.0 Multi- Stream support. The audio stream present at the input of the Hdmi_tx controller is transported using Multi-Stream Audio Sample Packets."]
+#[doc = "Field `FC_MAS_PACKET_EN` writer - This field, when set (1'b1), activates the HDMI 2.0\n\nMulti- Stream support. The audio stream present at\n\nthe input of the Hdmi_tx controller is transported\n\nusing Multi-Stream Audio Sample Packets."]
 pub type FcMasPacketEnW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - This field, when set (1'b1), activates the HDMI 2.0 Multi- Stream support. The audio stream present at the input of the Hdmi_tx controller is transported using Multi-Stream Audio Sample Packets."]
+    #[doc = "Bit 0 - This field, when set (1'b1), activates the HDMI 2.0\n\nMulti- Stream support. The audio stream present at\n\nthe input of the Hdmi_tx controller is transported\n\nusing Multi-Stream Audio Sample Packets."]
     #[inline(always)]
     pub fn fc_mas_packet_en(&self) -> FcMasPacketEnR {
         FcMasPacketEnR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - This field, when set (1'b1), activates the HDMI 2.0 Multi- Stream support. The audio stream present at the input of the Hdmi_tx controller is transported using Multi-Stream Audio Sample Packets."]
+    #[doc = "Bit 0 - This field, when set (1'b1), activates the HDMI 2.0\n\nMulti- Stream support. The audio stream present at\n\nthe input of the Hdmi_tx controller is transported\n\nusing Multi-Stream Audio Sample Packets."]
     #[inline(always)]
     #[must_use]
     pub fn fc_mas_packet_en(&mut self) -> FcMasPacketEnW<FcMultistreamCtrlSpec> {
         FcMasPacketEnW::new(self, 0)
     }
 }
-#[doc = "This field, when set (1'b1), activates the HDMI 2.0 Multi- Stream support. The audio stream present at the input of the Hdmi_tx controller is transported using Multi-Stream Audio Sample Packets.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_multistream_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_multistream_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer Multi-Stream Audio Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_multistream_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_multistream_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcMultistreamCtrlSpec;
 impl crate::RegisterSpec for FcMultistreamCtrlSpec {
     type Ux = u8;

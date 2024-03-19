@@ -2,103 +2,103 @@
 pub type R = crate::R<CruSoftrstCon3Spec>;
 #[doc = "Register `CRU_SOFTRST_CON3` writer"]
 pub type W = crate::W<CruSoftrstCon3Spec>;
-#[doc = "Field `ARESETN_CCI_REQ_T` reader - aresetn_cci request bit When HIGH, reset relative logic"]
+#[doc = "Field `ARESETN_CCI_REQ_T` reader - aresetn_cci request bit\n\nWhen HIGH, reset relative logic"]
 pub type AresetnCciReqTR = crate::BitReader;
-#[doc = "Field `ARESETN_CCI_REQ_T` writer - aresetn_cci request bit When HIGH, reset relative logic"]
+#[doc = "Field `ARESETN_CCI_REQ_T` writer - aresetn_cci request bit\n\nWhen HIGH, reset relative logic"]
 pub type AresetnCciReqTW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ARESETN_CCIM0_NOC_REQ_T` reader - aresetn_ccim0_noc request bit When HIGH, reset relative logic"]
+#[doc = "Field `ARESETN_CCIM0_NOC_REQ_T` reader - aresetn_ccim0_noc request bit\n\nWhen HIGH, reset relative logic"]
 pub type AresetnCcim0NocReqTR = crate::BitReader;
-#[doc = "Field `ARESETN_CCIM0_NOC_REQ_T` writer - aresetn_ccim0_noc request bit When HIGH, reset relative logic"]
+#[doc = "Field `ARESETN_CCIM0_NOC_REQ_T` writer - aresetn_ccim0_noc request bit\n\nWhen HIGH, reset relative logic"]
 pub type AresetnCcim0NocReqTW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ARESETN_CCIM1_NOC_REQ_T` reader - aresetn_ccim1_noc request bit When HIGH, reset relative logic"]
+#[doc = "Field `ARESETN_CCIM1_NOC_REQ_T` reader - aresetn_ccim1_noc request bit\n\nWhen HIGH, reset relative logic"]
 pub type AresetnCcim1NocReqTR = crate::BitReader;
-#[doc = "Field `ARESETN_ADB400M_PD_CORE_B_REQ_T` reader - aresetn_adb400m_pd_core_b request bit When HIGH, reset relative logic"]
+#[doc = "Field `ARESETN_ADB400M_PD_CORE_B_REQ_T` reader - aresetn_adb400m_pd_core_b request bit\n\nWhen HIGH, reset relative logic"]
 pub type AresetnAdb400mPdCoreBReqTR = crate::BitReader;
-#[doc = "Field `ARESETN_ADB400M_PD_CORE_B_REQ_T` writer - aresetn_adb400m_pd_core_b request bit When HIGH, reset relative logic"]
+#[doc = "Field `ARESETN_ADB400M_PD_CORE_B_REQ_T` writer - aresetn_adb400m_pd_core_b request bit\n\nWhen HIGH, reset relative logic"]
 pub type AresetnAdb400mPdCoreBReqTW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ARESETN_ADB400M_PD_CORE_L_REQ_T` reader - aresetn_adb400m_pd_core_l request bit When HIGH, reset relative logic"]
+#[doc = "Field `ARESETN_ADB400M_PD_CORE_L_REQ_T` reader - aresetn_adb400m_pd_core_l request bit\n\nWhen HIGH, reset relative logic"]
 pub type AresetnAdb400mPdCoreLReqTR = crate::BitReader;
-#[doc = "Field `ARESETN_ADB400M_PD_CORE_L_REQ_T` writer - aresetn_adb400m_pd_core_l request bit When HIGH, reset relative logic"]
+#[doc = "Field `ARESETN_ADB400M_PD_CORE_L_REQ_T` writer - aresetn_adb400m_pd_core_l request bit\n\nWhen HIGH, reset relative logic"]
 pub type AresetnAdb400mPdCoreLReqTW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `RESETN_DBG_NOC_REQ_T` reader - resetn_dbg_noc request bit When HIGH, reset relative logic"]
+#[doc = "Field `RESETN_DBG_NOC_REQ_T` reader - resetn_dbg_noc request bit\n\nWhen HIGH, reset relative logic"]
 pub type ResetnDbgNocReqTR = crate::BitReader;
-#[doc = "Field `RESETN_DBG_NOC_REQ_T` writer - resetn_dbg_noc request bit When HIGH, reset relative logic"]
+#[doc = "Field `RESETN_DBG_NOC_REQ_T` writer - resetn_dbg_noc request bit\n\nWhen HIGH, reset relative logic"]
 pub type ResetnDbgNocReqTW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `RESETN_DBG_CXCS_REQ` reader - resetn_dbg_cxcs request bit When HIGH, reset relative logic"]
+#[doc = "Field `RESETN_DBG_CXCS_REQ` reader - resetn_dbg_cxcs request bit\n\nWhen HIGH, reset relative logic"]
 pub type ResetnDbgCxcsReqR = crate::BitReader;
-#[doc = "Field `RESETN_DBG_CXCS_REQ` writer - resetn_dbg_cxcs request bit When HIGH, reset relative logic"]
+#[doc = "Field `RESETN_DBG_CXCS_REQ` writer - resetn_dbg_cxcs request bit\n\nWhen HIGH, reset relative logic"]
 pub type ResetnDbgCxcsReqW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `RESETN_CCI_TRACE_REQ` reader - resetn_cci_trace request bit When HIGH, reset relative logic"]
+#[doc = "Field `RESETN_CCI_TRACE_REQ` reader - resetn_cci_trace request bit\n\nWhen HIGH, reset relative logic"]
 pub type ResetnCciTraceReqR = crate::BitReader;
-#[doc = "Field `RESETN_CCI_TRACE_REQ` writer - resetn_cci_trace request bit When HIGH, reset relative logic"]
+#[doc = "Field `RESETN_CCI_TRACE_REQ` writer - resetn_cci_trace request bit\n\nWhen HIGH, reset relative logic"]
 pub type ResetnCciTraceReqW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PRESETN_CCI_GRF_REQ` reader - presetn_cci_grf request bit When HIGH, reset relative logic"]
+#[doc = "Field `PRESETN_CCI_GRF_REQ` reader - presetn_cci_grf request bit\n\nWhen HIGH, reset relative logic"]
 pub type PresetnCciGrfReqR = crate::BitReader;
-#[doc = "Field `PRESETN_CCI_GRF_REQ` writer - presetn_cci_grf request bit When HIGH, reset relative logic"]
+#[doc = "Field `PRESETN_CCI_GRF_REQ` writer - presetn_cci_grf request bit\n\nWhen HIGH, reset relative logic"]
 pub type PresetnCciGrfReqW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bit 2 - aresetn_cci request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 2 - aresetn_cci request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     pub fn aresetn_cci_req_t(&self) -> AresetnCciReqTR {
         AresetnCciReqTR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - aresetn_ccim0_noc request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 3 - aresetn_ccim0_noc request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     pub fn aresetn_ccim0_noc_req_t(&self) -> AresetnCcim0NocReqTR {
         AresetnCcim0NocReqTR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - aresetn_ccim1_noc request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 4 - aresetn_ccim1_noc request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     pub fn aresetn_ccim1_noc_req_t(&self) -> AresetnCcim1NocReqTR {
         AresetnCcim1NocReqTR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - aresetn_adb400m_pd_core_b request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 5 - aresetn_adb400m_pd_core_b request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     pub fn aresetn_adb400m_pd_core_b_req_t(&self) -> AresetnAdb400mPdCoreBReqTR {
         AresetnAdb400mPdCoreBReqTR::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 6 - aresetn_adb400m_pd_core_l request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 6 - aresetn_adb400m_pd_core_l request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     pub fn aresetn_adb400m_pd_core_l_req_t(&self) -> AresetnAdb400mPdCoreLReqTR {
         AresetnAdb400mPdCoreLReqTR::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 7 - resetn_dbg_noc request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 7 - resetn_dbg_noc request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     pub fn resetn_dbg_noc_req_t(&self) -> ResetnDbgNocReqTR {
         ResetnDbgNocReqTR::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bit 8 - resetn_dbg_cxcs request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 8 - resetn_dbg_cxcs request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     pub fn resetn_dbg_cxcs_req(&self) -> ResetnDbgCxcsReqR {
         ResetnDbgCxcsReqR::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bit 9 - resetn_cci_trace request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 9 - resetn_cci_trace request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     pub fn resetn_cci_trace_req(&self) -> ResetnCciTraceReqR {
         ResetnCciTraceReqR::new(((self.bits >> 9) & 1) != 0)
     }
-    #[doc = "Bit 10 - presetn_cci_grf request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 10 - presetn_cci_grf request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     pub fn presetn_cci_grf_req(&self) -> PresetnCciGrfReqR {
         PresetnCciGrfReqR::new(((self.bits >> 10) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 2 - aresetn_cci request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 2 - aresetn_cci request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     #[must_use]
     pub fn aresetn_cci_req_t(&mut self) -> AresetnCciReqTW<CruSoftrstCon3Spec> {
         AresetnCciReqTW::new(self, 2)
     }
-    #[doc = "Bit 3 - aresetn_ccim0_noc request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 3 - aresetn_ccim0_noc request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     #[must_use]
     pub fn aresetn_ccim0_noc_req_t(&mut self) -> AresetnCcim0NocReqTW<CruSoftrstCon3Spec> {
         AresetnCcim0NocReqTW::new(self, 3)
     }
-    #[doc = "Bit 5 - aresetn_adb400m_pd_core_b request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 5 - aresetn_adb400m_pd_core_b request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     #[must_use]
     pub fn aresetn_adb400m_pd_core_b_req_t(
@@ -106,7 +106,7 @@ impl W {
     ) -> AresetnAdb400mPdCoreBReqTW<CruSoftrstCon3Spec> {
         AresetnAdb400mPdCoreBReqTW::new(self, 5)
     }
-    #[doc = "Bit 6 - aresetn_adb400m_pd_core_l request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 6 - aresetn_adb400m_pd_core_l request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     #[must_use]
     pub fn aresetn_adb400m_pd_core_l_req_t(
@@ -114,31 +114,31 @@ impl W {
     ) -> AresetnAdb400mPdCoreLReqTW<CruSoftrstCon3Spec> {
         AresetnAdb400mPdCoreLReqTW::new(self, 6)
     }
-    #[doc = "Bit 7 - resetn_dbg_noc request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 7 - resetn_dbg_noc request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     #[must_use]
     pub fn resetn_dbg_noc_req_t(&mut self) -> ResetnDbgNocReqTW<CruSoftrstCon3Spec> {
         ResetnDbgNocReqTW::new(self, 7)
     }
-    #[doc = "Bit 8 - resetn_dbg_cxcs request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 8 - resetn_dbg_cxcs request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     #[must_use]
     pub fn resetn_dbg_cxcs_req(&mut self) -> ResetnDbgCxcsReqW<CruSoftrstCon3Spec> {
         ResetnDbgCxcsReqW::new(self, 8)
     }
-    #[doc = "Bit 9 - resetn_cci_trace request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 9 - resetn_cci_trace request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     #[must_use]
     pub fn resetn_cci_trace_req(&mut self) -> ResetnCciTraceReqW<CruSoftrstCon3Spec> {
         ResetnCciTraceReqW::new(self, 9)
     }
-    #[doc = "Bit 10 - presetn_cci_grf request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 10 - presetn_cci_grf request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     #[must_use]
     pub fn presetn_cci_grf_req(&mut self) -> PresetnCciGrfReqW<CruSoftrstCon3Spec> {
         PresetnCciGrfReqW::new(self, 10)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruSoftrstCon3Spec> {

@@ -10,7 +10,7 @@ pub type CalvlRespMaskW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type CalvlEnR = crate::BitReader;
 #[doc = "Field `CALVL_EN` writer - Enable the MC CA training module. Set to 1 to enable."]
 pub type CalvlEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CALVL_ERROR_STATUS` reader - Holds the error associated with the CA training error interrupt. Bit (0) set indicates a TDFI_CALVL_RESP parameter violation and bit (1) set indicates a TDFI_CALVL_MAX parameter violation. READ-ONLY"]
+#[doc = "Field `CALVL_ERROR_STATUS` reader - Holds the error associated with the CA training error interrupt. Bit (0) set indicates a TDFI_CALVL_RESP parameter violation and bit (1) set indicates a TDFI_CALVL_MAX parameter violation."]
 pub type CalvlErrorStatusR = crate::FieldReader;
 #[doc = "Field `TDFI_PHY_WRDATA` reader - Defines the DFI tPHY_WRDATA timing parameter (in DFI PHY clocks), the maximum cycles between a dfi_wrdata_en assertion and a dfi_wrdata signal."]
 pub type TdfiPhyWrdataR = crate::FieldReader;
@@ -27,7 +27,7 @@ impl R {
     pub fn calvl_en(&self) -> CalvlEnR {
         CalvlEnR::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bits 16:19 - Holds the error associated with the CA training error interrupt. Bit (0) set indicates a TDFI_CALVL_RESP parameter violation and bit (1) set indicates a TDFI_CALVL_MAX parameter violation. READ-ONLY"]
+    #[doc = "Bits 16:19 - Holds the error associated with the CA training error interrupt. Bit (0) set indicates a TDFI_CALVL_RESP parameter violation and bit (1) set indicates a TDFI_CALVL_MAX parameter violation."]
     #[inline(always)]
     pub fn calvl_error_status(&self) -> CalvlErrorStatusR {
         CalvlErrorStatusR::new(((self.bits >> 16) & 0x0f) as u8)

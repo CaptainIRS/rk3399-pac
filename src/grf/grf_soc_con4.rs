@@ -2,26 +2,27 @@
 pub type R = crate::R<GrfSocCon4Spec>;
 #[doc = "Register `GRF_SOC_CON4` writer"]
 pub type W = crate::W<GrfSocCon4Spec>;
-#[doc = "Field `ACCHANNELENS0_CCI500` reader - CCI ACCHANNELEN input control. Slave interface supports DVM messages. This is overridden to 0x0 if you set the Control Override Register\\[1\\]."]
+#[doc = "Field `ACCHANNELENS0_CCI500` reader - CCI ACCHANNELEN input control.\n\nSlave interface supports DVM messages.\n\nThis is overridden to 0x0 if you set the Control\n\nOverride Register\\[1\\]."]
 pub type Acchannelens0Cci500R = crate::FieldReader;
-#[doc = "Field `ACCHANNELENS0_CCI500` writer - CCI ACCHANNELEN input control. Slave interface supports DVM messages. This is overridden to 0x0 if you set the Control Override Register\\[1\\]."]
+#[doc = "Field `ACCHANNELENS0_CCI500` writer - CCI ACCHANNELEN input control.\n\nSlave interface supports DVM messages.\n\nThis is overridden to 0x0 if you set the Control\n\nOverride Register\\[1\\]."]
 pub type Acchannelens0Cci500W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-#[doc = "Field `ACCHANNELENS1_CCI500` reader - CCI ACCHANNELEN input control. Slave interface supports DVM messages. This is overridden to 0x0 if you set the Control Override Register\\[1\\]."]
+#[doc = "Field `ACCHANNELENS1_CCI500` reader - CCI ACCHANNELEN input control.\n\nSlave interface supports DVM messages.\n\nThis is overridden to 0x0 if you set the Control\n\nOverride Register\\[1\\]."]
 pub type Acchannelens1Cci500R = crate::FieldReader;
-#[doc = "Field `ACCHANNELENS1_CCI500` writer - CCI ACCHANNELEN input control. Slave interface supports DVM messages. This is overridden to 0x0 if you set the Control Override Register\\[1\\]."]
+#[doc = "Field `ACCHANNELENS1_CCI500` writer - CCI ACCHANNELEN input control.\n\nSlave interface supports DVM messages.\n\nThis is overridden to 0x0 if you set the Control\n\nOverride Register\\[1\\]."]
 pub type Acchannelens1Cci500W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-#[doc = "Field `CCI_ORDERED_WR_OBSV` reader - cci port ORDERED_WRITE_OBSERVATION control"]
+#[doc = "Field `CCI_ORDERED_WR_OBSV` reader - cci port ORDERED_WRITE_OBSERVATION\n\ncontrol"]
 pub type CciOrderedWrObsvR = crate::FieldReader;
-#[doc = "Field `CCI_ORDERED_WR_OBSV` writer - cci port ORDERED_WRITE_OBSERVATION control"]
+#[doc = "Field `CCI_ORDERED_WR_OBSV` writer - cci port ORDERED_WRITE_OBSERVATION\n\ncontrol"]
 pub type CciOrderedWrObsvW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `CCI_QOSOVERRIDE` reader - cci port QOSOVERRIDE bit control"]
 pub type CciQosoverrideR = crate::FieldReader;
 #[doc = "Field `CCI_QOSOVERRIDE` writer - cci port QOSOVERRIDE bit control"]
 pub type CciQosoverrideW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "cci force wakeup control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CciForceWakeup {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -43,7 +44,7 @@ impl CciForceWakeupR {
             true => CciForceWakeup::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CciForceWakeup::B0
@@ -60,7 +61,7 @@ impl<'a, REG> CciForceWakeupW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CciForceWakeup::B0)
@@ -72,22 +73,23 @@ where
     }
 }
 #[doc = "select ddr debug port\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DdrDebugSel {
-    #[doc = "0: ddr_dbug_port\\[63:56\\]"]
+    #[doc = "0: ddr_dbug_port\\[7:0\\]"]
     D0 = 0,
-    #[doc = "1: ddr_dbug_port\\[63:56\\]"]
+    #[doc = "1: ddr_dbug_port\\[15:8\\]"]
     D1 = 1,
-    #[doc = "2: ddr_dbug_port\\[63:56\\]"]
+    #[doc = "2: ddr_dbug_port\\[23:16\\]"]
     D2 = 2,
-    #[doc = "3: ddr_dbug_port\\[63:56\\]"]
+    #[doc = "3: ddr_dbug_port\\[31:24\\]"]
     D3 = 3,
-    #[doc = "4: ddr_dbug_port\\[63:56\\]"]
+    #[doc = "4: ddr_dbug_port\\[39:32\\]"]
     D4 = 4,
-    #[doc = "5: ddr_dbug_port\\[63:56\\]"]
+    #[doc = "5: ddr_dbug_port\\[47:40\\]"]
     D5 = 5,
-    #[doc = "6: ddr_dbug_port\\[63:56\\]"]
+    #[doc = "6: ddr_dbug_port\\[55:48\\]"]
     D6 = 6,
     #[doc = "7: ddr_dbug_port\\[63:56\\]"]
     D7 = 7,
@@ -119,37 +121,37 @@ impl DdrDebugSelR {
             _ => unreachable!(),
         }
     }
-    #[doc = "ddr_dbug_port\\[63:56\\]"]
+    #[doc = "ddr_dbug_port\\[7:0\\]"]
     #[inline(always)]
     pub fn is_d0(&self) -> bool {
         *self == DdrDebugSel::D0
     }
-    #[doc = "ddr_dbug_port\\[63:56\\]"]
+    #[doc = "ddr_dbug_port\\[15:8\\]"]
     #[inline(always)]
     pub fn is_d1(&self) -> bool {
         *self == DdrDebugSel::D1
     }
-    #[doc = "ddr_dbug_port\\[63:56\\]"]
+    #[doc = "ddr_dbug_port\\[23:16\\]"]
     #[inline(always)]
     pub fn is_d2(&self) -> bool {
         *self == DdrDebugSel::D2
     }
-    #[doc = "ddr_dbug_port\\[63:56\\]"]
+    #[doc = "ddr_dbug_port\\[31:24\\]"]
     #[inline(always)]
     pub fn is_d3(&self) -> bool {
         *self == DdrDebugSel::D3
     }
-    #[doc = "ddr_dbug_port\\[63:56\\]"]
+    #[doc = "ddr_dbug_port\\[39:32\\]"]
     #[inline(always)]
     pub fn is_d4(&self) -> bool {
         *self == DdrDebugSel::D4
     }
-    #[doc = "ddr_dbug_port\\[63:56\\]"]
+    #[doc = "ddr_dbug_port\\[47:40\\]"]
     #[inline(always)]
     pub fn is_d5(&self) -> bool {
         *self == DdrDebugSel::D5
     }
-    #[doc = "ddr_dbug_port\\[63:56\\]"]
+    #[doc = "ddr_dbug_port\\[55:48\\]"]
     #[inline(always)]
     pub fn is_d6(&self) -> bool {
         *self == DdrDebugSel::D6
@@ -167,37 +169,37 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "ddr_dbug_port\\[63:56\\]"]
+    #[doc = "ddr_dbug_port\\[7:0\\]"]
     #[inline(always)]
     pub fn d0(self) -> &'a mut crate::W<REG> {
         self.variant(DdrDebugSel::D0)
     }
-    #[doc = "ddr_dbug_port\\[63:56\\]"]
+    #[doc = "ddr_dbug_port\\[15:8\\]"]
     #[inline(always)]
     pub fn d1(self) -> &'a mut crate::W<REG> {
         self.variant(DdrDebugSel::D1)
     }
-    #[doc = "ddr_dbug_port\\[63:56\\]"]
+    #[doc = "ddr_dbug_port\\[23:16\\]"]
     #[inline(always)]
     pub fn d2(self) -> &'a mut crate::W<REG> {
         self.variant(DdrDebugSel::D2)
     }
-    #[doc = "ddr_dbug_port\\[63:56\\]"]
+    #[doc = "ddr_dbug_port\\[31:24\\]"]
     #[inline(always)]
     pub fn d3(self) -> &'a mut crate::W<REG> {
         self.variant(DdrDebugSel::D3)
     }
-    #[doc = "ddr_dbug_port\\[63:56\\]"]
+    #[doc = "ddr_dbug_port\\[39:32\\]"]
     #[inline(always)]
     pub fn d4(self) -> &'a mut crate::W<REG> {
         self.variant(DdrDebugSel::D4)
     }
-    #[doc = "ddr_dbug_port\\[63:56\\]"]
+    #[doc = "ddr_dbug_port\\[47:40\\]"]
     #[inline(always)]
     pub fn d5(self) -> &'a mut crate::W<REG> {
         self.variant(DdrDebugSel::D5)
     }
-    #[doc = "ddr_dbug_port\\[63:56\\]"]
+    #[doc = "ddr_dbug_port\\[55:48\\]"]
     #[inline(always)]
     pub fn d6(self) -> &'a mut crate::W<REG> {
         self.variant(DdrDebugSel::D6)
@@ -209,9 +211,10 @@ where
     }
 }
 #[doc = "noc_perilp_fwd_gic_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PerilpFwdGicPwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -233,7 +236,7 @@ impl PerilpFwdGicPwrdisctargpwrstallR {
             true => PerilpFwdGicPwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PerilpFwdGicPwrdisctargpwrstall::B0
@@ -251,7 +254,7 @@ impl<'a, REG> PerilpFwdGicPwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PerilpFwdGicPwrdisctargpwrstall::B0)
@@ -262,10 +265,11 @@ where
         self.variant(PerilpFwdGicPwrdisctargpwrstall::B1)
     }
 }
-#[doc = "noc_perilp_fwd_sdioaudio_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[doc = "noc_perilp_fwd_sdioaudio_rsp_err_stall bit\n\ncontrol\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PerilpFwdSdioaudioPwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -276,7 +280,7 @@ impl From<PerilpFwdSdioaudioPwrdisctargpwrstall> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PERILP_FWD_SDIOAUDIO_PWRDISCTARGPWRSTALL` reader - noc_perilp_fwd_sdioaudio_rsp_err_stall bit control"]
+#[doc = "Field `PERILP_FWD_SDIOAUDIO_PWRDISCTARGPWRSTALL` reader - noc_perilp_fwd_sdioaudio_rsp_err_stall bit\n\ncontrol"]
 pub type PerilpFwdSdioaudioPwrdisctargpwrstallR =
     crate::BitReader<PerilpFwdSdioaudioPwrdisctargpwrstall>;
 impl PerilpFwdSdioaudioPwrdisctargpwrstallR {
@@ -288,7 +292,7 @@ impl PerilpFwdSdioaudioPwrdisctargpwrstallR {
             true => PerilpFwdSdioaudioPwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PerilpFwdSdioaudioPwrdisctargpwrstall::B0
@@ -299,14 +303,14 @@ impl PerilpFwdSdioaudioPwrdisctargpwrstallR {
         *self == PerilpFwdSdioaudioPwrdisctargpwrstall::B1
     }
 }
-#[doc = "Field `PERILP_FWD_SDIOAUDIO_PWRDISCTARGPWRSTALL` writer - noc_perilp_fwd_sdioaudio_rsp_err_stall bit control"]
+#[doc = "Field `PERILP_FWD_SDIOAUDIO_PWRDISCTARGPWRSTALL` writer - noc_perilp_fwd_sdioaudio_rsp_err_stall bit\n\ncontrol"]
 pub type PerilpFwdSdioaudioPwrdisctargpwrstallW<'a, REG> =
     crate::BitWriter<'a, REG, PerilpFwdSdioaudioPwrdisctargpwrstall>;
 impl<'a, REG> PerilpFwdSdioaudioPwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PerilpFwdSdioaudioPwrdisctargpwrstall::B0)
@@ -317,10 +321,11 @@ where
         self.variant(PerilpFwdSdioaudioPwrdisctargpwrstall::B1)
     }
 }
-#[doc = "noc_perilp_fwd_centerslv_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[doc = "noc_perilp_fwd_centerslv_rsp_err_stall bit\n\ncontrol\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PerilpFwdCenterslvPwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -331,7 +336,7 @@ impl From<PerilpFwdCenterslvPwrdisctargpwrstall> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PERILP_FWD_CENTERSLV_PWRDISCTARGPWRSTALL` reader - noc_perilp_fwd_centerslv_rsp_err_stall bit control"]
+#[doc = "Field `PERILP_FWD_CENTERSLV_PWRDISCTARGPWRSTALL` reader - noc_perilp_fwd_centerslv_rsp_err_stall bit\n\ncontrol"]
 pub type PerilpFwdCenterslvPwrdisctargpwrstallR =
     crate::BitReader<PerilpFwdCenterslvPwrdisctargpwrstall>;
 impl PerilpFwdCenterslvPwrdisctargpwrstallR {
@@ -343,7 +348,7 @@ impl PerilpFwdCenterslvPwrdisctargpwrstallR {
             true => PerilpFwdCenterslvPwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PerilpFwdCenterslvPwrdisctargpwrstall::B0
@@ -354,14 +359,14 @@ impl PerilpFwdCenterslvPwrdisctargpwrstallR {
         *self == PerilpFwdCenterslvPwrdisctargpwrstall::B1
     }
 }
-#[doc = "Field `PERILP_FWD_CENTERSLV_PWRDISCTARGPWRSTALL` writer - noc_perilp_fwd_centerslv_rsp_err_stall bit control"]
+#[doc = "Field `PERILP_FWD_CENTERSLV_PWRDISCTARGPWRSTALL` writer - noc_perilp_fwd_centerslv_rsp_err_stall bit\n\ncontrol"]
 pub type PerilpFwdCenterslvPwrdisctargpwrstallW<'a, REG> =
     crate::BitWriter<'a, REG, PerilpFwdCenterslvPwrdisctargpwrstall>;
 impl<'a, REG> PerilpFwdCenterslvPwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PerilpFwdCenterslvPwrdisctargpwrstall::B0)
@@ -372,22 +377,22 @@ where
         self.variant(PerilpFwdCenterslvPwrdisctargpwrstall::B1)
     }
 }
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:1 - CCI ACCHANNELEN input control. Slave interface supports DVM messages. This is overridden to 0x0 if you set the Control Override Register\\[1\\]."]
+    #[doc = "Bits 0:1 - CCI ACCHANNELEN input control.\n\nSlave interface supports DVM messages.\n\nThis is overridden to 0x0 if you set the Control\n\nOverride Register\\[1\\]."]
     #[inline(always)]
     pub fn acchannelens0_cci500(&self) -> Acchannelens0Cci500R {
         Acchannelens0Cci500R::new((self.bits & 3) as u8)
     }
-    #[doc = "Bits 2:3 - CCI ACCHANNELEN input control. Slave interface supports DVM messages. This is overridden to 0x0 if you set the Control Override Register\\[1\\]."]
+    #[doc = "Bits 2:3 - CCI ACCHANNELEN input control.\n\nSlave interface supports DVM messages.\n\nThis is overridden to 0x0 if you set the Control\n\nOverride Register\\[1\\]."]
     #[inline(always)]
     pub fn acchannelens1_cci500(&self) -> Acchannelens1Cci500R {
         Acchannelens1Cci500R::new(((self.bits >> 2) & 3) as u8)
     }
-    #[doc = "Bits 4:5 - cci port ORDERED_WRITE_OBSERVATION control"]
+    #[doc = "Bits 4:5 - cci port ORDERED_WRITE_OBSERVATION\n\ncontrol"]
     #[inline(always)]
     pub fn cci_ordered_wr_obsv(&self) -> CciOrderedWrObsvR {
         CciOrderedWrObsvR::new(((self.bits >> 4) & 3) as u8)
@@ -412,40 +417,40 @@ impl R {
     pub fn perilp_fwd_gic_pwrdisctargpwrstall(&self) -> PerilpFwdGicPwrdisctargpwrstallR {
         PerilpFwdGicPwrdisctargpwrstallR::new(((self.bits >> 12) & 1) != 0)
     }
-    #[doc = "Bit 13 - noc_perilp_fwd_sdioaudio_rsp_err_stall bit control"]
+    #[doc = "Bit 13 - noc_perilp_fwd_sdioaudio_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     pub fn perilp_fwd_sdioaudio_pwrdisctargpwrstall(
         &self,
     ) -> PerilpFwdSdioaudioPwrdisctargpwrstallR {
         PerilpFwdSdioaudioPwrdisctargpwrstallR::new(((self.bits >> 13) & 1) != 0)
     }
-    #[doc = "Bit 14 - noc_perilp_fwd_centerslv_rsp_err_stall bit control"]
+    #[doc = "Bit 14 - noc_perilp_fwd_centerslv_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     pub fn perilp_fwd_centerslv_pwrdisctargpwrstall(
         &self,
     ) -> PerilpFwdCenterslvPwrdisctargpwrstallR {
         PerilpFwdCenterslvPwrdisctargpwrstallR::new(((self.bits >> 14) & 1) != 0)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:1 - CCI ACCHANNELEN input control. Slave interface supports DVM messages. This is overridden to 0x0 if you set the Control Override Register\\[1\\]."]
+    #[doc = "Bits 0:1 - CCI ACCHANNELEN input control.\n\nSlave interface supports DVM messages.\n\nThis is overridden to 0x0 if you set the Control\n\nOverride Register\\[1\\]."]
     #[inline(always)]
     #[must_use]
     pub fn acchannelens0_cci500(&mut self) -> Acchannelens0Cci500W<GrfSocCon4Spec> {
         Acchannelens0Cci500W::new(self, 0)
     }
-    #[doc = "Bits 2:3 - CCI ACCHANNELEN input control. Slave interface supports DVM messages. This is overridden to 0x0 if you set the Control Override Register\\[1\\]."]
+    #[doc = "Bits 2:3 - CCI ACCHANNELEN input control.\n\nSlave interface supports DVM messages.\n\nThis is overridden to 0x0 if you set the Control\n\nOverride Register\\[1\\]."]
     #[inline(always)]
     #[must_use]
     pub fn acchannelens1_cci500(&mut self) -> Acchannelens1Cci500W<GrfSocCon4Spec> {
         Acchannelens1Cci500W::new(self, 2)
     }
-    #[doc = "Bits 4:5 - cci port ORDERED_WRITE_OBSERVATION control"]
+    #[doc = "Bits 4:5 - cci port ORDERED_WRITE_OBSERVATION\n\ncontrol"]
     #[inline(always)]
     #[must_use]
     pub fn cci_ordered_wr_obsv(&mut self) -> CciOrderedWrObsvW<GrfSocCon4Spec> {
@@ -477,7 +482,7 @@ impl W {
     ) -> PerilpFwdGicPwrdisctargpwrstallW<GrfSocCon4Spec> {
         PerilpFwdGicPwrdisctargpwrstallW::new(self, 12)
     }
-    #[doc = "Bit 13 - noc_perilp_fwd_sdioaudio_rsp_err_stall bit control"]
+    #[doc = "Bit 13 - noc_perilp_fwd_sdioaudio_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     #[must_use]
     pub fn perilp_fwd_sdioaudio_pwrdisctargpwrstall(
@@ -485,7 +490,7 @@ impl W {
     ) -> PerilpFwdSdioaudioPwrdisctargpwrstallW<GrfSocCon4Spec> {
         PerilpFwdSdioaudioPwrdisctargpwrstallW::new(self, 13)
     }
-    #[doc = "Bit 14 - noc_perilp_fwd_centerslv_rsp_err_stall bit control"]
+    #[doc = "Bit 14 - noc_perilp_fwd_centerslv_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     #[must_use]
     pub fn perilp_fwd_centerslv_pwrdisctargpwrstall(
@@ -493,7 +498,7 @@ impl W {
     ) -> PerilpFwdCenterslvPwrdisctargpwrstallW<GrfSocCon4Spec> {
         PerilpFwdCenterslvPwrdisctargpwrstallW::new(self, 14)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfSocCon4Spec> {

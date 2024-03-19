@@ -2,19 +2,19 @@
 pub type R = crate::R<SdmmcBytcntSpec>;
 #[doc = "Register `SDMMC_BYTCNT` writer"]
 pub type W = crate::W<SdmmcBytcntSpec>;
-#[doc = "Field `BYTE_COUNT` reader - Number of bytes to be transferred; should be integer multiple of Block Size for block transfers. For undefined number of byte transfers, byte count should be set to 0. When byte count is set to 0, it is responsibility of host to explicitly send stop/abort command to terminate data transfer."]
+#[doc = "Field `BYTE_COUNT` reader - Number of bytes to be transferred; should be integer multiple of\n\nBlock Size for block transfers.\n\nFor undefined number of byte transfers, byte count should be set\n\nto 0. When byte count is set to 0, it is responsibility of host to\n\nexplicitly send stop/abort command to terminate data transfer."]
 pub type ByteCountR = crate::FieldReader<u32>;
-#[doc = "Field `BYTE_COUNT` writer - Number of bytes to be transferred; should be integer multiple of Block Size for block transfers. For undefined number of byte transfers, byte count should be set to 0. When byte count is set to 0, it is responsibility of host to explicitly send stop/abort command to terminate data transfer."]
+#[doc = "Field `BYTE_COUNT` writer - Number of bytes to be transferred; should be integer multiple of\n\nBlock Size for block transfers.\n\nFor undefined number of byte transfers, byte count should be set\n\nto 0. When byte count is set to 0, it is responsibility of host to\n\nexplicitly send stop/abort command to terminate data transfer."]
 pub type ByteCountW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Number of bytes to be transferred; should be integer multiple of Block Size for block transfers. For undefined number of byte transfers, byte count should be set to 0. When byte count is set to 0, it is responsibility of host to explicitly send stop/abort command to terminate data transfer."]
+    #[doc = "Bits 0:31 - Number of bytes to be transferred; should be integer multiple of\n\nBlock Size for block transfers.\n\nFor undefined number of byte transfers, byte count should be set\n\nto 0. When byte count is set to 0, it is responsibility of host to\n\nexplicitly send stop/abort command to terminate data transfer."]
     #[inline(always)]
     pub fn byte_count(&self) -> ByteCountR {
         ByteCountR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Number of bytes to be transferred; should be integer multiple of Block Size for block transfers. For undefined number of byte transfers, byte count should be set to 0. When byte count is set to 0, it is responsibility of host to explicitly send stop/abort command to terminate data transfer."]
+    #[doc = "Bits 0:31 - Number of bytes to be transferred; should be integer multiple of\n\nBlock Size for block transfers.\n\nFor undefined number of byte transfers, byte count should be set\n\nto 0. When byte count is set to 0, it is responsibility of host to\n\nexplicitly send stop/abort command to terminate data transfer."]
     #[inline(always)]
     #[must_use]
     pub fn byte_count(&mut self) -> ByteCountW<SdmmcBytcntSpec> {

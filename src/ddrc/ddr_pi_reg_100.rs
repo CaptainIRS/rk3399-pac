@@ -6,11 +6,11 @@ pub type W = crate::W<DdrPiReg100Spec>;
 pub type PiCalvlRespMaskR = crate::BitReader;
 #[doc = "Field `PI_CALVL_RESP_MASK` writer - Indicates mask for the dfi_calvl_resp signal during CA training."]
 pub type PiCalvlRespMaskW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PI_CALVL_EN` reader - Enables the PI CA training module. Bit1 represents the support when non-initialization. Bit0 represents the support when initialization. Set to 1 to enable."]
+#[doc = "Field `PI_CALVL_EN` reader - Enables the PI CA training module. Bit1 represents the support\n\nwhen non-initialization. Bit0 represents the support when\n\ninitialization. Set to 1 to enable."]
 pub type PiCalvlEnR = crate::FieldReader;
-#[doc = "Field `PI_CALVL_EN` writer - Enables the PI CA training module. Bit1 represents the support when non-initialization. Bit0 represents the support when initialization. Set to 1 to enable."]
+#[doc = "Field `PI_CALVL_EN` writer - Enables the PI CA training module. Bit1 represents the support\n\nwhen non-initialization. Bit0 represents the support when\n\ninitialization. Set to 1 to enable."]
 pub type PiCalvlEnW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-#[doc = "Field `PI_CALVL_ERROR_STATUS` reader - Holds the error that is associated with the CA training error interrupt. Bit0 set indicates a PI_REG_98.pi_tdfi_calvl_resp parameter violation and bit1 set indicates a PI_REG_99.pi_tdfi_calvl_max parameter violation."]
+#[doc = "Field `PI_CALVL_ERROR_STATUS` reader - Holds the error that is associated with the CA training error\n\ninterrupt. Bit0 set indicates a PI_REG_98.pi_tdfi_calvl_resp\n\nparameter violation and bit1 set indicates a\n\nPI_REG_99.pi_tdfi_calvl_max parameter violation."]
 pub type PiCalvlErrorStatusR = crate::FieldReader;
 impl R {
     #[doc = "Bit 0 - Indicates mask for the dfi_calvl_resp signal during CA training."]
@@ -18,12 +18,12 @@ impl R {
     pub fn pi_calvl_resp_mask(&self) -> PiCalvlRespMaskR {
         PiCalvlRespMaskR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bits 8:9 - Enables the PI CA training module. Bit1 represents the support when non-initialization. Bit0 represents the support when initialization. Set to 1 to enable."]
+    #[doc = "Bits 8:9 - Enables the PI CA training module. Bit1 represents the support\n\nwhen non-initialization. Bit0 represents the support when\n\ninitialization. Set to 1 to enable."]
     #[inline(always)]
     pub fn pi_calvl_en(&self) -> PiCalvlEnR {
         PiCalvlEnR::new(((self.bits >> 8) & 3) as u8)
     }
-    #[doc = "Bits 16:17 - Holds the error that is associated with the CA training error interrupt. Bit0 set indicates a PI_REG_98.pi_tdfi_calvl_resp parameter violation and bit1 set indicates a PI_REG_99.pi_tdfi_calvl_max parameter violation."]
+    #[doc = "Bits 16:17 - Holds the error that is associated with the CA training error\n\ninterrupt. Bit0 set indicates a PI_REG_98.pi_tdfi_calvl_resp\n\nparameter violation and bit1 set indicates a\n\nPI_REG_99.pi_tdfi_calvl_max parameter violation."]
     #[inline(always)]
     pub fn pi_calvl_error_status(&self) -> PiCalvlErrorStatusR {
         PiCalvlErrorStatusR::new(((self.bits >> 16) & 3) as u8)
@@ -36,7 +36,7 @@ impl W {
     pub fn pi_calvl_resp_mask(&mut self) -> PiCalvlRespMaskW<DdrPiReg100Spec> {
         PiCalvlRespMaskW::new(self, 0)
     }
-    #[doc = "Bits 8:9 - Enables the PI CA training module. Bit1 represents the support when non-initialization. Bit0 represents the support when initialization. Set to 1 to enable."]
+    #[doc = "Bits 8:9 - Enables the PI CA training module. Bit1 represents the support\n\nwhen non-initialization. Bit0 represents the support when\n\ninitialization. Set to 1 to enable."]
     #[inline(always)]
     #[must_use]
     pub fn pi_calvl_en(&mut self) -> PiCalvlEnW<DdrPiReg100Spec> {

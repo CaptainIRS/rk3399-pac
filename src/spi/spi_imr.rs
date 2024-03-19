@@ -3,9 +3,10 @@ pub type R = crate::R<SpiImrSpec>;
 #[doc = "Register `SPI_IMR` writer"]
 pub type W = crate::W<SpiImrSpec>;
 #[doc = "Transmit FIFO Empty Interrupt Mask\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tfeim {
-    #[doc = "0: spi_txe_intr interrupt is not masked"]
+    #[doc = "0: spi_txe_intr interrupt is masked"]
     B0 = 0,
     #[doc = "1: spi_txe_intr interrupt is not masked"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl TfeimR {
             true => Tfeim::B1,
         }
     }
-    #[doc = "spi_txe_intr interrupt is not masked"]
+    #[doc = "spi_txe_intr interrupt is masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Tfeim::B0
@@ -44,7 +45,7 @@ impl<'a, REG> TfeimW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "spi_txe_intr interrupt is not masked"]
+    #[doc = "spi_txe_intr interrupt is masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Tfeim::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Transmit FIFO Overflow Interrupt Mask\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tfoim {
-    #[doc = "0: spi_txo_intr interrupt is not masked"]
+    #[doc = "0: spi_txo_intr interrupt is masked"]
     B0 = 0,
     #[doc = "1: spi_txo_intr interrupt is not masked"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl TfoimR {
             true => Tfoim::B1,
         }
     }
-    #[doc = "spi_txo_intr interrupt is not masked"]
+    #[doc = "spi_txo_intr interrupt is masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Tfoim::B0
@@ -97,7 +99,7 @@ impl<'a, REG> TfoimW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "spi_txo_intr interrupt is not masked"]
+    #[doc = "spi_txo_intr interrupt is masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Tfoim::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "Receive FIFO Underflow Interrupt Mask\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rfuim {
-    #[doc = "0: spi_rxu_intr interrupt is not masked"]
+    #[doc = "0: spi_rxu_intr interrupt is masked"]
     B0 = 0,
     #[doc = "1: spi_rxu_intr interrupt is not masked"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl RfuimR {
             true => Rfuim::B1,
         }
     }
-    #[doc = "spi_rxu_intr interrupt is not masked"]
+    #[doc = "spi_rxu_intr interrupt is masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Rfuim::B0
@@ -150,7 +153,7 @@ impl<'a, REG> RfuimW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "spi_rxu_intr interrupt is not masked"]
+    #[doc = "spi_rxu_intr interrupt is masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Rfuim::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "Receive FIFO Overflow Interrupt Mask\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rfoim {
-    #[doc = "0: spi_rxo_intr interrupt is not masked"]
+    #[doc = "0: spi_rxo_intr interrupt is masked"]
     B0 = 0,
     #[doc = "1: spi_rxo_intr interrupt is not masked"]
     B1 = 1,
@@ -186,7 +190,7 @@ impl RfoimR {
             true => Rfoim::B1,
         }
     }
-    #[doc = "spi_rxo_intr interrupt is not masked"]
+    #[doc = "spi_rxo_intr interrupt is masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Rfoim::B0
@@ -203,7 +207,7 @@ impl<'a, REG> RfoimW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "spi_rxo_intr interrupt is not masked"]
+    #[doc = "spi_rxo_intr interrupt is masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Rfoim::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "Receive FIFO Full Interrupt Mask\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rffim {
-    #[doc = "0: spi_rxf_intr interrupt is not masked"]
+    #[doc = "0: spi_rxf_intr interrupt is masked"]
     B0 = 0,
     #[doc = "1: spi_rxf_intr interrupt is not masked"]
     B1 = 1,
@@ -239,7 +244,7 @@ impl RffimR {
             true => Rffim::B1,
         }
     }
-    #[doc = "spi_rxf_intr interrupt is not masked"]
+    #[doc = "spi_rxf_intr interrupt is masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Rffim::B0
@@ -256,7 +261,7 @@ impl<'a, REG> RffimW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "spi_rxf_intr interrupt is not masked"]
+    #[doc = "spi_rxf_intr interrupt is masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Rffim::B0)

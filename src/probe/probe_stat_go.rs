@@ -2,19 +2,19 @@
 pub type R = crate::R<ProbeStatGoSpec>;
 #[doc = "Register `PROBE_StatGo` writer"]
 pub type W = crate::W<ProbeStatGoSpec>;
-#[doc = "Field `STATGO` reader - Writing a 1 to the 1-bit pulse register StatGo generates a statistics dump.The register is active when statistics collection operates in manual mode, that is, when register StatPeriod is set to 0.NOTE The written value is not stored in StatGo. A read always returns 0."]
+#[doc = "Field `STATGO` reader - Writing a 1 to the 1-bit pulse register StatGo generates a statistics\n\ndump.The register is active when statistics collection operates in\n\nmanual mode, that is, when register StatPeriod is set to 0.NOTE\n\nThe written value is not stored in StatGo. A read always returns 0."]
 pub type StatgoR = crate::BitReader;
-#[doc = "Field `STATGO` writer - Writing a 1 to the 1-bit pulse register StatGo generates a statistics dump.The register is active when statistics collection operates in manual mode, that is, when register StatPeriod is set to 0.NOTE The written value is not stored in StatGo. A read always returns 0."]
+#[doc = "Field `STATGO` writer - Writing a 1 to the 1-bit pulse register StatGo generates a statistics\n\ndump.The register is active when statistics collection operates in\n\nmanual mode, that is, when register StatPeriod is set to 0.NOTE\n\nThe written value is not stored in StatGo. A read always returns 0."]
 pub type StatgoW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - Writing a 1 to the 1-bit pulse register StatGo generates a statistics dump.The register is active when statistics collection operates in manual mode, that is, when register StatPeriod is set to 0.NOTE The written value is not stored in StatGo. A read always returns 0."]
+    #[doc = "Bit 0 - Writing a 1 to the 1-bit pulse register StatGo generates a statistics\n\ndump.The register is active when statistics collection operates in\n\nmanual mode, that is, when register StatPeriod is set to 0.NOTE\n\nThe written value is not stored in StatGo. A read always returns 0."]
     #[inline(always)]
     pub fn statgo(&self) -> StatgoR {
         StatgoR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Writing a 1 to the 1-bit pulse register StatGo generates a statistics dump.The register is active when statistics collection operates in manual mode, that is, when register StatPeriod is set to 0.NOTE The written value is not stored in StatGo. A read always returns 0."]
+    #[doc = "Bit 0 - Writing a 1 to the 1-bit pulse register StatGo generates a statistics\n\ndump.The register is active when statistics collection operates in\n\nmanual mode, that is, when register StatPeriod is set to 0.NOTE\n\nThe written value is not stored in StatGo. A read always returns 0."]
     #[inline(always)]
     #[must_use]
     pub fn statgo(&mut self) -> StatgoW<ProbeStatGoSpec> {

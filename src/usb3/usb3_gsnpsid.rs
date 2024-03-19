@@ -1,13 +1,13 @@
 #[doc = "Register `USB3_GSNPSID` reader"]
 pub type R = crate::R<Usb3GsnpsidSpec>;
-#[doc = "Field `SNPSID` reader - SNPSID SNPSID\\[31:16\\]
-indicates Core Identification Number. 0x5533 is ASCII for U3 (DWC_usb3). SNPSID\\[15:0\\]
-indicates the release number. Current Release is 3.00a. Software uses this register to configure release-specific features in the driver."]
+#[doc = "Field `SNPSID` reader - SNPSID\n\nSNPSID\\[31:16\\]
+indicates Core Identification Number. 0x5533 is\n\nASCII for U3 (DWC_usb3).\n\nSNPSID\\[15:0\\]
+indicates the release number. Current Release is\n\n3.00a.\n\nSoftware uses this register to configure release-specific features\n\nin the driver."]
 pub type SnpsidR = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - SNPSID SNPSID\\[31:16\\]
-indicates Core Identification Number. 0x5533 is ASCII for U3 (DWC_usb3). SNPSID\\[15:0\\]
-indicates the release number. Current Release is 3.00a. Software uses this register to configure release-specific features in the driver."]
+    #[doc = "Bits 0:31 - SNPSID\n\nSNPSID\\[31:16\\]
+indicates Core Identification Number. 0x5533 is\n\nASCII for U3 (DWC_usb3).\n\nSNPSID\\[15:0\\]
+indicates the release number. Current Release is\n\n3.00a.\n\nSoftware uses this register to configure release-specific features\n\nin the driver."]
     #[inline(always)]
     pub fn snpsid(&self) -> SnpsidR {
         SnpsidR::new(self.bits)

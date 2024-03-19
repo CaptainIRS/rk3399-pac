@@ -3,24 +3,25 @@ pub type R = crate::R<AuxChStaSpec>;
 #[doc = "Register `AUX_CH_STA` writer"]
 pub type W = crate::W<AuxChStaSpec>;
 #[doc = "This register indicate the AUX channel access status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AuxStatus {
-    #[doc = "0: I2C_NACK_ERROR Other: Reserved."]
+    #[doc = "0: OK"]
     D0 = 0,
-    #[doc = "1: I2C_NACK_ERROR Other: Reserved."]
+    #[doc = "1: NACK_ERROR"]
     D1 = 1,
-    #[doc = "2: I2C_NACK_ERROR Other: Reserved."]
+    #[doc = "2: TIMEOUT_ERROR"]
     D2 = 2,
-    #[doc = "3: I2C_NACK_ERROR Other: Reserved."]
+    #[doc = "3: UNKNOWN_ERROR"]
     D3 = 3,
-    #[doc = "4: I2C_NACK_ERROR Other: Reserved."]
+    #[doc = "4: MUCH_DEFER_ERROR"]
     D4 = 4,
-    #[doc = "5: I2C_NACK_ERROR Other: Reserved."]
+    #[doc = "5: TX_SHORT_ERROR"]
     D5 = 5,
-    #[doc = "6: I2C_NACK_ERROR Other: Reserved."]
+    #[doc = "6: RX_SHORT_ERROR"]
     D6 = 6,
-    #[doc = "7: I2C_NACK_ERROR Other: Reserved."]
+    #[doc = "7: NACK_WITHOUT_M_ERROR"]
     D7 = 7,
     #[doc = "8: I2C_NACK_ERROR Other: Reserved."]
     D8 = 8,
@@ -53,42 +54,42 @@ impl AuxStatusR {
             _ => None,
         }
     }
-    #[doc = "I2C_NACK_ERROR Other: Reserved."]
+    #[doc = "OK"]
     #[inline(always)]
     pub fn is_d0(&self) -> bool {
         *self == AuxStatus::D0
     }
-    #[doc = "I2C_NACK_ERROR Other: Reserved."]
+    #[doc = "NACK_ERROR"]
     #[inline(always)]
     pub fn is_d1(&self) -> bool {
         *self == AuxStatus::D1
     }
-    #[doc = "I2C_NACK_ERROR Other: Reserved."]
+    #[doc = "TIMEOUT_ERROR"]
     #[inline(always)]
     pub fn is_d2(&self) -> bool {
         *self == AuxStatus::D2
     }
-    #[doc = "I2C_NACK_ERROR Other: Reserved."]
+    #[doc = "UNKNOWN_ERROR"]
     #[inline(always)]
     pub fn is_d3(&self) -> bool {
         *self == AuxStatus::D3
     }
-    #[doc = "I2C_NACK_ERROR Other: Reserved."]
+    #[doc = "MUCH_DEFER_ERROR"]
     #[inline(always)]
     pub fn is_d4(&self) -> bool {
         *self == AuxStatus::D4
     }
-    #[doc = "I2C_NACK_ERROR Other: Reserved."]
+    #[doc = "TX_SHORT_ERROR"]
     #[inline(always)]
     pub fn is_d5(&self) -> bool {
         *self == AuxStatus::D5
     }
-    #[doc = "I2C_NACK_ERROR Other: Reserved."]
+    #[doc = "RX_SHORT_ERROR"]
     #[inline(always)]
     pub fn is_d6(&self) -> bool {
         *self == AuxStatus::D6
     }
-    #[doc = "I2C_NACK_ERROR Other: Reserved."]
+    #[doc = "NACK_WITHOUT_M_ERROR"]
     #[inline(always)]
     pub fn is_d7(&self) -> bool {
         *self == AuxStatus::D7
@@ -106,42 +107,42 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "I2C_NACK_ERROR Other: Reserved."]
+    #[doc = "OK"]
     #[inline(always)]
     pub fn d0(self) -> &'a mut crate::W<REG> {
         self.variant(AuxStatus::D0)
     }
-    #[doc = "I2C_NACK_ERROR Other: Reserved."]
+    #[doc = "NACK_ERROR"]
     #[inline(always)]
     pub fn d1(self) -> &'a mut crate::W<REG> {
         self.variant(AuxStatus::D1)
     }
-    #[doc = "I2C_NACK_ERROR Other: Reserved."]
+    #[doc = "TIMEOUT_ERROR"]
     #[inline(always)]
     pub fn d2(self) -> &'a mut crate::W<REG> {
         self.variant(AuxStatus::D2)
     }
-    #[doc = "I2C_NACK_ERROR Other: Reserved."]
+    #[doc = "UNKNOWN_ERROR"]
     #[inline(always)]
     pub fn d3(self) -> &'a mut crate::W<REG> {
         self.variant(AuxStatus::D3)
     }
-    #[doc = "I2C_NACK_ERROR Other: Reserved."]
+    #[doc = "MUCH_DEFER_ERROR"]
     #[inline(always)]
     pub fn d4(self) -> &'a mut crate::W<REG> {
         self.variant(AuxStatus::D4)
     }
-    #[doc = "I2C_NACK_ERROR Other: Reserved."]
+    #[doc = "TX_SHORT_ERROR"]
     #[inline(always)]
     pub fn d5(self) -> &'a mut crate::W<REG> {
         self.variant(AuxStatus::D5)
     }
-    #[doc = "I2C_NACK_ERROR Other: Reserved."]
+    #[doc = "RX_SHORT_ERROR"]
     #[inline(always)]
     pub fn d6(self) -> &'a mut crate::W<REG> {
         self.variant(AuxStatus::D6)
     }
-    #[doc = "I2C_NACK_ERROR Other: Reserved."]
+    #[doc = "NACK_WITHOUT_M_ERROR"]
     #[inline(always)]
     pub fn d7(self) -> &'a mut crate::W<REG> {
         self.variant(AuxStatus::D7)
@@ -152,10 +153,11 @@ where
         self.variant(AuxStatus::D8)
     }
 }
-#[doc = "AUX channel status bit. If this bit is read as 1, AUX channel access should be halted.\n\nValue on reset: 0"]
+#[doc = "AUX channel status bit. If this bit is read as 1, AUX \n\nchannel access should be halted.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AuxBusy {
-    #[doc = "1: AUX CH is idle"]
+    #[doc = "1: AUX CH is busy"]
     B1 = 1,
     #[doc = "0: AUX CH is idle"]
     B0 = 0,
@@ -166,7 +168,7 @@ impl From<AuxBusy> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `AUX_BUSY` reader - AUX channel status bit. If this bit is read as 1, AUX channel access should be halted."]
+#[doc = "Field `AUX_BUSY` reader - AUX channel status bit. If this bit is read as 1, AUX \n\nchannel access should be halted."]
 pub type AuxBusyR = crate::BitReader<AuxBusy>;
 impl AuxBusyR {
     #[doc = "Get enumerated values variant"]
@@ -177,7 +179,7 @@ impl AuxBusyR {
             false => AuxBusy::B0,
         }
     }
-    #[doc = "AUX CH is idle"]
+    #[doc = "AUX CH is busy"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == AuxBusy::B1
@@ -188,13 +190,13 @@ impl AuxBusyR {
         *self == AuxBusy::B0
     }
 }
-#[doc = "Field `AUX_BUSY` writer - AUX channel status bit. If this bit is read as 1, AUX channel access should be halted."]
+#[doc = "Field `AUX_BUSY` writer - AUX channel status bit. If this bit is read as 1, AUX \n\nchannel access should be halted."]
 pub type AuxBusyW<'a, REG> = crate::BitWriter<'a, REG, AuxBusy>;
 impl<'a, REG> AuxBusyW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "AUX CH is idle"]
+    #[doc = "AUX CH is busy"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(AuxBusy::B1)
@@ -211,7 +213,7 @@ impl R {
     pub fn aux_status(&self) -> AuxStatusR {
         AuxStatusR::new((self.bits & 0x0f) as u8)
     }
-    #[doc = "Bit 4 - AUX channel status bit. If this bit is read as 1, AUX channel access should be halted."]
+    #[doc = "Bit 4 - AUX channel status bit. If this bit is read as 1, AUX \n\nchannel access should be halted."]
     #[inline(always)]
     pub fn aux_busy(&self) -> AuxBusyR {
         AuxBusyR::new(((self.bits >> 4) & 1) != 0)
@@ -224,7 +226,7 @@ impl W {
     pub fn aux_status(&mut self) -> AuxStatusW<AuxChStaSpec> {
         AuxStatusW::new(self, 0)
     }
-    #[doc = "Bit 4 - AUX channel status bit. If this bit is read as 1, AUX channel access should be halted."]
+    #[doc = "Bit 4 - AUX channel status bit. If this bit is read as 1, AUX \n\nchannel access should be halted."]
     #[inline(always)]
     #[must_use]
     pub fn aux_busy(&mut self) -> AuxBusyW<AuxChStaSpec> {

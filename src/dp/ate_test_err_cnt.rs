@@ -2,19 +2,19 @@
 pub type R = crate::R<AteTestErrCntSpec>;
 #[doc = "Register `ATE_TEST_ERR_CNT%s` writer"]
 pub type W = crate::W<AteTestErrCntSpec>;
-#[doc = "Field `ATE_TEST_ERR_CNT0_ATE_TEST_ERR_CNT3` reader - ATE test error counter register.0x080C—lane0, 0x0810—lane1, 0x0814—lane2, 0x0818—lane3"]
+#[doc = "Field `ATE_TEST_ERR_CNT0_ATE_TEST_ERR_CNT3` reader - ATE test error counter register.0x080C—lane0, \n\n0x0810—lane1, 0x0814—lane2, 0x0818—lane3"]
 pub type AteTestErrCnt0AteTestErrCnt3R = crate::FieldReader<u32>;
-#[doc = "Field `ATE_TEST_ERR_CNT0_ATE_TEST_ERR_CNT3` writer - ATE test error counter register.0x080C—lane0, 0x0810—lane1, 0x0814—lane2, 0x0818—lane3"]
+#[doc = "Field `ATE_TEST_ERR_CNT0_ATE_TEST_ERR_CNT3` writer - ATE test error counter register.0x080C—lane0, \n\n0x0810—lane1, 0x0814—lane2, 0x0818—lane3"]
 pub type AteTestErrCnt0AteTestErrCnt3W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - ATE test error counter register.0x080C—lane0, 0x0810—lane1, 0x0814—lane2, 0x0818—lane3"]
+    #[doc = "Bits 0:31 - ATE test error counter register.0x080C—lane0, \n\n0x0810—lane1, 0x0814—lane2, 0x0818—lane3"]
     #[inline(always)]
     pub fn ate_test_err_cnt0_ate_test_err_cnt3(&self) -> AteTestErrCnt0AteTestErrCnt3R {
         AteTestErrCnt0AteTestErrCnt3R::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - ATE test error counter register.0x080C—lane0, 0x0810—lane1, 0x0814—lane2, 0x0818—lane3"]
+    #[doc = "Bits 0:31 - ATE test error counter register.0x080C—lane0, \n\n0x0810—lane1, 0x0814—lane2, 0x0818—lane3"]
     #[inline(always)]
     #[must_use]
     pub fn ate_test_err_cnt0_ate_test_err_cnt3(

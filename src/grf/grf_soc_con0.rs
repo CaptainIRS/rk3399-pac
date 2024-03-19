@@ -3,9 +3,10 @@ pub type R = crate::R<GrfSocCon0Spec>;
 #[doc = "Register `GRF_SOC_CON0` writer"]
 pub type W = crate::W<GrfSocCon0Spec>;
 #[doc = "noc_cci_fwd_perilp_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CciFwdPerilpPwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl CciFwdPerilpPwrdisctargpwrstallR {
             true => CciFwdPerilpPwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CciFwdPerilpPwrdisctargpwrstall::B0
@@ -45,7 +46,7 @@ impl<'a, REG> CciFwdPerilpPwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CciFwdPerilpPwrdisctargpwrstall::B0)
@@ -57,9 +58,10 @@ where
     }
 }
 #[doc = "noc__rsp_err_stall bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CciReqMsch0Pwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -81,7 +83,7 @@ impl CciReqMsch0PwrdisctargpwrstallR {
             true => CciReqMsch0Pwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CciReqMsch0Pwrdisctargpwrstall::B0
@@ -99,7 +101,7 @@ impl<'a, REG> CciReqMsch0PwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CciReqMsch0Pwrdisctargpwrstall::B0)
@@ -111,9 +113,10 @@ where
     }
 }
 #[doc = "noc_cci_req_msch1_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CciReqMsch1Pwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -135,7 +138,7 @@ impl CciReqMsch1PwrdisctargpwrstallR {
             true => CciReqMsch1Pwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CciReqMsch1Pwrdisctargpwrstall::B0
@@ -153,7 +156,7 @@ impl<'a, REG> CciReqMsch1PwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CciReqMsch1Pwrdisctargpwrstall::B0)
@@ -165,9 +168,10 @@ where
     }
 }
 #[doc = "noc_center_fwd_edp_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CenterFwdEdpPwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -189,7 +193,7 @@ impl CenterFwdEdpPwrdisctargpwrstallR {
             true => CenterFwdEdpPwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CenterFwdEdpPwrdisctargpwrstall::B0
@@ -207,7 +211,7 @@ impl<'a, REG> CenterFwdEdpPwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CenterFwdEdpPwrdisctargpwrstall::B0)
@@ -219,9 +223,10 @@ where
     }
 }
 #[doc = "perilp_fwd_emmc_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PerilpFwdEmmcPwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -243,7 +248,7 @@ impl PerilpFwdEmmcPwrdisctargpwrstallR {
             true => PerilpFwdEmmcPwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PerilpFwdEmmcPwrdisctargpwrstall::B0
@@ -261,7 +266,7 @@ impl<'a, REG> PerilpFwdEmmcPwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PerilpFwdEmmcPwrdisctargpwrstall::B0)
@@ -273,9 +278,10 @@ where
     }
 }
 #[doc = "perilp_fwd_gmac_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PerilpFwdGmacPwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -297,7 +303,7 @@ impl PerilpFwdGmacPwrdisctargpwrstallR {
             true => PerilpFwdGmacPwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PerilpFwdGmacPwrdisctargpwrstall::B0
@@ -315,7 +321,7 @@ impl<'a, REG> PerilpFwdGmacPwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PerilpFwdGmacPwrdisctargpwrstall::B0)
@@ -327,9 +333,10 @@ where
     }
 }
 #[doc = "noc_center_fwd_gpu_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CenterFwdGpuPwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -351,7 +358,7 @@ impl CenterFwdGpuPwrdisctargpwrstallR {
             true => CenterFwdGpuPwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CenterFwdGpuPwrdisctargpwrstall::B0
@@ -369,7 +376,7 @@ impl<'a, REG> CenterFwdGpuPwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CenterFwdGpuPwrdisctargpwrstall::B0)
@@ -381,9 +388,10 @@ where
     }
 }
 #[doc = "noc_center_fwd_iep_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CenterFwdIepPwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -405,7 +413,7 @@ impl CenterFwdIepPwrdisctargpwrstallR {
             true => CenterFwdIepPwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CenterFwdIepPwrdisctargpwrstall::B0
@@ -423,7 +431,7 @@ impl<'a, REG> CenterFwdIepPwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CenterFwdIepPwrdisctargpwrstall::B0)
@@ -434,10 +442,11 @@ where
         self.variant(CenterFwdIepPwrdisctargpwrstall::B1)
     }
 }
-#[doc = "noc_center_fwd_perihp_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[doc = "noc_center_fwd_perihp_rsp_err_stall bit\n\ncontrol\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CenterFwdPerihpPwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -448,7 +457,7 @@ impl From<CenterFwdPerihpPwrdisctargpwrstall> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CENTER_FWD_PERIHP_PWRDISCTARGPWRSTALL` reader - noc_center_fwd_perihp_rsp_err_stall bit control"]
+#[doc = "Field `CENTER_FWD_PERIHP_PWRDISCTARGPWRSTALL` reader - noc_center_fwd_perihp_rsp_err_stall bit\n\ncontrol"]
 pub type CenterFwdPerihpPwrdisctargpwrstallR = crate::BitReader<CenterFwdPerihpPwrdisctargpwrstall>;
 impl CenterFwdPerihpPwrdisctargpwrstallR {
     #[doc = "Get enumerated values variant"]
@@ -459,7 +468,7 @@ impl CenterFwdPerihpPwrdisctargpwrstallR {
             true => CenterFwdPerihpPwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CenterFwdPerihpPwrdisctargpwrstall::B0
@@ -470,14 +479,14 @@ impl CenterFwdPerihpPwrdisctargpwrstallR {
         *self == CenterFwdPerihpPwrdisctargpwrstall::B1
     }
 }
-#[doc = "Field `CENTER_FWD_PERIHP_PWRDISCTARGPWRSTALL` writer - noc_center_fwd_perihp_rsp_err_stall bit control"]
+#[doc = "Field `CENTER_FWD_PERIHP_PWRDISCTARGPWRSTALL` writer - noc_center_fwd_perihp_rsp_err_stall bit\n\ncontrol"]
 pub type CenterFwdPerihpPwrdisctargpwrstallW<'a, REG> =
     crate::BitWriter<'a, REG, CenterFwdPerihpPwrdisctargpwrstall>;
 impl<'a, REG> CenterFwdPerihpPwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CenterFwdPerihpPwrdisctargpwrstall::B0)
@@ -489,9 +498,10 @@ where
     }
 }
 #[doc = "noc_center_fwd_rga_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CenterFwdRgaPwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -513,7 +523,7 @@ impl CenterFwdRgaPwrdisctargpwrstallR {
             true => CenterFwdRgaPwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CenterFwdRgaPwrdisctargpwrstall::B0
@@ -531,7 +541,7 @@ impl<'a, REG> CenterFwdRgaPwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CenterFwdRgaPwrdisctargpwrstall::B0)
@@ -542,10 +552,11 @@ where
         self.variant(CenterFwdRgaPwrdisctargpwrstall::B1)
     }
 }
-#[doc = "noc_center_fwd_usb3_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[doc = "noc_center_fwd_usb3_rsp_err_stall bit\n\ncontrol\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CenterFwdUsb3Pwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -556,7 +567,7 @@ impl From<CenterFwdUsb3Pwrdisctargpwrstall> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CENTER_FWD_USB3_PWRDISCTARGPWRSTALL` reader - noc_center_fwd_usb3_rsp_err_stall bit control"]
+#[doc = "Field `CENTER_FWD_USB3_PWRDISCTARGPWRSTALL` reader - noc_center_fwd_usb3_rsp_err_stall bit\n\ncontrol"]
 pub type CenterFwdUsb3PwrdisctargpwrstallR = crate::BitReader<CenterFwdUsb3Pwrdisctargpwrstall>;
 impl CenterFwdUsb3PwrdisctargpwrstallR {
     #[doc = "Get enumerated values variant"]
@@ -567,7 +578,7 @@ impl CenterFwdUsb3PwrdisctargpwrstallR {
             true => CenterFwdUsb3Pwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CenterFwdUsb3Pwrdisctargpwrstall::B0
@@ -578,14 +589,14 @@ impl CenterFwdUsb3PwrdisctargpwrstallR {
         *self == CenterFwdUsb3Pwrdisctargpwrstall::B1
     }
 }
-#[doc = "Field `CENTER_FWD_USB3_PWRDISCTARGPWRSTALL` writer - noc_center_fwd_usb3_rsp_err_stall bit control"]
+#[doc = "Field `CENTER_FWD_USB3_PWRDISCTARGPWRSTALL` writer - noc_center_fwd_usb3_rsp_err_stall bit\n\ncontrol"]
 pub type CenterFwdUsb3PwrdisctargpwrstallW<'a, REG> =
     crate::BitWriter<'a, REG, CenterFwdUsb3Pwrdisctargpwrstall>;
 impl<'a, REG> CenterFwdUsb3PwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CenterFwdUsb3Pwrdisctargpwrstall::B0)
@@ -596,10 +607,11 @@ where
         self.variant(CenterFwdUsb3Pwrdisctargpwrstall::B1)
     }
 }
-#[doc = "noc_center_fwd_vcodec_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[doc = "noc_center_fwd_vcodec_rsp_err_stall bit\n\ncontrol\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CenterFwdVcodecPwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -610,7 +622,7 @@ impl From<CenterFwdVcodecPwrdisctargpwrstall> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CENTER_FWD_VCODEC_PWRDISCTARGPWRSTALL` reader - noc_center_fwd_vcodec_rsp_err_stall bit control"]
+#[doc = "Field `CENTER_FWD_VCODEC_PWRDISCTARGPWRSTALL` reader - noc_center_fwd_vcodec_rsp_err_stall bit\n\ncontrol"]
 pub type CenterFwdVcodecPwrdisctargpwrstallR = crate::BitReader<CenterFwdVcodecPwrdisctargpwrstall>;
 impl CenterFwdVcodecPwrdisctargpwrstallR {
     #[doc = "Get enumerated values variant"]
@@ -621,7 +633,7 @@ impl CenterFwdVcodecPwrdisctargpwrstallR {
             true => CenterFwdVcodecPwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CenterFwdVcodecPwrdisctargpwrstall::B0
@@ -632,14 +644,14 @@ impl CenterFwdVcodecPwrdisctargpwrstallR {
         *self == CenterFwdVcodecPwrdisctargpwrstall::B1
     }
 }
-#[doc = "Field `CENTER_FWD_VCODEC_PWRDISCTARGPWRSTALL` writer - noc_center_fwd_vcodec_rsp_err_stall bit control"]
+#[doc = "Field `CENTER_FWD_VCODEC_PWRDISCTARGPWRSTALL` writer - noc_center_fwd_vcodec_rsp_err_stall bit\n\ncontrol"]
 pub type CenterFwdVcodecPwrdisctargpwrstallW<'a, REG> =
     crate::BitWriter<'a, REG, CenterFwdVcodecPwrdisctargpwrstall>;
 impl<'a, REG> CenterFwdVcodecPwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CenterFwdVcodecPwrdisctargpwrstall::B0)
@@ -651,9 +663,10 @@ where
     }
 }
 #[doc = "noc_center_fwd_vdu_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CenterFwdVduPwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -675,7 +688,7 @@ impl CenterFwdVduPwrdisctargpwrstallR {
             true => CenterFwdVduPwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CenterFwdVduPwrdisctargpwrstall::B0
@@ -693,7 +706,7 @@ impl<'a, REG> CenterFwdVduPwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CenterFwdVduPwrdisctargpwrstall::B0)
@@ -705,9 +718,10 @@ where
     }
 }
 #[doc = "noc_center_fwd_vio_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CenterFwdVioPwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -729,7 +743,7 @@ impl CenterFwdVioPwrdisctargpwrstallR {
             true => CenterFwdVioPwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CenterFwdVioPwrdisctargpwrstall::B0
@@ -747,7 +761,7 @@ impl<'a, REG> CenterFwdVioPwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CenterFwdVioPwrdisctargpwrstall::B0)
@@ -758,10 +772,11 @@ where
         self.variant(CenterFwdVioPwrdisctargpwrstall::B1)
     }
 }
-#[doc = "noc_centersrv_fwd_ccim1_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[doc = "noc_centersrv_fwd_ccim1_rsp_err_stall bit\n\ncontrol\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CentersrvFwdCcim1Pwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -772,7 +787,7 @@ impl From<CentersrvFwdCcim1Pwrdisctargpwrstall> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CENTERSRV_FWD_CCIM1_PWRDISCTARGPWRSTALL` reader - noc_centersrv_fwd_ccim1_rsp_err_stall bit control"]
+#[doc = "Field `CENTERSRV_FWD_CCIM1_PWRDISCTARGPWRSTALL` reader - noc_centersrv_fwd_ccim1_rsp_err_stall bit\n\ncontrol"]
 pub type CentersrvFwdCcim1PwrdisctargpwrstallR =
     crate::BitReader<CentersrvFwdCcim1Pwrdisctargpwrstall>;
 impl CentersrvFwdCcim1PwrdisctargpwrstallR {
@@ -784,7 +799,7 @@ impl CentersrvFwdCcim1PwrdisctargpwrstallR {
             true => CentersrvFwdCcim1Pwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CentersrvFwdCcim1Pwrdisctargpwrstall::B0
@@ -795,14 +810,14 @@ impl CentersrvFwdCcim1PwrdisctargpwrstallR {
         *self == CentersrvFwdCcim1Pwrdisctargpwrstall::B1
     }
 }
-#[doc = "Field `CENTERSRV_FWD_CCIM1_PWRDISCTARGPWRSTALL` writer - noc_centersrv_fwd_ccim1_rsp_err_stall bit control"]
+#[doc = "Field `CENTERSRV_FWD_CCIM1_PWRDISCTARGPWRSTALL` writer - noc_centersrv_fwd_ccim1_rsp_err_stall bit\n\ncontrol"]
 pub type CentersrvFwdCcim1PwrdisctargpwrstallW<'a, REG> =
     crate::BitWriter<'a, REG, CentersrvFwdCcim1Pwrdisctargpwrstall>;
 impl<'a, REG> CentersrvFwdCcim1PwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CentersrvFwdCcim1Pwrdisctargpwrstall::B0)
@@ -813,10 +828,11 @@ where
         self.variant(CentersrvFwdCcim1Pwrdisctargpwrstall::B1)
     }
 }
-#[doc = "noc_emmc_fwd_perihp_rsp_err_stall bit control\n\nValue on reset: 0"]
+#[doc = "noc_emmc_fwd_perihp_rsp_err_stall bit\n\ncontrol\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EmmcFwdPerihpPwrdisctargpwrstall {
-    #[doc = "0: stall response"]
+    #[doc = "0: error response"]
     B0 = 0,
     #[doc = "1: stall response"]
     B1 = 1,
@@ -827,7 +843,7 @@ impl From<EmmcFwdPerihpPwrdisctargpwrstall> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EMMC_FWD_PERIHP_PWRDISCTARGPWRSTALL` reader - noc_emmc_fwd_perihp_rsp_err_stall bit control"]
+#[doc = "Field `EMMC_FWD_PERIHP_PWRDISCTARGPWRSTALL` reader - noc_emmc_fwd_perihp_rsp_err_stall bit\n\ncontrol"]
 pub type EmmcFwdPerihpPwrdisctargpwrstallR = crate::BitReader<EmmcFwdPerihpPwrdisctargpwrstall>;
 impl EmmcFwdPerihpPwrdisctargpwrstallR {
     #[doc = "Get enumerated values variant"]
@@ -838,7 +854,7 @@ impl EmmcFwdPerihpPwrdisctargpwrstallR {
             true => EmmcFwdPerihpPwrdisctargpwrstall::B1,
         }
     }
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == EmmcFwdPerihpPwrdisctargpwrstall::B0
@@ -849,14 +865,14 @@ impl EmmcFwdPerihpPwrdisctargpwrstallR {
         *self == EmmcFwdPerihpPwrdisctargpwrstall::B1
     }
 }
-#[doc = "Field `EMMC_FWD_PERIHP_PWRDISCTARGPWRSTALL` writer - noc_emmc_fwd_perihp_rsp_err_stall bit control"]
+#[doc = "Field `EMMC_FWD_PERIHP_PWRDISCTARGPWRSTALL` writer - noc_emmc_fwd_perihp_rsp_err_stall bit\n\ncontrol"]
 pub type EmmcFwdPerihpPwrdisctargpwrstallW<'a, REG> =
     crate::BitWriter<'a, REG, EmmcFwdPerihpPwrdisctargpwrstall>;
 impl<'a, REG> EmmcFwdPerihpPwrdisctargpwrstallW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stall response"]
+    #[doc = "error response"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(EmmcFwdPerihpPwrdisctargpwrstall::B0)
@@ -867,9 +883,9 @@ where
         self.variant(EmmcFwdPerihpPwrdisctargpwrstall::B1)
     }
 }
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0 - noc_cci_fwd_perilp_rsp_err_stall bit control"]
@@ -912,7 +928,7 @@ impl R {
     pub fn center_fwd_iep_pwrdisctargpwrstall(&self) -> CenterFwdIepPwrdisctargpwrstallR {
         CenterFwdIepPwrdisctargpwrstallR::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bit 8 - noc_center_fwd_perihp_rsp_err_stall bit control"]
+    #[doc = "Bit 8 - noc_center_fwd_perihp_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     pub fn center_fwd_perihp_pwrdisctargpwrstall(&self) -> CenterFwdPerihpPwrdisctargpwrstallR {
         CenterFwdPerihpPwrdisctargpwrstallR::new(((self.bits >> 8) & 1) != 0)
@@ -922,12 +938,12 @@ impl R {
     pub fn center_fwd_rga_pwrdisctargpwrstall(&self) -> CenterFwdRgaPwrdisctargpwrstallR {
         CenterFwdRgaPwrdisctargpwrstallR::new(((self.bits >> 9) & 1) != 0)
     }
-    #[doc = "Bit 10 - noc_center_fwd_usb3_rsp_err_stall bit control"]
+    #[doc = "Bit 10 - noc_center_fwd_usb3_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     pub fn center_fwd_usb3_pwrdisctargpwrstall(&self) -> CenterFwdUsb3PwrdisctargpwrstallR {
         CenterFwdUsb3PwrdisctargpwrstallR::new(((self.bits >> 10) & 1) != 0)
     }
-    #[doc = "Bit 11 - noc_center_fwd_vcodec_rsp_err_stall bit control"]
+    #[doc = "Bit 11 - noc_center_fwd_vcodec_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     pub fn center_fwd_vcodec_pwrdisctargpwrstall(&self) -> CenterFwdVcodecPwrdisctargpwrstallR {
         CenterFwdVcodecPwrdisctargpwrstallR::new(((self.bits >> 11) & 1) != 0)
@@ -942,17 +958,17 @@ impl R {
     pub fn center_fwd_vio_pwrdisctargpwrstall(&self) -> CenterFwdVioPwrdisctargpwrstallR {
         CenterFwdVioPwrdisctargpwrstallR::new(((self.bits >> 13) & 1) != 0)
     }
-    #[doc = "Bit 14 - noc_centersrv_fwd_ccim1_rsp_err_stall bit control"]
+    #[doc = "Bit 14 - noc_centersrv_fwd_ccim1_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     pub fn centersrv_fwd_ccim1_pwrdisctargpwrstall(&self) -> CentersrvFwdCcim1PwrdisctargpwrstallR {
         CentersrvFwdCcim1PwrdisctargpwrstallR::new(((self.bits >> 14) & 1) != 0)
     }
-    #[doc = "Bit 15 - noc_emmc_fwd_perihp_rsp_err_stall bit control"]
+    #[doc = "Bit 15 - noc_emmc_fwd_perihp_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     pub fn emmc_fwd_perihp_pwrdisctargpwrstall(&self) -> EmmcFwdPerihpPwrdisctargpwrstallR {
         EmmcFwdPerihpPwrdisctargpwrstallR::new(((self.bits >> 15) & 1) != 0)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
@@ -1023,7 +1039,7 @@ impl W {
     ) -> CenterFwdIepPwrdisctargpwrstallW<GrfSocCon0Spec> {
         CenterFwdIepPwrdisctargpwrstallW::new(self, 7)
     }
-    #[doc = "Bit 8 - noc_center_fwd_perihp_rsp_err_stall bit control"]
+    #[doc = "Bit 8 - noc_center_fwd_perihp_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     #[must_use]
     pub fn center_fwd_perihp_pwrdisctargpwrstall(
@@ -1039,7 +1055,7 @@ impl W {
     ) -> CenterFwdRgaPwrdisctargpwrstallW<GrfSocCon0Spec> {
         CenterFwdRgaPwrdisctargpwrstallW::new(self, 9)
     }
-    #[doc = "Bit 10 - noc_center_fwd_usb3_rsp_err_stall bit control"]
+    #[doc = "Bit 10 - noc_center_fwd_usb3_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     #[must_use]
     pub fn center_fwd_usb3_pwrdisctargpwrstall(
@@ -1047,7 +1063,7 @@ impl W {
     ) -> CenterFwdUsb3PwrdisctargpwrstallW<GrfSocCon0Spec> {
         CenterFwdUsb3PwrdisctargpwrstallW::new(self, 10)
     }
-    #[doc = "Bit 11 - noc_center_fwd_vcodec_rsp_err_stall bit control"]
+    #[doc = "Bit 11 - noc_center_fwd_vcodec_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     #[must_use]
     pub fn center_fwd_vcodec_pwrdisctargpwrstall(
@@ -1071,7 +1087,7 @@ impl W {
     ) -> CenterFwdVioPwrdisctargpwrstallW<GrfSocCon0Spec> {
         CenterFwdVioPwrdisctargpwrstallW::new(self, 13)
     }
-    #[doc = "Bit 14 - noc_centersrv_fwd_ccim1_rsp_err_stall bit control"]
+    #[doc = "Bit 14 - noc_centersrv_fwd_ccim1_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     #[must_use]
     pub fn centersrv_fwd_ccim1_pwrdisctargpwrstall(
@@ -1079,7 +1095,7 @@ impl W {
     ) -> CentersrvFwdCcim1PwrdisctargpwrstallW<GrfSocCon0Spec> {
         CentersrvFwdCcim1PwrdisctargpwrstallW::new(self, 14)
     }
-    #[doc = "Bit 15 - noc_emmc_fwd_perihp_rsp_err_stall bit control"]
+    #[doc = "Bit 15 - noc_emmc_fwd_perihp_rsp_err_stall bit\n\ncontrol"]
     #[inline(always)]
     #[must_use]
     pub fn emmc_fwd_perihp_pwrdisctargpwrstall(
@@ -1087,7 +1103,7 @@ impl W {
     ) -> EmmcFwdPerihpPwrdisctargpwrstallW<GrfSocCon0Spec> {
         EmmcFwdPerihpPwrdisctargpwrstallW::new(self, 15)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfSocCon0Spec> {

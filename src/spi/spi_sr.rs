@@ -1,9 +1,10 @@
 #[doc = "Register `SPI_SR` reader"]
 pub type R = crate::R<SpiSrSpec>;
-#[doc = "SPI Busy Flag When set, indicates that a serial transfer is in progress; when cleared indicates that the SPI is idle or disabled.\n\nValue on reset: 0"]
+#[doc = "SPI Busy Flag\n\nWhen set, indicates that a serial transfer is in progress; when\n\ncleared indicates that the SPI is idle or disabled.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bsf {
-    #[doc = "0: SPI is actively transferring data"]
+    #[doc = "0: SPI is idle or disabled"]
     B0 = 0,
     #[doc = "1: SPI is actively transferring data"]
     B1 = 1,
@@ -14,7 +15,7 @@ impl From<Bsf> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BSF` reader - SPI Busy Flag When set, indicates that a serial transfer is in progress; when cleared indicates that the SPI is idle or disabled."]
+#[doc = "Field `BSF` reader - SPI Busy Flag\n\nWhen set, indicates that a serial transfer is in progress; when\n\ncleared indicates that the SPI is idle or disabled."]
 pub type BsfR = crate::BitReader<Bsf>;
 impl BsfR {
     #[doc = "Get enumerated values variant"]
@@ -25,7 +26,7 @@ impl BsfR {
             true => Bsf::B1,
         }
     }
-    #[doc = "SPI is actively transferring data"]
+    #[doc = "SPI is idle or disabled"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Bsf::B0
@@ -37,9 +38,10 @@ impl BsfR {
     }
 }
 #[doc = "Transmit FIFO Full\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tff {
-    #[doc = "0: Transmit FIFO is full"]
+    #[doc = "0: Transmit FIFO is not full"]
     B0 = 0,
     #[doc = "1: Transmit FIFO is full"]
     B1 = 1,
@@ -61,7 +63,7 @@ impl TffR {
             true => Tff::B1,
         }
     }
-    #[doc = "Transmit FIFO is full"]
+    #[doc = "Transmit FIFO is not full"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Tff::B0
@@ -73,9 +75,10 @@ impl TffR {
     }
 }
 #[doc = "Transmit FIFO Empty\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tfe {
-    #[doc = "0: Transmit FIFO is empty"]
+    #[doc = "0: Transmit FIFO is not empty"]
     B0 = 0,
     #[doc = "1: Transmit FIFO is empty"]
     B1 = 1,
@@ -97,7 +100,7 @@ impl TfeR {
             true => Tfe::B1,
         }
     }
-    #[doc = "Transmit FIFO is empty"]
+    #[doc = "Transmit FIFO is not empty"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Tfe::B0
@@ -109,9 +112,10 @@ impl TfeR {
     }
 }
 #[doc = "Receive FIFO Empty\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rfe {
-    #[doc = "0: Receive FIFO is empty"]
+    #[doc = "0: Receive FIFO is not empty"]
     B0 = 0,
     #[doc = "1: Receive FIFO is empty"]
     B1 = 1,
@@ -133,7 +137,7 @@ impl RfeR {
             true => Rfe::B1,
         }
     }
-    #[doc = "Receive FIFO is empty"]
+    #[doc = "Receive FIFO is not empty"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Rfe::B0
@@ -145,9 +149,10 @@ impl RfeR {
     }
 }
 #[doc = "Receive FIFO Full\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rff {
-    #[doc = "0: Receive FIFO is full"]
+    #[doc = "0: Receive FIFO is not full"]
     B0 = 0,
     #[doc = "1: Receive FIFO is full"]
     B1 = 1,
@@ -169,7 +174,7 @@ impl RffR {
             true => Rff::B1,
         }
     }
-    #[doc = "Receive FIFO is full"]
+    #[doc = "Receive FIFO is not full"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Rff::B0
@@ -181,7 +186,7 @@ impl RffR {
     }
 }
 impl R {
-    #[doc = "Bit 0 - SPI Busy Flag When set, indicates that a serial transfer is in progress; when cleared indicates that the SPI is idle or disabled."]
+    #[doc = "Bit 0 - SPI Busy Flag\n\nWhen set, indicates that a serial transfer is in progress; when\n\ncleared indicates that the SPI is idle or disabled."]
     #[inline(always)]
     pub fn bsf(&self) -> BsfR {
         BsfR::new((self.bits & 1) != 0)

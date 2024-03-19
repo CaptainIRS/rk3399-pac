@@ -1,9 +1,9 @@
 #[doc = "Register `DDR_DENALI_CTL_209` reader"]
 pub type R = crate::R<DdrDenaliCtl209Spec>;
-#[doc = "Field `OUT_OF_RANGE_ADDR` reader - Address of command that caused an out-of-range interrupt. READ- ONLY"]
+#[doc = "Field `OUT_OF_RANGE_ADDR` reader - Address of command that caused an out-of-range interrupt."]
 pub type OutOfRangeAddrR = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Address of command that caused an out-of-range interrupt. READ- ONLY"]
+    #[doc = "Bits 0:31 - Address of command that caused an out-of-range interrupt."]
     #[inline(always)]
     pub fn out_of_range_addr(&self) -> OutOfRangeAddrR {
         OutOfRangeAddrR::new(self.bits)

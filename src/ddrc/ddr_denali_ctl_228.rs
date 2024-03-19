@@ -6,7 +6,7 @@ pub type W = crate::W<DdrDenaliCtl228Spec>;
 pub type WrlvlCsMapR = crate::FieldReader;
 #[doc = "Field `WRLVL_CS_MAP` writer - Defines the chip select map for write leveling operations. Bit (0) controls cs0, bit (1) controls cs1, etc. Set each bit to 1 to enable chip for write leveling."]
 pub type WrlvlCsMapW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-#[doc = "Field `WRLVL_ERROR_STATUS` reader - Holds the error associated with the write level error interrupt. Bit (0) set indicates a TDFI_WRLVL_MAX parameter violation and bit (1) set indicates a TDFI_WRLVL_RESP parameter violation. READ-ONLY"]
+#[doc = "Field `WRLVL_ERROR_STATUS` reader - Holds the error associated with the write level error interrupt. Bit (0) set indicates a TDFI_WRLVL_MAX parameter violation and bit (1) set indicates a TDFI_WRLVL_RESP parameter violation."]
 pub type WrlvlErrorStatusR = crate::FieldReader;
 #[doc = "Field `WRLVL_NORM_THRESHOLD_F0` reader - Write leveling normal threshold number of long counts until the normal priority request is asserted."]
 pub type WrlvlNormThresholdF0R = crate::FieldReader<u16>;
@@ -18,7 +18,7 @@ impl R {
     pub fn wrlvl_cs_map(&self) -> WrlvlCsMapR {
         WrlvlCsMapR::new((self.bits & 3) as u8)
     }
-    #[doc = "Bits 8:9 - Holds the error associated with the write level error interrupt. Bit (0) set indicates a TDFI_WRLVL_MAX parameter violation and bit (1) set indicates a TDFI_WRLVL_RESP parameter violation. READ-ONLY"]
+    #[doc = "Bits 8:9 - Holds the error associated with the write level error interrupt. Bit (0) set indicates a TDFI_WRLVL_MAX parameter violation and bit (1) set indicates a TDFI_WRLVL_RESP parameter violation."]
     #[inline(always)]
     pub fn wrlvl_error_status(&self) -> WrlvlErrorStatusR {
         WrlvlErrorStatusR::new(((self.bits >> 8) & 3) as u8)

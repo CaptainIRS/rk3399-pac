@@ -2,14 +2,15 @@
 pub type R = crate::R<CruClkselCon45Spec>;
 #[doc = "Register `CRU_CLKSEL_CON45` writer"]
 pub type W = crate::W<CruClkselCon45Spec>;
-#[doc = "Field `CLK_HDMI_CEC_DIV_CON` reader - clk_hdmi_cec divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_HDMI_CEC_DIV_CON` reader - clk_hdmi_cec divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkHdmiCecDivConR = crate::FieldReader<u16>;
-#[doc = "Field `CLK_HDMI_CEC_DIV_CON` writer - clk_hdmi_cec divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_HDMI_CEC_DIV_CON` writer - clk_hdmi_cec divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkHdmiCecDivConW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 #[doc = "clk_hdmi_cec_src clock select control register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClkHdmiCecSrcSel {
-    #[doc = "0: xin_24m"]
+    #[doc = "0: clk_32k"]
     B0 = 0,
     #[doc = "1: xin_24m"]
     B1 = 1,
@@ -31,7 +32,7 @@ impl ClkHdmiCecSrcSelR {
             true => ClkHdmiCecSrcSel::B1,
         }
     }
-    #[doc = "xin_24m"]
+    #[doc = "clk_32k"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClkHdmiCecSrcSel::B0
@@ -48,7 +49,7 @@ impl<'a, REG> ClkHdmiCecSrcSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "xin_24m"]
+    #[doc = "clk_32k"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClkHdmiCecSrcSel::B0)
@@ -59,10 +60,10 @@ where
         self.variant(ClkHdmiCecSrcSel::B1)
     }
 }
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:9 - clk_hdmi_cec divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:9 - clk_hdmi_cec divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn clk_hdmi_cec_div_con(&self) -> ClkHdmiCecDivConR {
         ClkHdmiCecDivConR::new((self.bits & 0x03ff) as u16)
@@ -74,7 +75,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:9 - clk_hdmi_cec divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:9 - clk_hdmi_cec divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn clk_hdmi_cec_div_con(&mut self) -> ClkHdmiCecDivConW<CruClkselCon45Spec> {
@@ -86,7 +87,7 @@ impl W {
     pub fn clk_hdmi_cec_src_sel(&mut self) -> ClkHdmiCecSrcSelW<CruClkselCon45Spec> {
         ClkHdmiCecSrcSelW::new(self, 15)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkselCon45Spec> {

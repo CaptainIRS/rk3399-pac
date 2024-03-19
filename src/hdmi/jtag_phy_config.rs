@@ -2,14 +2,15 @@
 pub type R = crate::R<JtagPhyConfigSpec>;
 #[doc = "Register `JTAG_PHY_CONFIG` writer"]
 pub type W = crate::W<JtagPhyConfigSpec>;
-#[doc = "Field `JTAG_TRST_N` reader - Configures the JTAG PHY interface output pin JTAG_TRST_N when in internal control mode (iphy_ext_ctrl=1'b0) or ophyext_jtag_trst_n when PHY_EXTERNAL=1."]
+#[doc = "Field `JTAG_TRST_N` reader - Configures the JTAG PHY interface output pin\n\nJTAG_TRST_N when in internal control mode\n\n(iphy_ext_ctrl=1'b0) or ophyext_jtag_trst_n when\n\nPHY_EXTERNAL=1."]
 pub type JtagTrstNR = crate::BitReader;
-#[doc = "Field `JTAG_TRST_N` writer - Configures the JTAG PHY interface output pin JTAG_TRST_N when in internal control mode (iphy_ext_ctrl=1'b0) or ophyext_jtag_trst_n when PHY_EXTERNAL=1."]
+#[doc = "Field `JTAG_TRST_N` writer - Configures the JTAG PHY interface output pin\n\nJTAG_TRST_N when in internal control mode\n\n(iphy_ext_ctrl=1'b0) or ophyext_jtag_trst_n when\n\nPHY_EXTERNAL=1."]
 pub type JtagTrstNW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Configures the JTAG PHY interface output pin I2C_JTAGZ to select the PHY configuration interface when in internal control mode (iphy_ext_ctrl=1'b0) or ophyext_jtag_i2c_jtagz when PHY_EXTERNAL=1.\n\nValue on reset: 1"]
+#[doc = "Configures the JTAG PHY interface output pin\n\nI2C_JTAGZ to select the PHY configuration interface\n\nwhen in internal control mode (iphy_ext_ctrl=1'b0)\n\nor ophyext_jtag_i2c_jtagz when PHY_EXTERNAL=1.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum I2cJtagz {
-    #[doc = "0: I2C configuration Interface"]
+    #[doc = "0: JTAG configuration Interface"]
     B0 = 0,
     #[doc = "1: I2C configuration Interface"]
     B1 = 1,
@@ -20,7 +21,7 @@ impl From<I2cJtagz> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `I2C_JTAGZ` reader - Configures the JTAG PHY interface output pin I2C_JTAGZ to select the PHY configuration interface when in internal control mode (iphy_ext_ctrl=1'b0) or ophyext_jtag_i2c_jtagz when PHY_EXTERNAL=1."]
+#[doc = "Field `I2C_JTAGZ` reader - Configures the JTAG PHY interface output pin\n\nI2C_JTAGZ to select the PHY configuration interface\n\nwhen in internal control mode (iphy_ext_ctrl=1'b0)\n\nor ophyext_jtag_i2c_jtagz when PHY_EXTERNAL=1."]
 pub type I2cJtagzR = crate::BitReader<I2cJtagz>;
 impl I2cJtagzR {
     #[doc = "Get enumerated values variant"]
@@ -31,7 +32,7 @@ impl I2cJtagzR {
             true => I2cJtagz::B1,
         }
     }
-    #[doc = "I2C configuration Interface"]
+    #[doc = "JTAG configuration Interface"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == I2cJtagz::B0
@@ -42,13 +43,13 @@ impl I2cJtagzR {
         *self == I2cJtagz::B1
     }
 }
-#[doc = "Field `I2C_JTAGZ` writer - Configures the JTAG PHY interface output pin I2C_JTAGZ to select the PHY configuration interface when in internal control mode (iphy_ext_ctrl=1'b0) or ophyext_jtag_i2c_jtagz when PHY_EXTERNAL=1."]
+#[doc = "Field `I2C_JTAGZ` writer - Configures the JTAG PHY interface output pin\n\nI2C_JTAGZ to select the PHY configuration interface\n\nwhen in internal control mode (iphy_ext_ctrl=1'b0)\n\nor ophyext_jtag_i2c_jtagz when PHY_EXTERNAL=1."]
 pub type I2cJtagzW<'a, REG> = crate::BitWriter<'a, REG, I2cJtagz>;
 impl<'a, REG> I2cJtagzW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "I2C configuration Interface"]
+    #[doc = "JTAG configuration Interface"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(I2cJtagz::B0)
@@ -60,32 +61,32 @@ where
     }
 }
 impl R {
-    #[doc = "Bit 0 - Configures the JTAG PHY interface output pin JTAG_TRST_N when in internal control mode (iphy_ext_ctrl=1'b0) or ophyext_jtag_trst_n when PHY_EXTERNAL=1."]
+    #[doc = "Bit 0 - Configures the JTAG PHY interface output pin\n\nJTAG_TRST_N when in internal control mode\n\n(iphy_ext_ctrl=1'b0) or ophyext_jtag_trst_n when\n\nPHY_EXTERNAL=1."]
     #[inline(always)]
     pub fn jtag_trst_n(&self) -> JtagTrstNR {
         JtagTrstNR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 4 - Configures the JTAG PHY interface output pin I2C_JTAGZ to select the PHY configuration interface when in internal control mode (iphy_ext_ctrl=1'b0) or ophyext_jtag_i2c_jtagz when PHY_EXTERNAL=1."]
+    #[doc = "Bit 4 - Configures the JTAG PHY interface output pin\n\nI2C_JTAGZ to select the PHY configuration interface\n\nwhen in internal control mode (iphy_ext_ctrl=1'b0)\n\nor ophyext_jtag_i2c_jtagz when PHY_EXTERNAL=1."]
     #[inline(always)]
     pub fn i2c_jtagz(&self) -> I2cJtagzR {
         I2cJtagzR::new(((self.bits >> 4) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Configures the JTAG PHY interface output pin JTAG_TRST_N when in internal control mode (iphy_ext_ctrl=1'b0) or ophyext_jtag_trst_n when PHY_EXTERNAL=1."]
+    #[doc = "Bit 0 - Configures the JTAG PHY interface output pin\n\nJTAG_TRST_N when in internal control mode\n\n(iphy_ext_ctrl=1'b0) or ophyext_jtag_trst_n when\n\nPHY_EXTERNAL=1."]
     #[inline(always)]
     #[must_use]
     pub fn jtag_trst_n(&mut self) -> JtagTrstNW<JtagPhyConfigSpec> {
         JtagTrstNW::new(self, 0)
     }
-    #[doc = "Bit 4 - Configures the JTAG PHY interface output pin I2C_JTAGZ to select the PHY configuration interface when in internal control mode (iphy_ext_ctrl=1'b0) or ophyext_jtag_i2c_jtagz when PHY_EXTERNAL=1."]
+    #[doc = "Bit 4 - Configures the JTAG PHY interface output pin\n\nI2C_JTAGZ to select the PHY configuration interface\n\nwhen in internal control mode (iphy_ext_ctrl=1'b0)\n\nor ophyext_jtag_i2c_jtagz when PHY_EXTERNAL=1."]
     #[inline(always)]
     #[must_use]
     pub fn i2c_jtagz(&mut self) -> I2cJtagzW<JtagPhyConfigSpec> {
         I2cJtagzW::new(self, 4)
     }
 }
-#[doc = "Configures the JTAG PHY interface output pin JTAG_TRST_N when in internal control mode (iphy_ext_ctrl=1'b0) or ophyext_jtag_trst_n when PHY_EXTERNAL=1.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`jtag_phy_config::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`jtag_phy_config::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PHY I2C/JTAG I/O Configuration Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`jtag_phy_config::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`jtag_phy_config::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct JtagPhyConfigSpec;
 impl crate::RegisterSpec for JtagPhyConfigSpec {
     type Ux = u8;

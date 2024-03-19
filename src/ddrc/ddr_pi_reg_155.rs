@@ -6,9 +6,9 @@ pub type W = crate::W<DdrPiReg155Spec>;
 pub type PiBankDiffR = crate::FieldReader;
 #[doc = "Field `PI_BANK_DIFF` writer - Indicates encoded number of banks on the DRAM(s)."]
 pub type PiBankDiffW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-#[doc = "Field `PI_ROW_DIFF` reader - Indicates the difference between the number of address pins available and the number being used."]
+#[doc = "Field `PI_ROW_DIFF` reader - Indicates the difference between the number of address pins\n\navailable and the number being used."]
 pub type PiRowDiffR = crate::FieldReader;
-#[doc = "Field `PI_ROW_DIFF` writer - Indicates the difference between the number of address pins available and the number being used."]
+#[doc = "Field `PI_ROW_DIFF` writer - Indicates the difference between the number of address pins\n\navailable and the number being used."]
 pub type PiRowDiffW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bits 16:17 - Indicates encoded number of banks on the DRAM(s)."]
@@ -16,7 +16,7 @@ impl R {
     pub fn pi_bank_diff(&self) -> PiBankDiffR {
         PiBankDiffR::new(((self.bits >> 16) & 3) as u8)
     }
-    #[doc = "Bits 24:26 - Indicates the difference between the number of address pins available and the number being used."]
+    #[doc = "Bits 24:26 - Indicates the difference between the number of address pins\n\navailable and the number being used."]
     #[inline(always)]
     pub fn pi_row_diff(&self) -> PiRowDiffR {
         PiRowDiffR::new(((self.bits >> 24) & 7) as u8)
@@ -29,7 +29,7 @@ impl W {
     pub fn pi_bank_diff(&mut self) -> PiBankDiffW<DdrPiReg155Spec> {
         PiBankDiffW::new(self, 16)
     }
-    #[doc = "Bits 24:26 - Indicates the difference between the number of address pins available and the number being used."]
+    #[doc = "Bits 24:26 - Indicates the difference between the number of address pins\n\navailable and the number being used."]
     #[inline(always)]
     #[must_use]
     pub fn pi_row_diff(&mut self) -> PiRowDiffW<DdrPiReg155Spec> {

@@ -6,7 +6,7 @@ pub type W = crate::W<DdrPiReg49Spec>;
 pub type PiTrefIntervalR = crate::FieldReader<u16>;
 #[doc = "Field `PI_TREF_INTERVAL` writer - Defines the cycles between refreshes to different chip selects."]
 pub type PiTrefIntervalW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-#[doc = "Field `PI_SWLVL_LOAD` writer - Indicates user request to load delays and execute software leveling. Set to 1 to trigger."]
+#[doc = "Field `PI_SWLVL_LOAD` writer - Indicates user request to load delays and execute software\n\nleveling. Set to 1 to trigger."]
 pub type PiSwlvlLoadW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 8:23 - Defines the cycles between refreshes to different chip selects."]
@@ -22,7 +22,7 @@ impl W {
     pub fn pi_tref_interval(&mut self) -> PiTrefIntervalW<DdrPiReg49Spec> {
         PiTrefIntervalW::new(self, 8)
     }
-    #[doc = "Bit 24 - Indicates user request to load delays and execute software leveling. Set to 1 to trigger."]
+    #[doc = "Bit 24 - Indicates user request to load delays and execute software\n\nleveling. Set to 1 to trigger."]
     #[inline(always)]
     #[must_use]
     pub fn pi_swlvl_load(&mut self) -> PiSwlvlLoadW<DdrPiReg49Spec> {

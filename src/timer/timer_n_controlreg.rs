@@ -3,9 +3,10 @@ pub type R = crate::R<TimerNControlregSpec>;
 #[doc = "Register `TIMER_n_CONTROLREG` writer"]
 pub type W = crate::W<TimerNControlregSpec>;
 #[doc = "Timer enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TimerEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl TimerEnR {
             true => TimerEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == TimerEn::B0
@@ -44,7 +45,7 @@ impl<'a, REG> TimerEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(TimerEn::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Timer mode.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TimerMode {
-    #[doc = "0: user-defined count mode"]
+    #[doc = "0: free-running mode"]
     B0 = 0,
     #[doc = "1: user-defined count mode"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl TimerModeR {
             true => TimerMode::B1,
         }
     }
-    #[doc = "user-defined count mode"]
+    #[doc = "free-running mode"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == TimerMode::B0
@@ -97,7 +99,7 @@ impl<'a, REG> TimerModeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "user-defined count mode"]
+    #[doc = "free-running mode"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(TimerMode::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "Timer interrupt mask\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IntEn {
-    #[doc = "0: not mask"]
+    #[doc = "0: mask"]
     B0 = 0,
     #[doc = "1: not mask"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl IntEnR {
             true => IntEn::B1,
         }
     }
-    #[doc = "not mask"]
+    #[doc = "mask"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IntEn::B0
@@ -150,7 +153,7 @@ impl<'a, REG> IntEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "not mask"]
+    #[doc = "mask"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IntEn::B0)

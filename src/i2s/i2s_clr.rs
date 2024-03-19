@@ -2,34 +2,34 @@
 pub type R = crate::R<I2sClrSpec>;
 #[doc = "Register `I2S_CLR` writer"]
 pub type W = crate::W<I2sClrSpec>;
-#[doc = "Field `TXC` reader - TX logic clear This is a self cleared bit. Write 1 to clear all transmit logic."]
+#[doc = "Field `TXC` reader - TX logic clear\n\nThis is a self cleared bit. Write 1 to clear all transmit logic."]
 pub type TxcR = crate::BitReader;
-#[doc = "Field `TXC` writer - TX logic clear This is a self cleared bit. Write 1 to clear all transmit logic."]
+#[doc = "Field `TXC` writer - TX logic clear\n\nThis is a self cleared bit. Write 1 to clear all transmit logic."]
 pub type TxcW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `RXC` reader - RX logic clear This is a self cleared bit. Write 1 to clear all receive logic."]
+#[doc = "Field `RXC` reader - RX logic clear\n\nThis is a self cleared bit. Write 1 to clear all receive logic."]
 pub type RxcR = crate::BitReader;
-#[doc = "Field `RXC` writer - RX logic clear This is a self cleared bit. Write 1 to clear all receive logic."]
+#[doc = "Field `RXC` writer - RX logic clear\n\nThis is a self cleared bit. Write 1 to clear all receive logic."]
 pub type RxcW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - TX logic clear This is a self cleared bit. Write 1 to clear all transmit logic."]
+    #[doc = "Bit 0 - TX logic clear\n\nThis is a self cleared bit. Write 1 to clear all transmit logic."]
     #[inline(always)]
     pub fn txc(&self) -> TxcR {
         TxcR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - RX logic clear This is a self cleared bit. Write 1 to clear all receive logic."]
+    #[doc = "Bit 1 - RX logic clear\n\nThis is a self cleared bit. Write 1 to clear all receive logic."]
     #[inline(always)]
     pub fn rxc(&self) -> RxcR {
         RxcR::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - TX logic clear This is a self cleared bit. Write 1 to clear all transmit logic."]
+    #[doc = "Bit 0 - TX logic clear\n\nThis is a self cleared bit. Write 1 to clear all transmit logic."]
     #[inline(always)]
     #[must_use]
     pub fn txc(&mut self) -> TxcW<I2sClrSpec> {
         TxcW::new(self, 0)
     }
-    #[doc = "Bit 1 - RX logic clear This is a self cleared bit. Write 1 to clear all receive logic."]
+    #[doc = "Bit 1 - RX logic clear\n\nThis is a self cleared bit. Write 1 to clear all receive logic."]
     #[inline(always)]
     #[must_use]
     pub fn rxc(&mut self) -> RxcW<I2sClrSpec> {

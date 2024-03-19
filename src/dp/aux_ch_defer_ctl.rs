@@ -2,14 +2,15 @@
 pub type R = crate::R<AuxChDeferCtlSpec>;
 #[doc = "Register `AUX_CH_DEFER_CTL` writer"]
 pub type W = crate::W<AuxChDeferCtlSpec>;
-#[doc = "Field `DEFER_COUNT` reader - The count is defined to limit the max count AUX CH receive DEFER command When DEFER_CTRL_EN is 1 and AUX CH received (DEFER_COUNT * 64) DEFER command, the AUX CH will terminate the transaction"]
+#[doc = "Field `DEFER_COUNT` reader - The count is defined to limit the max count \n\nAUX CH receive DEFER command \n\nWhen DEFER_CTRL_EN is 1 and AUX CH \n\nreceived (DEFER_COUNT * 64) DEFER \n\ncommand, the AUX CH will terminate the \n\ntransaction"]
 pub type DeferCountR = crate::FieldReader;
-#[doc = "Field `DEFER_COUNT` writer - The count is defined to limit the max count AUX CH receive DEFER command When DEFER_CTRL_EN is 1 and AUX CH received (DEFER_COUNT * 64) DEFER command, the AUX CH will terminate the transaction"]
+#[doc = "Field `DEFER_COUNT` writer - The count is defined to limit the max count \n\nAUX CH receive DEFER command \n\nWhen DEFER_CTRL_EN is 1 and AUX CH \n\nreceived (DEFER_COUNT * 64) DEFER \n\ncommand, the AUX CH will terminate the \n\ntransaction"]
 pub type DeferCountW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
-#[doc = "AUX CH received DEFER command count control enable\n\nValue on reset: 0"]
+#[doc = "AUX CH received DEFER command count \n\ncontrol enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DeferCtrlEn {
-    #[doc = "1: The count that AUX CH receive DEFER command is unlimited"]
+    #[doc = "1: If the count that AUX CH receive DEFER command equal to (DEFER_COUNT * 64), the AUX CH transaction is terminated, and the AUX_STATUS is 0100"]
     B1 = 1,
     #[doc = "0: The count that AUX CH receive DEFER command is unlimited"]
     B0 = 0,
@@ -20,7 +21,7 @@ impl From<DeferCtrlEn> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DEFER_CTRL_EN` reader - AUX CH received DEFER command count control enable"]
+#[doc = "Field `DEFER_CTRL_EN` reader - AUX CH received DEFER command count \n\ncontrol enable"]
 pub type DeferCtrlEnR = crate::BitReader<DeferCtrlEn>;
 impl DeferCtrlEnR {
     #[doc = "Get enumerated values variant"]
@@ -31,7 +32,7 @@ impl DeferCtrlEnR {
             false => DeferCtrlEn::B0,
         }
     }
-    #[doc = "The count that AUX CH receive DEFER command is unlimited"]
+    #[doc = "If the count that AUX CH receive DEFER command equal to (DEFER_COUNT * 64), the AUX CH transaction is terminated, and the AUX_STATUS is 0100"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == DeferCtrlEn::B1
@@ -42,13 +43,13 @@ impl DeferCtrlEnR {
         *self == DeferCtrlEn::B0
     }
 }
-#[doc = "Field `DEFER_CTRL_EN` writer - AUX CH received DEFER command count control enable"]
+#[doc = "Field `DEFER_CTRL_EN` writer - AUX CH received DEFER command count \n\ncontrol enable"]
 pub type DeferCtrlEnW<'a, REG> = crate::BitWriter1C<'a, REG, DeferCtrlEn>;
 impl<'a, REG> DeferCtrlEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "The count that AUX CH receive DEFER command is unlimited"]
+    #[doc = "If the count that AUX CH receive DEFER command equal to (DEFER_COUNT * 64), the AUX CH transaction is terminated, and the AUX_STATUS is 0100"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(DeferCtrlEn::B1)
@@ -60,25 +61,25 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 0:6 - The count is defined to limit the max count AUX CH receive DEFER command When DEFER_CTRL_EN is 1 and AUX CH received (DEFER_COUNT * 64) DEFER command, the AUX CH will terminate the transaction"]
+    #[doc = "Bits 0:6 - The count is defined to limit the max count \n\nAUX CH receive DEFER command \n\nWhen DEFER_CTRL_EN is 1 and AUX CH \n\nreceived (DEFER_COUNT * 64) DEFER \n\ncommand, the AUX CH will terminate the \n\ntransaction"]
     #[inline(always)]
     pub fn defer_count(&self) -> DeferCountR {
         DeferCountR::new((self.bits & 0x7f) as u8)
     }
-    #[doc = "Bit 7 - AUX CH received DEFER command count control enable"]
+    #[doc = "Bit 7 - AUX CH received DEFER command count \n\ncontrol enable"]
     #[inline(always)]
     pub fn defer_ctrl_en(&self) -> DeferCtrlEnR {
         DeferCtrlEnR::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:6 - The count is defined to limit the max count AUX CH receive DEFER command When DEFER_CTRL_EN is 1 and AUX CH received (DEFER_COUNT * 64) DEFER command, the AUX CH will terminate the transaction"]
+    #[doc = "Bits 0:6 - The count is defined to limit the max count \n\nAUX CH receive DEFER command \n\nWhen DEFER_CTRL_EN is 1 and AUX CH \n\nreceived (DEFER_COUNT * 64) DEFER \n\ncommand, the AUX CH will terminate the \n\ntransaction"]
     #[inline(always)]
     #[must_use]
     pub fn defer_count(&mut self) -> DeferCountW<AuxChDeferCtlSpec> {
         DeferCountW::new(self, 0)
     }
-    #[doc = "Bit 7 - AUX CH received DEFER command count control enable"]
+    #[doc = "Bit 7 - AUX CH received DEFER command count \n\ncontrol enable"]
     #[inline(always)]
     #[must_use]
     pub fn defer_ctrl_en(&mut self) -> DeferCtrlEnW<AuxChDeferCtlSpec> {

@@ -1,9 +1,10 @@
 #[doc = "Register `EMMCCORE_FEACMD` writer"]
 pub type W = crate::W<EmmccoreFeacmdSpec>;
 #[doc = "Force Event for Auto CMD12 NOT Executed\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Notexe {
-    #[doc = "1: No interrupt"]
+    #[doc = "1: Interrupt is generated"]
     B1 = 1,
     #[doc = "0: No interrupt"]
     B0 = 0,
@@ -20,7 +21,7 @@ impl<'a, REG> NotexeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "No interrupt"]
+    #[doc = "Interrupt is generated"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Notexe::B1)
@@ -32,9 +33,10 @@ where
     }
 }
 #[doc = "Force Event for Auto CMD timeout Error\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Timeouterr {
-    #[doc = "1: No interrupt"]
+    #[doc = "1: Interrupt is generated"]
     B1 = 1,
     #[doc = "0: No interrupt"]
     B0 = 0,
@@ -51,7 +53,7 @@ impl<'a, REG> TimeouterrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "No interrupt"]
+    #[doc = "Interrupt is generated"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Timeouterr::B1)
@@ -63,9 +65,10 @@ where
     }
 }
 #[doc = "Force Event for Auto CMD CRC Error\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Crcerr {
-    #[doc = "1: No interrupt"]
+    #[doc = "1: Interrupt is generated"]
     B1 = 1,
     #[doc = "0: No interrupt"]
     B0 = 0,
@@ -82,7 +85,7 @@ impl<'a, REG> CrcerrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "No interrupt"]
+    #[doc = "Interrupt is generated"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Crcerr::B1)
@@ -94,9 +97,10 @@ where
     }
 }
 #[doc = "Force Event for Auto CMD End bit Error\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Enderr {
-    #[doc = "1: No interrupt"]
+    #[doc = "1: Interrupt is generated"]
     B1 = 1,
     #[doc = "0: No interrupt"]
     B0 = 0,
@@ -113,7 +117,7 @@ impl<'a, REG> EnderrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "No interrupt"]
+    #[doc = "Interrupt is generated"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Enderr::B1)
@@ -125,9 +129,10 @@ where
     }
 }
 #[doc = "Force Event for Auto CMD Index Error\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Indexerr {
-    #[doc = "1: No interrupt"]
+    #[doc = "1: Interrupt is generated"]
     B1 = 1,
     #[doc = "0: No interrupt"]
     B0 = 0,
@@ -144,7 +149,7 @@ impl<'a, REG> IndexerrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "No interrupt"]
+    #[doc = "Interrupt is generated"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Indexerr::B1)
@@ -156,9 +161,10 @@ where
     }
 }
 #[doc = "Force Event for command not issued by Auto CMD12 Error\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cmderr {
-    #[doc = "1: No interrupt"]
+    #[doc = "1: Interrupt is generated"]
     B1 = 1,
     #[doc = "0: No interrupt"]
     B0 = 0,
@@ -175,7 +181,7 @@ impl<'a, REG> CmderrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "No interrupt"]
+    #[doc = "Interrupt is generated"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Cmderr::B1)

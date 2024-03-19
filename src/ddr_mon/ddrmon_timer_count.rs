@@ -1,9 +1,9 @@
 #[doc = "Register `DDRMON_TIMER_COUNT` reader"]
 pub type R = crate::R<DdrmonTimerCountSpec>;
-#[doc = "Field `TIMER_COUNT` reader - The DFI timer threshold, the statistics of DDR access only be done when timer counter is less then this threshold in hardware mode"]
+#[doc = "Field `TIMER_COUNT` reader - The DFI timer threshold, the statistics of DDR access only be done\n\nwhen timer counter is less then this threshold in hardware mode"]
 pub type TimerCountR = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - The DFI timer threshold, the statistics of DDR access only be done when timer counter is less then this threshold in hardware mode"]
+    #[doc = "Bits 0:31 - The DFI timer threshold, the statistics of DDR access only be done\n\nwhen timer counter is less then this threshold in hardware mode"]
     #[inline(always)]
     pub fn timer_count(&self) -> TimerCountR {
         TimerCountR::new(self.bits)

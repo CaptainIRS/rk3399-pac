@@ -3,9 +3,10 @@ pub type R = crate::R<PmuAdb400StSpec>;
 #[doc = "Register `PMU_ADB400_ST` writer"]
 pub type W = crate::W<PmuAdb400StSpec>;
 #[doc = "idle acknowledge status from cxcs\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PwrdwnAckCxcs {
-    #[doc = "0: idle acknowledge status of adb is 1"]
+    #[doc = "0: idle acknowledge status of adb is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of adb is 1"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl PwrdwnAckCxcsR {
             true => PwrdwnAckCxcs::B1,
         }
     }
-    #[doc = "idle acknowledge status of adb is 1"]
+    #[doc = "idle acknowledge status of adb is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PwrdwnAckCxcs::B0
@@ -39,9 +40,10 @@ impl PwrdwnAckCxcsR {
     }
 }
 #[doc = "idle acknowledge status from cxcs\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PwrdwnAckCoreL {
-    #[doc = "0: idle acknowledge status of adb is 1"]
+    #[doc = "0: idle acknowledge status of adb is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of adb is 1"]
     B1 = 1,
@@ -63,7 +65,7 @@ impl PwrdwnAckCoreLR {
             true => PwrdwnAckCoreL::B1,
         }
     }
-    #[doc = "idle acknowledge status of adb is 1"]
+    #[doc = "idle acknowledge status of adb is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PwrdwnAckCoreL::B0
@@ -75,9 +77,10 @@ impl PwrdwnAckCoreLR {
     }
 }
 #[doc = "idle acknowledge status from cxcs\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PwrdwnAckCoreL2gic {
-    #[doc = "0: idle acknowledge status of adb is 1"]
+    #[doc = "0: idle acknowledge status of adb is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of adb is 1"]
     B1 = 1,
@@ -99,7 +102,7 @@ impl PwrdwnAckCoreL2gicR {
             true => PwrdwnAckCoreL2gic::B1,
         }
     }
-    #[doc = "idle acknowledge status of adb is 1"]
+    #[doc = "idle acknowledge status of adb is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PwrdwnAckCoreL2gic::B0
@@ -111,9 +114,10 @@ impl PwrdwnAckCoreL2gicR {
     }
 }
 #[doc = "idle acknowledge status from cxcs\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PwrdwnAckGic2CoreL {
-    #[doc = "0: idle acknowledge status of adb is 1"]
+    #[doc = "0: idle acknowledge status of adb is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of adb is 1"]
     B1 = 1,
@@ -135,7 +139,7 @@ impl PwrdwnAckGic2CoreLR {
             true => PwrdwnAckGic2CoreL::B1,
         }
     }
-    #[doc = "idle acknowledge status of adb is 1"]
+    #[doc = "idle acknowledge status of adb is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PwrdwnAckGic2CoreL::B0
@@ -147,9 +151,10 @@ impl PwrdwnAckGic2CoreLR {
     }
 }
 #[doc = "idle acknowledge status from cxcs\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PwrdwnAckCoreB {
-    #[doc = "0: idle acknowledge status of adb is 1"]
+    #[doc = "0: idle acknowledge status of adb is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of adb is 1"]
     B1 = 1,
@@ -171,7 +176,7 @@ impl PwrdwnAckCoreBR {
             true => PwrdwnAckCoreB::B1,
         }
     }
-    #[doc = "idle acknowledge status of adb is 1"]
+    #[doc = "idle acknowledge status of adb is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PwrdwnAckCoreB::B0
@@ -183,9 +188,10 @@ impl PwrdwnAckCoreBR {
     }
 }
 #[doc = "idle acknowledge status from cxcs\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PwrdwnAckCoreB2gic {
-    #[doc = "0: idle acknowledge status of adb is 1"]
+    #[doc = "0: idle acknowledge status of adb is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of adb is 1"]
     B1 = 1,
@@ -207,7 +213,7 @@ impl PwrdwnAckCoreB2gicR {
             true => PwrdwnAckCoreB2gic::B1,
         }
     }
-    #[doc = "idle acknowledge status of adb is 1"]
+    #[doc = "idle acknowledge status of adb is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PwrdwnAckCoreB2gic::B0
@@ -219,9 +225,10 @@ impl PwrdwnAckCoreB2gicR {
     }
 }
 #[doc = "idle acknowledge status from cxcs\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PwrdwnAckGic2CoreB {
-    #[doc = "0: idle acknowledge status of adb is 1"]
+    #[doc = "0: idle acknowledge status of adb is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of adb is 1"]
     B1 = 1,
@@ -243,7 +250,7 @@ impl PwrdwnAckGic2CoreBR {
             true => PwrdwnAckGic2CoreB::B1,
         }
     }
-    #[doc = "idle acknowledge status of adb is 1"]
+    #[doc = "idle acknowledge status of adb is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PwrdwnAckGic2CoreB::B0
@@ -255,9 +262,10 @@ impl PwrdwnAckGic2CoreBR {
     }
 }
 #[doc = "active status of cxcs low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ActiveCxcs {
-    #[doc = "0: active status is 1 (active)"]
+    #[doc = "0: active status is 0 (inactive)"]
     B0 = 0,
     #[doc = "1: active status is 1 (active)"]
     B1 = 1,
@@ -279,7 +287,7 @@ impl ActiveCxcsR {
             true => ActiveCxcs::B1,
         }
     }
-    #[doc = "active status is 1 (active)"]
+    #[doc = "active status is 0 (inactive)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ActiveCxcs::B0
@@ -291,9 +299,10 @@ impl ActiveCxcsR {
     }
 }
 #[doc = "active status of cxcs low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleCoreL {
-    #[doc = "0: active status is 1 (active)"]
+    #[doc = "0: active status is 0 (inactive)"]
     B0 = 0,
     #[doc = "1: active status is 1 (active)"]
     B1 = 1,
@@ -315,7 +324,7 @@ impl IdleCoreLR {
             true => IdleCoreL::B1,
         }
     }
-    #[doc = "active status is 1 (active)"]
+    #[doc = "active status is 0 (inactive)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleCoreL::B0
@@ -327,9 +336,10 @@ impl IdleCoreLR {
     }
 }
 #[doc = "active status of cxcs low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleCoreL2gic {
-    #[doc = "0: active status is 1 (active)"]
+    #[doc = "0: active status is 0 (inactive)"]
     B0 = 0,
     #[doc = "1: active status is 1 (active)"]
     B1 = 1,
@@ -351,7 +361,7 @@ impl IdleCoreL2gicR {
             true => IdleCoreL2gic::B1,
         }
     }
-    #[doc = "active status is 1 (active)"]
+    #[doc = "active status is 0 (inactive)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleCoreL2gic::B0
@@ -363,9 +373,10 @@ impl IdleCoreL2gicR {
     }
 }
 #[doc = "active status of cxcs low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleGic2CoreL {
-    #[doc = "0: active status is 1 (active)"]
+    #[doc = "0: active status is 0 (inactive)"]
     B0 = 0,
     #[doc = "1: active status is 1 (active)"]
     B1 = 1,
@@ -382,7 +393,7 @@ impl<'a, REG> IdleGic2CoreLW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "active status is 1 (active)"]
+    #[doc = "active status is 0 (inactive)"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleGic2CoreL::B0)
@@ -394,9 +405,10 @@ where
     }
 }
 #[doc = "active status of cxcs low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleCoreB {
-    #[doc = "0: active status is 1 (active)"]
+    #[doc = "0: active status is 0 (inactive)"]
     B0 = 0,
     #[doc = "1: active status is 1 (active)"]
     B1 = 1,
@@ -418,7 +430,7 @@ impl IdleCoreBR {
             true => IdleCoreB::B1,
         }
     }
-    #[doc = "active status is 1 (active)"]
+    #[doc = "active status is 0 (inactive)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleCoreB::B0
@@ -430,9 +442,10 @@ impl IdleCoreBR {
     }
 }
 #[doc = "active status of cxcs low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleCoreB2gic {
-    #[doc = "0: active status is 1 (active)"]
+    #[doc = "0: active status is 0 (inactive)"]
     B0 = 0,
     #[doc = "1: active status is 1 (active)"]
     B1 = 1,
@@ -454,7 +467,7 @@ impl IdleCoreB2gicR {
             true => IdleCoreB2gic::B1,
         }
     }
-    #[doc = "active status is 1 (active)"]
+    #[doc = "active status is 0 (inactive)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleCoreB2gic::B0
@@ -466,9 +479,10 @@ impl IdleCoreB2gicR {
     }
 }
 #[doc = "active status of cxcs low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleGic2CoreB {
-    #[doc = "0: active status is 1 (active)"]
+    #[doc = "0: active status is 0 (inactive)"]
     B0 = 0,
     #[doc = "1: active status is 1 (active)"]
     B1 = 1,
@@ -490,7 +504,7 @@ impl IdleGic2CoreBR {
             true => IdleGic2CoreB::B1,
         }
     }
-    #[doc = "active status is 1 (active)"]
+    #[doc = "active status is 0 (inactive)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleGic2CoreB::B0

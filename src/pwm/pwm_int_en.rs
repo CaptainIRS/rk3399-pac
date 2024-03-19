@@ -3,9 +3,10 @@ pub type R = crate::R<PwmIntEnSpec>;
 #[doc = "Register `PWM_INT_EN` writer"]
 pub type W = crate::W<PwmIntEnSpec>;
 #[doc = "Channel 0 Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ch0IntEn {
-    #[doc = "0: Channel 0 Interrupt enabled"]
+    #[doc = "0: Channel 0 Interrupt disabled"]
     B0 = 0,
     #[doc = "1: Channel 0 Interrupt enabled"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl Ch0IntEnR {
             true => Ch0IntEn::B1,
         }
     }
-    #[doc = "Channel 0 Interrupt enabled"]
+    #[doc = "Channel 0 Interrupt disabled"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Ch0IntEn::B0
@@ -44,7 +45,7 @@ impl<'a, REG> Ch0IntEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Channel 0 Interrupt enabled"]
+    #[doc = "Channel 0 Interrupt disabled"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Ch0IntEn::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Channel 1 Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ch1IntEn {
-    #[doc = "0: Channel 1 Interrupt enabled"]
+    #[doc = "0: Channel 1 Interrupt disabled"]
     B0 = 0,
     #[doc = "1: Channel 1 Interrupt enabled"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl Ch1IntEnR {
             true => Ch1IntEn::B1,
         }
     }
-    #[doc = "Channel 1 Interrupt enabled"]
+    #[doc = "Channel 1 Interrupt disabled"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Ch1IntEn::B0
@@ -97,7 +99,7 @@ impl<'a, REG> Ch1IntEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Channel 1 Interrupt enabled"]
+    #[doc = "Channel 1 Interrupt disabled"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Ch1IntEn::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "Channel 2 Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ch2IntEn {
-    #[doc = "0: Channel 2 Interrupt enabled"]
+    #[doc = "0: Channel 2 Interrupt disabled"]
     B0 = 0,
     #[doc = "1: Channel 2 Interrupt enabled"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl Ch2IntEnR {
             true => Ch2IntEn::B1,
         }
     }
-    #[doc = "Channel 2 Interrupt enabled"]
+    #[doc = "Channel 2 Interrupt disabled"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Ch2IntEn::B0
@@ -150,7 +153,7 @@ impl<'a, REG> Ch2IntEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Channel 2 Interrupt enabled"]
+    #[doc = "Channel 2 Interrupt disabled"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Ch2IntEn::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "Channel 3 Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ch3IntEn {
-    #[doc = "0: Channel 3 Interrupt enabled"]
+    #[doc = "0: Channel 3 Interrupt disabled"]
     B0 = 0,
     #[doc = "1: Channel 3 Interrupt enabled"]
     B1 = 1,
@@ -186,7 +190,7 @@ impl Ch3IntEnR {
             true => Ch3IntEn::B1,
         }
     }
-    #[doc = "Channel 3 Interrupt enabled"]
+    #[doc = "Channel 3 Interrupt disabled"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Ch3IntEn::B0
@@ -203,7 +207,7 @@ impl<'a, REG> Ch3IntEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Channel 3 Interrupt enabled"]
+    #[doc = "Channel 3 Interrupt disabled"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Ch3IntEn::B0)

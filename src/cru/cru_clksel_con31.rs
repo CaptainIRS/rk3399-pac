@@ -3,12 +3,13 @@ pub type R = crate::R<CruClkselCon31Spec>;
 #[doc = "Register `CRU_CLKSEL_CON31` writer"]
 pub type W = crate::W<CruClkselCon31Spec>;
 #[doc = "clk_i2s_ch clock select control register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ClkI2sChSel {
-    #[doc = "0: clk_i2s2"]
+    #[doc = "0: clk_i2s0"]
     B00 = 0,
-    #[doc = "1: clk_i2s2"]
+    #[doc = "1: clk_i2s1"]
     B01 = 1,
     #[doc = "2: clk_i2s2"]
     B10 = 2,
@@ -35,12 +36,12 @@ impl ClkI2sChSelR {
             _ => None,
         }
     }
-    #[doc = "clk_i2s2"]
+    #[doc = "clk_i2s0"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == ClkI2sChSel::B00
     }
-    #[doc = "clk_i2s2"]
+    #[doc = "clk_i2s1"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == ClkI2sChSel::B01
@@ -58,12 +59,12 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "clk_i2s2"]
+    #[doc = "clk_i2s0"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(ClkI2sChSel::B00)
     }
-    #[doc = "clk_i2s2"]
+    #[doc = "clk_i2s1"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(ClkI2sChSel::B01)
@@ -75,9 +76,10 @@ where
     }
 }
 #[doc = "clk_i2sout clock select control register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClkI2soutSel {
-    #[doc = "0: clk_12m"]
+    #[doc = "0: clk_i2s"]
     B0 = 0,
     #[doc = "1: clk_12m"]
     B1 = 1,
@@ -99,7 +101,7 @@ impl ClkI2soutSelR {
             true => ClkI2soutSel::B1,
         }
     }
-    #[doc = "clk_12m"]
+    #[doc = "clk_i2s"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClkI2soutSel::B0
@@ -116,7 +118,7 @@ impl<'a, REG> ClkI2soutSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clk_12m"]
+    #[doc = "clk_i2s"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClkI2soutSel::B0)
@@ -127,7 +129,7 @@ where
         self.variant(ClkI2soutSel::B1)
     }
 }
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:1 - clk_i2s_ch clock select control register"]
@@ -154,7 +156,7 @@ impl W {
     pub fn clk_i2sout_sel(&mut self) -> ClkI2soutSelW<CruClkselCon31Spec> {
         ClkI2soutSelW::new(self, 2)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkselCon31Spec> {

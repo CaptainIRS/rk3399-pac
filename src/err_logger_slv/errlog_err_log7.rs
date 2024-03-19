@@ -1,9 +1,9 @@
 #[doc = "Register `ERRLOG_ErrLog7` reader"]
 pub type R = crate::R<ErrlogErrLog7Spec>;
-#[doc = "Field `ERRLOG7` reader - Contains transport protocol packet header field Security of the logged error."]
+#[doc = "Field `ERRLOG7` reader - Contains transport protocol packet header field Security of the\n\nlogged error."]
 pub type Errlog7R = crate::BitReader;
 impl R {
-    #[doc = "Bit 0 - Contains transport protocol packet header field Security of the logged error."]
+    #[doc = "Bit 0 - Contains transport protocol packet header field Security of the\n\nlogged error."]
     #[inline(always)]
     pub fn errlog7(&self) -> Errlog7R {
         Errlog7R::new((self.bits & 1) != 0)

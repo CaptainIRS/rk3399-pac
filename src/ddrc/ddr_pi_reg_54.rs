@@ -2,13 +2,13 @@
 pub type R = crate::R<DdrPiReg54Spec>;
 #[doc = "Register `DDR_PI_REG_54` writer"]
 pub type W = crate::W<DdrPiReg54Spec>;
-#[doc = "Field `PI_SWLVL_WR_SLICE_1` writer - Indicates software leveling write command in WDQ training for data slice 1."]
+#[doc = "Field `PI_SWLVL_WR_SLICE_1` writer - Indicates software leveling write command in WDQ training for data\n\nslice 1."]
 pub type PiSwlvlWrSlice1W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PI_SWLVL_RD_SLICE_1` writer - Indicates software leveling read command in WDQ training for data slice 1."]
+#[doc = "Field `PI_SWLVL_RD_SLICE_1` writer - Indicates software leveling read command in WDQ training for data\n\nslice 1."]
 pub type PiSwlvlRdSlice1W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PI_SW_WDQLVL_RESP_1` reader - Indicates WDQ leveling response for data slice 1."]
 pub type PiSwWdqlvlResp1R = crate::FieldReader;
-#[doc = "Field `PI_SWLVL_WR_SLICE_2` writer - Indicates software leveling write command in WDQ training for data slice 2."]
+#[doc = "Field `PI_SWLVL_WR_SLICE_2` writer - Indicates software leveling write command in WDQ training for data\n\nslice 2."]
 pub type PiSwlvlWrSlice2W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 16:17 - Indicates WDQ leveling response for data slice 1."]
@@ -18,19 +18,19 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - Indicates software leveling write command in WDQ training for data slice 1."]
+    #[doc = "Bit 0 - Indicates software leveling write command in WDQ training for data\n\nslice 1."]
     #[inline(always)]
     #[must_use]
     pub fn pi_swlvl_wr_slice_1(&mut self) -> PiSwlvlWrSlice1W<DdrPiReg54Spec> {
         PiSwlvlWrSlice1W::new(self, 0)
     }
-    #[doc = "Bit 8 - Indicates software leveling read command in WDQ training for data slice 1."]
+    #[doc = "Bit 8 - Indicates software leveling read command in WDQ training for data\n\nslice 1."]
     #[inline(always)]
     #[must_use]
     pub fn pi_swlvl_rd_slice_1(&mut self) -> PiSwlvlRdSlice1W<DdrPiReg54Spec> {
         PiSwlvlRdSlice1W::new(self, 8)
     }
-    #[doc = "Bit 24 - Indicates software leveling write command in WDQ training for data slice 2."]
+    #[doc = "Bit 24 - Indicates software leveling write command in WDQ training for data\n\nslice 2."]
     #[inline(always)]
     #[must_use]
     pub fn pi_swlvl_wr_slice_2(&mut self) -> PiSwlvlWrSlice2W<DdrPiReg54Spec> {

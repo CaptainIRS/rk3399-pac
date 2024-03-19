@@ -2,19 +2,19 @@
 pub type R = crate::R<UartFarSpec>;
 #[doc = "Register `UART_FAR` writer"]
 pub type W = crate::W<UartFarSpec>;
-#[doc = "Field `FIFO_ACCESS_TEST_EN` reader - This register is use to enable a FIFO access mode for testing, so that the receive FIFO can be written by the master and the transmit FIFO can be read by the master when FIFOs are implemented and enabled. When FIFOs are not enabled it allows the RBR to be written by the master and the THR to be read by the master. 0 = FIFO access mode disabled 1 = FIFO access mode enabled"]
+#[doc = "Field `FIFO_ACCESS_TEST_EN` reader - This register is use to enable a FIFO access mode for testing, so\n\nthat the receive FIFO can be written by the master and the\n\ntransmit FIFO can be read by the master when FIFOs are\n\nimplemented and enabled. When FIFOs are not enabled it allows\n\nthe RBR to be written by the master and the THR to be read by\n\nthe master.\n\n0 = FIFO access mode disabled\n\n1 = FIFO access mode enabled"]
 pub type FifoAccessTestEnR = crate::BitReader;
-#[doc = "Field `FIFO_ACCESS_TEST_EN` writer - This register is use to enable a FIFO access mode for testing, so that the receive FIFO can be written by the master and the transmit FIFO can be read by the master when FIFOs are implemented and enabled. When FIFOs are not enabled it allows the RBR to be written by the master and the THR to be read by the master. 0 = FIFO access mode disabled 1 = FIFO access mode enabled"]
+#[doc = "Field `FIFO_ACCESS_TEST_EN` writer - This register is use to enable a FIFO access mode for testing, so\n\nthat the receive FIFO can be written by the master and the\n\ntransmit FIFO can be read by the master when FIFOs are\n\nimplemented and enabled. When FIFOs are not enabled it allows\n\nthe RBR to be written by the master and the THR to be read by\n\nthe master.\n\n0 = FIFO access mode disabled\n\n1 = FIFO access mode enabled"]
 pub type FifoAccessTestEnW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - This register is use to enable a FIFO access mode for testing, so that the receive FIFO can be written by the master and the transmit FIFO can be read by the master when FIFOs are implemented and enabled. When FIFOs are not enabled it allows the RBR to be written by the master and the THR to be read by the master. 0 = FIFO access mode disabled 1 = FIFO access mode enabled"]
+    #[doc = "Bit 0 - This register is use to enable a FIFO access mode for testing, so\n\nthat the receive FIFO can be written by the master and the\n\ntransmit FIFO can be read by the master when FIFOs are\n\nimplemented and enabled. When FIFOs are not enabled it allows\n\nthe RBR to be written by the master and the THR to be read by\n\nthe master.\n\n0 = FIFO access mode disabled\n\n1 = FIFO access mode enabled"]
     #[inline(always)]
     pub fn fifo_access_test_en(&self) -> FifoAccessTestEnR {
         FifoAccessTestEnR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - This register is use to enable a FIFO access mode for testing, so that the receive FIFO can be written by the master and the transmit FIFO can be read by the master when FIFOs are implemented and enabled. When FIFOs are not enabled it allows the RBR to be written by the master and the THR to be read by the master. 0 = FIFO access mode disabled 1 = FIFO access mode enabled"]
+    #[doc = "Bit 0 - This register is use to enable a FIFO access mode for testing, so\n\nthat the receive FIFO can be written by the master and the\n\ntransmit FIFO can be read by the master when FIFOs are\n\nimplemented and enabled. When FIFOs are not enabled it allows\n\nthe RBR to be written by the master and the THR to be read by\n\nthe master.\n\n0 = FIFO access mode disabled\n\n1 = FIFO access mode enabled"]
     #[inline(always)]
     #[must_use]
     pub fn fifo_access_test_en(&mut self) -> FifoAccessTestEnW<UartFarSpec> {

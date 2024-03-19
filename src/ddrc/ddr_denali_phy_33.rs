@@ -1,9 +1,9 @@
 #[doc = "Register `DDR_DENALI_PHY_33` reader"]
 pub type R = crate::R<DdrDenaliPhy33Spec>;
-#[doc = "Field `PHY_FIFO_PTR_OBS_0` reader - Observation register for read entry FIFO pointers for slice 0. READ- ONLY"]
+#[doc = "Field `PHY_FIFO_PTR_OBS_0` reader - Observation register for read entry FIFO pointers for slice 0."]
 pub type PhyFifoPtrObs0R = crate::FieldReader;
 impl R {
-    #[doc = "Bits 0:7 - Observation register for read entry FIFO pointers for slice 0. READ- ONLY"]
+    #[doc = "Bits 0:7 - Observation register for read entry FIFO pointers for slice 0."]
     #[inline(always)]
     pub fn phy_fifo_ptr_obs_0(&self) -> PhyFifoPtrObs0R {
         PhyFifoPtrObs0R::new((self.bits & 0xff) as u8)

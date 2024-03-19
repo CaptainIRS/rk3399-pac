@@ -1,9 +1,9 @@
 #[doc = "Register `ERRLOG_ErrVld` reader"]
 pub type R = crate::R<ErrlogErrVldSpec>;
-#[doc = "Field `ERRVLD` reader - When set to 1, indicates that an error is logged in the ErrLog registers."]
+#[doc = "Field `ERRVLD` reader - When set to 1, indicates that an error is logged in the ErrLog\n\nregisters."]
 pub type ErrvldR = crate::BitReader;
 impl R {
-    #[doc = "Bit 0 - When set to 1, indicates that an error is logged in the ErrLog registers."]
+    #[doc = "Bit 0 - When set to 1, indicates that an error is logged in the ErrLog\n\nregisters."]
     #[inline(always)]
     pub fn errvld(&self) -> ErrvldR {
         ErrvldR::new((self.bits & 1) != 0)

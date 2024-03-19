@@ -6,9 +6,9 @@ pub type W = crate::W<PmugrfOscESpec>;
 pub type OscER = crate::FieldReader;
 #[doc = "Field `OSC_E` writer - 24M OSC drive strenth"]
 pub type OscEW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-#[doc = "Field `WRITE_ENABLE` reader - When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; When bit 18=1, bit 2 can be written by software . When bit 18=0, bit 2 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - When bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\nWhen bit 18=1, bit 2 can be written by\n\nsoftware .\n\nWhen bit 18=0, bit 2 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader;
-#[doc = "Field `WRITE_ENABLE` writer - When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; When bit 18=1, bit 2 can be written by software . When bit 18=0, bit 2 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - When bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\nWhen bit 18=1, bit 2 can be written by\n\nsoftware .\n\nWhen bit 18=0, bit 2 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bits 0:2 - 24M OSC drive strenth"]
@@ -16,7 +16,7 @@ impl R {
     pub fn osc_e(&self) -> OscER {
         OscER::new((self.bits & 7) as u8)
     }
-    #[doc = "Bits 16:18 - When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; When bit 18=1, bit 2 can be written by software . When bit 18=0, bit 2 cannot be written by software;"]
+    #[doc = "Bits 16:18 - When bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\nWhen bit 18=1, bit 2 can be written by\n\nsoftware .\n\nWhen bit 18=0, bit 2 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 7) as u8)
@@ -29,7 +29,7 @@ impl W {
     pub fn osc_e(&mut self) -> OscEW<PmugrfOscESpec> {
         OscEW::new(self, 0)
     }
-    #[doc = "Bits 16:18 - When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; When bit 18=1, bit 2 can be written by software . When bit 18=0, bit 2 cannot be written by software;"]
+    #[doc = "Bits 16:18 - When bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\nWhen bit 18=1, bit 2 can be written by\n\nsoftware .\n\nWhen bit 18=0, bit 2 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<PmugrfOscESpec> {

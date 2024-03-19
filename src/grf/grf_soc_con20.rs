@@ -3,9 +3,10 @@ pub type R = crate::R<GrfSocCon20Spec>;
 #[doc = "Register `GRF_SOC_CON20` writer"]
 pub type W = crate::W<GrfSocCon20Spec>;
 #[doc = "dsi0 vol select bit\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dsi0LcdcSel {
-    #[doc = "0: vop little"]
+    #[doc = "0: vop big"]
     B0 = 0,
     #[doc = "1: vop little"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl Dsi0LcdcSelR {
             true => Dsi0LcdcSel::B1,
         }
     }
-    #[doc = "vop little"]
+    #[doc = "vop big"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Dsi0LcdcSel::B0
@@ -44,7 +45,7 @@ impl<'a, REG> Dsi0LcdcSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "vop little"]
+    #[doc = "vop big"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Dsi0LcdcSel::B0)
@@ -68,9 +69,10 @@ pub type Dsi1DpiupdatecfgR = crate::BitReader;
 #[doc = "Field `DSI1_DPIUPDATECFG` writer - dsi1 dpiupdatecfg bit control"]
 pub type Dsi1DpiupdatecfgW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "dsi1 lcdc select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dsi1LcdcSel {
-    #[doc = "0: vop little"]
+    #[doc = "0: vop big"]
     B0 = 0,
     #[doc = "1: vop little"]
     B1 = 1,
@@ -92,7 +94,7 @@ impl Dsi1LcdcSelR {
             true => Dsi1LcdcSel::B1,
         }
     }
-    #[doc = "vop little"]
+    #[doc = "vop big"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Dsi1LcdcSel::B0
@@ -109,7 +111,7 @@ impl<'a, REG> Dsi1LcdcSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "vop little"]
+    #[doc = "vop big"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Dsi1LcdcSel::B0)
@@ -121,9 +123,10 @@ where
     }
 }
 #[doc = "edp lcdc select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EdpLcdcSel {
-    #[doc = "0: vop little"]
+    #[doc = "0: vop big"]
     B0 = 0,
     #[doc = "1: vop little"]
     B1 = 1,
@@ -145,7 +148,7 @@ impl EdpLcdcSelR {
             true => EdpLcdcSel::B1,
         }
     }
-    #[doc = "vop little"]
+    #[doc = "vop big"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == EdpLcdcSel::B0
@@ -162,7 +165,7 @@ impl<'a, REG> EdpLcdcSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "vop little"]
+    #[doc = "vop big"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(EdpLcdcSel::B0)
@@ -174,9 +177,10 @@ where
     }
 }
 #[doc = "hdmi lcdc select\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HdmiLcdcSel {
-    #[doc = "0: vop little"]
+    #[doc = "0: vop big"]
     B0 = 0,
     #[doc = "1: vop little"]
     B1 = 1,
@@ -198,7 +202,7 @@ impl HdmiLcdcSelR {
             true => HdmiLcdcSel::B1,
         }
     }
-    #[doc = "vop little"]
+    #[doc = "vop big"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == HdmiLcdcSel::B0
@@ -215,7 +219,7 @@ impl<'a, REG> HdmiLcdcSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "vop little"]
+    #[doc = "vop big"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(HdmiLcdcSel::B0)
@@ -227,9 +231,10 @@ where
     }
 }
 #[doc = "vop finish select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VopFinishSel {
-    #[doc = "0: vop little"]
+    #[doc = "0: vop big"]
     B0 = 0,
     #[doc = "1: vop little"]
     B1 = 1,
@@ -251,7 +256,7 @@ impl VopFinishSelR {
             true => VopFinishSel::B1,
         }
     }
-    #[doc = "vop little"]
+    #[doc = "vop big"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == VopFinishSel::B0
@@ -268,7 +273,7 @@ impl<'a, REG> VopFinishSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "vop little"]
+    #[doc = "vop big"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(VopFinishSel::B0)
@@ -280,9 +285,10 @@ where
     }
 }
 #[doc = "edp video bist enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EdpVideoBistEn {
-    #[doc = "1: disable"]
+    #[doc = "1: enable"]
     B1 = 1,
     #[doc = "0: disable"]
     B0 = 0,
@@ -304,7 +310,7 @@ impl EdpVideoBistEnR {
             false => EdpVideoBistEn::B0,
         }
     }
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == EdpVideoBistEn::B1
@@ -321,7 +327,7 @@ impl<'a, REG> EdpVideoBistEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(EdpVideoBistEn::B1)
@@ -333,9 +339,10 @@ where
     }
 }
 #[doc = "pclkin dvp clock select\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PclkinDvpRevSel {
-    #[doc = "0: invert phase"]
+    #[doc = "0: not invet phase"]
     B0 = 0,
     #[doc = "1: invert phase"]
     B1 = 1,
@@ -357,7 +364,7 @@ impl PclkinDvpRevSelR {
             true => PclkinDvpRevSel::B1,
         }
     }
-    #[doc = "invert phase"]
+    #[doc = "not invet phase"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PclkinDvpRevSel::B0
@@ -374,7 +381,7 @@ impl<'a, REG> PclkinDvpRevSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "invert phase"]
+    #[doc = "not invet phase"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PclkinDvpRevSel::B0)
@@ -386,9 +393,10 @@ where
     }
 }
 #[doc = "vop select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GrfConRgbLcdcSel {
-    #[doc = "0: vop little"]
+    #[doc = "0: vop big"]
     B0 = 0,
     #[doc = "1: vop little"]
     B1 = 1,
@@ -410,7 +418,7 @@ impl GrfConRgbLcdcSelR {
             true => GrfConRgbLcdcSel::B1,
         }
     }
-    #[doc = "vop little"]
+    #[doc = "vop big"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == GrfConRgbLcdcSel::B0
@@ -427,7 +435,7 @@ impl<'a, REG> GrfConRgbLcdcSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "vop little"]
+    #[doc = "vop big"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(GrfConRgbLcdcSel::B0)
@@ -439,9 +447,10 @@ where
     }
 }
 #[doc = "dclk phase selct\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GrfVopRgbDclkRevSel {
-    #[doc = "0: 180 degree"]
+    #[doc = "0: 0 degree"]
     B0 = 0,
     #[doc = "1: 180 degree"]
     B1 = 1,
@@ -463,7 +472,7 @@ impl GrfVopRgbDclkRevSelR {
             true => GrfVopRgbDclkRevSel::B1,
         }
     }
-    #[doc = "180 degree"]
+    #[doc = "0 degree"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == GrfVopRgbDclkRevSel::B0
@@ -480,7 +489,7 @@ impl<'a, REG> GrfVopRgbDclkRevSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "180 degree"]
+    #[doc = "0 degree"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(GrfVopRgbDclkRevSel::B0)
@@ -499,9 +508,9 @@ pub type HdcpI2cForceSclW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type HdcpI2cForceSdaR = crate::BitReader;
 #[doc = "Field `HDCP_I2C_FORCE_SDA` writer - hdcp_i2c_force_sda bit control"]
 pub type HdcpI2cForceSdaW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0 - dsi0 vol select bit"]
@@ -574,7 +583,7 @@ impl R {
     pub fn hdcp_i2c_force_sda(&self) -> HdcpI2cForceSdaR {
         HdcpI2cForceSdaR::new(((self.bits >> 14) & 1) != 0)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
@@ -665,7 +674,7 @@ impl W {
     pub fn hdcp_i2c_force_sda(&mut self) -> HdcpI2cForceSdaW<GrfSocCon20Spec> {
         HdcpI2cForceSdaW::new(self, 14)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfSocCon20Spec> {

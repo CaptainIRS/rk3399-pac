@@ -1,9 +1,10 @@
 #[doc = "Register `MC_OPSTS` reader"]
 pub type R = crate::R<McOpstsSpec>;
 #[doc = "HDCP SNPS 2.2 versus 1.4 switch value status.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum H22sSwitchSts {
-    #[doc = "0: HDCP 2.2 selected"]
+    #[doc = "0: HDCP 1.4 selected"]
     B0 = 0,
     #[doc = "1: HDCP 2.2 selected"]
     B1 = 1,
@@ -25,7 +26,7 @@ impl H22sSwitchStsR {
             true => H22sSwitchSts::B1,
         }
     }
-    #[doc = "HDCP 2.2 selected"]
+    #[doc = "HDCP 1.4 selected"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == H22sSwitchSts::B0
@@ -43,7 +44,7 @@ impl R {
         H22sSwitchStsR::new((self.bits & 1) != 0)
     }
 }
-#[doc = "HDCP SNPS 2.2 versus 1.4 switch value status. 1'b0: HDCP 1.4 selected 1'b1: HDCP 2.2 selected\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mc_opsts::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Main Controller Status Register\n\nThis register contains the information regarding the status of the HDCP SNPS 2.2 versus\n\n1.4 switch.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mc_opsts::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct McOpstsSpec;
 impl crate::RegisterSpec for McOpstsSpec {
     type Ux = u8;

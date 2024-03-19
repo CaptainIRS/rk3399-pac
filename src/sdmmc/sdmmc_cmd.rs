@@ -7,9 +7,10 @@ pub type CmdIndexR = crate::FieldReader;
 #[doc = "Field `CMD_INDEX` writer - Command index"]
 pub type CmdIndexW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ResponseExpect {
-    #[doc = "0: response expected from card"]
+    #[doc = "0: no response expected from card"]
     B0 = 0,
     #[doc = "1: response expected from card"]
     B1 = 1,
@@ -31,7 +32,7 @@ impl ResponseExpectR {
             true => ResponseExpect::B1,
         }
     }
-    #[doc = "response expected from card"]
+    #[doc = "no response expected from card"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ResponseExpect::B0
@@ -48,7 +49,7 @@ impl<'a, REG> ResponseExpectW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "response expected from card"]
+    #[doc = "no response expected from card"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ResponseExpect::B0)
@@ -60,9 +61,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ResponseLength {
-    #[doc = "0: long response expected from card"]
+    #[doc = "0: short response expected from card"]
     B0 = 0,
     #[doc = "1: long response expected from card"]
     B1 = 1,
@@ -84,7 +86,7 @@ impl ResponseLengthR {
             true => ResponseLength::B1,
         }
     }
-    #[doc = "long response expected from card"]
+    #[doc = "short response expected from card"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ResponseLength::B0
@@ -101,7 +103,7 @@ impl<'a, REG> ResponseLengthW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "long response expected from card"]
+    #[doc = "short response expected from card"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ResponseLength::B0)
@@ -113,9 +115,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CheckResponseCrc {
-    #[doc = "0: check response CRC Some of command responses do not return valid CRC bits. Software should disable CRC checks for those commands in order to disable CRC checking by controller"]
+    #[doc = "0: do not check response CRC"]
     B0 = 0,
     #[doc = "1: check response CRC Some of command responses do not return valid CRC bits. Software should disable CRC checks for those commands in order to disable CRC checking by controller"]
     B1 = 1,
@@ -137,7 +140,7 @@ impl CheckResponseCrcR {
             true => CheckResponseCrc::B1,
         }
     }
-    #[doc = "check response CRC Some of command responses do not return valid CRC bits. Software should disable CRC checks for those commands in order to disable CRC checking by controller"]
+    #[doc = "do not check response CRC"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CheckResponseCrc::B0
@@ -154,7 +157,7 @@ impl<'a, REG> CheckResponseCrcW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "check response CRC Some of command responses do not return valid CRC bits. Software should disable CRC checks for those commands in order to disable CRC checking by controller"]
+    #[doc = "do not check response CRC"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CheckResponseCrc::B0)
@@ -166,9 +169,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DataExpected {
-    #[doc = "0: data transfer expected (read/write)"]
+    #[doc = "0: no data transfer expected (read/write)"]
     B0 = 0,
     #[doc = "1: data transfer expected (read/write)"]
     B1 = 1,
@@ -190,7 +194,7 @@ impl DataExpectedR {
             true => DataExpected::B1,
         }
     }
-    #[doc = "data transfer expected (read/write)"]
+    #[doc = "no data transfer expected (read/write)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == DataExpected::B0
@@ -207,7 +211,7 @@ impl<'a, REG> DataExpectedW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "data transfer expected (read/write)"]
+    #[doc = "no data transfer expected (read/write)"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(DataExpected::B0)
@@ -219,9 +223,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wr {
-    #[doc = "0: write to card Don't care if no data expected from card."]
+    #[doc = "0: read from card"]
     B0 = 0,
     #[doc = "1: write to card Don't care if no data expected from card."]
     B1 = 1,
@@ -243,7 +248,7 @@ impl WrR {
             true => Wr::B1,
         }
     }
-    #[doc = "write to card Don't care if no data expected from card."]
+    #[doc = "read from card"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Wr::B0
@@ -260,7 +265,7 @@ impl<'a, REG> WrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "write to card Don't care if no data expected from card."]
+    #[doc = "read from card"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Wr::B0)
@@ -272,9 +277,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TransferMode {
-    #[doc = "0: stream data transfer command Don't care if no data expected."]
+    #[doc = "0: block data transfer command"]
     B0 = 0,
     #[doc = "1: stream data transfer command Don't care if no data expected."]
     B1 = 1,
@@ -296,7 +302,7 @@ impl TransferModeR {
             true => TransferMode::B1,
         }
     }
-    #[doc = "stream data transfer command Don't care if no data expected."]
+    #[doc = "block data transfer command"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == TransferMode::B0
@@ -313,7 +319,7 @@ impl<'a, REG> TransferModeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stream data transfer command Don't care if no data expected."]
+    #[doc = "block data transfer command"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(TransferMode::B0)
@@ -325,9 +331,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SendAutoStop {
-    #[doc = "0: send stop command at end of data transfer When set, SDMMC Controller sends stop command to SD_MMC cards at end of data transfer. a. when send_auto_stop bit should be set, since some data transfers do not need explicit stop commands b. open-ended transfers that software should explicitly send to stop command Additionally, when \"resume\" is sent to resume –suspended memory access of SD-Combo card –bit should be set correctly if suspended data transfer needs send_auto_stop. Don't care if no data expected from card."]
+    #[doc = "0: no stop command sent at end of data transfer"]
     B0 = 0,
     #[doc = "1: send stop command at end of data transfer When set, SDMMC Controller sends stop command to SD_MMC cards at end of data transfer. a. when send_auto_stop bit should be set, since some data transfers do not need explicit stop commands b. open-ended transfers that software should explicitly send to stop command Additionally, when \"resume\" is sent to resume –suspended memory access of SD-Combo card –bit should be set correctly if suspended data transfer needs send_auto_stop. Don't care if no data expected from card."]
     B1 = 1,
@@ -349,7 +356,7 @@ impl SendAutoStopR {
             true => SendAutoStop::B1,
         }
     }
-    #[doc = "send stop command at end of data transfer When set, SDMMC Controller sends stop command to SD_MMC cards at end of data transfer. a. when send_auto_stop bit should be set, since some data transfers do not need explicit stop commands b. open-ended transfers that software should explicitly send to stop command Additionally, when \"resume\" is sent to resume –suspended memory access of SD-Combo card –bit should be set correctly if suspended data transfer needs send_auto_stop. Don't care if no data expected from card."]
+    #[doc = "no stop command sent at end of data transfer"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SendAutoStop::B0
@@ -366,7 +373,7 @@ impl<'a, REG> SendAutoStopW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "send stop command at end of data transfer When set, SDMMC Controller sends stop command to SD_MMC cards at end of data transfer. a. when send_auto_stop bit should be set, since some data transfers do not need explicit stop commands b. open-ended transfers that software should explicitly send to stop command Additionally, when \"resume\" is sent to resume –suspended memory access of SD-Combo card –bit should be set correctly if suspended data transfer needs send_auto_stop. Don't care if no data expected from card."]
+    #[doc = "no stop command sent at end of data transfer"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SendAutoStop::B0)
@@ -378,9 +385,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WaitPrvdataComplete {
-    #[doc = "0: wait for previous data transfer completion before sending command The wait_prvdata_complete = 0 option typically used to query status of card during data transfer or to stop current data transfer; card_number should be same as in previous command."]
+    #[doc = "0: send command at once, even if previous data transfer has not completed"]
     B0 = 0,
     #[doc = "1: wait for previous data transfer completion before sending command The wait_prvdata_complete = 0 option typically used to query status of card during data transfer or to stop current data transfer; card_number should be same as in previous command."]
     B1 = 1,
@@ -402,7 +410,7 @@ impl WaitPrvdataCompleteR {
             true => WaitPrvdataComplete::B1,
         }
     }
-    #[doc = "wait for previous data transfer completion before sending command The wait_prvdata_complete = 0 option typically used to query status of card during data transfer or to stop current data transfer; card_number should be same as in previous command."]
+    #[doc = "send command at once, even if previous data transfer has not completed"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == WaitPrvdataComplete::B0
@@ -419,7 +427,7 @@ impl<'a, REG> WaitPrvdataCompleteW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "wait for previous data transfer completion before sending command The wait_prvdata_complete = 0 option typically used to query status of card during data transfer or to stop current data transfer; card_number should be same as in previous command."]
+    #[doc = "send command at once, even if previous data transfer has not completed"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(WaitPrvdataComplete::B0)
@@ -431,10 +439,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum StopAbortCmd {
-    #[doc = "0: stop or abort command intended to stop current data transfer in progress. When open-ended or predefined data transfer is in progress, and host issues stop or abort command to stop data transfer, bit should be set so that command/data state-machines of CIU can return correctly to idle state. This is also applicable for Boot mode transfers. To Abort boot mode, this bit should be set along with CMD\\[26\\]
-= disable_boot."]
+    #[doc = "0: neither stop nor abort command to stop current data transfer in progress. If abort is sent to function-number currently selected or not in data-transfer mode, then bit should be set to 0."]
     B0 = 0,
     #[doc = "1: stop or abort command intended to stop current data transfer in progress. When open-ended or predefined data transfer is in progress, and host issues stop or abort command to stop data transfer, bit should be set so that command/data state-machines of CIU can return correctly to idle state. This is also applicable for Boot mode transfers. To Abort boot mode, this bit should be set along with CMD\\[26\\]
 = disable_boot."]
@@ -457,8 +465,7 @@ impl StopAbortCmdR {
             true => StopAbortCmd::B1,
         }
     }
-    #[doc = "stop or abort command intended to stop current data transfer in progress. When open-ended or predefined data transfer is in progress, and host issues stop or abort command to stop data transfer, bit should be set so that command/data state-machines of CIU can return correctly to idle state. This is also applicable for Boot mode transfers. To Abort boot mode, this bit should be set along with CMD\\[26\\]
-= disable_boot."]
+    #[doc = "neither stop nor abort command to stop current data transfer in progress. If abort is sent to function-number currently selected or not in data-transfer mode, then bit should be set to 0."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == StopAbortCmd::B0
@@ -476,8 +483,7 @@ impl<'a, REG> StopAbortCmdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stop or abort command intended to stop current data transfer in progress. When open-ended or predefined data transfer is in progress, and host issues stop or abort command to stop data transfer, bit should be set so that command/data state-machines of CIU can return correctly to idle state. This is also applicable for Boot mode transfers. To Abort boot mode, this bit should be set along with CMD\\[26\\]
-= disable_boot."]
+    #[doc = "neither stop nor abort command to stop current data transfer in progress. If abort is sent to function-number currently selected or not in data-transfer mode, then bit should be set to 0."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(StopAbortCmd::B0)
@@ -490,9 +496,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SendInitialization {
-    #[doc = "0: send initialization sequence before sending this command After power on, 80 clocks must be sent to card for initialization before sending any commands to card. Bit should be set while sending first command to card so that controller will initialize clocks before sending command to card. This bit should not be set for either of the boot modes (alternate or mandatory)."]
+    #[doc = "0: do not send initialization sequence (80 clocks of 1) before sending this command"]
     B0 = 0,
     #[doc = "1: send initialization sequence before sending this command After power on, 80 clocks must be sent to card for initialization before sending any commands to card. Bit should be set while sending first command to card so that controller will initialize clocks before sending command to card. This bit should not be set for either of the boot modes (alternate or mandatory)."]
     B1 = 1,
@@ -514,7 +521,7 @@ impl SendInitializationR {
             true => SendInitialization::B1,
         }
     }
-    #[doc = "send initialization sequence before sending this command After power on, 80 clocks must be sent to card for initialization before sending any commands to card. Bit should be set while sending first command to card so that controller will initialize clocks before sending command to card. This bit should not be set for either of the boot modes (alternate or mandatory)."]
+    #[doc = "do not send initialization sequence (80 clocks of 1) before sending this command"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SendInitialization::B0
@@ -531,7 +538,7 @@ impl<'a, REG> SendInitializationW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "send initialization sequence before sending this command After power on, 80 clocks must be sent to card for initialization before sending any commands to card. Bit should be set while sending first command to card so that controller will initialize clocks before sending command to card. This bit should not be set for either of the boot modes (alternate or mandatory)."]
+    #[doc = "do not send initialization sequence (80 clocks of 1) before sending this command"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SendInitialization::B0)
@@ -543,9 +550,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UpdateClockRegistersOnly {
-    #[doc = "0: do not send commands, just update clock register value into card clock domain Following register values transferred into card clock domain: CLKDIV, CLRSRC, CLKENA. Changes card clocks (change frequency, truncate off or on, and set low-frequency mode); provided in order to change clock frequency or stop clock without having to send command to cards. During normal command sequence, when update_clock_registers_only = 0, following control registers are transferred from BIU to CIU: CMD, CMDARG, TMOUT, CTYPE, BLKSIZ, BYTCNT. CIU uses new register values for new command sequence to card. When bit is set, there are no Command Done interrupts because no command is sent to SD_MMC_CEATA cards."]
+    #[doc = "0: normal command sequence"]
     B0 = 0,
     #[doc = "1: do not send commands, just update clock register value into card clock domain Following register values transferred into card clock domain: CLKDIV, CLRSRC, CLKENA. Changes card clocks (change frequency, truncate off or on, and set low-frequency mode); provided in order to change clock frequency or stop clock without having to send command to cards. During normal command sequence, when update_clock_registers_only = 0, following control registers are transferred from BIU to CIU: CMD, CMDARG, TMOUT, CTYPE, BLKSIZ, BYTCNT. CIU uses new register values for new command sequence to card. When bit is set, there are no Command Done interrupts because no command is sent to SD_MMC_CEATA cards."]
     B1 = 1,
@@ -567,7 +575,7 @@ impl UpdateClockRegistersOnlyR {
             true => UpdateClockRegistersOnly::B1,
         }
     }
-    #[doc = "do not send commands, just update clock register value into card clock domain Following register values transferred into card clock domain: CLKDIV, CLRSRC, CLKENA. Changes card clocks (change frequency, truncate off or on, and set low-frequency mode); provided in order to change clock frequency or stop clock without having to send command to cards. During normal command sequence, when update_clock_registers_only = 0, following control registers are transferred from BIU to CIU: CMD, CMDARG, TMOUT, CTYPE, BLKSIZ, BYTCNT. CIU uses new register values for new command sequence to card. When bit is set, there are no Command Done interrupts because no command is sent to SD_MMC_CEATA cards."]
+    #[doc = "normal command sequence"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == UpdateClockRegistersOnly::B0
@@ -584,7 +592,7 @@ impl<'a, REG> UpdateClockRegistersOnlyW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "do not send commands, just update clock register value into card clock domain Following register values transferred into card clock domain: CLKDIV, CLRSRC, CLKENA. Changes card clocks (change frequency, truncate off or on, and set low-frequency mode); provided in order to change clock frequency or stop clock without having to send command to cards. During normal command sequence, when update_clock_registers_only = 0, following control registers are transferred from BIU to CIU: CMD, CMDARG, TMOUT, CTYPE, BLKSIZ, BYTCNT. CIU uses new register values for new command sequence to card. When bit is set, there are no Command Done interrupts because no command is sent to SD_MMC_CEATA cards."]
+    #[doc = "normal command sequence"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(UpdateClockRegistersOnly::B0)
@@ -596,9 +604,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ReadCeataDevice {
-    #[doc = "0: Host is performing read access (RW_REG or RW_BLK) towards CE-ATA device Software should set this bit to indicate that CE-ATA device is being accessed for read transfer. This bit is used to disable read data timeout indication while performing CE-ATA read transfers. Maximum value of I/O transmission delay can be no less than 10 seconds. Mobile Storage Host Controller should not indicate read data timeout while waiting for data from CE-ATA device."]
+    #[doc = "0: Host is not performing read access (RW_REG or RW_BLK) towards CE-ATA device"]
     B0 = 0,
     #[doc = "1: Host is performing read access (RW_REG or RW_BLK) towards CE-ATA device Software should set this bit to indicate that CE-ATA device is being accessed for read transfer. This bit is used to disable read data timeout indication while performing CE-ATA read transfers. Maximum value of I/O transmission delay can be no less than 10 seconds. Mobile Storage Host Controller should not indicate read data timeout while waiting for data from CE-ATA device."]
     B1 = 1,
@@ -620,7 +629,7 @@ impl ReadCeataDeviceR {
             true => ReadCeataDevice::B1,
         }
     }
-    #[doc = "Host is performing read access (RW_REG or RW_BLK) towards CE-ATA device Software should set this bit to indicate that CE-ATA device is being accessed for read transfer. This bit is used to disable read data timeout indication while performing CE-ATA read transfers. Maximum value of I/O transmission delay can be no less than 10 seconds. Mobile Storage Host Controller should not indicate read data timeout while waiting for data from CE-ATA device."]
+    #[doc = "Host is not performing read access (RW_REG or RW_BLK) towards CE-ATA device"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ReadCeataDevice::B0
@@ -637,7 +646,7 @@ impl<'a, REG> ReadCeataDeviceW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Host is performing read access (RW_REG or RW_BLK) towards CE-ATA device Software should set this bit to indicate that CE-ATA device is being accessed for read transfer. This bit is used to disable read data timeout indication while performing CE-ATA read transfers. Maximum value of I/O transmission delay can be no less than 10 seconds. Mobile Storage Host Controller should not indicate read data timeout while waiting for data from CE-ATA device."]
+    #[doc = "Host is not performing read access (RW_REG or RW_BLK) towards CE-ATA device"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ReadCeataDevice::B0)
@@ -649,9 +658,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CcsExpected {
-    #[doc = "0: Interrupts are enabled in CE-ATA device (nIEN = 0), and RW_BLK command expects command completion signal from CE- ATA device. If the command expects Command Completion Signal (CCS) from the CE-ATA device, the software should set this control bit. Mobile Storage Host Controller sets Data Transfer Over (DTO) bit in RINTSTS register and generates interrupt to host if Data Transfer Over interrupt is not masked."]
+    #[doc = "0: Interrupts are not enabled in CE-ATA device (nIEN = 1 in ATA control register), or command does not expect CCS from device"]
     B0 = 0,
     #[doc = "1: Interrupts are enabled in CE-ATA device (nIEN = 0), and RW_BLK command expects command completion signal from CE- ATA device. If the command expects Command Completion Signal (CCS) from the CE-ATA device, the software should set this control bit. Mobile Storage Host Controller sets Data Transfer Over (DTO) bit in RINTSTS register and generates interrupt to host if Data Transfer Over interrupt is not masked."]
     B1 = 1,
@@ -673,7 +683,7 @@ impl CcsExpectedR {
             true => CcsExpected::B1,
         }
     }
-    #[doc = "Interrupts are enabled in CE-ATA device (nIEN = 0), and RW_BLK command expects command completion signal from CE- ATA device. If the command expects Command Completion Signal (CCS) from the CE-ATA device, the software should set this control bit. Mobile Storage Host Controller sets Data Transfer Over (DTO) bit in RINTSTS register and generates interrupt to host if Data Transfer Over interrupt is not masked."]
+    #[doc = "Interrupts are not enabled in CE-ATA device (nIEN = 1 in ATA control register), or command does not expect CCS from device"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CcsExpected::B0
@@ -690,7 +700,7 @@ impl<'a, REG> CcsExpectedW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Interrupts are enabled in CE-ATA device (nIEN = 0), and RW_BLK command expects command completion signal from CE- ATA device. If the command expects Command Completion Signal (CCS) from the CE-ATA device, the software should set this control bit. Mobile Storage Host Controller sets Data Transfer Over (DTO) bit in RINTSTS register and generates interrupt to host if Data Transfer Over interrupt is not masked."]
+    #[doc = "Interrupts are not enabled in CE-ATA device (nIEN = 1 in ATA control register), or command does not expect CCS from device"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CcsExpected::B0)
@@ -701,22 +711,23 @@ where
         self.variant(CcsExpected::B1)
     }
 }
-#[doc = "Field `ENABLE_BOOT` reader - Enable Boot—this bit should be set only for mandatory boot mode.When Software sets this bit along with start_cmd, CIU starts the boot sequence for the corresponding card by asserting the CMD line low. Do NOT set disable_boot and enable_boot together."]
+#[doc = "Field `ENABLE_BOOT` reader - Enable Boot—this bit should be set only for mandatory boot\n\nmode.When Software sets this bit along with start_cmd, CIU\n\nstarts the boot sequence for the corresponding card by asserting\n\nthe CMD line low. Do NOT set disable_boot and enable_boot\n\ntogether."]
 pub type EnableBootR = crate::BitReader;
-#[doc = "Field `ENABLE_BOOT` writer - Enable Boot—this bit should be set only for mandatory boot mode.When Software sets this bit along with start_cmd, CIU starts the boot sequence for the corresponding card by asserting the CMD line low. Do NOT set disable_boot and enable_boot together."]
+#[doc = "Field `ENABLE_BOOT` writer - Enable Boot—this bit should be set only for mandatory boot\n\nmode.When Software sets this bit along with start_cmd, CIU\n\nstarts the boot sequence for the corresponding card by asserting\n\nthe CMD line low. Do NOT set disable_boot and enable_boot\n\ntogether."]
 pub type EnableBootW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `EXPECT_BOOT_ACK` reader - Expect Boot Acknowledge. When Software sets this bit along with enable_boot, CIU expects a boot acknowledge start pattern of 0- 1-0 from the selected card."]
+#[doc = "Field `EXPECT_BOOT_ACK` reader - Expect Boot Acknowledge. When Software sets this bit along with\n\nenable_boot, CIU expects a boot acknowledge start pattern of 0-\n\n1-0 from the selected card."]
 pub type ExpectBootAckR = crate::BitReader;
-#[doc = "Field `EXPECT_BOOT_ACK` writer - Expect Boot Acknowledge. When Software sets this bit along with enable_boot, CIU expects a boot acknowledge start pattern of 0- 1-0 from the selected card."]
+#[doc = "Field `EXPECT_BOOT_ACK` writer - Expect Boot Acknowledge. When Software sets this bit along with\n\nenable_boot, CIU expects a boot acknowledge start pattern of 0-\n\n1-0 from the selected card."]
 pub type ExpectBootAckW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `DISABLE_BOOT` reader - Disable Boot. When software sets this bit along with start_cmd, CIU terminates the boot operation. Do NOT set disable_boot and enable_boot together."]
+#[doc = "Field `DISABLE_BOOT` reader - Disable Boot. When software sets this bit along with start_cmd,\n\nCIU terminates the boot operation. Do NOT set disable_boot and\n\nenable_boot together."]
 pub type DisableBootR = crate::BitReader;
-#[doc = "Field `DISABLE_BOOT` writer - Disable Boot. When software sets this bit along with start_cmd, CIU terminates the boot operation. Do NOT set disable_boot and enable_boot together."]
+#[doc = "Field `DISABLE_BOOT` writer - Disable Boot. When software sets this bit along with start_cmd,\n\nCIU terminates the boot operation. Do NOT set disable_boot and\n\nenable_boot together."]
 pub type DisableBootW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Boot Mode.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BootMode {
-    #[doc = "0: alternate Boot operation"]
+    #[doc = "0: mandatory Boot operation"]
     B0 = 0,
     #[doc = "1: alternate Boot operation"]
     B1 = 1,
@@ -738,7 +749,7 @@ impl BootModeR {
             true => BootMode::B1,
         }
     }
-    #[doc = "alternate Boot operation"]
+    #[doc = "mandatory Boot operation"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == BootMode::B0
@@ -755,7 +766,7 @@ impl<'a, REG> BootModeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "alternate Boot operation"]
+    #[doc = "mandatory Boot operation"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(BootMode::B0)
@@ -767,9 +778,10 @@ where
     }
 }
 #[doc = "Voltage switch bit.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VoltSwitch {
-    #[doc = "0: voltage switching enabled; must be set for CMD11 only"]
+    #[doc = "0: no voltage switching"]
     B0 = 0,
     #[doc = "1: voltage switching enabled; must be set for CMD11 only"]
     B1 = 1,
@@ -791,7 +803,7 @@ impl VoltSwitchR {
             true => VoltSwitch::B1,
         }
     }
-    #[doc = "voltage switching enabled; must be set for CMD11 only"]
+    #[doc = "no voltage switching"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == VoltSwitch::B0
@@ -808,7 +820,7 @@ impl<'a, REG> VoltSwitchW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "voltage switching enabled; must be set for CMD11 only"]
+    #[doc = "no voltage switching"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(VoltSwitch::B0)
@@ -820,9 +832,10 @@ where
     }
 }
 #[doc = "Use Hold Register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UseHoldReg {
-    #[doc = "0: CMD and DATA sent to card through the HOLD Register Note: a. Set to 1'b1 for SDR12 and SDR25 (with non-zero phase-shifted cclk_in_drv); zero phase shift is not allowed in these modes. b. Set to 1'b0 for SDR50, SDR104, and DDR50 (with zero phase- shifted cclk_in_drv). c. Set to 1'b1 for SDR50, SDR104, and DDR50 (with non-zero phase-shifted cclk_in_drv)."]
+    #[doc = "0: CMD and DATA sent to card bypassing HOLD Register"]
     B0 = 0,
     #[doc = "1: CMD and DATA sent to card through the HOLD Register Note: a. Set to 1'b1 for SDR12 and SDR25 (with non-zero phase-shifted cclk_in_drv); zero phase shift is not allowed in these modes. b. Set to 1'b0 for SDR50, SDR104, and DDR50 (with zero phase- shifted cclk_in_drv). c. Set to 1'b1 for SDR50, SDR104, and DDR50 (with non-zero phase-shifted cclk_in_drv)."]
     B1 = 1,
@@ -844,7 +857,7 @@ impl UseHoldRegR {
             true => UseHoldReg::B1,
         }
     }
-    #[doc = "CMD and DATA sent to card through the HOLD Register Note: a. Set to 1'b1 for SDR12 and SDR25 (with non-zero phase-shifted cclk_in_drv); zero phase shift is not allowed in these modes. b. Set to 1'b0 for SDR50, SDR104, and DDR50 (with zero phase- shifted cclk_in_drv). c. Set to 1'b1 for SDR50, SDR104, and DDR50 (with non-zero phase-shifted cclk_in_drv)."]
+    #[doc = "CMD and DATA sent to card bypassing HOLD Register"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == UseHoldReg::B0
@@ -861,7 +874,7 @@ impl<'a, REG> UseHoldRegW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "CMD and DATA sent to card through the HOLD Register Note: a. Set to 1'b1 for SDR12 and SDR25 (with non-zero phase-shifted cclk_in_drv); zero phase shift is not allowed in these modes. b. Set to 1'b0 for SDR50, SDR104, and DDR50 (with zero phase- shifted cclk_in_drv). c. Set to 1'b1 for SDR50, SDR104, and DDR50 (with non-zero phase-shifted cclk_in_drv)."]
+    #[doc = "CMD and DATA sent to card bypassing HOLD Register"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(UseHoldReg::B0)
@@ -872,9 +885,9 @@ where
         self.variant(UseHoldReg::B1)
     }
 }
-#[doc = "Field `START_CMD` reader - Start command. Once command is taken by CIU, bit is cleared. When bit is set, host should not attempt to write to any command registers. If write is attempted, hardware lock error is set in raw interrupt register. Once command is sent and response is received from SD_MMC cards, Command Done bit is set in raw interrupt register."]
+#[doc = "Field `START_CMD` reader - Start command. Once command is taken by CIU, bit is cleared.\n\nWhen bit is set, host should not attempt to write to any command\n\nregisters. If write is attempted, hardware lock error is set in raw\n\ninterrupt register.\n\nOnce command is sent and response is received from SD_MMC\n\ncards, Command Done bit is set in raw interrupt register."]
 pub type StartCmdR = crate::BitReader;
-#[doc = "Field `START_CMD` writer - Start command. Once command is taken by CIU, bit is cleared. When bit is set, host should not attempt to write to any command registers. If write is attempted, hardware lock error is set in raw interrupt register. Once command is sent and response is received from SD_MMC cards, Command Done bit is set in raw interrupt register."]
+#[doc = "Field `START_CMD` writer - Start command. Once command is taken by CIU, bit is cleared.\n\nWhen bit is set, host should not attempt to write to any command\n\nregisters. If write is attempted, hardware lock error is set in raw\n\ninterrupt register.\n\nOnce command is sent and response is received from SD_MMC\n\ncards, Command Done bit is set in raw interrupt register."]
 pub type StartCmdW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:5 - Command index"]
@@ -947,17 +960,17 @@ impl R {
     pub fn ccs_expected(&self) -> CcsExpectedR {
         CcsExpectedR::new(((self.bits >> 23) & 1) != 0)
     }
-    #[doc = "Bit 24 - Enable Boot—this bit should be set only for mandatory boot mode.When Software sets this bit along with start_cmd, CIU starts the boot sequence for the corresponding card by asserting the CMD line low. Do NOT set disable_boot and enable_boot together."]
+    #[doc = "Bit 24 - Enable Boot—this bit should be set only for mandatory boot\n\nmode.When Software sets this bit along with start_cmd, CIU\n\nstarts the boot sequence for the corresponding card by asserting\n\nthe CMD line low. Do NOT set disable_boot and enable_boot\n\ntogether."]
     #[inline(always)]
     pub fn enable_boot(&self) -> EnableBootR {
         EnableBootR::new(((self.bits >> 24) & 1) != 0)
     }
-    #[doc = "Bit 25 - Expect Boot Acknowledge. When Software sets this bit along with enable_boot, CIU expects a boot acknowledge start pattern of 0- 1-0 from the selected card."]
+    #[doc = "Bit 25 - Expect Boot Acknowledge. When Software sets this bit along with\n\nenable_boot, CIU expects a boot acknowledge start pattern of 0-\n\n1-0 from the selected card."]
     #[inline(always)]
     pub fn expect_boot_ack(&self) -> ExpectBootAckR {
         ExpectBootAckR::new(((self.bits >> 25) & 1) != 0)
     }
-    #[doc = "Bit 26 - Disable Boot. When software sets this bit along with start_cmd, CIU terminates the boot operation. Do NOT set disable_boot and enable_boot together."]
+    #[doc = "Bit 26 - Disable Boot. When software sets this bit along with start_cmd,\n\nCIU terminates the boot operation. Do NOT set disable_boot and\n\nenable_boot together."]
     #[inline(always)]
     pub fn disable_boot(&self) -> DisableBootR {
         DisableBootR::new(((self.bits >> 26) & 1) != 0)
@@ -977,7 +990,7 @@ impl R {
     pub fn use_hold_reg(&self) -> UseHoldRegR {
         UseHoldRegR::new(((self.bits >> 29) & 1) != 0)
     }
-    #[doc = "Bit 31 - Start command. Once command is taken by CIU, bit is cleared. When bit is set, host should not attempt to write to any command registers. If write is attempted, hardware lock error is set in raw interrupt register. Once command is sent and response is received from SD_MMC cards, Command Done bit is set in raw interrupt register."]
+    #[doc = "Bit 31 - Start command. Once command is taken by CIU, bit is cleared.\n\nWhen bit is set, host should not attempt to write to any command\n\nregisters. If write is attempted, hardware lock error is set in raw\n\ninterrupt register.\n\nOnce command is sent and response is received from SD_MMC\n\ncards, Command Done bit is set in raw interrupt register."]
     #[inline(always)]
     pub fn start_cmd(&self) -> StartCmdR {
         StartCmdR::new(((self.bits >> 31) & 1) != 0)
@@ -1068,19 +1081,19 @@ impl W {
     pub fn ccs_expected(&mut self) -> CcsExpectedW<SdmmcCmdSpec> {
         CcsExpectedW::new(self, 23)
     }
-    #[doc = "Bit 24 - Enable Boot—this bit should be set only for mandatory boot mode.When Software sets this bit along with start_cmd, CIU starts the boot sequence for the corresponding card by asserting the CMD line low. Do NOT set disable_boot and enable_boot together."]
+    #[doc = "Bit 24 - Enable Boot—this bit should be set only for mandatory boot\n\nmode.When Software sets this bit along with start_cmd, CIU\n\nstarts the boot sequence for the corresponding card by asserting\n\nthe CMD line low. Do NOT set disable_boot and enable_boot\n\ntogether."]
     #[inline(always)]
     #[must_use]
     pub fn enable_boot(&mut self) -> EnableBootW<SdmmcCmdSpec> {
         EnableBootW::new(self, 24)
     }
-    #[doc = "Bit 25 - Expect Boot Acknowledge. When Software sets this bit along with enable_boot, CIU expects a boot acknowledge start pattern of 0- 1-0 from the selected card."]
+    #[doc = "Bit 25 - Expect Boot Acknowledge. When Software sets this bit along with\n\nenable_boot, CIU expects a boot acknowledge start pattern of 0-\n\n1-0 from the selected card."]
     #[inline(always)]
     #[must_use]
     pub fn expect_boot_ack(&mut self) -> ExpectBootAckW<SdmmcCmdSpec> {
         ExpectBootAckW::new(self, 25)
     }
-    #[doc = "Bit 26 - Disable Boot. When software sets this bit along with start_cmd, CIU terminates the boot operation. Do NOT set disable_boot and enable_boot together."]
+    #[doc = "Bit 26 - Disable Boot. When software sets this bit along with start_cmd,\n\nCIU terminates the boot operation. Do NOT set disable_boot and\n\nenable_boot together."]
     #[inline(always)]
     #[must_use]
     pub fn disable_boot(&mut self) -> DisableBootW<SdmmcCmdSpec> {
@@ -1104,7 +1117,7 @@ impl W {
     pub fn use_hold_reg(&mut self) -> UseHoldRegW<SdmmcCmdSpec> {
         UseHoldRegW::new(self, 29)
     }
-    #[doc = "Bit 31 - Start command. Once command is taken by CIU, bit is cleared. When bit is set, host should not attempt to write to any command registers. If write is attempted, hardware lock error is set in raw interrupt register. Once command is sent and response is received from SD_MMC cards, Command Done bit is set in raw interrupt register."]
+    #[doc = "Bit 31 - Start command. Once command is taken by CIU, bit is cleared.\n\nWhen bit is set, host should not attempt to write to any command\n\nregisters. If write is attempted, hardware lock error is set in raw\n\ninterrupt register.\n\nOnce command is sent and response is received from SD_MMC\n\ncards, Command Done bit is set in raw interrupt register."]
     #[inline(always)]
     #[must_use]
     pub fn start_cmd(&mut self) -> StartCmdW<SdmmcCmdSpec> {

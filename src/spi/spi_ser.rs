@@ -2,34 +2,34 @@
 pub type R = crate::R<SpiSerSpec>;
 #[doc = "Register `SPI_SER` writer"]
 pub type W = crate::W<SpiSerSpec>;
-#[doc = "Field `SER0` reader - Slave Select Enable 1’b1: Enable chip select 0 1’b0: Disable chip select 0 This register is valid only when SPI is configured as a master device."]
+#[doc = "Field `SER0` reader - Slave Select Enable\n\n1’b1: Enable chip select 0\n\n1’b0: Disable chip select 0\n\nThis register is valid only when SPI is configured as a master\n\ndevice."]
 pub type Ser0R = crate::BitReader;
-#[doc = "Field `SER0` writer - Slave Select Enable 1’b1: Enable chip select 0 1’b0: Disable chip select 0 This register is valid only when SPI is configured as a master device."]
+#[doc = "Field `SER0` writer - Slave Select Enable\n\n1’b1: Enable chip select 0\n\n1’b0: Disable chip select 0\n\nThis register is valid only when SPI is configured as a master\n\ndevice."]
 pub type Ser0W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `SER1` reader - Slave 1 Select Enable 1’b1: Enable chip select 1 1’b0: Disable chip select 1 This register is valid only when SPI is configured as a master device."]
+#[doc = "Field `SER1` reader - Slave 1 Select Enable\n\n1’b1: Enable chip select 1\n\n1’b0: Disable chip select 1\n\nThis register is valid only when SPI is configured as a master\n\ndevice."]
 pub type Ser1R = crate::BitReader;
-#[doc = "Field `SER1` writer - Slave 1 Select Enable 1’b1: Enable chip select 1 1’b0: Disable chip select 1 This register is valid only when SPI is configured as a master device."]
+#[doc = "Field `SER1` writer - Slave 1 Select Enable\n\n1’b1: Enable chip select 1\n\n1’b0: Disable chip select 1\n\nThis register is valid only when SPI is configured as a master\n\ndevice."]
 pub type Ser1W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - Slave Select Enable 1’b1: Enable chip select 0 1’b0: Disable chip select 0 This register is valid only when SPI is configured as a master device."]
+    #[doc = "Bit 0 - Slave Select Enable\n\n1’b1: Enable chip select 0\n\n1’b0: Disable chip select 0\n\nThis register is valid only when SPI is configured as a master\n\ndevice."]
     #[inline(always)]
     pub fn ser0(&self) -> Ser0R {
         Ser0R::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - Slave 1 Select Enable 1’b1: Enable chip select 1 1’b0: Disable chip select 1 This register is valid only when SPI is configured as a master device."]
+    #[doc = "Bit 1 - Slave 1 Select Enable\n\n1’b1: Enable chip select 1\n\n1’b0: Disable chip select 1\n\nThis register is valid only when SPI is configured as a master\n\ndevice."]
     #[inline(always)]
     pub fn ser1(&self) -> Ser1R {
         Ser1R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Slave Select Enable 1’b1: Enable chip select 0 1’b0: Disable chip select 0 This register is valid only when SPI is configured as a master device."]
+    #[doc = "Bit 0 - Slave Select Enable\n\n1’b1: Enable chip select 0\n\n1’b0: Disable chip select 0\n\nThis register is valid only when SPI is configured as a master\n\ndevice."]
     #[inline(always)]
     #[must_use]
     pub fn ser0(&mut self) -> Ser0W<SpiSerSpec> {
         Ser0W::new(self, 0)
     }
-    #[doc = "Bit 1 - Slave 1 Select Enable 1’b1: Enable chip select 1 1’b0: Disable chip select 1 This register is valid only when SPI is configured as a master device."]
+    #[doc = "Bit 1 - Slave 1 Select Enable\n\n1’b1: Enable chip select 1\n\n1’b0: Disable chip select 1\n\nThis register is valid only when SPI is configured as a master\n\ndevice."]
     #[inline(always)]
     #[must_use]
     pub fn ser1(&mut self) -> Ser1W<SpiSerSpec> {

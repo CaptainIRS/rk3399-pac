@@ -2,33 +2,33 @@
 pub type R = crate::R<Usb3GdbgbmuSpec>;
 #[doc = "Register `USB3_GDBGBMU` writer"]
 pub type W = crate::W<Usb3GdbgbmuSpec>;
-#[doc = "Field `BMU_CCU` reader - BMU_CCU Debug information BMU_CCU Debug information"]
+#[doc = "Field `BMU_CCU` reader - BMU_CCU Debug information\n\nBMU_CCU Debug information"]
 pub type BmuCcuR = crate::FieldReader;
-#[doc = "Field `BMU_DCU` reader - BMU_DCU Debug information BMU_DCU Debug information"]
+#[doc = "Field `BMU_DCU` reader - BMU_DCU Debug information\n\nBMU_DCU Debug information"]
 pub type BmuDcuR = crate::FieldReader;
-#[doc = "Field `BMU_BCU` reader - BMU_BCU Debug information BMU_BCU Debug information"]
+#[doc = "Field `BMU_BCU` reader - BMU_BCU Debug information\n\nBMU_BCU Debug information"]
 pub type BmuBcuR = crate::FieldReader<u32>;
-#[doc = "Field `BMU_BCU` writer - BMU_BCU Debug information BMU_BCU Debug information"]
+#[doc = "Field `BMU_BCU` writer - BMU_BCU Debug information\n\nBMU_BCU Debug information"]
 pub type BmuBcuW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
-    #[doc = "Bits 0:3 - BMU_CCU Debug information BMU_CCU Debug information"]
+    #[doc = "Bits 0:3 - BMU_CCU Debug information\n\nBMU_CCU Debug information"]
     #[inline(always)]
     pub fn bmu_ccu(&self) -> BmuCcuR {
         BmuCcuR::new((self.bits & 0x0f) as u8)
     }
-    #[doc = "Bits 4:7 - BMU_DCU Debug information BMU_DCU Debug information"]
+    #[doc = "Bits 4:7 - BMU_DCU Debug information\n\nBMU_DCU Debug information"]
     #[inline(always)]
     pub fn bmu_dcu(&self) -> BmuDcuR {
         BmuDcuR::new(((self.bits >> 4) & 0x0f) as u8)
     }
-    #[doc = "Bits 8:31 - BMU_BCU Debug information BMU_BCU Debug information"]
+    #[doc = "Bits 8:31 - BMU_BCU Debug information\n\nBMU_BCU Debug information"]
     #[inline(always)]
     pub fn bmu_bcu(&self) -> BmuBcuR {
         BmuBcuR::new((self.bits >> 8) & 0x00ff_ffff)
     }
 }
 impl W {
-    #[doc = "Bits 8:31 - BMU_BCU Debug information BMU_BCU Debug information"]
+    #[doc = "Bits 8:31 - BMU_BCU Debug information\n\nBMU_BCU Debug information"]
     #[inline(always)]
     #[must_use]
     pub fn bmu_bcu(&mut self) -> BmuBcuW<Usb3GdbgbmuSpec> {

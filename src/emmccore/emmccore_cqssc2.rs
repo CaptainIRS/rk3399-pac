@@ -2,19 +2,19 @@
 pub type R = crate::R<EmmccoreCqssc2Spec>;
 #[doc = "Register `EMMCCORE_CQSSC2` writer"]
 pub type W = crate::W<EmmccoreCqssc2Spec>;
-#[doc = "Field `SQRCA` reader - Send Queue RCA This field provides CQE with the contents of the 16-bit RCA field in SEND_QUEUE_ STATUS (CMD13) command. argument. CQE shall copy this field to bits 31:16 of the argument when transmitting SEND_ QUEUE_STATUS (CMD13) command"]
+#[doc = "Field `SQRCA` reader - Send Queue RCA\n\nThis field provides CQE with the contents of the 16-bit RCA field\n\nin SEND_QUEUE_ STATUS (CMD13) command. argument.\n\nCQE shall copy this field to bits 31:16 of the argument when\n\ntransmitting SEND_ QUEUE_STATUS (CMD13) command"]
 pub type SqrcaR = crate::FieldReader<u16>;
-#[doc = "Field `SQRCA` writer - Send Queue RCA This field provides CQE with the contents of the 16-bit RCA field in SEND_QUEUE_ STATUS (CMD13) command. argument. CQE shall copy this field to bits 31:16 of the argument when transmitting SEND_ QUEUE_STATUS (CMD13) command"]
+#[doc = "Field `SQRCA` writer - Send Queue RCA\n\nThis field provides CQE with the contents of the 16-bit RCA field\n\nin SEND_QUEUE_ STATUS (CMD13) command. argument.\n\nCQE shall copy this field to bits 31:16 of the argument when\n\ntransmitting SEND_ QUEUE_STATUS (CMD13) command"]
 pub type SqrcaW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:15 - Send Queue RCA This field provides CQE with the contents of the 16-bit RCA field in SEND_QUEUE_ STATUS (CMD13) command. argument. CQE shall copy this field to bits 31:16 of the argument when transmitting SEND_ QUEUE_STATUS (CMD13) command"]
+    #[doc = "Bits 0:15 - Send Queue RCA\n\nThis field provides CQE with the contents of the 16-bit RCA field\n\nin SEND_QUEUE_ STATUS (CMD13) command. argument.\n\nCQE shall copy this field to bits 31:16 of the argument when\n\ntransmitting SEND_ QUEUE_STATUS (CMD13) command"]
     #[inline(always)]
     pub fn sqrca(&self) -> SqrcaR {
         SqrcaR::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - Send Queue RCA This field provides CQE with the contents of the 16-bit RCA field in SEND_QUEUE_ STATUS (CMD13) command. argument. CQE shall copy this field to bits 31:16 of the argument when transmitting SEND_ QUEUE_STATUS (CMD13) command"]
+    #[doc = "Bits 0:15 - Send Queue RCA\n\nThis field provides CQE with the contents of the 16-bit RCA field\n\nin SEND_QUEUE_ STATUS (CMD13) command. argument.\n\nCQE shall copy this field to bits 31:16 of the argument when\n\ntransmitting SEND_ QUEUE_STATUS (CMD13) command"]
     #[inline(always)]
     #[must_use]
     pub fn sqrca(&mut self) -> SqrcaW<EmmccoreCqssc2Spec> {

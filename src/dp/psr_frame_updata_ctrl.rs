@@ -2,34 +2,34 @@
 pub type R = crate::R<PsrFrameUpdataCtrlSpec>;
 #[doc = "Register `PSR_FRAME_UPDATA_CTRL` writer"]
 pub type W = crate::W<PsrFrameUpdataCtrlSpec>;
-#[doc = "Field `PSR_VSC_PACKET_VERSION` reader - PSR VSC packet version select. 1 = PSR 2. 0 = PSR 1."]
+#[doc = "Field `PSR_VSC_PACKET_VERSION` reader - PSR VSC packet version select. \n\n1 = PSR 2. \n\n0 = PSR 1."]
 pub type PsrVscPacketVersionR = crate::BitReader;
-#[doc = "Field `PSR_VSC_PACKET_VERSION` writer - PSR VSC packet version select. 1 = PSR 2. 0 = PSR 1."]
+#[doc = "Field `PSR_VSC_PACKET_VERSION` writer - PSR VSC packet version select. \n\n1 = PSR 2. \n\n0 = PSR 1."]
 pub type PsrVscPacketVersionW<'a, REG> = crate::BitWriter1C<'a, REG>;
-#[doc = "Field `PSR_FRAME_UP_TYPE` reader - Select PSR Frame Update type. 1 = Burst single frame update. 0 = Single frame update. VSC packet is only sent once after PSR_FRAME_UPDATE is written with 1. IF_EN bit will be self-cleared after the VSYNC leading edge."]
+#[doc = "Field `PSR_FRAME_UP_TYPE` reader - Select PSR Frame Update type. \n\n1 = Burst single frame update. \n\n0 = Single frame update. \n\nVSC packet is only sent once \n\nafter PSR_FRAME_UPDATE is \n\nwritten with 1. IF_EN bit will be \n\nself-cleared after the VSYNC \n\nleading edge."]
 pub type PsrFrameUpTypeR = crate::BitReader;
-#[doc = "Field `PSR_FRAME_UP_TYPE` writer - Select PSR Frame Update type. 1 = Burst single frame update. 0 = Single frame update. VSC packet is only sent once after PSR_FRAME_UPDATE is written with 1. IF_EN bit will be self-cleared after the VSYNC leading edge."]
+#[doc = "Field `PSR_FRAME_UP_TYPE` writer - Select PSR Frame Update type. \n\n1 = Burst single frame update. \n\n0 = Single frame update. \n\nVSC packet is only sent once \n\nafter PSR_FRAME_UPDATE is \n\nwritten with 1. IF_EN bit will be \n\nself-cleared after the VSYNC \n\nleading edge."]
 pub type PsrFrameUpTypeW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - PSR VSC packet version select. 1 = PSR 2. 0 = PSR 1."]
+    #[doc = "Bit 0 - PSR VSC packet version select. \n\n1 = PSR 2. \n\n0 = PSR 1."]
     #[inline(always)]
     pub fn psr_vsc_packet_version(&self) -> PsrVscPacketVersionR {
         PsrVscPacketVersionR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - Select PSR Frame Update type. 1 = Burst single frame update. 0 = Single frame update. VSC packet is only sent once after PSR_FRAME_UPDATE is written with 1. IF_EN bit will be self-cleared after the VSYNC leading edge."]
+    #[doc = "Bit 1 - Select PSR Frame Update type. \n\n1 = Burst single frame update. \n\n0 = Single frame update. \n\nVSC packet is only sent once \n\nafter PSR_FRAME_UPDATE is \n\nwritten with 1. IF_EN bit will be \n\nself-cleared after the VSYNC \n\nleading edge."]
     #[inline(always)]
     pub fn psr_frame_up_type(&self) -> PsrFrameUpTypeR {
         PsrFrameUpTypeR::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - PSR VSC packet version select. 1 = PSR 2. 0 = PSR 1."]
+    #[doc = "Bit 0 - PSR VSC packet version select. \n\n1 = PSR 2. \n\n0 = PSR 1."]
     #[inline(always)]
     #[must_use]
     pub fn psr_vsc_packet_version(&mut self) -> PsrVscPacketVersionW<PsrFrameUpdataCtrlSpec> {
         PsrVscPacketVersionW::new(self, 0)
     }
-    #[doc = "Bit 1 - Select PSR Frame Update type. 1 = Burst single frame update. 0 = Single frame update. VSC packet is only sent once after PSR_FRAME_UPDATE is written with 1. IF_EN bit will be self-cleared after the VSYNC leading edge."]
+    #[doc = "Bit 1 - Select PSR Frame Update type. \n\n1 = Burst single frame update. \n\n0 = Single frame update. \n\nVSC packet is only sent once \n\nafter PSR_FRAME_UPDATE is \n\nwritten with 1. IF_EN bit will be \n\nself-cleared after the VSYNC \n\nleading edge."]
     #[inline(always)]
     #[must_use]
     pub fn psr_frame_up_type(&mut self) -> PsrFrameUpTypeW<PsrFrameUpdataCtrlSpec> {

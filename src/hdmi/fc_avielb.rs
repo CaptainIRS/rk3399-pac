@@ -2,26 +2,26 @@
 pub type R = crate::R<FcAvielbSpec>;
 #[doc = "Register `FC_AVIELB[%s]` writer"]
 pub type W = crate::W<FcAvielbSpec>;
-#[doc = "Field `FC_AVIELB` reader - This register defines the AVI InfoFrame End of Left Bar value. For more information, refer to the CEA- 861-E specification."]
+#[doc = "Field `FC_AVIELB` reader - This register defines the AVI InfoFrame End of Left\n\nBar value. For more information, refer to the CEA-\n\n861-E specification."]
 pub type FcAvielbR = crate::FieldReader;
-#[doc = "Field `FC_AVIELB` writer - This register defines the AVI InfoFrame End of Left Bar value. For more information, refer to the CEA- 861-E specification."]
+#[doc = "Field `FC_AVIELB` writer - This register defines the AVI InfoFrame End of Left\n\nBar value. For more information, refer to the CEA-\n\n861-E specification."]
 pub type FcAvielbW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - This register defines the AVI InfoFrame End of Left Bar value. For more information, refer to the CEA- 861-E specification."]
+    #[doc = "Bits 0:7 - This register defines the AVI InfoFrame End of Left\n\nBar value. For more information, refer to the CEA-\n\n861-E specification."]
     #[inline(always)]
     pub fn fc_avielb(&self) -> FcAvielbR {
         FcAvielbR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - This register defines the AVI InfoFrame End of Left Bar value. For more information, refer to the CEA- 861-E specification."]
+    #[doc = "Bits 0:7 - This register defines the AVI InfoFrame End of Left\n\nBar value. For more information, refer to the CEA-\n\n861-E specification."]
     #[inline(always)]
     #[must_use]
     pub fn fc_avielb(&mut self) -> FcAvielbW<FcAvielbSpec> {
         FcAvielbW::new(self, 0)
     }
 }
-#[doc = "This register defines the AVI InfoFrame End of Left Bar value. For more information, refer to the CEA- 861-E specification.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_avielb::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_avielb::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer AVI Packet End of Left Bar Register Array\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_avielb::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_avielb::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcAvielbSpec;
 impl crate::RegisterSpec for FcAvielbSpec {
     type Ux = u8;

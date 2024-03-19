@@ -6,9 +6,9 @@ pub type W = crate::W<CrcConSpec>;
 pub type PsrVidCrcEnableR = crate::BitReader;
 #[doc = "Field `PSR_VID_CRC_ENABLE` writer - PSR Video CRC enable. 0: Disable, 1: Enable"]
 pub type PsrVidCrcEnableW<'a, REG> = crate::BitWriter1C<'a, REG>;
-#[doc = "Field `PSR_VID_CRC_FLUSH` reader - PSR Video CRC flush enable. The PSR video CRC value is initialized at every v-sync leading edge."]
+#[doc = "Field `PSR_VID_CRC_FLUSH` reader - PSR Video CRC flush enable. The PSR video CRC \n\nvalue is initialized at every v-sync leading edge."]
 pub type PsrVidCrcFlushR = crate::BitReader;
-#[doc = "Field `PSR_VID_CRC_FLUSH` writer - PSR Video CRC flush enable. The PSR video CRC value is initialized at every v-sync leading edge."]
+#[doc = "Field `PSR_VID_CRC_FLUSH` writer - PSR Video CRC flush enable. The PSR video CRC \n\nvalue is initialized at every v-sync leading edge."]
 pub type PsrVidCrcFlushW<'a, REG> = crate::BitWriter1C<'a, REG>;
 impl R {
     #[doc = "Bit 0 - PSR Video CRC enable. 0: Disable, 1: Enable"]
@@ -16,7 +16,7 @@ impl R {
     pub fn psr_vid_crc_enable(&self) -> PsrVidCrcEnableR {
         PsrVidCrcEnableR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 2 - PSR Video CRC flush enable. The PSR video CRC value is initialized at every v-sync leading edge."]
+    #[doc = "Bit 2 - PSR Video CRC flush enable. The PSR video CRC \n\nvalue is initialized at every v-sync leading edge."]
     #[inline(always)]
     pub fn psr_vid_crc_flush(&self) -> PsrVidCrcFlushR {
         PsrVidCrcFlushR::new(((self.bits >> 2) & 1) != 0)
@@ -29,7 +29,7 @@ impl W {
     pub fn psr_vid_crc_enable(&mut self) -> PsrVidCrcEnableW<CrcConSpec> {
         PsrVidCrcEnableW::new(self, 0)
     }
-    #[doc = "Bit 2 - PSR Video CRC flush enable. The PSR video CRC value is initialized at every v-sync leading edge."]
+    #[doc = "Bit 2 - PSR Video CRC flush enable. The PSR video CRC \n\nvalue is initialized at every v-sync leading edge."]
     #[inline(always)]
     #[must_use]
     pub fn psr_vid_crc_flush(&mut self) -> PsrVidCrcFlushW<CrcConSpec> {

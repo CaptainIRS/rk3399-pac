@@ -1,9 +1,9 @@
 #[doc = "Register `DDR_DENALI_CTL_205` writer"]
 pub type W = crate::W<DdrDenaliCtl205Spec>;
-#[doc = "Field `INT_ACK` writer - Clear mask of the INT_STATUS parameter. WRITE-ONLY"]
+#[doc = "Field `INT_ACK` writer - Clear mask of the INT_STATUS parameter."]
 pub type IntAckW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl W {
-    #[doc = "Bits 0:31 - Clear mask of the INT_STATUS parameter. WRITE-ONLY"]
+    #[doc = "Bits 0:31 - Clear mask of the INT_STATUS parameter."]
     #[inline(always)]
     #[must_use]
     pub fn int_ack(&mut self) -> IntAckW<DdrDenaliCtl205Spec> {

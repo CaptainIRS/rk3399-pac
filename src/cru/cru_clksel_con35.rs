@@ -2,17 +2,18 @@
 pub type R = crate::R<CruClkselCon35Spec>;
 #[doc = "Register `CRU_CLKSEL_CON35` writer"]
 pub type W = crate::W<CruClkselCon35Spec>;
-#[doc = "Field `CLK_UART2_DIV_CON` reader - clk_uart2 divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_UART2_DIV_CON` reader - clk_uart2 divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkUart2DivConR = crate::FieldReader;
-#[doc = "Field `CLK_UART2_DIV_CON` writer - clk_uart2 divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_UART2_DIV_CON` writer - clk_uart2 divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkUart2DivConW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "clk_uart2 clock select control register\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ClkUart2Sel {
-    #[doc = "0: xin_24m"]
+    #[doc = "0: clk_uart2_divout"]
     B00 = 0,
-    #[doc = "1: xin_24m"]
+    #[doc = "1: clk_uart2_frac"]
     B01 = 1,
     #[doc = "2: xin_24m"]
     B10 = 2,
@@ -39,12 +40,12 @@ impl ClkUart2SelR {
             _ => None,
         }
     }
-    #[doc = "xin_24m"]
+    #[doc = "clk_uart2_divout"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == ClkUart2Sel::B00
     }
-    #[doc = "xin_24m"]
+    #[doc = "clk_uart2_frac"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == ClkUart2Sel::B01
@@ -62,12 +63,12 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "xin_24m"]
+    #[doc = "clk_uart2_divout"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(ClkUart2Sel::B00)
     }
-    #[doc = "xin_24m"]
+    #[doc = "clk_uart2_frac"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(ClkUart2Sel::B01)
@@ -78,10 +79,10 @@ where
         self.variant(ClkUart2Sel::B10)
     }
 }
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:6 - clk_uart2 divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:6 - clk_uart2 divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn clk_uart2_div_con(&self) -> ClkUart2DivConR {
         ClkUart2DivConR::new((self.bits & 0x7f) as u8)
@@ -93,7 +94,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:6 - clk_uart2 divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:6 - clk_uart2 divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn clk_uart2_div_con(&mut self) -> ClkUart2DivConW<CruClkselCon35Spec> {
@@ -105,7 +106,7 @@ impl W {
     pub fn clk_uart2_sel(&mut self) -> ClkUart2SelW<CruClkselCon35Spec> {
         ClkUart2SelW::new(self, 8)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkselCon35Spec> {

@@ -1,15 +1,15 @@
 #[doc = "Register `DMAC_EVENT_RIS` reader"]
 pub type R = crate::R<DmacEventRisSpec>;
-#[doc = "Field `DMAC_EVENT_RIS_BITS_0` reader - Returns the status of the event-interrupt resources: Bit \\[N\\]
+#[doc = "Field `DMAC_EVENT_RIS_BITS_0` reader - Returns the status of the event-interrupt resources:\n\nBit \\[N\\]
 = 0 Event N is inactive or irq\\[N\\]
-is LOW. Bit \\[N\\]
+is LOW.\n\nBit \\[N\\]
 = 1 Event N is active or irq\\[N\\]
 is HIGH."]
 pub type DmacEventRisBits0R = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Returns the status of the event-interrupt resources: Bit \\[N\\]
+    #[doc = "Bits 0:31 - Returns the status of the event-interrupt resources:\n\nBit \\[N\\]
 = 0 Event N is inactive or irq\\[N\\]
-is LOW. Bit \\[N\\]
+is LOW.\n\nBit \\[N\\]
 = 1 Event N is active or irq\\[N\\]
 is HIGH."]
     #[inline(always)]

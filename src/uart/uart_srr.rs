@@ -1,25 +1,25 @@
 #[doc = "Register `UART_SRR` writer"]
 pub type W = crate::W<UartSrrSpec>;
-#[doc = "Field `UART_RESET` writer - UART Reset. This asynchronously resets the UART and synchronously removes the reset assertion. For a two clock implementation both pclk and sclk domains are reset."]
+#[doc = "Field `UART_RESET` writer - UART Reset.\n\nThis asynchronously resets the UART and synchronously removes\n\nthe reset assertion. For a two clock implementation both pclk and\n\nsclk domains are reset."]
 pub type UartResetW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `RCVR_FIFO_RESET` writer - RCVR FIFO Reset. This is a shadow register for the RCVR FIFO Reset bit (FCR\\[1\\])."]
+#[doc = "Field `RCVR_FIFO_RESET` writer - RCVR FIFO Reset.\n\nThis is a shadow register for the RCVR FIFO Reset bit (FCR\\[1\\])."]
 pub type RcvrFifoResetW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `XMIT_FIFO_RESET` writer - XMIT FIFO Reset. This is a shadow register for the XMIT FIFO Reset bit (FCR\\[2\\])."]
+#[doc = "Field `XMIT_FIFO_RESET` writer - XMIT FIFO Reset.\n\nThis is a shadow register for the XMIT FIFO Reset bit (FCR\\[2\\])."]
 pub type XmitFifoResetW<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
-    #[doc = "Bit 0 - UART Reset. This asynchronously resets the UART and synchronously removes the reset assertion. For a two clock implementation both pclk and sclk domains are reset."]
+    #[doc = "Bit 0 - UART Reset.\n\nThis asynchronously resets the UART and synchronously removes\n\nthe reset assertion. For a two clock implementation both pclk and\n\nsclk domains are reset."]
     #[inline(always)]
     #[must_use]
     pub fn uart_reset(&mut self) -> UartResetW<UartSrrSpec> {
         UartResetW::new(self, 0)
     }
-    #[doc = "Bit 1 - RCVR FIFO Reset. This is a shadow register for the RCVR FIFO Reset bit (FCR\\[1\\])."]
+    #[doc = "Bit 1 - RCVR FIFO Reset.\n\nThis is a shadow register for the RCVR FIFO Reset bit (FCR\\[1\\])."]
     #[inline(always)]
     #[must_use]
     pub fn rcvr_fifo_reset(&mut self) -> RcvrFifoResetW<UartSrrSpec> {
         RcvrFifoResetW::new(self, 1)
     }
-    #[doc = "Bit 2 - XMIT FIFO Reset. This is a shadow register for the XMIT FIFO Reset bit (FCR\\[2\\])."]
+    #[doc = "Bit 2 - XMIT FIFO Reset.\n\nThis is a shadow register for the XMIT FIFO Reset bit (FCR\\[2\\])."]
     #[inline(always)]
     #[must_use]
     pub fn xmit_fifo_reset(&mut self) -> XmitFifoResetW<UartSrrSpec> {

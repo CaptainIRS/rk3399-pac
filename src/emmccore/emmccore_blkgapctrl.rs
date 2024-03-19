@@ -3,9 +3,10 @@ pub type R = crate::R<EmmccoreBlkgapctrlSpec>;
 #[doc = "Register `EMMCCORE_BLKGAPCTRL` writer"]
 pub type W = crate::W<EmmccoreBlkgapctrlSpec>;
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Stopatblkgapreq {
-    #[doc = "1: Transfer This bit is used to stop executing a transaction at the next block gap for non-DMA,SDMA and ADMA transfers. Until the transfer complete is set to 1, indicating a transfer completion the HD shall leave this bit set to 1. Clearing both the Stop At Block Gap Request and Continue Request shall not cause the transaction to restart. Read Wait is used to stop the read transaction at the block gap. The HC shall honour Stop At Block Gap Request for write transfers, but for read transfers it requires that the SD card support Read Wait. Therefore the HD shall not set this bit during read transfers unless the SD card supports Read Wait and has set Read Wait Control to 1. In case ofwrite transfers in which the HD writes data to the Buffer Data Port register, the HD shall set this bit after all block data is written. If this bit is set to 1, the HD shall not write data to Buffer data port register. This bit affects Read Transfer Active, Write Transfer Active, DAT line active and Command Inhibit (DAT) in the Present State register."]
+    #[doc = "1: Stop"]
     B1 = 1,
     #[doc = "0: Transfer This bit is used to stop executing a transaction at the next block gap for non-DMA,SDMA and ADMA transfers. Until the transfer complete is set to 1, indicating a transfer completion the HD shall leave this bit set to 1. Clearing both the Stop At Block Gap Request and Continue Request shall not cause the transaction to restart. Read Wait is used to stop the read transaction at the block gap. The HC shall honour Stop At Block Gap Request for write transfers, but for read transfers it requires that the SD card support Read Wait. Therefore the HD shall not set this bit during read transfers unless the SD card supports Read Wait and has set Read Wait Control to 1. In case ofwrite transfers in which the HD writes data to the Buffer Data Port register, the HD shall set this bit after all block data is written. If this bit is set to 1, the HD shall not write data to Buffer data port register. This bit affects Read Transfer Active, Write Transfer Active, DAT line active and Command Inhibit (DAT) in the Present State register."]
     B0 = 0,
@@ -27,7 +28,7 @@ impl StopatblkgapreqR {
             false => Stopatblkgapreq::B0,
         }
     }
-    #[doc = "Transfer This bit is used to stop executing a transaction at the next block gap for non-DMA,SDMA and ADMA transfers. Until the transfer complete is set to 1, indicating a transfer completion the HD shall leave this bit set to 1. Clearing both the Stop At Block Gap Request and Continue Request shall not cause the transaction to restart. Read Wait is used to stop the read transaction at the block gap. The HC shall honour Stop At Block Gap Request for write transfers, but for read transfers it requires that the SD card support Read Wait. Therefore the HD shall not set this bit during read transfers unless the SD card supports Read Wait and has set Read Wait Control to 1. In case ofwrite transfers in which the HD writes data to the Buffer Data Port register, the HD shall set this bit after all block data is written. If this bit is set to 1, the HD shall not write data to Buffer data port register. This bit affects Read Transfer Active, Write Transfer Active, DAT line active and Command Inhibit (DAT) in the Present State register."]
+    #[doc = "Stop"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Stopatblkgapreq::B1
@@ -44,7 +45,7 @@ impl<'a, REG> StopatblkgapreqW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Transfer This bit is used to stop executing a transaction at the next block gap for non-DMA,SDMA and ADMA transfers. Until the transfer complete is set to 1, indicating a transfer completion the HD shall leave this bit set to 1. Clearing both the Stop At Block Gap Request and Continue Request shall not cause the transaction to restart. Read Wait is used to stop the read transaction at the block gap. The HC shall honour Stop At Block Gap Request for write transfers, but for read transfers it requires that the SD card support Read Wait. Therefore the HD shall not set this bit during read transfers unless the SD card supports Read Wait and has set Read Wait Control to 1. In case ofwrite transfers in which the HD writes data to the Buffer Data Port register, the HD shall set this bit after all block data is written. If this bit is set to 1, the HD shall not write data to Buffer data port register. This bit affects Read Transfer Active, Write Transfer Active, DAT line active and Command Inhibit (DAT) in the Present State register."]
+    #[doc = "Stop"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Stopatblkgapreq::B1)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Continuerequest {
-    #[doc = "1: Ignored This bit is used to restart a transaction which was stopped using the Stop At Block Gap Request. To cancel stop at the block gap, set Stop At block Gap Request to 0 and set this bit to restart the transfer. The HC automatically clears this bit in either of the following cases: a. In the case of a read transaction, the DAT Line Active changes from 0 to 1 as a read transaction restarts. b. In the case of a write transaction, the Write transfer active changes from 0 to 1 as the write transaction restarts. Therefore it is not necessary for Host driver to set this bit to 0. If Stop At Block Gap Request is set to 1, any write to this bit is ignored."]
+    #[doc = "1: Restart"]
     B1 = 1,
     #[doc = "0: Ignored This bit is used to restart a transaction which was stopped using the Stop At Block Gap Request. To cancel stop at the block gap, set Stop At block Gap Request to 0 and set this bit to restart the transfer. The HC automatically clears this bit in either of the following cases: a. In the case of a read transaction, the DAT Line Active changes from 0 to 1 as a read transaction restarts. b. In the case of a write transaction, the Write transfer active changes from 0 to 1 as the write transaction restarts. Therefore it is not necessary for Host driver to set this bit to 0. If Stop At Block Gap Request is set to 1, any write to this bit is ignored."]
     B0 = 0,
@@ -80,7 +82,7 @@ impl ContinuerequestR {
             false => Continuerequest::B0,
         }
     }
-    #[doc = "Ignored This bit is used to restart a transaction which was stopped using the Stop At Block Gap Request. To cancel stop at the block gap, set Stop At block Gap Request to 0 and set this bit to restart the transfer. The HC automatically clears this bit in either of the following cases: a. In the case of a read transaction, the DAT Line Active changes from 0 to 1 as a read transaction restarts. b. In the case of a write transaction, the Write transfer active changes from 0 to 1 as the write transaction restarts. Therefore it is not necessary for Host driver to set this bit to 0. If Stop At Block Gap Request is set to 1, any write to this bit is ignored."]
+    #[doc = "Restart"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Continuerequest::B1
@@ -97,7 +99,7 @@ impl<'a, REG> ContinuerequestW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Ignored This bit is used to restart a transaction which was stopped using the Stop At Block Gap Request. To cancel stop at the block gap, set Stop At block Gap Request to 0 and set this bit to restart the transfer. The HC automatically clears this bit in either of the following cases: a. In the case of a read transaction, the DAT Line Active changes from 0 to 1 as a read transaction restarts. b. In the case of a write transaction, the Write transfer active changes from 0 to 1 as the write transaction restarts. Therefore it is not necessary for Host driver to set this bit to 0. If Stop At Block Gap Request is set to 1, any write to this bit is ignored."]
+    #[doc = "Restart"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Continuerequest::B1)
@@ -109,10 +111,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Readwaitcontrol {
-    #[doc = "1: Disable Read Wait Control The read wait function is optional for SDIO cards. If the card supports read wait, set this bit to enable use of the read wait protocol to stop read data using DAT\\[2\\]
-line. Otherwise the HC has to stop the SD clock to hold read data, which restricts commands generation. When the HD detects an SD card insertion, it shall set this bit according to the CCCR of the SDIO card. If the card does not support read wait, this bit shall never be set to 1 otherwise DAT line conflict may occur. If this bit is set to 0, Suspend / Resume cannot be supported"]
+    #[doc = "1: Enable Read Wait Control"]
     B1 = 1,
     #[doc = "0: Disable Read Wait Control The read wait function is optional for SDIO cards. If the card supports read wait, set this bit to enable use of the read wait protocol to stop read data using DAT\\[2\\]
 line. Otherwise the HC has to stop the SD clock to hold read data, which restricts commands generation. When the HD detects an SD card insertion, it shall set this bit according to the CCCR of the SDIO card. If the card does not support read wait, this bit shall never be set to 1 otherwise DAT line conflict may occur. If this bit is set to 0, Suspend / Resume cannot be supported"]
@@ -135,8 +137,7 @@ impl ReadwaitcontrolR {
             false => Readwaitcontrol::B0,
         }
     }
-    #[doc = "Disable Read Wait Control The read wait function is optional for SDIO cards. If the card supports read wait, set this bit to enable use of the read wait protocol to stop read data using DAT\\[2\\]
-line. Otherwise the HC has to stop the SD clock to hold read data, which restricts commands generation. When the HD detects an SD card insertion, it shall set this bit according to the CCCR of the SDIO card. If the card does not support read wait, this bit shall never be set to 1 otherwise DAT line conflict may occur. If this bit is set to 0, Suspend / Resume cannot be supported"]
+    #[doc = "Enable Read Wait Control"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Readwaitcontrol::B1
@@ -154,8 +155,7 @@ impl<'a, REG> ReadwaitcontrolW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disable Read Wait Control The read wait function is optional for SDIO cards. If the card supports read wait, set this bit to enable use of the read wait protocol to stop read data using DAT\\[2\\]
-line. Otherwise the HC has to stop the SD clock to hold read data, which restricts commands generation. When the HD detects an SD card insertion, it shall set this bit according to the CCCR of the SDIO card. If the card does not support read wait, this bit shall never be set to 1 otherwise DAT line conflict may occur. If this bit is set to 0, Suspend / Resume cannot be supported"]
+    #[doc = "Enable Read Wait Control"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Readwaitcontrol::B1)
@@ -167,14 +167,15 @@ line. Otherwise the HC has to stop the SD clock to hold read data, which restric
         self.variant(Readwaitcontrol::B0)
     }
 }
-#[doc = "Field `INTATBLKGAP` reader - Interrupt At Block Gap. This bit is valid only in 4-bit mode of the SDIO card and selects a sample point in the interrupt cycle. Setting to 1 enables interrupt detection at the block gap for a multiple block transfer. If the SD card cannot signal an interrupt during a multiple block transfer, this bit should be set to 0. When the HD detects an SD card insertion, it shall set this bit according to the CCCR of the SDIO card."]
+#[doc = "Field `INTATBLKGAP` reader - Interrupt At Block Gap.\n\nThis bit is valid only in 4-bit mode of the SDIO card and selects a\n\nsample point in the interrupt cycle. Setting to 1 enables interrupt\n\ndetection at the block gap for a multiple block transfer. If the SD\n\ncard cannot signal an interrupt during a multiple block transfer,\n\nthis bit should be set to 0. When the HD detects an SD card\n\ninsertion, it shall set this bit according to the CCCR of the SDIO\n\ncard."]
 pub type IntatblkgapR = crate::BitReader;
-#[doc = "Field `INTATBLKGAP` writer - Interrupt At Block Gap. This bit is valid only in 4-bit mode of the SDIO card and selects a sample point in the interrupt cycle. Setting to 1 enables interrupt detection at the block gap for a multiple block transfer. If the SD card cannot signal an interrupt during a multiple block transfer, this bit should be set to 0. When the HD detects an SD card insertion, it shall set this bit according to the CCCR of the SDIO card."]
+#[doc = "Field `INTATBLKGAP` writer - Interrupt At Block Gap.\n\nThis bit is valid only in 4-bit mode of the SDIO card and selects a\n\nsample point in the interrupt cycle. Setting to 1 enables interrupt\n\ndetection at the block gap for a multiple block transfer. If the SD\n\ncard cannot signal an interrupt during a multiple block transfer,\n\nthis bit should be set to 0. When the HD detects an SD card\n\ninsertion, it shall set this bit according to the CCCR of the SDIO\n\ncard."]
 pub type IntatblkgapW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "SPI mode enable bit.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Spimode {
-    #[doc = "1: SD mode"]
+    #[doc = "1: SPI mode"]
     B1 = 1,
     #[doc = "0: SD mode"]
     B0 = 0,
@@ -196,7 +197,7 @@ impl SpimodeR {
             false => Spimode::B0,
         }
     }
-    #[doc = "SD mode"]
+    #[doc = "SPI mode"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Spimode::B1
@@ -213,7 +214,7 @@ impl<'a, REG> SpimodeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "SD mode"]
+    #[doc = "SPI mode"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Spimode::B1)
@@ -225,9 +226,10 @@ where
     }
 }
 #[doc = "To start boot code access.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Booten {
-    #[doc = "1: To stop boot code access"]
+    #[doc = "1: To start boot code access"]
     B1 = 1,
     #[doc = "0: To stop boot code access"]
     B0 = 0,
@@ -249,7 +251,7 @@ impl BootenR {
             false => Booten::B0,
         }
     }
-    #[doc = "To stop boot code access"]
+    #[doc = "To start boot code access"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Booten::B1
@@ -266,7 +268,7 @@ impl<'a, REG> BootenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "To stop boot code access"]
+    #[doc = "To start boot code access"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Booten::B1)
@@ -278,9 +280,10 @@ where
     }
 }
 #[doc = "To start boot code access in alternative mode.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Altbooten {
-    #[doc = "1: To stop alternate boot mode access"]
+    #[doc = "1: To start alternate boot mode access"]
     B1 = 1,
     #[doc = "0: To stop alternate boot mode access"]
     B0 = 0,
@@ -302,7 +305,7 @@ impl AltbootenR {
             false => Altbooten::B0,
         }
     }
-    #[doc = "To stop alternate boot mode access"]
+    #[doc = "To start alternate boot mode access"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Altbooten::B1
@@ -319,7 +322,7 @@ impl<'a, REG> AltbootenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "To stop alternate boot mode access"]
+    #[doc = "To start alternate boot mode access"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Altbooten::B1)
@@ -331,9 +334,10 @@ where
     }
 }
 #[doc = "To check for the boot acknowledge in boot operation.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bootackchk {
-    #[doc = "1: Will not wait for boot ack from eMMC card"]
+    #[doc = "1: wait for boot ack from eMMC card"]
     B1 = 1,
     #[doc = "0: Will not wait for boot ack from eMMC card"]
     B0 = 0,
@@ -355,7 +359,7 @@ impl BootackchkR {
             false => Bootackchk::B0,
         }
     }
-    #[doc = "Will not wait for boot ack from eMMC card"]
+    #[doc = "wait for boot ack from eMMC card"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Bootackchk::B1
@@ -372,7 +376,7 @@ impl<'a, REG> BootackchkW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Will not wait for boot ack from eMMC card"]
+    #[doc = "wait for boot ack from eMMC card"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Bootackchk::B1)
@@ -399,7 +403,7 @@ impl R {
     pub fn readwaitcontrol(&self) -> ReadwaitcontrolR {
         ReadwaitcontrolR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - Interrupt At Block Gap. This bit is valid only in 4-bit mode of the SDIO card and selects a sample point in the interrupt cycle. Setting to 1 enables interrupt detection at the block gap for a multiple block transfer. If the SD card cannot signal an interrupt during a multiple block transfer, this bit should be set to 0. When the HD detects an SD card insertion, it shall set this bit according to the CCCR of the SDIO card."]
+    #[doc = "Bit 3 - Interrupt At Block Gap.\n\nThis bit is valid only in 4-bit mode of the SDIO card and selects a\n\nsample point in the interrupt cycle. Setting to 1 enables interrupt\n\ndetection at the block gap for a multiple block transfer. If the SD\n\ncard cannot signal an interrupt during a multiple block transfer,\n\nthis bit should be set to 0. When the HD detects an SD card\n\ninsertion, it shall set this bit according to the CCCR of the SDIO\n\ncard."]
     #[inline(always)]
     pub fn intatblkgap(&self) -> IntatblkgapR {
         IntatblkgapR::new(((self.bits >> 3) & 1) != 0)
@@ -444,7 +448,7 @@ impl W {
     pub fn readwaitcontrol(&mut self) -> ReadwaitcontrolW<EmmccoreBlkgapctrlSpec> {
         ReadwaitcontrolW::new(self, 2)
     }
-    #[doc = "Bit 3 - Interrupt At Block Gap. This bit is valid only in 4-bit mode of the SDIO card and selects a sample point in the interrupt cycle. Setting to 1 enables interrupt detection at the block gap for a multiple block transfer. If the SD card cannot signal an interrupt during a multiple block transfer, this bit should be set to 0. When the HD detects an SD card insertion, it shall set this bit according to the CCCR of the SDIO card."]
+    #[doc = "Bit 3 - Interrupt At Block Gap.\n\nThis bit is valid only in 4-bit mode of the SDIO card and selects a\n\nsample point in the interrupt cycle. Setting to 1 enables interrupt\n\ndetection at the block gap for a multiple block transfer. If the SD\n\ncard cannot signal an interrupt during a multiple block transfer,\n\nthis bit should be set to 0. When the HD detects an SD card\n\ninsertion, it shall set this bit according to the CCCR of the SDIO\n\ncard."]
     #[inline(always)]
     #[must_use]
     pub fn intatblkgap(&mut self) -> IntatblkgapW<EmmccoreBlkgapctrlSpec> {

@@ -2,19 +2,19 @@
 pub type R = crate::R<DdrPiReg98Spec>;
 #[doc = "Register `DDR_PI_REG_98` writer"]
 pub type W = crate::W<DdrPiReg98Spec>;
-#[doc = "Field `PI_TDFI_CALVL_RESP` reader - Defines the DFI tCALVL_RESP timing parameter (in DFI clocks), the maximum cycles between a dfi_calvl_req assertion and a dfi_calvl_en assertion."]
+#[doc = "Field `PI_TDFI_CALVL_RESP` reader - Defines the DFI tCALVL_RESP timing parameter (in DFI clocks), the\n\nmaximum cycles between a dfi_calvl_req assertion and a\n\ndfi_calvl_en assertion."]
 pub type PiTdfiCalvlRespR = crate::FieldReader<u32>;
-#[doc = "Field `PI_TDFI_CALVL_RESP` writer - Defines the DFI tCALVL_RESP timing parameter (in DFI clocks), the maximum cycles between a dfi_calvl_req assertion and a dfi_calvl_en assertion."]
+#[doc = "Field `PI_TDFI_CALVL_RESP` writer - Defines the DFI tCALVL_RESP timing parameter (in DFI clocks), the\n\nmaximum cycles between a dfi_calvl_req assertion and a\n\ndfi_calvl_en assertion."]
 pub type PiTdfiCalvlRespW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Defines the DFI tCALVL_RESP timing parameter (in DFI clocks), the maximum cycles between a dfi_calvl_req assertion and a dfi_calvl_en assertion."]
+    #[doc = "Bits 0:31 - Defines the DFI tCALVL_RESP timing parameter (in DFI clocks), the\n\nmaximum cycles between a dfi_calvl_req assertion and a\n\ndfi_calvl_en assertion."]
     #[inline(always)]
     pub fn pi_tdfi_calvl_resp(&self) -> PiTdfiCalvlRespR {
         PiTdfiCalvlRespR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Defines the DFI tCALVL_RESP timing parameter (in DFI clocks), the maximum cycles between a dfi_calvl_req assertion and a dfi_calvl_en assertion."]
+    #[doc = "Bits 0:31 - Defines the DFI tCALVL_RESP timing parameter (in DFI clocks), the\n\nmaximum cycles between a dfi_calvl_req assertion and a\n\ndfi_calvl_en assertion."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tdfi_calvl_resp(&mut self) -> PiTdfiCalvlRespW<DdrPiReg98Spec> {

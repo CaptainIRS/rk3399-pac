@@ -2,15 +2,16 @@
 pub type R = crate::R<DpTrainingPtnSetSpec>;
 #[doc = "Register `DP_TRAINING_PTN_SET` writer"]
 pub type W = crate::W<DpTrainingPtnSetSpec>;
-#[doc = "Link training pattern setting. SW_TRAINING_PATTERN_SET has higher priority than LINK_QUAL_PATTER_SET.\n\nValue on reset: 0"]
+#[doc = "Link training pattern setting. \n\nSW_TRAINING_PATTERN_SET has higher \n\npriority than LINK_QUAL_PATTER_SET.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SwTrainingPatternSet {
-    #[doc = "3: Training pattern not sent"]
+    #[doc = "3: Reserved"]
     B11 = 3,
-    #[doc = "2: Training pattern not sent"]
+    #[doc = "2: Sending training pattern 2"]
     B10 = 2,
-    #[doc = "1: Training pattern not sent"]
+    #[doc = "1: Sending training pattern 1"]
     B01 = 1,
     #[doc = "0: Training pattern not sent"]
     B00 = 0,
@@ -24,7 +25,7 @@ impl From<SwTrainingPatternSet> for u8 {
 impl crate::FieldSpec for SwTrainingPatternSet {
     type Ux = u8;
 }
-#[doc = "Field `SW_TRAINING_PATTERN_SET` reader - Link training pattern setting. SW_TRAINING_PATTERN_SET has higher priority than LINK_QUAL_PATTER_SET."]
+#[doc = "Field `SW_TRAINING_PATTERN_SET` reader - Link training pattern setting. \n\nSW_TRAINING_PATTERN_SET has higher \n\npriority than LINK_QUAL_PATTER_SET."]
 pub type SwTrainingPatternSetR = crate::FieldReader<SwTrainingPatternSet>;
 impl SwTrainingPatternSetR {
     #[doc = "Get enumerated values variant"]
@@ -38,17 +39,17 @@ impl SwTrainingPatternSetR {
             _ => unreachable!(),
         }
     }
-    #[doc = "Training pattern not sent"]
+    #[doc = "Reserved"]
     #[inline(always)]
     pub fn is_b11(&self) -> bool {
         *self == SwTrainingPatternSet::B11
     }
-    #[doc = "Training pattern not sent"]
+    #[doc = "Sending training pattern 2"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == SwTrainingPatternSet::B10
     }
-    #[doc = "Training pattern not sent"]
+    #[doc = "Sending training pattern 1"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == SwTrainingPatternSet::B01
@@ -59,24 +60,24 @@ impl SwTrainingPatternSetR {
         *self == SwTrainingPatternSet::B00
     }
 }
-#[doc = "Field `SW_TRAINING_PATTERN_SET` writer - Link training pattern setting. SW_TRAINING_PATTERN_SET has higher priority than LINK_QUAL_PATTER_SET."]
+#[doc = "Field `SW_TRAINING_PATTERN_SET` writer - Link training pattern setting. \n\nSW_TRAINING_PATTERN_SET has higher \n\npriority than LINK_QUAL_PATTER_SET."]
 pub type SwTrainingPatternSetW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, SwTrainingPatternSet>;
 impl<'a, REG> SwTrainingPatternSetW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Training pattern not sent"]
+    #[doc = "Reserved"]
     #[inline(always)]
     pub fn b11(self) -> &'a mut crate::W<REG> {
         self.variant(SwTrainingPatternSet::B11)
     }
-    #[doc = "Training pattern not sent"]
+    #[doc = "Sending training pattern 2"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(SwTrainingPatternSet::B10)
     }
-    #[doc = "Training pattern not sent"]
+    #[doc = "Sending training pattern 1"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(SwTrainingPatternSet::B01)
@@ -87,14 +88,15 @@ where
         self.variant(SwTrainingPatternSet::B00)
     }
 }
-#[doc = "Field `LINK_QUAL_PATTERN_SET` reader - Link quality pattern setting. 101 = HBR2 Compliance 100 = 80 bit test pattern 011 = PRBS 7 bit 010 = symbol error rate measurement pattern is sent; 001 = D10.2 test pattern is sent; 000= link quality test pattern not sent"]
+#[doc = "Field `LINK_QUAL_PATTERN_SET` reader - Link quality pattern setting. \n\n101 = HBR2 Compliance \n\n100 = 80 bit test pattern \n\n011 = PRBS 7 bit \n\n010 = symbol error rate measurement \n\npattern is sent; \n\n001 = D10.2 test pattern is sent; \n\n000= link quality test pattern not sent"]
 pub type LinkQualPatternSetR = crate::FieldReader;
-#[doc = "Field `LINK_QUAL_PATTERN_SET` writer - Link quality pattern setting. 101 = HBR2 Compliance 100 = 80 bit test pattern 011 = PRBS 7 bit 010 = symbol error rate measurement pattern is sent; 001 = D10.2 test pattern is sent; 000= link quality test pattern not sent"]
+#[doc = "Field `LINK_QUAL_PATTERN_SET` writer - Link quality pattern setting. \n\n101 = HBR2 Compliance \n\n100 = 80 bit test pattern \n\n011 = PRBS 7 bit \n\n010 = symbol error rate measurement \n\npattern is sent; \n\n001 = D10.2 test pattern is sent; \n\n000= link quality test pattern not sent"]
 pub type LinkQualPatternSetW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Disable scramble\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ScramblingDisable {
-    #[doc = "1: Normal operation"]
+    #[doc = "1: Disable"]
     B1 = 1,
     #[doc = "0: Normal operation"]
     B0 = 0,
@@ -116,7 +118,7 @@ impl ScramblingDisableR {
             false => ScramblingDisable::B0,
         }
     }
-    #[doc = "Normal operation"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == ScramblingDisable::B1
@@ -133,7 +135,7 @@ impl<'a, REG> ScramblingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Normal operation"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(ScramblingDisable::B1)
@@ -145,12 +147,12 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 0:1 - Link training pattern setting. SW_TRAINING_PATTERN_SET has higher priority than LINK_QUAL_PATTER_SET."]
+    #[doc = "Bits 0:1 - Link training pattern setting. \n\nSW_TRAINING_PATTERN_SET has higher \n\npriority than LINK_QUAL_PATTER_SET."]
     #[inline(always)]
     pub fn sw_training_pattern_set(&self) -> SwTrainingPatternSetR {
         SwTrainingPatternSetR::new((self.bits & 3) as u8)
     }
-    #[doc = "Bits 2:4 - Link quality pattern setting. 101 = HBR2 Compliance 100 = 80 bit test pattern 011 = PRBS 7 bit 010 = symbol error rate measurement pattern is sent; 001 = D10.2 test pattern is sent; 000= link quality test pattern not sent"]
+    #[doc = "Bits 2:4 - Link quality pattern setting. \n\n101 = HBR2 Compliance \n\n100 = 80 bit test pattern \n\n011 = PRBS 7 bit \n\n010 = symbol error rate measurement \n\npattern is sent; \n\n001 = D10.2 test pattern is sent; \n\n000= link quality test pattern not sent"]
     #[inline(always)]
     pub fn link_qual_pattern_set(&self) -> LinkQualPatternSetR {
         LinkQualPatternSetR::new(((self.bits >> 2) & 7) as u8)
@@ -162,13 +164,13 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:1 - Link training pattern setting. SW_TRAINING_PATTERN_SET has higher priority than LINK_QUAL_PATTER_SET."]
+    #[doc = "Bits 0:1 - Link training pattern setting. \n\nSW_TRAINING_PATTERN_SET has higher \n\npriority than LINK_QUAL_PATTER_SET."]
     #[inline(always)]
     #[must_use]
     pub fn sw_training_pattern_set(&mut self) -> SwTrainingPatternSetW<DpTrainingPtnSetSpec> {
         SwTrainingPatternSetW::new(self, 0)
     }
-    #[doc = "Bits 2:4 - Link quality pattern setting. 101 = HBR2 Compliance 100 = 80 bit test pattern 011 = PRBS 7 bit 010 = symbol error rate measurement pattern is sent; 001 = D10.2 test pattern is sent; 000= link quality test pattern not sent"]
+    #[doc = "Bits 2:4 - Link quality pattern setting. \n\n101 = HBR2 Compliance \n\n100 = 80 bit test pattern \n\n011 = PRBS 7 bit \n\n010 = symbol error rate measurement \n\npattern is sent; \n\n001 = D10.2 test pattern is sent; \n\n000= link quality test pattern not sent"]
     #[inline(always)]
     #[must_use]
     pub fn link_qual_pattern_set(&mut self) -> LinkQualPatternSetW<DpTrainingPtnSetSpec> {

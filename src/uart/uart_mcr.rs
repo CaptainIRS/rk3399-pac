@@ -2,109 +2,109 @@
 pub type R = crate::R<UartMcrSpec>;
 #[doc = "Register `UART_MCR` writer"]
 pub type W = crate::W<UartMcrSpec>;
-#[doc = "Field `DATA_TERMINAL_READY` reader - Data Terminal Ready. This is used to directly control the Data Terminal Ready (dtr_n) output. The value written to this location is inverted and driven out on dtr_n, that is: 0 = dtr_n de-asserted (logic 1) 1 = dtr_n asserted (logic 0)"]
+#[doc = "Field `DATA_TERMINAL_READY` reader - Data Terminal Ready.\n\nThis is used to directly control the Data Terminal Ready (dtr_n)\n\noutput. The value written to this location is inverted and driven\n\nout on dtr_n, that is:\n\n0 = dtr_n de-asserted (logic 1)\n\n1 = dtr_n asserted (logic 0)"]
 pub type DataTerminalReadyR = crate::BitReader;
-#[doc = "Field `DATA_TERMINAL_READY` writer - Data Terminal Ready. This is used to directly control the Data Terminal Ready (dtr_n) output. The value written to this location is inverted and driven out on dtr_n, that is: 0 = dtr_n de-asserted (logic 1) 1 = dtr_n asserted (logic 0)"]
+#[doc = "Field `DATA_TERMINAL_READY` writer - Data Terminal Ready.\n\nThis is used to directly control the Data Terminal Ready (dtr_n)\n\noutput. The value written to this location is inverted and driven\n\nout on dtr_n, that is:\n\n0 = dtr_n de-asserted (logic 1)\n\n1 = dtr_n asserted (logic 0)"]
 pub type DataTerminalReadyW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `REQ_TO_SEND` reader - Request to Send. This is used to directly control the Request to Send (rts_n) output. The Request To Send (rts_n) output is used to inform the modem or data set that the UART is ready to exchange data."]
+#[doc = "Field `REQ_TO_SEND` reader - Request to Send.\n\n\n\nThis is used to directly control the Request to Send (rts_n)\n\noutput. The Request To Send (rts_n) output is used to inform the\n\nmodem or data set that the UART is ready to exchange data."]
 pub type ReqToSendR = crate::BitReader;
-#[doc = "Field `REQ_TO_SEND` writer - Request to Send. This is used to directly control the Request to Send (rts_n) output. The Request To Send (rts_n) output is used to inform the modem or data set that the UART is ready to exchange data."]
+#[doc = "Field `REQ_TO_SEND` writer - Request to Send.\n\n\n\nThis is used to directly control the Request to Send (rts_n)\n\noutput. The Request To Send (rts_n) output is used to inform the\n\nmodem or data set that the UART is ready to exchange data."]
 pub type ReqToSendW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `OUT1` reader - OUT1 This is used to directly control the user-designated Output2 (out2_n) output. The value written to this location is inverted and driven out on out2_n, that is: 1’b0: out2_n de-asserted (logic 1) 1’b1: out2_n asserted (logic 0)"]
+#[doc = "Field `OUT1` reader - OUT1\n\nThis is used to directly control the user-designated Output2\n\n(out2_n) output. The value written to this location is inverted and\n\ndriven out on out2_n, that is:\n\n1’b0: out2_n de-asserted (logic 1)\n\n1’b1: out2_n asserted (logic 0)"]
 pub type Out1R = crate::BitReader;
-#[doc = "Field `OUT1` writer - OUT1 This is used to directly control the user-designated Output2 (out2_n) output. The value written to this location is inverted and driven out on out2_n, that is: 1’b0: out2_n de-asserted (logic 1) 1’b1: out2_n asserted (logic 0)"]
+#[doc = "Field `OUT1` writer - OUT1\n\nThis is used to directly control the user-designated Output2\n\n(out2_n) output. The value written to this location is inverted and\n\ndriven out on out2_n, that is:\n\n1’b0: out2_n de-asserted (logic 1)\n\n1’b1: out2_n asserted (logic 0)"]
 pub type Out1W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `OUT2` reader - OUT2. This is used to directly control the user-designated Output2 (out2_n) output. The value written to this location is inverted and driven out on out2_n, that is: 0 = out2_n de-asserted (logic 1) 1 = out2_n asserted (logic 0)"]
+#[doc = "Field `OUT2` reader - OUT2.\n\nThis is used to directly control the user-designated Output2\n\n(out2_n) output. The value written to this location is inverted and\n\ndriven out on out2_n, that is:\n\n0 = out2_n de-asserted (logic 1)\n\n1 = out2_n asserted (logic 0)"]
 pub type Out2R = crate::BitReader;
-#[doc = "Field `OUT2` writer - OUT2. This is used to directly control the user-designated Output2 (out2_n) output. The value written to this location is inverted and driven out on out2_n, that is: 0 = out2_n de-asserted (logic 1) 1 = out2_n asserted (logic 0)"]
+#[doc = "Field `OUT2` writer - OUT2.\n\nThis is used to directly control the user-designated Output2\n\n(out2_n) output. The value written to this location is inverted and\n\ndriven out on out2_n, that is:\n\n0 = out2_n de-asserted (logic 1)\n\n1 = out2_n asserted (logic 0)"]
 pub type Out2W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `LOOPBACK` reader - LoopBack Bit. This is used to put the UART into a diagnostic mode for test purposes."]
+#[doc = "Field `LOOPBACK` reader - LoopBack Bit.\n\nThis is used to put the UART into a diagnostic mode for test\n\npurposes."]
 pub type LoopbackR = crate::BitReader;
-#[doc = "Field `LOOPBACK` writer - LoopBack Bit. This is used to put the UART into a diagnostic mode for test purposes."]
+#[doc = "Field `LOOPBACK` writer - LoopBack Bit.\n\nThis is used to put the UART into a diagnostic mode for test\n\npurposes."]
 pub type LoopbackW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `AUTO_FLOW_CTRL_EN` reader - Auto Flow Control Enable. 0 = Auto Flow Control Mode disabled 1 = Auto Flow Control Mode enabled"]
+#[doc = "Field `AUTO_FLOW_CTRL_EN` reader - Auto Flow Control Enable.\n\n0 = Auto Flow Control Mode disabled\n\n1 = Auto Flow Control Mode enabled"]
 pub type AutoFlowCtrlEnR = crate::BitReader;
-#[doc = "Field `AUTO_FLOW_CTRL_EN` writer - Auto Flow Control Enable. 0 = Auto Flow Control Mode disabled 1 = Auto Flow Control Mode enabled"]
+#[doc = "Field `AUTO_FLOW_CTRL_EN` writer - Auto Flow Control Enable.\n\n0 = Auto Flow Control Mode disabled\n\n1 = Auto Flow Control Mode enabled"]
 pub type AutoFlowCtrlEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `SIR_MODE_EN` reader - SIR Mode Enable. SIR Mode Enable. This is used to enable/disable the IrDA SIR Mode . 0 = IrDA SIR Mode disabled 1 = IrDA SIR Mode enabled"]
+#[doc = "Field `SIR_MODE_EN` reader - SIR Mode Enable.\n\nSIR Mode Enable.\n\nThis is used to enable/disable the IrDA SIR Mode .\n\n0 = IrDA SIR Mode disabled\n\n1 = IrDA SIR Mode enabled"]
 pub type SirModeEnR = crate::BitReader;
-#[doc = "Field `SIR_MODE_EN` writer - SIR Mode Enable. SIR Mode Enable. This is used to enable/disable the IrDA SIR Mode . 0 = IrDA SIR Mode disabled 1 = IrDA SIR Mode enabled"]
+#[doc = "Field `SIR_MODE_EN` writer - SIR Mode Enable.\n\nSIR Mode Enable.\n\nThis is used to enable/disable the IrDA SIR Mode .\n\n0 = IrDA SIR Mode disabled\n\n1 = IrDA SIR Mode enabled"]
 pub type SirModeEnW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - Data Terminal Ready. This is used to directly control the Data Terminal Ready (dtr_n) output. The value written to this location is inverted and driven out on dtr_n, that is: 0 = dtr_n de-asserted (logic 1) 1 = dtr_n asserted (logic 0)"]
+    #[doc = "Bit 0 - Data Terminal Ready.\n\nThis is used to directly control the Data Terminal Ready (dtr_n)\n\noutput. The value written to this location is inverted and driven\n\nout on dtr_n, that is:\n\n0 = dtr_n de-asserted (logic 1)\n\n1 = dtr_n asserted (logic 0)"]
     #[inline(always)]
     pub fn data_terminal_ready(&self) -> DataTerminalReadyR {
         DataTerminalReadyR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - Request to Send. This is used to directly control the Request to Send (rts_n) output. The Request To Send (rts_n) output is used to inform the modem or data set that the UART is ready to exchange data."]
+    #[doc = "Bit 1 - Request to Send.\n\n\n\nThis is used to directly control the Request to Send (rts_n)\n\noutput. The Request To Send (rts_n) output is used to inform the\n\nmodem or data set that the UART is ready to exchange data."]
     #[inline(always)]
     pub fn req_to_send(&self) -> ReqToSendR {
         ReqToSendR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - OUT1 This is used to directly control the user-designated Output2 (out2_n) output. The value written to this location is inverted and driven out on out2_n, that is: 1’b0: out2_n de-asserted (logic 1) 1’b1: out2_n asserted (logic 0)"]
+    #[doc = "Bit 2 - OUT1\n\nThis is used to directly control the user-designated Output2\n\n(out2_n) output. The value written to this location is inverted and\n\ndriven out on out2_n, that is:\n\n1’b0: out2_n de-asserted (logic 1)\n\n1’b1: out2_n asserted (logic 0)"]
     #[inline(always)]
     pub fn out1(&self) -> Out1R {
         Out1R::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - OUT2. This is used to directly control the user-designated Output2 (out2_n) output. The value written to this location is inverted and driven out on out2_n, that is: 0 = out2_n de-asserted (logic 1) 1 = out2_n asserted (logic 0)"]
+    #[doc = "Bit 3 - OUT2.\n\nThis is used to directly control the user-designated Output2\n\n(out2_n) output. The value written to this location is inverted and\n\ndriven out on out2_n, that is:\n\n0 = out2_n de-asserted (logic 1)\n\n1 = out2_n asserted (logic 0)"]
     #[inline(always)]
     pub fn out2(&self) -> Out2R {
         Out2R::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - LoopBack Bit. This is used to put the UART into a diagnostic mode for test purposes."]
+    #[doc = "Bit 4 - LoopBack Bit.\n\nThis is used to put the UART into a diagnostic mode for test\n\npurposes."]
     #[inline(always)]
     pub fn loopback(&self) -> LoopbackR {
         LoopbackR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - Auto Flow Control Enable. 0 = Auto Flow Control Mode disabled 1 = Auto Flow Control Mode enabled"]
+    #[doc = "Bit 5 - Auto Flow Control Enable.\n\n0 = Auto Flow Control Mode disabled\n\n1 = Auto Flow Control Mode enabled"]
     #[inline(always)]
     pub fn auto_flow_ctrl_en(&self) -> AutoFlowCtrlEnR {
         AutoFlowCtrlEnR::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 6 - SIR Mode Enable. SIR Mode Enable. This is used to enable/disable the IrDA SIR Mode . 0 = IrDA SIR Mode disabled 1 = IrDA SIR Mode enabled"]
+    #[doc = "Bit 6 - SIR Mode Enable.\n\nSIR Mode Enable.\n\nThis is used to enable/disable the IrDA SIR Mode .\n\n0 = IrDA SIR Mode disabled\n\n1 = IrDA SIR Mode enabled"]
     #[inline(always)]
     pub fn sir_mode_en(&self) -> SirModeEnR {
         SirModeEnR::new(((self.bits >> 6) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Data Terminal Ready. This is used to directly control the Data Terminal Ready (dtr_n) output. The value written to this location is inverted and driven out on dtr_n, that is: 0 = dtr_n de-asserted (logic 1) 1 = dtr_n asserted (logic 0)"]
+    #[doc = "Bit 0 - Data Terminal Ready.\n\nThis is used to directly control the Data Terminal Ready (dtr_n)\n\noutput. The value written to this location is inverted and driven\n\nout on dtr_n, that is:\n\n0 = dtr_n de-asserted (logic 1)\n\n1 = dtr_n asserted (logic 0)"]
     #[inline(always)]
     #[must_use]
     pub fn data_terminal_ready(&mut self) -> DataTerminalReadyW<UartMcrSpec> {
         DataTerminalReadyW::new(self, 0)
     }
-    #[doc = "Bit 1 - Request to Send. This is used to directly control the Request to Send (rts_n) output. The Request To Send (rts_n) output is used to inform the modem or data set that the UART is ready to exchange data."]
+    #[doc = "Bit 1 - Request to Send.\n\n\n\nThis is used to directly control the Request to Send (rts_n)\n\noutput. The Request To Send (rts_n) output is used to inform the\n\nmodem or data set that the UART is ready to exchange data."]
     #[inline(always)]
     #[must_use]
     pub fn req_to_send(&mut self) -> ReqToSendW<UartMcrSpec> {
         ReqToSendW::new(self, 1)
     }
-    #[doc = "Bit 2 - OUT1 This is used to directly control the user-designated Output2 (out2_n) output. The value written to this location is inverted and driven out on out2_n, that is: 1’b0: out2_n de-asserted (logic 1) 1’b1: out2_n asserted (logic 0)"]
+    #[doc = "Bit 2 - OUT1\n\nThis is used to directly control the user-designated Output2\n\n(out2_n) output. The value written to this location is inverted and\n\ndriven out on out2_n, that is:\n\n1’b0: out2_n de-asserted (logic 1)\n\n1’b1: out2_n asserted (logic 0)"]
     #[inline(always)]
     #[must_use]
     pub fn out1(&mut self) -> Out1W<UartMcrSpec> {
         Out1W::new(self, 2)
     }
-    #[doc = "Bit 3 - OUT2. This is used to directly control the user-designated Output2 (out2_n) output. The value written to this location is inverted and driven out on out2_n, that is: 0 = out2_n de-asserted (logic 1) 1 = out2_n asserted (logic 0)"]
+    #[doc = "Bit 3 - OUT2.\n\nThis is used to directly control the user-designated Output2\n\n(out2_n) output. The value written to this location is inverted and\n\ndriven out on out2_n, that is:\n\n0 = out2_n de-asserted (logic 1)\n\n1 = out2_n asserted (logic 0)"]
     #[inline(always)]
     #[must_use]
     pub fn out2(&mut self) -> Out2W<UartMcrSpec> {
         Out2W::new(self, 3)
     }
-    #[doc = "Bit 4 - LoopBack Bit. This is used to put the UART into a diagnostic mode for test purposes."]
+    #[doc = "Bit 4 - LoopBack Bit.\n\nThis is used to put the UART into a diagnostic mode for test\n\npurposes."]
     #[inline(always)]
     #[must_use]
     pub fn loopback(&mut self) -> LoopbackW<UartMcrSpec> {
         LoopbackW::new(self, 4)
     }
-    #[doc = "Bit 5 - Auto Flow Control Enable. 0 = Auto Flow Control Mode disabled 1 = Auto Flow Control Mode enabled"]
+    #[doc = "Bit 5 - Auto Flow Control Enable.\n\n0 = Auto Flow Control Mode disabled\n\n1 = Auto Flow Control Mode enabled"]
     #[inline(always)]
     #[must_use]
     pub fn auto_flow_ctrl_en(&mut self) -> AutoFlowCtrlEnW<UartMcrSpec> {
         AutoFlowCtrlEnW::new(self, 5)
     }
-    #[doc = "Bit 6 - SIR Mode Enable. SIR Mode Enable. This is used to enable/disable the IrDA SIR Mode . 0 = IrDA SIR Mode disabled 1 = IrDA SIR Mode enabled"]
+    #[doc = "Bit 6 - SIR Mode Enable.\n\nSIR Mode Enable.\n\nThis is used to enable/disable the IrDA SIR Mode .\n\n0 = IrDA SIR Mode disabled\n\n1 = IrDA SIR Mode enabled"]
     #[inline(always)]
     #[must_use]
     pub fn sir_mode_en(&mut self) -> SirModeEnW<UartMcrSpec> {

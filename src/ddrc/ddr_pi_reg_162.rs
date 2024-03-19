@@ -2,34 +2,34 @@
 pub type R = crate::R<DdrPiReg162Spec>;
 #[doc = "Register `DDR_PI_REG_162` writer"]
 pub type W = crate::W<DdrPiReg162Spec>;
-#[doc = "Field `PI_TWTR_F1` reader - Indicates DRAM TWTR value in cycles. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TWTR_F1` reader - Indicates DRAM TWTR value in cycles. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTwtrF1R = crate::FieldReader;
-#[doc = "Field `PI_TWTR_F1` writer - Indicates DRAM TWTR value in cycles. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TWTR_F1` writer - Indicates DRAM TWTR value in cycles. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTwtrF1W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
-#[doc = "Field `PI_TWR_F1` reader - Indicates DRAM TWR value in cycles. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TWR_F1` reader - Indicates DRAM TWR value in cycles. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTwrF1R = crate::FieldReader;
-#[doc = "Field `PI_TWR_F1` writer - Indicates DRAM TWR value in cycles. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TWR_F1` writer - Indicates DRAM TWR value in cycles. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTwrF1W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
-    #[doc = "Bits 0:5 - Indicates DRAM TWTR value in cycles. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:5 - Indicates DRAM TWTR value in cycles. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_twtr_f1(&self) -> PiTwtrF1R {
         PiTwtrF1R::new((self.bits & 0x3f) as u8)
     }
-    #[doc = "Bits 8:13 - Indicates DRAM TWR value in cycles. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 8:13 - Indicates DRAM TWR value in cycles. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_twr_f1(&self) -> PiTwrF1R {
         PiTwrF1R::new(((self.bits >> 8) & 0x3f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:5 - Indicates DRAM TWTR value in cycles. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:5 - Indicates DRAM TWTR value in cycles. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_twtr_f1(&mut self) -> PiTwtrF1W<DdrPiReg162Spec> {
         PiTwtrF1W::new(self, 0)
     }
-    #[doc = "Bits 8:13 - Indicates DRAM TWR value in cycles. The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 8:13 - Indicates DRAM TWR value in cycles. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_twr_f1(&mut self) -> PiTwrF1W<DdrPiReg162Spec> {

@@ -2,25 +2,26 @@
 pub type R = crate::R<Usb3DgcmdSpec>;
 #[doc = "Register `USB3_DGCMD` writer"]
 pub type W = crate::W<Usb3DgcmdSpec>;
-#[doc = "Command Type Specifies the type of command the software driver is requesting the core to perform.\n\nValue on reset: 0"]
+#[doc = "Command Type\n\nSpecifies the type of command the software driver is requesting\n\nthe core to perform.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cmdtyp {
-    #[doc = "0: Start New Configuration - No Parameter Needed"]
+    #[doc = "0: Reserved"]
     H00 = 0,
-    #[doc = "1: Start New Configuration - No Parameter Needed"]
+    #[doc = "1: Set Endpoint Configuration - 64 or 96-bit Parameter"]
     H01 = 1,
-    #[doc = "2: Start New Configuration - No Parameter Needed"]
+    #[doc = "2: Set Endpoint Transfer Resource Configuration - 32-bit Parameter"]
     H02 = 2,
-    #[doc = "3: Start New Configuration - No Parameter Needed"]
+    #[doc = "3: Get Endpoint State - No Parameter Needed"]
     H03 = 3,
-    #[doc = "5: Start New Configuration - No Parameter Needed"]
+    #[doc = "5: Clear Stall (see Set Stall) - No Parameter Needed"]
     H05 = 5,
-    #[doc = "6: Start New Configuration - No Parameter Needed"]
+    #[doc = "6: Start Transfer - 64-bit Parameter"]
     H06 = 6,
-    #[doc = "7: Start New Configuration - No Parameter Needed"]
+    #[doc = "7: Update Transfer - No Parameter Needed"]
     H07 = 7,
-    #[doc = "8: Start New Configuration - No Parameter Needed"]
+    #[doc = "8: End Transfer - No Parameter Needed"]
     H08 = 8,
     #[doc = "9: Start New Configuration - No Parameter Needed"]
     H09 = 9,
@@ -34,7 +35,7 @@ impl From<Cmdtyp> for u8 {
 impl crate::FieldSpec for Cmdtyp {
     type Ux = u8;
 }
-#[doc = "Field `CMDTYP` reader - Command Type Specifies the type of command the software driver is requesting the core to perform."]
+#[doc = "Field `CMDTYP` reader - Command Type\n\nSpecifies the type of command the software driver is requesting\n\nthe core to perform."]
 pub type CmdtypR = crate::FieldReader<Cmdtyp>;
 impl CmdtypR {
     #[doc = "Get enumerated values variant"]
@@ -53,42 +54,42 @@ impl CmdtypR {
             _ => None,
         }
     }
-    #[doc = "Start New Configuration - No Parameter Needed"]
+    #[doc = "Reserved"]
     #[inline(always)]
     pub fn is_h00(&self) -> bool {
         *self == Cmdtyp::H00
     }
-    #[doc = "Start New Configuration - No Parameter Needed"]
+    #[doc = "Set Endpoint Configuration - 64 or 96-bit Parameter"]
     #[inline(always)]
     pub fn is_h01(&self) -> bool {
         *self == Cmdtyp::H01
     }
-    #[doc = "Start New Configuration - No Parameter Needed"]
+    #[doc = "Set Endpoint Transfer Resource Configuration - 32-bit Parameter"]
     #[inline(always)]
     pub fn is_h02(&self) -> bool {
         *self == Cmdtyp::H02
     }
-    #[doc = "Start New Configuration - No Parameter Needed"]
+    #[doc = "Get Endpoint State - No Parameter Needed"]
     #[inline(always)]
     pub fn is_h03(&self) -> bool {
         *self == Cmdtyp::H03
     }
-    #[doc = "Start New Configuration - No Parameter Needed"]
+    #[doc = "Clear Stall (see Set Stall) - No Parameter Needed"]
     #[inline(always)]
     pub fn is_h05(&self) -> bool {
         *self == Cmdtyp::H05
     }
-    #[doc = "Start New Configuration - No Parameter Needed"]
+    #[doc = "Start Transfer - 64-bit Parameter"]
     #[inline(always)]
     pub fn is_h06(&self) -> bool {
         *self == Cmdtyp::H06
     }
-    #[doc = "Start New Configuration - No Parameter Needed"]
+    #[doc = "Update Transfer - No Parameter Needed"]
     #[inline(always)]
     pub fn is_h07(&self) -> bool {
         *self == Cmdtyp::H07
     }
-    #[doc = "Start New Configuration - No Parameter Needed"]
+    #[doc = "End Transfer - No Parameter Needed"]
     #[inline(always)]
     pub fn is_h08(&self) -> bool {
         *self == Cmdtyp::H08
@@ -99,49 +100,49 @@ impl CmdtypR {
         *self == Cmdtyp::H09
     }
 }
-#[doc = "Field `CMDTYP` writer - Command Type Specifies the type of command the software driver is requesting the core to perform."]
+#[doc = "Field `CMDTYP` writer - Command Type\n\nSpecifies the type of command the software driver is requesting\n\nthe core to perform."]
 pub type CmdtypW<'a, REG> = crate::FieldWriter<'a, REG, 8, Cmdtyp>;
 impl<'a, REG> CmdtypW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Start New Configuration - No Parameter Needed"]
+    #[doc = "Reserved"]
     #[inline(always)]
     pub fn h00(self) -> &'a mut crate::W<REG> {
         self.variant(Cmdtyp::H00)
     }
-    #[doc = "Start New Configuration - No Parameter Needed"]
+    #[doc = "Set Endpoint Configuration - 64 or 96-bit Parameter"]
     #[inline(always)]
     pub fn h01(self) -> &'a mut crate::W<REG> {
         self.variant(Cmdtyp::H01)
     }
-    #[doc = "Start New Configuration - No Parameter Needed"]
+    #[doc = "Set Endpoint Transfer Resource Configuration - 32-bit Parameter"]
     #[inline(always)]
     pub fn h02(self) -> &'a mut crate::W<REG> {
         self.variant(Cmdtyp::H02)
     }
-    #[doc = "Start New Configuration - No Parameter Needed"]
+    #[doc = "Get Endpoint State - No Parameter Needed"]
     #[inline(always)]
     pub fn h03(self) -> &'a mut crate::W<REG> {
         self.variant(Cmdtyp::H03)
     }
-    #[doc = "Start New Configuration - No Parameter Needed"]
+    #[doc = "Clear Stall (see Set Stall) - No Parameter Needed"]
     #[inline(always)]
     pub fn h05(self) -> &'a mut crate::W<REG> {
         self.variant(Cmdtyp::H05)
     }
-    #[doc = "Start New Configuration - No Parameter Needed"]
+    #[doc = "Start Transfer - 64-bit Parameter"]
     #[inline(always)]
     pub fn h06(self) -> &'a mut crate::W<REG> {
         self.variant(Cmdtyp::H06)
     }
-    #[doc = "Start New Configuration - No Parameter Needed"]
+    #[doc = "Update Transfer - No Parameter Needed"]
     #[inline(always)]
     pub fn h07(self) -> &'a mut crate::W<REG> {
         self.variant(Cmdtyp::H07)
     }
-    #[doc = "Start New Configuration - No Parameter Needed"]
+    #[doc = "End Transfer - No Parameter Needed"]
     #[inline(always)]
     pub fn h08(self) -> &'a mut crate::W<REG> {
         self.variant(Cmdtyp::H08)
@@ -152,19 +153,20 @@ where
         self.variant(Cmdtyp::H09)
     }
 }
-#[doc = "Field `CMDIOC` reader - Command Interrupt on Complete When this bit is set, the device controller issues a Generic Command Completion event after executing the command. Note that this interrupt is mapped to DCFG.IntrNum. Note: This field must not set to 1 if the DCTL.RunStop field is 0."]
+#[doc = "Field `CMDIOC` reader - Command Interrupt on Complete\n\nWhen this bit is set, the device controller issues a Generic\n\nCommand Completion event after executing the command.\n\nNote that this interrupt is mapped to DCFG.IntrNum.\n\nNote: This field must not set to 1 if the DCTL.RunStop field is 0."]
 pub type CmdiocR = crate::BitReader;
-#[doc = "Field `CMDIOC` writer - Command Interrupt on Complete When this bit is set, the device controller issues a Generic Command Completion event after executing the command. Note that this interrupt is mapped to DCFG.IntrNum. Note: This field must not set to 1 if the DCTL.RunStop field is 0."]
+#[doc = "Field `CMDIOC` writer - Command Interrupt on Complete\n\nWhen this bit is set, the device controller issues a Generic\n\nCommand Completion event after executing the command.\n\nNote that this interrupt is mapped to DCFG.IntrNum.\n\nNote: This field must not set to 1 if the DCTL.RunStop field is 0."]
 pub type CmdiocW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CMDACT` reader - Command Active The software sets this bit to 1 to enable the device controller to execute the generic command. The device controller sets this bit to 0 after executing the command."]
+#[doc = "Field `CMDACT` reader - Command Active\n\nThe software sets this bit to 1 to enable the device controller to\n\nexecute the generic command.\n\nThe device controller sets this bit to 0 after executing the\n\ncommand."]
 pub type CmdactR = crate::BitReader;
-#[doc = "Field `CMDACT` writer - Command Active The software sets this bit to 1 to enable the device controller to execute the generic command. The device controller sets this bit to 0 after executing the command."]
+#[doc = "Field `CMDACT` writer - Command Active\n\nThe software sets this bit to 1 to enable the device controller to\n\nexecute the generic command.\n\nThe device controller sets this bit to 0 after executing the\n\ncommand."]
 pub type CmdactW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Command Status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cmdstatus {
-    #[doc = "1: Indicates command success"]
+    #[doc = "1: CmdErr: Indicates that the device controller encountered an error while processing the command."]
     B1 = 1,
     #[doc = "0: Indicates command success"]
     B0 = 0,
@@ -190,7 +192,7 @@ impl CmdstatusR {
             _ => None,
         }
     }
-    #[doc = "Indicates command success"]
+    #[doc = "CmdErr: Indicates that the device controller encountered an error while processing the command."]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Cmdstatus::B1
@@ -202,17 +204,17 @@ impl CmdstatusR {
     }
 }
 impl R {
-    #[doc = "Bits 0:7 - Command Type Specifies the type of command the software driver is requesting the core to perform."]
+    #[doc = "Bits 0:7 - Command Type\n\nSpecifies the type of command the software driver is requesting\n\nthe core to perform."]
     #[inline(always)]
     pub fn cmdtyp(&self) -> CmdtypR {
         CmdtypR::new((self.bits & 0xff) as u8)
     }
-    #[doc = "Bit 8 - Command Interrupt on Complete When this bit is set, the device controller issues a Generic Command Completion event after executing the command. Note that this interrupt is mapped to DCFG.IntrNum. Note: This field must not set to 1 if the DCTL.RunStop field is 0."]
+    #[doc = "Bit 8 - Command Interrupt on Complete\n\nWhen this bit is set, the device controller issues a Generic\n\nCommand Completion event after executing the command.\n\nNote that this interrupt is mapped to DCFG.IntrNum.\n\nNote: This field must not set to 1 if the DCTL.RunStop field is 0."]
     #[inline(always)]
     pub fn cmdioc(&self) -> CmdiocR {
         CmdiocR::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bit 10 - Command Active The software sets this bit to 1 to enable the device controller to execute the generic command. The device controller sets this bit to 0 after executing the command."]
+    #[doc = "Bit 10 - Command Active\n\nThe software sets this bit to 1 to enable the device controller to\n\nexecute the generic command.\n\nThe device controller sets this bit to 0 after executing the\n\ncommand."]
     #[inline(always)]
     pub fn cmdact(&self) -> CmdactR {
         CmdactR::new(((self.bits >> 10) & 1) != 0)
@@ -224,19 +226,19 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Command Type Specifies the type of command the software driver is requesting the core to perform."]
+    #[doc = "Bits 0:7 - Command Type\n\nSpecifies the type of command the software driver is requesting\n\nthe core to perform."]
     #[inline(always)]
     #[must_use]
     pub fn cmdtyp(&mut self) -> CmdtypW<Usb3DgcmdSpec> {
         CmdtypW::new(self, 0)
     }
-    #[doc = "Bit 8 - Command Interrupt on Complete When this bit is set, the device controller issues a Generic Command Completion event after executing the command. Note that this interrupt is mapped to DCFG.IntrNum. Note: This field must not set to 1 if the DCTL.RunStop field is 0."]
+    #[doc = "Bit 8 - Command Interrupt on Complete\n\nWhen this bit is set, the device controller issues a Generic\n\nCommand Completion event after executing the command.\n\nNote that this interrupt is mapped to DCFG.IntrNum.\n\nNote: This field must not set to 1 if the DCTL.RunStop field is 0."]
     #[inline(always)]
     #[must_use]
     pub fn cmdioc(&mut self) -> CmdiocW<Usb3DgcmdSpec> {
         CmdiocW::new(self, 8)
     }
-    #[doc = "Bit 10 - Command Active The software sets this bit to 1 to enable the device controller to execute the generic command. The device controller sets this bit to 0 after executing the command."]
+    #[doc = "Bit 10 - Command Active\n\nThe software sets this bit to 1 to enable the device controller to\n\nexecute the generic command.\n\nThe device controller sets this bit to 0 after executing the\n\ncommand."]
     #[inline(always)]
     #[must_use]
     pub fn cmdact(&mut self) -> CmdactW<Usb3DgcmdSpec> {

@@ -3,14 +3,14 @@ pub type R = crate::R<TotalLineStaLSpec>;
 #[doc = "Register `TOTAL_LINE_STA_L` writer"]
 pub type W = crate::W<TotalLineStaLSpec>;
 #[doc = "Field `TOTAL_LINE_STA_L` reader - TOTAL_LINE \\[7:0\\]
-which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+which is detected by video \n\ncapture module. \n\nThis bit field is valid only when STRM_VALID is \n\nhigh. And STRM_VALID becomes high when two \n\nsuccessive frames are determined as stable."]
 pub type TotalLineStaLR = crate::FieldReader;
 #[doc = "Field `TOTAL_LINE_STA_L` writer - TOTAL_LINE \\[7:0\\]
-which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+which is detected by video \n\ncapture module. \n\nThis bit field is valid only when STRM_VALID is \n\nhigh. And STRM_VALID becomes high when two \n\nsuccessive frames are determined as stable."]
 pub type TotalLineStaLW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - TOTAL_LINE \\[7:0\\]
-which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+which is detected by video \n\ncapture module. \n\nThis bit field is valid only when STRM_VALID is \n\nhigh. And STRM_VALID becomes high when two \n\nsuccessive frames are determined as stable."]
     #[inline(always)]
     pub fn total_line_sta_l(&self) -> TotalLineStaLR {
         TotalLineStaLR::new((self.bits & 0xff) as u8)
@@ -18,7 +18,7 @@ which is detected by video capture module. This bit field is valid only when STR
 }
 impl W {
     #[doc = "Bits 0:7 - TOTAL_LINE \\[7:0\\]
-which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+which is detected by video \n\ncapture module. \n\nThis bit field is valid only when STRM_VALID is \n\nhigh. And STRM_VALID becomes high when two \n\nsuccessive frames are determined as stable."]
     #[inline(always)]
     #[must_use]
     pub fn total_line_sta_l(&mut self) -> TotalLineStaLW<TotalLineStaLSpec> {

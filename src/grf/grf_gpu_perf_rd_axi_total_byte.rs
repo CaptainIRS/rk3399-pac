@@ -2,19 +2,19 @@
 pub type R = crate::R<GrfGpuPerfRdAxiTotalByteSpec>;
 #[doc = "Register `GRF_GPU_PERF_RD_AXI_TOTAL_BYTE` writer"]
 pub type W = crate::W<GrfGpuPerfRdAxiTotalByteSpec>;
-#[doc = "Field `RD_AXI_TOTAL_BYTE` reader - AXI active total read bytes/ddr align read bytes"]
+#[doc = "Field `RD_AXI_TOTAL_BYTE` reader - AXI active total read bytes/ddr align read\n\nbytes"]
 pub type RdAxiTotalByteR = crate::FieldReader<u32>;
-#[doc = "Field `RD_AXI_TOTAL_BYTE` writer - AXI active total read bytes/ddr align read bytes"]
+#[doc = "Field `RD_AXI_TOTAL_BYTE` writer - AXI active total read bytes/ddr align read\n\nbytes"]
 pub type RdAxiTotalByteW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - AXI active total read bytes/ddr align read bytes"]
+    #[doc = "Bits 0:31 - AXI active total read bytes/ddr align read\n\nbytes"]
     #[inline(always)]
     pub fn rd_axi_total_byte(&self) -> RdAxiTotalByteR {
         RdAxiTotalByteR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - AXI active total read bytes/ddr align read bytes"]
+    #[doc = "Bits 0:31 - AXI active total read bytes/ddr align read\n\nbytes"]
     #[inline(always)]
     #[must_use]
     pub fn rd_axi_total_byte(&mut self) -> RdAxiTotalByteW<GrfGpuPerfRdAxiTotalByteSpec> {

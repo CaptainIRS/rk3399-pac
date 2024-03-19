@@ -3,9 +3,10 @@ pub type R = crate::R<SysCtl2Spec>;
 #[doc = "Register `SYS_CTL_2` writer"]
 pub type W = crate::W<SysCtl2Spec>;
 #[doc = "Pixel clock frequency change status control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ChaCtrl {
-    #[doc = "1: Use auto-detected status This bit's type is R/W."]
+    #[doc = "1: Use force change status"]
     B1 = 1,
     #[doc = "0: Use auto-detected status This bit's type is R/W."]
     B0 = 0,
@@ -27,7 +28,7 @@ impl ChaCtrlR {
             false => ChaCtrl::B0,
         }
     }
-    #[doc = "Use auto-detected status This bit's type is R/W."]
+    #[doc = "Use force change status"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == ChaCtrl::B1
@@ -44,7 +45,7 @@ impl<'a, REG> ChaCtrlW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Use auto-detected status This bit's type is R/W."]
+    #[doc = "Use force change status"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(ChaCtrl::B1)
@@ -55,10 +56,11 @@ where
         self.variant(ChaCtrl::B0)
     }
 }
-#[doc = "Force stream clock change status, this bit only active when CHA_CTRL is 1\n\nValue on reset: 0"]
+#[doc = "Force stream clock change status, this bit \n\nonly active when CHA_CTRL is 1\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ForceCha {
-    #[doc = "1: Force clock not change This bit's type is R/W."]
+    #[doc = "1: Force clock change. When asserted, CHA_STA is ‘1'."]
     B1 = 1,
     #[doc = "0: Force clock not change This bit's type is R/W."]
     B0 = 0,
@@ -69,7 +71,7 @@ impl From<ForceCha> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FORCE_CHA` reader - Force stream clock change status, this bit only active when CHA_CTRL is 1"]
+#[doc = "Field `FORCE_CHA` reader - Force stream clock change status, this bit \n\nonly active when CHA_CTRL is 1"]
 pub type ForceChaR = crate::BitReader<ForceCha>;
 impl ForceChaR {
     #[doc = "Get enumerated values variant"]
@@ -80,7 +82,7 @@ impl ForceChaR {
             false => ForceCha::B0,
         }
     }
-    #[doc = "Force clock not change This bit's type is R/W."]
+    #[doc = "Force clock change. When asserted, CHA_STA is ‘1'."]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == ForceCha::B1
@@ -91,13 +93,13 @@ impl ForceChaR {
         *self == ForceCha::B0
     }
 }
-#[doc = "Field `FORCE_CHA` writer - Force stream clock change status, this bit only active when CHA_CTRL is 1"]
+#[doc = "Field `FORCE_CHA` writer - Force stream clock change status, this bit \n\nonly active when CHA_CTRL is 1"]
 pub type ForceChaW<'a, REG> = crate::BitWriter1C<'a, REG, ForceCha>;
 impl<'a, REG> ForceChaW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Force clock not change This bit's type is R/W."]
+    #[doc = "Force clock change. When asserted, CHA_STA is ‘1'."]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(ForceCha::B1)
@@ -108,10 +110,11 @@ where
         self.variant(ForceCha::B0)
     }
 }
-#[doc = "Video stream clock change status, It will not affect video output\n\nValue on reset: 0"]
+#[doc = "Video stream clock change status, It will \n\nnot affect video output\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ChaSta {
-    #[doc = "1: Clock frequency not changed Write any value to update the current status."]
+    #[doc = "1: Clock frequency changed"]
     B1 = 1,
     #[doc = "0: Clock frequency not changed Write any value to update the current status."]
     B0 = 0,
@@ -122,7 +125,7 @@ impl From<ChaSta> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CHA_STA` reader - Video stream clock change status, It will not affect video output"]
+#[doc = "Field `CHA_STA` reader - Video stream clock change status, It will \n\nnot affect video output"]
 pub type ChaStaR = crate::BitReader<ChaSta>;
 impl ChaStaR {
     #[doc = "Get enumerated values variant"]
@@ -133,7 +136,7 @@ impl ChaStaR {
             false => ChaSta::B0,
         }
     }
-    #[doc = "Clock frequency not changed Write any value to update the current status."]
+    #[doc = "Clock frequency changed"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == ChaSta::B1
@@ -144,13 +147,13 @@ impl ChaStaR {
         *self == ChaSta::B0
     }
 }
-#[doc = "Field `CHA_STA` writer - Video stream clock change status, It will not affect video output"]
+#[doc = "Field `CHA_STA` writer - Video stream clock change status, It will \n\nnot affect video output"]
 pub type ChaStaW<'a, REG> = crate::BitWriter1C<'a, REG, ChaSta>;
 impl<'a, REG> ChaStaW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Clock frequency not changed Write any value to update the current status."]
+    #[doc = "Clock frequency changed"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(ChaSta::B1)
@@ -161,9 +164,9 @@ where
         self.variant(ChaSta::B0)
     }
 }
-#[doc = "Field `CHA_CRI` reader - Pixel clock change detection threshold. The incoming pixel clock input is counted continuously by the 24Mhz reference clock. This register defines a number, if the counter number change is more than this value for 2 pixel clock edges, the CHA_STA bit is asserted. This bit's type is R/W."]
+#[doc = "Field `CHA_CRI` reader - Pixel clock change detection threshold. \n\nThe incoming pixel clock input is counted \n\ncontinuously by the 24Mhz reference clock. \n\nThis register defines a number, if the \n\ncounter number change is more than this \n\nvalue for 2 pixel clock edges, the CHA_STA \n\nbit is asserted. \n\nThis bit's type is R/W."]
 pub type ChaCriR = crate::FieldReader;
-#[doc = "Field `CHA_CRI` writer - Pixel clock change detection threshold. The incoming pixel clock input is counted continuously by the 24Mhz reference clock. This register defines a number, if the counter number change is more than this value for 2 pixel clock edges, the CHA_STA bit is asserted. This bit's type is R/W."]
+#[doc = "Field `CHA_CRI` writer - Pixel clock change detection threshold. \n\nThe incoming pixel clock input is counted \n\ncontinuously by the 24Mhz reference clock. \n\nThis register defines a number, if the \n\ncounter number change is more than this \n\nvalue for 2 pixel clock edges, the CHA_STA \n\nbit is asserted. \n\nThis bit's type is R/W."]
 pub type ChaCriW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bit 0 - Pixel clock frequency change status control"]
@@ -171,17 +174,17 @@ impl R {
     pub fn cha_ctrl(&self) -> ChaCtrlR {
         ChaCtrlR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - Force stream clock change status, this bit only active when CHA_CTRL is 1"]
+    #[doc = "Bit 1 - Force stream clock change status, this bit \n\nonly active when CHA_CTRL is 1"]
     #[inline(always)]
     pub fn force_cha(&self) -> ForceChaR {
         ForceChaR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - Video stream clock change status, It will not affect video output"]
+    #[doc = "Bit 2 - Video stream clock change status, It will \n\nnot affect video output"]
     #[inline(always)]
     pub fn cha_sta(&self) -> ChaStaR {
         ChaStaR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bits 4:7 - Pixel clock change detection threshold. The incoming pixel clock input is counted continuously by the 24Mhz reference clock. This register defines a number, if the counter number change is more than this value for 2 pixel clock edges, the CHA_STA bit is asserted. This bit's type is R/W."]
+    #[doc = "Bits 4:7 - Pixel clock change detection threshold. \n\nThe incoming pixel clock input is counted \n\ncontinuously by the 24Mhz reference clock. \n\nThis register defines a number, if the \n\ncounter number change is more than this \n\nvalue for 2 pixel clock edges, the CHA_STA \n\nbit is asserted. \n\nThis bit's type is R/W."]
     #[inline(always)]
     pub fn cha_cri(&self) -> ChaCriR {
         ChaCriR::new(((self.bits >> 4) & 0x0f) as u8)
@@ -194,19 +197,19 @@ impl W {
     pub fn cha_ctrl(&mut self) -> ChaCtrlW<SysCtl2Spec> {
         ChaCtrlW::new(self, 0)
     }
-    #[doc = "Bit 1 - Force stream clock change status, this bit only active when CHA_CTRL is 1"]
+    #[doc = "Bit 1 - Force stream clock change status, this bit \n\nonly active when CHA_CTRL is 1"]
     #[inline(always)]
     #[must_use]
     pub fn force_cha(&mut self) -> ForceChaW<SysCtl2Spec> {
         ForceChaW::new(self, 1)
     }
-    #[doc = "Bit 2 - Video stream clock change status, It will not affect video output"]
+    #[doc = "Bit 2 - Video stream clock change status, It will \n\nnot affect video output"]
     #[inline(always)]
     #[must_use]
     pub fn cha_sta(&mut self) -> ChaStaW<SysCtl2Spec> {
         ChaStaW::new(self, 2)
     }
-    #[doc = "Bits 4:7 - Pixel clock change detection threshold. The incoming pixel clock input is counted continuously by the 24Mhz reference clock. This register defines a number, if the counter number change is more than this value for 2 pixel clock edges, the CHA_STA bit is asserted. This bit's type is R/W."]
+    #[doc = "Bits 4:7 - Pixel clock change detection threshold. \n\nThe incoming pixel clock input is counted \n\ncontinuously by the 24Mhz reference clock. \n\nThis register defines a number, if the \n\ncounter number change is more than this \n\nvalue for 2 pixel clock edges, the CHA_STA \n\nbit is asserted. \n\nThis bit's type is R/W."]
     #[inline(always)]
     #[must_use]
     pub fn cha_cri(&mut self) -> ChaCriW<SysCtl2Spec> {

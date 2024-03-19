@@ -3,14 +3,15 @@ pub type R = crate::R<VideoCtl4Spec>;
 #[doc = "Register `VIDEO_CTL_4` writer"]
 pub type W = crate::W<VideoCtl4Spec>;
 #[doc = "Display BIST type.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum BistType {
-    #[doc = "0: Reserved."]
+    #[doc = "0: Color bar,"]
     B00 = 0,
-    #[doc = "1: Reserved."]
+    #[doc = "1: White, gray and black bar,"]
     B01 = 1,
-    #[doc = "2: Reserved."]
+    #[doc = "2: Mobile white bar,"]
     B10 = 2,
     #[doc = "3: Reserved."]
     B11 = 3,
@@ -38,17 +39,17 @@ impl BistTypeR {
             _ => unreachable!(),
         }
     }
-    #[doc = "Reserved."]
+    #[doc = "Color bar,"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == BistType::B00
     }
-    #[doc = "Reserved."]
+    #[doc = "White, gray and black bar,"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == BistType::B01
     }
-    #[doc = "Reserved."]
+    #[doc = "Mobile white bar,"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == BistType::B10
@@ -66,17 +67,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Reserved."]
+    #[doc = "Color bar,"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(BistType::B00)
     }
-    #[doc = "Reserved."]
+    #[doc = "White, gray and black bar,"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(BistType::B01)
     }
-    #[doc = "Reserved."]
+    #[doc = "Mobile white bar,"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(BistType::B10)
@@ -88,9 +89,10 @@ where
     }
 }
 #[doc = "Control display BIST color bar width.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BistWidth {
-    #[doc = "1: Each bar is 32 pixel width."]
+    #[doc = "1: Each bar is 64 pixel width,"]
     B1 = 1,
     #[doc = "0: Each bar is 32 pixel width."]
     B0 = 0,
@@ -112,7 +114,7 @@ impl BistWidthR {
             false => BistWidth::B0,
         }
     }
-    #[doc = "Each bar is 32 pixel width."]
+    #[doc = "Each bar is 64 pixel width,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == BistWidth::B1
@@ -129,7 +131,7 @@ impl<'a, REG> BistWidthW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Each bar is 32 pixel width."]
+    #[doc = "Each bar is 64 pixel width,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(BistWidth::B1)
@@ -141,9 +143,10 @@ where
     }
 }
 #[doc = "Video BIST enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BistEn {
-    #[doc = "1: Normal operation mode."]
+    #[doc = "1: Enable video BIST,"]
     B1 = 1,
     #[doc = "0: Normal operation mode."]
     B0 = 0,
@@ -165,7 +168,7 @@ impl BistEnR {
             false => BistEn::B0,
         }
     }
-    #[doc = "Normal operation mode."]
+    #[doc = "Enable video BIST,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == BistEn::B1
@@ -182,7 +185,7 @@ impl<'a, REG> BistEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Normal operation mode."]
+    #[doc = "Enable video BIST,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(BistEn::B1)

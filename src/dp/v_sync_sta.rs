@@ -2,19 +2,19 @@
 pub type R = crate::R<VSyncStaSpec>;
 #[doc = "Register `V_SYNC_STA` writer"]
 pub type W = crate::W<VSyncStaSpec>;
-#[doc = "Field `V_SYNC_STA` reader - V_SYNC_WIDTH (vertical sync width) which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+#[doc = "Field `V_SYNC_STA` reader - V_SYNC_WIDTH (vertical sync width) which is detected \n\nby video capture module. \n\nThis bit field is valid only when STRM_VALID is high. \n\nAnd STRM_VALID becomes high when two successive \n\nframes are determined as stable."]
 pub type VSyncStaR = crate::FieldReader;
-#[doc = "Field `V_SYNC_STA` writer - V_SYNC_WIDTH (vertical sync width) which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+#[doc = "Field `V_SYNC_STA` writer - V_SYNC_WIDTH (vertical sync width) which is detected \n\nby video capture module. \n\nThis bit field is valid only when STRM_VALID is high. \n\nAnd STRM_VALID becomes high when two successive \n\nframes are determined as stable."]
 pub type VSyncStaW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - V_SYNC_WIDTH (vertical sync width) which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+    #[doc = "Bits 0:7 - V_SYNC_WIDTH (vertical sync width) which is detected \n\nby video capture module. \n\nThis bit field is valid only when STRM_VALID is high. \n\nAnd STRM_VALID becomes high when two successive \n\nframes are determined as stable."]
     #[inline(always)]
     pub fn v_sync_sta(&self) -> VSyncStaR {
         VSyncStaR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - V_SYNC_WIDTH (vertical sync width) which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+    #[doc = "Bits 0:7 - V_SYNC_WIDTH (vertical sync width) which is detected \n\nby video capture module. \n\nThis bit field is valid only when STRM_VALID is high. \n\nAnd STRM_VALID becomes high when two successive \n\nframes are determined as stable."]
     #[inline(always)]
     #[must_use]
     pub fn v_sync_sta(&mut self) -> VSyncStaW<VSyncStaSpec> {

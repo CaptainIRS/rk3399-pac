@@ -2,19 +2,19 @@
 pub type R = crate::R<GmacMmcRxtcperrfrmSpec>;
 #[doc = "Register `GMAC_MMC_RXTCPERRFRM` writer"]
 pub type W = crate::W<GmacMmcRxtcperrfrmSpec>;
-#[doc = "Field `RXTCP_ERR_FRMS` reader - Number of good IP datagrams whose TCP payload has a checksum error."]
+#[doc = "Field `RXTCP_ERR_FRMS` reader - Number of good IP datagrams whose TCP payload has a\n\nchecksum error."]
 pub type RxtcpErrFrmsR = crate::FieldReader<u32>;
-#[doc = "Field `RXTCP_ERR_FRMS` writer - Number of good IP datagrams whose TCP payload has a checksum error."]
+#[doc = "Field `RXTCP_ERR_FRMS` writer - Number of good IP datagrams whose TCP payload has a\n\nchecksum error."]
 pub type RxtcpErrFrmsW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Number of good IP datagrams whose TCP payload has a checksum error."]
+    #[doc = "Bits 0:31 - Number of good IP datagrams whose TCP payload has a\n\nchecksum error."]
     #[inline(always)]
     pub fn rxtcp_err_frms(&self) -> RxtcpErrFrmsR {
         RxtcpErrFrmsR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Number of good IP datagrams whose TCP payload has a checksum error."]
+    #[doc = "Bits 0:31 - Number of good IP datagrams whose TCP payload has a\n\nchecksum error."]
     #[inline(always)]
     #[must_use]
     pub fn rxtcp_err_frms(&mut self) -> RxtcpErrFrmsW<GmacMmcRxtcperrfrmSpec> {

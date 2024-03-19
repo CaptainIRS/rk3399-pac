@@ -2,26 +2,26 @@
 pub type R = crate::R<CecTxCntSpec>;
 #[doc = "Register `CEC_TX_CNT` writer"]
 pub type W = crate::W<CecTxCntSpec>;
-#[doc = "Field `CEC_TX_CNT` reader - CEC Transmitter Counter register 5'd0: No data needs to be transmitted 5'd1: Frame size is 1 byte 5'd16: Frame size is 16 bytes"]
+#[doc = "Field `CEC_TX_CNT` reader - CEC Transmitter Counter register 5'd0: No data needs\n\nto be transmitted 5'd1: Frame size is 1 byte\n\n5'd16: Frame size is 16 bytes"]
 pub type CecTxCntR = crate::FieldReader;
-#[doc = "Field `CEC_TX_CNT` writer - CEC Transmitter Counter register 5'd0: No data needs to be transmitted 5'd1: Frame size is 1 byte 5'd16: Frame size is 16 bytes"]
+#[doc = "Field `CEC_TX_CNT` writer - CEC Transmitter Counter register 5'd0: No data needs\n\nto be transmitted 5'd1: Frame size is 1 byte\n\n5'd16: Frame size is 16 bytes"]
 pub type CecTxCntW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
-    #[doc = "Bits 0:4 - CEC Transmitter Counter register 5'd0: No data needs to be transmitted 5'd1: Frame size is 1 byte 5'd16: Frame size is 16 bytes"]
+    #[doc = "Bits 0:4 - CEC Transmitter Counter register 5'd0: No data needs\n\nto be transmitted 5'd1: Frame size is 1 byte\n\n5'd16: Frame size is 16 bytes"]
     #[inline(always)]
     pub fn cec_tx_cnt(&self) -> CecTxCntR {
         CecTxCntR::new(self.bits & 0x1f)
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - CEC Transmitter Counter register 5'd0: No data needs to be transmitted 5'd1: Frame size is 1 byte 5'd16: Frame size is 16 bytes"]
+    #[doc = "Bits 0:4 - CEC Transmitter Counter register 5'd0: No data needs\n\nto be transmitted 5'd1: Frame size is 1 byte\n\n5'd16: Frame size is 16 bytes"]
     #[inline(always)]
     #[must_use]
     pub fn cec_tx_cnt(&mut self) -> CecTxCntW<CecTxCntSpec> {
         CecTxCntW::new(self, 0)
     }
 }
-#[doc = "CEC Transmitter Counter register 5'd0: No data needs to be transmitted 5'd1: Frame size is 1 byte 5'd16: Frame size is 16 bytes\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cec_tx_cnt::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cec_tx_cnt::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "CEC TX Frame Size Register\n\nThis register indicates the size of the frame in bytes (including header and data blocks),\n\nwhich are available in the transmitter data buffer.\n\nNote: When the value is zero, the CEC controller ignores the send command triggered by\n\nsoftware. When the transmission is done (no matter success or not), the current value is\n\nheld until it is overwritten by software.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cec_tx_cnt::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cec_tx_cnt::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CecTxCntSpec;
 impl crate::RegisterSpec for CecTxCntSpec {
     type Ux = u8;

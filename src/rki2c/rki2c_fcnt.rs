@@ -1,9 +1,9 @@
 #[doc = "Register `RKI2C_FCNT` reader"]
 pub type R = crate::R<Rki2cFcntSpec>;
-#[doc = "Field `FCNT` reader - finished count the count of data which has been transmitted or received for debug purpose"]
+#[doc = "Field `FCNT` reader - finished count\n\nthe count of data which has been transmitted or received\n\nfor debug purpose"]
 pub type FcntR = crate::FieldReader;
 impl R {
-    #[doc = "Bits 0:5 - finished count the count of data which has been transmitted or received for debug purpose"]
+    #[doc = "Bits 0:5 - finished count\n\nthe count of data which has been transmitted or received\n\nfor debug purpose"]
     #[inline(always)]
     pub fn fcnt(&self) -> FcntR {
         FcntR::new((self.bits & 0x3f) as u8)

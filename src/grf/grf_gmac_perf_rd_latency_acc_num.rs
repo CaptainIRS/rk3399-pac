@@ -2,19 +2,19 @@
 pub type R = crate::R<GrfGmacPerfRdLatencyAccNumSpec>;
 #[doc = "Register `GRF_GMAC_PERF_RD_LATENCY_ACC_NUM` writer"]
 pub type W = crate::W<GrfGmacPerfRdLatencyAccNumSpec>;
-#[doc = "Field `RD_LATENCY_ACC_CNT_R` reader - AXI read latency (>sw_rd_latency_thr) total number"]
+#[doc = "Field `RD_LATENCY_ACC_CNT_R` reader - AXI read latency (>sw_rd_latency_thr)\n\ntotal number"]
 pub type RdLatencyAccCntRR = crate::FieldReader<u32>;
-#[doc = "Field `RD_LATENCY_ACC_CNT_R` writer - AXI read latency (>sw_rd_latency_thr) total number"]
+#[doc = "Field `RD_LATENCY_ACC_CNT_R` writer - AXI read latency (>sw_rd_latency_thr)\n\ntotal number"]
 pub type RdLatencyAccCntRW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - AXI read latency (>sw_rd_latency_thr) total number"]
+    #[doc = "Bits 0:31 - AXI read latency (>sw_rd_latency_thr)\n\ntotal number"]
     #[inline(always)]
     pub fn rd_latency_acc_cnt_r(&self) -> RdLatencyAccCntRR {
         RdLatencyAccCntRR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - AXI read latency (>sw_rd_latency_thr) total number"]
+    #[doc = "Bits 0:31 - AXI read latency (>sw_rd_latency_thr)\n\ntotal number"]
     #[inline(always)]
     #[must_use]
     pub fn rd_latency_acc_cnt_r(&mut self) -> RdLatencyAccCntRW<GrfGmacPerfRdLatencyAccNumSpec> {

@@ -2,19 +2,20 @@
 pub type R = crate::R<EmmccoreHostctrl2Spec>;
 #[doc = "Register `EMMCCORE_HOSTCTRL2` writer"]
 pub type W = crate::W<EmmccoreHostctrl2Spec>;
-#[doc = "UHS Mode Select. This field is used to select one of UHS-I modes and effective when 1.8V Signaling Enable is set to 1. If Preset Value Enable in the Host Control 2 register is set to 1, Host Controller sets SDCLK Frequency Select, Clock Generator Select in the Clock Control register and Driver Strength Select according to Preset Value registers. In this case, one of preset value registers is selected by this field. Host Driver needs to reset SD Clock Enable before changing this field to avoid generating clock glitch. After setting this field, Host Driver sets SD Clock Enable again.\n\nValue on reset: 0"]
+#[doc = "UHS Mode Select.\n\nThis field is used to select one of UHS-I modes and effective\n\nwhen 1.8V Signaling Enable is set to 1.\n\nIf Preset Value Enable in the Host Control 2 register is set to 1,\n\nHost Controller sets SDCLK Frequency Select, Clock Generator\n\nSelect in the Clock Control register and Driver Strength Select\n\naccording to Preset Value registers. In this case, one of preset\n\nvalue registers is selected by this field. Host Driver needs to reset\n\nSD Clock Enable before changing this field to avoid generating\n\nclock glitch. After setting this field, Host Driver sets SD Clock\n\nEnable again.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Uhsmodeselect {
-    #[doc = "0: HS400 others: Reserved When SDR50, SDR104 or DDR50 is selected for SDIO card, interrupt detection at the block gap shall not be used. Read Wait timing is changed for these modes. Refer to the SDIO Specification Version 3.00 for more detail."]
+    #[doc = "0: SDR12"]
     H0 = 0,
-    #[doc = "1: HS400 others: Reserved When SDR50, SDR104 or DDR50 is selected for SDIO card, interrupt detection at the block gap shall not be used. Read Wait timing is changed for these modes. Refer to the SDIO Specification Version 3.00 for more detail."]
+    #[doc = "1: SDR25"]
     H1 = 1,
-    #[doc = "2: HS400 others: Reserved When SDR50, SDR104 or DDR50 is selected for SDIO card, interrupt detection at the block gap shall not be used. Read Wait timing is changed for these modes. Refer to the SDIO Specification Version 3.00 for more detail."]
+    #[doc = "2: SDR50"]
     H2 = 2,
-    #[doc = "3: HS400 others: Reserved When SDR50, SDR104 or DDR50 is selected for SDIO card, interrupt detection at the block gap shall not be used. Read Wait timing is changed for these modes. Refer to the SDIO Specification Version 3.00 for more detail."]
+    #[doc = "3: SDR104"]
     H3 = 3,
-    #[doc = "4: HS400 others: Reserved When SDR50, SDR104 or DDR50 is selected for SDIO card, interrupt detection at the block gap shall not be used. Read Wait timing is changed for these modes. Refer to the SDIO Specification Version 3.00 for more detail."]
+    #[doc = "4: DDR50"]
     H4 = 4,
     #[doc = "5: HS400 others: Reserved When SDR50, SDR104 or DDR50 is selected for SDIO card, interrupt detection at the block gap shall not be used. Read Wait timing is changed for these modes. Refer to the SDIO Specification Version 3.00 for more detail."]
     H5 = 5,
@@ -28,7 +29,7 @@ impl From<Uhsmodeselect> for u8 {
 impl crate::FieldSpec for Uhsmodeselect {
     type Ux = u8;
 }
-#[doc = "Field `UHSMODESELECT` reader - UHS Mode Select. This field is used to select one of UHS-I modes and effective when 1.8V Signaling Enable is set to 1. If Preset Value Enable in the Host Control 2 register is set to 1, Host Controller sets SDCLK Frequency Select, Clock Generator Select in the Clock Control register and Driver Strength Select according to Preset Value registers. In this case, one of preset value registers is selected by this field. Host Driver needs to reset SD Clock Enable before changing this field to avoid generating clock glitch. After setting this field, Host Driver sets SD Clock Enable again."]
+#[doc = "Field `UHSMODESELECT` reader - UHS Mode Select.\n\nThis field is used to select one of UHS-I modes and effective\n\nwhen 1.8V Signaling Enable is set to 1.\n\nIf Preset Value Enable in the Host Control 2 register is set to 1,\n\nHost Controller sets SDCLK Frequency Select, Clock Generator\n\nSelect in the Clock Control register and Driver Strength Select\n\naccording to Preset Value registers. In this case, one of preset\n\nvalue registers is selected by this field. Host Driver needs to reset\n\nSD Clock Enable before changing this field to avoid generating\n\nclock glitch. After setting this field, Host Driver sets SD Clock\n\nEnable again."]
 pub type UhsmodeselectR = crate::FieldReader<Uhsmodeselect>;
 impl UhsmodeselectR {
     #[doc = "Get enumerated values variant"]
@@ -44,27 +45,27 @@ impl UhsmodeselectR {
             _ => None,
         }
     }
-    #[doc = "HS400 others: Reserved When SDR50, SDR104 or DDR50 is selected for SDIO card, interrupt detection at the block gap shall not be used. Read Wait timing is changed for these modes. Refer to the SDIO Specification Version 3.00 for more detail."]
+    #[doc = "SDR12"]
     #[inline(always)]
     pub fn is_h0(&self) -> bool {
         *self == Uhsmodeselect::H0
     }
-    #[doc = "HS400 others: Reserved When SDR50, SDR104 or DDR50 is selected for SDIO card, interrupt detection at the block gap shall not be used. Read Wait timing is changed for these modes. Refer to the SDIO Specification Version 3.00 for more detail."]
+    #[doc = "SDR25"]
     #[inline(always)]
     pub fn is_h1(&self) -> bool {
         *self == Uhsmodeselect::H1
     }
-    #[doc = "HS400 others: Reserved When SDR50, SDR104 or DDR50 is selected for SDIO card, interrupt detection at the block gap shall not be used. Read Wait timing is changed for these modes. Refer to the SDIO Specification Version 3.00 for more detail."]
+    #[doc = "SDR50"]
     #[inline(always)]
     pub fn is_h2(&self) -> bool {
         *self == Uhsmodeselect::H2
     }
-    #[doc = "HS400 others: Reserved When SDR50, SDR104 or DDR50 is selected for SDIO card, interrupt detection at the block gap shall not be used. Read Wait timing is changed for these modes. Refer to the SDIO Specification Version 3.00 for more detail."]
+    #[doc = "SDR104"]
     #[inline(always)]
     pub fn is_h3(&self) -> bool {
         *self == Uhsmodeselect::H3
     }
-    #[doc = "HS400 others: Reserved When SDR50, SDR104 or DDR50 is selected for SDIO card, interrupt detection at the block gap shall not be used. Read Wait timing is changed for these modes. Refer to the SDIO Specification Version 3.00 for more detail."]
+    #[doc = "DDR50"]
     #[inline(always)]
     pub fn is_h4(&self) -> bool {
         *self == Uhsmodeselect::H4
@@ -75,34 +76,34 @@ impl UhsmodeselectR {
         *self == Uhsmodeselect::H5
     }
 }
-#[doc = "Field `UHSMODESELECT` writer - UHS Mode Select. This field is used to select one of UHS-I modes and effective when 1.8V Signaling Enable is set to 1. If Preset Value Enable in the Host Control 2 register is set to 1, Host Controller sets SDCLK Frequency Select, Clock Generator Select in the Clock Control register and Driver Strength Select according to Preset Value registers. In this case, one of preset value registers is selected by this field. Host Driver needs to reset SD Clock Enable before changing this field to avoid generating clock glitch. After setting this field, Host Driver sets SD Clock Enable again."]
+#[doc = "Field `UHSMODESELECT` writer - UHS Mode Select.\n\nThis field is used to select one of UHS-I modes and effective\n\nwhen 1.8V Signaling Enable is set to 1.\n\nIf Preset Value Enable in the Host Control 2 register is set to 1,\n\nHost Controller sets SDCLK Frequency Select, Clock Generator\n\nSelect in the Clock Control register and Driver Strength Select\n\naccording to Preset Value registers. In this case, one of preset\n\nvalue registers is selected by this field. Host Driver needs to reset\n\nSD Clock Enable before changing this field to avoid generating\n\nclock glitch. After setting this field, Host Driver sets SD Clock\n\nEnable again."]
 pub type UhsmodeselectW<'a, REG> = crate::FieldWriter<'a, REG, 3, Uhsmodeselect>;
 impl<'a, REG> UhsmodeselectW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "HS400 others: Reserved When SDR50, SDR104 or DDR50 is selected for SDIO card, interrupt detection at the block gap shall not be used. Read Wait timing is changed for these modes. Refer to the SDIO Specification Version 3.00 for more detail."]
+    #[doc = "SDR12"]
     #[inline(always)]
     pub fn h0(self) -> &'a mut crate::W<REG> {
         self.variant(Uhsmodeselect::H0)
     }
-    #[doc = "HS400 others: Reserved When SDR50, SDR104 or DDR50 is selected for SDIO card, interrupt detection at the block gap shall not be used. Read Wait timing is changed for these modes. Refer to the SDIO Specification Version 3.00 for more detail."]
+    #[doc = "SDR25"]
     #[inline(always)]
     pub fn h1(self) -> &'a mut crate::W<REG> {
         self.variant(Uhsmodeselect::H1)
     }
-    #[doc = "HS400 others: Reserved When SDR50, SDR104 or DDR50 is selected for SDIO card, interrupt detection at the block gap shall not be used. Read Wait timing is changed for these modes. Refer to the SDIO Specification Version 3.00 for more detail."]
+    #[doc = "SDR50"]
     #[inline(always)]
     pub fn h2(self) -> &'a mut crate::W<REG> {
         self.variant(Uhsmodeselect::H2)
     }
-    #[doc = "HS400 others: Reserved When SDR50, SDR104 or DDR50 is selected for SDIO card, interrupt detection at the block gap shall not be used. Read Wait timing is changed for these modes. Refer to the SDIO Specification Version 3.00 for more detail."]
+    #[doc = "SDR104"]
     #[inline(always)]
     pub fn h3(self) -> &'a mut crate::W<REG> {
         self.variant(Uhsmodeselect::H3)
     }
-    #[doc = "HS400 others: Reserved When SDR50, SDR104 or DDR50 is selected for SDIO card, interrupt detection at the block gap shall not be used. Read Wait timing is changed for these modes. Refer to the SDIO Specification Version 3.00 for more detail."]
+    #[doc = "DDR50"]
     #[inline(always)]
     pub fn h4(self) -> &'a mut crate::W<REG> {
         self.variant(Uhsmodeselect::H4)
@@ -113,10 +114,11 @@ where
         self.variant(Uhsmodeselect::H5)
     }
 }
-#[doc = "This bit is set to 1 to start tuning procedure and automatically cleared when tuning procedure is completed. The result of tuning is indicated to Sampling Clock Select. Tuning procedure is aborted by writing 0 for more detail about tuning procedure.\n\nValue on reset: 0"]
+#[doc = "This bit is set to 1 to start tuning procedure and automatically\n\ncleared when tuning procedure is completed. The result of tuning\n\nis indicated to Sampling Clock Select. Tuning procedure is\n\naborted by writing 0 for more detail about tuning procedure.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Executetuning {
-    #[doc = "1: Not Tuned or Tuning Completed"]
+    #[doc = "1: Execute Tuning"]
     B1 = 1,
     #[doc = "0: Not Tuned or Tuning Completed"]
     B0 = 0,
@@ -127,7 +129,7 @@ impl From<Executetuning> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EXECUTETUNING` reader - This bit is set to 1 to start tuning procedure and automatically cleared when tuning procedure is completed. The result of tuning is indicated to Sampling Clock Select. Tuning procedure is aborted by writing 0 for more detail about tuning procedure."]
+#[doc = "Field `EXECUTETUNING` reader - This bit is set to 1 to start tuning procedure and automatically\n\ncleared when tuning procedure is completed. The result of tuning\n\nis indicated to Sampling Clock Select. Tuning procedure is\n\naborted by writing 0 for more detail about tuning procedure."]
 pub type ExecutetuningR = crate::BitReader<Executetuning>;
 impl ExecutetuningR {
     #[doc = "Get enumerated values variant"]
@@ -138,7 +140,7 @@ impl ExecutetuningR {
             false => Executetuning::B0,
         }
     }
-    #[doc = "Not Tuned or Tuning Completed"]
+    #[doc = "Execute Tuning"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Executetuning::B1
@@ -149,13 +151,13 @@ impl ExecutetuningR {
         *self == Executetuning::B0
     }
 }
-#[doc = "Field `EXECUTETUNING` writer - This bit is set to 1 to start tuning procedure and automatically cleared when tuning procedure is completed. The result of tuning is indicated to Sampling Clock Select. Tuning procedure is aborted by writing 0 for more detail about tuning procedure."]
+#[doc = "Field `EXECUTETUNING` writer - This bit is set to 1 to start tuning procedure and automatically\n\ncleared when tuning procedure is completed. The result of tuning\n\nis indicated to Sampling Clock Select. Tuning procedure is\n\naborted by writing 0 for more detail about tuning procedure."]
 pub type ExecutetuningW<'a, REG> = crate::BitWriter<'a, REG, Executetuning>;
 impl<'a, REG> ExecutetuningW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Not Tuned or Tuning Completed"]
+    #[doc = "Execute Tuning"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Executetuning::B1)
@@ -166,10 +168,11 @@ where
         self.variant(Executetuning::B0)
     }
 }
-#[doc = "Sampling Clock Select This bit is set by tuning procedure when Execute Tuning is cleared. Writing 1 to this bit is meaningless and ignored. Setting 1 means that tuning is completed successfully and setting 0 means that tuning is failed. Host Controller uses this bit to select sampling clock to receive CMD and DAT. This bit is cleared by writing 0. Change of this bit is not allowed while the Host Controller is receiving response or a read data block.\n\nValue on reset: 0"]
+#[doc = "Sampling Clock Select\n\nThis bit is set by tuning procedure when Execute Tuning is\n\ncleared. Writing 1 to this bit is meaningless and ignored. Setting\n\n1 means that tuning is completed successfully and setting 0\n\nmeans that tuning is failed. Host Controller uses this bit to select\n\nsampling clock to receive CMD and DAT. This bit is cleared by\n\nwriting 0. Change of this bit is not allowed while the Host\n\nController is receiving response or a read data block.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Samplingclockselect {
-    #[doc = "1: Fixed clock is used to sample data"]
+    #[doc = "1: Tuned clock is used to sample data"]
     B1 = 1,
     #[doc = "0: Fixed clock is used to sample data"]
     B0 = 0,
@@ -180,7 +183,7 @@ impl From<Samplingclockselect> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SAMPLINGCLOCKSELECT` reader - Sampling Clock Select This bit is set by tuning procedure when Execute Tuning is cleared. Writing 1 to this bit is meaningless and ignored. Setting 1 means that tuning is completed successfully and setting 0 means that tuning is failed. Host Controller uses this bit to select sampling clock to receive CMD and DAT. This bit is cleared by writing 0. Change of this bit is not allowed while the Host Controller is receiving response or a read data block."]
+#[doc = "Field `SAMPLINGCLOCKSELECT` reader - Sampling Clock Select\n\nThis bit is set by tuning procedure when Execute Tuning is\n\ncleared. Writing 1 to this bit is meaningless and ignored. Setting\n\n1 means that tuning is completed successfully and setting 0\n\nmeans that tuning is failed. Host Controller uses this bit to select\n\nsampling clock to receive CMD and DAT. This bit is cleared by\n\nwriting 0. Change of this bit is not allowed while the Host\n\nController is receiving response or a read data block."]
 pub type SamplingclockselectR = crate::BitReader<Samplingclockselect>;
 impl SamplingclockselectR {
     #[doc = "Get enumerated values variant"]
@@ -191,7 +194,7 @@ impl SamplingclockselectR {
             false => Samplingclockselect::B0,
         }
     }
-    #[doc = "Fixed clock is used to sample data"]
+    #[doc = "Tuned clock is used to sample data"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Samplingclockselect::B1
@@ -202,13 +205,13 @@ impl SamplingclockselectR {
         *self == Samplingclockselect::B0
     }
 }
-#[doc = "Field `SAMPLINGCLOCKSELECT` writer - Sampling Clock Select This bit is set by tuning procedure when Execute Tuning is cleared. Writing 1 to this bit is meaningless and ignored. Setting 1 means that tuning is completed successfully and setting 0 means that tuning is failed. Host Controller uses this bit to select sampling clock to receive CMD and DAT. This bit is cleared by writing 0. Change of this bit is not allowed while the Host Controller is receiving response or a read data block."]
+#[doc = "Field `SAMPLINGCLOCKSELECT` writer - Sampling Clock Select\n\nThis bit is set by tuning procedure when Execute Tuning is\n\ncleared. Writing 1 to this bit is meaningless and ignored. Setting\n\n1 means that tuning is completed successfully and setting 0\n\nmeans that tuning is failed. Host Controller uses this bit to select\n\nsampling clock to receive CMD and DAT. This bit is cleared by\n\nwriting 0. Change of this bit is not allowed while the Host\n\nController is receiving response or a read data block."]
 pub type SamplingclockselectW<'a, REG> = crate::BitWriter<'a, REG, Samplingclockselect>;
 impl<'a, REG> SamplingclockselectW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Fixed clock is used to sample data"]
+    #[doc = "Tuned clock is used to sample data"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Samplingclockselect::B1)
@@ -219,11 +222,11 @@ where
         self.variant(Samplingclockselect::B0)
     }
 }
-#[doc = "Asynchronous Interrupt Enable This bit can be set to 1 if a card support asynchronous interrupt and Asynchronous Interrupt Support is set to 1 in the Capabilities register. Asynchronous interrupt is effective when DAT\\[1\\]
-interrupt is used in 4-bit SD mode(and zero is set to Interrupt Pin Select in the Shared Bus Control register). If this bit is set to 1, the Host Driver can stop the SDCLK during asynchronous interrupt period to save power. During this period, the Host Controller continues to deliver CardInterrupt to the host when it is asserted by the card.\n\nValue on reset: 0"]
+#[doc = "Asynchronous Interrupt Enable\n\nThis bit can be set to 1 if a card support asynchronous interrupt\n\nand Asynchronous Interrupt Support is set to 1 in the Capabilities\n\nregister. Asynchronous interrupt is effective when DAT\\[1\\]\n\ninterrupt is used in 4-bit SD mode(and zero is set to Interrupt Pin\n\nSelect in the Shared Bus Control register). If this bit is set to 1,\n\nthe Host Driver can stop the SDCLK during asynchronous\n\ninterrupt period to save power. During this period, the Host\n\nController continues to deliver CardInterrupt to the host when it\n\nis asserted by the card.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Asyninten {
-    #[doc = "1: Disabled"]
+    #[doc = "1: Enabled"]
     B1 = 1,
     #[doc = "0: Disabled"]
     B0 = 0,
@@ -234,8 +237,7 @@ impl From<Asyninten> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ASYNINTEN` reader - Asynchronous Interrupt Enable This bit can be set to 1 if a card support asynchronous interrupt and Asynchronous Interrupt Support is set to 1 in the Capabilities register. Asynchronous interrupt is effective when DAT\\[1\\]
-interrupt is used in 4-bit SD mode(and zero is set to Interrupt Pin Select in the Shared Bus Control register). If this bit is set to 1, the Host Driver can stop the SDCLK during asynchronous interrupt period to save power. During this period, the Host Controller continues to deliver CardInterrupt to the host when it is asserted by the card."]
+#[doc = "Field `ASYNINTEN` reader - Asynchronous Interrupt Enable\n\nThis bit can be set to 1 if a card support asynchronous interrupt\n\nand Asynchronous Interrupt Support is set to 1 in the Capabilities\n\nregister. Asynchronous interrupt is effective when DAT\\[1\\]\n\ninterrupt is used in 4-bit SD mode(and zero is set to Interrupt Pin\n\nSelect in the Shared Bus Control register). If this bit is set to 1,\n\nthe Host Driver can stop the SDCLK during asynchronous\n\ninterrupt period to save power. During this period, the Host\n\nController continues to deliver CardInterrupt to the host when it\n\nis asserted by the card."]
 pub type AsynintenR = crate::BitReader<Asyninten>;
 impl AsynintenR {
     #[doc = "Get enumerated values variant"]
@@ -246,7 +248,7 @@ impl AsynintenR {
             false => Asyninten::B0,
         }
     }
-    #[doc = "Disabled"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Asyninten::B1
@@ -257,14 +259,13 @@ impl AsynintenR {
         *self == Asyninten::B0
     }
 }
-#[doc = "Field `ASYNINTEN` writer - Asynchronous Interrupt Enable This bit can be set to 1 if a card support asynchronous interrupt and Asynchronous Interrupt Support is set to 1 in the Capabilities register. Asynchronous interrupt is effective when DAT\\[1\\]
-interrupt is used in 4-bit SD mode(and zero is set to Interrupt Pin Select in the Shared Bus Control register). If this bit is set to 1, the Host Driver can stop the SDCLK during asynchronous interrupt period to save power. During this period, the Host Controller continues to deliver CardInterrupt to the host when it is asserted by the card."]
+#[doc = "Field `ASYNINTEN` writer - Asynchronous Interrupt Enable\n\nThis bit can be set to 1 if a card support asynchronous interrupt\n\nand Asynchronous Interrupt Support is set to 1 in the Capabilities\n\nregister. Asynchronous interrupt is effective when DAT\\[1\\]\n\ninterrupt is used in 4-bit SD mode(and zero is set to Interrupt Pin\n\nSelect in the Shared Bus Control register). If this bit is set to 1,\n\nthe Host Driver can stop the SDCLK during asynchronous\n\ninterrupt period to save power. During this period, the Host\n\nController continues to deliver CardInterrupt to the host when it\n\nis asserted by the card."]
 pub type AsynintenW<'a, REG> = crate::BitWriter<'a, REG, Asyninten>;
 impl<'a, REG> AsynintenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disabled"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Asyninten::B1)
@@ -276,9 +277,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Presetvalueenable {
-    #[doc = "1: SDCLK and Driver Strength are controlled by Host Driver As the operating SDCLK frequency and I/O driver strength depend on the Host System implementation, it is difficult to determine these parameters in the Standard Host Driver. When Preset Value Enable is set to automatic. This bit enablesthe functions defined in the Preset Value registers. If this bit is set to 0, SDCLK Frequency Select, Clock Generator Select in the Clock Control register and Driver Strength Select in Host Control 2 register are set by Host Driver. If this bit is set to 1, SDCLK Frequency Select, Clock Generator Select in the Clock Control register and Driver Strength Select in Host Control 2 register are set by Host Controller as specified in the Preset Value registers."]
+    #[doc = "1: Automatic Selection by Preset Value are Enabled"]
     B1 = 1,
     #[doc = "0: SDCLK and Driver Strength are controlled by Host Driver As the operating SDCLK frequency and I/O driver strength depend on the Host System implementation, it is difficult to determine these parameters in the Standard Host Driver. When Preset Value Enable is set to automatic. This bit enablesthe functions defined in the Preset Value registers. If this bit is set to 0, SDCLK Frequency Select, Clock Generator Select in the Clock Control register and Driver Strength Select in Host Control 2 register are set by Host Driver. If this bit is set to 1, SDCLK Frequency Select, Clock Generator Select in the Clock Control register and Driver Strength Select in Host Control 2 register are set by Host Controller as specified in the Preset Value registers."]
     B0 = 0,
@@ -300,7 +302,7 @@ impl PresetvalueenableR {
             false => Presetvalueenable::B0,
         }
     }
-    #[doc = "SDCLK and Driver Strength are controlled by Host Driver As the operating SDCLK frequency and I/O driver strength depend on the Host System implementation, it is difficult to determine these parameters in the Standard Host Driver. When Preset Value Enable is set to automatic. This bit enablesthe functions defined in the Preset Value registers. If this bit is set to 0, SDCLK Frequency Select, Clock Generator Select in the Clock Control register and Driver Strength Select in Host Control 2 register are set by Host Driver. If this bit is set to 1, SDCLK Frequency Select, Clock Generator Select in the Clock Control register and Driver Strength Select in Host Control 2 register are set by Host Controller as specified in the Preset Value registers."]
+    #[doc = "Automatic Selection by Preset Value are Enabled"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Presetvalueenable::B1
@@ -317,7 +319,7 @@ impl<'a, REG> PresetvalueenableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "SDCLK and Driver Strength are controlled by Host Driver As the operating SDCLK frequency and I/O driver strength depend on the Host System implementation, it is difficult to determine these parameters in the Standard Host Driver. When Preset Value Enable is set to automatic. This bit enablesthe functions defined in the Preset Value registers. If this bit is set to 0, SDCLK Frequency Select, Clock Generator Select in the Clock Control register and Driver Strength Select in Host Control 2 register are set by Host Driver. If this bit is set to 1, SDCLK Frequency Select, Clock Generator Select in the Clock Control register and Driver Strength Select in Host Control 2 register are set by Host Controller as specified in the Preset Value registers."]
+    #[doc = "Automatic Selection by Preset Value are Enabled"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Presetvalueenable::B1)
@@ -329,23 +331,22 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 0:2 - UHS Mode Select. This field is used to select one of UHS-I modes and effective when 1.8V Signaling Enable is set to 1. If Preset Value Enable in the Host Control 2 register is set to 1, Host Controller sets SDCLK Frequency Select, Clock Generator Select in the Clock Control register and Driver Strength Select according to Preset Value registers. In this case, one of preset value registers is selected by this field. Host Driver needs to reset SD Clock Enable before changing this field to avoid generating clock glitch. After setting this field, Host Driver sets SD Clock Enable again."]
+    #[doc = "Bits 0:2 - UHS Mode Select.\n\nThis field is used to select one of UHS-I modes and effective\n\nwhen 1.8V Signaling Enable is set to 1.\n\nIf Preset Value Enable in the Host Control 2 register is set to 1,\n\nHost Controller sets SDCLK Frequency Select, Clock Generator\n\nSelect in the Clock Control register and Driver Strength Select\n\naccording to Preset Value registers. In this case, one of preset\n\nvalue registers is selected by this field. Host Driver needs to reset\n\nSD Clock Enable before changing this field to avoid generating\n\nclock glitch. After setting this field, Host Driver sets SD Clock\n\nEnable again."]
     #[inline(always)]
     pub fn uhsmodeselect(&self) -> UhsmodeselectR {
         UhsmodeselectR::new((self.bits & 7) as u8)
     }
-    #[doc = "Bit 6 - This bit is set to 1 to start tuning procedure and automatically cleared when tuning procedure is completed. The result of tuning is indicated to Sampling Clock Select. Tuning procedure is aborted by writing 0 for more detail about tuning procedure."]
+    #[doc = "Bit 6 - This bit is set to 1 to start tuning procedure and automatically\n\ncleared when tuning procedure is completed. The result of tuning\n\nis indicated to Sampling Clock Select. Tuning procedure is\n\naborted by writing 0 for more detail about tuning procedure."]
     #[inline(always)]
     pub fn executetuning(&self) -> ExecutetuningR {
         ExecutetuningR::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 7 - Sampling Clock Select This bit is set by tuning procedure when Execute Tuning is cleared. Writing 1 to this bit is meaningless and ignored. Setting 1 means that tuning is completed successfully and setting 0 means that tuning is failed. Host Controller uses this bit to select sampling clock to receive CMD and DAT. This bit is cleared by writing 0. Change of this bit is not allowed while the Host Controller is receiving response or a read data block."]
+    #[doc = "Bit 7 - Sampling Clock Select\n\nThis bit is set by tuning procedure when Execute Tuning is\n\ncleared. Writing 1 to this bit is meaningless and ignored. Setting\n\n1 means that tuning is completed successfully and setting 0\n\nmeans that tuning is failed. Host Controller uses this bit to select\n\nsampling clock to receive CMD and DAT. This bit is cleared by\n\nwriting 0. Change of this bit is not allowed while the Host\n\nController is receiving response or a read data block."]
     #[inline(always)]
     pub fn samplingclockselect(&self) -> SamplingclockselectR {
         SamplingclockselectR::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bit 14 - Asynchronous Interrupt Enable This bit can be set to 1 if a card support asynchronous interrupt and Asynchronous Interrupt Support is set to 1 in the Capabilities register. Asynchronous interrupt is effective when DAT\\[1\\]
-interrupt is used in 4-bit SD mode(and zero is set to Interrupt Pin Select in the Shared Bus Control register). If this bit is set to 1, the Host Driver can stop the SDCLK during asynchronous interrupt period to save power. During this period, the Host Controller continues to deliver CardInterrupt to the host when it is asserted by the card."]
+    #[doc = "Bit 14 - Asynchronous Interrupt Enable\n\nThis bit can be set to 1 if a card support asynchronous interrupt\n\nand Asynchronous Interrupt Support is set to 1 in the Capabilities\n\nregister. Asynchronous interrupt is effective when DAT\\[1\\]\n\ninterrupt is used in 4-bit SD mode(and zero is set to Interrupt Pin\n\nSelect in the Shared Bus Control register). If this bit is set to 1,\n\nthe Host Driver can stop the SDCLK during asynchronous\n\ninterrupt period to save power. During this period, the Host\n\nController continues to deliver CardInterrupt to the host when it\n\nis asserted by the card."]
     #[inline(always)]
     pub fn asyninten(&self) -> AsynintenR {
         AsynintenR::new(((self.bits >> 14) & 1) != 0)
@@ -357,26 +358,25 @@ interrupt is used in 4-bit SD mode(and zero is set to Interrupt Pin Select in th
     }
 }
 impl W {
-    #[doc = "Bits 0:2 - UHS Mode Select. This field is used to select one of UHS-I modes and effective when 1.8V Signaling Enable is set to 1. If Preset Value Enable in the Host Control 2 register is set to 1, Host Controller sets SDCLK Frequency Select, Clock Generator Select in the Clock Control register and Driver Strength Select according to Preset Value registers. In this case, one of preset value registers is selected by this field. Host Driver needs to reset SD Clock Enable before changing this field to avoid generating clock glitch. After setting this field, Host Driver sets SD Clock Enable again."]
+    #[doc = "Bits 0:2 - UHS Mode Select.\n\nThis field is used to select one of UHS-I modes and effective\n\nwhen 1.8V Signaling Enable is set to 1.\n\nIf Preset Value Enable in the Host Control 2 register is set to 1,\n\nHost Controller sets SDCLK Frequency Select, Clock Generator\n\nSelect in the Clock Control register and Driver Strength Select\n\naccording to Preset Value registers. In this case, one of preset\n\nvalue registers is selected by this field. Host Driver needs to reset\n\nSD Clock Enable before changing this field to avoid generating\n\nclock glitch. After setting this field, Host Driver sets SD Clock\n\nEnable again."]
     #[inline(always)]
     #[must_use]
     pub fn uhsmodeselect(&mut self) -> UhsmodeselectW<EmmccoreHostctrl2Spec> {
         UhsmodeselectW::new(self, 0)
     }
-    #[doc = "Bit 6 - This bit is set to 1 to start tuning procedure and automatically cleared when tuning procedure is completed. The result of tuning is indicated to Sampling Clock Select. Tuning procedure is aborted by writing 0 for more detail about tuning procedure."]
+    #[doc = "Bit 6 - This bit is set to 1 to start tuning procedure and automatically\n\ncleared when tuning procedure is completed. The result of tuning\n\nis indicated to Sampling Clock Select. Tuning procedure is\n\naborted by writing 0 for more detail about tuning procedure."]
     #[inline(always)]
     #[must_use]
     pub fn executetuning(&mut self) -> ExecutetuningW<EmmccoreHostctrl2Spec> {
         ExecutetuningW::new(self, 6)
     }
-    #[doc = "Bit 7 - Sampling Clock Select This bit is set by tuning procedure when Execute Tuning is cleared. Writing 1 to this bit is meaningless and ignored. Setting 1 means that tuning is completed successfully and setting 0 means that tuning is failed. Host Controller uses this bit to select sampling clock to receive CMD and DAT. This bit is cleared by writing 0. Change of this bit is not allowed while the Host Controller is receiving response or a read data block."]
+    #[doc = "Bit 7 - Sampling Clock Select\n\nThis bit is set by tuning procedure when Execute Tuning is\n\ncleared. Writing 1 to this bit is meaningless and ignored. Setting\n\n1 means that tuning is completed successfully and setting 0\n\nmeans that tuning is failed. Host Controller uses this bit to select\n\nsampling clock to receive CMD and DAT. This bit is cleared by\n\nwriting 0. Change of this bit is not allowed while the Host\n\nController is receiving response or a read data block."]
     #[inline(always)]
     #[must_use]
     pub fn samplingclockselect(&mut self) -> SamplingclockselectW<EmmccoreHostctrl2Spec> {
         SamplingclockselectW::new(self, 7)
     }
-    #[doc = "Bit 14 - Asynchronous Interrupt Enable This bit can be set to 1 if a card support asynchronous interrupt and Asynchronous Interrupt Support is set to 1 in the Capabilities register. Asynchronous interrupt is effective when DAT\\[1\\]
-interrupt is used in 4-bit SD mode(and zero is set to Interrupt Pin Select in the Shared Bus Control register). If this bit is set to 1, the Host Driver can stop the SDCLK during asynchronous interrupt period to save power. During this period, the Host Controller continues to deliver CardInterrupt to the host when it is asserted by the card."]
+    #[doc = "Bit 14 - Asynchronous Interrupt Enable\n\nThis bit can be set to 1 if a card support asynchronous interrupt\n\nand Asynchronous Interrupt Support is set to 1 in the Capabilities\n\nregister. Asynchronous interrupt is effective when DAT\\[1\\]\n\ninterrupt is used in 4-bit SD mode(and zero is set to Interrupt Pin\n\nSelect in the Shared Bus Control register). If this bit is set to 1,\n\nthe Host Driver can stop the SDCLK during asynchronous\n\ninterrupt period to save power. During this period, the Host\n\nController continues to deliver CardInterrupt to the host when it\n\nis asserted by the card."]
     #[inline(always)]
     #[must_use]
     pub fn asyninten(&mut self) -> AsynintenW<EmmccoreHostctrl2Spec> {

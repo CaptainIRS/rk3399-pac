@@ -2,19 +2,19 @@
 pub type R = crate::R<AnalogCtl47Spec>;
 #[doc = "Register `ANALOG_CTL_47` writer"]
 pub type W = crate::W<AnalogCtl47Spec>;
-#[doc = "Field `R_CH3_EMP_FORCE_VALUE` reader - The forced ch3 emp value (for calculating ch3_pre_emphasis_bit) value in specific V_diff and Pre_emphasis."]
+#[doc = "Field `R_CH3_EMP_FORCE_VALUE` reader - The forced ch3 emp value (for calculating \n\nch3_pre_emphasis_bit) value in specific V_diff \n\nand Pre_emphasis."]
 pub type RCh3EmpForceValueR = crate::FieldReader;
-#[doc = "Field `R_CH3_EMP_FORCE_VALUE` writer - The forced ch3 emp value (for calculating ch3_pre_emphasis_bit) value in specific V_diff and Pre_emphasis."]
+#[doc = "Field `R_CH3_EMP_FORCE_VALUE` writer - The forced ch3 emp value (for calculating \n\nch3_pre_emphasis_bit) value in specific V_diff \n\nand Pre_emphasis."]
 pub type RCh3EmpForceValueW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - The forced ch3 emp value (for calculating ch3_pre_emphasis_bit) value in specific V_diff and Pre_emphasis."]
+    #[doc = "Bits 0:7 - The forced ch3 emp value (for calculating \n\nch3_pre_emphasis_bit) value in specific V_diff \n\nand Pre_emphasis."]
     #[inline(always)]
     pub fn r_ch3_emp_force_value(&self) -> RCh3EmpForceValueR {
         RCh3EmpForceValueR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - The forced ch3 emp value (for calculating ch3_pre_emphasis_bit) value in specific V_diff and Pre_emphasis."]
+    #[doc = "Bits 0:7 - The forced ch3 emp value (for calculating \n\nch3_pre_emphasis_bit) value in specific V_diff \n\nand Pre_emphasis."]
     #[inline(always)]
     #[must_use]
     pub fn r_ch3_emp_force_value(&mut self) -> RCh3EmpForceValueW<AnalogCtl47Spec> {

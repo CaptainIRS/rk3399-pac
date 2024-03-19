@@ -2,26 +2,26 @@
 pub type R = crate::R<HdcpregRmlctlSpec>;
 #[doc = "Register `HDCPREG_RMLCTL` writer"]
 pub type W = crate::W<HdcpregRmlctlSpec>;
-#[doc = "Field `ODPK_DECRYPT_ENABLE` reader - When set (1'b1), this bit activates the decryption of the Device Private keys."]
+#[doc = "Field `ODPK_DECRYPT_ENABLE` reader - When set (1'b1), this bit activates the decryption of\n\nthe Device Private keys."]
 pub type OdpkDecryptEnableR = crate::BitReader;
-#[doc = "Field `ODPK_DECRYPT_ENABLE` writer - When set (1'b1), this bit activates the decryption of the Device Private keys."]
+#[doc = "Field `ODPK_DECRYPT_ENABLE` writer - When set (1'b1), this bit activates the decryption of\n\nthe Device Private keys."]
 pub type OdpkDecryptEnableW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - When set (1'b1), this bit activates the decryption of the Device Private keys."]
+    #[doc = "Bit 0 - When set (1'b1), this bit activates the decryption of\n\nthe Device Private keys."]
     #[inline(always)]
     pub fn odpk_decrypt_enable(&self) -> OdpkDecryptEnableR {
         OdpkDecryptEnableR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - When set (1'b1), this bit activates the decryption of the Device Private keys."]
+    #[doc = "Bit 0 - When set (1'b1), this bit activates the decryption of\n\nthe Device Private keys."]
     #[inline(always)]
     #[must_use]
     pub fn odpk_decrypt_enable(&mut self) -> OdpkDecryptEnableW<HdcpregRmlctlSpec> {
         OdpkDecryptEnableW::new(self, 0)
     }
 }
-#[doc = "When set (1'b1), this bit activates the decryption of the Device Private keys.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hdcpreg_rmlctl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hdcpreg_rmlctl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "HDCP Encrypted Device Private Keys Control Register\n\nThis register is the control register for the software programmable encrypted DPK\n\nembedded storage feature. The required software configuration sequence is documented in\n\nthe Cores HDMI Transmitter User Guide in the \"Programming\" chapter, Section 3.2.4,\n\n\"Configure HDCP.\"\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hdcpreg_rmlctl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hdcpreg_rmlctl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HdcpregRmlctlSpec;
 impl crate::RegisterSpec for HdcpregRmlctlSpec {
     type Ux = u8;

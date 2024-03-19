@@ -2,14 +2,15 @@
 pub type R = crate::R<AuxChCtl2Spec>;
 #[doc = "Register `AUX_CH_CTL_2` writer"]
 pub type W = crate::W<AuxChCtl2Spec>;
-#[doc = "Field `AUX_EN` reader - Register control AUX CH operation enable Write 1 to this bit to enable AUX CH operation This bit will self-clear when AUX CH operation is finished. This bit is self cleared."]
+#[doc = "Field `AUX_EN` reader - Register control AUX CH operation enable \n\nWrite 1 to this bit to enable AUX CH \n\noperation \n\nThis bit will self-clear when AUX CH \n\noperation is finished. This bit is self \n\ncleared."]
 pub type AuxEnR = crate::BitReader;
-#[doc = "Field `AUX_EN` writer - Register control AUX CH operation enable Write 1 to this bit to enable AUX CH operation This bit will self-clear when AUX CH operation is finished. This bit is self cleared."]
+#[doc = "Field `AUX_EN` writer - Register control AUX CH operation enable \n\nWrite 1 to this bit to enable AUX CH \n\noperation \n\nThis bit will self-clear when AUX CH \n\noperation is finished. This bit is self \n\ncleared."]
 pub type AuxEnW<'a, REG> = crate::BitWriter1C<'a, REG>;
 #[doc = "AUX CH issue “address only” command\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AddrOnly {
-    #[doc = "1: Normal AUX CH command"]
+    #[doc = "1: Issue “address only” command"]
     B1 = 1,
     #[doc = "0: Normal AUX CH command"]
     B0 = 0,
@@ -31,7 +32,7 @@ impl AddrOnlyR {
             false => AddrOnly::B0,
         }
     }
-    #[doc = "Normal AUX CH command"]
+    #[doc = "Issue “address only” command"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == AddrOnly::B1
@@ -48,7 +49,7 @@ impl<'a, REG> AddrOnlyW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Normal AUX CH command"]
+    #[doc = "Issue “address only” command"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(AddrOnly::B1)
@@ -60,9 +61,10 @@ where
     }
 }
 #[doc = "Invert AUX CH PN\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AuxPnInv {
-    #[doc = "1: Normal mode"]
+    #[doc = "1: Invert PN"]
     B1 = 1,
     #[doc = "0: Normal mode"]
     B0 = 0,
@@ -84,7 +86,7 @@ impl AuxPnInvR {
             false => AuxPnInv::B0,
         }
     }
-    #[doc = "Normal mode"]
+    #[doc = "Invert PN"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == AuxPnInv::B1
@@ -101,7 +103,7 @@ impl<'a, REG> AuxPnInvW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Normal mode"]
+    #[doc = "Invert PN"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(AuxPnInv::B1)
@@ -112,10 +114,11 @@ where
         self.variant(AuxPnInv::B0)
     }
 }
-#[doc = "Power down AUX CH when AUX CH is in idle state.\n\nValue on reset: 0"]
+#[doc = "Power down AUX CH when AUX CH is in \n\nidle state.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PdAuxIdle {
-    #[doc = "1: Keep AUX CH power up in idle state."]
+    #[doc = "1: Power down AUX CH in idle state."]
     B1 = 1,
     #[doc = "0: Keep AUX CH power up in idle state."]
     B0 = 0,
@@ -126,7 +129,7 @@ impl From<PdAuxIdle> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PD_AUX_IDLE` reader - Power down AUX CH when AUX CH is in idle state."]
+#[doc = "Field `PD_AUX_IDLE` reader - Power down AUX CH when AUX CH is in \n\nidle state."]
 pub type PdAuxIdleR = crate::BitReader<PdAuxIdle>;
 impl PdAuxIdleR {
     #[doc = "Get enumerated values variant"]
@@ -137,7 +140,7 @@ impl PdAuxIdleR {
             false => PdAuxIdle::B0,
         }
     }
-    #[doc = "Keep AUX CH power up in idle state."]
+    #[doc = "Power down AUX CH in idle state."]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == PdAuxIdle::B1
@@ -148,13 +151,13 @@ impl PdAuxIdleR {
         *self == PdAuxIdle::B0
     }
 }
-#[doc = "Field `PD_AUX_IDLE` writer - Power down AUX CH when AUX CH is in idle state."]
+#[doc = "Field `PD_AUX_IDLE` writer - Power down AUX CH when AUX CH is in \n\nidle state."]
 pub type PdAuxIdleW<'a, REG> = crate::BitWriter<'a, REG, PdAuxIdle>;
 impl<'a, REG> PdAuxIdleW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Keep AUX CH power up in idle state."]
+    #[doc = "Power down AUX CH in idle state."]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(PdAuxIdle::B1)
@@ -166,7 +169,7 @@ where
     }
 }
 impl R {
-    #[doc = "Bit 0 - Register control AUX CH operation enable Write 1 to this bit to enable AUX CH operation This bit will self-clear when AUX CH operation is finished. This bit is self cleared."]
+    #[doc = "Bit 0 - Register control AUX CH operation enable \n\nWrite 1 to this bit to enable AUX CH \n\noperation \n\nThis bit will self-clear when AUX CH \n\noperation is finished. This bit is self \n\ncleared."]
     #[inline(always)]
     pub fn aux_en(&self) -> AuxEnR {
         AuxEnR::new((self.bits & 1) != 0)
@@ -181,14 +184,14 @@ impl R {
     pub fn aux_pn_inv(&self) -> AuxPnInvR {
         AuxPnInvR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - Power down AUX CH when AUX CH is in idle state."]
+    #[doc = "Bit 3 - Power down AUX CH when AUX CH is in \n\nidle state."]
     #[inline(always)]
     pub fn pd_aux_idle(&self) -> PdAuxIdleR {
         PdAuxIdleR::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Register control AUX CH operation enable Write 1 to this bit to enable AUX CH operation This bit will self-clear when AUX CH operation is finished. This bit is self cleared."]
+    #[doc = "Bit 0 - Register control AUX CH operation enable \n\nWrite 1 to this bit to enable AUX CH \n\noperation \n\nThis bit will self-clear when AUX CH \n\noperation is finished. This bit is self \n\ncleared."]
     #[inline(always)]
     #[must_use]
     pub fn aux_en(&mut self) -> AuxEnW<AuxChCtl2Spec> {
@@ -206,7 +209,7 @@ impl W {
     pub fn aux_pn_inv(&mut self) -> AuxPnInvW<AuxChCtl2Spec> {
         AuxPnInvW::new(self, 2)
     }
-    #[doc = "Bit 3 - Power down AUX CH when AUX CH is in idle state."]
+    #[doc = "Bit 3 - Power down AUX CH when AUX CH is in \n\nidle state."]
     #[inline(always)]
     #[must_use]
     pub fn pd_aux_idle(&mut self) -> PdAuxIdleW<AuxChCtl2Spec> {

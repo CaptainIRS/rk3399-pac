@@ -2,34 +2,34 @@
 pub type R = crate::R<AteTestStatusSpec>;
 #[doc = "Register `ATE_TEST_STATUS` writer"]
 pub type W = crate::W<AteTestStatusSpec>;
-#[doc = "Field `PRBS7CHECKFSMSTATE` reader - PRBS7 check FSM state \\[15:12\\]:lane3,\\[11:8\\]:lane2,\\[7:4\\]:lane1,\\[3:0\\]:lane 0"]
+#[doc = "Field `PRBS7CHECKFSMSTATE` reader - PRBS7 check FSM state \n\n\\[15:12\\]:lane3,\\[11:8\\]:lane2,\\[7:4\\]:lane1,\\[3:0\\]:lane \n\n0"]
 pub type Prbs7checkfsmstateR = crate::FieldReader<u16>;
-#[doc = "Field `PRBS7CHECKFSMSTATE` writer - PRBS7 check FSM state \\[15:12\\]:lane3,\\[11:8\\]:lane2,\\[7:4\\]:lane1,\\[3:0\\]:lane 0"]
+#[doc = "Field `PRBS7CHECKFSMSTATE` writer - PRBS7 check FSM state \n\n\\[15:12\\]:lane3,\\[11:8\\]:lane2,\\[7:4\\]:lane1,\\[3:0\\]:lane \n\n0"]
 pub type Prbs7checkfsmstateW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-#[doc = "Field `ERROR_INC` reader - ERROR indicator \\[19\\]:lane3,\\[18\\]:lane2,\\[17\\]:lane1,\\[16\\]:lane0"]
+#[doc = "Field `ERROR_INC` reader - ERROR indicator \n\n\\[19\\]:lane3,\\[18\\]:lane2,\\[17\\]:lane1,\\[16\\]:lane0"]
 pub type ErrorIncR = crate::FieldReader;
-#[doc = "Field `ERROR_INC` writer - ERROR indicator \\[19\\]:lane3,\\[18\\]:lane2,\\[17\\]:lane1,\\[16\\]:lane0"]
+#[doc = "Field `ERROR_INC` writer - ERROR indicator \n\n\\[19\\]:lane3,\\[18\\]:lane2,\\[17\\]:lane1,\\[16\\]:lane0"]
 pub type ErrorIncW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
-    #[doc = "Bits 0:15 - PRBS7 check FSM state \\[15:12\\]:lane3,\\[11:8\\]:lane2,\\[7:4\\]:lane1,\\[3:0\\]:lane 0"]
+    #[doc = "Bits 0:15 - PRBS7 check FSM state \n\n\\[15:12\\]:lane3,\\[11:8\\]:lane2,\\[7:4\\]:lane1,\\[3:0\\]:lane \n\n0"]
     #[inline(always)]
     pub fn prbs7checkfsmstate(&self) -> Prbs7checkfsmstateR {
         Prbs7checkfsmstateR::new((self.bits & 0xffff) as u16)
     }
-    #[doc = "Bits 16:19 - ERROR indicator \\[19\\]:lane3,\\[18\\]:lane2,\\[17\\]:lane1,\\[16\\]:lane0"]
+    #[doc = "Bits 16:19 - ERROR indicator \n\n\\[19\\]:lane3,\\[18\\]:lane2,\\[17\\]:lane1,\\[16\\]:lane0"]
     #[inline(always)]
     pub fn error_inc(&self) -> ErrorIncR {
         ErrorIncR::new(((self.bits >> 16) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - PRBS7 check FSM state \\[15:12\\]:lane3,\\[11:8\\]:lane2,\\[7:4\\]:lane1,\\[3:0\\]:lane 0"]
+    #[doc = "Bits 0:15 - PRBS7 check FSM state \n\n\\[15:12\\]:lane3,\\[11:8\\]:lane2,\\[7:4\\]:lane1,\\[3:0\\]:lane \n\n0"]
     #[inline(always)]
     #[must_use]
     pub fn prbs7checkfsmstate(&mut self) -> Prbs7checkfsmstateW<AteTestStatusSpec> {
         Prbs7checkfsmstateW::new(self, 0)
     }
-    #[doc = "Bits 16:19 - ERROR indicator \\[19\\]:lane3,\\[18\\]:lane2,\\[17\\]:lane1,\\[16\\]:lane0"]
+    #[doc = "Bits 16:19 - ERROR indicator \n\n\\[19\\]:lane3,\\[18\\]:lane2,\\[17\\]:lane1,\\[16\\]:lane0"]
     #[inline(always)]
     #[must_use]
     pub fn error_inc(&mut self) -> ErrorIncW<AteTestStatusSpec> {

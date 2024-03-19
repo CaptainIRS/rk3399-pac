@@ -2,19 +2,19 @@
 pub type R = crate::R<FcNvbiPbSpec>;
 #[doc = "Register `FC_NVBI_PB[%s]` writer"]
 pub type W = crate::W<FcNvbiPbSpec>;
-#[doc = "Field `FC_NVBI_PB` reader - Frame Composer NTSC VBI Packet Body Register Array"]
+#[doc = "Field `FC_NVBI_PB` reader - Frame Composer NTSC VBI Packet Body Register\n\nArray"]
 pub type FcNvbiPbR = crate::FieldReader;
-#[doc = "Field `FC_NVBI_PB` writer - Frame Composer NTSC VBI Packet Body Register Array"]
+#[doc = "Field `FC_NVBI_PB` writer - Frame Composer NTSC VBI Packet Body Register\n\nArray"]
 pub type FcNvbiPbW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - Frame Composer NTSC VBI Packet Body Register Array"]
+    #[doc = "Bits 0:7 - Frame Composer NTSC VBI Packet Body Register\n\nArray"]
     #[inline(always)]
     pub fn fc_nvbi_pb(&self) -> FcNvbiPbR {
         FcNvbiPbR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Frame Composer NTSC VBI Packet Body Register Array"]
+    #[doc = "Bits 0:7 - Frame Composer NTSC VBI Packet Body Register\n\nArray"]
     #[inline(always)]
     #[must_use]
     pub fn fc_nvbi_pb(&mut self) -> FcNvbiPbW<FcNvbiPbSpec> {

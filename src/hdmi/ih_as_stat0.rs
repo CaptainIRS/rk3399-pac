@@ -10,9 +10,9 @@ pub type AudFifoOverflowW<'a, REG> = crate::BitWriter1C<'a, REG>;
 pub type AudFifoUnderflowR = crate::BitReader;
 #[doc = "Field `AUD_FIFO_UNDERFLOW` writer - Audio Sampler audio FIFO empty indication."]
 pub type AudFifoUnderflowW<'a, REG> = crate::BitWriter1C<'a, REG>;
-#[doc = "Field `AUD_FIFO_UNDERFLOW_THR` reader - Audio Sampler audio FIFO empty threshold (four samples) indication for the legacy HBR audio interface. For AHB_DMA, this bit indicates that the number of samples in the FIFO is equal to (or less) than the number of active audio channels. This bit is not relevant for I2S, SPDIF, and GPA interfaces."]
+#[doc = "Field `AUD_FIFO_UNDERFLOW_THR` reader - Audio Sampler audio FIFO empty threshold (four\n\nsamples) indication for the legacy HBR audio\n\ninterface.\n\nFor AHB_DMA, this bit indicates that the number of\n\nsamples in the FIFO is equal to (or less) than the\n\nnumber of active audio channels.\n\nThis bit is not relevant for I2S, SPDIF, and GPA\n\ninterfaces."]
 pub type AudFifoUnderflowThrR = crate::BitReader;
-#[doc = "Field `AUD_FIFO_UNDERFLOW_THR` writer - Audio Sampler audio FIFO empty threshold (four samples) indication for the legacy HBR audio interface. For AHB_DMA, this bit indicates that the number of samples in the FIFO is equal to (or less) than the number of active audio channels. This bit is not relevant for I2S, SPDIF, and GPA interfaces."]
+#[doc = "Field `AUD_FIFO_UNDERFLOW_THR` writer - Audio Sampler audio FIFO empty threshold (four\n\nsamples) indication for the legacy HBR audio\n\ninterface.\n\nFor AHB_DMA, this bit indicates that the number of\n\nsamples in the FIFO is equal to (or less) than the\n\nnumber of active audio channels.\n\nThis bit is not relevant for I2S, SPDIF, and GPA\n\ninterfaces."]
 pub type AudFifoUnderflowThrW<'a, REG> = crate::BitWriter1C<'a, REG>;
 #[doc = "Field `FIFO_OVERRUN` reader - Indicates an overrun on the audio FIFO."]
 pub type FifoOverrunR = crate::BitReader;
@@ -33,7 +33,7 @@ impl R {
     pub fn aud_fifo_underflow(&self) -> AudFifoUnderflowR {
         AudFifoUnderflowR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - Audio Sampler audio FIFO empty threshold (four samples) indication for the legacy HBR audio interface. For AHB_DMA, this bit indicates that the number of samples in the FIFO is equal to (or less) than the number of active audio channels. This bit is not relevant for I2S, SPDIF, and GPA interfaces."]
+    #[doc = "Bit 2 - Audio Sampler audio FIFO empty threshold (four\n\nsamples) indication for the legacy HBR audio\n\ninterface.\n\nFor AHB_DMA, this bit indicates that the number of\n\nsamples in the FIFO is equal to (or less) than the\n\nnumber of active audio channels.\n\nThis bit is not relevant for I2S, SPDIF, and GPA\n\ninterfaces."]
     #[inline(always)]
     pub fn aud_fifo_underflow_thr(&self) -> AudFifoUnderflowThrR {
         AudFifoUnderflowThrR::new(((self.bits >> 2) & 1) != 0)
@@ -62,7 +62,7 @@ impl W {
     pub fn aud_fifo_underflow(&mut self) -> AudFifoUnderflowW<IhAsStat0Spec> {
         AudFifoUnderflowW::new(self, 1)
     }
-    #[doc = "Bit 2 - Audio Sampler audio FIFO empty threshold (four samples) indication for the legacy HBR audio interface. For AHB_DMA, this bit indicates that the number of samples in the FIFO is equal to (or less) than the number of active audio channels. This bit is not relevant for I2S, SPDIF, and GPA interfaces."]
+    #[doc = "Bit 2 - Audio Sampler audio FIFO empty threshold (four\n\nsamples) indication for the legacy HBR audio\n\ninterface.\n\nFor AHB_DMA, this bit indicates that the number of\n\nsamples in the FIFO is equal to (or less) than the\n\nnumber of active audio channels.\n\nThis bit is not relevant for I2S, SPDIF, and GPA\n\ninterfaces."]
     #[inline(always)]
     #[must_use]
     pub fn aud_fifo_underflow_thr(&mut self) -> AudFifoUnderflowThrW<IhAsStat0Spec> {
@@ -81,7 +81,7 @@ impl W {
         FifoUnderrunW::new(self, 4)
     }
 }
-#[doc = "Audio Sampler audio FIFO full indication.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ih_as_stat0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ih_as_stat0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Audio Sampler Interrupt Status Register (FIFO Threshold, Underflow and\n\nOverflow Interrupts)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ih_as_stat0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ih_as_stat0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IhAsStat0Spec;
 impl crate::RegisterSpec for IhAsStat0Spec {
     type Ux = u8;

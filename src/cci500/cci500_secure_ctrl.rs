@@ -3,9 +3,10 @@ pub type R = crate::R<Cci500SecureCtrlSpec>;
 #[doc = "Register `CCI500_SECURE_CTRL` writer"]
 pub type W = crate::W<Cci500SecureCtrlSpec>;
 #[doc = "Non-secure register access override\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum NonSecureOverride {
-    #[doc = "0: Enable Non-secure access to CCI-400 registers"]
+    #[doc = "0: Disable Non-secure access to CCI-400 registers"]
     B0 = 0,
     #[doc = "1: Enable Non-secure access to CCI-400 registers"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl NonSecureOverrideR {
             true => NonSecureOverride::B1,
         }
     }
-    #[doc = "Enable Non-secure access to CCI-400 registers"]
+    #[doc = "Disable Non-secure access to CCI-400 registers"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == NonSecureOverride::B0
@@ -44,7 +45,7 @@ impl<'a, REG> NonSecureOverrideW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enable Non-secure access to CCI-400 registers"]
+    #[doc = "Disable Non-secure access to CCI-400 registers"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(NonSecureOverride::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DebugMonitorSecurityOverride {
-    #[doc = "0: Disable Non-secure access to the PMU and Interface Monitor Registers, unless overridden by bit\\[0\\]"]
+    #[doc = "0: Enable Non-secure access to the PMU and Interface Monitor Registers."]
     B0 = 0,
     #[doc = "1: Disable Non-secure access to the PMU and Interface Monitor Registers, unless overridden by bit\\[0\\]"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl DebugMonitorSecurityOverrideR {
             true => DebugMonitorSecurityOverride::B1,
         }
     }
-    #[doc = "Disable Non-secure access to the PMU and Interface Monitor Registers, unless overridden by bit\\[0\\]"]
+    #[doc = "Enable Non-secure access to the PMU and Interface Monitor Registers."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == DebugMonitorSecurityOverride::B0
@@ -98,7 +100,7 @@ impl<'a, REG> DebugMonitorSecurityOverrideW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disable Non-secure access to the PMU and Interface Monitor Registers, unless overridden by bit\\[0\\]"]
+    #[doc = "Enable Non-secure access to the PMU and Interface Monitor Registers."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(DebugMonitorSecurityOverride::B0)

@@ -2,26 +2,26 @@
 pub type R = crate::R<McPhyrstzSpec>;
 #[doc = "Register `MC_PHYRSTZ` writer"]
 pub type W = crate::W<McPhyrstzSpec>;
-#[doc = "Field `PHYRSTZ` reader - HDMI Source PHY active low reset control for PHY GEN1, active high reset control for PHY GEN2. Reset Value: (PHY_GEN2== 1) ? 1 : 0"]
+#[doc = "Field `PHYRSTZ` reader - HDMI Source PHY active low reset control for PHY GEN1,\n\nactive high reset control for PHY GEN2.\n\nReset Value: (PHY_GEN2== 1) ? 1 : 0"]
 pub type PhyrstzR = crate::BitReader;
-#[doc = "Field `PHYRSTZ` writer - HDMI Source PHY active low reset control for PHY GEN1, active high reset control for PHY GEN2. Reset Value: (PHY_GEN2== 1) ? 1 : 0"]
+#[doc = "Field `PHYRSTZ` writer - HDMI Source PHY active low reset control for PHY GEN1,\n\nactive high reset control for PHY GEN2.\n\nReset Value: (PHY_GEN2== 1) ? 1 : 0"]
 pub type PhyrstzW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - HDMI Source PHY active low reset control for PHY GEN1, active high reset control for PHY GEN2. Reset Value: (PHY_GEN2== 1) ? 1 : 0"]
+    #[doc = "Bit 0 - HDMI Source PHY active low reset control for PHY GEN1,\n\nactive high reset control for PHY GEN2.\n\nReset Value: (PHY_GEN2== 1) ? 1 : 0"]
     #[inline(always)]
     pub fn phyrstz(&self) -> PhyrstzR {
         PhyrstzR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - HDMI Source PHY active low reset control for PHY GEN1, active high reset control for PHY GEN2. Reset Value: (PHY_GEN2== 1) ? 1 : 0"]
+    #[doc = "Bit 0 - HDMI Source PHY active low reset control for PHY GEN1,\n\nactive high reset control for PHY GEN2.\n\nReset Value: (PHY_GEN2== 1) ? 1 : 0"]
     #[inline(always)]
     #[must_use]
     pub fn phyrstz(&mut self) -> PhyrstzW<McPhyrstzSpec> {
         PhyrstzW::new(self, 0)
     }
 }
-#[doc = "HDMI Source PHY active low reset control for PHY GEN1, active high reset control for PHY GEN2.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mc_phyrstz::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mc_phyrstz::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Main Controller PHY Reset Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mc_phyrstz::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mc_phyrstz::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct McPhyrstzSpec;
 impl crate::RegisterSpec for McPhyrstzSpec {
     type Ux = u8;

@@ -2,10 +2,11 @@
 pub type R = crate::R<EmmccoreTransmodSpec>;
 #[doc = "Register `EMMCCORE_TRANSMOD` writer"]
 pub type W = crate::W<EmmccoreTransmodSpec>;
-#[doc = "DMA can be enabled only if DMA Support bit in the Capabilities register is set. If this bit is set to 1, a DMA operation shall begin when the HD writes to the upper byte of Command register (00Fh).\n\nValue on reset: 0"]
+#[doc = "DMA can be enabled only if DMA Support bit in the Capabilities\n\nregister is set. If this bit is set to 1, a DMA operation shall begin\n\nwhen the HD writes to the upper byte of Command register\n\n(00Fh).\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmaenable {
-    #[doc = "0: Enable"]
+    #[doc = "0: Disable"]
     B0 = 0,
     #[doc = "1: Enable"]
     B1 = 1,
@@ -16,7 +17,7 @@ impl From<Dmaenable> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DMAENABLE` reader - DMA can be enabled only if DMA Support bit in the Capabilities register is set. If this bit is set to 1, a DMA operation shall begin when the HD writes to the upper byte of Command register (00Fh)."]
+#[doc = "Field `DMAENABLE` reader - DMA can be enabled only if DMA Support bit in the Capabilities\n\nregister is set. If this bit is set to 1, a DMA operation shall begin\n\nwhen the HD writes to the upper byte of Command register\n\n(00Fh)."]
 pub type DmaenableR = crate::BitReader<Dmaenable>;
 impl DmaenableR {
     #[doc = "Get enumerated values variant"]
@@ -27,7 +28,7 @@ impl DmaenableR {
             true => Dmaenable::B1,
         }
     }
-    #[doc = "Enable"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Dmaenable::B0
@@ -38,13 +39,13 @@ impl DmaenableR {
         *self == Dmaenable::B1
     }
 }
-#[doc = "Field `DMAENABLE` writer - DMA can be enabled only if DMA Support bit in the Capabilities register is set. If this bit is set to 1, a DMA operation shall begin when the HD writes to the upper byte of Command register (00Fh)."]
+#[doc = "Field `DMAENABLE` writer - DMA can be enabled only if DMA Support bit in the Capabilities\n\nregister is set. If this bit is set to 1, a DMA operation shall begin\n\nwhen the HD writes to the upper byte of Command register\n\n(00Fh)."]
 pub type DmaenableW<'a, REG> = crate::BitWriter<'a, REG, Dmaenable>;
 impl<'a, REG> DmaenableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enable"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Dmaenable::B0)
@@ -55,10 +56,11 @@ where
         self.variant(Dmaenable::B1)
     }
 }
-#[doc = "This bit is used to enable the Block count register, which is only relevant for multiple block transfers. When this bit is 0, the Block Count register is disabled, which is useful in executing an infinite transfer.\n\nValue on reset: 0"]
+#[doc = "This bit is used to enable the Block count register, which is only\n\nrelevant for multiple block transfers. When this bit is 0, the Block\n\nCount register is disabled, which is useful in executing an infinite\n\ntransfer.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Blockcountenable {
-    #[doc = "0: Enable"]
+    #[doc = "0: Disable"]
     B0 = 0,
     #[doc = "1: Enable"]
     B1 = 1,
@@ -69,7 +71,7 @@ impl From<Blockcountenable> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BLOCKCOUNTENABLE` reader - This bit is used to enable the Block count register, which is only relevant for multiple block transfers. When this bit is 0, the Block Count register is disabled, which is useful in executing an infinite transfer."]
+#[doc = "Field `BLOCKCOUNTENABLE` reader - This bit is used to enable the Block count register, which is only\n\nrelevant for multiple block transfers. When this bit is 0, the Block\n\nCount register is disabled, which is useful in executing an infinite\n\ntransfer."]
 pub type BlockcountenableR = crate::BitReader<Blockcountenable>;
 impl BlockcountenableR {
     #[doc = "Get enumerated values variant"]
@@ -80,7 +82,7 @@ impl BlockcountenableR {
             true => Blockcountenable::B1,
         }
     }
-    #[doc = "Enable"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Blockcountenable::B0
@@ -91,13 +93,13 @@ impl BlockcountenableR {
         *self == Blockcountenable::B1
     }
 }
-#[doc = "Field `BLOCKCOUNTENABLE` writer - This bit is used to enable the Block count register, which is only relevant for multiple block transfers. When this bit is 0, the Block Count register is disabled, which is useful in executing an infinite transfer."]
+#[doc = "Field `BLOCKCOUNTENABLE` writer - This bit is used to enable the Block count register, which is only\n\nrelevant for multiple block transfers. When this bit is 0, the Block\n\nCount register is disabled, which is useful in executing an infinite\n\ntransfer."]
 pub type BlockcountenableW<'a, REG> = crate::BitWriter<'a, REG, Blockcountenable>;
 impl<'a, REG> BlockcountenableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enable"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Blockcountenable::B0)
@@ -109,14 +111,15 @@ where
     }
 }
 #[doc = "This field determines use of auto command functions\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Autocmdenable {
-    #[doc = "0: Reserved There are two methods to stop Multiple-block read and write operation. (1) Auto CMD12 Enable Multiple-block read and write commands for memory require CMD12 to stop the operation. When this field is set to 01b, the Host Controller issues CMD12 automatically when last block transferis completed. Auto CMD12 error is indicated to the Auto CMD Error Status register. The Host Driver shall not set this bit if the command does not require CMD12. (2) Auto CMD23 Enable When this bit field is set to 10b, the Host Controller issues a CMD23 automatically before issuing a command specified in the Command Register The following conditions are required to use the Auto CMD23. a. Auto CMD23 Supported (Host Controller Version is 3.00 or later) b. A memory card that supports CMD23 (SCR\\[33\\]=1) c. If DMA is used, it shall be ADMA d. Only when CMD18 or CMD25 is issued By writing the Command register, the Host Controller issues a CMD23 first and then issues a command specified by the Command Index in Command register 32-bit block count value for CMD23 is set to SDMA System Address / Argument 2 register"]
+    #[doc = "0: Auto Command Disabled"]
     D0 = 0,
-    #[doc = "1: Reserved There are two methods to stop Multiple-block read and write operation. (1) Auto CMD12 Enable Multiple-block read and write commands for memory require CMD12 to stop the operation. When this field is set to 01b, the Host Controller issues CMD12 automatically when last block transferis completed. Auto CMD12 error is indicated to the Auto CMD Error Status register. The Host Driver shall not set this bit if the command does not require CMD12. (2) Auto CMD23 Enable When this bit field is set to 10b, the Host Controller issues a CMD23 automatically before issuing a command specified in the Command Register The following conditions are required to use the Auto CMD23. a. Auto CMD23 Supported (Host Controller Version is 3.00 or later) b. A memory card that supports CMD23 (SCR\\[33\\]=1) c. If DMA is used, it shall be ADMA d. Only when CMD18 or CMD25 is issued By writing the Command register, the Host Controller issues a CMD23 first and then issues a command specified by the Command Index in Command register 32-bit block count value for CMD23 is set to SDMA System Address / Argument 2 register"]
+    #[doc = "1: Auto CMD12 Enable"]
     D1 = 1,
-    #[doc = "2: Reserved There are two methods to stop Multiple-block read and write operation. (1) Auto CMD12 Enable Multiple-block read and write commands for memory require CMD12 to stop the operation. When this field is set to 01b, the Host Controller issues CMD12 automatically when last block transferis completed. Auto CMD12 error is indicated to the Auto CMD Error Status register. The Host Driver shall not set this bit if the command does not require CMD12. (2) Auto CMD23 Enable When this bit field is set to 10b, the Host Controller issues a CMD23 automatically before issuing a command specified in the Command Register The following conditions are required to use the Auto CMD23. a. Auto CMD23 Supported (Host Controller Version is 3.00 or later) b. A memory card that supports CMD23 (SCR\\[33\\]=1) c. If DMA is used, it shall be ADMA d. Only when CMD18 or CMD25 is issued By writing the Command register, the Host Controller issues a CMD23 first and then issues a command specified by the Command Index in Command register 32-bit block count value for CMD23 is set to SDMA System Address / Argument 2 register"]
+    #[doc = "2: Auto CMD23 Enable"]
     D2 = 2,
     #[doc = "3: Reserved There are two methods to stop Multiple-block read and write operation. (1) Auto CMD12 Enable Multiple-block read and write commands for memory require CMD12 to stop the operation. When this field is set to 01b, the Host Controller issues CMD12 automatically when last block transferis completed. Auto CMD12 error is indicated to the Auto CMD Error Status register. The Host Driver shall not set this bit if the command does not require CMD12. (2) Auto CMD23 Enable When this bit field is set to 10b, the Host Controller issues a CMD23 automatically before issuing a command specified in the Command Register The following conditions are required to use the Auto CMD23. a. Auto CMD23 Supported (Host Controller Version is 3.00 or later) b. A memory card that supports CMD23 (SCR\\[33\\]=1) c. If DMA is used, it shall be ADMA d. Only when CMD18 or CMD25 is issued By writing the Command register, the Host Controller issues a CMD23 first and then issues a command specified by the Command Index in Command register 32-bit block count value for CMD23 is set to SDMA System Address / Argument 2 register"]
     D3 = 3,
@@ -144,17 +147,17 @@ impl AutocmdenableR {
             _ => unreachable!(),
         }
     }
-    #[doc = "Reserved There are two methods to stop Multiple-block read and write operation. (1) Auto CMD12 Enable Multiple-block read and write commands for memory require CMD12 to stop the operation. When this field is set to 01b, the Host Controller issues CMD12 automatically when last block transferis completed. Auto CMD12 error is indicated to the Auto CMD Error Status register. The Host Driver shall not set this bit if the command does not require CMD12. (2) Auto CMD23 Enable When this bit field is set to 10b, the Host Controller issues a CMD23 automatically before issuing a command specified in the Command Register The following conditions are required to use the Auto CMD23. a. Auto CMD23 Supported (Host Controller Version is 3.00 or later) b. A memory card that supports CMD23 (SCR\\[33\\]=1) c. If DMA is used, it shall be ADMA d. Only when CMD18 or CMD25 is issued By writing the Command register, the Host Controller issues a CMD23 first and then issues a command specified by the Command Index in Command register 32-bit block count value for CMD23 is set to SDMA System Address / Argument 2 register"]
+    #[doc = "Auto Command Disabled"]
     #[inline(always)]
     pub fn is_d0(&self) -> bool {
         *self == Autocmdenable::D0
     }
-    #[doc = "Reserved There are two methods to stop Multiple-block read and write operation. (1) Auto CMD12 Enable Multiple-block read and write commands for memory require CMD12 to stop the operation. When this field is set to 01b, the Host Controller issues CMD12 automatically when last block transferis completed. Auto CMD12 error is indicated to the Auto CMD Error Status register. The Host Driver shall not set this bit if the command does not require CMD12. (2) Auto CMD23 Enable When this bit field is set to 10b, the Host Controller issues a CMD23 automatically before issuing a command specified in the Command Register The following conditions are required to use the Auto CMD23. a. Auto CMD23 Supported (Host Controller Version is 3.00 or later) b. A memory card that supports CMD23 (SCR\\[33\\]=1) c. If DMA is used, it shall be ADMA d. Only when CMD18 or CMD25 is issued By writing the Command register, the Host Controller issues a CMD23 first and then issues a command specified by the Command Index in Command register 32-bit block count value for CMD23 is set to SDMA System Address / Argument 2 register"]
+    #[doc = "Auto CMD12 Enable"]
     #[inline(always)]
     pub fn is_d1(&self) -> bool {
         *self == Autocmdenable::D1
     }
-    #[doc = "Reserved There are two methods to stop Multiple-block read and write operation. (1) Auto CMD12 Enable Multiple-block read and write commands for memory require CMD12 to stop the operation. When this field is set to 01b, the Host Controller issues CMD12 automatically when last block transferis completed. Auto CMD12 error is indicated to the Auto CMD Error Status register. The Host Driver shall not set this bit if the command does not require CMD12. (2) Auto CMD23 Enable When this bit field is set to 10b, the Host Controller issues a CMD23 automatically before issuing a command specified in the Command Register The following conditions are required to use the Auto CMD23. a. Auto CMD23 Supported (Host Controller Version is 3.00 or later) b. A memory card that supports CMD23 (SCR\\[33\\]=1) c. If DMA is used, it shall be ADMA d. Only when CMD18 or CMD25 is issued By writing the Command register, the Host Controller issues a CMD23 first and then issues a command specified by the Command Index in Command register 32-bit block count value for CMD23 is set to SDMA System Address / Argument 2 register"]
+    #[doc = "Auto CMD23 Enable"]
     #[inline(always)]
     pub fn is_d2(&self) -> bool {
         *self == Autocmdenable::D2
@@ -172,17 +175,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Reserved There are two methods to stop Multiple-block read and write operation. (1) Auto CMD12 Enable Multiple-block read and write commands for memory require CMD12 to stop the operation. When this field is set to 01b, the Host Controller issues CMD12 automatically when last block transferis completed. Auto CMD12 error is indicated to the Auto CMD Error Status register. The Host Driver shall not set this bit if the command does not require CMD12. (2) Auto CMD23 Enable When this bit field is set to 10b, the Host Controller issues a CMD23 automatically before issuing a command specified in the Command Register The following conditions are required to use the Auto CMD23. a. Auto CMD23 Supported (Host Controller Version is 3.00 or later) b. A memory card that supports CMD23 (SCR\\[33\\]=1) c. If DMA is used, it shall be ADMA d. Only when CMD18 or CMD25 is issued By writing the Command register, the Host Controller issues a CMD23 first and then issues a command specified by the Command Index in Command register 32-bit block count value for CMD23 is set to SDMA System Address / Argument 2 register"]
+    #[doc = "Auto Command Disabled"]
     #[inline(always)]
     pub fn d0(self) -> &'a mut crate::W<REG> {
         self.variant(Autocmdenable::D0)
     }
-    #[doc = "Reserved There are two methods to stop Multiple-block read and write operation. (1) Auto CMD12 Enable Multiple-block read and write commands for memory require CMD12 to stop the operation. When this field is set to 01b, the Host Controller issues CMD12 automatically when last block transferis completed. Auto CMD12 error is indicated to the Auto CMD Error Status register. The Host Driver shall not set this bit if the command does not require CMD12. (2) Auto CMD23 Enable When this bit field is set to 10b, the Host Controller issues a CMD23 automatically before issuing a command specified in the Command Register The following conditions are required to use the Auto CMD23. a. Auto CMD23 Supported (Host Controller Version is 3.00 or later) b. A memory card that supports CMD23 (SCR\\[33\\]=1) c. If DMA is used, it shall be ADMA d. Only when CMD18 or CMD25 is issued By writing the Command register, the Host Controller issues a CMD23 first and then issues a command specified by the Command Index in Command register 32-bit block count value for CMD23 is set to SDMA System Address / Argument 2 register"]
+    #[doc = "Auto CMD12 Enable"]
     #[inline(always)]
     pub fn d1(self) -> &'a mut crate::W<REG> {
         self.variant(Autocmdenable::D1)
     }
-    #[doc = "Reserved There are two methods to stop Multiple-block read and write operation. (1) Auto CMD12 Enable Multiple-block read and write commands for memory require CMD12 to stop the operation. When this field is set to 01b, the Host Controller issues CMD12 automatically when last block transferis completed. Auto CMD12 error is indicated to the Auto CMD Error Status register. The Host Driver shall not set this bit if the command does not require CMD12. (2) Auto CMD23 Enable When this bit field is set to 10b, the Host Controller issues a CMD23 automatically before issuing a command specified in the Command Register The following conditions are required to use the Auto CMD23. a. Auto CMD23 Supported (Host Controller Version is 3.00 or later) b. A memory card that supports CMD23 (SCR\\[33\\]=1) c. If DMA is used, it shall be ADMA d. Only when CMD18 or CMD25 is issued By writing the Command register, the Host Controller issues a CMD23 first and then issues a command specified by the Command Index in Command register 32-bit block count value for CMD23 is set to SDMA System Address / Argument 2 register"]
+    #[doc = "Auto CMD23 Enable"]
     #[inline(always)]
     pub fn d2(self) -> &'a mut crate::W<REG> {
         self.variant(Autocmdenable::D2)
@@ -194,9 +197,10 @@ where
     }
 }
 #[doc = "This bit defines the direction of data transfers.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Datatransferdirectionselect {
-    #[doc = "0: Read (Card to Host)"]
+    #[doc = "0: Write (Host to Card)"]
     B0 = 0,
     #[doc = "1: Read (Card to Host)"]
     B1 = 1,
@@ -218,7 +222,7 @@ impl DatatransferdirectionselectR {
             true => Datatransferdirectionselect::B1,
         }
     }
-    #[doc = "Read (Card to Host)"]
+    #[doc = "Write (Host to Card)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Datatransferdirectionselect::B0
@@ -236,7 +240,7 @@ impl<'a, REG> DatatransferdirectionselectW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Read (Card to Host)"]
+    #[doc = "Write (Host to Card)"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Datatransferdirectionselect::B0)
@@ -248,9 +252,10 @@ where
     }
 }
 #[doc = "This bit enables multiple block data transfers.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Multiblockselect {
-    #[doc = "0: Multiple Block"]
+    #[doc = "0: Single Block"]
     B0 = 0,
     #[doc = "1: Multiple Block"]
     B1 = 1,
@@ -272,7 +277,7 @@ impl MultiblockselectR {
             true => Multiblockselect::B1,
         }
     }
-    #[doc = "Multiple Block"]
+    #[doc = "Single Block"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Multiblockselect::B0
@@ -289,7 +294,7 @@ impl<'a, REG> MultiblockselectW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Multiple Block"]
+    #[doc = "Single Block"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Multiblockselect::B0)
@@ -301,12 +306,12 @@ where
     }
 }
 impl R {
-    #[doc = "Bit 0 - DMA can be enabled only if DMA Support bit in the Capabilities register is set. If this bit is set to 1, a DMA operation shall begin when the HD writes to the upper byte of Command register (00Fh)."]
+    #[doc = "Bit 0 - DMA can be enabled only if DMA Support bit in the Capabilities\n\nregister is set. If this bit is set to 1, a DMA operation shall begin\n\nwhen the HD writes to the upper byte of Command register\n\n(00Fh)."]
     #[inline(always)]
     pub fn dmaenable(&self) -> DmaenableR {
         DmaenableR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - This bit is used to enable the Block count register, which is only relevant for multiple block transfers. When this bit is 0, the Block Count register is disabled, which is useful in executing an infinite transfer."]
+    #[doc = "Bit 1 - This bit is used to enable the Block count register, which is only\n\nrelevant for multiple block transfers. When this bit is 0, the Block\n\nCount register is disabled, which is useful in executing an infinite\n\ntransfer."]
     #[inline(always)]
     pub fn blockcountenable(&self) -> BlockcountenableR {
         BlockcountenableR::new(((self.bits >> 1) & 1) != 0)
@@ -328,13 +333,13 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - DMA can be enabled only if DMA Support bit in the Capabilities register is set. If this bit is set to 1, a DMA operation shall begin when the HD writes to the upper byte of Command register (00Fh)."]
+    #[doc = "Bit 0 - DMA can be enabled only if DMA Support bit in the Capabilities\n\nregister is set. If this bit is set to 1, a DMA operation shall begin\n\nwhen the HD writes to the upper byte of Command register\n\n(00Fh)."]
     #[inline(always)]
     #[must_use]
     pub fn dmaenable(&mut self) -> DmaenableW<EmmccoreTransmodSpec> {
         DmaenableW::new(self, 0)
     }
-    #[doc = "Bit 1 - This bit is used to enable the Block count register, which is only relevant for multiple block transfers. When this bit is 0, the Block Count register is disabled, which is useful in executing an infinite transfer."]
+    #[doc = "Bit 1 - This bit is used to enable the Block count register, which is only\n\nrelevant for multiple block transfers. When this bit is 0, the Block\n\nCount register is disabled, which is useful in executing an infinite\n\ntransfer."]
     #[inline(always)]
     #[must_use]
     pub fn blockcountenable(&mut self) -> BlockcountenableW<EmmccoreTransmodSpec> {

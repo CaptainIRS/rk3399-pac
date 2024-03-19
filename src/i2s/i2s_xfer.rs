@@ -3,9 +3,10 @@ pub type R = crate::R<I2sXferSpec>;
 #[doc = "Register `I2S_XFER` writer"]
 pub type W = crate::W<I2sXferSpec>;
 #[doc = "TX Transfer start bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Txs {
-    #[doc = "0: start TX transfer"]
+    #[doc = "0: stop TX transfer."]
     B0 = 0,
     #[doc = "1: start TX transfer"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl TxsR {
             true => Txs::B1,
         }
     }
-    #[doc = "start TX transfer"]
+    #[doc = "stop TX transfer."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Txs::B0
@@ -44,7 +45,7 @@ impl<'a, REG> TxsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "start TX transfer"]
+    #[doc = "stop TX transfer."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Txs::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "RX Transfer start bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rxs {
-    #[doc = "0: start RX transfer"]
+    #[doc = "0: stop RX transfer."]
     B0 = 0,
     #[doc = "1: start RX transfer"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl RxsR {
             true => Rxs::B1,
         }
     }
-    #[doc = "start RX transfer"]
+    #[doc = "stop RX transfer."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Rxs::B0
@@ -97,7 +99,7 @@ impl<'a, REG> RxsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "start RX transfer"]
+    #[doc = "stop RX transfer."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Rxs::B0)

@@ -50,7 +50,7 @@ impl W {
         NullTxW::new(self, 5)
     }
 }
-#[doc = "ACP packet\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_datman::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer Data Island Manual Packet Request Register\n\nRequests to the Frame Composer the data island packet insertion for NULL, SPD, VSD,\n\nISRC2, ISRC1 and ACP packets when FC_DATAUTO0 bit is in manual mode for the packet\n\nrequested.\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_datman::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcDatmanSpec;
 impl crate::RegisterSpec for FcDatmanSpec {
     type Ux = u8;

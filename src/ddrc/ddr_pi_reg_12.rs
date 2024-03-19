@@ -2,19 +2,19 @@
 pub type R = crate::R<DdrPiReg12Spec>;
 #[doc = "Register `DDR_PI_REG_12` writer"]
 pub type W = crate::W<DdrPiReg12Spec>;
-#[doc = "Field `PI_TDFI_PHYUPD_RESP_F1` reader - Defines the DFI tPHYUPD_RESP timing parameter (in DFI clocks), the maximum cycles between a dfi_phyupd_req assertion and a dfi_phyupd_ack assertion. If programmed to a non-zero, a timing violation causes an interrupt and bit8 set in the PI_REG_193.pi_update_error_status parameter and bit8 set in the PI_REG_22.pi_control_error_status parameter. The suffix f1 of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TDFI_PHYUPD_RESP_F1` reader - Defines the DFI tPHYUPD_RESP timing parameter (in DFI clocks),\n\nthe maximum cycles between a dfi_phyupd_req assertion and a\n\ndfi_phyupd_ack assertion. If programmed to a non-zero, a timing\n\nviolation causes an interrupt and bit8 set in the\n\nPI_REG_193.pi_update_error_status parameter and bit8 set in the\n\nPI_REG_22.pi_control_error_status parameter. The suffix f1 of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTdfiPhyupdRespF1R = crate::FieldReader<u16>;
-#[doc = "Field `PI_TDFI_PHYUPD_RESP_F1` writer - Defines the DFI tPHYUPD_RESP timing parameter (in DFI clocks), the maximum cycles between a dfi_phyupd_req assertion and a dfi_phyupd_ack assertion. If programmed to a non-zero, a timing violation causes an interrupt and bit8 set in the PI_REG_193.pi_update_error_status parameter and bit8 set in the PI_REG_22.pi_control_error_status parameter. The suffix f1 of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TDFI_PHYUPD_RESP_F1` writer - Defines the DFI tPHYUPD_RESP timing parameter (in DFI clocks),\n\nthe maximum cycles between a dfi_phyupd_req assertion and a\n\ndfi_phyupd_ack assertion. If programmed to a non-zero, a timing\n\nviolation causes an interrupt and bit8 set in the\n\nPI_REG_193.pi_update_error_status parameter and bit8 set in the\n\nPI_REG_22.pi_control_error_status parameter. The suffix f1 of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTdfiPhyupdRespF1W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:15 - Defines the DFI tPHYUPD_RESP timing parameter (in DFI clocks), the maximum cycles between a dfi_phyupd_req assertion and a dfi_phyupd_ack assertion. If programmed to a non-zero, a timing violation causes an interrupt and bit8 set in the PI_REG_193.pi_update_error_status parameter and bit8 set in the PI_REG_22.pi_control_error_status parameter. The suffix f1 of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:15 - Defines the DFI tPHYUPD_RESP timing parameter (in DFI clocks),\n\nthe maximum cycles between a dfi_phyupd_req assertion and a\n\ndfi_phyupd_ack assertion. If programmed to a non-zero, a timing\n\nviolation causes an interrupt and bit8 set in the\n\nPI_REG_193.pi_update_error_status parameter and bit8 set in the\n\nPI_REG_22.pi_control_error_status parameter. The suffix f1 of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tdfi_phyupd_resp_f1(&self) -> PiTdfiPhyupdRespF1R {
         PiTdfiPhyupdRespF1R::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - Defines the DFI tPHYUPD_RESP timing parameter (in DFI clocks), the maximum cycles between a dfi_phyupd_req assertion and a dfi_phyupd_ack assertion. If programmed to a non-zero, a timing violation causes an interrupt and bit8 set in the PI_REG_193.pi_update_error_status parameter and bit8 set in the PI_REG_22.pi_control_error_status parameter. The suffix f1 of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:15 - Defines the DFI tPHYUPD_RESP timing parameter (in DFI clocks),\n\nthe maximum cycles between a dfi_phyupd_req assertion and a\n\ndfi_phyupd_ack assertion. If programmed to a non-zero, a timing\n\nviolation causes an interrupt and bit8 set in the\n\nPI_REG_193.pi_update_error_status parameter and bit8 set in the\n\nPI_REG_22.pi_control_error_status parameter. The suffix f1 of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tdfi_phyupd_resp_f1(&mut self) -> PiTdfiPhyupdRespF1W<DdrPiReg12Spec> {

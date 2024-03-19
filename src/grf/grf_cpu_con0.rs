@@ -3,9 +3,10 @@ pub type R = crate::R<GrfCpuCon0Spec>;
 #[doc = "Register `GRF_CPU_CON0` writer"]
 pub type W = crate::W<GrfCpuCon0Spec>;
 #[doc = "pd_core_l cpu broadcastinner bit control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BroadcastinnerPdCoreL {
-    #[doc = "1: disable"]
+    #[doc = "1: enable"]
     B1 = 1,
     #[doc = "0: disable"]
     B0 = 0,
@@ -27,7 +28,7 @@ impl BroadcastinnerPdCoreLR {
             false => BroadcastinnerPdCoreL::B0,
         }
     }
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == BroadcastinnerPdCoreL::B1
@@ -44,7 +45,7 @@ impl<'a, REG> BroadcastinnerPdCoreLW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "disable"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(BroadcastinnerPdCoreL::B1)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "pd_core_l cpu broadcastouter bit control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BroadcastouterPdCoreL {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl BroadcastouterPdCoreLR {
             true => BroadcastouterPdCoreL::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == BroadcastouterPdCoreL::B0
@@ -97,7 +99,7 @@ impl<'a, REG> BroadcastouterPdCoreLW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(BroadcastouterPdCoreL::B0)
@@ -108,10 +110,11 @@ where
         self.variant(BroadcastouterPdCoreL::B1)
     }
 }
-#[doc = "pd_core_l cpu broadcastcachemaint bit control\n\nValue on reset: 0"]
+#[doc = "pd_core_l cpu broadcastcachemaint bit\n\ncontrol\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BroadcastcachemaintPdCoreL {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -122,7 +125,7 @@ impl From<BroadcastcachemaintPdCoreL> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BROADCASTCACHEMAINT_PD_CORE_L` reader - pd_core_l cpu broadcastcachemaint bit control"]
+#[doc = "Field `BROADCASTCACHEMAINT_PD_CORE_L` reader - pd_core_l cpu broadcastcachemaint bit\n\ncontrol"]
 pub type BroadcastcachemaintPdCoreLR = crate::BitReader<BroadcastcachemaintPdCoreL>;
 impl BroadcastcachemaintPdCoreLR {
     #[doc = "Get enumerated values variant"]
@@ -133,7 +136,7 @@ impl BroadcastcachemaintPdCoreLR {
             true => BroadcastcachemaintPdCoreL::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == BroadcastcachemaintPdCoreL::B0
@@ -144,14 +147,14 @@ impl BroadcastcachemaintPdCoreLR {
         *self == BroadcastcachemaintPdCoreL::B1
     }
 }
-#[doc = "Field `BROADCASTCACHEMAINT_PD_CORE_L` writer - pd_core_l cpu broadcastcachemaint bit control"]
+#[doc = "Field `BROADCASTCACHEMAINT_PD_CORE_L` writer - pd_core_l cpu broadcastcachemaint bit\n\ncontrol"]
 pub type BroadcastcachemaintPdCoreLW<'a, REG> =
     crate::BitWriter<'a, REG, BroadcastcachemaintPdCoreL>;
 impl<'a, REG> BroadcastcachemaintPdCoreLW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(BroadcastcachemaintPdCoreL::B0)
@@ -163,9 +166,10 @@ where
     }
 }
 #[doc = "pd_core_l cpu sysbardisable bit control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SysbardisablePdCoreL {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -187,7 +191,7 @@ impl SysbardisablePdCoreLR {
             true => SysbardisablePdCoreL::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SysbardisablePdCoreL::B0
@@ -204,7 +208,7 @@ impl<'a, REG> SysbardisablePdCoreLW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SysbardisablePdCoreL::B0)
@@ -216,9 +220,10 @@ where
     }
 }
 #[doc = "pd_core_l cpu clrexmonreq bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClrexmonreqPdCoreL {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -240,7 +245,7 @@ impl ClrexmonreqPdCoreLR {
             true => ClrexmonreqPdCoreL::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClrexmonreqPdCoreL::B0
@@ -257,7 +262,7 @@ impl<'a, REG> ClrexmonreqPdCoreLW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClrexmonreqPdCoreL::B0)
@@ -269,9 +274,10 @@ where
     }
 }
 #[doc = "pd_core_l cpu dbgl1rstdisable bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dbgl1rstdisablePdCoreL {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -293,7 +299,7 @@ impl Dbgl1rstdisablePdCoreLR {
             true => Dbgl1rstdisablePdCoreL::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Dbgl1rstdisablePdCoreL::B0
@@ -310,7 +316,7 @@ impl<'a, REG> Dbgl1rstdisablePdCoreLW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Dbgl1rstdisablePdCoreL::B0)
@@ -322,9 +328,10 @@ where
     }
 }
 #[doc = "pd_core_l cpu l2rstdisable bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum L2rstdisablePdCoreL {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -346,7 +353,7 @@ impl L2rstdisablePdCoreLR {
             true => L2rstdisablePdCoreL::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == L2rstdisablePdCoreL::B0
@@ -363,7 +370,7 @@ impl<'a, REG> L2rstdisablePdCoreLW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(L2rstdisablePdCoreL::B0)
@@ -375,10 +382,11 @@ where
     }
 }
 #[doc = "pd_core_l cpu cfgend bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CfgendPdCoreL {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -404,7 +412,7 @@ impl CfgendPdCoreLR {
             _ => None,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CfgendPdCoreL::B0
@@ -422,7 +430,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CfgendPdCoreL::B0)
@@ -434,10 +442,11 @@ where
     }
 }
 #[doc = "pd_core_l cpu cfgte bit control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CfgtePdCoreL {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -463,7 +472,7 @@ impl CfgtePdCoreLR {
             _ => None,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CfgtePdCoreL::B0
@@ -481,7 +490,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CfgtePdCoreL::B0)
@@ -492,9 +501,9 @@ where
         self.variant(CfgtePdCoreL::B1)
     }
 }
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0 - pd_core_l cpu broadcastinner bit control"]
@@ -507,7 +516,7 @@ impl R {
     pub fn broadcastouter_pd_core_l(&self) -> BroadcastouterPdCoreLR {
         BroadcastouterPdCoreLR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - pd_core_l cpu broadcastcachemaint bit control"]
+    #[doc = "Bit 2 - pd_core_l cpu broadcastcachemaint bit\n\ncontrol"]
     #[inline(always)]
     pub fn broadcastcachemaint_pd_core_l(&self) -> BroadcastcachemaintPdCoreLR {
         BroadcastcachemaintPdCoreLR::new(((self.bits >> 2) & 1) != 0)
@@ -542,7 +551,7 @@ impl R {
     pub fn cfgte_pd_core_l(&self) -> CfgtePdCoreLR {
         CfgtePdCoreLR::new(((self.bits >> 12) & 0x0f) as u8)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
@@ -561,7 +570,7 @@ impl W {
     pub fn broadcastouter_pd_core_l(&mut self) -> BroadcastouterPdCoreLW<GrfCpuCon0Spec> {
         BroadcastouterPdCoreLW::new(self, 1)
     }
-    #[doc = "Bit 2 - pd_core_l cpu broadcastcachemaint bit control"]
+    #[doc = "Bit 2 - pd_core_l cpu broadcastcachemaint bit\n\ncontrol"]
     #[inline(always)]
     #[must_use]
     pub fn broadcastcachemaint_pd_core_l(&mut self) -> BroadcastcachemaintPdCoreLW<GrfCpuCon0Spec> {
@@ -603,7 +612,7 @@ impl W {
     pub fn cfgte_pd_core_l(&mut self) -> CfgtePdCoreLW<GrfCpuCon0Spec> {
         CfgtePdCoreLW::new(self, 12)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfCpuCon0Spec> {

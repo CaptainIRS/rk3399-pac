@@ -9,7 +9,7 @@ impl R {
         ACoreverlsbR::new(self.bits)
     }
 }
-#[doc = "HDCP Controller Version Register LSB\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`a_coreverlsb::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "HDCP Controller Version Register LSB Design ID number.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`a_coreverlsb::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ACoreverlsbSpec;
 impl crate::RegisterSpec for ACoreverlsbSpec {
     type Ux = u8;

@@ -2,19 +2,19 @@
 pub type R = crate::R<VBPorchCfgSpec>;
 #[doc = "Register `V_B_PORCH_CFG` writer"]
 pub type W = crate::W<VBPorchCfgSpec>;
-#[doc = "Field `V_B_PORCH_CFG` reader - This is used to specify the number of lines in frame back porch part. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+#[doc = "Field `V_B_PORCH_CFG` reader - This is used to specify the number of lines in frame \n\nback porch part. \n\nWhen F_SEL is 1, this value is sent in main stream \n\nattribute packet. \n\nWhen BIST_EN is 1, this bit field is used to specify \n\nthe BIST video stream format."]
 pub type VBPorchCfgR = crate::FieldReader;
-#[doc = "Field `V_B_PORCH_CFG` writer - This is used to specify the number of lines in frame back porch part. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+#[doc = "Field `V_B_PORCH_CFG` writer - This is used to specify the number of lines in frame \n\nback porch part. \n\nWhen F_SEL is 1, this value is sent in main stream \n\nattribute packet. \n\nWhen BIST_EN is 1, this bit field is used to specify \n\nthe BIST video stream format."]
 pub type VBPorchCfgW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - This is used to specify the number of lines in frame back porch part. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+    #[doc = "Bits 0:7 - This is used to specify the number of lines in frame \n\nback porch part. \n\nWhen F_SEL is 1, this value is sent in main stream \n\nattribute packet. \n\nWhen BIST_EN is 1, this bit field is used to specify \n\nthe BIST video stream format."]
     #[inline(always)]
     pub fn v_b_porch_cfg(&self) -> VBPorchCfgR {
         VBPorchCfgR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - This is used to specify the number of lines in frame back porch part. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+    #[doc = "Bits 0:7 - This is used to specify the number of lines in frame \n\nback porch part. \n\nWhen F_SEL is 1, this value is sent in main stream \n\nattribute packet. \n\nWhen BIST_EN is 1, this bit field is used to specify \n\nthe BIST video stream format."]
     #[inline(always)]
     #[must_use]
     pub fn v_b_porch_cfg(&mut self) -> VBPorchCfgW<VBPorchCfgSpec> {

@@ -3,9 +3,10 @@ pub type R = crate::R<SysCtl3Spec>;
 #[doc = "Register `SYS_CTL_3` writer"]
 pub type W = crate::W<SysCtl3Spec>;
 #[doc = "Stream valid control.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ValidCtrl {
-    #[doc = "1: Use video stream valid auto-detect This bit's type is R/W."]
+    #[doc = "1: Use F_VALID bit to control video stream valid status"]
     B1 = 1,
     #[doc = "0: Use video stream valid auto-detect This bit's type is R/W."]
     B0 = 0,
@@ -27,7 +28,7 @@ impl ValidCtrlR {
             false => ValidCtrl::B0,
         }
     }
-    #[doc = "Use video stream valid auto-detect This bit's type is R/W."]
+    #[doc = "Use F_VALID bit to control video stream valid status"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == ValidCtrl::B1
@@ -44,7 +45,7 @@ impl<'a, REG> ValidCtrlW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Use video stream valid auto-detect This bit's type is R/W."]
+    #[doc = "Use F_VALID bit to control video stream valid status"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(ValidCtrl::B1)
@@ -55,10 +56,11 @@ where
         self.variant(ValidCtrl::B0)
     }
 }
-#[doc = "Force stream valid, this bit only active when VALID_CTRL is 1.\n\nValue on reset: 0"]
+#[doc = "Force stream valid, this bit only active \n\nwhen VALID_CTRL is 1.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FValid {
-    #[doc = "1: Force input video stream not valid. This bit's type is R/W."]
+    #[doc = "1: Force input video stream valid,"]
     B1 = 1,
     #[doc = "0: Force input video stream not valid. This bit's type is R/W."]
     B0 = 0,
@@ -69,7 +71,7 @@ impl From<FValid> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `F_VALID` reader - Force stream valid, this bit only active when VALID_CTRL is 1."]
+#[doc = "Field `F_VALID` reader - Force stream valid, this bit only active \n\nwhen VALID_CTRL is 1."]
 pub type FValidR = crate::BitReader<FValid>;
 impl FValidR {
     #[doc = "Get enumerated values variant"]
@@ -80,7 +82,7 @@ impl FValidR {
             false => FValid::B0,
         }
     }
-    #[doc = "Force input video stream not valid. This bit's type is R/W."]
+    #[doc = "Force input video stream valid,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == FValid::B1
@@ -91,13 +93,13 @@ impl FValidR {
         *self == FValid::B0
     }
 }
-#[doc = "Field `F_VALID` writer - Force stream valid, this bit only active when VALID_CTRL is 1."]
+#[doc = "Field `F_VALID` writer - Force stream valid, this bit only active \n\nwhen VALID_CTRL is 1."]
 pub type FValidW<'a, REG> = crate::BitWriter<'a, REG, FValid>;
 impl<'a, REG> FValidW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Force input video stream not valid. This bit's type is R/W."]
+    #[doc = "Force input video stream valid,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(FValid::B1)
@@ -108,10 +110,11 @@ where
         self.variant(FValid::B0)
     }
 }
-#[doc = "Input stream have constant video format, and this stream is valid to send out through link.\n\nValue on reset: 0"]
+#[doc = "Input stream have constant video format, \n\nand this stream is valid to send out \n\nthrough link.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum StrmValid {
-    #[doc = "1: Input stream is not valid. Write any value to update the current status. Hardware will not send out video through link when this bit is 0."]
+    #[doc = "1: Input stream is valid,"]
     B1 = 1,
     #[doc = "0: Input stream is not valid. Write any value to update the current status. Hardware will not send out video through link when this bit is 0."]
     B0 = 0,
@@ -122,7 +125,7 @@ impl From<StrmValid> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `STRM_VALID` reader - Input stream have constant video format, and this stream is valid to send out through link."]
+#[doc = "Field `STRM_VALID` reader - Input stream have constant video format, \n\nand this stream is valid to send out \n\nthrough link."]
 pub type StrmValidR = crate::BitReader<StrmValid>;
 impl StrmValidR {
     #[doc = "Get enumerated values variant"]
@@ -133,7 +136,7 @@ impl StrmValidR {
             false => StrmValid::B0,
         }
     }
-    #[doc = "Input stream is not valid. Write any value to update the current status. Hardware will not send out video through link when this bit is 0."]
+    #[doc = "Input stream is valid,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == StrmValid::B1
@@ -144,13 +147,13 @@ impl StrmValidR {
         *self == StrmValid::B0
     }
 }
-#[doc = "Field `STRM_VALID` writer - Input stream have constant video format, and this stream is valid to send out through link."]
+#[doc = "Field `STRM_VALID` writer - Input stream have constant video format, \n\nand this stream is valid to send out \n\nthrough link."]
 pub type StrmValidW<'a, REG> = crate::BitWriter<'a, REG, StrmValid>;
 impl<'a, REG> StrmValidW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Input stream is not valid. Write any value to update the current status. Hardware will not send out video through link when this bit is 0."]
+    #[doc = "Input stream is valid,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(StrmValid::B1)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "HDCP ready status.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HdcpRdy {
-    #[doc = "1: HDCP is not ready. This bit's type is RO. This bit is an indicator of whether HDCP is ready to perform. Usually, it is set as soon as HPD signal is detected as plugged."]
+    #[doc = "1: HDCP is ready,"]
     B1 = 1,
     #[doc = "0: HDCP is not ready. This bit's type is RO. This bit is an indicator of whether HDCP is ready to perform. Usually, it is set as soon as HPD signal is detected as plugged."]
     B0 = 0,
@@ -186,7 +190,7 @@ impl HdcpRdyR {
             false => HdcpRdy::B0,
         }
     }
-    #[doc = "HDCP is not ready. This bit's type is RO. This bit is an indicator of whether HDCP is ready to perform. Usually, it is set as soon as HPD signal is detected as plugged."]
+    #[doc = "HDCP is ready,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == HdcpRdy::B1
@@ -198,9 +202,10 @@ impl HdcpRdyR {
     }
 }
 #[doc = "Hot plug detect manual control.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HpdCtrl {
-    #[doc = "1: Use PIN_HPD state. This bit's type is R/W."]
+    #[doc = "1: Force HPD with F_HPD,"]
     B1 = 1,
     #[doc = "0: Use PIN_HPD state. This bit's type is R/W."]
     B0 = 0,
@@ -222,7 +227,7 @@ impl HpdCtrlR {
             false => HpdCtrl::B0,
         }
     }
-    #[doc = "Use PIN_HPD state. This bit's type is R/W."]
+    #[doc = "Force HPD with F_HPD,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == HpdCtrl::B1
@@ -239,7 +244,7 @@ impl<'a, REG> HpdCtrlW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Use PIN_HPD state. This bit's type is R/W."]
+    #[doc = "Force HPD with F_HPD,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(HpdCtrl::B1)
@@ -251,9 +256,10 @@ where
     }
 }
 #[doc = "Force hot plug detect.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FHpd {
-    #[doc = "1: Force HPD 0. This bit's type is R/W."]
+    #[doc = "1: Force HPD 1,"]
     B1 = 1,
     #[doc = "0: Force HPD 0. This bit's type is R/W."]
     B0 = 0,
@@ -275,7 +281,7 @@ impl FHpdR {
             false => FHpd::B0,
         }
     }
-    #[doc = "Force HPD 0. This bit's type is R/W."]
+    #[doc = "Force HPD 1,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == FHpd::B1
@@ -292,7 +298,7 @@ impl<'a, REG> FHpdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Force HPD 0. This bit's type is R/W."]
+    #[doc = "Force HPD 1,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(FHpd::B1)
@@ -304,9 +310,10 @@ where
     }
 }
 #[doc = "Hot plug detect status.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HpdStatus {
-    #[doc = "1: HPD is 0. This bit's type is RO. When this bit is 0, AUX CH will not work. Note that the HPD_STATUS is only changed after the change of the pin I_DP_HPD remains for no less than hot plug deglitch time. And the hot plug deglitch time is defined in HPD_DEGLITCH_L and HPD_DEGLITCH_H."]
+    #[doc = "1: HPD is 1,"]
     B1 = 1,
     #[doc = "0: HPD is 0. This bit's type is RO. When this bit is 0, AUX CH will not work. Note that the HPD_STATUS is only changed after the change of the pin I_DP_HPD remains for no less than hot plug deglitch time. And the hot plug deglitch time is defined in HPD_DEGLITCH_L and HPD_DEGLITCH_H."]
     B0 = 0,
@@ -328,7 +335,7 @@ impl HpdStatusR {
             false => HpdStatus::B0,
         }
     }
-    #[doc = "HPD is 0. This bit's type is RO. When this bit is 0, AUX CH will not work. Note that the HPD_STATUS is only changed after the change of the pin I_DP_HPD remains for no less than hot plug deglitch time. And the hot plug deglitch time is defined in HPD_DEGLITCH_L and HPD_DEGLITCH_H."]
+    #[doc = "HPD is 1,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == HpdStatus::B1
@@ -345,12 +352,12 @@ impl R {
     pub fn valid_ctrl(&self) -> ValidCtrlR {
         ValidCtrlR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - Force stream valid, this bit only active when VALID_CTRL is 1."]
+    #[doc = "Bit 1 - Force stream valid, this bit only active \n\nwhen VALID_CTRL is 1."]
     #[inline(always)]
     pub fn f_valid(&self) -> FValidR {
         FValidR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - Input stream have constant video format, and this stream is valid to send out through link."]
+    #[doc = "Bit 2 - Input stream have constant video format, \n\nand this stream is valid to send out \n\nthrough link."]
     #[inline(always)]
     pub fn strm_valid(&self) -> StrmValidR {
         StrmValidR::new(((self.bits >> 2) & 1) != 0)
@@ -383,13 +390,13 @@ impl W {
     pub fn valid_ctrl(&mut self) -> ValidCtrlW<SysCtl3Spec> {
         ValidCtrlW::new(self, 0)
     }
-    #[doc = "Bit 1 - Force stream valid, this bit only active when VALID_CTRL is 1."]
+    #[doc = "Bit 1 - Force stream valid, this bit only active \n\nwhen VALID_CTRL is 1."]
     #[inline(always)]
     #[must_use]
     pub fn f_valid(&mut self) -> FValidW<SysCtl3Spec> {
         FValidW::new(self, 1)
     }
-    #[doc = "Bit 2 - Input stream have constant video format, and this stream is valid to send out through link."]
+    #[doc = "Bit 2 - Input stream have constant video format, \n\nand this stream is valid to send out \n\nthrough link."]
     #[inline(always)]
     #[must_use]
     pub fn strm_valid(&mut self) -> StrmValidW<SysCtl3Spec> {

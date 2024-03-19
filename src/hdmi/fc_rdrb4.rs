@@ -21,7 +21,7 @@ impl W {
         GcpframeinterpolationW::new(self, 0)
     }
 }
-#[doc = "Frames interpolated between GCP packets\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_rdrb4::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_rdrb4::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer Round Robin GCP Packet Insertion Register 4\n\nConfigures the Frame Composer (FC) RDRB frame interpolation for GCP packet insertion on\n\ndata island when FC is on RDRB mode for this packet.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_rdrb4::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_rdrb4::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcRdrb4Spec;
 impl crate::RegisterSpec for FcRdrb4Spec {
     type Ux = u8;

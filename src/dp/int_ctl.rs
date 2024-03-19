@@ -3,9 +3,10 @@ pub type R = crate::R<IntCtlSpec>;
 #[doc = "Register `INT_CTL` writer"]
 pub type W = crate::W<IntCtlSpec>;
 #[doc = "INT pin assertion polarity:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IntPol {
-    #[doc = "1: Assert low"]
+    #[doc = "1: Assert high,"]
     B1 = 1,
     #[doc = "0: Assert low"]
     B0 = 0,
@@ -27,7 +28,7 @@ impl IntPolR {
             false => IntPol::B0,
         }
     }
-    #[doc = "Assert low"]
+    #[doc = "Assert high,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == IntPol::B1
@@ -44,7 +45,7 @@ impl<'a, REG> IntPolW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Assert low"]
+    #[doc = "Assert high,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(IntPol::B1)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Set Software Interrupt:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SoftIntCtrl {
-    #[doc = "1: Do not set interrupt,"]
+    #[doc = "1: Set interrupt,"]
     B1 = 1,
     #[doc = "0: Do not set interrupt,"]
     B0 = 0,
@@ -80,7 +82,7 @@ impl SoftIntCtrlR {
             false => SoftIntCtrl::B0,
         }
     }
-    #[doc = "Do not set interrupt,"]
+    #[doc = "Set interrupt,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == SoftIntCtrl::B1
@@ -97,7 +99,7 @@ impl<'a, REG> SoftIntCtrlW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Do not set interrupt,"]
+    #[doc = "Set interrupt,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(SoftIntCtrl::B1)

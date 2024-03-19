@@ -2,10 +2,11 @@
 pub type R = crate::R<SdmmcClkenaSpec>;
 #[doc = "Register `SDMMC_CLKENA` writer"]
 pub type W = crate::W<SdmmcClkenaSpec>;
-#[doc = "Clock-enable control for SD card clock and MMC card clock supported.\n\nValue on reset: 0"]
+#[doc = "Clock-enable control for SD card clock and MMC card clock\n\nsupported.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CclkEnable {
-    #[doc = "0: clock enabled"]
+    #[doc = "0: clock disabled"]
     B0 = 0,
     #[doc = "1: clock enabled"]
     B1 = 1,
@@ -16,7 +17,7 @@ impl From<CclkEnable> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CCLK_ENABLE` reader - Clock-enable control for SD card clock and MMC card clock supported."]
+#[doc = "Field `CCLK_ENABLE` reader - Clock-enable control for SD card clock and MMC card clock\n\nsupported."]
 pub type CclkEnableR = crate::BitReader<CclkEnable>;
 impl CclkEnableR {
     #[doc = "Get enumerated values variant"]
@@ -27,7 +28,7 @@ impl CclkEnableR {
             true => CclkEnable::B1,
         }
     }
-    #[doc = "clock enabled"]
+    #[doc = "clock disabled"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CclkEnable::B0
@@ -38,13 +39,13 @@ impl CclkEnableR {
         *self == CclkEnable::B1
     }
 }
-#[doc = "Field `CCLK_ENABLE` writer - Clock-enable control for SD card clock and MMC card clock supported."]
+#[doc = "Field `CCLK_ENABLE` writer - Clock-enable control for SD card clock and MMC card clock\n\nsupported."]
 pub type CclkEnableW<'a, REG> = crate::BitWriter<'a, REG, CclkEnable>;
 impl<'a, REG> CclkEnableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock enabled"]
+    #[doc = "clock disabled"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CclkEnable::B0)
@@ -55,10 +56,11 @@ where
         self.variant(CclkEnable::B1)
     }
 }
-#[doc = "Low-power control for SD card clock and MMC card clock supported.\n\nValue on reset: 0"]
+#[doc = "Low-power control for SD card clock and MMC card clock\n\nsupported.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CclkLowPower {
-    #[doc = "0: low-power mode; stop clock when card in IDLE (should be normally set to only MMC and SD memory cards; for SDIO cards, if interrupts must be detected, clock should not be stopped)."]
+    #[doc = "0: non-low-power mode"]
     B0 = 0,
     #[doc = "1: low-power mode; stop clock when card in IDLE (should be normally set to only MMC and SD memory cards; for SDIO cards, if interrupts must be detected, clock should not be stopped)."]
     B1 = 1,
@@ -69,7 +71,7 @@ impl From<CclkLowPower> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CCLK_LOW_POWER` reader - Low-power control for SD card clock and MMC card clock supported."]
+#[doc = "Field `CCLK_LOW_POWER` reader - Low-power control for SD card clock and MMC card clock\n\nsupported."]
 pub type CclkLowPowerR = crate::BitReader<CclkLowPower>;
 impl CclkLowPowerR {
     #[doc = "Get enumerated values variant"]
@@ -80,7 +82,7 @@ impl CclkLowPowerR {
             true => CclkLowPower::B1,
         }
     }
-    #[doc = "low-power mode; stop clock when card in IDLE (should be normally set to only MMC and SD memory cards; for SDIO cards, if interrupts must be detected, clock should not be stopped)."]
+    #[doc = "non-low-power mode"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CclkLowPower::B0
@@ -91,13 +93,13 @@ impl CclkLowPowerR {
         *self == CclkLowPower::B1
     }
 }
-#[doc = "Field `CCLK_LOW_POWER` writer - Low-power control for SD card clock and MMC card clock supported."]
+#[doc = "Field `CCLK_LOW_POWER` writer - Low-power control for SD card clock and MMC card clock\n\nsupported."]
 pub type CclkLowPowerW<'a, REG> = crate::BitWriter<'a, REG, CclkLowPower>;
 impl<'a, REG> CclkLowPowerW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "low-power mode; stop clock when card in IDLE (should be normally set to only MMC and SD memory cards; for SDIO cards, if interrupts must be detected, clock should not be stopped)."]
+    #[doc = "non-low-power mode"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CclkLowPower::B0)
@@ -109,25 +111,25 @@ where
     }
 }
 impl R {
-    #[doc = "Bit 0 - Clock-enable control for SD card clock and MMC card clock supported."]
+    #[doc = "Bit 0 - Clock-enable control for SD card clock and MMC card clock\n\nsupported."]
     #[inline(always)]
     pub fn cclk_enable(&self) -> CclkEnableR {
         CclkEnableR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 16 - Low-power control for SD card clock and MMC card clock supported."]
+    #[doc = "Bit 16 - Low-power control for SD card clock and MMC card clock\n\nsupported."]
     #[inline(always)]
     pub fn cclk_low_power(&self) -> CclkLowPowerR {
         CclkLowPowerR::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Clock-enable control for SD card clock and MMC card clock supported."]
+    #[doc = "Bit 0 - Clock-enable control for SD card clock and MMC card clock\n\nsupported."]
     #[inline(always)]
     #[must_use]
     pub fn cclk_enable(&mut self) -> CclkEnableW<SdmmcClkenaSpec> {
         CclkEnableW::new(self, 0)
     }
-    #[doc = "Bit 16 - Low-power control for SD card clock and MMC card clock supported."]
+    #[doc = "Bit 16 - Low-power control for SD card clock and MMC card clock\n\nsupported."]
     #[inline(always)]
     #[must_use]
     pub fn cclk_low_power(&mut self) -> CclkLowPowerW<SdmmcClkenaSpec> {

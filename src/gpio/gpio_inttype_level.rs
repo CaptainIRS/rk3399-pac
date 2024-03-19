@@ -3,10 +3,11 @@ pub type R = crate::R<GpioInttypeLevelSpec>;
 #[doc = "Register `GPIO_INTTYPE_LEVEL` writer"]
 pub type W = crate::W<GpioInttypeLevelSpec>;
 #[doc = "Controls the type of interrupt that can occur on Port A.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum GpioInttypeLevel {
-    #[doc = "0: Edge-sensitive"]
+    #[doc = "0: Level-sensitive (default)"]
     B0 = 0,
     #[doc = "1: Edge-sensitive"]
     B1 = 1,
@@ -32,7 +33,7 @@ impl GpioInttypeLevelR {
             _ => None,
         }
     }
-    #[doc = "Edge-sensitive"]
+    #[doc = "Level-sensitive (default)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == GpioInttypeLevel::B0
@@ -50,7 +51,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u32>,
 {
-    #[doc = "Edge-sensitive"]
+    #[doc = "Level-sensitive (default)"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(GpioInttypeLevel::B0)

@@ -1,9 +1,9 @@
 #[doc = "Register `SDMMC_VERID` reader"]
 pub type R = crate::R<SdmmcVeridSpec>;
-#[doc = "Field `VERID` reader - Version identification register; register value is hard-wired. Can be read by firmware to support different versions of core."]
+#[doc = "Field `VERID` reader - Version identification register; register value is hard-wired. Can\n\nbe read by firmware to support different versions of core."]
 pub type VeridR = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Version identification register; register value is hard-wired. Can be read by firmware to support different versions of core."]
+    #[doc = "Bits 0:31 - Version identification register; register value is hard-wired. Can\n\nbe read by firmware to support different versions of core."]
     #[inline(always)]
     pub fn verid(&self) -> VeridR {
         VeridR::new(self.bits)

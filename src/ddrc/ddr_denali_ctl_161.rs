@@ -2,14 +2,14 @@
 pub type R = crate::R<DdrDenaliCtl161Spec>;
 #[doc = "Register `DDR_DENALI_CTL_161` writer"]
 pub type W = crate::W<DdrDenaliCtl161Spec>;
-#[doc = "Field `RL3_SUPPORT_EN` reader - Indicates if RL3 is supported by a connected LPDDR3 memory. Data read from MR0 bit 7. READ-ONLY"]
+#[doc = "Field `RL3_SUPPORT_EN` reader - Indicates if RL3 is supported by a connected LPDDR3 memory. Data read from MR0 bit 7."]
 pub type Rl3SupportEnR = crate::FieldReader;
 #[doc = "Field `FSP_PHY_UPDATE_MRW` reader - Identifies the logic responsible for updating MR12 and MR14 in memory. Clear to 0 for the controller, or set to 1 for the PHY or PI."]
 pub type FspPhyUpdateMrwR = crate::BitReader;
 #[doc = "Field `FSP_PHY_UPDATE_MRW` writer - Identifies the logic responsible for updating MR12 and MR14 in memory. Clear to 0 for the controller, or set to 1 for the PHY or PI."]
 pub type FspPhyUpdateMrwW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bits 0:1 - Indicates if RL3 is supported by a connected LPDDR3 memory. Data read from MR0 bit 7. READ-ONLY"]
+    #[doc = "Bits 0:1 - Indicates if RL3 is supported by a connected LPDDR3 memory. Data read from MR0 bit 7."]
     #[inline(always)]
     pub fn rl3_support_en(&self) -> Rl3SupportEnR {
         Rl3SupportEnR::new((self.bits & 3) as u8)

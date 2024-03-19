@@ -2,21 +2,21 @@
 pub type R = crate::R<DdrDenaliPhy906Spec>;
 #[doc = "Register `DDR_DENALI_PHY_906` writer"]
 pub type W = crate::W<DdrDenaliPhy906Spec>;
-#[doc = "Field `PHY_GRP_SLV_DLY_ENC_OBS` reader - Observation register for all address/control group slice slave delay encoded values. READ- ONLY"]
+#[doc = "Field `PHY_GRP_SLV_DLY_ENC_OBS` reader - Observation register for all address/control group slice slave delay encoded values."]
 pub type PhyGrpSlvDlyEncObsR = crate::FieldReader<u16>;
-#[doc = "Field `PHY_GRP_SHIFT_OBS` reader - Observation register for the address/control group automatic half cycle and cycle shift values. READ-ONLY"]
+#[doc = "Field `PHY_GRP_SHIFT_OBS` reader - Observation register for the address/control group automatic half cycle and cycle shift values."]
 pub type PhyGrpShiftObsR = crate::FieldReader;
 #[doc = "Field `PHY_ADRCTL_SLAVE_LOOP_CNT_UPDATE` reader - Sets the frequency by which the slave delay encoded value holding registers are updated for the address/control master."]
 pub type PhyAdrctlSlaveLoopCntUpdateR = crate::FieldReader;
 #[doc = "Field `PHY_ADRCTL_SLAVE_LOOP_CNT_UPDATE` writer - Sets the frequency by which the slave delay encoded value holding registers are updated for the address/control master."]
 pub type PhyAdrctlSlaveLoopCntUpdateW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
-    #[doc = "Bits 0:9 - Observation register for all address/control group slice slave delay encoded values. READ- ONLY"]
+    #[doc = "Bits 0:9 - Observation register for all address/control group slice slave delay encoded values."]
     #[inline(always)]
     pub fn phy_grp_slv_dly_enc_obs(&self) -> PhyGrpSlvDlyEncObsR {
         PhyGrpSlvDlyEncObsR::new((self.bits & 0x03ff) as u16)
     }
-    #[doc = "Bits 16:18 - Observation register for the address/control group automatic half cycle and cycle shift values. READ-ONLY"]
+    #[doc = "Bits 16:18 - Observation register for the address/control group automatic half cycle and cycle shift values."]
     #[inline(always)]
     pub fn phy_grp_shift_obs(&self) -> PhyGrpShiftObsR {
         PhyGrpShiftObsR::new(((self.bits >> 16) & 7) as u8)

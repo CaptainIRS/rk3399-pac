@@ -3,9 +3,10 @@ pub type R = crate::R<GrfSocCon5Spec>;
 #[doc = "Register `GRF_SOC_CON5` writer"]
 pub type W = crate::W<GrfSocCon5Spec>;
 #[doc = "RMII clock selection\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RmiiClkSel {
-    #[doc = "1: 2.5MHz"]
+    #[doc = "1: 25MHz"]
     B1 = 1,
     #[doc = "0: 2.5MHz"]
     B0 = 0,
@@ -27,7 +28,7 @@ impl RmiiClkSelR {
             false => RmiiClkSel::B0,
         }
     }
-    #[doc = "2.5MHz"]
+    #[doc = "25MHz"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == RmiiClkSel::B1
@@ -44,7 +45,7 @@ impl<'a, REG> RmiiClkSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "2.5MHz"]
+    #[doc = "25MHz"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(RmiiClkSel::B1)
@@ -56,12 +57,13 @@ where
     }
 }
 #[doc = "RGMII clock selection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum GmacClkSel {
-    #[doc = "0: 2.5MHz"]
+    #[doc = "0: 125MHz"]
     B00 = 0,
-    #[doc = "3: 2.5MHz"]
+    #[doc = "3: 25MHz"]
     B11 = 3,
     #[doc = "2: 2.5MHz"]
     B10 = 2,
@@ -88,12 +90,12 @@ impl GmacClkSelR {
             _ => None,
         }
     }
-    #[doc = "2.5MHz"]
+    #[doc = "125MHz"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == GmacClkSel::B00
     }
-    #[doc = "2.5MHz"]
+    #[doc = "25MHz"]
     #[inline(always)]
     pub fn is_b11(&self) -> bool {
         *self == GmacClkSel::B11
@@ -111,12 +113,12 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "2.5MHz"]
+    #[doc = "125MHz"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(GmacClkSel::B00)
     }
-    #[doc = "2.5MHz"]
+    #[doc = "25MHz"]
     #[inline(always)]
     pub fn b11(self) -> &'a mut crate::W<REG> {
         self.variant(GmacClkSel::B11)
@@ -128,9 +130,10 @@ where
     }
 }
 #[doc = "RMII mode selection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RmiiMode {
-    #[doc = "1: MII mode"]
+    #[doc = "1: RMII mode"]
     B1 = 1,
     #[doc = "0: MII mode"]
     B0 = 0,
@@ -152,7 +155,7 @@ impl RmiiModeR {
             false => RmiiMode::B0,
         }
     }
-    #[doc = "MII mode"]
+    #[doc = "RMII mode"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == RmiiMode::B1
@@ -169,7 +172,7 @@ impl<'a, REG> RmiiModeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "MII mode"]
+    #[doc = "RMII mode"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(RmiiMode::B1)
@@ -181,9 +184,10 @@ where
     }
 }
 #[doc = "MAC speed\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GmacSpeed {
-    #[doc = "1: 10-Mbps"]
+    #[doc = "1: 100-Mbps"]
     B1 = 1,
     #[doc = "0: 10-Mbps"]
     B0 = 0,
@@ -205,7 +209,7 @@ impl GmacSpeedR {
             false => GmacSpeed::B0,
         }
     }
-    #[doc = "10-Mbps"]
+    #[doc = "100-Mbps"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == GmacSpeed::B1
@@ -222,7 +226,7 @@ impl<'a, REG> GmacSpeedW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "10-Mbps"]
+    #[doc = "100-Mbps"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(GmacSpeed::B1)
@@ -233,15 +237,16 @@ where
         self.variant(GmacSpeed::B0)
     }
 }
-#[doc = "Field `GMAC_FLOWCTRL` reader - GMAC transmit flow control When set high, instructs the GMAC to transmit PAUSE Control frames in Full-duplex mode. In Half-duplex mode, the GMAC enables the Back-pressure function until this signal is made low again"]
+#[doc = "Field `GMAC_FLOWCTRL` reader - GMAC transmit flow control\n\nWhen set high, instructs the GMAC to transmit\n\nPAUSE Control frames in\n\nFull-duplex mode. In Half-duplex mode, the\n\nGMAC enables the Back-pressure\n\nfunction until this signal is made low again"]
 pub type GmacFlowctrlR = crate::BitReader;
-#[doc = "Field `GMAC_FLOWCTRL` writer - GMAC transmit flow control When set high, instructs the GMAC to transmit PAUSE Control frames in Full-duplex mode. In Half-duplex mode, the GMAC enables the Back-pressure function until this signal is made low again"]
+#[doc = "Field `GMAC_FLOWCTRL` writer - GMAC transmit flow control\n\nWhen set high, instructs the GMAC to transmit\n\nPAUSE Control frames in\n\nFull-duplex mode. In Half-duplex mode, the\n\nGMAC enables the Back-pressure\n\nfunction until this signal is made low again"]
 pub type GmacFlowctrlW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "PHY interface select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum GmacPhyIntfSel {
-    #[doc = "1: RMII All others: Reserved"]
+    #[doc = "1: RGMII"]
     B001 = 1,
     #[doc = "4: RMII All others: Reserved"]
     B100 = 4,
@@ -267,7 +272,7 @@ impl GmacPhyIntfSelR {
             _ => None,
         }
     }
-    #[doc = "RMII All others: Reserved"]
+    #[doc = "RGMII"]
     #[inline(always)]
     pub fn is_b001(&self) -> bool {
         *self == GmacPhyIntfSel::B001
@@ -285,7 +290,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "RMII All others: Reserved"]
+    #[doc = "RGMII"]
     #[inline(always)]
     pub fn b001(self) -> &'a mut crate::W<REG> {
         self.variant(GmacPhyIntfSel::B001)
@@ -296,9 +301,9 @@ where
         self.variant(GmacPhyIntfSel::B100)
     }
 }
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 3 - RMII clock selection"]
@@ -321,7 +326,7 @@ impl R {
     pub fn gmac_speed(&self) -> GmacSpeedR {
         GmacSpeedR::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bit 8 - GMAC transmit flow control When set high, instructs the GMAC to transmit PAUSE Control frames in Full-duplex mode. In Half-duplex mode, the GMAC enables the Back-pressure function until this signal is made low again"]
+    #[doc = "Bit 8 - GMAC transmit flow control\n\nWhen set high, instructs the GMAC to transmit\n\nPAUSE Control frames in\n\nFull-duplex mode. In Half-duplex mode, the\n\nGMAC enables the Back-pressure\n\nfunction until this signal is made low again"]
     #[inline(always)]
     pub fn gmac_flowctrl(&self) -> GmacFlowctrlR {
         GmacFlowctrlR::new(((self.bits >> 8) & 1) != 0)
@@ -331,7 +336,7 @@ impl R {
     pub fn gmac_phy_intf_sel(&self) -> GmacPhyIntfSelR {
         GmacPhyIntfSelR::new(((self.bits >> 9) & 7) as u8)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
@@ -362,7 +367,7 @@ impl W {
     pub fn gmac_speed(&mut self) -> GmacSpeedW<GrfSocCon5Spec> {
         GmacSpeedW::new(self, 7)
     }
-    #[doc = "Bit 8 - GMAC transmit flow control When set high, instructs the GMAC to transmit PAUSE Control frames in Full-duplex mode. In Half-duplex mode, the GMAC enables the Back-pressure function until this signal is made low again"]
+    #[doc = "Bit 8 - GMAC transmit flow control\n\nWhen set high, instructs the GMAC to transmit\n\nPAUSE Control frames in\n\nFull-duplex mode. In Half-duplex mode, the\n\nGMAC enables the Back-pressure\n\nfunction until this signal is made low again"]
     #[inline(always)]
     #[must_use]
     pub fn gmac_flowctrl(&mut self) -> GmacFlowctrlW<GrfSocCon5Spec> {
@@ -374,7 +379,7 @@ impl W {
     pub fn gmac_phy_intf_sel(&mut self) -> GmacPhyIntfSelW<GrfSocCon5Spec> {
         GmacPhyIntfSelW::new(self, 9)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfSocCon5Spec> {

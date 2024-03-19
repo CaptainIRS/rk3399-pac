@@ -2,21 +2,22 @@
 pub type R = crate::R<CruClkselCon13Spec>;
 #[doc = "Register `CRU_CLKSEL_CON13` writer"]
 pub type W = crate::W<CruClkselCon13Spec>;
-#[doc = "Field `ACLK_GPU_DIV_CON` reader - aclk_gpu divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `ACLK_GPU_DIV_CON` reader - aclk_gpu divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type AclkGpuDivConR = crate::FieldReader;
-#[doc = "Field `ACLK_GPU_DIV_CON` writer - aclk_gpu divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `ACLK_GPU_DIV_CON` writer - aclk_gpu divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type AclkGpuDivConW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "aclk_gpu clock source select control register\n\nValue on reset: 3"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AclkGpuPllSel {
-    #[doc = "0: USB_480M"]
+    #[doc = "0: PPLL"]
     B000 = 0,
-    #[doc = "1: USB_480M"]
+    #[doc = "1: CPLL"]
     B001 = 1,
-    #[doc = "2: USB_480M"]
+    #[doc = "2: GPLL"]
     B010 = 2,
-    #[doc = "3: USB_480M"]
+    #[doc = "3: NPLL"]
     B011 = 3,
     #[doc = "4: USB_480M"]
     B100 = 4,
@@ -45,22 +46,22 @@ impl AclkGpuPllSelR {
             _ => None,
         }
     }
-    #[doc = "USB_480M"]
+    #[doc = "PPLL"]
     #[inline(always)]
     pub fn is_b000(&self) -> bool {
         *self == AclkGpuPllSel::B000
     }
-    #[doc = "USB_480M"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn is_b001(&self) -> bool {
         *self == AclkGpuPllSel::B001
     }
-    #[doc = "USB_480M"]
+    #[doc = "GPLL"]
     #[inline(always)]
     pub fn is_b010(&self) -> bool {
         *self == AclkGpuPllSel::B010
     }
-    #[doc = "USB_480M"]
+    #[doc = "NPLL"]
     #[inline(always)]
     pub fn is_b011(&self) -> bool {
         *self == AclkGpuPllSel::B011
@@ -78,22 +79,22 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "USB_480M"]
+    #[doc = "PPLL"]
     #[inline(always)]
     pub fn b000(self) -> &'a mut crate::W<REG> {
         self.variant(AclkGpuPllSel::B000)
     }
-    #[doc = "USB_480M"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn b001(self) -> &'a mut crate::W<REG> {
         self.variant(AclkGpuPllSel::B001)
     }
-    #[doc = "USB_480M"]
+    #[doc = "GPLL"]
     #[inline(always)]
     pub fn b010(self) -> &'a mut crate::W<REG> {
         self.variant(AclkGpuPllSel::B010)
     }
-    #[doc = "USB_480M"]
+    #[doc = "NPLL"]
     #[inline(always)]
     pub fn b011(self) -> &'a mut crate::W<REG> {
         self.variant(AclkGpuPllSel::B011)
@@ -104,14 +105,15 @@ where
         self.variant(AclkGpuPllSel::B100)
     }
 }
-#[doc = "Field `HCLK_SD_DIV_CON` reader - hclk_sd divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `HCLK_SD_DIV_CON` reader - hclk_sd divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type HclkSdDivConR = crate::FieldReader;
-#[doc = "Field `HCLK_SD_DIV_CON` writer - hclk_sd divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `HCLK_SD_DIV_CON` writer - hclk_sd divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type HclkSdDivConW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "hclk_sd clock source select control register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HclkSdSrcSel {
-    #[doc = "0: GPLL"]
+    #[doc = "0: CPLL"]
     B0 = 0,
     #[doc = "1: GPLL"]
     B1 = 1,
@@ -133,7 +135,7 @@ impl HclkSdSrcSelR {
             true => HclkSdSrcSel::B1,
         }
     }
-    #[doc = "GPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == HclkSdSrcSel::B0
@@ -150,7 +152,7 @@ impl<'a, REG> HclkSdSrcSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "GPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(HclkSdSrcSel::B0)
@@ -161,10 +163,10 @@ where
         self.variant(HclkSdSrcSel::B1)
     }
 }
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:4 - aclk_gpu divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:4 - aclk_gpu divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn aclk_gpu_div_con(&self) -> AclkGpuDivConR {
         AclkGpuDivConR::new((self.bits & 0x1f) as u8)
@@ -174,7 +176,7 @@ impl R {
     pub fn aclk_gpu_pll_sel(&self) -> AclkGpuPllSelR {
         AclkGpuPllSelR::new(((self.bits >> 5) & 7) as u8)
     }
-    #[doc = "Bits 8:12 - hclk_sd divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 8:12 - hclk_sd divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn hclk_sd_div_con(&self) -> HclkSdDivConR {
         HclkSdDivConR::new(((self.bits >> 8) & 0x1f) as u8)
@@ -186,7 +188,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - aclk_gpu divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:4 - aclk_gpu divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_gpu_div_con(&mut self) -> AclkGpuDivConW<CruClkselCon13Spec> {
@@ -198,7 +200,7 @@ impl W {
     pub fn aclk_gpu_pll_sel(&mut self) -> AclkGpuPllSelW<CruClkselCon13Spec> {
         AclkGpuPllSelW::new(self, 5)
     }
-    #[doc = "Bits 8:12 - hclk_sd divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 8:12 - hclk_sd divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn hclk_sd_div_con(&mut self) -> HclkSdDivConW<CruClkselCon13Spec> {
@@ -210,7 +212,7 @@ impl W {
     pub fn hclk_sd_src_sel(&mut self) -> HclkSdSrcSelW<CruClkselCon13Spec> {
         HclkSdSrcSelW::new(self, 15)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkselCon13Spec> {

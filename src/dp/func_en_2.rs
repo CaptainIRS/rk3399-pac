@@ -2,10 +2,11 @@
 pub type R = crate::R<FuncEn2Spec>;
 #[doc = "Register `FUNC_EN_2` writer"]
 pub type W = crate::W<FuncEn2Spec>;
-#[doc = "Link symbol clock domain modules functions enable.\n\nValue on reset: 1"]
+#[doc = "Link symbol clock domain modules \n\nfunctions enable.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LsClkDomainFuncEnN {
-    #[doc = "0: Disable the modules in link symbol clock domain. To reset the modules in link symbol clock domain, firmware must disable and enable this bit."]
+    #[doc = "0: Normal mode,"]
     B0 = 0,
     #[doc = "1: Disable the modules in link symbol clock domain. To reset the modules in link symbol clock domain, firmware must disable and enable this bit."]
     B1 = 1,
@@ -16,7 +17,7 @@ impl From<LsClkDomainFuncEnN> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LS_CLK_DOMAIN_FUNC_EN_N` reader - Link symbol clock domain modules functions enable."]
+#[doc = "Field `LS_CLK_DOMAIN_FUNC_EN_N` reader - Link symbol clock domain modules \n\nfunctions enable."]
 pub type LsClkDomainFuncEnNR = crate::BitReader<LsClkDomainFuncEnN>;
 impl LsClkDomainFuncEnNR {
     #[doc = "Get enumerated values variant"]
@@ -27,7 +28,7 @@ impl LsClkDomainFuncEnNR {
             true => LsClkDomainFuncEnN::B1,
         }
     }
-    #[doc = "Disable the modules in link symbol clock domain. To reset the modules in link symbol clock domain, firmware must disable and enable this bit."]
+    #[doc = "Normal mode,"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == LsClkDomainFuncEnN::B0
@@ -38,13 +39,13 @@ impl LsClkDomainFuncEnNR {
         *self == LsClkDomainFuncEnN::B1
     }
 }
-#[doc = "Field `LS_CLK_DOMAIN_FUNC_EN_N` writer - Link symbol clock domain modules functions enable."]
+#[doc = "Field `LS_CLK_DOMAIN_FUNC_EN_N` writer - Link symbol clock domain modules \n\nfunctions enable."]
 pub type LsClkDomainFuncEnNW<'a, REG> = crate::BitWriter1C<'a, REG, LsClkDomainFuncEnN>;
 impl<'a, REG> LsClkDomainFuncEnNW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disable the modules in link symbol clock domain. To reset the modules in link symbol clock domain, firmware must disable and enable this bit."]
+    #[doc = "Normal mode,"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(LsClkDomainFuncEnN::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Serdes FIFO function enable.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SerdesFifoFuncEnN {
-    #[doc = "0: Disable Serdes FIFO. To reset the serdes fifo, firmware must disable and enable this bit."]
+    #[doc = "0: Normal mode,"]
     B0 = 0,
     #[doc = "1: Disable Serdes FIFO. To reset the serdes fifo, firmware must disable and enable this bit."]
     B1 = 1,
@@ -80,7 +82,7 @@ impl SerdesFifoFuncEnNR {
             true => SerdesFifoFuncEnN::B1,
         }
     }
-    #[doc = "Disable Serdes FIFO. To reset the serdes fifo, firmware must disable and enable this bit."]
+    #[doc = "Normal mode,"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SerdesFifoFuncEnN::B0
@@ -97,7 +99,7 @@ impl<'a, REG> SerdesFifoFuncEnNW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disable Serdes FIFO. To reset the serdes fifo, firmware must disable and enable this bit."]
+    #[doc = "Normal mode,"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SerdesFifoFuncEnN::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "AUX channel module function enable.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AuxFuncEnN {
-    #[doc = "0: Disable AUX channel module."]
+    #[doc = "0: Normal operation,"]
     B0 = 0,
     #[doc = "1: Disable AUX channel module."]
     B1 = 1,
@@ -133,7 +136,7 @@ impl AuxFuncEnNR {
             true => AuxFuncEnN::B1,
         }
     }
-    #[doc = "Disable AUX channel module."]
+    #[doc = "Normal operation,"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == AuxFuncEnN::B0
@@ -150,7 +153,7 @@ impl<'a, REG> AuxFuncEnNW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disable AUX channel module."]
+    #[doc = "Normal operation,"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(AuxFuncEnN::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "SSC module enable.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SscFuncEnN {
-    #[doc = "0: Disable SSC module. To apply updated SSC parameters into SSC operation, firmware must disable and enable this bit."]
+    #[doc = "0: Normal mode,"]
     B0 = 0,
     #[doc = "1: Disable SSC module. To apply updated SSC parameters into SSC operation, firmware must disable and enable this bit."]
     B1 = 1,
@@ -186,7 +190,7 @@ impl SscFuncEnNR {
             true => SscFuncEnN::B1,
         }
     }
-    #[doc = "Disable SSC module. To apply updated SSC parameters into SSC operation, firmware must disable and enable this bit."]
+    #[doc = "Normal mode,"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SscFuncEnN::B0
@@ -203,7 +207,7 @@ impl<'a, REG> SscFuncEnNW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disable SSC module. To apply updated SSC parameters into SSC operation, firmware must disable and enable this bit."]
+    #[doc = "Normal mode,"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SscFuncEnN::B0)
@@ -215,7 +219,7 @@ where
     }
 }
 impl R {
-    #[doc = "Bit 0 - Link symbol clock domain modules functions enable."]
+    #[doc = "Bit 0 - Link symbol clock domain modules \n\nfunctions enable."]
     #[inline(always)]
     pub fn ls_clk_domain_func_en_n(&self) -> LsClkDomainFuncEnNR {
         LsClkDomainFuncEnNR::new((self.bits & 1) != 0)
@@ -237,7 +241,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - Link symbol clock domain modules functions enable."]
+    #[doc = "Bit 0 - Link symbol clock domain modules \n\nfunctions enable."]
     #[inline(always)]
     #[must_use]
     pub fn ls_clk_domain_func_en_n(&mut self) -> LsClkDomainFuncEnNW<FuncEn2Spec> {

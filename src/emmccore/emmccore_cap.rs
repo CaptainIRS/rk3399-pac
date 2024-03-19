@@ -2,12 +2,13 @@
 pub type R = crate::R<EmmccoreCapSpec>;
 #[doc = "Register `EMMCCORE_CAP` writer"]
 pub type W = crate::W<EmmccoreCapSpec>;
-#[doc = "Field `TIMEOUTCLOCKFREQUENCY` reader - This bit shows the base clock frequency used to detect Data Timeout Error. Not 0: 1Khz to 63Khz or 1Mhz to 63Mhz 0: Get Information viaanother method"]
+#[doc = "Field `TIMEOUTCLOCKFREQUENCY` reader - This bit shows the base clock frequency used to detect Data\n\nTimeout Error.\n\nNot 0: 1Khz to 63Khz or 1Mhz to 63Mhz\n\n0: Get Information viaanother method"]
 pub type TimeoutclockfrequencyR = crate::FieldReader;
-#[doc = "This bit shows the unit of base clock frequency used to detect Data Timeout Error.\n\nValue on reset: 1"]
+#[doc = "This bit shows the unit of base clock frequency used to detect\n\nData Timeout Error.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Timeoutclockunit {
-    #[doc = "0: Mhz"]
+    #[doc = "0: Khz"]
     B0 = 0,
     #[doc = "1: Mhz"]
     B1 = 1,
@@ -18,7 +19,7 @@ impl From<Timeoutclockunit> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TIMEOUTCLOCKUNIT` reader - This bit shows the unit of base clock frequency used to detect Data Timeout Error."]
+#[doc = "Field `TIMEOUTCLOCKUNIT` reader - This bit shows the unit of base clock frequency used to detect\n\nData Timeout Error."]
 pub type TimeoutclockunitR = crate::BitReader<Timeoutclockunit>;
 impl TimeoutclockunitR {
     #[doc = "Get enumerated values variant"]
@@ -29,7 +30,7 @@ impl TimeoutclockunitR {
             true => Timeoutclockunit::B1,
         }
     }
-    #[doc = "Mhz"]
+    #[doc = "Khz"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Timeoutclockunit::B0
@@ -40,17 +41,18 @@ impl TimeoutclockunitR {
         *self == Timeoutclockunit::B1
     }
 }
-#[doc = "Field `BASECLOCKFREQSDCLOCK` reader - Base Clock Frequency for SD Clock (1) 6-bit Base Clock Frequency This mode is supported by the Host Controller Version 1.00 and 2.00. Upper 2-bit is not effective and always 0. Unit values are 1MHz. The supported clock range is 10MHz to 63MHz. 8'h00: Get information via another method 8'h01: 1MHz 8'h02: 2MHz ...... 8'h3f: 63MHz others: not supported (2) 8-bit Base Clock Frequency This mode is supported by the Host Controller Version 3.00. Unit values are 1MHz. The supported clock range is 10MHz to 255MHz. 8'h00: Get information via another method 8'h01: 1MHz 8'h02: 2MHz ...... 8'hff: 255MHz If the real frequency is 16.5MHz, the lager value shall be set 0001 0001b (17MHz) because the Host Driver use this value to calculate the clock divider value (Refer to the SDCLK Frequency Select in the Clock Control register.) and it shall not exceed upper limit of the SD Clock frequency. If these bits are all 0, the Host System has to get information via another method."]
+#[doc = "Field `BASECLOCKFREQSDCLOCK` reader - Base Clock Frequency for SD Clock\n\n(1) 6-bit Base Clock Frequency\n\nThis mode is supported by the Host Controller Version 1.00 and\n\n2.00. Upper 2-bit is not effective and always 0. Unit values are\n\n1MHz. The supported clock range is 10MHz to 63MHz.\n\n8'h00: Get information via another method\n\n8'h01: 1MHz\n\n8'h02: 2MHz\n\n......\n\n8'h3f: 63MHz\n\nothers: not supported\n\n(2) 8-bit Base Clock Frequency\n\nThis mode is supported by the Host Controller Version 3.00. Unit\n\nvalues are 1MHz. The supported clock range is 10MHz to 255MHz.\n\n8'h00: Get information via another method\n\n8'h01: 1MHz\n\n8'h02: 2MHz\n\n......\n\n8'hff: 255MHz\n\nIf the real frequency is 16.5MHz, the lager value shall be set\n\n0001 0001b (17MHz) because the Host Driver use this value to\n\ncalculate the clock divider value (Refer to the SDCLK Frequency\n\nSelect in the Clock Control register.) and it shall not exceed upper\n\nlimit of the SD Clock frequency. If these bits are all 0, the Host\n\nSystem has to get information via another method."]
 pub type BaseclockfreqsdclockR = crate::FieldReader;
-#[doc = "Max Block Length This value indicates the maximum block size that the HD can read and write to the buffer in the HC. The buffer shall transfer this block size without wait cycles. Three sizes can be defined as indicated below.\n\nValue on reset: 1"]
+#[doc = "Max Block Length\n\nThis value indicates the maximum block size that the HD can\n\nread and write to the buffer in the HC.\n\nThe buffer shall transfer this block size without wait cycles. Three\n\nsizes can be defined as indicated below.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Maxblocklength {
-    #[doc = "0: 4096 byte"]
+    #[doc = "0: 512 byte"]
     D0 = 0,
-    #[doc = "1: 4096 byte"]
+    #[doc = "1: 1024 byte"]
     D1 = 1,
-    #[doc = "2: 4096 byte"]
+    #[doc = "2: 2048 byte"]
     D2 = 2,
     #[doc = "3: 4096 byte"]
     D3 = 3,
@@ -64,7 +66,7 @@ impl From<Maxblocklength> for u8 {
 impl crate::FieldSpec for Maxblocklength {
     type Ux = u8;
 }
-#[doc = "Field `MAXBLOCKLENGTH` reader - Max Block Length This value indicates the maximum block size that the HD can read and write to the buffer in the HC. The buffer shall transfer this block size without wait cycles. Three sizes can be defined as indicated below."]
+#[doc = "Field `MAXBLOCKLENGTH` reader - Max Block Length\n\nThis value indicates the maximum block size that the HD can\n\nread and write to the buffer in the HC.\n\nThe buffer shall transfer this block size without wait cycles. Three\n\nsizes can be defined as indicated below."]
 pub type MaxblocklengthR = crate::FieldReader<Maxblocklength>;
 impl MaxblocklengthR {
     #[doc = "Get enumerated values variant"]
@@ -78,17 +80,17 @@ impl MaxblocklengthR {
             _ => unreachable!(),
         }
     }
-    #[doc = "4096 byte"]
+    #[doc = "512 byte"]
     #[inline(always)]
     pub fn is_d0(&self) -> bool {
         *self == Maxblocklength::D0
     }
-    #[doc = "4096 byte"]
+    #[doc = "1024 byte"]
     #[inline(always)]
     pub fn is_d1(&self) -> bool {
         *self == Maxblocklength::D1
     }
-    #[doc = "4096 byte"]
+    #[doc = "2048 byte"]
     #[inline(always)]
     pub fn is_d2(&self) -> bool {
         *self == Maxblocklength::D2
@@ -99,10 +101,11 @@ impl MaxblocklengthR {
         *self == Maxblocklength::D3
     }
 }
-#[doc = "Extended Media Bus Support This bit indicates whether the Host Controller is capable of using 8-bit bus width mode. This bit is not effective when Slot Type is set to 10b. In this case, refer to Bus Width Preset in the Shared Bus resister.\n\nValue on reset: 1"]
+#[doc = "Extended Media Bus Support\n\nThis bit indicates whether the Host Controller is capable of using\n\n8-bit bus width mode. This bit is not effective when Slot Type is\n\nset to 10b. In this case, refer to Bus Width Preset in the Shared\n\nBus resister.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Extendedmediabussupport {
-    #[doc = "1: Extended Media Bus not Supported"]
+    #[doc = "1: Extended Media Bus Supported"]
     B1 = 1,
     #[doc = "0: Extended Media Bus not Supported"]
     B0 = 0,
@@ -113,7 +116,7 @@ impl From<Extendedmediabussupport> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EXTENDEDMEDIABUSSUPPORT` reader - Extended Media Bus Support This bit indicates whether the Host Controller is capable of using 8-bit bus width mode. This bit is not effective when Slot Type is set to 10b. In this case, refer to Bus Width Preset in the Shared Bus resister."]
+#[doc = "Field `EXTENDEDMEDIABUSSUPPORT` reader - Extended Media Bus Support\n\nThis bit indicates whether the Host Controller is capable of using\n\n8-bit bus width mode. This bit is not effective when Slot Type is\n\nset to 10b. In this case, refer to Bus Width Preset in the Shared\n\nBus resister."]
 pub type ExtendedmediabussupportR = crate::BitReader<Extendedmediabussupport>;
 impl ExtendedmediabussupportR {
     #[doc = "Get enumerated values variant"]
@@ -124,7 +127,7 @@ impl ExtendedmediabussupportR {
             false => Extendedmediabussupport::B0,
         }
     }
-    #[doc = "Extended Media Bus not Supported"]
+    #[doc = "Extended Media Bus Supported"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Extendedmediabussupport::B1
@@ -136,9 +139,10 @@ impl ExtendedmediabussupportR {
     }
 }
 #[doc = "ADMA2 Support\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adma2support {
-    #[doc = "1: ADMA2 not support"]
+    #[doc = "1: ADMA2 support"]
     B1 = 1,
     #[doc = "0: ADMA2 not support"]
     B0 = 0,
@@ -160,7 +164,7 @@ impl Adma2supportR {
             false => Adma2support::B0,
         }
     }
-    #[doc = "ADMA2 not support"]
+    #[doc = "ADMA2 support"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Adma2support::B1
@@ -171,10 +175,11 @@ impl Adma2supportR {
         *self == Adma2support::B0
     }
 }
-#[doc = "High Speed Support This bit indicates whether the HC and the Host System support High Speed mode and they can supply SD Clock frequency from 25Mhz to 50 Mhz (for SD)/ 20MHz to 52MHz (for eMMC).\n\nValue on reset: 1"]
+#[doc = "High Speed Support\n\nThis bit indicates whether the HC and the Host System support\n\nHigh Speed mode and they can supply SD Clock frequency from\n\n25Mhz to 50 Mhz (for SD)/ 20MHz to 52MHz (for eMMC).\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Highspeedsupport {
-    #[doc = "0: High Speed Supported"]
+    #[doc = "0: High Speed Not Supported"]
     B0 = 0,
     #[doc = "1: High Speed Supported"]
     B1 = 1,
@@ -185,7 +190,7 @@ impl From<Highspeedsupport> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HIGHSPEEDSUPPORT` reader - High Speed Support This bit indicates whether the HC and the Host System support High Speed mode and they can supply SD Clock frequency from 25Mhz to 50 Mhz (for SD)/ 20MHz to 52MHz (for eMMC)."]
+#[doc = "Field `HIGHSPEEDSUPPORT` reader - High Speed Support\n\nThis bit indicates whether the HC and the Host System support\n\nHigh Speed mode and they can supply SD Clock frequency from\n\n25Mhz to 50 Mhz (for SD)/ 20MHz to 52MHz (for eMMC)."]
 pub type HighspeedsupportR = crate::BitReader<Highspeedsupport>;
 impl HighspeedsupportR {
     #[doc = "Get enumerated values variant"]
@@ -196,7 +201,7 @@ impl HighspeedsupportR {
             true => Highspeedsupport::B1,
         }
     }
-    #[doc = "High Speed Supported"]
+    #[doc = "High Speed Not Supported"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Highspeedsupport::B0
@@ -207,10 +212,11 @@ impl HighspeedsupportR {
         *self == Highspeedsupport::B1
     }
 }
-#[doc = "This bit indicates whether the HC is capable of using DMA to transfer data between system memory and the HC directly.\n\nValue on reset: 1"]
+#[doc = "This bit indicates whether the HC is capable of using DMA to\n\ntransfer data between system memory and the HC directly.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sdmasupport {
-    #[doc = "0: SDMA Supported."]
+    #[doc = "0: SDMA Not Supported"]
     B0 = 0,
     #[doc = "1: SDMA Supported."]
     B1 = 1,
@@ -221,7 +227,7 @@ impl From<Sdmasupport> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SDMASUPPORT` reader - This bit indicates whether the HC is capable of using DMA to transfer data between system memory and the HC directly."]
+#[doc = "Field `SDMASUPPORT` reader - This bit indicates whether the HC is capable of using DMA to\n\ntransfer data between system memory and the HC directly."]
 pub type SdmasupportR = crate::BitReader<Sdmasupport>;
 impl SdmasupportR {
     #[doc = "Get enumerated values variant"]
@@ -232,7 +238,7 @@ impl SdmasupportR {
             true => Sdmasupport::B1,
         }
     }
-    #[doc = "SDMA Supported."]
+    #[doc = "SDMA Not Supported"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Sdmasupport::B0
@@ -243,10 +249,11 @@ impl SdmasupportR {
         *self == Sdmasupport::B1
     }
 }
-#[doc = "Suspend / Resume Support This bit indicates whether the HC supports Suspend / Resume functionality. If this bit is 0, the Suspend and Resume mechanism are not supported and the HD shall not issue either Suspend / Resume commands.\n\nValue on reset: 1"]
+#[doc = "Suspend / Resume Support\n\nThis bit indicates whether the HC supports Suspend / Resume\n\nfunctionality. If this bit is 0, the Suspend and Resume mechanism\n\nare not supported and the HD shall not issue either Suspend /\n\nResume commands.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Suspendresumesupport {
-    #[doc = "0: Supported"]
+    #[doc = "0: Not Supported"]
     B0 = 0,
     #[doc = "1: Supported"]
     B1 = 1,
@@ -257,7 +264,7 @@ impl From<Suspendresumesupport> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SUSPENDRESUMESUPPORT` reader - Suspend / Resume Support This bit indicates whether the HC supports Suspend / Resume functionality. If this bit is 0, the Suspend and Resume mechanism are not supported and the HD shall not issue either Suspend / Resume commands."]
+#[doc = "Field `SUSPENDRESUMESUPPORT` reader - Suspend / Resume Support\n\nThis bit indicates whether the HC supports Suspend / Resume\n\nfunctionality. If this bit is 0, the Suspend and Resume mechanism\n\nare not supported and the HD shall not issue either Suspend /\n\nResume commands."]
 pub type SuspendresumesupportR = crate::BitReader<Suspendresumesupport>;
 impl SuspendresumesupportR {
     #[doc = "Get enumerated values variant"]
@@ -268,7 +275,7 @@ impl SuspendresumesupportR {
             true => Suspendresumesupport::B1,
         }
     }
-    #[doc = "Supported"]
+    #[doc = "Not Supported"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Suspendresumesupport::B0
@@ -279,13 +286,13 @@ impl SuspendresumesupportR {
         *self == Suspendresumesupport::B1
     }
 }
-#[doc = "Field `SUSPENDRESUMESUPPORT` writer - Suspend / Resume Support This bit indicates whether the HC supports Suspend / Resume functionality. If this bit is 0, the Suspend and Resume mechanism are not supported and the HD shall not issue either Suspend / Resume commands."]
+#[doc = "Field `SUSPENDRESUMESUPPORT` writer - Suspend / Resume Support\n\nThis bit indicates whether the HC supports Suspend / Resume\n\nfunctionality. If this bit is 0, the Suspend and Resume mechanism\n\nare not supported and the HD shall not issue either Suspend /\n\nResume commands."]
 pub type SuspendresumesupportW<'a, REG> = crate::BitWriter<'a, REG, Suspendresumesupport>;
 impl<'a, REG> SuspendresumesupportW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Supported"]
+    #[doc = "Not Supported"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Suspendresumesupport::B0)
@@ -297,9 +304,10 @@ where
     }
 }
 #[doc = "Voltage Support 3.3 V\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Voltage33vsupport {
-    #[doc = "0: Supported"]
+    #[doc = "0: Not Supported"]
     B0 = 0,
     #[doc = "1: Supported"]
     B1 = 1,
@@ -321,7 +329,7 @@ impl Voltage33vsupportR {
             true => Voltage33vsupport::B1,
         }
     }
-    #[doc = "Supported"]
+    #[doc = "Not Supported"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Voltage33vsupport::B0
@@ -338,7 +346,7 @@ impl<'a, REG> Voltage33vsupportW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Supported"]
+    #[doc = "Not Supported"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Voltage33vsupport::B0)
@@ -350,9 +358,10 @@ where
     }
 }
 #[doc = "Voltage Support 3.0 V\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Voltage30vsupport {
-    #[doc = "0: Supported"]
+    #[doc = "0: Not Supported"]
     B0 = 0,
     #[doc = "1: Supported"]
     B1 = 1,
@@ -374,7 +383,7 @@ impl Voltage30vsupportR {
             true => Voltage30vsupport::B1,
         }
     }
-    #[doc = "Supported"]
+    #[doc = "Not Supported"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Voltage30vsupport::B0
@@ -386,9 +395,10 @@ impl Voltage30vsupportR {
     }
 }
 #[doc = "Voltage Support 1.8 V\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Voltage18vsupport {
-    #[doc = "0: Supported"]
+    #[doc = "0: Not Supported"]
     B0 = 0,
     #[doc = "1: Supported"]
     B1 = 1,
@@ -410,7 +420,7 @@ impl Voltage18vsupportR {
             true => Voltage18vsupport::B1,
         }
     }
-    #[doc = "Supported"]
+    #[doc = "Not Supported"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Voltage18vsupport::B0
@@ -422,9 +432,10 @@ impl Voltage18vsupportR {
     }
 }
 #[doc = "64-bit System Bus Support\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Systembussupport {
-    #[doc = "1: Does not support 64 bit system address"]
+    #[doc = "1: Supports 64 bit system address"]
     B1 = 1,
     #[doc = "0: Does not support 64 bit system address"]
     B0 = 0,
@@ -446,7 +457,7 @@ impl SystembussupportR {
             false => Systembussupport::B0,
         }
     }
-    #[doc = "Does not support 64 bit system address"]
+    #[doc = "Supports 64 bit system address"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Systembussupport::B1
@@ -457,10 +468,11 @@ impl SystembussupportR {
         *self == Systembussupport::B0
     }
 }
-#[doc = "Asynchronous Interrupt Support Refer to SDIO Specification Version 3.00 about asynchronous interrupt.\n\nValue on reset: 0"]
+#[doc = "Asynchronous Interrupt Support\n\nRefer to SDIO Specification Version 3.00 about asynchronous\n\ninterrupt.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Asynintsupport {
-    #[doc = "1: Asynchronous Interrupt Not Supported"]
+    #[doc = "1: Asynchronous Interrupt Supported"]
     B1 = 1,
     #[doc = "0: Asynchronous Interrupt Not Supported"]
     B0 = 0,
@@ -471,7 +483,7 @@ impl From<Asynintsupport> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ASYNINTSUPPORT` reader - Asynchronous Interrupt Support Refer to SDIO Specification Version 3.00 about asynchronous interrupt."]
+#[doc = "Field `ASYNINTSUPPORT` reader - Asynchronous Interrupt Support\n\nRefer to SDIO Specification Version 3.00 about asynchronous\n\ninterrupt."]
 pub type AsynintsupportR = crate::BitReader<Asynintsupport>;
 impl AsynintsupportR {
     #[doc = "Get enumerated values variant"]
@@ -482,7 +494,7 @@ impl AsynintsupportR {
             false => Asynintsupport::B0,
         }
     }
-    #[doc = "Asynchronous Interrupt Not Supported"]
+    #[doc = "Asynchronous Interrupt Supported"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Asynintsupport::B1
@@ -493,15 +505,16 @@ impl AsynintsupportR {
         *self == Asynintsupport::B0
     }
 }
-#[doc = "This field indicates usage of a slot by a specific Host System. (A host controller register set is defined per slot.) Embedded slot for one device (01b) means that only one non-removable device is connected to a SD bus slot. Shared Bus Slot (10b) can be set if Host Controller supports Shared Bus Control register. The Standard Host Driver controls only a removable card or one embedded device is onnected to a SD bus slot. If a slot is configured for shared bus (10b), the Standard Host Driver does not control embedded devices connected to a shared bus. Shared bus slot is controlled by a specific host driver developed by a Host System.\n\nValue on reset: 1"]
+#[doc = "This field indicates usage of a slot by a specific Host System. (A\n\nhost controller register set is defined per slot.) Embedded slot for\n\none device (01b) means that only one non-removable device is\n\nconnected to a SD bus slot. Shared Bus Slot (10b) can be set if\n\nHost Controller supports Shared Bus Control register.\n\nThe Standard Host Driver controls only a removable card or one\n\nembedded device is onnected to a SD bus slot. If a slot is\n\nconfigured for shared bus (10b), the Standard Host Driver does\n\nnot control embedded devices connected to a shared bus. Shared\n\nbus slot is controlled by a specific host driver developed by a Host\n\nSystem.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Slottype {
-    #[doc = "0: Reserved"]
+    #[doc = "0: Removable Card Slot"]
     D0 = 0,
-    #[doc = "1: Reserved"]
+    #[doc = "1: Embedded Slot for One Device"]
     D1 = 1,
-    #[doc = "2: Reserved"]
+    #[doc = "2: Shared Bus Slot"]
     D2 = 2,
     #[doc = "3: Reserved"]
     D3 = 3,
@@ -515,7 +528,7 @@ impl From<Slottype> for u8 {
 impl crate::FieldSpec for Slottype {
     type Ux = u8;
 }
-#[doc = "Field `SLOTTYPE` reader - This field indicates usage of a slot by a specific Host System. (A host controller register set is defined per slot.) Embedded slot for one device (01b) means that only one non-removable device is connected to a SD bus slot. Shared Bus Slot (10b) can be set if Host Controller supports Shared Bus Control register. The Standard Host Driver controls only a removable card or one embedded device is onnected to a SD bus slot. If a slot is configured for shared bus (10b), the Standard Host Driver does not control embedded devices connected to a shared bus. Shared bus slot is controlled by a specific host driver developed by a Host System."]
+#[doc = "Field `SLOTTYPE` reader - This field indicates usage of a slot by a specific Host System. (A\n\nhost controller register set is defined per slot.) Embedded slot for\n\none device (01b) means that only one non-removable device is\n\nconnected to a SD bus slot. Shared Bus Slot (10b) can be set if\n\nHost Controller supports Shared Bus Control register.\n\nThe Standard Host Driver controls only a removable card or one\n\nembedded device is onnected to a SD bus slot. If a slot is\n\nconfigured for shared bus (10b), the Standard Host Driver does\n\nnot control embedded devices connected to a shared bus. Shared\n\nbus slot is controlled by a specific host driver developed by a Host\n\nSystem."]
 pub type SlottypeR = crate::FieldReader<Slottype>;
 impl SlottypeR {
     #[doc = "Get enumerated values variant"]
@@ -529,17 +542,17 @@ impl SlottypeR {
             _ => unreachable!(),
         }
     }
-    #[doc = "Reserved"]
+    #[doc = "Removable Card Slot"]
     #[inline(always)]
     pub fn is_d0(&self) -> bool {
         *self == Slottype::D0
     }
-    #[doc = "Reserved"]
+    #[doc = "Embedded Slot for One Device"]
     #[inline(always)]
     pub fn is_d1(&self) -> bool {
         *self == Slottype::D1
     }
-    #[doc = "Reserved"]
+    #[doc = "Shared Bus Slot"]
     #[inline(always)]
     pub fn is_d2(&self) -> bool {
         *self == Slottype::D2
@@ -551,9 +564,10 @@ impl SlottypeR {
     }
 }
 #[doc = "SDR50 Support\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sdr50support {
-    #[doc = "1: SDR50 is Not Supported"]
+    #[doc = "1: SDR50 is Supported"]
     B1 = 1,
     #[doc = "0: SDR50 is Not Supported"]
     B0 = 0,
@@ -575,7 +589,7 @@ impl Sdr50supportR {
             false => Sdr50support::B0,
         }
     }
-    #[doc = "SDR50 is Not Supported"]
+    #[doc = "SDR50 is Supported"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Sdr50support::B1
@@ -587,9 +601,10 @@ impl Sdr50supportR {
     }
 }
 #[doc = "SDR104 Support.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sdr104support {
-    #[doc = "1: SDR104 is Not Supported"]
+    #[doc = "1: SDR104 is Supported"]
     B1 = 1,
     #[doc = "0: SDR104 is Not Supported"]
     B0 = 0,
@@ -611,7 +626,7 @@ impl Sdr104supportR {
             false => Sdr104support::B0,
         }
     }
-    #[doc = "SDR104 is Not Supported"]
+    #[doc = "SDR104 is Supported"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Sdr104support::B1
@@ -623,9 +638,10 @@ impl Sdr104supportR {
     }
 }
 #[doc = "DDR50 Support\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ddr50support {
-    #[doc = "1: DDR50 is Not Supported"]
+    #[doc = "1: DDR50 is Supported"]
     B1 = 1,
     #[doc = "0: DDR50 is Not Supported"]
     B0 = 0,
@@ -647,7 +663,7 @@ impl Ddr50supportR {
             false => Ddr50support::B0,
         }
     }
-    #[doc = "DDR50 is Not Supported"]
+    #[doc = "DDR50 is Supported"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Ddr50support::B1
@@ -659,9 +675,10 @@ impl Ddr50supportR {
     }
 }
 #[doc = "This bit indicates support of Driver Type A for 1.8 Signaling.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Drivertypeasupport {
-    #[doc = "1: Driver Type A is Not Supported"]
+    #[doc = "1: Driver Type A is Supported"]
     B1 = 1,
     #[doc = "0: Driver Type A is Not Supported"]
     B0 = 0,
@@ -683,7 +700,7 @@ impl DrivertypeasupportR {
             false => Drivertypeasupport::B0,
         }
     }
-    #[doc = "Driver Type A is Not Supported"]
+    #[doc = "Driver Type A is Supported"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Drivertypeasupport::B1
@@ -695,9 +712,10 @@ impl DrivertypeasupportR {
     }
 }
 #[doc = "This bit indicates support of Driver Type C for 1.8 Signaling.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Drivertypecsupport {
-    #[doc = "1: Driver Type C is Not Supported"]
+    #[doc = "1: Driver Type C is Supported"]
     B1 = 1,
     #[doc = "0: Driver Type C is Not Supported"]
     B0 = 0,
@@ -719,7 +737,7 @@ impl DrivertypecsupportR {
             false => Drivertypecsupport::B0,
         }
     }
-    #[doc = "Driver Type C is Not Supported"]
+    #[doc = "Driver Type C is Supported"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Drivertypecsupport::B1
@@ -736,7 +754,7 @@ impl<'a, REG> DrivertypecsupportW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Driver Type C is Not Supported"]
+    #[doc = "Driver Type C is Supported"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Drivertypecsupport::B1)
@@ -748,9 +766,10 @@ where
     }
 }
 #[doc = "This bit indicates support of Driver Type D for 1.8 Signaling.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Drivertypedsupport {
-    #[doc = "1: Driver Type D is Not Supported"]
+    #[doc = "1: Driver Type D is Supported"]
     B1 = 1,
     #[doc = "0: Driver Type D is Not Supported"]
     B0 = 0,
@@ -772,7 +791,7 @@ impl DrivertypedsupportR {
             false => Drivertypedsupport::B0,
         }
     }
-    #[doc = "Driver Type D is Not Supported"]
+    #[doc = "Driver Type D is Supported"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Drivertypedsupport::B1
@@ -784,9 +803,10 @@ impl DrivertypedsupportR {
     }
 }
 #[doc = "Driver Type 4 Support\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Drivertype4support {
-    #[doc = "1: Driver Type 4 is Not Supported"]
+    #[doc = "1: Driver Type 4 is Supported"]
     B1 = 1,
     #[doc = "0: Driver Type 4 is Not Supported"]
     B0 = 0,
@@ -808,7 +828,7 @@ impl Drivertype4supportR {
             false => Drivertype4support::B0,
         }
     }
-    #[doc = "Driver Type 4 is Not Supported"]
+    #[doc = "Driver Type 4 is Supported"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Drivertype4support::B1
@@ -819,12 +839,13 @@ impl Drivertype4supportR {
         *self == Drivertype4support::B0
     }
 }
-#[doc = "Field `TIMERCOUNTFORRETUNING` reader - Timer count for ReTuning This field indicates an initial value of the Re-Tuning Timer for Re- Tuning Mode 1 to 3. 4'h0 - Get information via other source 4'h1 = 1 seconds 4'h2 = 2 seconds 4'h3 = 4 seconds 4'h4 = 8 seconds ........ 4'hB = 1024 seconds 4'hF - Ch = Reserved"]
+#[doc = "Field `TIMERCOUNTFORRETUNING` reader - Timer count for ReTuning\n\nThis field indicates an initial value of the Re-Tuning Timer for Re-\n\nTuning Mode 1 to 3.\n\n4'h0 - Get information via other source\n\n4'h1 = 1 seconds\n\n4'h2 = 2 seconds\n\n4'h3 = 4 seconds\n\n4'h4 = 8 seconds\n\n........\n\n4'hB = 1024 seconds\n\n4'hF - Ch = Reserved"]
 pub type TimercountforretuningR = crate::FieldReader;
-#[doc = "Use Tuning for SDR50 If this bit is set to 1, this Host Controller requires tuning to operate SDR50. (Tuning is always required to operate SDR104.)\n\nValue on reset: 1"]
+#[doc = "Use Tuning for SDR50\n\nIf this bit is set to 1, this Host Controller requires tuning to\n\noperate SDR50. (Tuning is always required to operate SDR104.)\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Usetuningforsdr50 {
-    #[doc = "1: SDR50 does not require tuning"]
+    #[doc = "1: SDR50 requires tuning"]
     B1 = 1,
     #[doc = "0: SDR50 does not require tuning"]
     B0 = 0,
@@ -835,7 +856,7 @@ impl From<Usetuningforsdr50> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `USETUNINGFORSDR50` reader - Use Tuning for SDR50 If this bit is set to 1, this Host Controller requires tuning to operate SDR50. (Tuning is always required to operate SDR104.)"]
+#[doc = "Field `USETUNINGFORSDR50` reader - Use Tuning for SDR50\n\nIf this bit is set to 1, this Host Controller requires tuning to\n\noperate SDR50. (Tuning is always required to operate SDR104.)"]
 pub type Usetuningforsdr50R = crate::BitReader<Usetuningforsdr50>;
 impl Usetuningforsdr50R {
     #[doc = "Get enumerated values variant"]
@@ -846,7 +867,7 @@ impl Usetuningforsdr50R {
             false => Usetuningforsdr50::B0,
         }
     }
-    #[doc = "SDR50 does not require tuning"]
+    #[doc = "SDR50 requires tuning"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Usetuningforsdr50::B1
@@ -857,15 +878,16 @@ impl Usetuningforsdr50R {
         *self == Usetuningforsdr50::B0
     }
 }
-#[doc = "Re-tuning modes This field defines the re-tuning capability of a Host Controller and how to manage the data transfer length and a Re-Tuning Timer by the Host Driver\n\nValue on reset: 0"]
+#[doc = "Re-tuning modes\n\nThis field defines the re-tuning capability of a Host Controller and\n\nhow to manage the data transfer length and a Re-Tuning Timer\n\nby the Host Driver\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Retuningmode {
-    #[doc = "0: Reserved There are two re-tuning timings: Re-Tuning Request and expiration of a Re-Tuning Timer. By receiving either timing, the Host Driver executes the re-tuning procedure just before a next command issue"]
+    #[doc = "0: Mode1"]
     D0 = 0,
-    #[doc = "1: Reserved There are two re-tuning timings: Re-Tuning Request and expiration of a Re-Tuning Timer. By receiving either timing, the Host Driver executes the re-tuning procedure just before a next command issue"]
+    #[doc = "1: Mode2"]
     D1 = 1,
-    #[doc = "2: Reserved There are two re-tuning timings: Re-Tuning Request and expiration of a Re-Tuning Timer. By receiving either timing, the Host Driver executes the re-tuning procedure just before a next command issue"]
+    #[doc = "2: Mode3"]
     D2 = 2,
     #[doc = "3: Reserved There are two re-tuning timings: Re-Tuning Request and expiration of a Re-Tuning Timer. By receiving either timing, the Host Driver executes the re-tuning procedure just before a next command issue"]
     D3 = 3,
@@ -879,7 +901,7 @@ impl From<Retuningmode> for u8 {
 impl crate::FieldSpec for Retuningmode {
     type Ux = u8;
 }
-#[doc = "Field `RETUNINGMODE` reader - Re-tuning modes This field defines the re-tuning capability of a Host Controller and how to manage the data transfer length and a Re-Tuning Timer by the Host Driver"]
+#[doc = "Field `RETUNINGMODE` reader - Re-tuning modes\n\nThis field defines the re-tuning capability of a Host Controller and\n\nhow to manage the data transfer length and a Re-Tuning Timer\n\nby the Host Driver"]
 pub type RetuningmodeR = crate::FieldReader<Retuningmode>;
 impl RetuningmodeR {
     #[doc = "Get enumerated values variant"]
@@ -893,17 +915,17 @@ impl RetuningmodeR {
             _ => unreachable!(),
         }
     }
-    #[doc = "Reserved There are two re-tuning timings: Re-Tuning Request and expiration of a Re-Tuning Timer. By receiving either timing, the Host Driver executes the re-tuning procedure just before a next command issue"]
+    #[doc = "Mode1"]
     #[inline(always)]
     pub fn is_d0(&self) -> bool {
         *self == Retuningmode::D0
     }
-    #[doc = "Reserved There are two re-tuning timings: Re-Tuning Request and expiration of a Re-Tuning Timer. By receiving either timing, the Host Driver executes the re-tuning procedure just before a next command issue"]
+    #[doc = "Mode2"]
     #[inline(always)]
     pub fn is_d1(&self) -> bool {
         *self == Retuningmode::D1
     }
-    #[doc = "Reserved There are two re-tuning timings: Re-Tuning Request and expiration of a Re-Tuning Timer. By receiving either timing, the Host Driver executes the re-tuning procedure just before a next command issue"]
+    #[doc = "Mode3"]
     #[inline(always)]
     pub fn is_d2(&self) -> bool {
         *self == Retuningmode::D2
@@ -914,15 +936,16 @@ impl RetuningmodeR {
         *self == Retuningmode::D3
     }
 }
-#[doc = "This field indicates clock multiplier value of programmable clock generator. Refer to Clock Control register. Setting 00h means that Host Controller does not support programmable clock generator.\n\nValue on reset: 16"]
+#[doc = "This field indicates clock multiplier value of programmable clock\n\ngenerator. Refer to Clock Control register. Setting 00h means\n\nthat Host Controller does not support programmable clock\n\ngenerator.\n\nValue on reset: 16"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Clockmultiplier {
-    #[doc = "255: Clock Multiplier is Not Supported"]
+    #[doc = "255: Clock Multiplier M = 256 ...."]
     HFf = 255,
-    #[doc = "2: Clock Multiplier is Not Supported"]
+    #[doc = "2: Clock Multiplier M = 3"]
     H02 = 2,
-    #[doc = "1: Clock Multiplier is Not Supported"]
+    #[doc = "1: Clock Multiplier M = 2"]
     H01 = 1,
     #[doc = "0: Clock Multiplier is Not Supported"]
     H00 = 0,
@@ -936,7 +959,7 @@ impl From<Clockmultiplier> for u8 {
 impl crate::FieldSpec for Clockmultiplier {
     type Ux = u8;
 }
-#[doc = "Field `CLOCKMULTIPLIER` reader - This field indicates clock multiplier value of programmable clock generator. Refer to Clock Control register. Setting 00h means that Host Controller does not support programmable clock generator."]
+#[doc = "Field `CLOCKMULTIPLIER` reader - This field indicates clock multiplier value of programmable clock\n\ngenerator. Refer to Clock Control register. Setting 00h means\n\nthat Host Controller does not support programmable clock\n\ngenerator."]
 pub type ClockmultiplierR = crate::FieldReader<Clockmultiplier>;
 impl ClockmultiplierR {
     #[doc = "Get enumerated values variant"]
@@ -950,17 +973,17 @@ impl ClockmultiplierR {
             _ => None,
         }
     }
-    #[doc = "Clock Multiplier is Not Supported"]
+    #[doc = "Clock Multiplier M = 256 ...."]
     #[inline(always)]
     pub fn is_h_ff(&self) -> bool {
         *self == Clockmultiplier::HFf
     }
-    #[doc = "Clock Multiplier is Not Supported"]
+    #[doc = "Clock Multiplier M = 3"]
     #[inline(always)]
     pub fn is_h02(&self) -> bool {
         *self == Clockmultiplier::H02
     }
-    #[doc = "Clock Multiplier is Not Supported"]
+    #[doc = "Clock Multiplier M = 2"]
     #[inline(always)]
     pub fn is_h01(&self) -> bool {
         *self == Clockmultiplier::H01
@@ -972,9 +995,10 @@ impl ClockmultiplierR {
     }
 }
 #[doc = "SPI block mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Spiblockmode {
-    #[doc = "0: Supported"]
+    #[doc = "0: Not Supported"]
     B0 = 0,
     #[doc = "1: Supported"]
     B1 = 1,
@@ -996,7 +1020,7 @@ impl SpiblockmodeR {
             true => Spiblockmode::B1,
         }
     }
-    #[doc = "Supported"]
+    #[doc = "Not Supported"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Spiblockmode::B0
@@ -1008,9 +1032,10 @@ impl SpiblockmodeR {
     }
 }
 #[doc = "HS400 Support\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hs400support {
-    #[doc = "0: Supported"]
+    #[doc = "0: Not Supported"]
     B0 = 0,
     #[doc = "1: Supported"]
     B1 = 1,
@@ -1032,7 +1057,7 @@ impl Hs400supportR {
             true => Hs400support::B1,
         }
     }
-    #[doc = "Supported"]
+    #[doc = "Not Supported"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Hs400support::B0
@@ -1044,27 +1069,27 @@ impl Hs400supportR {
     }
 }
 impl R {
-    #[doc = "Bits 0:5 - This bit shows the base clock frequency used to detect Data Timeout Error. Not 0: 1Khz to 63Khz or 1Mhz to 63Mhz 0: Get Information viaanother method"]
+    #[doc = "Bits 0:5 - This bit shows the base clock frequency used to detect Data\n\nTimeout Error.\n\nNot 0: 1Khz to 63Khz or 1Mhz to 63Mhz\n\n0: Get Information viaanother method"]
     #[inline(always)]
     pub fn timeoutclockfrequency(&self) -> TimeoutclockfrequencyR {
         TimeoutclockfrequencyR::new((self.bits & 0x3f) as u8)
     }
-    #[doc = "Bit 7 - This bit shows the unit of base clock frequency used to detect Data Timeout Error."]
+    #[doc = "Bit 7 - This bit shows the unit of base clock frequency used to detect\n\nData Timeout Error."]
     #[inline(always)]
     pub fn timeoutclockunit(&self) -> TimeoutclockunitR {
         TimeoutclockunitR::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bits 8:15 - Base Clock Frequency for SD Clock (1) 6-bit Base Clock Frequency This mode is supported by the Host Controller Version 1.00 and 2.00. Upper 2-bit is not effective and always 0. Unit values are 1MHz. The supported clock range is 10MHz to 63MHz. 8'h00: Get information via another method 8'h01: 1MHz 8'h02: 2MHz ...... 8'h3f: 63MHz others: not supported (2) 8-bit Base Clock Frequency This mode is supported by the Host Controller Version 3.00. Unit values are 1MHz. The supported clock range is 10MHz to 255MHz. 8'h00: Get information via another method 8'h01: 1MHz 8'h02: 2MHz ...... 8'hff: 255MHz If the real frequency is 16.5MHz, the lager value shall be set 0001 0001b (17MHz) because the Host Driver use this value to calculate the clock divider value (Refer to the SDCLK Frequency Select in the Clock Control register.) and it shall not exceed upper limit of the SD Clock frequency. If these bits are all 0, the Host System has to get information via another method."]
+    #[doc = "Bits 8:15 - Base Clock Frequency for SD Clock\n\n(1) 6-bit Base Clock Frequency\n\nThis mode is supported by the Host Controller Version 1.00 and\n\n2.00. Upper 2-bit is not effective and always 0. Unit values are\n\n1MHz. The supported clock range is 10MHz to 63MHz.\n\n8'h00: Get information via another method\n\n8'h01: 1MHz\n\n8'h02: 2MHz\n\n......\n\n8'h3f: 63MHz\n\nothers: not supported\n\n(2) 8-bit Base Clock Frequency\n\nThis mode is supported by the Host Controller Version 3.00. Unit\n\nvalues are 1MHz. The supported clock range is 10MHz to 255MHz.\n\n8'h00: Get information via another method\n\n8'h01: 1MHz\n\n8'h02: 2MHz\n\n......\n\n8'hff: 255MHz\n\nIf the real frequency is 16.5MHz, the lager value shall be set\n\n0001 0001b (17MHz) because the Host Driver use this value to\n\ncalculate the clock divider value (Refer to the SDCLK Frequency\n\nSelect in the Clock Control register.) and it shall not exceed upper\n\nlimit of the SD Clock frequency. If these bits are all 0, the Host\n\nSystem has to get information via another method."]
     #[inline(always)]
     pub fn baseclockfreqsdclock(&self) -> BaseclockfreqsdclockR {
         BaseclockfreqsdclockR::new(((self.bits >> 8) & 0xff) as u8)
     }
-    #[doc = "Bits 16:17 - Max Block Length This value indicates the maximum block size that the HD can read and write to the buffer in the HC. The buffer shall transfer this block size without wait cycles. Three sizes can be defined as indicated below."]
+    #[doc = "Bits 16:17 - Max Block Length\n\nThis value indicates the maximum block size that the HD can\n\nread and write to the buffer in the HC.\n\nThe buffer shall transfer this block size without wait cycles. Three\n\nsizes can be defined as indicated below."]
     #[inline(always)]
     pub fn maxblocklength(&self) -> MaxblocklengthR {
         MaxblocklengthR::new(((self.bits >> 16) & 3) as u8)
     }
-    #[doc = "Bit 18 - Extended Media Bus Support This bit indicates whether the Host Controller is capable of using 8-bit bus width mode. This bit is not effective when Slot Type is set to 10b. In this case, refer to Bus Width Preset in the Shared Bus resister."]
+    #[doc = "Bit 18 - Extended Media Bus Support\n\nThis bit indicates whether the Host Controller is capable of using\n\n8-bit bus width mode. This bit is not effective when Slot Type is\n\nset to 10b. In this case, refer to Bus Width Preset in the Shared\n\nBus resister."]
     #[inline(always)]
     pub fn extendedmediabussupport(&self) -> ExtendedmediabussupportR {
         ExtendedmediabussupportR::new(((self.bits >> 18) & 1) != 0)
@@ -1074,17 +1099,17 @@ impl R {
     pub fn adma2support(&self) -> Adma2supportR {
         Adma2supportR::new(((self.bits >> 19) & 1) != 0)
     }
-    #[doc = "Bit 21 - High Speed Support This bit indicates whether the HC and the Host System support High Speed mode and they can supply SD Clock frequency from 25Mhz to 50 Mhz (for SD)/ 20MHz to 52MHz (for eMMC)."]
+    #[doc = "Bit 21 - High Speed Support\n\nThis bit indicates whether the HC and the Host System support\n\nHigh Speed mode and they can supply SD Clock frequency from\n\n25Mhz to 50 Mhz (for SD)/ 20MHz to 52MHz (for eMMC)."]
     #[inline(always)]
     pub fn highspeedsupport(&self) -> HighspeedsupportR {
         HighspeedsupportR::new(((self.bits >> 21) & 1) != 0)
     }
-    #[doc = "Bit 22 - This bit indicates whether the HC is capable of using DMA to transfer data between system memory and the HC directly."]
+    #[doc = "Bit 22 - This bit indicates whether the HC is capable of using DMA to\n\ntransfer data between system memory and the HC directly."]
     #[inline(always)]
     pub fn sdmasupport(&self) -> SdmasupportR {
         SdmasupportR::new(((self.bits >> 22) & 1) != 0)
     }
-    #[doc = "Bit 23 - Suspend / Resume Support This bit indicates whether the HC supports Suspend / Resume functionality. If this bit is 0, the Suspend and Resume mechanism are not supported and the HD shall not issue either Suspend / Resume commands."]
+    #[doc = "Bit 23 - Suspend / Resume Support\n\nThis bit indicates whether the HC supports Suspend / Resume\n\nfunctionality. If this bit is 0, the Suspend and Resume mechanism\n\nare not supported and the HD shall not issue either Suspend /\n\nResume commands."]
     #[inline(always)]
     pub fn suspendresumesupport(&self) -> SuspendresumesupportR {
         SuspendresumesupportR::new(((self.bits >> 23) & 1) != 0)
@@ -1109,12 +1134,12 @@ impl R {
     pub fn systembussupport(&self) -> SystembussupportR {
         SystembussupportR::new(((self.bits >> 28) & 1) != 0)
     }
-    #[doc = "Bit 29 - Asynchronous Interrupt Support Refer to SDIO Specification Version 3.00 about asynchronous interrupt."]
+    #[doc = "Bit 29 - Asynchronous Interrupt Support\n\nRefer to SDIO Specification Version 3.00 about asynchronous\n\ninterrupt."]
     #[inline(always)]
     pub fn asynintsupport(&self) -> AsynintsupportR {
         AsynintsupportR::new(((self.bits >> 29) & 1) != 0)
     }
-    #[doc = "Bits 30:31 - This field indicates usage of a slot by a specific Host System. (A host controller register set is defined per slot.) Embedded slot for one device (01b) means that only one non-removable device is connected to a SD bus slot. Shared Bus Slot (10b) can be set if Host Controller supports Shared Bus Control register. The Standard Host Driver controls only a removable card or one embedded device is onnected to a SD bus slot. If a slot is configured for shared bus (10b), the Standard Host Driver does not control embedded devices connected to a shared bus. Shared bus slot is controlled by a specific host driver developed by a Host System."]
+    #[doc = "Bits 30:31 - This field indicates usage of a slot by a specific Host System. (A\n\nhost controller register set is defined per slot.) Embedded slot for\n\none device (01b) means that only one non-removable device is\n\nconnected to a SD bus slot. Shared Bus Slot (10b) can be set if\n\nHost Controller supports Shared Bus Control register.\n\nThe Standard Host Driver controls only a removable card or one\n\nembedded device is onnected to a SD bus slot. If a slot is\n\nconfigured for shared bus (10b), the Standard Host Driver does\n\nnot control embedded devices connected to a shared bus. Shared\n\nbus slot is controlled by a specific host driver developed by a Host\n\nSystem."]
     #[inline(always)]
     pub fn slottype(&self) -> SlottypeR {
         SlottypeR::new(((self.bits >> 30) & 3) as u8)
@@ -1154,22 +1179,22 @@ impl R {
     pub fn drivertype4support(&self) -> Drivertype4supportR {
         Drivertype4supportR::new(((self.bits >> 39) & 1) != 0)
     }
-    #[doc = "Bits 40:43 - Timer count for ReTuning This field indicates an initial value of the Re-Tuning Timer for Re- Tuning Mode 1 to 3. 4'h0 - Get information via other source 4'h1 = 1 seconds 4'h2 = 2 seconds 4'h3 = 4 seconds 4'h4 = 8 seconds ........ 4'hB = 1024 seconds 4'hF - Ch = Reserved"]
+    #[doc = "Bits 40:43 - Timer count for ReTuning\n\nThis field indicates an initial value of the Re-Tuning Timer for Re-\n\nTuning Mode 1 to 3.\n\n4'h0 - Get information via other source\n\n4'h1 = 1 seconds\n\n4'h2 = 2 seconds\n\n4'h3 = 4 seconds\n\n4'h4 = 8 seconds\n\n........\n\n4'hB = 1024 seconds\n\n4'hF - Ch = Reserved"]
     #[inline(always)]
     pub fn timercountforretuning(&self) -> TimercountforretuningR {
         TimercountforretuningR::new(((self.bits >> 40) & 0x0f) as u8)
     }
-    #[doc = "Bit 45 - Use Tuning for SDR50 If this bit is set to 1, this Host Controller requires tuning to operate SDR50. (Tuning is always required to operate SDR104.)"]
+    #[doc = "Bit 45 - Use Tuning for SDR50\n\nIf this bit is set to 1, this Host Controller requires tuning to\n\noperate SDR50. (Tuning is always required to operate SDR104.)"]
     #[inline(always)]
     pub fn usetuningforsdr50(&self) -> Usetuningforsdr50R {
         Usetuningforsdr50R::new(((self.bits >> 45) & 1) != 0)
     }
-    #[doc = "Bits 46:47 - Re-tuning modes This field defines the re-tuning capability of a Host Controller and how to manage the data transfer length and a Re-Tuning Timer by the Host Driver"]
+    #[doc = "Bits 46:47 - Re-tuning modes\n\nThis field defines the re-tuning capability of a Host Controller and\n\nhow to manage the data transfer length and a Re-Tuning Timer\n\nby the Host Driver"]
     #[inline(always)]
     pub fn retuningmode(&self) -> RetuningmodeR {
         RetuningmodeR::new(((self.bits >> 46) & 3) as u8)
     }
-    #[doc = "Bits 48:55 - This field indicates clock multiplier value of programmable clock generator. Refer to Clock Control register. Setting 00h means that Host Controller does not support programmable clock generator."]
+    #[doc = "Bits 48:55 - This field indicates clock multiplier value of programmable clock\n\ngenerator. Refer to Clock Control register. Setting 00h means\n\nthat Host Controller does not support programmable clock\n\ngenerator."]
     #[inline(always)]
     pub fn clockmultiplier(&self) -> ClockmultiplierR {
         ClockmultiplierR::new(((self.bits >> 48) & 0xff) as u8)
@@ -1186,7 +1211,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 23 - Suspend / Resume Support This bit indicates whether the HC supports Suspend / Resume functionality. If this bit is 0, the Suspend and Resume mechanism are not supported and the HD shall not issue either Suspend / Resume commands."]
+    #[doc = "Bit 23 - Suspend / Resume Support\n\nThis bit indicates whether the HC supports Suspend / Resume\n\nfunctionality. If this bit is 0, the Suspend and Resume mechanism\n\nare not supported and the HD shall not issue either Suspend /\n\nResume commands."]
     #[inline(always)]
     #[must_use]
     pub fn suspendresumesupport(&mut self) -> SuspendresumesupportW<EmmccoreCapSpec> {

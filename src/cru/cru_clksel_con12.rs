@@ -2,19 +2,20 @@
 pub type R = crate::R<CruClkselCon12Spec>;
 #[doc = "Register `CRU_CLKSEL_CON12` writer"]
 pub type W = crate::W<CruClkselCon12Spec>;
-#[doc = "Field `CLK_RGA_CORE_DIV_CON` reader - clk_rga_core divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_RGA_CORE_DIV_CON` reader - clk_rga_core divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkRgaCoreDivConR = crate::FieldReader;
-#[doc = "Field `CLK_RGA_CORE_DIV_CON` writer - clk_rga_core divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_RGA_CORE_DIV_CON` writer - clk_rga_core divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkRgaCoreDivConW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "clk_rga_core clock source select control register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ClkRgaCorePllSel {
-    #[doc = "0: PPLL"]
+    #[doc = "0: CPLL"]
     B00 = 0,
-    #[doc = "1: PPLL"]
+    #[doc = "1: GPLL"]
     B01 = 1,
-    #[doc = "2: PPLL"]
+    #[doc = "2: NPLL"]
     B10 = 2,
     #[doc = "3: PPLL"]
     B11 = 3,
@@ -42,17 +43,17 @@ impl ClkRgaCorePllSelR {
             _ => unreachable!(),
         }
     }
-    #[doc = "PPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == ClkRgaCorePllSel::B00
     }
-    #[doc = "PPLL"]
+    #[doc = "GPLL"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == ClkRgaCorePllSel::B01
     }
-    #[doc = "PPLL"]
+    #[doc = "NPLL"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == ClkRgaCorePllSel::B10
@@ -70,17 +71,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "PPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(ClkRgaCorePllSel::B00)
     }
-    #[doc = "PPLL"]
+    #[doc = "GPLL"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(ClkRgaCorePllSel::B01)
     }
-    #[doc = "PPLL"]
+    #[doc = "NPLL"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(ClkRgaCorePllSel::B10)
@@ -91,17 +92,18 @@ where
         self.variant(ClkRgaCorePllSel::B11)
     }
 }
-#[doc = "Field `ACLK_CENTER_DIV_CON` reader - aclk_center divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `ACLK_CENTER_DIV_CON` reader - aclk_center divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type AclkCenterDivConR = crate::FieldReader;
-#[doc = "Field `ACLK_CENTER_DIV_CON` writer - aclk_center divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `ACLK_CENTER_DIV_CON` writer - aclk_center divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type AclkCenterDivConW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "aclk_center clock source select control register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AclkCenterPllSel {
-    #[doc = "0: NPLL"]
+    #[doc = "0: CPLL"]
     B00 = 0,
-    #[doc = "1: NPLL"]
+    #[doc = "1: GPLL"]
     B01 = 1,
     #[doc = "2: NPLL"]
     B1x = 2,
@@ -128,12 +130,12 @@ impl AclkCenterPllSelR {
             _ => None,
         }
     }
-    #[doc = "NPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == AclkCenterPllSel::B00
     }
-    #[doc = "NPLL"]
+    #[doc = "GPLL"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == AclkCenterPllSel::B01
@@ -151,12 +153,12 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "NPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(AclkCenterPllSel::B00)
     }
-    #[doc = "NPLL"]
+    #[doc = "GPLL"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(AclkCenterPllSel::B01)
@@ -167,10 +169,10 @@ where
         self.variant(AclkCenterPllSel::B1x)
     }
 }
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:4 - clk_rga_core divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:4 - clk_rga_core divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn clk_rga_core_div_con(&self) -> ClkRgaCoreDivConR {
         ClkRgaCoreDivConR::new((self.bits & 0x1f) as u8)
@@ -180,7 +182,7 @@ impl R {
     pub fn clk_rga_core_pll_sel(&self) -> ClkRgaCorePllSelR {
         ClkRgaCorePllSelR::new(((self.bits >> 6) & 3) as u8)
     }
-    #[doc = "Bits 8:12 - aclk_center divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 8:12 - aclk_center divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn aclk_center_div_con(&self) -> AclkCenterDivConR {
         AclkCenterDivConR::new(((self.bits >> 8) & 0x1f) as u8)
@@ -192,7 +194,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - clk_rga_core divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:4 - clk_rga_core divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn clk_rga_core_div_con(&mut self) -> ClkRgaCoreDivConW<CruClkselCon12Spec> {
@@ -204,7 +206,7 @@ impl W {
     pub fn clk_rga_core_pll_sel(&mut self) -> ClkRgaCorePllSelW<CruClkselCon12Spec> {
         ClkRgaCorePllSelW::new(self, 6)
     }
-    #[doc = "Bits 8:12 - aclk_center divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 8:12 - aclk_center divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_center_div_con(&mut self) -> AclkCenterDivConW<CruClkselCon12Spec> {
@@ -216,7 +218,7 @@ impl W {
     pub fn aclk_center_pll_sel(&mut self) -> AclkCenterPllSelW<CruClkselCon12Spec> {
         AclkCenterPllSelW::new(self, 14)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkselCon12Spec> {

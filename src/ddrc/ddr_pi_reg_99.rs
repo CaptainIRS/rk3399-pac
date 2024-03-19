@@ -2,19 +2,19 @@
 pub type R = crate::R<DdrPiReg99Spec>;
 #[doc = "Register `DDR_PI_REG_99` writer"]
 pub type W = crate::W<DdrPiReg99Spec>;
-#[doc = "Field `PI_TDFI_CALVL_MAX` reader - Defines the DFI tCALVL_MAX timing parameter (in DFI clocks), the maximum cycles between a dfi_calvl_en assertion and a valid dfi_calvl_resp."]
+#[doc = "Field `PI_TDFI_CALVL_MAX` reader - Defines the DFI tCALVL_MAX timing parameter (in DFI clocks), the\n\nmaximum cycles between a dfi_calvl_en assertion and a valid\n\ndfi_calvl_resp."]
 pub type PiTdfiCalvlMaxR = crate::FieldReader<u32>;
-#[doc = "Field `PI_TDFI_CALVL_MAX` writer - Defines the DFI tCALVL_MAX timing parameter (in DFI clocks), the maximum cycles between a dfi_calvl_en assertion and a valid dfi_calvl_resp."]
+#[doc = "Field `PI_TDFI_CALVL_MAX` writer - Defines the DFI tCALVL_MAX timing parameter (in DFI clocks), the\n\nmaximum cycles between a dfi_calvl_en assertion and a valid\n\ndfi_calvl_resp."]
 pub type PiTdfiCalvlMaxW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Defines the DFI tCALVL_MAX timing parameter (in DFI clocks), the maximum cycles between a dfi_calvl_en assertion and a valid dfi_calvl_resp."]
+    #[doc = "Bits 0:31 - Defines the DFI tCALVL_MAX timing parameter (in DFI clocks), the\n\nmaximum cycles between a dfi_calvl_en assertion and a valid\n\ndfi_calvl_resp."]
     #[inline(always)]
     pub fn pi_tdfi_calvl_max(&self) -> PiTdfiCalvlMaxR {
         PiTdfiCalvlMaxR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Defines the DFI tCALVL_MAX timing parameter (in DFI clocks), the maximum cycles between a dfi_calvl_en assertion and a valid dfi_calvl_resp."]
+    #[doc = "Bits 0:31 - Defines the DFI tCALVL_MAX timing parameter (in DFI clocks), the\n\nmaximum cycles between a dfi_calvl_en assertion and a valid\n\ndfi_calvl_resp."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tdfi_calvl_max(&mut self) -> PiTdfiCalvlMaxW<DdrPiReg99Spec> {

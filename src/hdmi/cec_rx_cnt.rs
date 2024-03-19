@@ -1,12 +1,13 @@
 #[doc = "Register `CEC_RX_CNT` reader"]
 pub type R = crate::R<CecRxCntSpec>;
 #[doc = "CEC Receiver Counter register:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CecRxCnt {
-    #[doc = "0: 16-byte data is received"]
+    #[doc = "0: No data received"]
     D0 = 0,
-    #[doc = "1: 16-byte data is received"]
+    #[doc = "1: 1-byte data is received"]
     D1 = 1,
     #[doc = "16: 16-byte data is received"]
     D16 = 16,
@@ -33,12 +34,12 @@ impl CecRxCntR {
             _ => None,
         }
     }
-    #[doc = "16-byte data is received"]
+    #[doc = "No data received"]
     #[inline(always)]
     pub fn is_d0(&self) -> bool {
         *self == CecRxCnt::D0
     }
-    #[doc = "16-byte data is received"]
+    #[doc = "1-byte data is received"]
     #[inline(always)]
     pub fn is_d1(&self) -> bool {
         *self == CecRxCnt::D1
@@ -56,7 +57,7 @@ impl R {
         CecRxCntR::new(self.bits & 0x1f)
     }
 }
-#[doc = "CEC Receiver Counter register: 5'd0: No data received 5'd1: 1-byte data is received 5'd16: 16-byte data is received\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cec_rx_cnt::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "CEC RX Frame Size Register\n\nThis register indicates the size of the frame in bytes (including header and data blocks),\n\nwhich are available in the receiver data buffer.\n\nNote: Only after the whole receiving process is finished successfully, the counter is\n\nrefreshed to the value which indicates the total number of data bytes in the Receiver Data\n\nRegister.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cec_rx_cnt::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CecRxCntSpec;
 impl crate::RegisterSpec for CecRxCntSpec {
     type Ux = u8;

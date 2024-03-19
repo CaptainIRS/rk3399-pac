@@ -1,10 +1,11 @@
 #[doc = "Register `EMMCCORE_CQRMEM` reader"]
 pub type R = crate::R<EmmccoreCqrmemSpec>;
-#[doc = "Response Mode Error Mask This bit is used as in interrupt mask on the device status filed which is received in R1/R1b responses. Bit Value Description (for any bit i):\n\nValue on reset: 4260995200"]
+#[doc = "Response Mode Error Mask\n\nThis bit is used as in interrupt mask on the device status filed\n\nwhich is received in R1/R1b responses.\n\nBit Value Description (for any bit i):\n\nValue on reset: 4260995200"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum Rmem {
-    #[doc = "1: When a R1/R1b response is received, bit i in the device status is ignored The reset value of this register is set to trigger an interrupt on all 'Error' type bits in the device status. NOTE: Responses to CMD13 (SQS) encode the QSR, so they are ignored by this logic."]
+    #[doc = "1: When a R1/R1b response is received, with bit i in the device status set, a RED interrupt is generated"]
     B1 = 1,
     #[doc = "0: When a R1/R1b response is received, bit i in the device status is ignored The reset value of this register is set to trigger an interrupt on all 'Error' type bits in the device status. NOTE: Responses to CMD13 (SQS) encode the QSR, so they are ignored by this logic."]
     B0 = 0,
@@ -18,7 +19,7 @@ impl From<Rmem> for u32 {
 impl crate::FieldSpec for Rmem {
     type Ux = u32;
 }
-#[doc = "Field `RMEM` reader - Response Mode Error Mask This bit is used as in interrupt mask on the device status filed which is received in R1/R1b responses. Bit Value Description (for any bit i):"]
+#[doc = "Field `RMEM` reader - Response Mode Error Mask\n\nThis bit is used as in interrupt mask on the device status filed\n\nwhich is received in R1/R1b responses.\n\nBit Value Description (for any bit i):"]
 pub type RmemR = crate::FieldReader<Rmem>;
 impl RmemR {
     #[doc = "Get enumerated values variant"]
@@ -30,7 +31,7 @@ impl RmemR {
             _ => None,
         }
     }
-    #[doc = "When a R1/R1b response is received, bit i in the device status is ignored The reset value of this register is set to trigger an interrupt on all 'Error' type bits in the device status. NOTE: Responses to CMD13 (SQS) encode the QSR, so they are ignored by this logic."]
+    #[doc = "When a R1/R1b response is received, with bit i in the device status set, a RED interrupt is generated"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Rmem::B1
@@ -42,7 +43,7 @@ impl RmemR {
     }
 }
 impl R {
-    #[doc = "Bits 0:31 - Response Mode Error Mask This bit is used as in interrupt mask on the device status filed which is received in R1/R1b responses. Bit Value Description (for any bit i):"]
+    #[doc = "Bits 0:31 - Response Mode Error Mask\n\nThis bit is used as in interrupt mask on the device status filed\n\nwhich is received in R1/R1b responses.\n\nBit Value Description (for any bit i):"]
     #[inline(always)]
     pub fn rmem(&self) -> RmemR {
         RmemR::new(self.bits)

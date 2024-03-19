@@ -1,16 +1,16 @@
 #[doc = "Register `DDR_DENALI_PHY_299` reader"]
 pub type R = crate::R<DdrDenaliPhy299Spec>;
-#[doc = "Field `PHY_GTLVL_HARD1_DELAY_OBS_2` reader - Observation register for gate training last hard 1 DQS slave delay for slice 2. READ-ONLY"]
+#[doc = "Field `PHY_GTLVL_HARD1_DELAY_OBS_2` reader - Observation register for gate training last hard 1 DQS slave delay for slice 2."]
 pub type PhyGtlvlHard1DelayObs2R = crate::FieldReader<u16>;
-#[doc = "Field `PHY_GTLVL_STATUS_OBS_2` reader - Observation register for gate training status for slice 2. READ- ONLY"]
+#[doc = "Field `PHY_GTLVL_STATUS_OBS_2` reader - Observation register for gate training status for slice 2."]
 pub type PhyGtlvlStatusObs2R = crate::FieldReader<u16>;
 impl R {
-    #[doc = "Bits 0:13 - Observation register for gate training last hard 1 DQS slave delay for slice 2. READ-ONLY"]
+    #[doc = "Bits 0:13 - Observation register for gate training last hard 1 DQS slave delay for slice 2."]
     #[inline(always)]
     pub fn phy_gtlvl_hard1_delay_obs_2(&self) -> PhyGtlvlHard1DelayObs2R {
         PhyGtlvlHard1DelayObs2R::new((self.bits & 0x3fff) as u16)
     }
-    #[doc = "Bits 16:27 - Observation register for gate training status for slice 2. READ- ONLY"]
+    #[doc = "Bits 16:27 - Observation register for gate training status for slice 2."]
     #[inline(always)]
     pub fn phy_gtlvl_status_obs_2(&self) -> PhyGtlvlStatusObs2R {
         PhyGtlvlStatusObs2R::new(((self.bits >> 16) & 0x0fff) as u16)

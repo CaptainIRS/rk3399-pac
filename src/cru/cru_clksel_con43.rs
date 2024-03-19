@@ -2,57 +2,57 @@
 pub type R = crate::R<CruClkselCon43Spec>;
 #[doc = "Register `CRU_CLKSEL_CON43` writer"]
 pub type W = crate::W<CruClkselCon43Spec>;
-#[doc = "Field `PCLK_VIO_DIV_CON` reader - pclk_vio divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `PCLK_VIO_DIV_CON` reader - pclk_vio divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type PclkVioDivConR = crate::FieldReader;
-#[doc = "Field `PCLK_VIO_DIV_CON` writer - pclk_vio divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `PCLK_VIO_DIV_CON` writer - pclk_vio divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type PclkVioDivConW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Field `HCLK_HDCP_DIV_CON` reader - hclk_hdcp divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `HCLK_HDCP_DIV_CON` reader - hclk_hdcp divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type HclkHdcpDivConR = crate::FieldReader;
-#[doc = "Field `HCLK_HDCP_DIV_CON` writer - hclk_hdcp divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `HCLK_HDCP_DIV_CON` writer - hclk_hdcp divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type HclkHdcpDivConW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Field `PCLK_HDCP_DIV_CON` reader - pclk_hdcp divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `PCLK_HDCP_DIV_CON` reader - pclk_hdcp divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type PclkHdcpDivConR = crate::FieldReader;
-#[doc = "Field `PCLK_HDCP_DIV_CON` writer - pclk_hdcp divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `PCLK_HDCP_DIV_CON` writer - pclk_hdcp divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type PclkHdcpDivConW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:4 - pclk_vio divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:4 - pclk_vio divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn pclk_vio_div_con(&self) -> PclkVioDivConR {
         PclkVioDivConR::new((self.bits & 0x1f) as u8)
     }
-    #[doc = "Bits 5:9 - hclk_hdcp divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 5:9 - hclk_hdcp divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn hclk_hdcp_div_con(&self) -> HclkHdcpDivConR {
         HclkHdcpDivConR::new(((self.bits >> 5) & 0x1f) as u8)
     }
-    #[doc = "Bits 10:14 - pclk_hdcp divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 10:14 - pclk_hdcp divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn pclk_hdcp_div_con(&self) -> PclkHdcpDivConR {
         PclkHdcpDivConR::new(((self.bits >> 10) & 0x1f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - pclk_vio divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:4 - pclk_vio divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn pclk_vio_div_con(&mut self) -> PclkVioDivConW<CruClkselCon43Spec> {
         PclkVioDivConW::new(self, 0)
     }
-    #[doc = "Bits 5:9 - hclk_hdcp divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 5:9 - hclk_hdcp divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn hclk_hdcp_div_con(&mut self) -> HclkHdcpDivConW<CruClkselCon43Spec> {
         HclkHdcpDivConW::new(self, 5)
     }
-    #[doc = "Bits 10:14 - pclk_hdcp divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 10:14 - pclk_hdcp divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn pclk_hdcp_div_con(&mut self) -> PclkHdcpDivConW<CruClkselCon43Spec> {
         PclkHdcpDivConW::new(self, 10)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkselCon43Spec> {

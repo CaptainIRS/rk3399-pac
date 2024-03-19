@@ -10,7 +10,7 @@ pub type StartW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type DramClassR = crate::FieldReader;
 #[doc = "Field `DRAM_CLASS` writer - Defines the class of DRAM memory which is connected to the controller."]
 pub type DramClassW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-#[doc = "Field `VERSION` reader - Holds the controller version number. READ-ONLY"]
+#[doc = "Field `VERSION` reader - Holds the controller version number."]
 pub type VersionR = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bit 0 - Initiate command processing in the controller. Set to 1 to initiate."]
@@ -23,7 +23,7 @@ impl R {
     pub fn dram_class(&self) -> DramClassR {
         DramClassR::new(((self.bits >> 8) & 0x0f) as u8)
     }
-    #[doc = "Bits 16:31 - Holds the controller version number. READ-ONLY"]
+    #[doc = "Bits 16:31 - Holds the controller version number."]
     #[inline(always)]
     pub fn version(&self) -> VersionR {
         VersionR::new(((self.bits >> 16) & 0xffff) as u16)

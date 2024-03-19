@@ -3,9 +3,10 @@ pub type R = crate::R<CruNpllCon5Spec>;
 #[doc = "Register `CRU_NPLL_CON5` writer"]
 pub type W = crate::W<CruNpllCon5Spec>;
 #[doc = "select external wave\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SsmodSelExtWave {
-    #[doc = "0: select ext_wave"]
+    #[doc = "0: no select ext_wave"]
     B0 = 0,
     #[doc = "1: select ext_wave"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl SsmodSelExtWaveR {
             true => SsmodSelExtWave::B1,
         }
     }
-    #[doc = "select ext_wave"]
+    #[doc = "no select ext_wave"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SsmodSelExtWave::B0
@@ -44,7 +45,7 @@ impl<'a, REG> SsmodSelExtWaveW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "select ext_wave"]
+    #[doc = "no select ext_wave"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SsmodSelExtWave::B0)
@@ -55,11 +56,11 @@ where
         self.variant(SsmodSelExtWave::B1)
     }
 }
-#[doc = "Field `SSMOD_EXT_MAXADDR` reader - External wave table data inputs (0-255)"]
+#[doc = "Field `SSMOD_EXT_MAXADDR` reader - External wave table data inputs\n\n(0-255)"]
 pub type SsmodExtMaxaddrR = crate::FieldReader;
-#[doc = "Field `SSMOD_EXT_MAXADDR` writer - External wave table data inputs (0-255)"]
+#[doc = "Field `SSMOD_EXT_MAXADDR` writer - External wave table data inputs\n\n(0-255)"]
 pub type SsmodExtMaxaddrW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0 - select external wave"]
@@ -67,7 +68,7 @@ impl R {
     pub fn ssmod_sel_ext_wave(&self) -> SsmodSelExtWaveR {
         SsmodSelExtWaveR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bits 8:15 - External wave table data inputs (0-255)"]
+    #[doc = "Bits 8:15 - External wave table data inputs\n\n(0-255)"]
     #[inline(always)]
     pub fn ssmod_ext_maxaddr(&self) -> SsmodExtMaxaddrR {
         SsmodExtMaxaddrR::new(((self.bits >> 8) & 0xff) as u8)
@@ -80,13 +81,13 @@ impl W {
     pub fn ssmod_sel_ext_wave(&mut self) -> SsmodSelExtWaveW<CruNpllCon5Spec> {
         SsmodSelExtWaveW::new(self, 0)
     }
-    #[doc = "Bits 8:15 - External wave table data inputs (0-255)"]
+    #[doc = "Bits 8:15 - External wave table data inputs\n\n(0-255)"]
     #[inline(always)]
     #[must_use]
     pub fn ssmod_ext_maxaddr(&mut self) -> SsmodExtMaxaddrW<CruNpllCon5Spec> {
         SsmodExtMaxaddrW::new(self, 8)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruNpllCon5Spec> {

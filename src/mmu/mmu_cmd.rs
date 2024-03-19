@@ -3,20 +3,21 @@ pub type R = crate::R<MmuCmdSpec>;
 #[doc = "Register `MMU_CMD` writer"]
 pub type W = crate::W<MmuCmdSpec>;
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MmuCmd {
-    #[doc = "0: MMU_FORCE_RESET. reset the mmu. The MMU_ENABLE_STALL command can always be issued. Other commands are ignored unless the MMU is idle or stalled."]
+    #[doc = "0: MMU_ENABLE_PAGING. enable paging."]
     D0 = 0,
-    #[doc = "1: MMU_FORCE_RESET. reset the mmu. The MMU_ENABLE_STALL command can always be issued. Other commands are ignored unless the MMU is idle or stalled."]
+    #[doc = "1: MMU_DISABLE_PAGING. disable paging."]
     D1 = 1,
-    #[doc = "2: MMU_FORCE_RESET. reset the mmu. The MMU_ENABLE_STALL command can always be issued. Other commands are ignored unless the MMU is idle or stalled."]
+    #[doc = "2: MMU_ENABLE_STALL. turn on stall mode."]
     D2 = 2,
-    #[doc = "3: MMU_FORCE_RESET. reset the mmu. The MMU_ENABLE_STALL command can always be issued. Other commands are ignored unless the MMU is idle or stalled."]
+    #[doc = "3: MMU_DISABLE_STALL. turn off stall mode."]
     D3 = 3,
-    #[doc = "4: MMU_FORCE_RESET. reset the mmu. The MMU_ENABLE_STALL command can always be issued. Other commands are ignored unless the MMU is idle or stalled."]
+    #[doc = "4: MMU_ZAP_CACHE. zap the entire page table cache."]
     D4 = 4,
-    #[doc = "5: MMU_FORCE_RESET. reset the mmu. The MMU_ENABLE_STALL command can always be issued. Other commands are ignored unless the MMU is idle or stalled."]
+    #[doc = "5: MMU_PAGE_FAULT_DONE. leave page fault mode."]
     D5 = 5,
     #[doc = "6: MMU_FORCE_RESET. reset the mmu. The MMU_ENABLE_STALL command can always be issued. Other commands are ignored unless the MMU is idle or stalled."]
     D6 = 6,
@@ -47,32 +48,32 @@ impl MmuCmdR {
             _ => None,
         }
     }
-    #[doc = "MMU_FORCE_RESET. reset the mmu. The MMU_ENABLE_STALL command can always be issued. Other commands are ignored unless the MMU is idle or stalled."]
+    #[doc = "MMU_ENABLE_PAGING. enable paging."]
     #[inline(always)]
     pub fn is_d0(&self) -> bool {
         *self == MmuCmd::D0
     }
-    #[doc = "MMU_FORCE_RESET. reset the mmu. The MMU_ENABLE_STALL command can always be issued. Other commands are ignored unless the MMU is idle or stalled."]
+    #[doc = "MMU_DISABLE_PAGING. disable paging."]
     #[inline(always)]
     pub fn is_d1(&self) -> bool {
         *self == MmuCmd::D1
     }
-    #[doc = "MMU_FORCE_RESET. reset the mmu. The MMU_ENABLE_STALL command can always be issued. Other commands are ignored unless the MMU is idle or stalled."]
+    #[doc = "MMU_ENABLE_STALL. turn on stall mode."]
     #[inline(always)]
     pub fn is_d2(&self) -> bool {
         *self == MmuCmd::D2
     }
-    #[doc = "MMU_FORCE_RESET. reset the mmu. The MMU_ENABLE_STALL command can always be issued. Other commands are ignored unless the MMU is idle or stalled."]
+    #[doc = "MMU_DISABLE_STALL. turn off stall mode."]
     #[inline(always)]
     pub fn is_d3(&self) -> bool {
         *self == MmuCmd::D3
     }
-    #[doc = "MMU_FORCE_RESET. reset the mmu. The MMU_ENABLE_STALL command can always be issued. Other commands are ignored unless the MMU is idle or stalled."]
+    #[doc = "MMU_ZAP_CACHE. zap the entire page table cache."]
     #[inline(always)]
     pub fn is_d4(&self) -> bool {
         *self == MmuCmd::D4
     }
-    #[doc = "MMU_FORCE_RESET. reset the mmu. The MMU_ENABLE_STALL command can always be issued. Other commands are ignored unless the MMU is idle or stalled."]
+    #[doc = "MMU_PAGE_FAULT_DONE. leave page fault mode."]
     #[inline(always)]
     pub fn is_d5(&self) -> bool {
         *self == MmuCmd::D5
@@ -90,32 +91,32 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "MMU_FORCE_RESET. reset the mmu. The MMU_ENABLE_STALL command can always be issued. Other commands are ignored unless the MMU is idle or stalled."]
+    #[doc = "MMU_ENABLE_PAGING. enable paging."]
     #[inline(always)]
     pub fn d0(self) -> &'a mut crate::W<REG> {
         self.variant(MmuCmd::D0)
     }
-    #[doc = "MMU_FORCE_RESET. reset the mmu. The MMU_ENABLE_STALL command can always be issued. Other commands are ignored unless the MMU is idle or stalled."]
+    #[doc = "MMU_DISABLE_PAGING. disable paging."]
     #[inline(always)]
     pub fn d1(self) -> &'a mut crate::W<REG> {
         self.variant(MmuCmd::D1)
     }
-    #[doc = "MMU_FORCE_RESET. reset the mmu. The MMU_ENABLE_STALL command can always be issued. Other commands are ignored unless the MMU is idle or stalled."]
+    #[doc = "MMU_ENABLE_STALL. turn on stall mode."]
     #[inline(always)]
     pub fn d2(self) -> &'a mut crate::W<REG> {
         self.variant(MmuCmd::D2)
     }
-    #[doc = "MMU_FORCE_RESET. reset the mmu. The MMU_ENABLE_STALL command can always be issued. Other commands are ignored unless the MMU is idle or stalled."]
+    #[doc = "MMU_DISABLE_STALL. turn off stall mode."]
     #[inline(always)]
     pub fn d3(self) -> &'a mut crate::W<REG> {
         self.variant(MmuCmd::D3)
     }
-    #[doc = "MMU_FORCE_RESET. reset the mmu. The MMU_ENABLE_STALL command can always be issued. Other commands are ignored unless the MMU is idle or stalled."]
+    #[doc = "MMU_ZAP_CACHE. zap the entire page table cache."]
     #[inline(always)]
     pub fn d4(self) -> &'a mut crate::W<REG> {
         self.variant(MmuCmd::D4)
     }
-    #[doc = "MMU_FORCE_RESET. reset the mmu. The MMU_ENABLE_STALL command can always be issued. Other commands are ignored unless the MMU is idle or stalled."]
+    #[doc = "MMU_PAGE_FAULT_DONE. leave page fault mode."]
     #[inline(always)]
     pub fn d5(self) -> &'a mut crate::W<REG> {
         self.variant(MmuCmd::D5)

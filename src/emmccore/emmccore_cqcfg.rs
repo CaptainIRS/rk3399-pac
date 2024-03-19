@@ -2,14 +2,15 @@
 pub type R = crate::R<EmmccoreCqcfgSpec>;
 #[doc = "Register `EMMCCORE_CQCFG` writer"]
 pub type W = crate::W<EmmccoreCqcfgSpec>;
-#[doc = "Field `CQENA` reader - Command Queueing Enable Software shall write 1 this bit when in order to enable command queueing mode (i.e. enable CQE). When this bit is 0, CQE is disabled and software controls the eMMC bus using the legacy eMMC host controller. Before software writes 1 to this bit, software shall verify that the eMMC host controller is in idle state and there are no commands or data transfers ongoing. When software wants to exit command queueing mode, it shall clear all previous tasks if such exist before setting this bit to 0."]
+#[doc = "Field `CQENA` reader - Command Queueing Enable\n\nSoftware shall write 1 this bit when in order to enable command\n\nqueueing mode (i.e. enable CQE).\n\nWhen this bit is 0, CQE is disabled and software controls the\n\neMMC bus using the legacy eMMC host controller.\n\nBefore software writes 1 to this bit, software shall verify that the\n\neMMC host controller is in idle state and there are no commands\n\nor data transfers ongoing.\n\nWhen software wants to exit command queueing mode, it shall\n\nclear all previous tasks if such exist before setting this bit to 0."]
 pub type CqenaR = crate::BitReader;
-#[doc = "Field `CQENA` writer - Command Queueing Enable Software shall write 1 this bit when in order to enable command queueing mode (i.e. enable CQE). When this bit is 0, CQE is disabled and software controls the eMMC bus using the legacy eMMC host controller. Before software writes 1 to this bit, software shall verify that the eMMC host controller is in idle state and there are no commands or data transfers ongoing. When software wants to exit command queueing mode, it shall clear all previous tasks if such exist before setting this bit to 0."]
+#[doc = "Field `CQENA` writer - Command Queueing Enable\n\nSoftware shall write 1 this bit when in order to enable command\n\nqueueing mode (i.e. enable CQE).\n\nWhen this bit is 0, CQE is disabled and software controls the\n\neMMC bus using the legacy eMMC host controller.\n\nBefore software writes 1 to this bit, software shall verify that the\n\neMMC host controller is in idle state and there are no commands\n\nor data transfers ongoing.\n\nWhen software wants to exit command queueing mode, it shall\n\nclear all previous tasks if such exist before setting this bit to 0."]
 pub type CqenaW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "This bit indicates whether the task descriptor size is 128 bits or 64 bits as detailed in Data Structures section. This bit can only be configured when Command Queueing Enable bit is 0 (command queueing is disabled)\n\nValue on reset: 0"]
+#[doc = "This bit indicates whether the task descriptor size is 128 bits or\n\n64 bits as detailed in Data Structures section. This bit can only be\n\nconfigured when Command Queueing Enable bit is 0 (command\n\nqueueing is disabled)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Taskdescriptorsize {
-    #[doc = "1: Task descriptor size is 64 bits"]
+    #[doc = "1: Task descriptor size is 128 bits"]
     B1 = 1,
     #[doc = "0: Task descriptor size is 64 bits"]
     B0 = 0,
@@ -20,7 +21,7 @@ impl From<Taskdescriptorsize> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TASKDESCRIPTORSIZE` reader - This bit indicates whether the task descriptor size is 128 bits or 64 bits as detailed in Data Structures section. This bit can only be configured when Command Queueing Enable bit is 0 (command queueing is disabled)"]
+#[doc = "Field `TASKDESCRIPTORSIZE` reader - This bit indicates whether the task descriptor size is 128 bits or\n\n64 bits as detailed in Data Structures section. This bit can only be\n\nconfigured when Command Queueing Enable bit is 0 (command\n\nqueueing is disabled)"]
 pub type TaskdescriptorsizeR = crate::BitReader<Taskdescriptorsize>;
 impl TaskdescriptorsizeR {
     #[doc = "Get enumerated values variant"]
@@ -31,7 +32,7 @@ impl TaskdescriptorsizeR {
             false => Taskdescriptorsize::B0,
         }
     }
-    #[doc = "Task descriptor size is 64 bits"]
+    #[doc = "Task descriptor size is 128 bits"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Taskdescriptorsize::B1
@@ -42,13 +43,13 @@ impl TaskdescriptorsizeR {
         *self == Taskdescriptorsize::B0
     }
 }
-#[doc = "Field `TASKDESCRIPTORSIZE` writer - This bit indicates whether the task descriptor size is 128 bits or 64 bits as detailed in Data Structures section. This bit can only be configured when Command Queueing Enable bit is 0 (command queueing is disabled)"]
+#[doc = "Field `TASKDESCRIPTORSIZE` writer - This bit indicates whether the task descriptor size is 128 bits or\n\n64 bits as detailed in Data Structures section. This bit can only be\n\nconfigured when Command Queueing Enable bit is 0 (command\n\nqueueing is disabled)"]
 pub type TaskdescriptorsizeW<'a, REG> = crate::BitWriter<'a, REG, Taskdescriptorsize>;
 impl<'a, REG> TaskdescriptorsizeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Task descriptor size is 64 bits"]
+    #[doc = "Task descriptor size is 128 bits"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Taskdescriptorsize::B1)
@@ -59,10 +60,11 @@ where
         self.variant(Taskdescriptorsize::B0)
     }
 }
-#[doc = "Direct Command (DCMD) Enable This bit indicates to the hardware whether the Task Descriptor in slot #31 of the TDL is a Data Transfer Task Descriptor, or a Direct Command Task Descriptor. CQE uses this bit when a task is issued in slot #31, to determine how to decode the Task Descriptor.\n\nValue on reset: 0"]
+#[doc = "Direct Command (DCMD) Enable\n\nThis bit indicates to the hardware whether the Task Descriptor in\n\nslot #31 of the TDL is a Data Transfer Task Descriptor, or a\n\nDirect Command Task Descriptor.\n\nCQE uses this bit when a task is issued in slot #31, to determine\n\nhow to decode the Task Descriptor.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dcmdena {
-    #[doc = "1: Task descriptor in slot #31 is a Data Transfer Task Descriptor"]
+    #[doc = "1: Task descriptor in slot #31 is a DCMD Task Descriptor"]
     B1 = 1,
     #[doc = "0: Task descriptor in slot #31 is a Data Transfer Task Descriptor"]
     B0 = 0,
@@ -73,7 +75,7 @@ impl From<Dcmdena> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DCMDENA` reader - Direct Command (DCMD) Enable This bit indicates to the hardware whether the Task Descriptor in slot #31 of the TDL is a Data Transfer Task Descriptor, or a Direct Command Task Descriptor. CQE uses this bit when a task is issued in slot #31, to determine how to decode the Task Descriptor."]
+#[doc = "Field `DCMDENA` reader - Direct Command (DCMD) Enable\n\nThis bit indicates to the hardware whether the Task Descriptor in\n\nslot #31 of the TDL is a Data Transfer Task Descriptor, or a\n\nDirect Command Task Descriptor.\n\nCQE uses this bit when a task is issued in slot #31, to determine\n\nhow to decode the Task Descriptor."]
 pub type DcmdenaR = crate::BitReader<Dcmdena>;
 impl DcmdenaR {
     #[doc = "Get enumerated values variant"]
@@ -84,7 +86,7 @@ impl DcmdenaR {
             false => Dcmdena::B0,
         }
     }
-    #[doc = "Task descriptor in slot #31 is a Data Transfer Task Descriptor"]
+    #[doc = "Task descriptor in slot #31 is a DCMD Task Descriptor"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Dcmdena::B1
@@ -95,13 +97,13 @@ impl DcmdenaR {
         *self == Dcmdena::B0
     }
 }
-#[doc = "Field `DCMDENA` writer - Direct Command (DCMD) Enable This bit indicates to the hardware whether the Task Descriptor in slot #31 of the TDL is a Data Transfer Task Descriptor, or a Direct Command Task Descriptor. CQE uses this bit when a task is issued in slot #31, to determine how to decode the Task Descriptor."]
+#[doc = "Field `DCMDENA` writer - Direct Command (DCMD) Enable\n\nThis bit indicates to the hardware whether the Task Descriptor in\n\nslot #31 of the TDL is a Data Transfer Task Descriptor, or a\n\nDirect Command Task Descriptor.\n\nCQE uses this bit when a task is issued in slot #31, to determine\n\nhow to decode the Task Descriptor."]
 pub type DcmdenaW<'a, REG> = crate::BitWriter<'a, REG, Dcmdena>;
 impl<'a, REG> DcmdenaW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Task descriptor in slot #31 is a Data Transfer Task Descriptor"]
+    #[doc = "Task descriptor in slot #31 is a DCMD Task Descriptor"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Dcmdena::B1)
@@ -113,36 +115,36 @@ where
     }
 }
 impl R {
-    #[doc = "Bit 0 - Command Queueing Enable Software shall write 1 this bit when in order to enable command queueing mode (i.e. enable CQE). When this bit is 0, CQE is disabled and software controls the eMMC bus using the legacy eMMC host controller. Before software writes 1 to this bit, software shall verify that the eMMC host controller is in idle state and there are no commands or data transfers ongoing. When software wants to exit command queueing mode, it shall clear all previous tasks if such exist before setting this bit to 0."]
+    #[doc = "Bit 0 - Command Queueing Enable\n\nSoftware shall write 1 this bit when in order to enable command\n\nqueueing mode (i.e. enable CQE).\n\nWhen this bit is 0, CQE is disabled and software controls the\n\neMMC bus using the legacy eMMC host controller.\n\nBefore software writes 1 to this bit, software shall verify that the\n\neMMC host controller is in idle state and there are no commands\n\nor data transfers ongoing.\n\nWhen software wants to exit command queueing mode, it shall\n\nclear all previous tasks if such exist before setting this bit to 0."]
     #[inline(always)]
     pub fn cqena(&self) -> CqenaR {
         CqenaR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 8 - This bit indicates whether the task descriptor size is 128 bits or 64 bits as detailed in Data Structures section. This bit can only be configured when Command Queueing Enable bit is 0 (command queueing is disabled)"]
+    #[doc = "Bit 8 - This bit indicates whether the task descriptor size is 128 bits or\n\n64 bits as detailed in Data Structures section. This bit can only be\n\nconfigured when Command Queueing Enable bit is 0 (command\n\nqueueing is disabled)"]
     #[inline(always)]
     pub fn taskdescriptorsize(&self) -> TaskdescriptorsizeR {
         TaskdescriptorsizeR::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bit 12 - Direct Command (DCMD) Enable This bit indicates to the hardware whether the Task Descriptor in slot #31 of the TDL is a Data Transfer Task Descriptor, or a Direct Command Task Descriptor. CQE uses this bit when a task is issued in slot #31, to determine how to decode the Task Descriptor."]
+    #[doc = "Bit 12 - Direct Command (DCMD) Enable\n\nThis bit indicates to the hardware whether the Task Descriptor in\n\nslot #31 of the TDL is a Data Transfer Task Descriptor, or a\n\nDirect Command Task Descriptor.\n\nCQE uses this bit when a task is issued in slot #31, to determine\n\nhow to decode the Task Descriptor."]
     #[inline(always)]
     pub fn dcmdena(&self) -> DcmdenaR {
         DcmdenaR::new(((self.bits >> 12) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Command Queueing Enable Software shall write 1 this bit when in order to enable command queueing mode (i.e. enable CQE). When this bit is 0, CQE is disabled and software controls the eMMC bus using the legacy eMMC host controller. Before software writes 1 to this bit, software shall verify that the eMMC host controller is in idle state and there are no commands or data transfers ongoing. When software wants to exit command queueing mode, it shall clear all previous tasks if such exist before setting this bit to 0."]
+    #[doc = "Bit 0 - Command Queueing Enable\n\nSoftware shall write 1 this bit when in order to enable command\n\nqueueing mode (i.e. enable CQE).\n\nWhen this bit is 0, CQE is disabled and software controls the\n\neMMC bus using the legacy eMMC host controller.\n\nBefore software writes 1 to this bit, software shall verify that the\n\neMMC host controller is in idle state and there are no commands\n\nor data transfers ongoing.\n\nWhen software wants to exit command queueing mode, it shall\n\nclear all previous tasks if such exist before setting this bit to 0."]
     #[inline(always)]
     #[must_use]
     pub fn cqena(&mut self) -> CqenaW<EmmccoreCqcfgSpec> {
         CqenaW::new(self, 0)
     }
-    #[doc = "Bit 8 - This bit indicates whether the task descriptor size is 128 bits or 64 bits as detailed in Data Structures section. This bit can only be configured when Command Queueing Enable bit is 0 (command queueing is disabled)"]
+    #[doc = "Bit 8 - This bit indicates whether the task descriptor size is 128 bits or\n\n64 bits as detailed in Data Structures section. This bit can only be\n\nconfigured when Command Queueing Enable bit is 0 (command\n\nqueueing is disabled)"]
     #[inline(always)]
     #[must_use]
     pub fn taskdescriptorsize(&mut self) -> TaskdescriptorsizeW<EmmccoreCqcfgSpec> {
         TaskdescriptorsizeW::new(self, 8)
     }
-    #[doc = "Bit 12 - Direct Command (DCMD) Enable This bit indicates to the hardware whether the Task Descriptor in slot #31 of the TDL is a Data Transfer Task Descriptor, or a Direct Command Task Descriptor. CQE uses this bit when a task is issued in slot #31, to determine how to decode the Task Descriptor."]
+    #[doc = "Bit 12 - Direct Command (DCMD) Enable\n\nThis bit indicates to the hardware whether the Task Descriptor in\n\nslot #31 of the TDL is a Data Transfer Task Descriptor, or a\n\nDirect Command Task Descriptor.\n\nCQE uses this bit when a task is issued in slot #31, to determine\n\nhow to decode the Task Descriptor."]
     #[inline(always)]
     #[must_use]
     pub fn dcmdena(&mut self) -> DcmdenaW<EmmccoreCqcfgSpec> {

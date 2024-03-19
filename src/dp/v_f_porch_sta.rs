@@ -2,19 +2,19 @@
 pub type R = crate::R<VFPorchStaSpec>;
 #[doc = "Register `V_F_PORCH_STA` writer"]
 pub type W = crate::W<VFPorchStaSpec>;
-#[doc = "Field `V_F_PORCH_STA` reader - V_F_PORCH (vertical front porch) which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+#[doc = "Field `V_F_PORCH_STA` reader - V_F_PORCH (vertical front porch) which is detected \n\nby video capture module. \n\nThis bit field is valid only when STRM_VALID is \n\nhigh. And STRM_VALID becomes high when two \n\nsuccessive frames are determined as stable."]
 pub type VFPorchStaR = crate::FieldReader;
-#[doc = "Field `V_F_PORCH_STA` writer - V_F_PORCH (vertical front porch) which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+#[doc = "Field `V_F_PORCH_STA` writer - V_F_PORCH (vertical front porch) which is detected \n\nby video capture module. \n\nThis bit field is valid only when STRM_VALID is \n\nhigh. And STRM_VALID becomes high when two \n\nsuccessive frames are determined as stable."]
 pub type VFPorchStaW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - V_F_PORCH (vertical front porch) which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+    #[doc = "Bits 0:7 - V_F_PORCH (vertical front porch) which is detected \n\nby video capture module. \n\nThis bit field is valid only when STRM_VALID is \n\nhigh. And STRM_VALID becomes high when two \n\nsuccessive frames are determined as stable."]
     #[inline(always)]
     pub fn v_f_porch_sta(&self) -> VFPorchStaR {
         VFPorchStaR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - V_F_PORCH (vertical front porch) which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+    #[doc = "Bits 0:7 - V_F_PORCH (vertical front porch) which is detected \n\nby video capture module. \n\nThis bit field is valid only when STRM_VALID is \n\nhigh. And STRM_VALID becomes high when two \n\nsuccessive frames are determined as stable."]
     #[inline(always)]
     #[must_use]
     pub fn v_f_porch_sta(&mut self) -> VFPorchStaW<VFPorchStaSpec> {

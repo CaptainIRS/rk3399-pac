@@ -2,13 +2,13 @@
 pub type R = crate::R<DdrPiReg24Spec>;
 #[doc = "Register `DDR_PI_REG_24` writer"]
 pub type W = crate::W<DdrPiReg24Spec>;
-#[doc = "Field `PI_INIT_WORK_FREQ` reader - Indicates the initial work frequency after initialization and initial leveling sequence."]
+#[doc = "Field `PI_INIT_WORK_FREQ` reader - Indicates the initial work frequency after initialization and initial\n\nleveling sequence."]
 pub type PiInitWorkFreqR = crate::FieldReader;
-#[doc = "Field `PI_INIT_WORK_FREQ` writer - Indicates the initial work frequency after initialization and initial leveling sequence."]
+#[doc = "Field `PI_INIT_WORK_FREQ` writer - Indicates the initial work frequency after initialization and initial\n\nleveling sequence."]
 pub type PiInitWorkFreqW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Field `PI_INIT_DFS_CALVL_ONLY` reader - Enables the initial leveling sequence loop that only CA training executes DFS."]
+#[doc = "Field `PI_INIT_DFS_CALVL_ONLY` reader - Enables the initial leveling sequence loop that only CA training\n\nexecutes DFS."]
 pub type PiInitDfsCalvlOnlyR = crate::BitReader;
-#[doc = "Field `PI_INIT_DFS_CALVL_ONLY` writer - Enables the initial leveling sequence loop that only CA training executes DFS."]
+#[doc = "Field `PI_INIT_DFS_CALVL_ONLY` writer - Enables the initial leveling sequence loop that only CA training\n\nexecutes DFS."]
 pub type PiInitDfsCalvlOnlyW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PI_POWER_ON_SEQ_BYPASS_ARRAY` reader - Indicates the bypassed steps of power on sequence."]
 pub type PiPowerOnSeqBypassArrayR = crate::FieldReader;
@@ -19,12 +19,12 @@ pub type PiPowerOnSeqEndArrayR = crate::FieldReader;
 #[doc = "Field `PI_POWER_ON_SEQ_END_ARRAY` writer - Indicates the step that is the last step of the power-on sequence."]
 pub type PiPowerOnSeqEndArrayW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:4 - Indicates the initial work frequency after initialization and initial leveling sequence."]
+    #[doc = "Bits 0:4 - Indicates the initial work frequency after initialization and initial\n\nleveling sequence."]
     #[inline(always)]
     pub fn pi_init_work_freq(&self) -> PiInitWorkFreqR {
         PiInitWorkFreqR::new((self.bits & 0x1f) as u8)
     }
-    #[doc = "Bit 8 - Enables the initial leveling sequence loop that only CA training executes DFS."]
+    #[doc = "Bit 8 - Enables the initial leveling sequence loop that only CA training\n\nexecutes DFS."]
     #[inline(always)]
     pub fn pi_init_dfs_calvl_only(&self) -> PiInitDfsCalvlOnlyR {
         PiInitDfsCalvlOnlyR::new(((self.bits >> 8) & 1) != 0)
@@ -41,13 +41,13 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - Indicates the initial work frequency after initialization and initial leveling sequence."]
+    #[doc = "Bits 0:4 - Indicates the initial work frequency after initialization and initial\n\nleveling sequence."]
     #[inline(always)]
     #[must_use]
     pub fn pi_init_work_freq(&mut self) -> PiInitWorkFreqW<DdrPiReg24Spec> {
         PiInitWorkFreqW::new(self, 0)
     }
-    #[doc = "Bit 8 - Enables the initial leveling sequence loop that only CA training executes DFS."]
+    #[doc = "Bit 8 - Enables the initial leveling sequence loop that only CA training\n\nexecutes DFS."]
     #[inline(always)]
     #[must_use]
     pub fn pi_init_dfs_calvl_only(&mut self) -> PiInitDfsCalvlOnlyW<DdrPiReg24Spec> {

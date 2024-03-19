@@ -3,9 +3,10 @@ pub type R = crate::R<IntState1Spec>;
 #[doc = "Register `INT_STATE_1` writer"]
 pub type W = crate::W<IntState1Spec>;
 #[doc = "Interrupt request status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IntState {
-    #[doc = "1: No interrupt service is requested."]
+    #[doc = "1: Interrupt service is requested,"]
     B1 = 1,
     #[doc = "0: No interrupt service is requested."]
     B0 = 0,
@@ -27,7 +28,7 @@ impl IntStateR {
             false => IntState::B0,
         }
     }
-    #[doc = "No interrupt service is requested."]
+    #[doc = "Interrupt service is requested,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == IntState::B1
@@ -44,7 +45,7 @@ impl<'a, REG> IntStateW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "No interrupt service is requested."]
+    #[doc = "Interrupt service is requested,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(IntState::B1)

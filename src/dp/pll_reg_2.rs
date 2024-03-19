@@ -3,14 +3,15 @@ pub type R = crate::R<PllReg2Spec>;
 #[doc = "Register `PLL_REG_2` writer"]
 pub type W = crate::W<PllReg2Spec>;
 #[doc = "v2i current select\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum V2iCurrentSel {
-    #[doc = "0: adding 4.5mA current"]
+    #[doc = "0: no adding current"]
     B00 = 0,
-    #[doc = "1: adding 4.5mA current"]
+    #[doc = "1: adding 1mA current(default)"]
     B01 = 1,
-    #[doc = "2: adding 4.5mA current"]
+    #[doc = "2: adding 2mA current"]
     B10 = 2,
     #[doc = "3: adding 4.5mA current"]
     B11 = 3,
@@ -38,17 +39,17 @@ impl V2iCurrentSelR {
             _ => unreachable!(),
         }
     }
-    #[doc = "adding 4.5mA current"]
+    #[doc = "no adding current"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == V2iCurrentSel::B00
     }
-    #[doc = "adding 4.5mA current"]
+    #[doc = "adding 1mA current(default)"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == V2iCurrentSel::B01
     }
-    #[doc = "adding 4.5mA current"]
+    #[doc = "adding 2mA current"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == V2iCurrentSel::B10
@@ -66,17 +67,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "adding 4.5mA current"]
+    #[doc = "no adding current"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(V2iCurrentSel::B00)
     }
-    #[doc = "adding 4.5mA current"]
+    #[doc = "adding 1mA current(default)"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(V2iCurrentSel::B01)
     }
-    #[doc = "adding 4.5mA current"]
+    #[doc = "adding 2mA current"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(V2iCurrentSel::B10)
@@ -88,12 +89,13 @@ where
     }
 }
 #[doc = "charge pump current select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ChgPumpCurrentSel {
-    #[doc = "0: 10u"]
+    #[doc = "0: 2.5u 01(default):5u"]
     B00 = 0,
-    #[doc = "2: 10u"]
+    #[doc = "2: 7.5u"]
     B10 = 2,
     #[doc = "3: 10u"]
     B11 = 3,
@@ -120,12 +122,12 @@ impl ChgPumpCurrentSelR {
             _ => None,
         }
     }
-    #[doc = "10u"]
+    #[doc = "2.5u 01(default):5u"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == ChgPumpCurrentSel::B00
     }
-    #[doc = "10u"]
+    #[doc = "7.5u"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == ChgPumpCurrentSel::B10
@@ -143,12 +145,12 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "10u"]
+    #[doc = "2.5u 01(default):5u"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(ChgPumpCurrentSel::B00)
     }
-    #[doc = "10u"]
+    #[doc = "7.5u"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(ChgPumpCurrentSel::B10)
@@ -160,14 +162,15 @@ where
     }
 }
 #[doc = "KVCO to control VCO band\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Kvco {
-    #[doc = "0: increase KVCO by 20%"]
+    #[doc = "0: decrease KVCO by 15%"]
     B00 = 0,
-    #[doc = "1: increase KVCO by 20%"]
+    #[doc = "1: (default)"]
     B01 = 1,
-    #[doc = "2: increase KVCO by 20%"]
+    #[doc = "2: increase KVCO by 10%"]
     B10 = 2,
     #[doc = "3: increase KVCO by 20%"]
     B11 = 3,
@@ -195,17 +198,17 @@ impl KvcoR {
             _ => unreachable!(),
         }
     }
-    #[doc = "increase KVCO by 20%"]
+    #[doc = "decrease KVCO by 15%"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == Kvco::B00
     }
-    #[doc = "increase KVCO by 20%"]
+    #[doc = "(default)"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Kvco::B01
     }
-    #[doc = "increase KVCO by 20%"]
+    #[doc = "increase KVCO by 10%"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Kvco::B10
@@ -223,17 +226,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "increase KVCO by 20%"]
+    #[doc = "decrease KVCO by 15%"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(Kvco::B00)
     }
-    #[doc = "increase KVCO by 20%"]
+    #[doc = "(default)"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Kvco::B01)
     }
-    #[doc = "increase KVCO by 20%"]
+    #[doc = "increase KVCO by 10%"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Kvco::B10)
@@ -245,14 +248,15 @@ where
     }
 }
 #[doc = "1.5v LDO output voltage select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LdoOutputVSel {
-    #[doc = "0: 1.50v"]
+    #[doc = "0: 1.35v"]
     B00 = 0,
-    #[doc = "1: 1.50v"]
+    #[doc = "1: 1.40v"]
     B01 = 1,
-    #[doc = "2: 1.50v"]
+    #[doc = "2: 1.45v(default)"]
     B10 = 2,
     #[doc = "3: 1.50v"]
     B11 = 3,
@@ -280,17 +284,17 @@ impl LdoOutputVSelR {
             _ => unreachable!(),
         }
     }
-    #[doc = "1.50v"]
+    #[doc = "1.35v"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == LdoOutputVSel::B00
     }
-    #[doc = "1.50v"]
+    #[doc = "1.40v"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == LdoOutputVSel::B01
     }
-    #[doc = "1.50v"]
+    #[doc = "1.45v(default)"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == LdoOutputVSel::B10
@@ -308,17 +312,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "1.50v"]
+    #[doc = "1.35v"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(LdoOutputVSel::B00)
     }
-    #[doc = "1.50v"]
+    #[doc = "1.40v"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(LdoOutputVSel::B01)
     }
-    #[doc = "1.50v"]
+    #[doc = "1.45v(default)"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(LdoOutputVSel::B10)

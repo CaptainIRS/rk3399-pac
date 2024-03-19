@@ -1,9 +1,10 @@
 #[doc = "Register `PMU_BUS_IDLE_ST` reader"]
 pub type R = crate::R<PmuBusIdleStSpec>;
 #[doc = "idle status of gpu niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleGpu {
-    #[doc = "0: idle status of gpu_niu is 1"]
+    #[doc = "0: idle status of gpu_niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of gpu_niu is 1"]
     B1 = 1,
@@ -25,7 +26,7 @@ impl IdleGpuR {
             true => IdleGpu::B1,
         }
     }
-    #[doc = "idle status of gpu_niu is 1"]
+    #[doc = "idle status of gpu_niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleGpu::B0
@@ -37,9 +38,10 @@ impl IdleGpuR {
     }
 }
 #[doc = "idle status of perilp niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdlePerilp {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -61,7 +63,7 @@ impl IdlePerilpR {
             true => IdlePerilp::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdlePerilp::B0
@@ -73,9 +75,10 @@ impl IdlePerilpR {
     }
 }
 #[doc = "idle status of perihp niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdlePerihp {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -97,7 +100,7 @@ impl IdlePerihpR {
             true => IdlePerihp::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdlePerihp::B0
@@ -109,9 +112,10 @@ impl IdlePerihpR {
     }
 }
 #[doc = "idle status of vcodec niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleVcodec {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -133,7 +137,7 @@ impl IdleVcodecR {
             true => IdleVcodec::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleVcodec::B0
@@ -145,9 +149,10 @@ impl IdleVcodecR {
     }
 }
 #[doc = "idle status of vdu niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleVdu {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -169,7 +174,7 @@ impl IdleVduR {
             true => IdleVdu::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleVdu::B0
@@ -181,9 +186,10 @@ impl IdleVduR {
     }
 }
 #[doc = "idle status of rga niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleRga {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -205,7 +211,7 @@ impl IdleRgaR {
             true => IdleRga::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleRga::B0
@@ -217,9 +223,10 @@ impl IdleRgaR {
     }
 }
 #[doc = "idle status of iep niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleIep {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -241,7 +248,7 @@ impl IdleIepR {
             true => IdleIep::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleIep::B0
@@ -253,9 +260,10 @@ impl IdleIepR {
     }
 }
 #[doc = "idle status of vopb niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleVopb {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -277,7 +285,7 @@ impl IdleVopbR {
             true => IdleVopb::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleVopb::B0
@@ -289,9 +297,10 @@ impl IdleVopbR {
     }
 }
 #[doc = "idle status of vopl niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleVopl {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -313,7 +322,7 @@ impl IdleVoplR {
             true => IdleVopl::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleVopl::B0
@@ -325,9 +334,10 @@ impl IdleVoplR {
     }
 }
 #[doc = "idle status of isp0 niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleIsp0 {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -349,7 +359,7 @@ impl IdleIsp0R {
             true => IdleIsp0::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleIsp0::B0
@@ -361,9 +371,10 @@ impl IdleIsp0R {
     }
 }
 #[doc = "idle status of isp1 niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleIsp1 {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -385,7 +396,7 @@ impl IdleIsp1R {
             true => IdleIsp1::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleIsp1::B0
@@ -397,9 +408,10 @@ impl IdleIsp1R {
     }
 }
 #[doc = "idle status of hdcp niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleHdcp {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -421,7 +433,7 @@ impl IdleHdcpR {
             true => IdleHdcp::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleHdcp::B0
@@ -433,9 +445,10 @@ impl IdleHdcpR {
     }
 }
 #[doc = "idle status of usb3 niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleUsb3 {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -457,7 +470,7 @@ impl IdleUsb3R {
             true => IdleUsb3::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleUsb3::B0
@@ -469,9 +482,10 @@ impl IdleUsb3R {
     }
 }
 #[doc = "idle status of perilpm0 niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdlePerilpm0 {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -493,7 +507,7 @@ impl IdlePerilpm0R {
             true => IdlePerilpm0::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdlePerilpm0::B0
@@ -505,9 +519,10 @@ impl IdlePerilpm0R {
     }
 }
 #[doc = "idle status of center niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleCenter {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -529,7 +544,7 @@ impl IdleCenterR {
             true => IdleCenter::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleCenter::B0
@@ -541,9 +556,10 @@ impl IdleCenterR {
     }
 }
 #[doc = "idle status of ccim0 niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleCcim0 {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -565,7 +581,7 @@ impl IdleCcim0R {
             true => IdleCcim0::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleCcim0::B0
@@ -577,9 +593,10 @@ impl IdleCcim0R {
     }
 }
 #[doc = "idle status of ccim1 niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleCcim1 {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -601,7 +618,7 @@ impl IdleCcim1R {
             true => IdleCcim1::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleCcim1::B0
@@ -613,9 +630,10 @@ impl IdleCcim1R {
     }
 }
 #[doc = "idle status of vio niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleVio {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -637,7 +655,7 @@ impl IdleVioR {
             true => IdleVio::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleVio::B0
@@ -649,9 +667,10 @@ impl IdleVioR {
     }
 }
 #[doc = "idle status of msch0 niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleMsch0 {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -673,7 +692,7 @@ impl IdleMsch0R {
             true => IdleMsch0::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleMsch0::B0
@@ -685,9 +704,10 @@ impl IdleMsch0R {
     }
 }
 #[doc = "idle status of msch1 niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleMsch1 {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -709,7 +729,7 @@ impl IdleMsch1R {
             true => IdleMsch1::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleMsch1::B0
@@ -721,9 +741,10 @@ impl IdleMsch1R {
     }
 }
 #[doc = "idle status of alive niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAlive {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -745,7 +766,7 @@ impl IdleAliveR {
             true => IdleAlive::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAlive::B0
@@ -757,9 +778,10 @@ impl IdleAliveR {
     }
 }
 #[doc = "idle status of pmu niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdlePmu {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -781,7 +803,7 @@ impl IdlePmuR {
             true => IdlePmu::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdlePmu::B0
@@ -793,9 +815,10 @@ impl IdlePmuR {
     }
 }
 #[doc = "idle status of edp niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleEdp {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -817,7 +840,7 @@ impl IdleEdpR {
             true => IdleEdp::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleEdp::B0
@@ -829,9 +852,10 @@ impl IdleEdpR {
     }
 }
 #[doc = "idle status of gmac niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleGmac {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -853,7 +877,7 @@ impl IdleGmacR {
             true => IdleGmac::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleGmac::B0
@@ -865,9 +889,10 @@ impl IdleGmacR {
     }
 }
 #[doc = "idle status of emmc niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleEmmc {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -889,7 +914,7 @@ impl IdleEmmcR {
             true => IdleEmmc::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleEmmc::B0
@@ -901,9 +926,10 @@ impl IdleEmmcR {
     }
 }
 #[doc = "idle status of center1 niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleCenter1 {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -925,7 +951,7 @@ impl IdleCenter1R {
             true => IdleCenter1::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleCenter1::B0
@@ -937,9 +963,10 @@ impl IdleCenter1R {
     }
 }
 #[doc = "idle status of pmu m0 niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdlePmum0 {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -961,7 +988,7 @@ impl IdlePmum0R {
             true => IdlePmum0::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdlePmum0::B0
@@ -973,9 +1000,10 @@ impl IdlePmum0R {
     }
 }
 #[doc = "idle status of gic niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleGic {
-    #[doc = "0: idle status of niu is 1"]
+    #[doc = "0: idle status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle status of niu is 1"]
     B1 = 1,
@@ -997,7 +1025,7 @@ impl IdleGicR {
             true => IdleGic::B1,
         }
     }
-    #[doc = "idle status of niu is 1"]
+    #[doc = "idle status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleGic::B0
@@ -1009,9 +1037,10 @@ impl IdleGicR {
     }
 }
 #[doc = "send idle request to sd low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleSd {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1033,7 +1062,7 @@ impl IdleSdR {
             true => IdleSd::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleSd::B0
@@ -1045,9 +1074,10 @@ impl IdleSdR {
     }
 }
 #[doc = "send idle request to sdioaudio low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleSdioaudio {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1069,7 +1099,7 @@ impl IdleSdioaudioR {
             true => IdleSdioaudio::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleSdioaudio::B0

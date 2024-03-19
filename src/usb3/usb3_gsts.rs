@@ -2,90 +2,90 @@
 pub type R = crate::R<Usb3GstsSpec>;
 #[doc = "Register `USB3_GSTS` writer"]
 pub type W = crate::W<Usb3GstsSpec>;
-#[doc = "Field `CURMOD` reader - Current Mode of Operation Current Mode of Operation"]
+#[doc = "Field `CURMOD` reader - Current Mode of Operation\n\nCurrent Mode of Operation"]
 pub type CurmodR = crate::FieldReader;
-#[doc = "Field `BUSERRADDRVLD` reader - Bus Error Address Valid Indicates that the GBUSERRADDR register is valid and reports the first bus address that encounters a bus error."]
+#[doc = "Field `BUSERRADDRVLD` reader - Bus Error Address Valid\n\nIndicates that the GBUSERRADDR register is valid and reports the\n\nfirst bus address that encounters a bus error."]
 pub type BuserraddrvldR = crate::BitReader;
-#[doc = "Field `BUSERRADDRVLD` writer - Bus Error Address Valid Indicates that the GBUSERRADDR register is valid and reports the first bus address that encounters a bus error."]
+#[doc = "Field `BUSERRADDRVLD` writer - Bus Error Address Valid\n\nIndicates that the GBUSERRADDR register is valid and reports the\n\nfirst bus address that encounters a bus error."]
 pub type BuserraddrvldW<'a, REG> = crate::BitWriter1C<'a, REG>;
-#[doc = "Field `CSRTIMEOUT` reader - CSR Timeout When this bit is 1'b1, it indicates that the software performed a write or read to a core register that could not be completed within DWC_USB3_CSR_ACCESS_TIMEOUT bus clock cycles (default: h1FFFF)."]
+#[doc = "Field `CSRTIMEOUT` reader - CSR Timeout\n\nWhen this bit is 1'b1, it indicates that the software performed a\n\nwrite or read to a core register that could not be completed\n\nwithin DWC_USB3_CSR_ACCESS_TIMEOUT bus clock cycles\n\n(default:\n\nh1FFFF)."]
 pub type CsrtimeoutR = crate::BitReader;
-#[doc = "Field `CSRTIMEOUT` writer - CSR Timeout When this bit is 1'b1, it indicates that the software performed a write or read to a core register that could not be completed within DWC_USB3_CSR_ACCESS_TIMEOUT bus clock cycles (default: h1FFFF)."]
+#[doc = "Field `CSRTIMEOUT` writer - CSR Timeout\n\nWhen this bit is 1'b1, it indicates that the software performed a\n\nwrite or read to a core register that could not be completed\n\nwithin DWC_USB3_CSR_ACCESS_TIMEOUT bus clock cycles\n\n(default:\n\nh1FFFF)."]
 pub type CsrtimeoutW<'a, REG> = crate::BitWriter1C<'a, REG>;
-#[doc = "Field `DEVICE_IP` reader - Device Interrupt Pending This field indicates that there is a pending interrupt pertaining to peripheral (device) operation in the Device event queue."]
+#[doc = "Field `DEVICE_IP` reader - Device Interrupt Pending\n\nThis field indicates that there is a pending interrupt pertaining to\n\nperipheral (device) operation in the Device event queue."]
 pub type DeviceIpR = crate::BitReader;
-#[doc = "Field `HOST_IP` reader - Host Interrupt Pending This field indicates that there is a pending interrupt pertaining to xHC in the Host event queue."]
+#[doc = "Field `HOST_IP` reader - Host Interrupt Pending\n\nThis field indicates that there is a pending interrupt pertaining to\n\nxHC in the Host event queue."]
 pub type HostIpR = crate::BitReader;
-#[doc = "Field `ADP_IP` reader - ADP Interrupt Pending his field indicates that there is a pending interrupt pertaining to ADP in ADPEVT register."]
+#[doc = "Field `ADP_IP` reader - ADP Interrupt Pending\n\nhis field indicates that there is a pending interrupt pertaining to\n\nADP in ADPEVT register."]
 pub type AdpIpR = crate::BitReader;
-#[doc = "Field `BC_IP` reader - Battery Charger Interrupt Pending This field indicates that there is a pending interrupt pertaining to BC in BCEVT register."]
+#[doc = "Field `BC_IP` reader - Battery Charger Interrupt Pending\n\nThis field indicates that there is a pending interrupt pertaining to\n\nBC in BCEVT register."]
 pub type BcIpR = crate::BitReader;
-#[doc = "Field `OTG_IP` reader - OTG Interrupt Pending This field indicates that there is a pending interrupt pertaining to OTG in OEVT register."]
+#[doc = "Field `OTG_IP` reader - OTG Interrupt Pending\n\nThis field indicates that there is a pending interrupt pertaining to\n\nOTG in OEVT register."]
 pub type OtgIpR = crate::BitReader;
-#[doc = "Field `SSIC_IP` reader - SSIC interrupt pending This field indicates that there is a pending interrupt related to SSIC in the SEVT register. Note: When the DWC_USB3_NUM_SSIC_PORTS parameter is set to zero, this bit is reserved."]
+#[doc = "Field `SSIC_IP` reader - SSIC interrupt pending\n\nThis field indicates that there is a pending interrupt related to\n\nSSIC in the SEVT register.\n\nNote: When the DWC_USB3_NUM_SSIC_PORTS parameter is set\n\nto zero, this bit is reserved."]
 pub type SsicIpR = crate::BitReader;
-#[doc = "Field `CBELT` reader - Current BELT Value In Host mode, this field indicates the minimum value of all received device BELT values and the BELT value that is set by the Set Latency Tolerance Value command."]
+#[doc = "Field `CBELT` reader - Current BELT Value\n\nIn Host mode, this field indicates the minimum value of all\n\nreceived device BELT values and the BELT value that is set by the\n\nSet Latency Tolerance Value command."]
 pub type CbeltR = crate::FieldReader<u16>;
 impl R {
-    #[doc = "Bits 0:1 - Current Mode of Operation Current Mode of Operation"]
+    #[doc = "Bits 0:1 - Current Mode of Operation\n\nCurrent Mode of Operation"]
     #[inline(always)]
     pub fn curmod(&self) -> CurmodR {
         CurmodR::new((self.bits & 3) as u8)
     }
-    #[doc = "Bit 4 - Bus Error Address Valid Indicates that the GBUSERRADDR register is valid and reports the first bus address that encounters a bus error."]
+    #[doc = "Bit 4 - Bus Error Address Valid\n\nIndicates that the GBUSERRADDR register is valid and reports the\n\nfirst bus address that encounters a bus error."]
     #[inline(always)]
     pub fn buserraddrvld(&self) -> BuserraddrvldR {
         BuserraddrvldR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - CSR Timeout When this bit is 1'b1, it indicates that the software performed a write or read to a core register that could not be completed within DWC_USB3_CSR_ACCESS_TIMEOUT bus clock cycles (default: h1FFFF)."]
+    #[doc = "Bit 5 - CSR Timeout\n\nWhen this bit is 1'b1, it indicates that the software performed a\n\nwrite or read to a core register that could not be completed\n\nwithin DWC_USB3_CSR_ACCESS_TIMEOUT bus clock cycles\n\n(default:\n\nh1FFFF)."]
     #[inline(always)]
     pub fn csrtimeout(&self) -> CsrtimeoutR {
         CsrtimeoutR::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 6 - Device Interrupt Pending This field indicates that there is a pending interrupt pertaining to peripheral (device) operation in the Device event queue."]
+    #[doc = "Bit 6 - Device Interrupt Pending\n\nThis field indicates that there is a pending interrupt pertaining to\n\nperipheral (device) operation in the Device event queue."]
     #[inline(always)]
     pub fn device_ip(&self) -> DeviceIpR {
         DeviceIpR::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 7 - Host Interrupt Pending This field indicates that there is a pending interrupt pertaining to xHC in the Host event queue."]
+    #[doc = "Bit 7 - Host Interrupt Pending\n\nThis field indicates that there is a pending interrupt pertaining to\n\nxHC in the Host event queue."]
     #[inline(always)]
     pub fn host_ip(&self) -> HostIpR {
         HostIpR::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bit 8 - ADP Interrupt Pending his field indicates that there is a pending interrupt pertaining to ADP in ADPEVT register."]
+    #[doc = "Bit 8 - ADP Interrupt Pending\n\nhis field indicates that there is a pending interrupt pertaining to\n\nADP in ADPEVT register."]
     #[inline(always)]
     pub fn adp_ip(&self) -> AdpIpR {
         AdpIpR::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bit 9 - Battery Charger Interrupt Pending This field indicates that there is a pending interrupt pertaining to BC in BCEVT register."]
+    #[doc = "Bit 9 - Battery Charger Interrupt Pending\n\nThis field indicates that there is a pending interrupt pertaining to\n\nBC in BCEVT register."]
     #[inline(always)]
     pub fn bc_ip(&self) -> BcIpR {
         BcIpR::new(((self.bits >> 9) & 1) != 0)
     }
-    #[doc = "Bit 10 - OTG Interrupt Pending This field indicates that there is a pending interrupt pertaining to OTG in OEVT register."]
+    #[doc = "Bit 10 - OTG Interrupt Pending\n\nThis field indicates that there is a pending interrupt pertaining to\n\nOTG in OEVT register."]
     #[inline(always)]
     pub fn otg_ip(&self) -> OtgIpR {
         OtgIpR::new(((self.bits >> 10) & 1) != 0)
     }
-    #[doc = "Bit 11 - SSIC interrupt pending This field indicates that there is a pending interrupt related to SSIC in the SEVT register. Note: When the DWC_USB3_NUM_SSIC_PORTS parameter is set to zero, this bit is reserved."]
+    #[doc = "Bit 11 - SSIC interrupt pending\n\nThis field indicates that there is a pending interrupt related to\n\nSSIC in the SEVT register.\n\nNote: When the DWC_USB3_NUM_SSIC_PORTS parameter is set\n\nto zero, this bit is reserved."]
     #[inline(always)]
     pub fn ssic_ip(&self) -> SsicIpR {
         SsicIpR::new(((self.bits >> 11) & 1) != 0)
     }
-    #[doc = "Bits 20:31 - Current BELT Value In Host mode, this field indicates the minimum value of all received device BELT values and the BELT value that is set by the Set Latency Tolerance Value command."]
+    #[doc = "Bits 20:31 - Current BELT Value\n\nIn Host mode, this field indicates the minimum value of all\n\nreceived device BELT values and the BELT value that is set by the\n\nSet Latency Tolerance Value command."]
     #[inline(always)]
     pub fn cbelt(&self) -> CbeltR {
         CbeltR::new(((self.bits >> 20) & 0x0fff) as u16)
     }
 }
 impl W {
-    #[doc = "Bit 4 - Bus Error Address Valid Indicates that the GBUSERRADDR register is valid and reports the first bus address that encounters a bus error."]
+    #[doc = "Bit 4 - Bus Error Address Valid\n\nIndicates that the GBUSERRADDR register is valid and reports the\n\nfirst bus address that encounters a bus error."]
     #[inline(always)]
     #[must_use]
     pub fn buserraddrvld(&mut self) -> BuserraddrvldW<Usb3GstsSpec> {
         BuserraddrvldW::new(self, 4)
     }
-    #[doc = "Bit 5 - CSR Timeout When this bit is 1'b1, it indicates that the software performed a write or read to a core register that could not be completed within DWC_USB3_CSR_ACCESS_TIMEOUT bus clock cycles (default: h1FFFF)."]
+    #[doc = "Bit 5 - CSR Timeout\n\nWhen this bit is 1'b1, it indicates that the software performed a\n\nwrite or read to a core register that could not be completed\n\nwithin DWC_USB3_CSR_ACCESS_TIMEOUT bus clock cycles\n\n(default:\n\nh1FFFF)."]
     #[inline(always)]
     #[must_use]
     pub fn csrtimeout(&mut self) -> CsrtimeoutW<Usb3GstsSpec> {

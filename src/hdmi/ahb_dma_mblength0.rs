@@ -9,7 +9,9 @@ impl R {
         MburstlengthR::new(self.bits)
     }
 }
-#[doc = "Requested burst length (mburstlength\\[7:0\\])\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ahb_dma_mblength0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Audio DMA Burst Length Register 0\n\nThis registers holds the length of the current burst operation. As an example, if the first\n\nburst transaction of the AHB audio DMA is a length of 8, then the second burst should start\n\nat address ohaddr\\[31:0\\]
+= initial_addr\\[31:0\\]
++ 32.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ahb_dma_mblength0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AhbDmaMblength0Spec;
 impl crate::RegisterSpec for AhbDmaMblength0Spec {
     type Ux = u8;

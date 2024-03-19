@@ -2,57 +2,57 @@
 pub type R = crate::R<CruDpllCon1Spec>;
 #[doc = "Register `CRU_DPLL_CON1` writer"]
 pub type W = crate::W<CruDpllCon1Spec>;
-#[doc = "Field `REFDIV` reader - Reference Clock Divide Value (1-63)"]
+#[doc = "Field `REFDIV` reader - Reference Clock Divide Value\n\n(1-63)"]
 pub type RefdivR = crate::FieldReader;
-#[doc = "Field `REFDIV` writer - Reference Clock Divide Value (1-63)"]
+#[doc = "Field `REFDIV` writer - Reference Clock Divide Value\n\n(1-63)"]
 pub type RefdivW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
-#[doc = "Field `POSTDIV1` reader - First Post Divide Value (1-7)"]
+#[doc = "Field `POSTDIV1` reader - First Post Divide Value\n\n(1-7)"]
 pub type Postdiv1R = crate::FieldReader;
-#[doc = "Field `POSTDIV1` writer - First Post Divide Value (1-7)"]
+#[doc = "Field `POSTDIV1` writer - First Post Divide Value\n\n(1-7)"]
 pub type Postdiv1W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-#[doc = "Field `POSTDIV2` reader - Second Post Divide Value (1-7)"]
+#[doc = "Field `POSTDIV2` reader - Second Post Divide Value\n\n(1-7)"]
 pub type Postdiv2R = crate::FieldReader;
-#[doc = "Field `POSTDIV2` writer - Second Post Divide Value (1-7)"]
+#[doc = "Field `POSTDIV2` writer - Second Post Divide Value\n\n(1-7)"]
 pub type Postdiv2W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:5 - Reference Clock Divide Value (1-63)"]
+    #[doc = "Bits 0:5 - Reference Clock Divide Value\n\n(1-63)"]
     #[inline(always)]
     pub fn refdiv(&self) -> RefdivR {
         RefdivR::new((self.bits & 0x3f) as u8)
     }
-    #[doc = "Bits 8:10 - First Post Divide Value (1-7)"]
+    #[doc = "Bits 8:10 - First Post Divide Value\n\n(1-7)"]
     #[inline(always)]
     pub fn postdiv1(&self) -> Postdiv1R {
         Postdiv1R::new(((self.bits >> 8) & 7) as u8)
     }
-    #[doc = "Bits 12:14 - Second Post Divide Value (1-7)"]
+    #[doc = "Bits 12:14 - Second Post Divide Value\n\n(1-7)"]
     #[inline(always)]
     pub fn postdiv2(&self) -> Postdiv2R {
         Postdiv2R::new(((self.bits >> 12) & 7) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:5 - Reference Clock Divide Value (1-63)"]
+    #[doc = "Bits 0:5 - Reference Clock Divide Value\n\n(1-63)"]
     #[inline(always)]
     #[must_use]
     pub fn refdiv(&mut self) -> RefdivW<CruDpllCon1Spec> {
         RefdivW::new(self, 0)
     }
-    #[doc = "Bits 8:10 - First Post Divide Value (1-7)"]
+    #[doc = "Bits 8:10 - First Post Divide Value\n\n(1-7)"]
     #[inline(always)]
     #[must_use]
     pub fn postdiv1(&mut self) -> Postdiv1W<CruDpllCon1Spec> {
         Postdiv1W::new(self, 8)
     }
-    #[doc = "Bits 12:14 - Second Post Divide Value (1-7)"]
+    #[doc = "Bits 12:14 - Second Post Divide Value\n\n(1-7)"]
     #[inline(always)]
     #[must_use]
     pub fn postdiv2(&mut self) -> Postdiv2W<CruDpllCon1Spec> {
         Postdiv2W::new(self, 12)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruDpllCon1Spec> {

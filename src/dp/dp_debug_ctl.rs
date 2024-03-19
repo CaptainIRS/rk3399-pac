@@ -3,9 +3,10 @@ pub type R = crate::R<DpDebugCtlSpec>;
 #[doc = "Register `DP_DEBUG_CTL` writer"]
 pub type W = crate::W<DpDebugCtlSpec>;
 #[doc = "Invert SERDES output polarity\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PnInv {
-    #[doc = "1: Normal operation. This bit's type is R/W."]
+    #[doc = "1: Invert output polarity,"]
     B1 = 1,
     #[doc = "0: Normal operation. This bit's type is R/W."]
     B0 = 0,
@@ -27,7 +28,7 @@ impl PnInvR {
             false => PnInv::B0,
         }
     }
-    #[doc = "Normal operation. This bit's type is R/W."]
+    #[doc = "Invert output polarity,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == PnInv::B1
@@ -44,7 +45,7 @@ impl<'a, REG> PnInvW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Normal operation. This bit's type is R/W."]
+    #[doc = "Invert output polarity,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(PnInv::B1)
@@ -55,10 +56,11 @@ where
         self.variant(PnInv::B0)
     }
 }
-#[doc = "Enable hardware state machine to polling the HPD status or link status. The interval of each polling is controlled by POLLING_PERIOD\n\nValue on reset: 0"]
+#[doc = "Enable hardware state machine to polling \n\nthe HPD status or link status. The interval \n\nof each polling is controlled by \n\nPOLLING_PERIOD\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PollingEn {
-    #[doc = "1: Disable polling function This bit's type is R/W."]
+    #[doc = "1: Enable polling function."]
     B1 = 1,
     #[doc = "0: Disable polling function This bit's type is R/W."]
     B0 = 0,
@@ -69,7 +71,7 @@ impl From<PollingEn> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `POLLING_EN` reader - Enable hardware state machine to polling the HPD status or link status. The interval of each polling is controlled by POLLING_PERIOD"]
+#[doc = "Field `POLLING_EN` reader - Enable hardware state machine to polling \n\nthe HPD status or link status. The interval \n\nof each polling is controlled by \n\nPOLLING_PERIOD"]
 pub type PollingEnR = crate::BitReader<PollingEn>;
 impl PollingEnR {
     #[doc = "Get enumerated values variant"]
@@ -80,7 +82,7 @@ impl PollingEnR {
             false => PollingEn::B0,
         }
     }
-    #[doc = "Disable polling function This bit's type is R/W."]
+    #[doc = "Enable polling function."]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == PollingEn::B1
@@ -91,13 +93,13 @@ impl PollingEnR {
         *self == PollingEn::B0
     }
 }
-#[doc = "Field `POLLING_EN` writer - Enable hardware state machine to polling the HPD status or link status. The interval of each polling is controlled by POLLING_PERIOD"]
+#[doc = "Field `POLLING_EN` writer - Enable hardware state machine to polling \n\nthe HPD status or link status. The interval \n\nof each polling is controlled by \n\nPOLLING_PERIOD"]
 pub type PollingEnW<'a, REG> = crate::BitWriter<'a, REG, PollingEn>;
 impl<'a, REG> PollingEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disable polling function This bit's type is R/W."]
+    #[doc = "Enable polling function."]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(PollingEn::B1)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "PLL lock register control enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PllLockCtrl {
-    #[doc = "1: PLL lock signal is controlled by PLL. This bit's type is R/W"]
+    #[doc = "1: PLL lock signal is controlled by register,"]
     B1 = 1,
     #[doc = "0: PLL lock signal is controlled by PLL. This bit's type is R/W"]
     B0 = 0,
@@ -133,7 +136,7 @@ impl PllLockCtrlR {
             false => PllLockCtrl::B0,
         }
     }
-    #[doc = "PLL lock signal is controlled by PLL. This bit's type is R/W"]
+    #[doc = "PLL lock signal is controlled by register,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == PllLockCtrl::B1
@@ -150,7 +153,7 @@ impl<'a, REG> PllLockCtrlW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "PLL lock signal is controlled by PLL. This bit's type is R/W"]
+    #[doc = "PLL lock signal is controlled by register,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(PllLockCtrl::B1)
@@ -161,10 +164,11 @@ where
         self.variant(PllLockCtrl::B0)
     }
 }
-#[doc = "Force PLL lock, this bit is active when PLL_LOCK_CTRL is 1:\n\nValue on reset: 0"]
+#[doc = "Force PLL lock, this bit is active when \n\nPLL_LOCK_CTRL is 1:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FPllLock {
-    #[doc = "1: Force PLL non-lock. This bit's type is R/W"]
+    #[doc = "1: Force PLL lock,"]
     B1 = 1,
     #[doc = "0: Force PLL non-lock. This bit's type is R/W"]
     B0 = 0,
@@ -175,7 +179,7 @@ impl From<FPllLock> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `F_PLL_LOCK` reader - Force PLL lock, this bit is active when PLL_LOCK_CTRL is 1:"]
+#[doc = "Field `F_PLL_LOCK` reader - Force PLL lock, this bit is active when \n\nPLL_LOCK_CTRL is 1:"]
 pub type FPllLockR = crate::BitReader<FPllLock>;
 impl FPllLockR {
     #[doc = "Get enumerated values variant"]
@@ -186,7 +190,7 @@ impl FPllLockR {
             false => FPllLock::B0,
         }
     }
-    #[doc = "Force PLL non-lock. This bit's type is R/W"]
+    #[doc = "Force PLL lock,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == FPllLock::B1
@@ -197,13 +201,13 @@ impl FPllLockR {
         *self == FPllLock::B0
     }
 }
-#[doc = "Field `F_PLL_LOCK` writer - Force PLL lock, this bit is active when PLL_LOCK_CTRL is 1:"]
+#[doc = "Field `F_PLL_LOCK` writer - Force PLL lock, this bit is active when \n\nPLL_LOCK_CTRL is 1:"]
 pub type FPllLockW<'a, REG> = crate::BitWriter1C<'a, REG, FPllLock>;
 impl<'a, REG> FPllLockW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Force PLL non-lock. This bit's type is R/W"]
+    #[doc = "Force PLL lock,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(FPllLock::B1)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "PLL lock status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PllLock {
-    #[doc = "1: PLL unlock. This bit's type is RO."]
+    #[doc = "1: PLL lock,"]
     B1 = 1,
     #[doc = "0: PLL unlock. This bit's type is RO."]
     B0 = 0,
@@ -239,7 +244,7 @@ impl PllLockR {
             false => PllLock::B0,
         }
     }
-    #[doc = "PLL unlock. This bit's type is RO."]
+    #[doc = "PLL lock,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == PllLock::B1
@@ -250,10 +255,11 @@ impl PllLockR {
         *self == PllLock::B0
     }
 }
-#[doc = "Bypass link status polling. If this bit, MYDP_HPD_POLLIN_EN and POLLING_EN are all enabled, hardware only polling MYDP HPD status.\n\nValue on reset: 0"]
+#[doc = "Bypass link status polling. If this bit, \n\nMYDP_HPD_POLLIN_EN and POLLING_EN \n\nare all enabled, hardware only polling \n\nMYDP HPD status.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BypassStatusPolling {
-    #[doc = "1: Disabled. This bit's type is RW."]
+    #[doc = "1: Enabled"]
     B1 = 1,
     #[doc = "0: Disabled. This bit's type is RW."]
     B0 = 0,
@@ -264,7 +270,7 @@ impl From<BypassStatusPolling> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BYPASS_STATUS_POLLING` reader - Bypass link status polling. If this bit, MYDP_HPD_POLLIN_EN and POLLING_EN are all enabled, hardware only polling MYDP HPD status."]
+#[doc = "Field `BYPASS_STATUS_POLLING` reader - Bypass link status polling. If this bit, \n\nMYDP_HPD_POLLIN_EN and POLLING_EN \n\nare all enabled, hardware only polling \n\nMYDP HPD status."]
 pub type BypassStatusPollingR = crate::BitReader<BypassStatusPolling>;
 impl BypassStatusPollingR {
     #[doc = "Get enumerated values variant"]
@@ -275,7 +281,7 @@ impl BypassStatusPollingR {
             false => BypassStatusPolling::B0,
         }
     }
-    #[doc = "Disabled. This bit's type is RW."]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == BypassStatusPolling::B1
@@ -286,13 +292,13 @@ impl BypassStatusPollingR {
         *self == BypassStatusPolling::B0
     }
 }
-#[doc = "Field `BYPASS_STATUS_POLLING` writer - Bypass link status polling. If this bit, MYDP_HPD_POLLIN_EN and POLLING_EN are all enabled, hardware only polling MYDP HPD status."]
+#[doc = "Field `BYPASS_STATUS_POLLING` writer - Bypass link status polling. If this bit, \n\nMYDP_HPD_POLLIN_EN and POLLING_EN \n\nare all enabled, hardware only polling \n\nMYDP HPD status."]
 pub type BypassStatusPollingW<'a, REG> = crate::BitWriter<'a, REG, BypassStatusPolling>;
 impl<'a, REG> BypassStatusPollingW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disabled. This bit's type is RW."]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(BypassStatusPolling::B1)
@@ -303,10 +309,11 @@ where
         self.variant(BypassStatusPolling::B0)
     }
 }
-#[doc = "Enable the MYDP HPD status polling. If this bit and POLLING_EN are enabled and BYPASS_STATUS_POLLING is 0, hardware polling both of link status and MYDP HPD status.\n\nValue on reset: 0"]
+#[doc = "Enable the MYDP HPD status polling. If this \n\nbit and POLLING_EN are enabled and \n\nBYPASS_STATUS_POLLING is 0, hardware \n\npolling both of link status and MYDP HPD \n\nstatus.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MydpHpdPollinEn {
-    #[doc = "1: Disabled. This bit's type is RW."]
+    #[doc = "1: Enabled"]
     B1 = 1,
     #[doc = "0: Disabled. This bit's type is RW."]
     B0 = 0,
@@ -317,7 +324,7 @@ impl From<MydpHpdPollinEn> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MYDP_HPD_POLLIN_EN` reader - Enable the MYDP HPD status polling. If this bit and POLLING_EN are enabled and BYPASS_STATUS_POLLING is 0, hardware polling both of link status and MYDP HPD status."]
+#[doc = "Field `MYDP_HPD_POLLIN_EN` reader - Enable the MYDP HPD status polling. If this \n\nbit and POLLING_EN are enabled and \n\nBYPASS_STATUS_POLLING is 0, hardware \n\npolling both of link status and MYDP HPD \n\nstatus."]
 pub type MydpHpdPollinEnR = crate::BitReader<MydpHpdPollinEn>;
 impl MydpHpdPollinEnR {
     #[doc = "Get enumerated values variant"]
@@ -328,7 +335,7 @@ impl MydpHpdPollinEnR {
             false => MydpHpdPollinEn::B0,
         }
     }
-    #[doc = "Disabled. This bit's type is RW."]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == MydpHpdPollinEn::B1
@@ -339,13 +346,13 @@ impl MydpHpdPollinEnR {
         *self == MydpHpdPollinEn::B0
     }
 }
-#[doc = "Field `MYDP_HPD_POLLIN_EN` writer - Enable the MYDP HPD status polling. If this bit and POLLING_EN are enabled and BYPASS_STATUS_POLLING is 0, hardware polling both of link status and MYDP HPD status."]
+#[doc = "Field `MYDP_HPD_POLLIN_EN` writer - Enable the MYDP HPD status polling. If this \n\nbit and POLLING_EN are enabled and \n\nBYPASS_STATUS_POLLING is 0, hardware \n\npolling both of link status and MYDP HPD \n\nstatus."]
 pub type MydpHpdPollinEnW<'a, REG> = crate::BitWriter<'a, REG, MydpHpdPollinEn>;
 impl<'a, REG> MydpHpdPollinEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disabled. This bit's type is RW."]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(MydpHpdPollinEn::B1)
@@ -362,7 +369,7 @@ impl R {
     pub fn pn_inv(&self) -> PnInvR {
         PnInvR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - Enable hardware state machine to polling the HPD status or link status. The interval of each polling is controlled by POLLING_PERIOD"]
+    #[doc = "Bit 1 - Enable hardware state machine to polling \n\nthe HPD status or link status. The interval \n\nof each polling is controlled by \n\nPOLLING_PERIOD"]
     #[inline(always)]
     pub fn polling_en(&self) -> PollingEnR {
         PollingEnR::new(((self.bits >> 1) & 1) != 0)
@@ -372,7 +379,7 @@ impl R {
     pub fn pll_lock_ctrl(&self) -> PllLockCtrlR {
         PllLockCtrlR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - Force PLL lock, this bit is active when PLL_LOCK_CTRL is 1:"]
+    #[doc = "Bit 3 - Force PLL lock, this bit is active when \n\nPLL_LOCK_CTRL is 1:"]
     #[inline(always)]
     pub fn f_pll_lock(&self) -> FPllLockR {
         FPllLockR::new(((self.bits >> 3) & 1) != 0)
@@ -382,12 +389,12 @@ impl R {
     pub fn pll_lock(&self) -> PllLockR {
         PllLockR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - Bypass link status polling. If this bit, MYDP_HPD_POLLIN_EN and POLLING_EN are all enabled, hardware only polling MYDP HPD status."]
+    #[doc = "Bit 5 - Bypass link status polling. If this bit, \n\nMYDP_HPD_POLLIN_EN and POLLING_EN \n\nare all enabled, hardware only polling \n\nMYDP HPD status."]
     #[inline(always)]
     pub fn bypass_status_polling(&self) -> BypassStatusPollingR {
         BypassStatusPollingR::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 6 - Enable the MYDP HPD status polling. If this bit and POLLING_EN are enabled and BYPASS_STATUS_POLLING is 0, hardware polling both of link status and MYDP HPD status."]
+    #[doc = "Bit 6 - Enable the MYDP HPD status polling. If this \n\nbit and POLLING_EN are enabled and \n\nBYPASS_STATUS_POLLING is 0, hardware \n\npolling both of link status and MYDP HPD \n\nstatus."]
     #[inline(always)]
     pub fn mydp_hpd_pollin_en(&self) -> MydpHpdPollinEnR {
         MydpHpdPollinEnR::new(((self.bits >> 6) & 1) != 0)
@@ -400,7 +407,7 @@ impl W {
     pub fn pn_inv(&mut self) -> PnInvW<DpDebugCtlSpec> {
         PnInvW::new(self, 0)
     }
-    #[doc = "Bit 1 - Enable hardware state machine to polling the HPD status or link status. The interval of each polling is controlled by POLLING_PERIOD"]
+    #[doc = "Bit 1 - Enable hardware state machine to polling \n\nthe HPD status or link status. The interval \n\nof each polling is controlled by \n\nPOLLING_PERIOD"]
     #[inline(always)]
     #[must_use]
     pub fn polling_en(&mut self) -> PollingEnW<DpDebugCtlSpec> {
@@ -412,19 +419,19 @@ impl W {
     pub fn pll_lock_ctrl(&mut self) -> PllLockCtrlW<DpDebugCtlSpec> {
         PllLockCtrlW::new(self, 2)
     }
-    #[doc = "Bit 3 - Force PLL lock, this bit is active when PLL_LOCK_CTRL is 1:"]
+    #[doc = "Bit 3 - Force PLL lock, this bit is active when \n\nPLL_LOCK_CTRL is 1:"]
     #[inline(always)]
     #[must_use]
     pub fn f_pll_lock(&mut self) -> FPllLockW<DpDebugCtlSpec> {
         FPllLockW::new(self, 3)
     }
-    #[doc = "Bit 5 - Bypass link status polling. If this bit, MYDP_HPD_POLLIN_EN and POLLING_EN are all enabled, hardware only polling MYDP HPD status."]
+    #[doc = "Bit 5 - Bypass link status polling. If this bit, \n\nMYDP_HPD_POLLIN_EN and POLLING_EN \n\nare all enabled, hardware only polling \n\nMYDP HPD status."]
     #[inline(always)]
     #[must_use]
     pub fn bypass_status_polling(&mut self) -> BypassStatusPollingW<DpDebugCtlSpec> {
         BypassStatusPollingW::new(self, 5)
     }
-    #[doc = "Bit 6 - Enable the MYDP HPD status polling. If this bit and POLLING_EN are enabled and BYPASS_STATUS_POLLING is 0, hardware polling both of link status and MYDP HPD status."]
+    #[doc = "Bit 6 - Enable the MYDP HPD status polling. If this \n\nbit and POLLING_EN are enabled and \n\nBYPASS_STATUS_POLLING is 0, hardware \n\npolling both of link status and MYDP HPD \n\nstatus."]
     #[inline(always)]
     #[must_use]
     pub fn mydp_hpd_pollin_en(&mut self) -> MydpHpdPollinEnW<DpDebugCtlSpec> {

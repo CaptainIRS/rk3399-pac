@@ -14,7 +14,7 @@ pub type CksreF2W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 pub type CksrxF2R = crate::FieldReader;
 #[doc = "Field `CKSRX_F2` writer - Clock stable delay on self-refresh exit for frequency copy 2."]
 pub type CksrxF2W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-#[doc = "Field `LP_CMD` writer - Low power software command request interface. Bit (0) controls exit, bit (1) controls entry, bits (4:2) define the low power state, bit (5) controls memory clock gating, bit (6) controls controller clock gating, and bit (7) controls lock. WRITE- ONLY"]
+#[doc = "Field `LP_CMD` writer - Low power software command request interface. Bit (0) controls exit, bit (1) controls entry, bits (4:2) define the low power state, bit (5) controls memory clock gating, bit (6) controls controller clock gating, and bit (7) controls lock."]
 pub type LpCmdW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Clock stable delay on self-refresh exit for frequency copy 1."]
@@ -52,7 +52,7 @@ impl W {
     pub fn cksrx_f2(&mut self) -> CksrxF2W<DdrDenaliCtl93Spec> {
         CksrxF2W::new(self, 16)
     }
-    #[doc = "Bits 24:31 - Low power software command request interface. Bit (0) controls exit, bit (1) controls entry, bits (4:2) define the low power state, bit (5) controls memory clock gating, bit (6) controls controller clock gating, and bit (7) controls lock. WRITE- ONLY"]
+    #[doc = "Bits 24:31 - Low power software command request interface. Bit (0) controls exit, bit (1) controls entry, bits (4:2) define the low power state, bit (5) controls memory clock gating, bit (6) controls controller clock gating, and bit (7) controls lock."]
     #[inline(always)]
     #[must_use]
     pub fn lp_cmd(&mut self) -> LpCmdW<DdrDenaliCtl93Spec> {

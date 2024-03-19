@@ -1,9 +1,9 @@
 #[doc = "Register `DDR_DENALI_PHY_429` reader"]
 pub type R = crate::R<DdrDenaliPhy429Spec>;
-#[doc = "Field `PHY_RDLVL_RDDQS_DQ_NUM_WINDOWS_OBS_3` reader - Observation register for read leveling number of windows found for slice 3. READ-ONLY"]
+#[doc = "Field `PHY_RDLVL_RDDQS_DQ_NUM_WINDOWS_OBS_3` reader - Observation register for read leveling number of windows found for slice 3."]
 pub type PhyRdlvlRddqsDqNumWindowsObs3R = crate::FieldReader;
 impl R {
-    #[doc = "Bits 0:1 - Observation register for read leveling number of windows found for slice 3. READ-ONLY"]
+    #[doc = "Bits 0:1 - Observation register for read leveling number of windows found for slice 3."]
     #[inline(always)]
     pub fn phy_rdlvl_rddqs_dq_num_windows_obs_3(&self) -> PhyRdlvlRddqsDqNumWindowsObs3R {
         PhyRdlvlRddqsDqNumWindowsObs3R::new((self.bits & 3) as u8)

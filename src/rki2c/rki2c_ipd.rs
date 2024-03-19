@@ -3,9 +3,10 @@ pub type R = crate::R<Rki2cIpdSpec>;
 #[doc = "Register `RKI2C_IPD` writer"]
 pub type W = crate::W<Rki2cIpdSpec>;
 #[doc = "byte tx finished interrupt pending bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Btfipd {
-    #[doc = "0: byte tx finished interrupt appear, write 1 to clear"]
+    #[doc = "0: no interrupt available"]
     B0 = 0,
     #[doc = "1: byte tx finished interrupt appear, write 1 to clear"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl BtfipdR {
             true => Btfipd::B1,
         }
     }
-    #[doc = "byte tx finished interrupt appear, write 1 to clear"]
+    #[doc = "no interrupt available"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Btfipd::B0
@@ -44,7 +45,7 @@ impl<'a, REG> BtfipdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "byte tx finished interrupt appear, write 1 to clear"]
+    #[doc = "no interrupt available"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Btfipd::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "byte rx finished interrupt pending bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Brfipd {
-    #[doc = "0: byte rx finished interrupt appear, write 1 to clear"]
+    #[doc = "0: no interrupt available"]
     B0 = 0,
     #[doc = "1: byte rx finished interrupt appear, write 1 to clear"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl BrfipdR {
             true => Brfipd::B1,
         }
     }
-    #[doc = "byte rx finished interrupt appear, write 1 to clear"]
+    #[doc = "no interrupt available"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Brfipd::B0
@@ -97,7 +99,7 @@ impl<'a, REG> BrfipdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "byte rx finished interrupt appear, write 1 to clear"]
+    #[doc = "no interrupt available"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Brfipd::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "MTXCNT data transfer finished interrupt pending bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mbtfipd {
-    #[doc = "0: MTXCNT data transfer finished interrupt appear, write 1 to clear"]
+    #[doc = "0: no interrupt available"]
     B0 = 0,
     #[doc = "1: MTXCNT data transfer finished interrupt appear, write 1 to clear"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl MbtfipdR {
             true => Mbtfipd::B1,
         }
     }
-    #[doc = "MTXCNT data transfer finished interrupt appear, write 1 to clear"]
+    #[doc = "no interrupt available"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Mbtfipd::B0
@@ -150,7 +153,7 @@ impl<'a, REG> MbtfipdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "MTXCNT data transfer finished interrupt appear, write 1 to clear"]
+    #[doc = "no interrupt available"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Mbtfipd::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "MRXCNT data received finished interrupt pending bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mbrfipd {
-    #[doc = "0: MRXCNT data received finished interrupt appear, write 1 to clear"]
+    #[doc = "0: no interrupt available"]
     B0 = 0,
     #[doc = "1: MRXCNT data received finished interrupt appear, write 1 to clear"]
     B1 = 1,
@@ -186,7 +190,7 @@ impl MbrfipdR {
             true => Mbrfipd::B1,
         }
     }
-    #[doc = "MRXCNT data received finished interrupt appear, write 1 to clear"]
+    #[doc = "no interrupt available"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Mbrfipd::B0
@@ -203,7 +207,7 @@ impl<'a, REG> MbrfipdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "MRXCNT data received finished interrupt appear, write 1 to clear"]
+    #[doc = "no interrupt available"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Mbrfipd::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "start operation finished interrupt pending bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Startipd {
-    #[doc = "0: start operation finished interrupt appear, write 1 to clear"]
+    #[doc = "0: no interrupt available"]
     B0 = 0,
     #[doc = "1: start operation finished interrupt appear, write 1 to clear"]
     B1 = 1,
@@ -239,7 +244,7 @@ impl StartipdR {
             true => Startipd::B1,
         }
     }
-    #[doc = "start operation finished interrupt appear, write 1 to clear"]
+    #[doc = "no interrupt available"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Startipd::B0
@@ -256,7 +261,7 @@ impl<'a, REG> StartipdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "start operation finished interrupt appear, write 1 to clear"]
+    #[doc = "no interrupt available"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Startipd::B0)
@@ -268,9 +273,10 @@ where
     }
 }
 #[doc = "stop operation finished interrupt pending bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Stopipd {
-    #[doc = "0: stop operation finished interrupt appear, write 1 to clear"]
+    #[doc = "0: no interrupt available"]
     B0 = 0,
     #[doc = "1: stop operation finished interrupt appear, write 1 to clear"]
     B1 = 1,
@@ -292,7 +298,7 @@ impl StopipdR {
             true => Stopipd::B1,
         }
     }
-    #[doc = "stop operation finished interrupt appear, write 1 to clear"]
+    #[doc = "no interrupt available"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Stopipd::B0
@@ -309,7 +315,7 @@ impl<'a, REG> StopipdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "stop operation finished interrupt appear, write 1 to clear"]
+    #[doc = "no interrupt available"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Stopipd::B0)
@@ -321,9 +327,10 @@ where
     }
 }
 #[doc = "NAK handshake received interrupt pending bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Nakrcvipd {
-    #[doc = "0: NAK handshake received interrupt appear, write 1 to clear"]
+    #[doc = "0: no interrupt available"]
     B0 = 0,
     #[doc = "1: NAK handshake received interrupt appear, write 1 to clear"]
     B1 = 1,
@@ -345,7 +352,7 @@ impl NakrcvipdR {
             true => Nakrcvipd::B1,
         }
     }
-    #[doc = "NAK handshake received interrupt appear, write 1 to clear"]
+    #[doc = "no interrupt available"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Nakrcvipd::B0
@@ -362,7 +369,7 @@ impl<'a, REG> NakrcvipdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "NAK handshake received interrupt appear, write 1 to clear"]
+    #[doc = "no interrupt available"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Nakrcvipd::B0)
@@ -374,9 +381,10 @@ where
     }
 }
 #[doc = "slave hold scl interrupt pending bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Slavehdsclipd {
-    #[doc = "0: slave hold scl interrupt appear, write 1 to clear"]
+    #[doc = "0: no interrupt available"]
     B0 = 0,
     #[doc = "1: slave hold scl interrupt appear, write 1 to clear"]
     B1 = 1,
@@ -398,7 +406,7 @@ impl SlavehdsclipdR {
             true => Slavehdsclipd::B1,
         }
     }
-    #[doc = "slave hold scl interrupt appear, write 1 to clear"]
+    #[doc = "no interrupt available"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Slavehdsclipd::B0
@@ -415,7 +423,7 @@ impl<'a, REG> SlavehdsclipdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "slave hold scl interrupt appear, write 1 to clear"]
+    #[doc = "no interrupt available"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Slavehdsclipd::B0)

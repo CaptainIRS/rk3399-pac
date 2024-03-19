@@ -10,13 +10,13 @@ pub type PiRdlvlSeqEnW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type PiRdlvlGateSeqEnR = crate::FieldReader;
 #[doc = "Field `PI_RDLVL_GATE_SEQ_EN` writer - Specifies the pattern, format and MPR for gate training."]
 pub type PiRdlvlGateSeqEnW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-#[doc = "Field `PI_RDLVL_PERIODIC` reader - Enables the use of the dfi_lvl_periodic signal during data eye training. Set to 1 to enable."]
+#[doc = "Field `PI_RDLVL_PERIODIC` reader - Enables the use of the dfi_lvl_periodic signal during data eye\n\ntraining. Set to 1 to enable."]
 pub type PiRdlvlPeriodicR = crate::BitReader;
-#[doc = "Field `PI_RDLVL_PERIODIC` writer - Enables the use of the dfi_lvl_periodic signal during data eye training. Set to 1 to enable."]
+#[doc = "Field `PI_RDLVL_PERIODIC` writer - Enables the use of the dfi_lvl_periodic signal during data eye\n\ntraining. Set to 1 to enable."]
 pub type PiRdlvlPeriodicW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PI_RDLVL_ON_SREF_EXIT` reader - Enables automatic data eye training on a self-refresh exit. Set to 1 to enable."]
+#[doc = "Field `PI_RDLVL_ON_SREF_EXIT` reader - Enables automatic data eye training on a self-refresh exit. Set to 1\n\nto enable."]
 pub type PiRdlvlOnSrefExitR = crate::BitReader;
-#[doc = "Field `PI_RDLVL_ON_SREF_EXIT` writer - Enables automatic data eye training on a self-refresh exit. Set to 1 to enable."]
+#[doc = "Field `PI_RDLVL_ON_SREF_EXIT` writer - Enables automatic data eye training on a self-refresh exit. Set to 1\n\nto enable."]
 pub type PiRdlvlOnSrefExitW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:3 - Specifies the pattern, format, and MPR for data eye training."]
@@ -29,12 +29,12 @@ impl R {
     pub fn pi_rdlvl_gate_seq_en(&self) -> PiRdlvlGateSeqEnR {
         PiRdlvlGateSeqEnR::new(((self.bits >> 8) & 0x0f) as u8)
     }
-    #[doc = "Bit 16 - Enables the use of the dfi_lvl_periodic signal during data eye training. Set to 1 to enable."]
+    #[doc = "Bit 16 - Enables the use of the dfi_lvl_periodic signal during data eye\n\ntraining. Set to 1 to enable."]
     #[inline(always)]
     pub fn pi_rdlvl_periodic(&self) -> PiRdlvlPeriodicR {
         PiRdlvlPeriodicR::new(((self.bits >> 16) & 1) != 0)
     }
-    #[doc = "Bit 24 - Enables automatic data eye training on a self-refresh exit. Set to 1 to enable."]
+    #[doc = "Bit 24 - Enables automatic data eye training on a self-refresh exit. Set to 1\n\nto enable."]
     #[inline(always)]
     pub fn pi_rdlvl_on_sref_exit(&self) -> PiRdlvlOnSrefExitR {
         PiRdlvlOnSrefExitR::new(((self.bits >> 24) & 1) != 0)
@@ -53,13 +53,13 @@ impl W {
     pub fn pi_rdlvl_gate_seq_en(&mut self) -> PiRdlvlGateSeqEnW<DdrPiReg75Spec> {
         PiRdlvlGateSeqEnW::new(self, 8)
     }
-    #[doc = "Bit 16 - Enables the use of the dfi_lvl_periodic signal during data eye training. Set to 1 to enable."]
+    #[doc = "Bit 16 - Enables the use of the dfi_lvl_periodic signal during data eye\n\ntraining. Set to 1 to enable."]
     #[inline(always)]
     #[must_use]
     pub fn pi_rdlvl_periodic(&mut self) -> PiRdlvlPeriodicW<DdrPiReg75Spec> {
         PiRdlvlPeriodicW::new(self, 16)
     }
-    #[doc = "Bit 24 - Enables automatic data eye training on a self-refresh exit. Set to 1 to enable."]
+    #[doc = "Bit 24 - Enables automatic data eye training on a self-refresh exit. Set to 1\n\nto enable."]
     #[inline(always)]
     #[must_use]
     pub fn pi_rdlvl_on_sref_exit(&mut self) -> PiRdlvlOnSrefExitW<DdrPiReg75Spec> {

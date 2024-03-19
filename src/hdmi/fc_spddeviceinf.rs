@@ -2,19 +2,19 @@
 pub type R = crate::R<FcSpddeviceinfSpec>;
 #[doc = "Register `FC_SPDDEVICEINF` writer"]
 pub type W = crate::W<FcSpddeviceinfSpec>;
-#[doc = "Field `FC_SPDDEVICEINF` reader - Frame Composer SPD Packet Data Source Product Descriptor Register"]
+#[doc = "Field `FC_SPDDEVICEINF` reader - Frame Composer SPD Packet Data Source Product\n\nDescriptor Register"]
 pub type FcSpddeviceinfR = crate::FieldReader;
-#[doc = "Field `FC_SPDDEVICEINF` writer - Frame Composer SPD Packet Data Source Product Descriptor Register"]
+#[doc = "Field `FC_SPDDEVICEINF` writer - Frame Composer SPD Packet Data Source Product\n\nDescriptor Register"]
 pub type FcSpddeviceinfW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - Frame Composer SPD Packet Data Source Product Descriptor Register"]
+    #[doc = "Bits 0:7 - Frame Composer SPD Packet Data Source Product\n\nDescriptor Register"]
     #[inline(always)]
     pub fn fc_spddeviceinf(&self) -> FcSpddeviceinfR {
         FcSpddeviceinfR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Frame Composer SPD Packet Data Source Product Descriptor Register"]
+    #[doc = "Bits 0:7 - Frame Composer SPD Packet Data Source Product\n\nDescriptor Register"]
     #[inline(always)]
     #[must_use]
     pub fn fc_spddeviceinf(&mut self) -> FcSpddeviceinfW<FcSpddeviceinfSpec> {

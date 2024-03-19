@@ -10,7 +10,7 @@ impl W {
         DpkDataW::new(self, 0)
     }
 }
-#[doc = "Byte of the encrypted DPK value. dpk\\[23:16\\]\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hdcpreg_dpk2::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "HDCP Encrypted DPK Data Register 2\n\nThis register contains an HDCP DPK byte. The required software configuration sequence is\n\ndocumented in the Cores HDMI Transmitter User Guide in the \"Programming\" chapter,\n\nSection 3.2.4, \"Configure HDCP.\"\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hdcpreg_dpk2::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HdcpregDpk2Spec;
 impl crate::RegisterSpec for HdcpregDpk2Spec {
     type Ux = u8;

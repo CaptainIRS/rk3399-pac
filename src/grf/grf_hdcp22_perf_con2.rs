@@ -2,49 +2,49 @@
 pub type R = crate::R<GrfHdcp22PerfCon2Spec>;
 #[doc = "Register `GRF_HDCP22_PERF_CON2` writer"]
 pub type W = crate::W<GrfHdcp22PerfCon2Spec>;
-#[doc = "Field `HDCP22_SW_AR_COUNT_ID` reader - When sw_ar_cnt_id_type=1, only count the id designated by sw_ar_count_id"]
+#[doc = "Field `HDCP22_SW_AR_COUNT_ID` reader - When sw_ar_cnt_id_type=1, only count\n\nthe id designated by sw_ar_count_id"]
 pub type Hdcp22SwArCountIdR = crate::FieldReader;
-#[doc = "Field `HDCP22_SW_AR_COUNT_ID` writer - When sw_ar_cnt_id_type=1, only count the id designated by sw_ar_count_id"]
+#[doc = "Field `HDCP22_SW_AR_COUNT_ID` writer - When sw_ar_cnt_id_type=1, only count\n\nthe id designated by sw_ar_count_id"]
 pub type Hdcp22SwArCountIdW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-#[doc = "Field `HDCP22_SW_AW_COUNT_ID` reader - When sw_aw_cnt_id_type=1, only count the id designated by sw_aw_count_id"]
+#[doc = "Field `HDCP22_SW_AW_COUNT_ID` reader - When sw_aw_cnt_id_type=1, only count\n\nthe id designated by sw_aw_count_id"]
 pub type Hdcp22SwAwCountIdR = crate::FieldReader;
-#[doc = "Field `HDCP22_SW_AW_COUNT_ID` writer - When sw_aw_cnt_id_type=1, only count the id designated by sw_aw_count_id"]
+#[doc = "Field `HDCP22_SW_AW_COUNT_ID` writer - When sw_aw_cnt_id_type=1, only count\n\nthe id designated by sw_aw_count_id"]
 pub type Hdcp22SwAwCountIdW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:3 - When sw_ar_cnt_id_type=1, only count the id designated by sw_ar_count_id"]
+    #[doc = "Bits 0:3 - When sw_ar_cnt_id_type=1, only count\n\nthe id designated by sw_ar_count_id"]
     #[inline(always)]
     pub fn hdcp22_sw_ar_count_id(&self) -> Hdcp22SwArCountIdR {
         Hdcp22SwArCountIdR::new((self.bits & 0x0f) as u8)
     }
-    #[doc = "Bits 4:7 - When sw_aw_cnt_id_type=1, only count the id designated by sw_aw_count_id"]
+    #[doc = "Bits 4:7 - When sw_aw_cnt_id_type=1, only count\n\nthe id designated by sw_aw_count_id"]
     #[inline(always)]
     pub fn hdcp22_sw_aw_count_id(&self) -> Hdcp22SwAwCountIdR {
         Hdcp22SwAwCountIdR::new(((self.bits >> 4) & 0x0f) as u8)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - When sw_ar_cnt_id_type=1, only count the id designated by sw_ar_count_id"]
+    #[doc = "Bits 0:3 - When sw_ar_cnt_id_type=1, only count\n\nthe id designated by sw_ar_count_id"]
     #[inline(always)]
     #[must_use]
     pub fn hdcp22_sw_ar_count_id(&mut self) -> Hdcp22SwArCountIdW<GrfHdcp22PerfCon2Spec> {
         Hdcp22SwArCountIdW::new(self, 0)
     }
-    #[doc = "Bits 4:7 - When sw_aw_cnt_id_type=1, only count the id designated by sw_aw_count_id"]
+    #[doc = "Bits 4:7 - When sw_aw_cnt_id_type=1, only count\n\nthe id designated by sw_aw_count_id"]
     #[inline(always)]
     #[must_use]
     pub fn hdcp22_sw_aw_count_id(&mut self) -> Hdcp22SwAwCountIdW<GrfHdcp22PerfCon2Spec> {
         Hdcp22SwAwCountIdW::new(self, 4)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfHdcp22PerfCon2Spec> {

@@ -2,19 +2,19 @@
 pub type R = crate::R<PRegFrqSpec>;
 #[doc = "Register `P_REG_FRQ` writer"]
 pub type W = crate::W<PRegFrqSpec>;
-#[doc = "Field `FRQ` reader - digital output for debug, controlled by pll_reg1&lt;7> and pll_reg4&lt;4> when pll_reg1&lt;7>=0 &amp; pll_reg4&lt;4>=0: half video clock frequency calculated by frequency counter When pll_reg1&lt;7>=0 &amp; pll_reg4&lt;4>=1: half video clock frequency calculated frq_vid_ck_in&lt;8:0> when pll_reg1&lt;7>=1: frq&lt;1:0>: &lt;n_over, n_under> frq&lt;3:2>: band&lt;1:0> frq&lt;7:4>: 0"]
+#[doc = "Field `FRQ` reader - digital output for debug, controlled by \n\npll_reg1&lt;7> and pll_reg4&lt;4> \n\nwhen pll_reg1&lt;7>=0 &amp; pll_reg4&lt;4>=0: \n\nhalf video clock frequency calculated by \n\nfrequency counter \n\nWhen pll_reg1&lt;7>=0 &amp; pll_reg4&lt;4>=1: \n\nhalf video clock frequency calculated \n\nfrq_vid_ck_in&lt;8:0> \n\nwhen pll_reg1&lt;7>=1: \n\nfrq&lt;1:0>: &lt;n_over, n_under> \n\nfrq&lt;3:2>: band&lt;1:0> \n\nfrq&lt;7:4>: 0"]
 pub type FrqR = crate::FieldReader;
-#[doc = "Field `FRQ` writer - digital output for debug, controlled by pll_reg1&lt;7> and pll_reg4&lt;4> when pll_reg1&lt;7>=0 &amp; pll_reg4&lt;4>=0: half video clock frequency calculated by frequency counter When pll_reg1&lt;7>=0 &amp; pll_reg4&lt;4>=1: half video clock frequency calculated frq_vid_ck_in&lt;8:0> when pll_reg1&lt;7>=1: frq&lt;1:0>: &lt;n_over, n_under> frq&lt;3:2>: band&lt;1:0> frq&lt;7:4>: 0"]
+#[doc = "Field `FRQ` writer - digital output for debug, controlled by \n\npll_reg1&lt;7> and pll_reg4&lt;4> \n\nwhen pll_reg1&lt;7>=0 &amp; pll_reg4&lt;4>=0: \n\nhalf video clock frequency calculated by \n\nfrequency counter \n\nWhen pll_reg1&lt;7>=0 &amp; pll_reg4&lt;4>=1: \n\nhalf video clock frequency calculated \n\nfrq_vid_ck_in&lt;8:0> \n\nwhen pll_reg1&lt;7>=1: \n\nfrq&lt;1:0>: &lt;n_over, n_under> \n\nfrq&lt;3:2>: band&lt;1:0> \n\nfrq&lt;7:4>: 0"]
 pub type FrqW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - digital output for debug, controlled by pll_reg1&lt;7> and pll_reg4&lt;4> when pll_reg1&lt;7>=0 &amp; pll_reg4&lt;4>=0: half video clock frequency calculated by frequency counter When pll_reg1&lt;7>=0 &amp; pll_reg4&lt;4>=1: half video clock frequency calculated frq_vid_ck_in&lt;8:0> when pll_reg1&lt;7>=1: frq&lt;1:0>: &lt;n_over, n_under> frq&lt;3:2>: band&lt;1:0> frq&lt;7:4>: 0"]
+    #[doc = "Bits 0:7 - digital output for debug, controlled by \n\npll_reg1&lt;7> and pll_reg4&lt;4> \n\nwhen pll_reg1&lt;7>=0 &amp; pll_reg4&lt;4>=0: \n\nhalf video clock frequency calculated by \n\nfrequency counter \n\nWhen pll_reg1&lt;7>=0 &amp; pll_reg4&lt;4>=1: \n\nhalf video clock frequency calculated \n\nfrq_vid_ck_in&lt;8:0> \n\nwhen pll_reg1&lt;7>=1: \n\nfrq&lt;1:0>: &lt;n_over, n_under> \n\nfrq&lt;3:2>: band&lt;1:0> \n\nfrq&lt;7:4>: 0"]
     #[inline(always)]
     pub fn frq(&self) -> FrqR {
         FrqR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - digital output for debug, controlled by pll_reg1&lt;7> and pll_reg4&lt;4> when pll_reg1&lt;7>=0 &amp; pll_reg4&lt;4>=0: half video clock frequency calculated by frequency counter When pll_reg1&lt;7>=0 &amp; pll_reg4&lt;4>=1: half video clock frequency calculated frq_vid_ck_in&lt;8:0> when pll_reg1&lt;7>=1: frq&lt;1:0>: &lt;n_over, n_under> frq&lt;3:2>: band&lt;1:0> frq&lt;7:4>: 0"]
+    #[doc = "Bits 0:7 - digital output for debug, controlled by \n\npll_reg1&lt;7> and pll_reg4&lt;4> \n\nwhen pll_reg1&lt;7>=0 &amp; pll_reg4&lt;4>=0: \n\nhalf video clock frequency calculated by \n\nfrequency counter \n\nWhen pll_reg1&lt;7>=0 &amp; pll_reg4&lt;4>=1: \n\nhalf video clock frequency calculated \n\nfrq_vid_ck_in&lt;8:0> \n\nwhen pll_reg1&lt;7>=1: \n\nfrq&lt;1:0>: &lt;n_over, n_under> \n\nfrq&lt;3:2>: band&lt;1:0> \n\nfrq&lt;7:4>: 0"]
     #[inline(always)]
     #[must_use]
     pub fn frq(&mut self) -> FrqW<PRegFrqSpec> {

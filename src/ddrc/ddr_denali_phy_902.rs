@@ -1,17 +1,17 @@
 #[doc = "Register `DDR_DENALI_PHY_902` writer"]
 pub type W = crate::W<DdrDenaliPhy902Spec>;
-#[doc = "Field `SC_PHY_CSLVL_DEBUG_CONT` writer - Allows the CS training state machine to advance (when in debug mode). Set to 1 to trigger. WRITE-ONLY"]
+#[doc = "Field `SC_PHY_CSLVL_DEBUG_CONT` writer - Allows the CS training state machine to advance (when in debug mode). Set to 1 to trigger."]
 pub type ScPhyCslvlDebugContW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `SC_PHY_CSLVL_ERROR_CLR` writer - Clears the CS training state machine error status. Set to 1 to trigger. WRITE-ONLY"]
+#[doc = "Field `SC_PHY_CSLVL_ERROR_CLR` writer - Clears the CS training state machine error status. Set to 1 to trigger."]
 pub type ScPhyCslvlErrorClrW<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
-    #[doc = "Bit 0 - Allows the CS training state machine to advance (when in debug mode). Set to 1 to trigger. WRITE-ONLY"]
+    #[doc = "Bit 0 - Allows the CS training state machine to advance (when in debug mode). Set to 1 to trigger."]
     #[inline(always)]
     #[must_use]
     pub fn sc_phy_cslvl_debug_cont(&mut self) -> ScPhyCslvlDebugContW<DdrDenaliPhy902Spec> {
         ScPhyCslvlDebugContW::new(self, 0)
     }
-    #[doc = "Bit 8 - Clears the CS training state machine error status. Set to 1 to trigger. WRITE-ONLY"]
+    #[doc = "Bit 8 - Clears the CS training state machine error status. Set to 1 to trigger."]
     #[inline(always)]
     #[must_use]
     pub fn sc_phy_cslvl_error_clr(&mut self) -> ScPhyCslvlErrorClrW<DdrDenaliPhy902Spec> {

@@ -2,11 +2,12 @@
 pub type R = crate::R<GrfSocCon7Spec>;
 #[doc = "Register `GRF_SOC_CON7` writer"]
 pub type W = crate::W<GrfSocCon7Spec>;
-#[doc = "UART polarity selection for cts port Every bit for one UART.\n\nValue on reset: 0"]
+#[doc = "UART polarity selection for cts port\n\nEvery bit for one UART.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum GrfUartCtsSel {
-    #[doc = "1: keep the cts_n value from IO"]
+    #[doc = "1: invert uart_cts_n"]
     B1 = 1,
     #[doc = "0: keep the cts_n value from IO"]
     B0 = 0,
@@ -20,7 +21,7 @@ impl From<GrfUartCtsSel> for u8 {
 impl crate::FieldSpec for GrfUartCtsSel {
     type Ux = u8;
 }
-#[doc = "Field `GRF_UART_CTS_SEL` reader - UART polarity selection for cts port Every bit for one UART."]
+#[doc = "Field `GRF_UART_CTS_SEL` reader - UART polarity selection for cts port\n\nEvery bit for one UART."]
 pub type GrfUartCtsSelR = crate::FieldReader<GrfUartCtsSel>;
 impl GrfUartCtsSelR {
     #[doc = "Get enumerated values variant"]
@@ -32,7 +33,7 @@ impl GrfUartCtsSelR {
             _ => None,
         }
     }
-    #[doc = "keep the cts_n value from IO"]
+    #[doc = "invert uart_cts_n"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == GrfUartCtsSel::B1
@@ -43,14 +44,14 @@ impl GrfUartCtsSelR {
         *self == GrfUartCtsSel::B0
     }
 }
-#[doc = "Field `GRF_UART_CTS_SEL` writer - UART polarity selection for cts port Every bit for one UART."]
+#[doc = "Field `GRF_UART_CTS_SEL` writer - UART polarity selection for cts port\n\nEvery bit for one UART."]
 pub type GrfUartCtsSelW<'a, REG> = crate::FieldWriter<'a, REG, 5, GrfUartCtsSel>;
 impl<'a, REG> GrfUartCtsSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "keep the cts_n value from IO"]
+    #[doc = "invert uart_cts_n"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(GrfUartCtsSel::B1)
@@ -61,11 +62,12 @@ where
         self.variant(GrfUartCtsSel::B0)
     }
 }
-#[doc = "uart_rts_sel bit control UART polarity selection for rts port Every bit for one UART.\n\nValue on reset: 0"]
+#[doc = "uart_rts_sel bit control\n\nUART polarity selection for rts port\n\nEvery bit for one UART.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum GrfUartRtsSel {
-    #[doc = "1: keep the rts_n value from UART module output"]
+    #[doc = "1: invert uart_rts_n"]
     B1 = 1,
     #[doc = "0: keep the rts_n value from UART module output"]
     B0 = 0,
@@ -79,7 +81,7 @@ impl From<GrfUartRtsSel> for u8 {
 impl crate::FieldSpec for GrfUartRtsSel {
     type Ux = u8;
 }
-#[doc = "Field `GRF_UART_RTS_SEL` reader - uart_rts_sel bit control UART polarity selection for rts port Every bit for one UART."]
+#[doc = "Field `GRF_UART_RTS_SEL` reader - uart_rts_sel bit control\n\nUART polarity selection for rts port\n\nEvery bit for one UART."]
 pub type GrfUartRtsSelR = crate::FieldReader<GrfUartRtsSel>;
 impl GrfUartRtsSelR {
     #[doc = "Get enumerated values variant"]
@@ -91,7 +93,7 @@ impl GrfUartRtsSelR {
             _ => None,
         }
     }
-    #[doc = "keep the rts_n value from UART module output"]
+    #[doc = "invert uart_rts_n"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == GrfUartRtsSel::B1
@@ -102,14 +104,14 @@ impl GrfUartRtsSelR {
         *self == GrfUartRtsSel::B0
     }
 }
-#[doc = "Field `GRF_UART_RTS_SEL` writer - uart_rts_sel bit control UART polarity selection for rts port Every bit for one UART."]
+#[doc = "Field `GRF_UART_RTS_SEL` writer - uart_rts_sel bit control\n\nUART polarity selection for rts port\n\nEvery bit for one UART."]
 pub type GrfUartRtsSelW<'a, REG> = crate::FieldWriter<'a, REG, 5, GrfUartRtsSel>;
 impl<'a, REG> GrfUartRtsSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "keep the rts_n value from UART module output"]
+    #[doc = "invert uart_rts_n"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(GrfUartRtsSel::B1)
@@ -133,9 +135,10 @@ pub type PcieClkreqSelR = crate::BitReader;
 #[doc = "Field `PCIE_CLKREQ_SEL` writer - pcie_clkreq_sel port control"]
 pub type PcieClkreqSelW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "gic_awuser mode select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GicAwuserMode {
-    #[doc = "1: user mode"]
+    #[doc = "1: address mode"]
     B1 = 1,
     #[doc = "0: user mode"]
     B0 = 0,
@@ -157,7 +160,7 @@ impl GicAwuserModeR {
             false => GicAwuserMode::B0,
         }
     }
-    #[doc = "user mode"]
+    #[doc = "address mode"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == GicAwuserMode::B1
@@ -174,7 +177,7 @@ impl<'a, REG> GicAwuserModeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "user mode"]
+    #[doc = "address mode"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(GicAwuserMode::B1)
@@ -185,17 +188,17 @@ where
         self.variant(GicAwuserMode::B0)
     }
 }
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:4 - UART polarity selection for cts port Every bit for one UART."]
+    #[doc = "Bits 0:4 - UART polarity selection for cts port\n\nEvery bit for one UART."]
     #[inline(always)]
     pub fn grf_uart_cts_sel(&self) -> GrfUartCtsSelR {
         GrfUartCtsSelR::new((self.bits & 0x1f) as u8)
     }
-    #[doc = "Bits 5:9 - uart_rts_sel bit control UART polarity selection for rts port Every bit for one UART."]
+    #[doc = "Bits 5:9 - uart_rts_sel bit control\n\nUART polarity selection for rts port\n\nEvery bit for one UART."]
     #[inline(always)]
     pub fn grf_uart_rts_sel(&self) -> GrfUartRtsSelR {
         GrfUartRtsSelR::new(((self.bits >> 5) & 0x1f) as u8)
@@ -220,20 +223,20 @@ impl R {
     pub fn gic_awuser_mode(&self) -> GicAwuserModeR {
         GicAwuserModeR::new(((self.bits >> 15) & 1) != 0)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - UART polarity selection for cts port Every bit for one UART."]
+    #[doc = "Bits 0:4 - UART polarity selection for cts port\n\nEvery bit for one UART."]
     #[inline(always)]
     #[must_use]
     pub fn grf_uart_cts_sel(&mut self) -> GrfUartCtsSelW<GrfSocCon7Spec> {
         GrfUartCtsSelW::new(self, 0)
     }
-    #[doc = "Bits 5:9 - uart_rts_sel bit control UART polarity selection for rts port Every bit for one UART."]
+    #[doc = "Bits 5:9 - uart_rts_sel bit control\n\nUART polarity selection for rts port\n\nEvery bit for one UART."]
     #[inline(always)]
     #[must_use]
     pub fn grf_uart_rts_sel(&mut self) -> GrfUartRtsSelW<GrfSocCon7Spec> {
@@ -263,7 +266,7 @@ impl W {
     pub fn gic_awuser_mode(&mut self) -> GicAwuserModeW<GrfSocCon7Spec> {
         GicAwuserModeW::new(self, 15)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfSocCon7Spec> {

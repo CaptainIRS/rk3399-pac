@@ -2,34 +2,34 @@
 pub type R = crate::R<SpdifChnsrnSpec>;
 #[doc = "Register `SPDIF_CHNSRn` writer"]
 pub type W = crate::W<SpdifChnsrnSpec>;
-#[doc = "Field `CHNSR_SUB_0` reader - Channel Status Subframe 0 Channel Status Bit for Subframe 0"]
+#[doc = "Field `CHNSR_SUB_0` reader - Channel Status Subframe 0\n\nChannel Status Bit for Subframe 0"]
 pub type ChnsrSub0R = crate::FieldReader<u16>;
-#[doc = "Field `CHNSR_SUB_0` writer - Channel Status Subframe 0 Channel Status Bit for Subframe 0"]
+#[doc = "Field `CHNSR_SUB_0` writer - Channel Status Subframe 0\n\nChannel Status Bit for Subframe 0"]
 pub type ChnsrSub0W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-#[doc = "Field `CHNSR_SUB_1` reader - Channel Status Subframe 1 Channel Status Bit for Subframe 1"]
+#[doc = "Field `CHNSR_SUB_1` reader - Channel Status Subframe 1\n\nChannel Status Bit for Subframe 1"]
 pub type ChnsrSub1R = crate::FieldReader<u16>;
-#[doc = "Field `CHNSR_SUB_1` writer - Channel Status Subframe 1 Channel Status Bit for Subframe 1"]
+#[doc = "Field `CHNSR_SUB_1` writer - Channel Status Subframe 1\n\nChannel Status Bit for Subframe 1"]
 pub type ChnsrSub1W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:15 - Channel Status Subframe 0 Channel Status Bit for Subframe 0"]
+    #[doc = "Bits 0:15 - Channel Status Subframe 0\n\nChannel Status Bit for Subframe 0"]
     #[inline(always)]
     pub fn chnsr_sub_0(&self) -> ChnsrSub0R {
         ChnsrSub0R::new((self.bits & 0xffff) as u16)
     }
-    #[doc = "Bits 16:31 - Channel Status Subframe 1 Channel Status Bit for Subframe 1"]
+    #[doc = "Bits 16:31 - Channel Status Subframe 1\n\nChannel Status Bit for Subframe 1"]
     #[inline(always)]
     pub fn chnsr_sub_1(&self) -> ChnsrSub1R {
         ChnsrSub1R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - Channel Status Subframe 0 Channel Status Bit for Subframe 0"]
+    #[doc = "Bits 0:15 - Channel Status Subframe 0\n\nChannel Status Bit for Subframe 0"]
     #[inline(always)]
     #[must_use]
     pub fn chnsr_sub_0(&mut self) -> ChnsrSub0W<SpdifChnsrnSpec> {
         ChnsrSub0W::new(self, 0)
     }
-    #[doc = "Bits 16:31 - Channel Status Subframe 1 Channel Status Bit for Subframe 1"]
+    #[doc = "Bits 16:31 - Channel Status Subframe 1\n\nChannel Status Bit for Subframe 1"]
     #[inline(always)]
     #[must_use]
     pub fn chnsr_sub_1(&mut self) -> ChnsrSub1W<SpdifChnsrnSpec> {

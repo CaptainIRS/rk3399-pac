@@ -2,19 +2,19 @@
 pub type R = crate::R<ErrlogStallEnSpec>;
 #[doc = "Register `ERRLOG_StallEn` writer"]
 pub type W = crate::W<ErrlogStallEnSpec>;
-#[doc = "Field `STALLEN` reader - When set to 1, enables stall mode. When set to 0, only the first error packet is stored in the error logger."]
+#[doc = "Field `STALLEN` reader - When set to 1, enables stall mode. When set to 0, only the first\n\nerror packet is stored in the error logger."]
 pub type StallenR = crate::BitReader;
-#[doc = "Field `STALLEN` writer - When set to 1, enables stall mode. When set to 0, only the first error packet is stored in the error logger."]
+#[doc = "Field `STALLEN` writer - When set to 1, enables stall mode. When set to 0, only the first\n\nerror packet is stored in the error logger."]
 pub type StallenW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - When set to 1, enables stall mode. When set to 0, only the first error packet is stored in the error logger."]
+    #[doc = "Bit 0 - When set to 1, enables stall mode. When set to 0, only the first\n\nerror packet is stored in the error logger."]
     #[inline(always)]
     pub fn stallen(&self) -> StallenR {
         StallenR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - When set to 1, enables stall mode. When set to 0, only the first error packet is stored in the error logger."]
+    #[doc = "Bit 0 - When set to 1, enables stall mode. When set to 0, only the first\n\nerror packet is stored in the error logger."]
     #[inline(always)]
     #[must_use]
     pub fn stallen(&mut self) -> StallenW<ErrlogStallEnSpec> {

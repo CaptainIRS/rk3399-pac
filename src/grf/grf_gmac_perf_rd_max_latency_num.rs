@@ -2,19 +2,19 @@
 pub type R = crate::R<GrfGmacPerfRdMaxLatencyNumSpec>;
 #[doc = "Register `GRF_GMAC_PERF_RD_MAX_LATENCY_NUM` writer"]
 pub type W = crate::W<GrfGmacPerfRdMaxLatencyNumSpec>;
-#[doc = "Field `RD_MAX_LATENCY_R` reader - axi read max latency oaxi read max latency outpututput"]
+#[doc = "Field `RD_MAX_LATENCY_R` reader - axi read max latency oaxi read max latency\n\noutpututput"]
 pub type RdMaxLatencyRR = crate::FieldReader<u16>;
-#[doc = "Field `RD_MAX_LATENCY_R` writer - axi read max latency oaxi read max latency outpututput"]
+#[doc = "Field `RD_MAX_LATENCY_R` writer - axi read max latency oaxi read max latency\n\noutpututput"]
 pub type RdMaxLatencyRW<'a, REG> = crate::FieldWriter<'a, REG, 13, u16>;
 impl R {
-    #[doc = "Bits 0:12 - axi read max latency oaxi read max latency outpututput"]
+    #[doc = "Bits 0:12 - axi read max latency oaxi read max latency\n\noutpututput"]
     #[inline(always)]
     pub fn rd_max_latency_r(&self) -> RdMaxLatencyRR {
         RdMaxLatencyRR::new((self.bits & 0x1fff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:12 - axi read max latency oaxi read max latency outpututput"]
+    #[doc = "Bits 0:12 - axi read max latency oaxi read max latency\n\noutpututput"]
     #[inline(always)]
     #[must_use]
     pub fn rd_max_latency_r(&mut self) -> RdMaxLatencyRW<GrfGmacPerfRdMaxLatencyNumSpec> {

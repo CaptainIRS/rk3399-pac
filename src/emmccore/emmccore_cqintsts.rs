@@ -2,79 +2,79 @@
 pub type R = crate::R<EmmccoreCqintstsSpec>;
 #[doc = "Register `EMMCCORE_CQINTSTS` writer"]
 pub type W = crate::W<EmmccoreCqintstsSpec>;
-#[doc = "Field `HAC` reader - Halt Complete Interrupt This status bit is asserted (if CQISTE.HAC=1) when halt bit in CQCTL register transitions from 0 to 1 indicating that host controller has completed its current ongoing task and has entered halt state."]
+#[doc = "Field `HAC` reader - Halt Complete Interrupt\n\nThis status bit is asserted (if CQISTE.HAC=1) when halt bit in\n\nCQCTL register transitions from 0 to 1 indicating that host\n\ncontroller has completed its current ongoing task and has entered\n\nhalt state."]
 pub type HacR = crate::BitReader;
-#[doc = "Field `HAC` writer - Halt Complete Interrupt This status bit is asserted (if CQISTE.HAC=1) when halt bit in CQCTL register transitions from 0 to 1 indicating that host controller has completed its current ongoing task and has entered halt state."]
+#[doc = "Field `HAC` writer - Halt Complete Interrupt\n\nThis status bit is asserted (if CQISTE.HAC=1) when halt bit in\n\nCQCTL register transitions from 0 to 1 indicating that host\n\ncontroller has completed its current ongoing task and has entered\n\nhalt state."]
 pub type HacW<'a, REG> = crate::BitWriter1C<'a, REG>;
-#[doc = "Field `TCC` reader - Task Complete Interrupt This status bit is asserted(if CQISTE.TCC=1) when at least one of the following two conditions are met: a. A task is completed and the INT bit is set in its Task Descriptor b. Interrupt caused by Interrupt Coalescing logic"]
+#[doc = "Field `TCC` reader - Task Complete Interrupt\n\nThis status bit is asserted(if CQISTE.TCC=1) when at least one of\n\nthe following two conditions are met:\n\na. A task is completed and the INT bit is set in its Task Descriptor\n\nb. Interrupt caused by Interrupt Coalescing logic"]
 pub type TccR = crate::BitReader;
-#[doc = "Field `TCC` writer - Task Complete Interrupt This status bit is asserted(if CQISTE.TCC=1) when at least one of the following two conditions are met: a. A task is completed and the INT bit is set in its Task Descriptor b. Interrupt caused by Interrupt Coalescing logic"]
+#[doc = "Field `TCC` writer - Task Complete Interrupt\n\nThis status bit is asserted(if CQISTE.TCC=1) when at least one of\n\nthe following two conditions are met:\n\na. A task is completed and the INT bit is set in its Task Descriptor\n\nb. Interrupt caused by Interrupt Coalescing logic"]
 pub type TccW<'a, REG> = crate::BitWriter1C<'a, REG>;
-#[doc = "Field `RED` reader - Response Error Detected Interrupt This status bit is asserted (if CQISTE.RED=1) when a response is received with an error bit set in the device status field. Software uses CQRMEM register to configure which device status bit fields may trigger an interrupt, and which are masked."]
+#[doc = "Field `RED` reader - Response Error Detected Interrupt\n\nThis status bit is asserted (if CQISTE.RED=1) when a response is\n\nreceived with an error bit set in the device status field.\n\nSoftware uses CQRMEM register to configure which device status\n\nbit fields may trigger an interrupt, and which are masked."]
 pub type RedR = crate::BitReader;
-#[doc = "Field `RED` writer - Response Error Detected Interrupt This status bit is asserted (if CQISTE.RED=1) when a response is received with an error bit set in the device status field. Software uses CQRMEM register to configure which device status bit fields may trigger an interrupt, and which are masked."]
+#[doc = "Field `RED` writer - Response Error Detected Interrupt\n\nThis status bit is asserted (if CQISTE.RED=1) when a response is\n\nreceived with an error bit set in the device status field.\n\nSoftware uses CQRMEM register to configure which device status\n\nbit fields may trigger an interrupt, and which are masked."]
 pub type RedW<'a, REG> = crate::BitWriter1C<'a, REG>;
-#[doc = "Field `TCL` reader - Task Cleared This status bit is asserted (if CQISTE.TCL=1) when a task clear operation is completed by CQE. The completed task clear operation is either an individual task clear (CQTCLR) or clearing of all tasks (CQCTL)."]
+#[doc = "Field `TCL` reader - Task Cleared\n\nThis status bit is asserted (if CQISTE.TCL=1) when a task clear\n\noperation is completed by CQE. The completed task clear\n\noperation is either an individual task clear (CQTCLR) or clearing\n\nof all tasks (CQCTL)."]
 pub type TclR = crate::BitReader;
-#[doc = "Field `TCL` writer - Task Cleared This status bit is asserted (if CQISTE.TCL=1) when a task clear operation is completed by CQE. The completed task clear operation is either an individual task clear (CQTCLR) or clearing of all tasks (CQCTL)."]
+#[doc = "Field `TCL` writer - Task Cleared\n\nThis status bit is asserted (if CQISTE.TCL=1) when a task clear\n\noperation is completed by CQE. The completed task clear\n\noperation is either an individual task clear (CQTCLR) or clearing\n\nof all tasks (CQCTL)."]
 pub type TclW<'a, REG> = crate::BitWriter1C<'a, REG>;
-#[doc = "Field `TERR` reader - Task Error Interrupt This bit is asserted when task error is detected due to invalid task descriptor"]
+#[doc = "Field `TERR` reader - Task Error Interrupt\n\nThis bit is asserted when task error is detected due to invalid task\n\ndescriptor"]
 pub type TerrR = crate::BitReader;
-#[doc = "Field `TERR` writer - Task Error Interrupt This bit is asserted when task error is detected due to invalid task descriptor"]
+#[doc = "Field `TERR` writer - Task Error Interrupt\n\nThis bit is asserted when task error is detected due to invalid task\n\ndescriptor"]
 pub type TerrW<'a, REG> = crate::BitWriter1C<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - Halt Complete Interrupt This status bit is asserted (if CQISTE.HAC=1) when halt bit in CQCTL register transitions from 0 to 1 indicating that host controller has completed its current ongoing task and has entered halt state."]
+    #[doc = "Bit 0 - Halt Complete Interrupt\n\nThis status bit is asserted (if CQISTE.HAC=1) when halt bit in\n\nCQCTL register transitions from 0 to 1 indicating that host\n\ncontroller has completed its current ongoing task and has entered\n\nhalt state."]
     #[inline(always)]
     pub fn hac(&self) -> HacR {
         HacR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - Task Complete Interrupt This status bit is asserted(if CQISTE.TCC=1) when at least one of the following two conditions are met: a. A task is completed and the INT bit is set in its Task Descriptor b. Interrupt caused by Interrupt Coalescing logic"]
+    #[doc = "Bit 1 - Task Complete Interrupt\n\nThis status bit is asserted(if CQISTE.TCC=1) when at least one of\n\nthe following two conditions are met:\n\na. A task is completed and the INT bit is set in its Task Descriptor\n\nb. Interrupt caused by Interrupt Coalescing logic"]
     #[inline(always)]
     pub fn tcc(&self) -> TccR {
         TccR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - Response Error Detected Interrupt This status bit is asserted (if CQISTE.RED=1) when a response is received with an error bit set in the device status field. Software uses CQRMEM register to configure which device status bit fields may trigger an interrupt, and which are masked."]
+    #[doc = "Bit 2 - Response Error Detected Interrupt\n\nThis status bit is asserted (if CQISTE.RED=1) when a response is\n\nreceived with an error bit set in the device status field.\n\nSoftware uses CQRMEM register to configure which device status\n\nbit fields may trigger an interrupt, and which are masked."]
     #[inline(always)]
     pub fn red(&self) -> RedR {
         RedR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - Task Cleared This status bit is asserted (if CQISTE.TCL=1) when a task clear operation is completed by CQE. The completed task clear operation is either an individual task clear (CQTCLR) or clearing of all tasks (CQCTL)."]
+    #[doc = "Bit 3 - Task Cleared\n\nThis status bit is asserted (if CQISTE.TCL=1) when a task clear\n\noperation is completed by CQE. The completed task clear\n\noperation is either an individual task clear (CQTCLR) or clearing\n\nof all tasks (CQCTL)."]
     #[inline(always)]
     pub fn tcl(&self) -> TclR {
         TclR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - Task Error Interrupt This bit is asserted when task error is detected due to invalid task descriptor"]
+    #[doc = "Bit 4 - Task Error Interrupt\n\nThis bit is asserted when task error is detected due to invalid task\n\ndescriptor"]
     #[inline(always)]
     pub fn terr(&self) -> TerrR {
         TerrR::new(((self.bits >> 4) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Halt Complete Interrupt This status bit is asserted (if CQISTE.HAC=1) when halt bit in CQCTL register transitions from 0 to 1 indicating that host controller has completed its current ongoing task and has entered halt state."]
+    #[doc = "Bit 0 - Halt Complete Interrupt\n\nThis status bit is asserted (if CQISTE.HAC=1) when halt bit in\n\nCQCTL register transitions from 0 to 1 indicating that host\n\ncontroller has completed its current ongoing task and has entered\n\nhalt state."]
     #[inline(always)]
     #[must_use]
     pub fn hac(&mut self) -> HacW<EmmccoreCqintstsSpec> {
         HacW::new(self, 0)
     }
-    #[doc = "Bit 1 - Task Complete Interrupt This status bit is asserted(if CQISTE.TCC=1) when at least one of the following two conditions are met: a. A task is completed and the INT bit is set in its Task Descriptor b. Interrupt caused by Interrupt Coalescing logic"]
+    #[doc = "Bit 1 - Task Complete Interrupt\n\nThis status bit is asserted(if CQISTE.TCC=1) when at least one of\n\nthe following two conditions are met:\n\na. A task is completed and the INT bit is set in its Task Descriptor\n\nb. Interrupt caused by Interrupt Coalescing logic"]
     #[inline(always)]
     #[must_use]
     pub fn tcc(&mut self) -> TccW<EmmccoreCqintstsSpec> {
         TccW::new(self, 1)
     }
-    #[doc = "Bit 2 - Response Error Detected Interrupt This status bit is asserted (if CQISTE.RED=1) when a response is received with an error bit set in the device status field. Software uses CQRMEM register to configure which device status bit fields may trigger an interrupt, and which are masked."]
+    #[doc = "Bit 2 - Response Error Detected Interrupt\n\nThis status bit is asserted (if CQISTE.RED=1) when a response is\n\nreceived with an error bit set in the device status field.\n\nSoftware uses CQRMEM register to configure which device status\n\nbit fields may trigger an interrupt, and which are masked."]
     #[inline(always)]
     #[must_use]
     pub fn red(&mut self) -> RedW<EmmccoreCqintstsSpec> {
         RedW::new(self, 2)
     }
-    #[doc = "Bit 3 - Task Cleared This status bit is asserted (if CQISTE.TCL=1) when a task clear operation is completed by CQE. The completed task clear operation is either an individual task clear (CQTCLR) or clearing of all tasks (CQCTL)."]
+    #[doc = "Bit 3 - Task Cleared\n\nThis status bit is asserted (if CQISTE.TCL=1) when a task clear\n\noperation is completed by CQE. The completed task clear\n\noperation is either an individual task clear (CQTCLR) or clearing\n\nof all tasks (CQCTL)."]
     #[inline(always)]
     #[must_use]
     pub fn tcl(&mut self) -> TclW<EmmccoreCqintstsSpec> {
         TclW::new(self, 3)
     }
-    #[doc = "Bit 4 - Task Error Interrupt This bit is asserted when task error is detected due to invalid task descriptor"]
+    #[doc = "Bit 4 - Task Error Interrupt\n\nThis bit is asserted when task error is detected due to invalid task\n\ndescriptor"]
     #[inline(always)]
     #[must_use]
     pub fn terr(&mut self) -> TerrW<EmmccoreCqintstsSpec> {

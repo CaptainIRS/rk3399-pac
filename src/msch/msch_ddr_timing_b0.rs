@@ -2,64 +2,64 @@
 pub type R = crate::R<MschDdrTimingB0Spec>;
 #[doc = "Register `MSCH_DdrTimingB0` writer"]
 pub type W = crate::W<MschDdrTimingB0Spec>;
-#[doc = "Field `RDTOWR` reader - Minimum number of scheduler clock cycles between the last DRAM Read command and a Write command. The field must be set to the following value, rounded to an integer number of scheduler clock cycles: 2 ×tCkD / tCkG, for DDR2 memories. (RL –WL + 2) ×tCkD / tCKG, for DDR3 and DDR4 memories. (RL + RoundUp(tDQSCK(max) / tCKD) + tRPST - WL + tWPRE) ×tCkD / tCKG , for LPDDR4 memories."]
+#[doc = "Field `RDTOWR` reader - Minimum number of scheduler clock cycles between the last DRAM\n\nRead command and a Write command.\n\nThe field must be set to the following value, rounded to an integer\n\nnumber of scheduler clock cycles:\n\n2 ×tCkD / tCkG, for DDR2 memories.\n\n(RL –WL + 2) ×tCkD / tCKG, for DDR3 and DDR4 memories.\n\n(RL + RoundUp(tDQSCK(max) / tCKD) + tRPST - WL + tWPRE)\n\n×tCkD / tCKG , for LPDDR4 memories."]
 pub type RdtowrR = crate::FieldReader;
-#[doc = "Field `RDTOWR` writer - Minimum number of scheduler clock cycles between the last DRAM Read command and a Write command. The field must be set to the following value, rounded to an integer number of scheduler clock cycles: 2 ×tCkD / tCkG, for DDR2 memories. (RL –WL + 2) ×tCkD / tCKG, for DDR3 and DDR4 memories. (RL + RoundUp(tDQSCK(max) / tCKD) + tRPST - WL + tWPRE) ×tCkD / tCKG , for LPDDR4 memories."]
+#[doc = "Field `RDTOWR` writer - Minimum number of scheduler clock cycles between the last DRAM\n\nRead command and a Write command.\n\nThe field must be set to the following value, rounded to an integer\n\nnumber of scheduler clock cycles:\n\n2 ×tCkD / tCkG, for DDR2 memories.\n\n(RL –WL + 2) ×tCkD / tCKG, for DDR3 and DDR4 memories.\n\n(RL + RoundUp(tDQSCK(max) / tCKD) + tRPST - WL + tWPRE)\n\n×tCkD / tCKG , for LPDDR4 memories."]
 pub type RdtowrW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Field `WRTORD` reader - Minimum number of scheduler clock cycles between the last DRAM Write command and a Read command. The field must be set to the following value, rounded to an integer of scheduler clock cycles: (WL ×tCkD + tWTR) / tCkG, for DDR2 and DDR3 memories. (WL ×tCkD + tWTR_S) / tCkG, for DDR4 memories. ((WL + 1) ×tCkD + tWTR) / tCkG, for LPDDR4 memories."]
+#[doc = "Field `WRTORD` reader - Minimum number of scheduler clock cycles between the last DRAM\n\nWrite command and a Read command.\n\nThe field must be set to the following value, rounded to an integer\n\nof scheduler clock cycles:\n\n(WL ×tCkD + tWTR) / tCkG, for DDR2 and DDR3 memories.\n\n(WL ×tCkD + tWTR_S) / tCkG, for DDR4 memories.\n\n((WL + 1) ×tCkD + tWTR) / tCkG, for LPDDR4 memories."]
 pub type WrtordR = crate::FieldReader;
-#[doc = "Field `WRTORD` writer - Minimum number of scheduler clock cycles between the last DRAM Write command and a Read command. The field must be set to the following value, rounded to an integer of scheduler clock cycles: (WL ×tCkD + tWTR) / tCkG, for DDR2 and DDR3 memories. (WL ×tCkD + tWTR_S) / tCkG, for DDR4 memories. ((WL + 1) ×tCkD + tWTR) / tCkG, for LPDDR4 memories."]
+#[doc = "Field `WRTORD` writer - Minimum number of scheduler clock cycles between the last DRAM\n\nWrite command and a Read command.\n\nThe field must be set to the following value, rounded to an integer\n\nof scheduler clock cycles:\n\n(WL ×tCkD + tWTR) / tCkG, for DDR2 and DDR3 memories.\n\n(WL ×tCkD + tWTR_S) / tCkG, for DDR4 memories.\n\n((WL + 1) ×tCkD + tWTR) / tCkG, for LPDDR4 memories."]
 pub type WrtordW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Field `RRD` reader - Number of cycle between two consecutive Activate commands on different Banks of the same device. The field must be set to the following value, rounded to an integer number of scheduler clock cycles: tRRD / tCkG"]
+#[doc = "Field `RRD` reader - Number of cycle between two consecutive Activate commands on\n\ndifferent Banks of the same device.\n\nThe field must be set to the following value, rounded to an integer\n\nnumber of scheduler clock cycles:\n\ntRRD / tCkG"]
 pub type RrdR = crate::FieldReader;
-#[doc = "Field `RRD` writer - Number of cycle between two consecutive Activate commands on different Banks of the same device. The field must be set to the following value, rounded to an integer number of scheduler clock cycles: tRRD / tCkG"]
+#[doc = "Field `RRD` writer - Number of cycle between two consecutive Activate commands on\n\ndifferent Banks of the same device.\n\nThe field must be set to the following value, rounded to an integer\n\nnumber of scheduler clock cycles:\n\ntRRD / tCkG"]
 pub type RrdW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-#[doc = "Field `FAW` reader - Field0000 Abstract Number of cycle of the FAW period. The field must be set to the following value, rounded to an integer number of scheduler clock cycles: tFAW / tCkG"]
+#[doc = "Field `FAW` reader - Field0000 Abstract\n\nNumber of cycle of the FAW period.\n\nThe field must be set to the following value, rounded to an integer\n\nnumber of scheduler clock cycles:\n\ntFAW / tCkG"]
 pub type FawR = crate::FieldReader;
-#[doc = "Field `FAW` writer - Field0000 Abstract Number of cycle of the FAW period. The field must be set to the following value, rounded to an integer number of scheduler clock cycles: tFAW / tCkG"]
+#[doc = "Field `FAW` writer - Field0000 Abstract\n\nNumber of cycle of the FAW period.\n\nThe field must be set to the following value, rounded to an integer\n\nnumber of scheduler clock cycles:\n\ntFAW / tCkG"]
 pub type FawW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
-    #[doc = "Bits 0:4 - Minimum number of scheduler clock cycles between the last DRAM Read command and a Write command. The field must be set to the following value, rounded to an integer number of scheduler clock cycles: 2 ×tCkD / tCkG, for DDR2 memories. (RL –WL + 2) ×tCkD / tCKG, for DDR3 and DDR4 memories. (RL + RoundUp(tDQSCK(max) / tCKD) + tRPST - WL + tWPRE) ×tCkD / tCKG , for LPDDR4 memories."]
+    #[doc = "Bits 0:4 - Minimum number of scheduler clock cycles between the last DRAM\n\nRead command and a Write command.\n\nThe field must be set to the following value, rounded to an integer\n\nnumber of scheduler clock cycles:\n\n2 ×tCkD / tCkG, for DDR2 memories.\n\n(RL –WL + 2) ×tCkD / tCKG, for DDR3 and DDR4 memories.\n\n(RL + RoundUp(tDQSCK(max) / tCKD) + tRPST - WL + tWPRE)\n\n×tCkD / tCKG , for LPDDR4 memories."]
     #[inline(always)]
     pub fn rdtowr(&self) -> RdtowrR {
         RdtowrR::new((self.bits & 0x1f) as u8)
     }
-    #[doc = "Bits 8:12 - Minimum number of scheduler clock cycles between the last DRAM Write command and a Read command. The field must be set to the following value, rounded to an integer of scheduler clock cycles: (WL ×tCkD + tWTR) / tCkG, for DDR2 and DDR3 memories. (WL ×tCkD + tWTR_S) / tCkG, for DDR4 memories. ((WL + 1) ×tCkD + tWTR) / tCkG, for LPDDR4 memories."]
+    #[doc = "Bits 8:12 - Minimum number of scheduler clock cycles between the last DRAM\n\nWrite command and a Read command.\n\nThe field must be set to the following value, rounded to an integer\n\nof scheduler clock cycles:\n\n(WL ×tCkD + tWTR) / tCkG, for DDR2 and DDR3 memories.\n\n(WL ×tCkD + tWTR_S) / tCkG, for DDR4 memories.\n\n((WL + 1) ×tCkD + tWTR) / tCkG, for LPDDR4 memories."]
     #[inline(always)]
     pub fn wrtord(&self) -> WrtordR {
         WrtordR::new(((self.bits >> 8) & 0x1f) as u8)
     }
-    #[doc = "Bits 16:19 - Number of cycle between two consecutive Activate commands on different Banks of the same device. The field must be set to the following value, rounded to an integer number of scheduler clock cycles: tRRD / tCkG"]
+    #[doc = "Bits 16:19 - Number of cycle between two consecutive Activate commands on\n\ndifferent Banks of the same device.\n\nThe field must be set to the following value, rounded to an integer\n\nnumber of scheduler clock cycles:\n\ntRRD / tCkG"]
     #[inline(always)]
     pub fn rrd(&self) -> RrdR {
         RrdR::new(((self.bits >> 16) & 0x0f) as u8)
     }
-    #[doc = "Bits 24:29 - Field0000 Abstract Number of cycle of the FAW period. The field must be set to the following value, rounded to an integer number of scheduler clock cycles: tFAW / tCkG"]
+    #[doc = "Bits 24:29 - Field0000 Abstract\n\nNumber of cycle of the FAW period.\n\nThe field must be set to the following value, rounded to an integer\n\nnumber of scheduler clock cycles:\n\ntFAW / tCkG"]
     #[inline(always)]
     pub fn faw(&self) -> FawR {
         FawR::new(((self.bits >> 24) & 0x3f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - Minimum number of scheduler clock cycles between the last DRAM Read command and a Write command. The field must be set to the following value, rounded to an integer number of scheduler clock cycles: 2 ×tCkD / tCkG, for DDR2 memories. (RL –WL + 2) ×tCkD / tCKG, for DDR3 and DDR4 memories. (RL + RoundUp(tDQSCK(max) / tCKD) + tRPST - WL + tWPRE) ×tCkD / tCKG , for LPDDR4 memories."]
+    #[doc = "Bits 0:4 - Minimum number of scheduler clock cycles between the last DRAM\n\nRead command and a Write command.\n\nThe field must be set to the following value, rounded to an integer\n\nnumber of scheduler clock cycles:\n\n2 ×tCkD / tCkG, for DDR2 memories.\n\n(RL –WL + 2) ×tCkD / tCKG, for DDR3 and DDR4 memories.\n\n(RL + RoundUp(tDQSCK(max) / tCKD) + tRPST - WL + tWPRE)\n\n×tCkD / tCKG , for LPDDR4 memories."]
     #[inline(always)]
     #[must_use]
     pub fn rdtowr(&mut self) -> RdtowrW<MschDdrTimingB0Spec> {
         RdtowrW::new(self, 0)
     }
-    #[doc = "Bits 8:12 - Minimum number of scheduler clock cycles between the last DRAM Write command and a Read command. The field must be set to the following value, rounded to an integer of scheduler clock cycles: (WL ×tCkD + tWTR) / tCkG, for DDR2 and DDR3 memories. (WL ×tCkD + tWTR_S) / tCkG, for DDR4 memories. ((WL + 1) ×tCkD + tWTR) / tCkG, for LPDDR4 memories."]
+    #[doc = "Bits 8:12 - Minimum number of scheduler clock cycles between the last DRAM\n\nWrite command and a Read command.\n\nThe field must be set to the following value, rounded to an integer\n\nof scheduler clock cycles:\n\n(WL ×tCkD + tWTR) / tCkG, for DDR2 and DDR3 memories.\n\n(WL ×tCkD + tWTR_S) / tCkG, for DDR4 memories.\n\n((WL + 1) ×tCkD + tWTR) / tCkG, for LPDDR4 memories."]
     #[inline(always)]
     #[must_use]
     pub fn wrtord(&mut self) -> WrtordW<MschDdrTimingB0Spec> {
         WrtordW::new(self, 8)
     }
-    #[doc = "Bits 16:19 - Number of cycle between two consecutive Activate commands on different Banks of the same device. The field must be set to the following value, rounded to an integer number of scheduler clock cycles: tRRD / tCkG"]
+    #[doc = "Bits 16:19 - Number of cycle between two consecutive Activate commands on\n\ndifferent Banks of the same device.\n\nThe field must be set to the following value, rounded to an integer\n\nnumber of scheduler clock cycles:\n\ntRRD / tCkG"]
     #[inline(always)]
     #[must_use]
     pub fn rrd(&mut self) -> RrdW<MschDdrTimingB0Spec> {
         RrdW::new(self, 16)
     }
-    #[doc = "Bits 24:29 - Field0000 Abstract Number of cycle of the FAW period. The field must be set to the following value, rounded to an integer number of scheduler clock cycles: tFAW / tCkG"]
+    #[doc = "Bits 24:29 - Field0000 Abstract\n\nNumber of cycle of the FAW period.\n\nThe field must be set to the following value, rounded to an integer\n\nnumber of scheduler clock cycles:\n\ntFAW / tCkG"]
     #[inline(always)]
     #[must_use]
     pub fn faw(&mut self) -> FawW<MschDdrTimingB0Spec> {

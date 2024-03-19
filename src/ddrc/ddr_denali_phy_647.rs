@@ -6,7 +6,7 @@ pub type W = crate::W<DdrDenaliPhy647Spec>;
 pub type PhyAdrType1R = crate::FieldReader;
 #[doc = "Field `PHY_ADR_TYPE_1` writer - DRAM type for address slice 1."]
 pub type PhyAdrType1W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-#[doc = "Field `PHY_ADR_WRADDR_SHIFT_OBS_1` reader - Observation register for automatic half cycle and cycle shift values for address slice 1. READ-ONLY"]
+#[doc = "Field `PHY_ADR_WRADDR_SHIFT_OBS_1` reader - Observation register for automatic half cycle and cycle shift values for address slice 1."]
 pub type PhyAdrWraddrShiftObs1R = crate::FieldReader;
 #[doc = "Field `PHY_ADR_IE_MODE_1` reader - Input enable control for address slice 1."]
 pub type PhyAdrIeMode1R = crate::BitReader;
@@ -18,7 +18,7 @@ impl R {
     pub fn phy_adr_type_1(&self) -> PhyAdrType1R {
         PhyAdrType1R::new((self.bits & 3) as u8)
     }
-    #[doc = "Bits 8:10 - Observation register for automatic half cycle and cycle shift values for address slice 1. READ-ONLY"]
+    #[doc = "Bits 8:10 - Observation register for automatic half cycle and cycle shift values for address slice 1."]
     #[inline(always)]
     pub fn phy_adr_wraddr_shift_obs_1(&self) -> PhyAdrWraddrShiftObs1R {
         PhyAdrWraddrShiftObs1R::new(((self.bits >> 8) & 7) as u8)

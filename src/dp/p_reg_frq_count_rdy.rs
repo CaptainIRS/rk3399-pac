@@ -2,10 +2,11 @@
 pub type R = crate::R<PRegFrqCountRdySpec>;
 #[doc = "Register `P_REG_FRQ_COUNT_RDY` writer"]
 pub type W = crate::W<PRegFrqCountRdySpec>;
-#[doc = "frequency counter ready indicator (frequency counter for VCO band selection)\n\nValue on reset: 0"]
+#[doc = "frequency counter ready indicator \n\n(frequency counter for VCO band \n\nselection)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FrqCountRdy {
-    #[doc = "1: frequency counter not ready, its output is not the real value"]
+    #[doc = "1: frequency counter ready, its output is the real value of video PLL"]
     B1 = 1,
     #[doc = "0: frequency counter not ready, its output is not the real value"]
     B0 = 0,
@@ -16,7 +17,7 @@ impl From<FrqCountRdy> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FRQ_COUNT_RDY` reader - frequency counter ready indicator (frequency counter for VCO band selection)"]
+#[doc = "Field `FRQ_COUNT_RDY` reader - frequency counter ready indicator \n\n(frequency counter for VCO band \n\nselection)"]
 pub type FrqCountRdyR = crate::BitReader<FrqCountRdy>;
 impl FrqCountRdyR {
     #[doc = "Get enumerated values variant"]
@@ -27,7 +28,7 @@ impl FrqCountRdyR {
             false => FrqCountRdy::B0,
         }
     }
-    #[doc = "frequency counter not ready, its output is not the real value"]
+    #[doc = "frequency counter ready, its output is the real value of video PLL"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == FrqCountRdy::B1
@@ -38,13 +39,13 @@ impl FrqCountRdyR {
         *self == FrqCountRdy::B0
     }
 }
-#[doc = "Field `FRQ_COUNT_RDY` writer - frequency counter ready indicator (frequency counter for VCO band selection)"]
+#[doc = "Field `FRQ_COUNT_RDY` writer - frequency counter ready indicator \n\n(frequency counter for VCO band \n\nselection)"]
 pub type FrqCountRdyW<'a, REG> = crate::BitWriter1C<'a, REG, FrqCountRdy>;
 impl<'a, REG> FrqCountRdyW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "frequency counter not ready, its output is not the real value"]
+    #[doc = "frequency counter ready, its output is the real value of video PLL"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(FrqCountRdy::B1)
@@ -56,14 +57,14 @@ where
     }
 }
 impl R {
-    #[doc = "Bit 0 - frequency counter ready indicator (frequency counter for VCO band selection)"]
+    #[doc = "Bit 0 - frequency counter ready indicator \n\n(frequency counter for VCO band \n\nselection)"]
     #[inline(always)]
     pub fn frq_count_rdy(&self) -> FrqCountRdyR {
         FrqCountRdyR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - frequency counter ready indicator (frequency counter for VCO band selection)"]
+    #[doc = "Bit 0 - frequency counter ready indicator \n\n(frequency counter for VCO band \n\nselection)"]
     #[inline(always)]
     #[must_use]
     pub fn frq_count_rdy(&mut self) -> FrqCountRdyW<PRegFrqCountRdySpec> {

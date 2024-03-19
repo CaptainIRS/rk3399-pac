@@ -2,49 +2,49 @@
 pub type R = crate::R<DdrPiReg76Spec>;
 #[doc = "Register `DDR_PI_REG_76` writer"]
 pub type W = crate::W<DdrPiReg76Spec>;
-#[doc = "Field `PI_RDLVL_GATE_PERIODIC` reader - Enables the use of the dfi_lvl_periodic signal during gate training. Set to 1 to enable."]
+#[doc = "Field `PI_RDLVL_GATE_PERIODIC` reader - Enables the use of the dfi_lvl_periodic signal during gate training.\n\nSet to 1 to enable."]
 pub type PiRdlvlGatePeriodicR = crate::BitReader;
-#[doc = "Field `PI_RDLVL_GATE_PERIODIC` writer - Enables the use of the dfi_lvl_periodic signal during gate training. Set to 1 to enable."]
+#[doc = "Field `PI_RDLVL_GATE_PERIODIC` writer - Enables the use of the dfi_lvl_periodic signal during gate training.\n\nSet to 1 to enable."]
 pub type PiRdlvlGatePeriodicW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PI_RDLVL_GATE_ON_SREF_EXIT` reader - Enables automatic gate training on a self-refresh exit. Set to 1 to enable."]
+#[doc = "Field `PI_RDLVL_GATE_ON_SREF_EXIT` reader - Enables automatic gate training on a self-refresh exit. Set to 1 to\n\nenable."]
 pub type PiRdlvlGateOnSrefExitR = crate::BitReader;
-#[doc = "Field `PI_RDLVL_GATE_ON_SREF_EXIT` writer - Enables automatic gate training on a self-refresh exit. Set to 1 to enable."]
+#[doc = "Field `PI_RDLVL_GATE_ON_SREF_EXIT` writer - Enables automatic gate training on a self-refresh exit. Set to 1 to\n\nenable."]
 pub type PiRdlvlGateOnSrefExitW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PI_RDLVL_ROTATE` reader - Enables rotational chip select for interval data eye training. Set to 1 for rotating CS."]
+#[doc = "Field `PI_RDLVL_ROTATE` reader - Enables rotational chip select for interval data eye training. Set to 1\n\nfor rotating CS."]
 pub type PiRdlvlRotateR = crate::BitReader;
-#[doc = "Field `PI_RDLVL_ROTATE` writer - Enables rotational chip select for interval data eye training. Set to 1 for rotating CS."]
+#[doc = "Field `PI_RDLVL_ROTATE` writer - Enables rotational chip select for interval data eye training. Set to 1\n\nfor rotating CS."]
 pub type PiRdlvlRotateW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - Enables the use of the dfi_lvl_periodic signal during gate training. Set to 1 to enable."]
+    #[doc = "Bit 0 - Enables the use of the dfi_lvl_periodic signal during gate training.\n\nSet to 1 to enable."]
     #[inline(always)]
     pub fn pi_rdlvl_gate_periodic(&self) -> PiRdlvlGatePeriodicR {
         PiRdlvlGatePeriodicR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 8 - Enables automatic gate training on a self-refresh exit. Set to 1 to enable."]
+    #[doc = "Bit 8 - Enables automatic gate training on a self-refresh exit. Set to 1 to\n\nenable."]
     #[inline(always)]
     pub fn pi_rdlvl_gate_on_sref_exit(&self) -> PiRdlvlGateOnSrefExitR {
         PiRdlvlGateOnSrefExitR::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bit 24 - Enables rotational chip select for interval data eye training. Set to 1 for rotating CS."]
+    #[doc = "Bit 24 - Enables rotational chip select for interval data eye training. Set to 1\n\nfor rotating CS."]
     #[inline(always)]
     pub fn pi_rdlvl_rotate(&self) -> PiRdlvlRotateR {
         PiRdlvlRotateR::new(((self.bits >> 24) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Enables the use of the dfi_lvl_periodic signal during gate training. Set to 1 to enable."]
+    #[doc = "Bit 0 - Enables the use of the dfi_lvl_periodic signal during gate training.\n\nSet to 1 to enable."]
     #[inline(always)]
     #[must_use]
     pub fn pi_rdlvl_gate_periodic(&mut self) -> PiRdlvlGatePeriodicW<DdrPiReg76Spec> {
         PiRdlvlGatePeriodicW::new(self, 0)
     }
-    #[doc = "Bit 8 - Enables automatic gate training on a self-refresh exit. Set to 1 to enable."]
+    #[doc = "Bit 8 - Enables automatic gate training on a self-refresh exit. Set to 1 to\n\nenable."]
     #[inline(always)]
     #[must_use]
     pub fn pi_rdlvl_gate_on_sref_exit(&mut self) -> PiRdlvlGateOnSrefExitW<DdrPiReg76Spec> {
         PiRdlvlGateOnSrefExitW::new(self, 8)
     }
-    #[doc = "Bit 24 - Enables rotational chip select for interval data eye training. Set to 1 for rotating CS."]
+    #[doc = "Bit 24 - Enables rotational chip select for interval data eye training. Set to 1\n\nfor rotating CS."]
     #[inline(always)]
     #[must_use]
     pub fn pi_rdlvl_rotate(&mut self) -> PiRdlvlRotateW<DdrPiReg76Spec> {

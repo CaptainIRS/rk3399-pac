@@ -2,19 +2,19 @@
 pub type R = crate::R<GmacMmcRxicmperroctSpec>;
 #[doc = "Register `GMAC_MMC_RXICMPERROCT` writer"]
 pub type W = crate::W<GmacMmcRxicmperroctSpec>;
-#[doc = "Field `RXICMP_ERR_OCTETS` reader - Number of bytes received in an ICMP segment with checksum errors."]
+#[doc = "Field `RXICMP_ERR_OCTETS` reader - Number of bytes received in an ICMP segment with checksum\n\nerrors."]
 pub type RxicmpErrOctetsR = crate::FieldReader<u32>;
-#[doc = "Field `RXICMP_ERR_OCTETS` writer - Number of bytes received in an ICMP segment with checksum errors."]
+#[doc = "Field `RXICMP_ERR_OCTETS` writer - Number of bytes received in an ICMP segment with checksum\n\nerrors."]
 pub type RxicmpErrOctetsW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Number of bytes received in an ICMP segment with checksum errors."]
+    #[doc = "Bits 0:31 - Number of bytes received in an ICMP segment with checksum\n\nerrors."]
     #[inline(always)]
     pub fn rxicmp_err_octets(&self) -> RxicmpErrOctetsR {
         RxicmpErrOctetsR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Number of bytes received in an ICMP segment with checksum errors."]
+    #[doc = "Bits 0:31 - Number of bytes received in an ICMP segment with checksum\n\nerrors."]
     #[inline(always)]
     #[must_use]
     pub fn rxicmp_err_octets(&mut self) -> RxicmpErrOctetsW<GmacMmcRxicmperroctSpec> {

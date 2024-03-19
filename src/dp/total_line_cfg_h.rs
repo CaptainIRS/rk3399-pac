@@ -2,19 +2,19 @@
 pub type R = crate::R<TotalLineCfgHSpec>;
 #[doc = "Register `TOTAL_LINE_CFG_H` writer"]
 pub type W = crate::W<TotalLineCfgHSpec>;
-#[doc = "Field `TOTAL_LINE_CFG_H` reader - TOTAL_LINE_CFG is used to specify the number of lines in each frame. This register is TOTAL_LINE_CFG \\[11:8\\]. When F_SEL is 1, this value is sent in main stream attribute packet. When Video BIST_EN is enabled, this bit must be configured right to generate right video format."]
+#[doc = "Field `TOTAL_LINE_CFG_H` reader - TOTAL_LINE_CFG is used to specify the \n\nnumber of lines in each frame. This register is \n\nTOTAL_LINE_CFG \\[11:8\\]. \n\nWhen F_SEL is 1, this value is sent in main \n\nstream attribute packet. \n\nWhen Video BIST_EN is enabled, this bit must \n\nbe configured right to generate right video \n\nformat."]
 pub type TotalLineCfgHR = crate::FieldReader;
-#[doc = "Field `TOTAL_LINE_CFG_H` writer - TOTAL_LINE_CFG is used to specify the number of lines in each frame. This register is TOTAL_LINE_CFG \\[11:8\\]. When F_SEL is 1, this value is sent in main stream attribute packet. When Video BIST_EN is enabled, this bit must be configured right to generate right video format."]
+#[doc = "Field `TOTAL_LINE_CFG_H` writer - TOTAL_LINE_CFG is used to specify the \n\nnumber of lines in each frame. This register is \n\nTOTAL_LINE_CFG \\[11:8\\]. \n\nWhen F_SEL is 1, this value is sent in main \n\nstream attribute packet. \n\nWhen Video BIST_EN is enabled, this bit must \n\nbe configured right to generate right video \n\nformat."]
 pub type TotalLineCfgHW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
-    #[doc = "Bits 0:3 - TOTAL_LINE_CFG is used to specify the number of lines in each frame. This register is TOTAL_LINE_CFG \\[11:8\\]. When F_SEL is 1, this value is sent in main stream attribute packet. When Video BIST_EN is enabled, this bit must be configured right to generate right video format."]
+    #[doc = "Bits 0:3 - TOTAL_LINE_CFG is used to specify the \n\nnumber of lines in each frame. This register is \n\nTOTAL_LINE_CFG \\[11:8\\]. \n\nWhen F_SEL is 1, this value is sent in main \n\nstream attribute packet. \n\nWhen Video BIST_EN is enabled, this bit must \n\nbe configured right to generate right video \n\nformat."]
     #[inline(always)]
     pub fn total_line_cfg_h(&self) -> TotalLineCfgHR {
         TotalLineCfgHR::new((self.bits & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - TOTAL_LINE_CFG is used to specify the number of lines in each frame. This register is TOTAL_LINE_CFG \\[11:8\\]. When F_SEL is 1, this value is sent in main stream attribute packet. When Video BIST_EN is enabled, this bit must be configured right to generate right video format."]
+    #[doc = "Bits 0:3 - TOTAL_LINE_CFG is used to specify the \n\nnumber of lines in each frame. This register is \n\nTOTAL_LINE_CFG \\[11:8\\]. \n\nWhen F_SEL is 1, this value is sent in main \n\nstream attribute packet. \n\nWhen Video BIST_EN is enabled, this bit must \n\nbe configured right to generate right video \n\nformat."]
     #[inline(always)]
     #[must_use]
     pub fn total_line_cfg_h(&mut self) -> TotalLineCfgHW<TotalLineCfgHSpec> {

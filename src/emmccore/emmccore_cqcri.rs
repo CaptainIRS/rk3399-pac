@@ -1,9 +1,9 @@
 #[doc = "Register `EMMCCORE_CQCRI` reader"]
 pub type R = crate::R<EmmccoreCqcriSpec>;
-#[doc = "Field `LCRI` reader - Last Command Response Index This field stores the index of the last received command response. CQE shall update the value every time a command response is received."]
+#[doc = "Field `LCRI` reader - Last Command Response Index\n\nThis field stores the index of the last received command\n\nresponse. CQE shall update the value every time a command\n\nresponse is received."]
 pub type LcriR = crate::FieldReader;
 impl R {
-    #[doc = "Bits 0:5 - Last Command Response Index This field stores the index of the last received command response. CQE shall update the value every time a command response is received."]
+    #[doc = "Bits 0:5 - Last Command Response Index\n\nThis field stores the index of the last received command\n\nresponse. CQE shall update the value every time a command\n\nresponse is received."]
     #[inline(always)]
     pub fn lcri(&self) -> LcriR {
         LcriR::new((self.bits & 0x3f) as u8)

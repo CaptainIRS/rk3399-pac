@@ -2,27 +2,28 @@
 pub type R = crate::R<DpReserv2Spec>;
 #[doc = "Register `DP_RESERV2` writer"]
 pub type W = crate::W<DpReserv2Spec>;
-#[doc = "ch0,2 swing and pre emphasis control for firmware when tx_common&lt;7>=1\n\nValue on reset: 1"]
+#[doc = "ch0,2 swing and pre emphasis control \n\nfor firmware \n\nwhen tx_common&lt;7>=1\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ch0Ch2SwingEmpCtrl {
-    #[doc = "0: swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "0: swing0 pre emphasis 0 dB"]
     B0000 = 0,
-    #[doc = "1: swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "1: swing1 pre emphasis 0 dB"]
     B0001 = 1,
-    #[doc = "2: swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "2: swing2 pre emphasis 0 dB"]
     B0010 = 2,
-    #[doc = "3: swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "3: swing3 pre emphasis 0 dB"]
     B0011 = 3,
-    #[doc = "4: swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "4: swing0 pre emphasis 3.5 dB"]
     B0100 = 4,
-    #[doc = "5: swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "5: swing1 pre emphasis 3.5 dB"]
     B0101 = 5,
-    #[doc = "6: swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "6: swing2 pre emphasis 3.5 dB"]
     B0110 = 6,
-    #[doc = "8: swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "8: swing0 pre emphasis 6 dB"]
     B1000 = 8,
-    #[doc = "9: swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "9: swing1 pre emphasis 6 dB"]
     B1001 = 9,
     #[doc = "12: swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
     B1100 = 12,
@@ -36,7 +37,7 @@ impl From<Ch0Ch2SwingEmpCtrl> for u8 {
 impl crate::FieldSpec for Ch0Ch2SwingEmpCtrl {
     type Ux = u8;
 }
-#[doc = "Field `CH0_CH2_SWING_EMP_CTRL` reader - ch0,2 swing and pre emphasis control for firmware when tx_common&lt;7>=1"]
+#[doc = "Field `CH0_CH2_SWING_EMP_CTRL` reader - ch0,2 swing and pre emphasis control \n\nfor firmware \n\nwhen tx_common&lt;7>=1"]
 pub type Ch0Ch2SwingEmpCtrlR = crate::FieldReader<Ch0Ch2SwingEmpCtrl>;
 impl Ch0Ch2SwingEmpCtrlR {
     #[doc = "Get enumerated values variant"]
@@ -56,47 +57,47 @@ impl Ch0Ch2SwingEmpCtrlR {
             _ => None,
         }
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing0 pre emphasis 0 dB"]
     #[inline(always)]
     pub fn is_b0000(&self) -> bool {
         *self == Ch0Ch2SwingEmpCtrl::B0000
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing1 pre emphasis 0 dB"]
     #[inline(always)]
     pub fn is_b0001(&self) -> bool {
         *self == Ch0Ch2SwingEmpCtrl::B0001
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing2 pre emphasis 0 dB"]
     #[inline(always)]
     pub fn is_b0010(&self) -> bool {
         *self == Ch0Ch2SwingEmpCtrl::B0010
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing3 pre emphasis 0 dB"]
     #[inline(always)]
     pub fn is_b0011(&self) -> bool {
         *self == Ch0Ch2SwingEmpCtrl::B0011
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing0 pre emphasis 3.5 dB"]
     #[inline(always)]
     pub fn is_b0100(&self) -> bool {
         *self == Ch0Ch2SwingEmpCtrl::B0100
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing1 pre emphasis 3.5 dB"]
     #[inline(always)]
     pub fn is_b0101(&self) -> bool {
         *self == Ch0Ch2SwingEmpCtrl::B0101
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing2 pre emphasis 3.5 dB"]
     #[inline(always)]
     pub fn is_b0110(&self) -> bool {
         *self == Ch0Ch2SwingEmpCtrl::B0110
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing0 pre emphasis 6 dB"]
     #[inline(always)]
     pub fn is_b1000(&self) -> bool {
         *self == Ch0Ch2SwingEmpCtrl::B1000
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing1 pre emphasis 6 dB"]
     #[inline(always)]
     pub fn is_b1001(&self) -> bool {
         *self == Ch0Ch2SwingEmpCtrl::B1001
@@ -107,54 +108,54 @@ impl Ch0Ch2SwingEmpCtrlR {
         *self == Ch0Ch2SwingEmpCtrl::B1100
     }
 }
-#[doc = "Field `CH0_CH2_SWING_EMP_CTRL` writer - ch0,2 swing and pre emphasis control for firmware when tx_common&lt;7>=1"]
+#[doc = "Field `CH0_CH2_SWING_EMP_CTRL` writer - ch0,2 swing and pre emphasis control \n\nfor firmware \n\nwhen tx_common&lt;7>=1"]
 pub type Ch0Ch2SwingEmpCtrlW<'a, REG> = crate::FieldWriter<'a, REG, 4, Ch0Ch2SwingEmpCtrl>;
 impl<'a, REG> Ch0Ch2SwingEmpCtrlW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing0 pre emphasis 0 dB"]
     #[inline(always)]
     pub fn b0000(self) -> &'a mut crate::W<REG> {
         self.variant(Ch0Ch2SwingEmpCtrl::B0000)
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing1 pre emphasis 0 dB"]
     #[inline(always)]
     pub fn b0001(self) -> &'a mut crate::W<REG> {
         self.variant(Ch0Ch2SwingEmpCtrl::B0001)
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing2 pre emphasis 0 dB"]
     #[inline(always)]
     pub fn b0010(self) -> &'a mut crate::W<REG> {
         self.variant(Ch0Ch2SwingEmpCtrl::B0010)
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing3 pre emphasis 0 dB"]
     #[inline(always)]
     pub fn b0011(self) -> &'a mut crate::W<REG> {
         self.variant(Ch0Ch2SwingEmpCtrl::B0011)
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing0 pre emphasis 3.5 dB"]
     #[inline(always)]
     pub fn b0100(self) -> &'a mut crate::W<REG> {
         self.variant(Ch0Ch2SwingEmpCtrl::B0100)
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing1 pre emphasis 3.5 dB"]
     #[inline(always)]
     pub fn b0101(self) -> &'a mut crate::W<REG> {
         self.variant(Ch0Ch2SwingEmpCtrl::B0101)
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing2 pre emphasis 3.5 dB"]
     #[inline(always)]
     pub fn b0110(self) -> &'a mut crate::W<REG> {
         self.variant(Ch0Ch2SwingEmpCtrl::B0110)
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing0 pre emphasis 6 dB"]
     #[inline(always)]
     pub fn b1000(self) -> &'a mut crate::W<REG> {
         self.variant(Ch0Ch2SwingEmpCtrl::B1000)
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing1 pre emphasis 6 dB"]
     #[inline(always)]
     pub fn b1001(self) -> &'a mut crate::W<REG> {
         self.variant(Ch0Ch2SwingEmpCtrl::B1001)
@@ -165,27 +166,28 @@ where
         self.variant(Ch0Ch2SwingEmpCtrl::B1100)
     }
 }
-#[doc = "ch1,3 swing and pre emphasis control for firmware when tx_common&lt;7>=1\n\nValue on reset: 1"]
+#[doc = "ch1,3 swing and pre emphasis control \n\nfor firmware \n\nwhen tx_common&lt;7>=1\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ch1Ch3SwingEmpCtrl {
-    #[doc = "0: swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "0: swing0 pre emphasis 0 dB"]
     B0000 = 0,
-    #[doc = "1: swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "1: swing1 pre emphasis 0 dB"]
     B0001 = 1,
-    #[doc = "2: swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "2: swing2 pre emphasis 0 dB"]
     B0010 = 2,
-    #[doc = "3: swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "3: swing3 pre emphasis 0 dB"]
     B0011 = 3,
-    #[doc = "4: swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "4: swing0 pre emphasis 3.5 dB"]
     B0100 = 4,
-    #[doc = "5: swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "5: swing1 pre emphasis 3.5 dB"]
     B0101 = 5,
-    #[doc = "6: swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "6: swing2 pre emphasis 3.5 dB"]
     B0110 = 6,
-    #[doc = "8: swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "8: swing0 pre emphasis 6 dB"]
     B1000 = 8,
-    #[doc = "9: swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "9: swing1 pre emphasis 6 dB"]
     B1001 = 9,
     #[doc = "12: swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
     B1100 = 12,
@@ -199,7 +201,7 @@ impl From<Ch1Ch3SwingEmpCtrl> for u8 {
 impl crate::FieldSpec for Ch1Ch3SwingEmpCtrl {
     type Ux = u8;
 }
-#[doc = "Field `CH1_CH3_SWING_EMP_CTRL` reader - ch1,3 swing and pre emphasis control for firmware when tx_common&lt;7>=1"]
+#[doc = "Field `CH1_CH3_SWING_EMP_CTRL` reader - ch1,3 swing and pre emphasis control \n\nfor firmware \n\nwhen tx_common&lt;7>=1"]
 pub type Ch1Ch3SwingEmpCtrlR = crate::FieldReader<Ch1Ch3SwingEmpCtrl>;
 impl Ch1Ch3SwingEmpCtrlR {
     #[doc = "Get enumerated values variant"]
@@ -219,47 +221,47 @@ impl Ch1Ch3SwingEmpCtrlR {
             _ => None,
         }
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing0 pre emphasis 0 dB"]
     #[inline(always)]
     pub fn is_b0000(&self) -> bool {
         *self == Ch1Ch3SwingEmpCtrl::B0000
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing1 pre emphasis 0 dB"]
     #[inline(always)]
     pub fn is_b0001(&self) -> bool {
         *self == Ch1Ch3SwingEmpCtrl::B0001
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing2 pre emphasis 0 dB"]
     #[inline(always)]
     pub fn is_b0010(&self) -> bool {
         *self == Ch1Ch3SwingEmpCtrl::B0010
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing3 pre emphasis 0 dB"]
     #[inline(always)]
     pub fn is_b0011(&self) -> bool {
         *self == Ch1Ch3SwingEmpCtrl::B0011
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing0 pre emphasis 3.5 dB"]
     #[inline(always)]
     pub fn is_b0100(&self) -> bool {
         *self == Ch1Ch3SwingEmpCtrl::B0100
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing1 pre emphasis 3.5 dB"]
     #[inline(always)]
     pub fn is_b0101(&self) -> bool {
         *self == Ch1Ch3SwingEmpCtrl::B0101
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing2 pre emphasis 3.5 dB"]
     #[inline(always)]
     pub fn is_b0110(&self) -> bool {
         *self == Ch1Ch3SwingEmpCtrl::B0110
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing0 pre emphasis 6 dB"]
     #[inline(always)]
     pub fn is_b1000(&self) -> bool {
         *self == Ch1Ch3SwingEmpCtrl::B1000
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing1 pre emphasis 6 dB"]
     #[inline(always)]
     pub fn is_b1001(&self) -> bool {
         *self == Ch1Ch3SwingEmpCtrl::B1001
@@ -270,54 +272,54 @@ impl Ch1Ch3SwingEmpCtrlR {
         *self == Ch1Ch3SwingEmpCtrl::B1100
     }
 }
-#[doc = "Field `CH1_CH3_SWING_EMP_CTRL` writer - ch1,3 swing and pre emphasis control for firmware when tx_common&lt;7>=1"]
+#[doc = "Field `CH1_CH3_SWING_EMP_CTRL` writer - ch1,3 swing and pre emphasis control \n\nfor firmware \n\nwhen tx_common&lt;7>=1"]
 pub type Ch1Ch3SwingEmpCtrlW<'a, REG> = crate::FieldWriter<'a, REG, 4, Ch1Ch3SwingEmpCtrl>;
 impl<'a, REG> Ch1Ch3SwingEmpCtrlW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing0 pre emphasis 0 dB"]
     #[inline(always)]
     pub fn b0000(self) -> &'a mut crate::W<REG> {
         self.variant(Ch1Ch3SwingEmpCtrl::B0000)
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing1 pre emphasis 0 dB"]
     #[inline(always)]
     pub fn b0001(self) -> &'a mut crate::W<REG> {
         self.variant(Ch1Ch3SwingEmpCtrl::B0001)
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing2 pre emphasis 0 dB"]
     #[inline(always)]
     pub fn b0010(self) -> &'a mut crate::W<REG> {
         self.variant(Ch1Ch3SwingEmpCtrl::B0010)
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing3 pre emphasis 0 dB"]
     #[inline(always)]
     pub fn b0011(self) -> &'a mut crate::W<REG> {
         self.variant(Ch1Ch3SwingEmpCtrl::B0011)
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing0 pre emphasis 3.5 dB"]
     #[inline(always)]
     pub fn b0100(self) -> &'a mut crate::W<REG> {
         self.variant(Ch1Ch3SwingEmpCtrl::B0100)
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing1 pre emphasis 3.5 dB"]
     #[inline(always)]
     pub fn b0101(self) -> &'a mut crate::W<REG> {
         self.variant(Ch1Ch3SwingEmpCtrl::B0101)
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing2 pre emphasis 3.5 dB"]
     #[inline(always)]
     pub fn b0110(self) -> &'a mut crate::W<REG> {
         self.variant(Ch1Ch3SwingEmpCtrl::B0110)
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing0 pre emphasis 6 dB"]
     #[inline(always)]
     pub fn b1000(self) -> &'a mut crate::W<REG> {
         self.variant(Ch1Ch3SwingEmpCtrl::B1000)
     }
-    #[doc = "swing0 pre emphasis 9.5 dB others : swing0 pre emphasis 9.5 dB"]
+    #[doc = "swing1 pre emphasis 6 dB"]
     #[inline(always)]
     pub fn b1001(self) -> &'a mut crate::W<REG> {
         self.variant(Ch1Ch3SwingEmpCtrl::B1001)
@@ -329,25 +331,25 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 0:3 - ch0,2 swing and pre emphasis control for firmware when tx_common&lt;7>=1"]
+    #[doc = "Bits 0:3 - ch0,2 swing and pre emphasis control \n\nfor firmware \n\nwhen tx_common&lt;7>=1"]
     #[inline(always)]
     pub fn ch0_ch2_swing_emp_ctrl(&self) -> Ch0Ch2SwingEmpCtrlR {
         Ch0Ch2SwingEmpCtrlR::new((self.bits & 0x0f) as u8)
     }
-    #[doc = "Bits 4:7 - ch1,3 swing and pre emphasis control for firmware when tx_common&lt;7>=1"]
+    #[doc = "Bits 4:7 - ch1,3 swing and pre emphasis control \n\nfor firmware \n\nwhen tx_common&lt;7>=1"]
     #[inline(always)]
     pub fn ch1_ch3_swing_emp_ctrl(&self) -> Ch1Ch3SwingEmpCtrlR {
         Ch1Ch3SwingEmpCtrlR::new(((self.bits >> 4) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - ch0,2 swing and pre emphasis control for firmware when tx_common&lt;7>=1"]
+    #[doc = "Bits 0:3 - ch0,2 swing and pre emphasis control \n\nfor firmware \n\nwhen tx_common&lt;7>=1"]
     #[inline(always)]
     #[must_use]
     pub fn ch0_ch2_swing_emp_ctrl(&mut self) -> Ch0Ch2SwingEmpCtrlW<DpReserv2Spec> {
         Ch0Ch2SwingEmpCtrlW::new(self, 0)
     }
-    #[doc = "Bits 4:7 - ch1,3 swing and pre emphasis control for firmware when tx_common&lt;7>=1"]
+    #[doc = "Bits 4:7 - ch1,3 swing and pre emphasis control \n\nfor firmware \n\nwhen tx_common&lt;7>=1"]
     #[inline(always)]
     #[must_use]
     pub fn ch1_ch3_swing_emp_ctrl(&mut self) -> Ch1Ch3SwingEmpCtrlW<DpReserv2Spec> {

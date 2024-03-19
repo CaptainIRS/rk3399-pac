@@ -1,9 +1,9 @@
 #[doc = "Register `GMAC_CUR_HOST_RX_BUF_ADDR` reader"]
 pub type R = crate::R<GmacCurHostRxBufAddrSpec>;
-#[doc = "Field `HRBAP` reader - Host Receive Buffer Address Pointer Cleared on Reset. Pointer updated by DMA during operation."]
+#[doc = "Field `HRBAP` reader - Host Receive Buffer Address Pointer\n\nCleared on Reset. Pointer updated by DMA during operation."]
 pub type HrbapR = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Host Receive Buffer Address Pointer Cleared on Reset. Pointer updated by DMA during operation."]
+    #[doc = "Bits 0:31 - Host Receive Buffer Address Pointer\n\nCleared on Reset. Pointer updated by DMA during operation."]
     #[inline(always)]
     pub fn hrbap(&self) -> HrbapR {
         HrbapR::new(self.bits)

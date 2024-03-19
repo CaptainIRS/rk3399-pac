@@ -3,9 +3,10 @@ pub type R = crate::R<PmuNocAutoEnaSpec>;
 #[doc = "Register `PMU_NOC_AUTO_ENA` writer"]
 pub type W = crate::W<PmuNocAutoEnaSpec>;
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pmum0GatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: noting ;"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -27,7 +28,7 @@ impl Pmum0GatingDisableR {
             true => Pmum0GatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "noting ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Pmum0GatingDisable::B0
@@ -44,7 +45,7 @@ impl<'a, REG> Pmum0GatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "noting ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Pmum0GatingDisable::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Center1GatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -80,7 +82,7 @@ impl Center1GatingDisableR {
             true => Center1GatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Center1GatingDisable::B0
@@ -97,7 +99,7 @@ impl<'a, REG> Center1GatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Center1GatingDisable::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EmmcGatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing ;"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -133,7 +136,7 @@ impl EmmcGatingDisableR {
             true => EmmcGatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == EmmcGatingDisable::B0
@@ -150,7 +153,7 @@ impl<'a, REG> EmmcGatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(EmmcGatingDisable::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GmacGatingDisable {
-    #[doc = "0: gmac clock gating disable."]
+    #[doc = "0: nothing ;"]
     B0 = 0,
     #[doc = "1: gmac clock gating disable."]
     B1 = 1,
@@ -186,7 +190,7 @@ impl GmacGatingDisableR {
             true => GmacGatingDisable::B1,
         }
     }
-    #[doc = "gmac clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == GmacGatingDisable::B0
@@ -203,7 +207,7 @@ impl<'a, REG> GmacGatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "gmac clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(GmacGatingDisable::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EdpGatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing ;"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -239,7 +244,7 @@ impl EdpGatingDisableR {
             true => EdpGatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == EdpGatingDisable::B0
@@ -256,7 +261,7 @@ impl<'a, REG> EdpGatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(EdpGatingDisable::B0)
@@ -268,9 +273,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PmuGatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing ;"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -292,7 +298,7 @@ impl PmuGatingDisableR {
             true => PmuGatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PmuGatingDisable::B0
@@ -309,7 +315,7 @@ impl<'a, REG> PmuGatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PmuGatingDisable::B0)
@@ -321,9 +327,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AliveGatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing ;"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -345,7 +352,7 @@ impl AliveGatingDisableR {
             true => AliveGatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == AliveGatingDisable::B0
@@ -362,7 +369,7 @@ impl<'a, REG> AliveGatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(AliveGatingDisable::B0)
@@ -374,9 +381,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Msch1GatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing ;"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -398,7 +406,7 @@ impl Msch1GatingDisableR {
             true => Msch1GatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Msch1GatingDisable::B0
@@ -415,7 +423,7 @@ impl<'a, REG> Msch1GatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Msch1GatingDisable::B0)
@@ -427,9 +435,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Msch0GatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing ;"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -451,7 +460,7 @@ impl Msch0GatingDisableR {
             true => Msch0GatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Msch0GatingDisable::B0
@@ -468,7 +477,7 @@ impl<'a, REG> Msch0GatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Msch0GatingDisable::B0)
@@ -480,9 +489,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VioGatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing ;"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -504,7 +514,7 @@ impl VioGatingDisableR {
             true => VioGatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == VioGatingDisable::B0
@@ -521,7 +531,7 @@ impl<'a, REG> VioGatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(VioGatingDisable::B0)
@@ -533,9 +543,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ccim1GatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing ;"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -557,7 +568,7 @@ impl Ccim1GatingDisableR {
             true => Ccim1GatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Ccim1GatingDisable::B0
@@ -574,7 +585,7 @@ impl<'a, REG> Ccim1GatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Ccim1GatingDisable::B0)
@@ -586,9 +597,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ccim0GatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing ;"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -610,7 +622,7 @@ impl Ccim0GatingDisableR {
             true => Ccim0GatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Ccim0GatingDisable::B0
@@ -627,7 +639,7 @@ impl<'a, REG> Ccim0GatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Ccim0GatingDisable::B0)
@@ -639,9 +651,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CenterGatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: noting"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -663,7 +676,7 @@ impl CenterGatingDisableR {
             true => CenterGatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "noting"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CenterGatingDisable::B0
@@ -680,7 +693,7 @@ impl<'a, REG> CenterGatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "noting"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CenterGatingDisable::B0)
@@ -692,9 +705,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Perilpm0GatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing ;"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -716,7 +730,7 @@ impl Perilpm0GatingDisableR {
             true => Perilpm0GatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Perilpm0GatingDisable::B0
@@ -733,7 +747,7 @@ impl<'a, REG> Perilpm0GatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Perilpm0GatingDisable::B0)
@@ -745,9 +759,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Usb3GatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -769,7 +784,7 @@ impl Usb3GatingDisableR {
             true => Usb3GatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Usb3GatingDisable::B0
@@ -786,7 +801,7 @@ impl<'a, REG> Usb3GatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Usb3GatingDisable::B0)
@@ -798,9 +813,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HdcpGatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing ;"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -822,7 +838,7 @@ impl HdcpGatingDisableR {
             true => HdcpGatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == HdcpGatingDisable::B0
@@ -839,7 +855,7 @@ impl<'a, REG> HdcpGatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(HdcpGatingDisable::B0)
@@ -851,9 +867,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Isp1GatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing ;"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -875,7 +892,7 @@ impl Isp1GatingDisableR {
             true => Isp1GatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Isp1GatingDisable::B0
@@ -892,7 +909,7 @@ impl<'a, REG> Isp1GatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Isp1GatingDisable::B0)
@@ -904,9 +921,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Isp0GatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing ;"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -928,7 +946,7 @@ impl Isp0GatingDisableR {
             true => Isp0GatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Isp0GatingDisable::B0
@@ -945,7 +963,7 @@ impl<'a, REG> Isp0GatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Isp0GatingDisable::B0)
@@ -957,9 +975,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VoplGatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing ;"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -981,7 +1000,7 @@ impl VoplGatingDisableR {
             true => VoplGatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == VoplGatingDisable::B0
@@ -998,7 +1017,7 @@ impl<'a, REG> VoplGatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(VoplGatingDisable::B0)
@@ -1010,9 +1029,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VopbGatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing ;"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -1034,7 +1054,7 @@ impl VopbGatingDisableR {
             true => VopbGatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == VopbGatingDisable::B0
@@ -1051,7 +1071,7 @@ impl<'a, REG> VopbGatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(VopbGatingDisable::B0)
@@ -1063,9 +1083,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IepGatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing ;"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -1087,7 +1108,7 @@ impl IepGatingDisableR {
             true => IepGatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IepGatingDisable::B0
@@ -1104,7 +1125,7 @@ impl<'a, REG> IepGatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IepGatingDisable::B0)
@@ -1116,9 +1137,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RgaGatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing ;"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -1140,7 +1162,7 @@ impl RgaGatingDisableR {
             true => RgaGatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == RgaGatingDisable::B0
@@ -1157,7 +1179,7 @@ impl<'a, REG> RgaGatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(RgaGatingDisable::B0)
@@ -1169,9 +1191,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VduGatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing ;"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -1193,7 +1216,7 @@ impl VduGatingDisableR {
             true => VduGatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == VduGatingDisable::B0
@@ -1210,7 +1233,7 @@ impl<'a, REG> VduGatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(VduGatingDisable::B0)
@@ -1222,9 +1245,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VcodecGatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -1246,7 +1270,7 @@ impl VcodecGatingDisableR {
             true => VcodecGatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == VcodecGatingDisable::B0
@@ -1263,7 +1287,7 @@ impl<'a, REG> VcodecGatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(VcodecGatingDisable::B0)
@@ -1275,9 +1299,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PerihpGatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing ;"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -1299,7 +1324,7 @@ impl PerihpGatingDisableR {
             true => PerihpGatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PerihpGatingDisable::B0
@@ -1316,7 +1341,7 @@ impl<'a, REG> PerihpGatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PerihpGatingDisable::B0)
@@ -1328,9 +1353,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PerilpGatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing ;"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -1352,7 +1378,7 @@ impl PerilpGatingDisableR {
             true => PerilpGatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PerilpGatingDisable::B0
@@ -1369,7 +1395,7 @@ impl<'a, REG> PerilpGatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PerilpGatingDisable::B0)
@@ -1381,9 +1407,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GpuGatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing ;"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -1405,7 +1432,7 @@ impl GpuGatingDisableR {
             true => GpuGatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == GpuGatingDisable::B0
@@ -1422,7 +1449,7 @@ impl<'a, REG> GpuGatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(GpuGatingDisable::B0)
@@ -1434,9 +1461,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GicGatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing ;"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -1458,7 +1486,7 @@ impl GicGatingDisableR {
             true => GicGatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == GicGatingDisable::B0
@@ -1475,7 +1503,7 @@ impl<'a, REG> GicGatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(GicGatingDisable::B0)
@@ -1487,9 +1515,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SdGatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -1511,7 +1540,7 @@ impl SdGatingDisableR {
             true => SdGatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SdGatingDisable::B0
@@ -1528,7 +1557,7 @@ impl<'a, REG> SdGatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SdGatingDisable::B0)
@@ -1540,9 +1569,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SdioaudioGatingDisable {
-    #[doc = "0: clock gating disable."]
+    #[doc = "0: nothing"]
     B0 = 0,
     #[doc = "1: clock gating disable."]
     B1 = 1,
@@ -1564,7 +1594,7 @@ impl SdioaudioGatingDisableR {
             true => SdioaudioGatingDisable::B1,
         }
     }
-    #[doc = "clock gating disable."]
+    #[doc = "nothing"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SdioaudioGatingDisable::B0
@@ -1581,7 +1611,7 @@ impl<'a, REG> SdioaudioGatingDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clock gating disable."]
+    #[doc = "nothing"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SdioaudioGatingDisable::B0)

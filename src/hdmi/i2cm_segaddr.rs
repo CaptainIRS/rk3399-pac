@@ -21,7 +21,7 @@ impl W {
         SegAddrW::new(self, 0)
     }
 }
-#[doc = "I2C DDC Segment Address Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`i2cm_segaddr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`i2cm_segaddr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "I2C DDC Segment Address Configuration Register\n\nThis register configures the segment address for extended R/W destination and is used for\n\nEDID reading operations, particularly for the Extended Data Read Operation for Enhanced\n\nDDC.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`i2cm_segaddr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`i2cm_segaddr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct I2cmSegaddrSpec;
 impl crate::RegisterSpec for I2cmSegaddrSpec {
     type Ux = u8;

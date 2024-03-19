@@ -3,14 +3,14 @@ pub type R = crate::R<HFPorchStaLSpec>;
 #[doc = "Register `H_F_PORCH_STA_L` writer"]
 pub type W = crate::W<HFPorchStaLSpec>;
 #[doc = "Field `H_F_PORCH_STA_L` reader - H_F_PORCH \\[7:0\\]
-(horizon front porch) which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+(horizon front porch) which is \n\ndetected by video capture module. \n\nThis bit field is valid only when STRM_VALID is \n\nhigh. And STRM_VALID becomes high when two \n\nsuccessive frames are determined as stable."]
 pub type HFPorchStaLR = crate::FieldReader;
 #[doc = "Field `H_F_PORCH_STA_L` writer - H_F_PORCH \\[7:0\\]
-(horizon front porch) which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+(horizon front porch) which is \n\ndetected by video capture module. \n\nThis bit field is valid only when STRM_VALID is \n\nhigh. And STRM_VALID becomes high when two \n\nsuccessive frames are determined as stable."]
 pub type HFPorchStaLW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - H_F_PORCH \\[7:0\\]
-(horizon front porch) which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+(horizon front porch) which is \n\ndetected by video capture module. \n\nThis bit field is valid only when STRM_VALID is \n\nhigh. And STRM_VALID becomes high when two \n\nsuccessive frames are determined as stable."]
     #[inline(always)]
     pub fn h_f_porch_sta_l(&self) -> HFPorchStaLR {
         HFPorchStaLR::new((self.bits & 0xff) as u8)
@@ -18,7 +18,7 @@ impl R {
 }
 impl W {
     #[doc = "Bits 0:7 - H_F_PORCH \\[7:0\\]
-(horizon front porch) which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+(horizon front porch) which is \n\ndetected by video capture module. \n\nThis bit field is valid only when STRM_VALID is \n\nhigh. And STRM_VALID becomes high when two \n\nsuccessive frames are determined as stable."]
     #[inline(always)]
     #[must_use]
     pub fn h_f_porch_sta_l(&mut self) -> HFPorchStaLW<HFPorchStaLSpec> {

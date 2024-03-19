@@ -3,9 +3,10 @@ pub type R = crate::R<PmuBusIdleReqSpec>;
 #[doc = "Register `PMU_BUS_IDLE_REQ` writer"]
 pub type W = crate::W<PmuBusIdleReqSpec>;
 #[doc = "send idle request to gpu niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqGpu {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl IdleReqGpuR {
             true => IdleReqGpu::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqGpu::B0
@@ -44,7 +45,7 @@ impl<'a, REG> IdleReqGpuW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqGpu::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "send idle request to perilp niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqPerilp {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl IdleReqPerilpR {
             true => IdleReqPerilp::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqPerilp::B0
@@ -97,7 +99,7 @@ impl<'a, REG> IdleReqPerilpW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqPerilp::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "send idle request to perihp niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqPerihp {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl IdleReqPerihpR {
             true => IdleReqPerihp::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqPerihp::B0
@@ -150,7 +153,7 @@ impl<'a, REG> IdleReqPerihpW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqPerihp::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "send idle request to vcodec niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqVcodec {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -186,7 +190,7 @@ impl IdleReqVcodecR {
             true => IdleReqVcodec::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqVcodec::B0
@@ -203,7 +207,7 @@ impl<'a, REG> IdleReqVcodecW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqVcodec::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "send idle request to vdu niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqVdu {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -239,7 +244,7 @@ impl IdleReqVduR {
             true => IdleReqVdu::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqVdu::B0
@@ -256,7 +261,7 @@ impl<'a, REG> IdleReqVduW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqVdu::B0)
@@ -268,9 +273,10 @@ where
     }
 }
 #[doc = "send idle request to rga niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqRga {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -292,7 +298,7 @@ impl IdleReqRgaR {
             true => IdleReqRga::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqRga::B0
@@ -309,7 +315,7 @@ impl<'a, REG> IdleReqRgaW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqRga::B0)
@@ -321,9 +327,10 @@ where
     }
 }
 #[doc = "send idle request to iep niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqIep {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -345,7 +352,7 @@ impl IdleReqIepR {
             true => IdleReqIep::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqIep::B0
@@ -362,7 +369,7 @@ impl<'a, REG> IdleReqIepW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqIep::B0)
@@ -374,9 +381,10 @@ where
     }
 }
 #[doc = "send idle request to vopb niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqVopb {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -398,7 +406,7 @@ impl IdleReqVopbR {
             true => IdleReqVopb::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqVopb::B0
@@ -415,7 +423,7 @@ impl<'a, REG> IdleReqVopbW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqVopb::B0)
@@ -427,9 +435,10 @@ where
     }
 }
 #[doc = "send idle request to vopl niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqVopl {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -451,7 +460,7 @@ impl IdleReqVoplR {
             true => IdleReqVopl::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqVopl::B0
@@ -468,7 +477,7 @@ impl<'a, REG> IdleReqVoplW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqVopl::B0)
@@ -480,9 +489,10 @@ where
     }
 }
 #[doc = "send idle request to isp0 niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqIsp0 {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -504,7 +514,7 @@ impl IdleReqIsp0R {
             true => IdleReqIsp0::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqIsp0::B0
@@ -521,7 +531,7 @@ impl<'a, REG> IdleReqIsp0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqIsp0::B0)
@@ -533,9 +543,10 @@ where
     }
 }
 #[doc = "send idle request to isp1 niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqIsp1 {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -557,7 +568,7 @@ impl IdleReqIsp1R {
             true => IdleReqIsp1::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqIsp1::B0
@@ -574,7 +585,7 @@ impl<'a, REG> IdleReqIsp1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqIsp1::B0)
@@ -586,9 +597,10 @@ where
     }
 }
 #[doc = "send idle request to hdcp niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqHdcp {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -610,7 +622,7 @@ impl IdleReqHdcpR {
             true => IdleReqHdcp::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqHdcp::B0
@@ -627,7 +639,7 @@ impl<'a, REG> IdleReqHdcpW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqHdcp::B0)
@@ -639,9 +651,10 @@ where
     }
 }
 #[doc = "send idle request to usb3 niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqUsb3 {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -663,7 +676,7 @@ impl IdleReqUsb3R {
             true => IdleReqUsb3::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqUsb3::B0
@@ -680,7 +693,7 @@ impl<'a, REG> IdleReqUsb3W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqUsb3::B0)
@@ -692,9 +705,10 @@ where
     }
 }
 #[doc = "send idle request to perilp m0 niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqPerilpm0 {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -716,7 +730,7 @@ impl IdleReqPerilpm0R {
             true => IdleReqPerilpm0::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqPerilpm0::B0
@@ -733,7 +747,7 @@ impl<'a, REG> IdleReqPerilpm0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqPerilpm0::B0)
@@ -745,9 +759,10 @@ where
     }
 }
 #[doc = "send idle request to center niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqCenter {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -769,7 +784,7 @@ impl IdleReqCenterR {
             true => IdleReqCenter::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqCenter::B0
@@ -786,7 +801,7 @@ impl<'a, REG> IdleReqCenterW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqCenter::B0)
@@ -798,9 +813,10 @@ where
     }
 }
 #[doc = "send idle request to ccim0 low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqCcim0 {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -822,7 +838,7 @@ impl IdleReqCcim0R {
             true => IdleReqCcim0::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqCcim0::B0
@@ -839,7 +855,7 @@ impl<'a, REG> IdleReqCcim0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqCcim0::B0)
@@ -851,9 +867,10 @@ where
     }
 }
 #[doc = "send idle request to ccim1 low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqCcim1 {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -875,7 +892,7 @@ impl IdleReqCcim1R {
             true => IdleReqCcim1::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqCcim1::B0
@@ -892,7 +909,7 @@ impl<'a, REG> IdleReqCcim1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqCcim1::B0)
@@ -904,9 +921,10 @@ where
     }
 }
 #[doc = "send idle request to vio low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqVio {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -928,7 +946,7 @@ impl IdleReqVioR {
             true => IdleReqVio::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqVio::B0
@@ -945,7 +963,7 @@ impl<'a, REG> IdleReqVioW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqVio::B0)
@@ -957,9 +975,10 @@ where
     }
 }
 #[doc = "send idle request to msch0 low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqMsch0 {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -981,7 +1000,7 @@ impl IdleReqMsch0R {
             true => IdleReqMsch0::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqMsch0::B0
@@ -998,7 +1017,7 @@ impl<'a, REG> IdleReqMsch0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqMsch0::B0)
@@ -1010,9 +1029,10 @@ where
     }
 }
 #[doc = "send idle request to msch1 low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqMsch1 {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1034,7 +1054,7 @@ impl IdleReqMsch1R {
             true => IdleReqMsch1::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqMsch1::B0
@@ -1051,7 +1071,7 @@ impl<'a, REG> IdleReqMsch1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqMsch1::B0)
@@ -1063,9 +1083,10 @@ where
     }
 }
 #[doc = "send idle request to alive low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqAlive {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1087,7 +1108,7 @@ impl IdleReqAliveR {
             true => IdleReqAlive::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqAlive::B0
@@ -1104,7 +1125,7 @@ impl<'a, REG> IdleReqAliveW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqAlive::B0)
@@ -1116,9 +1137,10 @@ where
     }
 }
 #[doc = "send idle request to pmu low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqPmu {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1140,7 +1162,7 @@ impl IdleReqPmuR {
             true => IdleReqPmu::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqPmu::B0
@@ -1157,7 +1179,7 @@ impl<'a, REG> IdleReqPmuW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqPmu::B0)
@@ -1169,9 +1191,10 @@ where
     }
 }
 #[doc = "send idle request to edp low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqEdp {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1193,7 +1216,7 @@ impl IdleReqEdpR {
             true => IdleReqEdp::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqEdp::B0
@@ -1210,7 +1233,7 @@ impl<'a, REG> IdleReqEdpW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqEdp::B0)
@@ -1222,9 +1245,10 @@ where
     }
 }
 #[doc = "send idle request to gmac low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqGmac {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1246,7 +1270,7 @@ impl IdleReqGmacR {
             true => IdleReqGmac::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqGmac::B0
@@ -1263,7 +1287,7 @@ impl<'a, REG> IdleReqGmacW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqGmac::B0)
@@ -1275,9 +1299,10 @@ where
     }
 }
 #[doc = "send idle request to emmc low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqEmmc {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1299,7 +1324,7 @@ impl IdleReqEmmcR {
             true => IdleReqEmmc::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqEmmc::B0
@@ -1316,7 +1341,7 @@ impl<'a, REG> IdleReqEmmcW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqEmmc::B0)
@@ -1328,9 +1353,10 @@ where
     }
 }
 #[doc = "send idle request to center1 low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqCenter1 {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1352,7 +1378,7 @@ impl IdleReqCenter1R {
             true => IdleReqCenter1::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqCenter1::B0
@@ -1369,7 +1395,7 @@ impl<'a, REG> IdleReqCenter1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqCenter1::B0)
@@ -1381,9 +1407,10 @@ where
     }
 }
 #[doc = "send idle request to pmu m0 low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqPmum0 {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1405,7 +1432,7 @@ impl IdleReqPmum0R {
             true => IdleReqPmum0::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqPmum0::B0
@@ -1422,7 +1449,7 @@ impl<'a, REG> IdleReqPmum0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqPmum0::B0)
@@ -1434,9 +1461,10 @@ where
     }
 }
 #[doc = "send idle request to gic low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqGic {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1458,7 +1486,7 @@ impl IdleReqGicR {
             true => IdleReqGic::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqGic::B0
@@ -1475,7 +1503,7 @@ impl<'a, REG> IdleReqGicW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqGic::B0)
@@ -1487,9 +1515,10 @@ where
     }
 }
 #[doc = "send idle request to sd low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqSd {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1511,7 +1540,7 @@ impl IdleReqSdR {
             true => IdleReqSd::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqSd::B0
@@ -1528,7 +1557,7 @@ impl<'a, REG> IdleReqSdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqSd::B0)
@@ -1540,9 +1569,10 @@ where
     }
 }
 #[doc = "send idle request to sdioaudio low power interface\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleReqSdioaudio {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -1564,7 +1594,7 @@ impl IdleReqSdioaudioR {
             true => IdleReqSdioaudio::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleReqSdioaudio::B0
@@ -1581,7 +1611,7 @@ impl<'a, REG> IdleReqSdioaudioW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IdleReqSdioaudio::B0)

@@ -2,10 +2,11 @@
 pub type R = crate::R<SpiIprSpec>;
 #[doc = "Register `SPI_IPR` writer"]
 pub type W = crate::W<SpiIprSpec>;
-#[doc = "Interrupt Polarity Interrupt Polarity Register\n\nValue on reset: 0"]
+#[doc = "Interrupt Polarity\n\nInterrupt Polarity Register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ipr {
-    #[doc = "0: Active Interrupt Polarity Level is LOW"]
+    #[doc = "0: Active Interrupt Polarity Level is HIGH"]
     B0 = 0,
     #[doc = "1: Active Interrupt Polarity Level is LOW"]
     B1 = 1,
@@ -16,7 +17,7 @@ impl From<Ipr> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IPR` reader - Interrupt Polarity Interrupt Polarity Register"]
+#[doc = "Field `IPR` reader - Interrupt Polarity\n\nInterrupt Polarity Register"]
 pub type IprR = crate::BitReader<Ipr>;
 impl IprR {
     #[doc = "Get enumerated values variant"]
@@ -27,7 +28,7 @@ impl IprR {
             true => Ipr::B1,
         }
     }
-    #[doc = "Active Interrupt Polarity Level is LOW"]
+    #[doc = "Active Interrupt Polarity Level is HIGH"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Ipr::B0
@@ -38,13 +39,13 @@ impl IprR {
         *self == Ipr::B1
     }
 }
-#[doc = "Field `IPR` writer - Interrupt Polarity Interrupt Polarity Register"]
+#[doc = "Field `IPR` writer - Interrupt Polarity\n\nInterrupt Polarity Register"]
 pub type IprW<'a, REG> = crate::BitWriter<'a, REG, Ipr>;
 impl<'a, REG> IprW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Active Interrupt Polarity Level is LOW"]
+    #[doc = "Active Interrupt Polarity Level is HIGH"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Ipr::B0)
@@ -56,14 +57,14 @@ where
     }
 }
 impl R {
-    #[doc = "Bit 0 - Interrupt Polarity Interrupt Polarity Register"]
+    #[doc = "Bit 0 - Interrupt Polarity\n\nInterrupt Polarity Register"]
     #[inline(always)]
     pub fn ipr(&self) -> IprR {
         IprR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Interrupt Polarity Interrupt Polarity Register"]
+    #[doc = "Bit 0 - Interrupt Polarity\n\nInterrupt Polarity Register"]
     #[inline(always)]
     #[must_use]
     pub fn ipr(&mut self) -> IprW<SpiIprSpec> {

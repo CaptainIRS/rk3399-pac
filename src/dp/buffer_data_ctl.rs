@@ -2,16 +2,16 @@
 pub type R = crate::R<BufferDataCtlSpec>;
 #[doc = "Register `BUFFER_DATA_CTL` writer"]
 pub type W = crate::W<BufferDataCtlSpec>;
-#[doc = "Field `BUF_DATA_COUNT` reader - The counts of data AUX CH buffer have. This bit's type is RO."]
+#[doc = "Field `BUF_DATA_COUNT` reader - The counts of data AUX CH buffer have. \n\nThis bit's type is RO."]
 pub type BufDataCountR = crate::FieldReader;
 #[doc = "Field `BUF_HAVE_DATA` reader - 0:buffer have data,1:buffer have not data"]
 pub type BufHaveDataR = crate::BitReader;
-#[doc = "Field `BUF_CLR` reader - Write 1 to this bit to clear AUX CH data buffer (BUF_DATA_0 ~ BUF_DATA_15). Always read back 0 from this bit. This bit's type is R/W. This bit is self cleared. Note: For the write operation, set this bit to 1 before writing data to BUF_DATA_0~15. And for READ operation, this bit has only to be set before starting data transfer by setting AUX_EN."]
+#[doc = "Field `BUF_CLR` reader - Write 1 to this bit to clear AUX CH data \n\nbuffer (BUF_DATA_0 ~ BUF_DATA_15). \n\nAlways read back 0 from this bit. \n\nThis bit's type is R/W. This bit is self \n\ncleared. \n\nNote: For the write operation, set this bit \n\nto 1 before writing data to \n\nBUF_DATA_0~15. And for READ \n\noperation, this bit has only to be set \n\nbefore starting data transfer by setting \n\nAUX_EN."]
 pub type BufClrR = crate::BitReader;
-#[doc = "Field `BUF_CLR` writer - Write 1 to this bit to clear AUX CH data buffer (BUF_DATA_0 ~ BUF_DATA_15). Always read back 0 from this bit. This bit's type is R/W. This bit is self cleared. Note: For the write operation, set this bit to 1 before writing data to BUF_DATA_0~15. And for READ operation, this bit has only to be set before starting data transfer by setting AUX_EN."]
+#[doc = "Field `BUF_CLR` writer - Write 1 to this bit to clear AUX CH data \n\nbuffer (BUF_DATA_0 ~ BUF_DATA_15). \n\nAlways read back 0 from this bit. \n\nThis bit's type is R/W. This bit is self \n\ncleared. \n\nNote: For the write operation, set this bit \n\nto 1 before writing data to \n\nBUF_DATA_0~15. And for READ \n\noperation, this bit has only to be set \n\nbefore starting data transfer by setting \n\nAUX_EN."]
 pub type BufClrW<'a, REG> = crate::BitWriter1C<'a, REG>;
 impl R {
-    #[doc = "Bits 0:3 - The counts of data AUX CH buffer have. This bit's type is RO."]
+    #[doc = "Bits 0:3 - The counts of data AUX CH buffer have. \n\nThis bit's type is RO."]
     #[inline(always)]
     pub fn buf_data_count(&self) -> BufDataCountR {
         BufDataCountR::new((self.bits & 0x0f) as u8)
@@ -21,14 +21,14 @@ impl R {
     pub fn buf_have_data(&self) -> BufHaveDataR {
         BufHaveDataR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 7 - Write 1 to this bit to clear AUX CH data buffer (BUF_DATA_0 ~ BUF_DATA_15). Always read back 0 from this bit. This bit's type is R/W. This bit is self cleared. Note: For the write operation, set this bit to 1 before writing data to BUF_DATA_0~15. And for READ operation, this bit has only to be set before starting data transfer by setting AUX_EN."]
+    #[doc = "Bit 7 - Write 1 to this bit to clear AUX CH data \n\nbuffer (BUF_DATA_0 ~ BUF_DATA_15). \n\nAlways read back 0 from this bit. \n\nThis bit's type is R/W. This bit is self \n\ncleared. \n\nNote: For the write operation, set this bit \n\nto 1 before writing data to \n\nBUF_DATA_0~15. And for READ \n\noperation, this bit has only to be set \n\nbefore starting data transfer by setting \n\nAUX_EN."]
     #[inline(always)]
     pub fn buf_clr(&self) -> BufClrR {
         BufClrR::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 7 - Write 1 to this bit to clear AUX CH data buffer (BUF_DATA_0 ~ BUF_DATA_15). Always read back 0 from this bit. This bit's type is R/W. This bit is self cleared. Note: For the write operation, set this bit to 1 before writing data to BUF_DATA_0~15. And for READ operation, this bit has only to be set before starting data transfer by setting AUX_EN."]
+    #[doc = "Bit 7 - Write 1 to this bit to clear AUX CH data \n\nbuffer (BUF_DATA_0 ~ BUF_DATA_15). \n\nAlways read back 0 from this bit. \n\nThis bit's type is R/W. This bit is self \n\ncleared. \n\nNote: For the write operation, set this bit \n\nto 1 before writing data to \n\nBUF_DATA_0~15. And for READ \n\noperation, this bit has only to be set \n\nbefore starting data transfer by setting \n\nAUX_EN."]
     #[inline(always)]
     #[must_use]
     pub fn buf_clr(&mut self) -> BufClrW<BufferDataCtlSpec> {

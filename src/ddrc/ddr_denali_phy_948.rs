@@ -1,9 +1,9 @@
 #[doc = "Register `DDR_DENALI_PHY_948` reader"]
 pub type R = crate::R<DdrDenaliPhy948Spec>;
-#[doc = "Field `PHY_CAL_RESULT_OBS_0` reader - Pad calibration results observation values for block 0. READ-ONLY"]
+#[doc = "Field `PHY_CAL_RESULT_OBS_0` reader - Pad calibration results observation values for block 0."]
 pub type PhyCalResultObs0R = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:23 - Pad calibration results observation values for block 0. READ-ONLY"]
+    #[doc = "Bits 0:23 - Pad calibration results observation values for block 0."]
     #[inline(always)]
     pub fn phy_cal_result_obs_0(&self) -> PhyCalResultObs0R {
         PhyCalResultObs0R::new(self.bits & 0x00ff_ffff)

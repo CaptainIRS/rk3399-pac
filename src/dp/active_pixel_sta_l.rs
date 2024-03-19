@@ -3,14 +3,14 @@ pub type R = crate::R<ActivePixelStaLSpec>;
 #[doc = "Register `ACTIVE_PIXEL_STA_L` writer"]
 pub type W = crate::W<ActivePixelStaLSpec>;
 #[doc = "Field `ACTIVE_PIXEL_STA_L` reader - ACTIVE_PIXEL \\[7:0\\]
-which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+which is detected by \n\nvideo capture module. \n\nThis bit field is valid only when STRM_VALID \n\nis high. And STRM_VALID becomes high when \n\ntwo successive frames are determined as \n\nstable."]
 pub type ActivePixelStaLR = crate::FieldReader;
 #[doc = "Field `ACTIVE_PIXEL_STA_L` writer - ACTIVE_PIXEL \\[7:0\\]
-which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+which is detected by \n\nvideo capture module. \n\nThis bit field is valid only when STRM_VALID \n\nis high. And STRM_VALID becomes high when \n\ntwo successive frames are determined as \n\nstable."]
 pub type ActivePixelStaLW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - ACTIVE_PIXEL \\[7:0\\]
-which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+which is detected by \n\nvideo capture module. \n\nThis bit field is valid only when STRM_VALID \n\nis high. And STRM_VALID becomes high when \n\ntwo successive frames are determined as \n\nstable."]
     #[inline(always)]
     pub fn active_pixel_sta_l(&self) -> ActivePixelStaLR {
         ActivePixelStaLR::new((self.bits & 0xff) as u8)
@@ -18,7 +18,7 @@ which is detected by video capture module. This bit field is valid only when STR
 }
 impl W {
     #[doc = "Bits 0:7 - ACTIVE_PIXEL \\[7:0\\]
-which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+which is detected by \n\nvideo capture module. \n\nThis bit field is valid only when STRM_VALID \n\nis high. And STRM_VALID becomes high when \n\ntwo successive frames are determined as \n\nstable."]
     #[inline(always)]
     #[must_use]
     pub fn active_pixel_sta_l(&mut self) -> ActivePixelStaLW<ActivePixelStaLSpec> {

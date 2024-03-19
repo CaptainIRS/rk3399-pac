@@ -1,11 +1,11 @@
 #[doc = "Register `GMAC_RX_POLL_DEMAND` reader"]
 pub type R = crate::R<GmacRxPollDemandSpec>;
-#[doc = "Field `RPD` reader - Receive Poll Demand When these bits are written with any value, the DMA reads the current descriptor pointed to by Register GMAC_CUR_HOST_RX_DESC. If that descriptor is not available (owned by Host), reception returns to the Suspended state and Register GMAC_STATUS\\[7\\]
-is not asserted. If the descriptor is available, the Receive DMA returns to active state."]
+#[doc = "Field `RPD` reader - Receive Poll Demand\n\nWhen these bits are written with any value, the DMA reads the\n\ncurrent descriptor pointed to by Register\n\nGMAC_CUR_HOST_RX_DESC. If that descriptor is not available\n\n(owned by Host), reception returns to the Suspended state and\n\nRegister GMAC_STATUS\\[7\\]
+is not asserted. If the descriptor is\n\navailable, the Receive DMA returns to active state."]
 pub type RpdR = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Receive Poll Demand When these bits are written with any value, the DMA reads the current descriptor pointed to by Register GMAC_CUR_HOST_RX_DESC. If that descriptor is not available (owned by Host), reception returns to the Suspended state and Register GMAC_STATUS\\[7\\]
-is not asserted. If the descriptor is available, the Receive DMA returns to active state."]
+    #[doc = "Bits 0:31 - Receive Poll Demand\n\nWhen these bits are written with any value, the DMA reads the\n\ncurrent descriptor pointed to by Register\n\nGMAC_CUR_HOST_RX_DESC. If that descriptor is not available\n\n(owned by Host), reception returns to the Suspended state and\n\nRegister GMAC_STATUS\\[7\\]
+is not asserted. If the descriptor is\n\navailable, the Receive DMA returns to active state."]
     #[inline(always)]
     pub fn rpd(&self) -> RpdR {
         RpdR::new(self.bits)

@@ -1,9 +1,9 @@
 #[doc = "Register `DDR_DENALI_CTL_317` reader"]
 pub type R = crate::R<DdrDenaliCtl317Spec>;
-#[doc = "Field `USER_DEF_REG_RO_0` reader - User-defined input register 0. READ-ONLY"]
+#[doc = "Field `USER_DEF_REG_RO_0` reader - User-defined input register 0."]
 pub type UserDefRegRo0R = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - User-defined input register 0. READ-ONLY"]
+    #[doc = "Bits 0:31 - User-defined input register 0."]
     #[inline(always)]
     pub fn user_def_reg_ro_0(&self) -> UserDefRegRo0R {
         UserDefRegRo0R::new(self.bits)

@@ -2,15 +2,16 @@
 pub type R = crate::R<DpAuxSpec>;
 #[doc = "Register `DP_AUX` writer"]
 pub type W = crate::W<DpAuxSpec>;
-#[doc = "AUX CH impedance control bits: only control TX impedance\n\nValue on reset: 3"]
+#[doc = "AUX CH impedance control bits: \n\nonly control TX impedance\n\nValue on reset: 3"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AuxTerm {
-    #[doc = "0: 50ohm"]
+    #[doc = "0: 500ohm"]
     B00 = 0,
-    #[doc = "1: 50ohm"]
+    #[doc = "1: 250ohm"]
     B01 = 1,
-    #[doc = "2: 50ohm"]
+    #[doc = "2: 100ohm"]
     B10 = 2,
     #[doc = "3: 50ohm"]
     B11 = 3,
@@ -24,7 +25,7 @@ impl From<AuxTerm> for u8 {
 impl crate::FieldSpec for AuxTerm {
     type Ux = u8;
 }
-#[doc = "Field `AUX_TERM` reader - AUX CH impedance control bits: only control TX impedance"]
+#[doc = "Field `AUX_TERM` reader - AUX CH impedance control bits: \n\nonly control TX impedance"]
 pub type AuxTermR = crate::FieldReader<AuxTerm>;
 impl AuxTermR {
     #[doc = "Get enumerated values variant"]
@@ -38,17 +39,17 @@ impl AuxTermR {
             _ => unreachable!(),
         }
     }
-    #[doc = "50ohm"]
+    #[doc = "500ohm"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == AuxTerm::B00
     }
-    #[doc = "50ohm"]
+    #[doc = "250ohm"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == AuxTerm::B01
     }
-    #[doc = "50ohm"]
+    #[doc = "100ohm"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == AuxTerm::B10
@@ -59,24 +60,24 @@ impl AuxTermR {
         *self == AuxTerm::B11
     }
 }
-#[doc = "Field `AUX_TERM` writer - AUX CH impedance control bits: only control TX impedance"]
+#[doc = "Field `AUX_TERM` writer - AUX CH impedance control bits: \n\nonly control TX impedance"]
 pub type AuxTermW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, AuxTerm>;
 impl<'a, REG> AuxTermW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "50ohm"]
+    #[doc = "500ohm"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(AuxTerm::B00)
     }
-    #[doc = "50ohm"]
+    #[doc = "250ohm"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(AuxTerm::B01)
     }
-    #[doc = "50ohm"]
+    #[doc = "100ohm"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(AuxTerm::B10)
@@ -88,9 +89,10 @@ where
     }
 }
 #[doc = "AUX TX enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DpAuxEn {
-    #[doc = "0: AUX CH configured as TX"]
+    #[doc = "0: AUX CH configured as RX"]
     B0 = 0,
     #[doc = "1: AUX CH configured as TX"]
     B1 = 1,
@@ -112,7 +114,7 @@ impl DpAuxEnR {
             true => DpAuxEn::B1,
         }
     }
-    #[doc = "AUX CH configured as TX"]
+    #[doc = "AUX CH configured as RX"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == DpAuxEn::B0
@@ -124,9 +126,10 @@ impl DpAuxEnR {
     }
 }
 #[doc = "AUX RX CM voltage control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DpAuxCommonMode {
-    #[doc = "0: use VCC1 as CM voltage"]
+    #[doc = "0: AUX CH use VCC1/2 as CM voltage (have static current consumption)"]
     B0 = 0,
     #[doc = "1: use VCC1 as CM voltage"]
     B1 = 1,
@@ -148,7 +151,7 @@ impl DpAuxCommonModeR {
             true => DpAuxCommonMode::B1,
         }
     }
-    #[doc = "use VCC1 as CM voltage"]
+    #[doc = "AUX CH use VCC1/2 as CM voltage (have static current consumption)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == DpAuxCommonMode::B0
@@ -165,7 +168,7 @@ impl<'a, REG> DpAuxCommonModeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "use VCC1 as CM voltage"]
+    #[doc = "AUX CH use VCC1/2 as CM voltage (have static current consumption)"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(DpAuxCommonMode::B0)
@@ -177,7 +180,7 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 0:1 - AUX CH impedance control bits: only control TX impedance"]
+    #[doc = "Bits 0:1 - AUX CH impedance control bits: \n\nonly control TX impedance"]
     #[inline(always)]
     pub fn aux_term(&self) -> AuxTermR {
         AuxTermR::new((self.bits & 3) as u8)
@@ -194,7 +197,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:1 - AUX CH impedance control bits: only control TX impedance"]
+    #[doc = "Bits 0:1 - AUX CH impedance control bits: \n\nonly control TX impedance"]
     #[inline(always)]
     #[must_use]
     pub fn aux_term(&mut self) -> AuxTermW<DpAuxSpec> {

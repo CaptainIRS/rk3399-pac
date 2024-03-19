@@ -3,9 +3,10 @@ pub type R = crate::R<McFlowctrlSpec>;
 #[doc = "Register `MC_FLOWCTRL` writer"]
 pub type W = crate::W<McFlowctrlSpec>;
 #[doc = "Video path Feed Through enable bit:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FeedThroughOff {
-    #[doc = "1: Color Space Converter is bypassed (not in the video data path)."]
+    #[doc = "1: Color Space Converter is in the video data path."]
     B1 = 1,
     #[doc = "0: Color Space Converter is bypassed (not in the video data path)."]
     B0 = 0,
@@ -27,7 +28,7 @@ impl FeedThroughOffR {
             false => FeedThroughOff::B0,
         }
     }
-    #[doc = "Color Space Converter is bypassed (not in the video data path)."]
+    #[doc = "Color Space Converter is in the video data path."]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == FeedThroughOff::B1
@@ -44,7 +45,7 @@ impl<'a, REG> FeedThroughOffW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Color Space Converter is bypassed (not in the video data path)."]
+    #[doc = "Color Space Converter is in the video data path."]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(FeedThroughOff::B1)
@@ -70,7 +71,7 @@ impl W {
         FeedThroughOffW::new(self, 0)
     }
 }
-#[doc = "Video path Feed Through enable bit: 1b: Color Space Converter is in the video data path. 0b: Color Space Converter is bypassed (not in the video data path).\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mc_flowctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mc_flowctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Main Controller Feed Through Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mc_flowctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mc_flowctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct McFlowctrlSpec;
 impl crate::RegisterSpec for McFlowctrlSpec {
     type Ux = u8;

@@ -2,14 +2,14 @@
 pub type R = crate::R<DdrDenaliPhy516Spec>;
 #[doc = "Register `DDR_DENALI_PHY_516` writer"]
 pub type W = crate::W<DdrDenaliPhy516Spec>;
-#[doc = "Field `PHY_ADR_LPBK_ERROR_COUNT_OBS_0` reader - Observation register containing total number of loopback error data for address slice 0. READ-ONLY"]
+#[doc = "Field `PHY_ADR_LPBK_ERROR_COUNT_OBS_0` reader - Observation register containing total number of loopback error data for address slice 0."]
 pub type PhyAdrLpbkErrorCountObs0R = crate::FieldReader<u16>;
 #[doc = "Field `PHY_ADR_MASTER_DLY_LOCK_OBS_SELECT_0` reader - Select value to map the internal master delay observation registers to the accessible master delay observation register for address slice 0."]
 pub type PhyAdrMasterDlyLockObsSelect0R = crate::FieldReader;
 #[doc = "Field `PHY_ADR_MASTER_DLY_LOCK_OBS_SELECT_0` writer - Select value to map the internal master delay observation registers to the accessible master delay observation register for address slice 0."]
 pub type PhyAdrMasterDlyLockObsSelect0W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
-    #[doc = "Bits 0:15 - Observation register containing total number of loopback error data for address slice 0. READ-ONLY"]
+    #[doc = "Bits 0:15 - Observation register containing total number of loopback error data for address slice 0."]
     #[inline(always)]
     pub fn phy_adr_lpbk_error_count_obs_0(&self) -> PhyAdrLpbkErrorCountObs0R {
         PhyAdrLpbkErrorCountObs0R::new((self.bits & 0xffff) as u16)

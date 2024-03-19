@@ -2,16 +2,16 @@
 pub type R = crate::R<AudSpdif1Spec>;
 #[doc = "Register `AUD_SPDIF1` writer"]
 pub type W = crate::W<AudSpdif1Spec>;
-#[doc = "Field `SPDIF_HBR_MODE` reader - When set to 1'b1, this bit field indicates that the input stream has a High Bit Rate (HBR) to be transmitted in HDMI HBR packets. When clear (1b'0), the audio is transmitted in HDMI AUDS packets.Note:&lt; Otherwise, this field is a \"spare\" bit with no associated functionality."]
+#[doc = "Field `SPDIF_HBR_MODE` reader - When set to 1'b1, this bit field indicates that the input\n\nstream has a High Bit Rate (HBR) to be transmitted in\n\nHDMI HBR packets. When clear (1b'0), the audio is\n\ntransmitted in HDMI AUDS packets.Note:&lt; Otherwise,\n\nthis field is a \"spare\" bit with no associated\n\nfunctionality."]
 pub type SpdifHbrModeR = crate::BitReader;
-#[doc = "Field `SPDIF_HBR_MODE` writer - When set to 1'b1, this bit field indicates that the input stream has a High Bit Rate (HBR) to be transmitted in HDMI HBR packets. When clear (1b'0), the audio is transmitted in HDMI AUDS packets.Note:&lt; Otherwise, this field is a \"spare\" bit with no associated functionality."]
+#[doc = "Field `SPDIF_HBR_MODE` writer - When set to 1'b1, this bit field indicates that the input\n\nstream has a High Bit Rate (HBR) to be transmitted in\n\nHDMI HBR packets. When clear (1b'0), the audio is\n\ntransmitted in HDMI AUDS packets.Note:&lt; Otherwise,\n\nthis field is a \"spare\" bit with no associated\n\nfunctionality."]
 pub type SpdifHbrModeW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SETNLPCM` reader - Select Non-Linear (1b) / Linear (0b) PCM mode"]
 pub type SetnlpcmR = crate::BitReader;
 #[doc = "Field `SETNLPCM` writer - Select Non-Linear (1b) / Linear (0b) PCM mode"]
 pub type SetnlpcmW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 6 - When set to 1'b1, this bit field indicates that the input stream has a High Bit Rate (HBR) to be transmitted in HDMI HBR packets. When clear (1b'0), the audio is transmitted in HDMI AUDS packets.Note:&lt; Otherwise, this field is a \"spare\" bit with no associated functionality."]
+    #[doc = "Bit 6 - When set to 1'b1, this bit field indicates that the input\n\nstream has a High Bit Rate (HBR) to be transmitted in\n\nHDMI HBR packets. When clear (1b'0), the audio is\n\ntransmitted in HDMI AUDS packets.Note:&lt; Otherwise,\n\nthis field is a \"spare\" bit with no associated\n\nfunctionality."]
     #[inline(always)]
     pub fn spdif_hbr_mode(&self) -> SpdifHbrModeR {
         SpdifHbrModeR::new(((self.bits >> 6) & 1) != 0)
@@ -23,7 +23,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 6 - When set to 1'b1, this bit field indicates that the input stream has a High Bit Rate (HBR) to be transmitted in HDMI HBR packets. When clear (1b'0), the audio is transmitted in HDMI AUDS packets.Note:&lt; Otherwise, this field is a \"spare\" bit with no associated functionality."]
+    #[doc = "Bit 6 - When set to 1'b1, this bit field indicates that the input\n\nstream has a High Bit Rate (HBR) to be transmitted in\n\nHDMI HBR packets. When clear (1b'0), the audio is\n\ntransmitted in HDMI AUDS packets.Note:&lt; Otherwise,\n\nthis field is a \"spare\" bit with no associated\n\nfunctionality."]
     #[inline(always)]
     #[must_use]
     pub fn spdif_hbr_mode(&mut self) -> SpdifHbrModeW<AudSpdif1Spec> {
@@ -36,7 +36,7 @@ impl W {
         SetnlpcmW::new(self, 7)
     }
 }
-#[doc = "When set to 1'b1, this bit field indicates that the input stream has a High Bit Rate (HBR) to be transmitted in HDMI HBR packets. When clear (1b'0), the audio is transmitted in HDMI AUDS packets.Note:&lt; Otherwise, this field is a \"spare\" bit with no associated functionality.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aud_spdif1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`aud_spdif1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Audio SPDIF NLPCM and Width Configuration Register 1 This register\n\nconfigures the SPDIF data width.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aud_spdif1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`aud_spdif1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AudSpdif1Spec;
 impl crate::RegisterSpec for AudSpdif1Spec {
     type Ux = u8;

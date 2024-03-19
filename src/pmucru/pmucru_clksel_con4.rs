@@ -2,14 +2,15 @@
 pub type R = crate::R<PmucruClkselCon4Spec>;
 #[doc = "Register `PMUCRU_CLKSEL_CON4` writer"]
 pub type W = crate::W<PmucruClkselCon4Spec>;
-#[doc = "Field `CLK_32K_SUSPEND_DIV_CON` reader - clk_32k_suspend divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_32K_SUSPEND_DIV_CON` reader - clk_32k_suspend divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type Clk32kSuspendDivConR = crate::FieldReader<u16>;
-#[doc = "Field `CLK_32K_SUSPEND_DIV_CON` writer - clk_32k_suspend divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_32K_SUSPEND_DIV_CON` writer - clk_32k_suspend divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type Clk32kSuspendDivConW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 #[doc = "clk_32k_suspend source select control register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Clk32kSuspendSel {
-    #[doc = "0: 32k from pmu 24m div"]
+    #[doc = "0: test clock out"]
     B0 = 0,
     #[doc = "1: 32k from pmu 24m div"]
     B1 = 1,
@@ -31,7 +32,7 @@ impl Clk32kSuspendSelR {
             true => Clk32kSuspendSel::B1,
         }
     }
-    #[doc = "32k from pmu 24m div"]
+    #[doc = "test clock out"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Clk32kSuspendSel::B0
@@ -48,7 +49,7 @@ impl<'a, REG> Clk32kSuspendSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "32k from pmu 24m div"]
+    #[doc = "test clock out"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Clk32kSuspendSel::B0)
@@ -59,10 +60,10 @@ where
         self.variant(Clk32kSuspendSel::B1)
     }
 }
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:9 - clk_32k_suspend divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:9 - clk_32k_suspend divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn clk_32k_suspend_div_con(&self) -> Clk32kSuspendDivConR {
         Clk32kSuspendDivConR::new((self.bits & 0x03ff) as u16)
@@ -74,7 +75,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:9 - clk_32k_suspend divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:9 - clk_32k_suspend divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn clk_32k_suspend_div_con(&mut self) -> Clk32kSuspendDivConW<PmucruClkselCon4Spec> {
@@ -86,7 +87,7 @@ impl W {
     pub fn clk_32k_suspend_sel(&mut self) -> Clk32kSuspendSelW<PmucruClkselCon4Spec> {
         Clk32kSuspendSelW::new(self, 15)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<PmucruClkselCon4Spec> {

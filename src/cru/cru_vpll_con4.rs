@@ -3,9 +3,10 @@ pub type R = crate::R<CruVpllCon4Spec>;
 #[doc = "Register `CRU_VPLL_CON4` writer"]
 pub type W = crate::W<CruVpllCon4Spec>;
 #[doc = "Bypass SSMOD by integration\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SsmodBp {
-    #[doc = "0: bypass"]
+    #[doc = "0: no bypass"]
     B0 = 0,
     #[doc = "1: bypass"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl SsmodBpR {
             true => SsmodBp::B1,
         }
     }
-    #[doc = "bypass"]
+    #[doc = "no bypass"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SsmodBp::B0
@@ -44,7 +45,7 @@ impl<'a, REG> SsmodBpW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "bypass"]
+    #[doc = "no bypass"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SsmodBp::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Bypass SSMOD by module\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SsmodDisableSscg {
-    #[doc = "0: bypass"]
+    #[doc = "0: no bypass"]
     B0 = 0,
     #[doc = "1: bypass"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl SsmodDisableSscgR {
             true => SsmodDisableSscg::B1,
         }
     }
-    #[doc = "bypass"]
+    #[doc = "no bypass"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SsmodDisableSscg::B0
@@ -97,7 +99,7 @@ impl<'a, REG> SsmodDisableSscgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "bypass"]
+    #[doc = "no bypass"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SsmodDisableSscg::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "Reset modulator state\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SsmodReset {
-    #[doc = "0: reset"]
+    #[doc = "0: no reset"]
     B0 = 0,
     #[doc = "1: reset"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl SsmodResetR {
             true => SsmodReset::B1,
         }
     }
-    #[doc = "reset"]
+    #[doc = "no reset"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SsmodReset::B0
@@ -150,7 +153,7 @@ impl<'a, REG> SsmodResetW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "reset"]
+    #[doc = "no reset"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SsmodReset::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "Selects center spread or downs pread\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SsmodDownspread {
-    #[doc = "0: down spread"]
+    #[doc = "0: center spread"]
     B0 = 0,
     #[doc = "1: down spread"]
     B1 = 1,
@@ -186,7 +190,7 @@ impl SsmodDownspreadR {
             true => SsmodDownspread::B1,
         }
     }
-    #[doc = "down spread"]
+    #[doc = "center spread"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SsmodDownspread::B0
@@ -203,7 +207,7 @@ impl<'a, REG> SsmodDownspreadW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "down spread"]
+    #[doc = "center spread"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SsmodDownspread::B0)
@@ -214,15 +218,15 @@ where
         self.variant(SsmodDownspread::B1)
     }
 }
-#[doc = "Field `SSMOD_DIVVAL` reader - Divider required to set the modulation frequency Divider required to set the modulation frequency"]
+#[doc = "Field `SSMOD_DIVVAL` reader - Divider required to set the modulation frequency\n\nDivider required to set the modulation frequency"]
 pub type SsmodDivvalR = crate::FieldReader;
-#[doc = "Field `SSMOD_DIVVAL` writer - Divider required to set the modulation frequency Divider required to set the modulation frequency"]
+#[doc = "Field `SSMOD_DIVVAL` writer - Divider required to set the modulation frequency\n\nDivider required to set the modulation frequency"]
 pub type SsmodDivvalW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-#[doc = "Field `SSMOD_SPREAD` reader - spread amplitude % = 0.1 * SPREAD\\[4:0\\]"]
+#[doc = "Field `SSMOD_SPREAD` reader - spread amplitude\n\n% = 0.1 * SPREAD\\[4:0\\]"]
 pub type SsmodSpreadR = crate::FieldReader;
-#[doc = "Field `SSMOD_SPREAD` writer - spread amplitude % = 0.1 * SPREAD\\[4:0\\]"]
+#[doc = "Field `SSMOD_SPREAD` writer - spread amplitude\n\n% = 0.1 * SPREAD\\[4:0\\]"]
 pub type SsmodSpreadW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0 - Bypass SSMOD by integration"]
@@ -245,12 +249,12 @@ impl R {
     pub fn ssmod_downspread(&self) -> SsmodDownspreadR {
         SsmodDownspreadR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bits 4:7 - Divider required to set the modulation frequency Divider required to set the modulation frequency"]
+    #[doc = "Bits 4:7 - Divider required to set the modulation frequency\n\nDivider required to set the modulation frequency"]
     #[inline(always)]
     pub fn ssmod_divval(&self) -> SsmodDivvalR {
         SsmodDivvalR::new(((self.bits >> 4) & 0x0f) as u8)
     }
-    #[doc = "Bits 8:12 - spread amplitude % = 0.1 * SPREAD\\[4:0\\]"]
+    #[doc = "Bits 8:12 - spread amplitude\n\n% = 0.1 * SPREAD\\[4:0\\]"]
     #[inline(always)]
     pub fn ssmod_spread(&self) -> SsmodSpreadR {
         SsmodSpreadR::new(((self.bits >> 8) & 0x1f) as u8)
@@ -281,19 +285,19 @@ impl W {
     pub fn ssmod_downspread(&mut self) -> SsmodDownspreadW<CruVpllCon4Spec> {
         SsmodDownspreadW::new(self, 3)
     }
-    #[doc = "Bits 4:7 - Divider required to set the modulation frequency Divider required to set the modulation frequency"]
+    #[doc = "Bits 4:7 - Divider required to set the modulation frequency\n\nDivider required to set the modulation frequency"]
     #[inline(always)]
     #[must_use]
     pub fn ssmod_divval(&mut self) -> SsmodDivvalW<CruVpllCon4Spec> {
         SsmodDivvalW::new(self, 4)
     }
-    #[doc = "Bits 8:12 - spread amplitude % = 0.1 * SPREAD\\[4:0\\]"]
+    #[doc = "Bits 8:12 - spread amplitude\n\n% = 0.1 * SPREAD\\[4:0\\]"]
     #[inline(always)]
     #[must_use]
     pub fn ssmod_spread(&mut self) -> SsmodSpreadW<CruVpllCon4Spec> {
         SsmodSpreadW::new(self, 8)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruVpllCon4Spec> {

@@ -2,15 +2,16 @@
 pub type R = crate::R<DpVidCtlSpec>;
 #[doc = "Register `DP_VID_CTL` writer"]
 pub type W = crate::W<DpVidCtlSpec>;
-#[doc = "Colorimetric format with video which transferred via DP main link\n\nValue on reset: 0"]
+#[doc = "Colorimetric format with video which \n\ntransferred via DP main link\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ColorF {
-    #[doc = "3: RGB."]
+    #[doc = "3: Reserved,"]
     B11 = 3,
-    #[doc = "2: RGB."]
+    #[doc = "2: YcbCr444,"]
     B10 = 2,
-    #[doc = "1: RGB."]
+    #[doc = "1: YcbCr422,"]
     B01 = 1,
     #[doc = "0: RGB."]
     B00 = 0,
@@ -24,7 +25,7 @@ impl From<ColorF> for u8 {
 impl crate::FieldSpec for ColorF {
     type Ux = u8;
 }
-#[doc = "Field `COLOR_F` reader - Colorimetric format with video which transferred via DP main link"]
+#[doc = "Field `COLOR_F` reader - Colorimetric format with video which \n\ntransferred via DP main link"]
 pub type ColorFR = crate::FieldReader<ColorF>;
 impl ColorFR {
     #[doc = "Get enumerated values variant"]
@@ -38,17 +39,17 @@ impl ColorFR {
             _ => unreachable!(),
         }
     }
-    #[doc = "RGB."]
+    #[doc = "Reserved,"]
     #[inline(always)]
     pub fn is_b11(&self) -> bool {
         *self == ColorF::B11
     }
-    #[doc = "RGB."]
+    #[doc = "YcbCr444,"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == ColorF::B10
     }
-    #[doc = "RGB."]
+    #[doc = "YcbCr422,"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == ColorF::B01
@@ -59,24 +60,24 @@ impl ColorFR {
         *self == ColorF::B00
     }
 }
-#[doc = "Field `COLOR_F` writer - Colorimetric format with video which transferred via DP main link"]
+#[doc = "Field `COLOR_F` writer - Colorimetric format with video which \n\ntransferred via DP main link"]
 pub type ColorFW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ColorF>;
 impl<'a, REG> ColorFW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "RGB."]
+    #[doc = "Reserved,"]
     #[inline(always)]
     pub fn b11(self) -> &'a mut crate::W<REG> {
         self.variant(ColorF::B11)
     }
-    #[doc = "RGB."]
+    #[doc = "YcbCr444,"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(ColorF::B10)
     }
-    #[doc = "RGB."]
+    #[doc = "YcbCr422,"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(ColorF::B01)
@@ -88,9 +89,10 @@ where
     }
 }
 #[doc = "Dynamic range\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DRange {
-    #[doc = "1: VESA range (from 0 to the maximum)."]
+    #[doc = "1: CEA range,"]
     B1 = 1,
     #[doc = "0: VESA range (from 0 to the maximum)."]
     B0 = 0,
@@ -112,7 +114,7 @@ impl DRangeR {
             false => DRange::B0,
         }
     }
-    #[doc = "VESA range (from 0 to the maximum)."]
+    #[doc = "CEA range,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == DRange::B1
@@ -129,7 +131,7 @@ impl<'a, REG> DRangeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "VESA range (from 0 to the maximum)."]
+    #[doc = "CEA range,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(DRange::B1)
@@ -140,10 +142,11 @@ where
         self.variant(DRange::B0)
     }
 }
-#[doc = "YcbCr Coefficients with video which transferred via DP main link\n\nValue on reset: 0"]
+#[doc = "YcbCr Coefficients with video which \n\ntransferred via DP main link\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum YcCoeff {
-    #[doc = "1: ITU601."]
+    #[doc = "1: ITU709,"]
     B1 = 1,
     #[doc = "0: ITU601."]
     B0 = 0,
@@ -154,7 +157,7 @@ impl From<YcCoeff> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `YC_COEFF` reader - YcbCr Coefficients with video which transferred via DP main link"]
+#[doc = "Field `YC_COEFF` reader - YcbCr Coefficients with video which \n\ntransferred via DP main link"]
 pub type YcCoeffR = crate::BitReader<YcCoeff>;
 impl YcCoeffR {
     #[doc = "Get enumerated values variant"]
@@ -165,7 +168,7 @@ impl YcCoeffR {
             false => YcCoeff::B0,
         }
     }
-    #[doc = "ITU601."]
+    #[doc = "ITU709,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == YcCoeff::B1
@@ -176,13 +179,13 @@ impl YcCoeffR {
         *self == YcCoeff::B0
     }
 }
-#[doc = "Field `YC_COEFF` writer - YcbCr Coefficients with video which transferred via DP main link"]
+#[doc = "Field `YC_COEFF` writer - YcbCr Coefficients with video which \n\ntransferred via DP main link"]
 pub type YcCoeffW<'a, REG> = crate::BitWriter1C<'a, REG, YcCoeff>;
 impl<'a, REG> YcCoeffW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "ITU601."]
+    #[doc = "ITU709,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(YcCoeff::B1)
@@ -193,15 +196,16 @@ where
         self.variant(YcCoeff::B0)
     }
 }
-#[doc = "Bit per color/ component with video which transferred via DP main link 101, 110, 111, 100: Reserved,\n\nValue on reset: 1"]
+#[doc = "Bit per color/ component with video which \n\ntransferred via DP main link \n\n101, 110, 111, 100: Reserved,\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Bpc {
-    #[doc = "3: 6 bits."]
+    #[doc = "3: 12 bits,"]
     B011 = 3,
-    #[doc = "2: 6 bits."]
+    #[doc = "2: 10 bits,"]
     B010 = 2,
-    #[doc = "1: 6 bits."]
+    #[doc = "1: 8 bits,"]
     B001 = 1,
     #[doc = "0: 6 bits."]
     B000 = 0,
@@ -215,7 +219,7 @@ impl From<Bpc> for u8 {
 impl crate::FieldSpec for Bpc {
     type Ux = u8;
 }
-#[doc = "Field `BPC` reader - Bit per color/ component with video which transferred via DP main link 101, 110, 111, 100: Reserved,"]
+#[doc = "Field `BPC` reader - Bit per color/ component with video which \n\ntransferred via DP main link \n\n101, 110, 111, 100: Reserved,"]
 pub type BpcR = crate::FieldReader<Bpc>;
 impl BpcR {
     #[doc = "Get enumerated values variant"]
@@ -229,17 +233,17 @@ impl BpcR {
             _ => None,
         }
     }
-    #[doc = "6 bits."]
+    #[doc = "12 bits,"]
     #[inline(always)]
     pub fn is_b011(&self) -> bool {
         *self == Bpc::B011
     }
-    #[doc = "6 bits."]
+    #[doc = "10 bits,"]
     #[inline(always)]
     pub fn is_b010(&self) -> bool {
         *self == Bpc::B010
     }
-    #[doc = "6 bits."]
+    #[doc = "8 bits,"]
     #[inline(always)]
     pub fn is_b001(&self) -> bool {
         *self == Bpc::B001
@@ -250,24 +254,24 @@ impl BpcR {
         *self == Bpc::B000
     }
 }
-#[doc = "Field `BPC` writer - Bit per color/ component with video which transferred via DP main link 101, 110, 111, 100: Reserved,"]
+#[doc = "Field `BPC` writer - Bit per color/ component with video which \n\ntransferred via DP main link \n\n101, 110, 111, 100: Reserved,"]
 pub type BpcW<'a, REG> = crate::FieldWriter<'a, REG, 3, Bpc>;
 impl<'a, REG> BpcW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "6 bits."]
+    #[doc = "12 bits,"]
     #[inline(always)]
     pub fn b011(self) -> &'a mut crate::W<REG> {
         self.variant(Bpc::B011)
     }
-    #[doc = "6 bits."]
+    #[doc = "10 bits,"]
     #[inline(always)]
     pub fn b010(self) -> &'a mut crate::W<REG> {
         self.variant(Bpc::B010)
     }
-    #[doc = "6 bits."]
+    #[doc = "8 bits,"]
     #[inline(always)]
     pub fn b001(self) -> &'a mut crate::W<REG> {
         self.variant(Bpc::B001)
@@ -279,7 +283,7 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 1:2 - Colorimetric format with video which transferred via DP main link"]
+    #[doc = "Bits 1:2 - Colorimetric format with video which \n\ntransferred via DP main link"]
     #[inline(always)]
     pub fn color_f(&self) -> ColorFR {
         ColorFR::new(((self.bits >> 1) & 3) as u8)
@@ -289,19 +293,19 @@ impl R {
     pub fn d_range(&self) -> DRangeR {
         DRangeR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - YcbCr Coefficients with video which transferred via DP main link"]
+    #[doc = "Bit 4 - YcbCr Coefficients with video which \n\ntransferred via DP main link"]
     #[inline(always)]
     pub fn yc_coeff(&self) -> YcCoeffR {
         YcCoeffR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bits 5:7 - Bit per color/ component with video which transferred via DP main link 101, 110, 111, 100: Reserved,"]
+    #[doc = "Bits 5:7 - Bit per color/ component with video which \n\ntransferred via DP main link \n\n101, 110, 111, 100: Reserved,"]
     #[inline(always)]
     pub fn bpc(&self) -> BpcR {
         BpcR::new(((self.bits >> 5) & 7) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 1:2 - Colorimetric format with video which transferred via DP main link"]
+    #[doc = "Bits 1:2 - Colorimetric format with video which \n\ntransferred via DP main link"]
     #[inline(always)]
     #[must_use]
     pub fn color_f(&mut self) -> ColorFW<DpVidCtlSpec> {
@@ -313,13 +317,13 @@ impl W {
     pub fn d_range(&mut self) -> DRangeW<DpVidCtlSpec> {
         DRangeW::new(self, 3)
     }
-    #[doc = "Bit 4 - YcbCr Coefficients with video which transferred via DP main link"]
+    #[doc = "Bit 4 - YcbCr Coefficients with video which \n\ntransferred via DP main link"]
     #[inline(always)]
     #[must_use]
     pub fn yc_coeff(&mut self) -> YcCoeffW<DpVidCtlSpec> {
         YcCoeffW::new(self, 4)
     }
-    #[doc = "Bits 5:7 - Bit per color/ component with video which transferred via DP main link 101, 110, 111, 100: Reserved,"]
+    #[doc = "Bits 5:7 - Bit per color/ component with video which \n\ntransferred via DP main link \n\n101, 110, 111, 100: Reserved,"]
     #[inline(always)]
     #[must_use]
     pub fn bpc(&mut self) -> BpcW<DpVidCtlSpec> {

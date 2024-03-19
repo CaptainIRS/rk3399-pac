@@ -2,27 +2,28 @@
 pub type R = crate::R<GmacDebugSpec>;
 #[doc = "Register `GMAC_DEBUG` writer"]
 pub type W = crate::W<GmacDebugSpec>;
-#[doc = "Field `RDB` reader - When high, it indicates that the MAC GMII/MII receive protocol engine is actively receiving data and not in IDLE state."]
+#[doc = "Field `RDB` reader - When high, it indicates that the MAC GMII/MII receive protocol\n\nengine is actively receiving data and not in IDLE state."]
 pub type RdbR = crate::BitReader;
-#[doc = "Field `RDB` writer - When high, it indicates that the MAC GMII/MII receive protocol engine is actively receiving data and not in IDLE state."]
+#[doc = "Field `RDB` writer - When high, it indicates that the MAC GMII/MII receive protocol\n\nengine is actively receiving data and not in IDLE state."]
 pub type RdbW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACT` reader - When high, it indicates the active state of the small FIFO Read and Write controllers respectively of the MAC receive Frame Controller module"]
+#[doc = "Field `ACT` reader - When high, it indicates the active state of the small FIFO Read\n\nand Write controllers respectively of the MAC receive Frame\n\nController module"]
 pub type ActR = crate::FieldReader;
-#[doc = "Field `ACT` writer - When high, it indicates the active state of the small FIFO Read and Write controllers respectively of the MAC receive Frame Controller module"]
+#[doc = "Field `ACT` writer - When high, it indicates the active state of the small FIFO Read\n\nand Write controllers respectively of the MAC receive Frame\n\nController module"]
 pub type ActW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-#[doc = "Field `RFIFOWR` reader - When high, it indicates that the MTL RxFIFO Write Controller is active and transferring a received frame to the FIFO."]
+#[doc = "Field `RFIFOWR` reader - When high, it indicates that the MTL RxFIFO Write Controller is\n\nactive and transferring a received frame to the FIFO."]
 pub type RfifowrR = crate::BitReader;
-#[doc = "Field `RFIFOWR` writer - When high, it indicates that the MTL RxFIFO Write Controller is active and transferring a received frame to the FIFO."]
+#[doc = "Field `RFIFOWR` writer - When high, it indicates that the MTL RxFIFO Write Controller is\n\nactive and transferring a received frame to the FIFO."]
 pub type RfifowrW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "It gives the state of the RxFIFO read Controller:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Rfiford {
-    #[doc = "0: Flushing the frame data and Status"]
+    #[doc = "0: IDLE state"]
     B00 = 0,
-    #[doc = "1: Flushing the frame data and Status"]
+    #[doc = "1: Reading frame data"]
     B01 = 1,
-    #[doc = "2: Flushing the frame data and Status"]
+    #[doc = "2: Reading frame status (or time-stamp)"]
     B10 = 2,
     #[doc = "3: Flushing the frame data and Status"]
     B11 = 3,
@@ -50,17 +51,17 @@ impl RfifordR {
             _ => unreachable!(),
         }
     }
-    #[doc = "Flushing the frame data and Status"]
+    #[doc = "IDLE state"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == Rfiford::B00
     }
-    #[doc = "Flushing the frame data and Status"]
+    #[doc = "Reading frame data"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Rfiford::B01
     }
-    #[doc = "Flushing the frame data and Status"]
+    #[doc = "Reading frame status (or time-stamp)"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Rfiford::B10
@@ -78,17 +79,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Flushing the frame data and Status"]
+    #[doc = "IDLE state"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(Rfiford::B00)
     }
-    #[doc = "Flushing the frame data and Status"]
+    #[doc = "Reading frame data"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Rfiford::B01)
     }
-    #[doc = "Flushing the frame data and Status"]
+    #[doc = "Reading frame status (or time-stamp)"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Rfiford::B10)
@@ -100,14 +101,15 @@ where
     }
 }
 #[doc = "This gives the status of the RxFIFO Fill-level:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Rfifo {
-    #[doc = "0: RxFIFO Full"]
+    #[doc = "0: RxFIFO Empty"]
     B00 = 0,
-    #[doc = "1: RxFIFO Full"]
+    #[doc = "1: RxFIFO fill-level below flow-control de-activate threshold"]
     B01 = 1,
-    #[doc = "2: RxFIFO Full"]
+    #[doc = "2: RxFIFO fill-level above flow-control activate threshold"]
     B10 = 2,
     #[doc = "3: RxFIFO Full"]
     B11 = 3,
@@ -135,17 +137,17 @@ impl RfifoR {
             _ => unreachable!(),
         }
     }
-    #[doc = "RxFIFO Full"]
+    #[doc = "RxFIFO Empty"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == Rfifo::B00
     }
-    #[doc = "RxFIFO Full"]
+    #[doc = "RxFIFO fill-level below flow-control de-activate threshold"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Rfifo::B01
     }
-    #[doc = "RxFIFO Full"]
+    #[doc = "RxFIFO fill-level above flow-control activate threshold"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Rfifo::B10
@@ -163,17 +165,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "RxFIFO Full"]
+    #[doc = "RxFIFO Empty"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(Rfifo::B00)
     }
-    #[doc = "RxFIFO Full"]
+    #[doc = "RxFIFO fill-level below flow-control de-activate threshold"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Rfifo::B01)
     }
-    #[doc = "RxFIFO Full"]
+    #[doc = "RxFIFO fill-level above flow-control activate threshold"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Rfifo::B10)
@@ -184,19 +186,20 @@ where
         self.variant(Rfifo::B11)
     }
 }
-#[doc = "Field `TACT` reader - When high, it indicates that the MAC GMII/MII transmit protocol engine is actively transmitting data and not in IDLE state."]
+#[doc = "Field `TACT` reader - When high, it indicates that the MAC GMII/MII transmit protocol\n\nengine is actively transmitting data and not in IDLE state."]
 pub type TactR = crate::BitReader;
-#[doc = "Field `TACT` writer - When high, it indicates that the MAC GMII/MII transmit protocol engine is actively transmitting data and not in IDLE state."]
+#[doc = "Field `TACT` writer - When high, it indicates that the MAC GMII/MII transmit protocol\n\nengine is actively transmitting data and not in IDLE state."]
 pub type TactW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "This indicates the state of the MAC Transmit Frame Controller module:\n\nValue on reset: 0"]
+#[doc = "This indicates the state of the MAC Transmit Frame Controller\n\nmodule:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Tsat {
-    #[doc = "0: Transferring input frame for transmission"]
+    #[doc = "0: IDLE"]
     B00 = 0,
-    #[doc = "1: Transferring input frame for transmission"]
+    #[doc = "1: Waiting for Status of previous frame or IFG/backoff period to be over"]
     B01 = 1,
-    #[doc = "2: Transferring input frame for transmission"]
+    #[doc = "2: Generating and transmitting a PAUSE control frame (in full duplex mode)"]
     B10 = 2,
     #[doc = "3: Transferring input frame for transmission"]
     B11 = 3,
@@ -210,7 +213,7 @@ impl From<Tsat> for u8 {
 impl crate::FieldSpec for Tsat {
     type Ux = u8;
 }
-#[doc = "Field `TSAT` reader - This indicates the state of the MAC Transmit Frame Controller module:"]
+#[doc = "Field `TSAT` reader - This indicates the state of the MAC Transmit Frame Controller\n\nmodule:"]
 pub type TsatR = crate::FieldReader<Tsat>;
 impl TsatR {
     #[doc = "Get enumerated values variant"]
@@ -224,17 +227,17 @@ impl TsatR {
             _ => unreachable!(),
         }
     }
-    #[doc = "Transferring input frame for transmission"]
+    #[doc = "IDLE"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == Tsat::B00
     }
-    #[doc = "Transferring input frame for transmission"]
+    #[doc = "Waiting for Status of previous frame or IFG/backoff period to be over"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Tsat::B01
     }
-    #[doc = "Transferring input frame for transmission"]
+    #[doc = "Generating and transmitting a PAUSE control frame (in full duplex mode)"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Tsat::B10
@@ -245,24 +248,24 @@ impl TsatR {
         *self == Tsat::B11
     }
 }
-#[doc = "Field `TSAT` writer - This indicates the state of the MAC Transmit Frame Controller module:"]
+#[doc = "Field `TSAT` writer - This indicates the state of the MAC Transmit Frame Controller\n\nmodule:"]
 pub type TsatW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Tsat>;
 impl<'a, REG> TsatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Transferring input frame for transmission"]
+    #[doc = "IDLE"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(Tsat::B00)
     }
-    #[doc = "Transferring input frame for transmission"]
+    #[doc = "Waiting for Status of previous frame or IFG/backoff period to be over"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Tsat::B01)
     }
-    #[doc = "Transferring input frame for transmission"]
+    #[doc = "Generating and transmitting a PAUSE control frame (in full duplex mode)"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Tsat::B10)
@@ -273,19 +276,20 @@ where
         self.variant(Tsat::B11)
     }
 }
-#[doc = "Field `PAUSE` reader - When high, it indicates that the MAC transmitter is in PAUSE condition (in full-duplex only) and hence will not schedule any frame for transmission"]
+#[doc = "Field `PAUSE` reader - When high, it indicates that the MAC transmitter is in PAUSE\n\ncondition (in full-duplex only) and hence will not schedule any\n\nframe for transmission"]
 pub type PauseR = crate::BitReader;
-#[doc = "Field `PAUSE` writer - When high, it indicates that the MAC transmitter is in PAUSE condition (in full-duplex only) and hence will not schedule any frame for transmission"]
+#[doc = "Field `PAUSE` writer - When high, it indicates that the MAC transmitter is in PAUSE\n\ncondition (in full-duplex only) and hence will not schedule any\n\nframe for transmission"]
 pub type PauseW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "This indicates the state of the TxFIFO read Controller:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Tfifosta {
-    #[doc = "0: Writing the received TxStatus or flushing the TxFIFO"]
+    #[doc = "0: IDLE state"]
     B00 = 0,
-    #[doc = "1: Writing the received TxStatus or flushing the TxFIFO"]
+    #[doc = "1: READ state (transferring data to MAC transmitter)"]
     B01 = 1,
-    #[doc = "2: Writing the received TxStatus or flushing the TxFIFO"]
+    #[doc = "2: Waiting for TxStatus from MAC transmitter"]
     B10 = 2,
     #[doc = "3: Writing the received TxStatus or flushing the TxFIFO"]
     B11 = 3,
@@ -313,17 +317,17 @@ impl TfifostaR {
             _ => unreachable!(),
         }
     }
-    #[doc = "Writing the received TxStatus or flushing the TxFIFO"]
+    #[doc = "IDLE state"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == Tfifosta::B00
     }
-    #[doc = "Writing the received TxStatus or flushing the TxFIFO"]
+    #[doc = "READ state (transferring data to MAC transmitter)"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Tfifosta::B01
     }
-    #[doc = "Writing the received TxStatus or flushing the TxFIFO"]
+    #[doc = "Waiting for TxStatus from MAC transmitter"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Tfifosta::B10
@@ -341,17 +345,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Writing the received TxStatus or flushing the TxFIFO"]
+    #[doc = "IDLE state"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(Tfifosta::B00)
     }
-    #[doc = "Writing the received TxStatus or flushing the TxFIFO"]
+    #[doc = "READ state (transferring data to MAC transmitter)"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Tfifosta::B01)
     }
-    #[doc = "Writing the received TxStatus or flushing the TxFIFO"]
+    #[doc = "Waiting for TxStatus from MAC transmitter"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Tfifosta::B10)
@@ -362,30 +366,30 @@ where
         self.variant(Tfifosta::B11)
     }
 }
-#[doc = "Field `TFIFO1` reader - When high, it indicates that the MTL TxFIFO Write Controller is active and transferring data to the TxFIFO."]
+#[doc = "Field `TFIFO1` reader - When high, it indicates that the MTL TxFIFO Write Controller is\n\nactive and transferring data to the TxFIFO."]
 pub type Tfifo1R = crate::BitReader;
-#[doc = "Field `TFIFO1` writer - When high, it indicates that the MTL TxFIFO Write Controller is active and transferring data to the TxFIFO."]
+#[doc = "Field `TFIFO1` writer - When high, it indicates that the MTL TxFIFO Write Controller is\n\nactive and transferring data to the TxFIFO."]
 pub type Tfifo1W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `TFIFO2` reader - When high, it indicates that the MTL TxFIFO is not empty and has some data left for transmission."]
+#[doc = "Field `TFIFO2` reader - When high, it indicates that the MTL TxFIFO is not empty and has\n\nsome data left for transmission."]
 pub type Tfifo2R = crate::BitReader;
-#[doc = "Field `TFIFO2` writer - When high, it indicates that the MTL TxFIFO is not empty and has some data left for transmission."]
+#[doc = "Field `TFIFO2` writer - When high, it indicates that the MTL TxFIFO is not empty and has\n\nsome data left for transmission."]
 pub type Tfifo2W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `TFIFO3` reader - When high, it indicates that the MTL TxStatus FIFO is full and hence the MTL will not be accepting any more frames for transmission."]
+#[doc = "Field `TFIFO3` reader - When high, it indicates that the MTL TxStatus FIFO is full and\n\nhence the MTL will not be accepting any more frames for\n\ntransmission."]
 pub type Tfifo3R = crate::BitReader;
-#[doc = "Field `TFIFO3` writer - When high, it indicates that the MTL TxStatus FIFO is full and hence the MTL will not be accepting any more frames for transmission."]
+#[doc = "Field `TFIFO3` writer - When high, it indicates that the MTL TxStatus FIFO is full and\n\nhence the MTL will not be accepting any more frames for\n\ntransmission."]
 pub type Tfifo3W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - When high, it indicates that the MAC GMII/MII receive protocol engine is actively receiving data and not in IDLE state."]
+    #[doc = "Bit 0 - When high, it indicates that the MAC GMII/MII receive protocol\n\nengine is actively receiving data and not in IDLE state."]
     #[inline(always)]
     pub fn rdb(&self) -> RdbR {
         RdbR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bits 1:2 - When high, it indicates the active state of the small FIFO Read and Write controllers respectively of the MAC receive Frame Controller module"]
+    #[doc = "Bits 1:2 - When high, it indicates the active state of the small FIFO Read\n\nand Write controllers respectively of the MAC receive Frame\n\nController module"]
     #[inline(always)]
     pub fn act(&self) -> ActR {
         ActR::new(((self.bits >> 1) & 3) as u8)
     }
-    #[doc = "Bit 4 - When high, it indicates that the MTL RxFIFO Write Controller is active and transferring a received frame to the FIFO."]
+    #[doc = "Bit 4 - When high, it indicates that the MTL RxFIFO Write Controller is\n\nactive and transferring a received frame to the FIFO."]
     #[inline(always)]
     pub fn rfifowr(&self) -> RfifowrR {
         RfifowrR::new(((self.bits >> 4) & 1) != 0)
@@ -400,17 +404,17 @@ impl R {
     pub fn rfifo(&self) -> RfifoR {
         RfifoR::new(((self.bits >> 8) & 3) as u8)
     }
-    #[doc = "Bit 16 - When high, it indicates that the MAC GMII/MII transmit protocol engine is actively transmitting data and not in IDLE state."]
+    #[doc = "Bit 16 - When high, it indicates that the MAC GMII/MII transmit protocol\n\nengine is actively transmitting data and not in IDLE state."]
     #[inline(always)]
     pub fn tact(&self) -> TactR {
         TactR::new(((self.bits >> 16) & 1) != 0)
     }
-    #[doc = "Bits 17:18 - This indicates the state of the MAC Transmit Frame Controller module:"]
+    #[doc = "Bits 17:18 - This indicates the state of the MAC Transmit Frame Controller\n\nmodule:"]
     #[inline(always)]
     pub fn tsat(&self) -> TsatR {
         TsatR::new(((self.bits >> 17) & 3) as u8)
     }
-    #[doc = "Bit 19 - When high, it indicates that the MAC transmitter is in PAUSE condition (in full-duplex only) and hence will not schedule any frame for transmission"]
+    #[doc = "Bit 19 - When high, it indicates that the MAC transmitter is in PAUSE\n\ncondition (in full-duplex only) and hence will not schedule any\n\nframe for transmission"]
     #[inline(always)]
     pub fn pause(&self) -> PauseR {
         PauseR::new(((self.bits >> 19) & 1) != 0)
@@ -420,36 +424,36 @@ impl R {
     pub fn tfifosta(&self) -> TfifostaR {
         TfifostaR::new(((self.bits >> 20) & 3) as u8)
     }
-    #[doc = "Bit 22 - When high, it indicates that the MTL TxFIFO Write Controller is active and transferring data to the TxFIFO."]
+    #[doc = "Bit 22 - When high, it indicates that the MTL TxFIFO Write Controller is\n\nactive and transferring data to the TxFIFO."]
     #[inline(always)]
     pub fn tfifo1(&self) -> Tfifo1R {
         Tfifo1R::new(((self.bits >> 22) & 1) != 0)
     }
-    #[doc = "Bit 24 - When high, it indicates that the MTL TxFIFO is not empty and has some data left for transmission."]
+    #[doc = "Bit 24 - When high, it indicates that the MTL TxFIFO is not empty and has\n\nsome data left for transmission."]
     #[inline(always)]
     pub fn tfifo2(&self) -> Tfifo2R {
         Tfifo2R::new(((self.bits >> 24) & 1) != 0)
     }
-    #[doc = "Bit 25 - When high, it indicates that the MTL TxStatus FIFO is full and hence the MTL will not be accepting any more frames for transmission."]
+    #[doc = "Bit 25 - When high, it indicates that the MTL TxStatus FIFO is full and\n\nhence the MTL will not be accepting any more frames for\n\ntransmission."]
     #[inline(always)]
     pub fn tfifo3(&self) -> Tfifo3R {
         Tfifo3R::new(((self.bits >> 25) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - When high, it indicates that the MAC GMII/MII receive protocol engine is actively receiving data and not in IDLE state."]
+    #[doc = "Bit 0 - When high, it indicates that the MAC GMII/MII receive protocol\n\nengine is actively receiving data and not in IDLE state."]
     #[inline(always)]
     #[must_use]
     pub fn rdb(&mut self) -> RdbW<GmacDebugSpec> {
         RdbW::new(self, 0)
     }
-    #[doc = "Bits 1:2 - When high, it indicates the active state of the small FIFO Read and Write controllers respectively of the MAC receive Frame Controller module"]
+    #[doc = "Bits 1:2 - When high, it indicates the active state of the small FIFO Read\n\nand Write controllers respectively of the MAC receive Frame\n\nController module"]
     #[inline(always)]
     #[must_use]
     pub fn act(&mut self) -> ActW<GmacDebugSpec> {
         ActW::new(self, 1)
     }
-    #[doc = "Bit 4 - When high, it indicates that the MTL RxFIFO Write Controller is active and transferring a received frame to the FIFO."]
+    #[doc = "Bit 4 - When high, it indicates that the MTL RxFIFO Write Controller is\n\nactive and transferring a received frame to the FIFO."]
     #[inline(always)]
     #[must_use]
     pub fn rfifowr(&mut self) -> RfifowrW<GmacDebugSpec> {
@@ -467,19 +471,19 @@ impl W {
     pub fn rfifo(&mut self) -> RfifoW<GmacDebugSpec> {
         RfifoW::new(self, 8)
     }
-    #[doc = "Bit 16 - When high, it indicates that the MAC GMII/MII transmit protocol engine is actively transmitting data and not in IDLE state."]
+    #[doc = "Bit 16 - When high, it indicates that the MAC GMII/MII transmit protocol\n\nengine is actively transmitting data and not in IDLE state."]
     #[inline(always)]
     #[must_use]
     pub fn tact(&mut self) -> TactW<GmacDebugSpec> {
         TactW::new(self, 16)
     }
-    #[doc = "Bits 17:18 - This indicates the state of the MAC Transmit Frame Controller module:"]
+    #[doc = "Bits 17:18 - This indicates the state of the MAC Transmit Frame Controller\n\nmodule:"]
     #[inline(always)]
     #[must_use]
     pub fn tsat(&mut self) -> TsatW<GmacDebugSpec> {
         TsatW::new(self, 17)
     }
-    #[doc = "Bit 19 - When high, it indicates that the MAC transmitter is in PAUSE condition (in full-duplex only) and hence will not schedule any frame for transmission"]
+    #[doc = "Bit 19 - When high, it indicates that the MAC transmitter is in PAUSE\n\ncondition (in full-duplex only) and hence will not schedule any\n\nframe for transmission"]
     #[inline(always)]
     #[must_use]
     pub fn pause(&mut self) -> PauseW<GmacDebugSpec> {
@@ -491,19 +495,19 @@ impl W {
     pub fn tfifosta(&mut self) -> TfifostaW<GmacDebugSpec> {
         TfifostaW::new(self, 20)
     }
-    #[doc = "Bit 22 - When high, it indicates that the MTL TxFIFO Write Controller is active and transferring data to the TxFIFO."]
+    #[doc = "Bit 22 - When high, it indicates that the MTL TxFIFO Write Controller is\n\nactive and transferring data to the TxFIFO."]
     #[inline(always)]
     #[must_use]
     pub fn tfifo1(&mut self) -> Tfifo1W<GmacDebugSpec> {
         Tfifo1W::new(self, 22)
     }
-    #[doc = "Bit 24 - When high, it indicates that the MTL TxFIFO is not empty and has some data left for transmission."]
+    #[doc = "Bit 24 - When high, it indicates that the MTL TxFIFO is not empty and has\n\nsome data left for transmission."]
     #[inline(always)]
     #[must_use]
     pub fn tfifo2(&mut self) -> Tfifo2W<GmacDebugSpec> {
         Tfifo2W::new(self, 24)
     }
-    #[doc = "Bit 25 - When high, it indicates that the MTL TxStatus FIFO is full and hence the MTL will not be accepting any more frames for transmission."]
+    #[doc = "Bit 25 - When high, it indicates that the MTL TxStatus FIFO is full and\n\nhence the MTL will not be accepting any more frames for\n\ntransmission."]
     #[inline(always)]
     #[must_use]
     pub fn tfifo3(&mut self) -> Tfifo3W<GmacDebugSpec> {

@@ -2,16 +2,16 @@
 pub type R = crate::R<FcAvividSpec>;
 #[doc = "Register `FC_AVIVID` writer"]
 pub type W = crate::W<FcAvividSpec>;
-#[doc = "Field `FC_AVIVID` reader - Configures the AVI InfoFrame Video Identification code. For more information, refer to the CEA-861- E specification."]
+#[doc = "Field `FC_AVIVID` reader - Configures the AVI InfoFrame Video Identification\n\ncode. For more information, refer to the CEA-861-\n\nE specification."]
 pub type FcAvividR = crate::FieldReader;
-#[doc = "Field `FC_AVIVID` writer - Configures the AVI InfoFrame Video Identification code. For more information, refer to the CEA-861- E specification."]
+#[doc = "Field `FC_AVIVID` writer - Configures the AVI InfoFrame Video Identification\n\ncode. For more information, refer to the CEA-861-\n\nE specification."]
 pub type FcAvividW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `FC_AVIVID_7` reader - Bit 7 of fc_avivid register"]
 pub type FcAvivid7R = crate::BitReader;
 #[doc = "Field `FC_AVIVID_7` writer - Bit 7 of fc_avivid register"]
 pub type FcAvivid7W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bits 0:6 - Configures the AVI InfoFrame Video Identification code. For more information, refer to the CEA-861- E specification."]
+    #[doc = "Bits 0:6 - Configures the AVI InfoFrame Video Identification\n\ncode. For more information, refer to the CEA-861-\n\nE specification."]
     #[inline(always)]
     pub fn fc_avivid(&self) -> FcAvividR {
         FcAvividR::new(self.bits & 0x7f)
@@ -23,7 +23,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:6 - Configures the AVI InfoFrame Video Identification code. For more information, refer to the CEA-861- E specification."]
+    #[doc = "Bits 0:6 - Configures the AVI InfoFrame Video Identification\n\ncode. For more information, refer to the CEA-861-\n\nE specification."]
     #[inline(always)]
     #[must_use]
     pub fn fc_avivid(&mut self) -> FcAvividW<FcAvividSpec> {
@@ -36,7 +36,7 @@ impl W {
         FcAvivid7W::new(self, 7)
     }
 }
-#[doc = "Configures the AVI InfoFrame Video Identification code. For more information, refer to the CEA-861- E specification.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_avivid::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_avivid::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer AVI Packet VIC Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_avivid::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_avivid::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcAvividSpec;
 impl crate::RegisterSpec for FcAvividSpec {
     type Ux = u8;

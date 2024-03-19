@@ -2,34 +2,34 @@
 pub type R = crate::R<GmacIntMaskSpec>;
 #[doc = "Register `GMAC_INT_MASK` writer"]
 pub type W = crate::W<GmacIntMaskSpec>;
-#[doc = "Field `RIM` reader - RGMII Interrupt Mask This bit when set, will disable the assertion of the interrupt signal due to the setting of RGMII Interrupt Status bit in Register GMAC_INT_STATUS."]
+#[doc = "Field `RIM` reader - RGMII Interrupt Mask\n\nThis bit when set, will disable the assertion of the interrupt signal\n\ndue to the setting of RGMII Interrupt Status bit in Register\n\nGMAC_INT_STATUS."]
 pub type RimR = crate::BitReader;
-#[doc = "Field `RIM` writer - RGMII Interrupt Mask This bit when set, will disable the assertion of the interrupt signal due to the setting of RGMII Interrupt Status bit in Register GMAC_INT_STATUS."]
+#[doc = "Field `RIM` writer - RGMII Interrupt Mask\n\nThis bit when set, will disable the assertion of the interrupt signal\n\ndue to the setting of RGMII Interrupt Status bit in Register\n\nGMAC_INT_STATUS."]
 pub type RimW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PIM` reader - PMT Interrupt Mask This bit when set, will disable the assertion of the interrupt signal due to the setting of PMT Interrupt Status bit in Register GMAC_INT_STATUS."]
+#[doc = "Field `PIM` reader - PMT Interrupt Mask\n\nThis bit when set, will disable the assertion of the interrupt signal\n\ndue to the setting of PMT Interrupt Status bit in Register\n\nGMAC_INT_STATUS."]
 pub type PimR = crate::BitReader;
-#[doc = "Field `PIM` writer - PMT Interrupt Mask This bit when set, will disable the assertion of the interrupt signal due to the setting of PMT Interrupt Status bit in Register GMAC_INT_STATUS."]
+#[doc = "Field `PIM` writer - PMT Interrupt Mask\n\nThis bit when set, will disable the assertion of the interrupt signal\n\ndue to the setting of PMT Interrupt Status bit in Register\n\nGMAC_INT_STATUS."]
 pub type PimW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - RGMII Interrupt Mask This bit when set, will disable the assertion of the interrupt signal due to the setting of RGMII Interrupt Status bit in Register GMAC_INT_STATUS."]
+    #[doc = "Bit 0 - RGMII Interrupt Mask\n\nThis bit when set, will disable the assertion of the interrupt signal\n\ndue to the setting of RGMII Interrupt Status bit in Register\n\nGMAC_INT_STATUS."]
     #[inline(always)]
     pub fn rim(&self) -> RimR {
         RimR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 3 - PMT Interrupt Mask This bit when set, will disable the assertion of the interrupt signal due to the setting of PMT Interrupt Status bit in Register GMAC_INT_STATUS."]
+    #[doc = "Bit 3 - PMT Interrupt Mask\n\nThis bit when set, will disable the assertion of the interrupt signal\n\ndue to the setting of PMT Interrupt Status bit in Register\n\nGMAC_INT_STATUS."]
     #[inline(always)]
     pub fn pim(&self) -> PimR {
         PimR::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - RGMII Interrupt Mask This bit when set, will disable the assertion of the interrupt signal due to the setting of RGMII Interrupt Status bit in Register GMAC_INT_STATUS."]
+    #[doc = "Bit 0 - RGMII Interrupt Mask\n\nThis bit when set, will disable the assertion of the interrupt signal\n\ndue to the setting of RGMII Interrupt Status bit in Register\n\nGMAC_INT_STATUS."]
     #[inline(always)]
     #[must_use]
     pub fn rim(&mut self) -> RimW<GmacIntMaskSpec> {
         RimW::new(self, 0)
     }
-    #[doc = "Bit 3 - PMT Interrupt Mask This bit when set, will disable the assertion of the interrupt signal due to the setting of PMT Interrupt Status bit in Register GMAC_INT_STATUS."]
+    #[doc = "Bit 3 - PMT Interrupt Mask\n\nThis bit when set, will disable the assertion of the interrupt signal\n\ndue to the setting of PMT Interrupt Status bit in Register\n\nGMAC_INT_STATUS."]
     #[inline(always)]
     #[must_use]
     pub fn pim(&mut self) -> PimW<GmacIntMaskSpec> {

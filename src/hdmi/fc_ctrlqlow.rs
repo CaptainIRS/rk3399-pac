@@ -2,26 +2,26 @@
 pub type R = crate::R<FcCtrlqlowSpec>;
 #[doc = "Register `FC_CTRLQLOW` writer"]
 pub type W = crate::W<FcCtrlqlowSpec>;
-#[doc = "Field `ONLOWATTENDED` reader - Configures the number of low priority packets or null packets consecutively attended before checking high priority queue status or audio samples availability. Valid range is from 5'd1 to 5'd31."]
+#[doc = "Field `ONLOWATTENDED` reader - Configures the number of low priority packets or\n\nnull packets consecutively attended before\n\nchecking high priority queue status or audio\n\nsamples availability. Valid range is from 5'd1 to\n\n5'd31."]
 pub type OnlowattendedR = crate::FieldReader;
-#[doc = "Field `ONLOWATTENDED` writer - Configures the number of low priority packets or null packets consecutively attended before checking high priority queue status or audio samples availability. Valid range is from 5'd1 to 5'd31."]
+#[doc = "Field `ONLOWATTENDED` writer - Configures the number of low priority packets or\n\nnull packets consecutively attended before\n\nchecking high priority queue status or audio\n\nsamples availability. Valid range is from 5'd1 to\n\n5'd31."]
 pub type OnlowattendedW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
-    #[doc = "Bits 0:4 - Configures the number of low priority packets or null packets consecutively attended before checking high priority queue status or audio samples availability. Valid range is from 5'd1 to 5'd31."]
+    #[doc = "Bits 0:4 - Configures the number of low priority packets or\n\nnull packets consecutively attended before\n\nchecking high priority queue status or audio\n\nsamples availability. Valid range is from 5'd1 to\n\n5'd31."]
     #[inline(always)]
     pub fn onlowattended(&self) -> OnlowattendedR {
         OnlowattendedR::new(self.bits & 0x1f)
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - Configures the number of low priority packets or null packets consecutively attended before checking high priority queue status or audio samples availability. Valid range is from 5'd1 to 5'd31."]
+    #[doc = "Bits 0:4 - Configures the number of low priority packets or\n\nnull packets consecutively attended before\n\nchecking high priority queue status or audio\n\nsamples availability. Valid range is from 5'd1 to\n\n5'd31."]
     #[inline(always)]
     #[must_use]
     pub fn onlowattended(&mut self) -> OnlowattendedW<FcCtrlqlowSpec> {
         OnlowattendedW::new(self, 0)
     }
 }
-#[doc = "Configures the number of low priority packets or null packets consecutively attended before checking high priority queue status or audio samples availability. Valid range is from 5'd1 to 5'd31.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_ctrlqlow::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_ctrlqlow::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer Number of Low Priority Packets Attended Configuration\n\nRegister\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_ctrlqlow::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_ctrlqlow::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcCtrlqlowSpec;
 impl crate::RegisterSpec for FcCtrlqlowSpec {
     type Ux = u8;

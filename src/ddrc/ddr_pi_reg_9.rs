@@ -2,19 +2,19 @@
 pub type R = crate::R<DdrPiReg9Spec>;
 #[doc = "Register `DDR_PI_REG_9` writer"]
 pub type W = crate::W<DdrPiReg9Spec>;
-#[doc = "Field `PI_TDFI_PHYUPD_TYPE1_F0` reader - Defines the DFI tPHYUPD_TYPE1 timing parameter (in DFI clocks), the maximum cycles that dfi_phyupd_req can assert after dfi_phyupd_ack for dfi_phyupd_type 1. If programmed to a non-zero, a timing violation causes an interrupt and bit5 set in the PI_REG_193.pi_update_error_status parameter and bit5 set in the PI_REG_22.pi_control_error_status parameter. The suffix f0 of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TDFI_PHYUPD_TYPE1_F0` reader - Defines the DFI tPHYUPD_TYPE1 timing parameter (in DFI clocks),\n\nthe maximum cycles that dfi_phyupd_req can assert after\n\ndfi_phyupd_ack for dfi_phyupd_type 1. If programmed to a\n\nnon-zero, a timing violation causes an interrupt and bit5 set in the\n\nPI_REG_193.pi_update_error_status parameter and bit5 set in the\n\nPI_REG_22.pi_control_error_status parameter. The suffix f0 of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTdfiPhyupdType1F0R = crate::FieldReader<u32>;
-#[doc = "Field `PI_TDFI_PHYUPD_TYPE1_F0` writer - Defines the DFI tPHYUPD_TYPE1 timing parameter (in DFI clocks), the maximum cycles that dfi_phyupd_req can assert after dfi_phyupd_ack for dfi_phyupd_type 1. If programmed to a non-zero, a timing violation causes an interrupt and bit5 set in the PI_REG_193.pi_update_error_status parameter and bit5 set in the PI_REG_22.pi_control_error_status parameter. The suffix f0 of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TDFI_PHYUPD_TYPE1_F0` writer - Defines the DFI tPHYUPD_TYPE1 timing parameter (in DFI clocks),\n\nthe maximum cycles that dfi_phyupd_req can assert after\n\ndfi_phyupd_ack for dfi_phyupd_type 1. If programmed to a\n\nnon-zero, a timing violation causes an interrupt and bit5 set in the\n\nPI_REG_193.pi_update_error_status parameter and bit5 set in the\n\nPI_REG_22.pi_control_error_status parameter. The suffix f0 of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTdfiPhyupdType1F0W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Defines the DFI tPHYUPD_TYPE1 timing parameter (in DFI clocks), the maximum cycles that dfi_phyupd_req can assert after dfi_phyupd_ack for dfi_phyupd_type 1. If programmed to a non-zero, a timing violation causes an interrupt and bit5 set in the PI_REG_193.pi_update_error_status parameter and bit5 set in the PI_REG_22.pi_control_error_status parameter. The suffix f0 of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:31 - Defines the DFI tPHYUPD_TYPE1 timing parameter (in DFI clocks),\n\nthe maximum cycles that dfi_phyupd_req can assert after\n\ndfi_phyupd_ack for dfi_phyupd_type 1. If programmed to a\n\nnon-zero, a timing violation causes an interrupt and bit5 set in the\n\nPI_REG_193.pi_update_error_status parameter and bit5 set in the\n\nPI_REG_22.pi_control_error_status parameter. The suffix f0 of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tdfi_phyupd_type1_f0(&self) -> PiTdfiPhyupdType1F0R {
         PiTdfiPhyupdType1F0R::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Defines the DFI tPHYUPD_TYPE1 timing parameter (in DFI clocks), the maximum cycles that dfi_phyupd_req can assert after dfi_phyupd_ack for dfi_phyupd_type 1. If programmed to a non-zero, a timing violation causes an interrupt and bit5 set in the PI_REG_193.pi_update_error_status parameter and bit5 set in the PI_REG_22.pi_control_error_status parameter. The suffix f0 of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:31 - Defines the DFI tPHYUPD_TYPE1 timing parameter (in DFI clocks),\n\nthe maximum cycles that dfi_phyupd_req can assert after\n\ndfi_phyupd_ack for dfi_phyupd_type 1. If programmed to a\n\nnon-zero, a timing violation causes an interrupt and bit5 set in the\n\nPI_REG_193.pi_update_error_status parameter and bit5 set in the\n\nPI_REG_22.pi_control_error_status parameter. The suffix f0 of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tdfi_phyupd_type1_f0(&mut self) -> PiTdfiPhyupdType1F0W<DdrPiReg9Spec> {

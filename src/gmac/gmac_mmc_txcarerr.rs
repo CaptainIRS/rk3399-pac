@@ -2,19 +2,19 @@
 pub type R = crate::R<GmacMmcTxcarerrSpec>;
 #[doc = "Register `GMAC_MMC_TXCARERR` writer"]
 pub type W = crate::W<GmacMmcTxcarerrSpec>;
-#[doc = "Field `TXCARRIERERROR` reader - Number of frames aborted due to carrier sense error (no carrier or loss of carrier)."]
+#[doc = "Field `TXCARRIERERROR` reader - Number of frames aborted due to carrier sense error (no carrier\n\nor loss of carrier)."]
 pub type TxcarriererrorR = crate::FieldReader<u32>;
-#[doc = "Field `TXCARRIERERROR` writer - Number of frames aborted due to carrier sense error (no carrier or loss of carrier)."]
+#[doc = "Field `TXCARRIERERROR` writer - Number of frames aborted due to carrier sense error (no carrier\n\nor loss of carrier)."]
 pub type TxcarriererrorW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Number of frames aborted due to carrier sense error (no carrier or loss of carrier)."]
+    #[doc = "Bits 0:31 - Number of frames aborted due to carrier sense error (no carrier\n\nor loss of carrier)."]
     #[inline(always)]
     pub fn txcarriererror(&self) -> TxcarriererrorR {
         TxcarriererrorR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Number of frames aborted due to carrier sense error (no carrier or loss of carrier)."]
+    #[doc = "Bits 0:31 - Number of frames aborted due to carrier sense error (no carrier\n\nor loss of carrier)."]
     #[inline(always)]
     #[must_use]
     pub fn txcarriererror(&mut self) -> TxcarriererrorW<GmacMmcTxcarerrSpec> {

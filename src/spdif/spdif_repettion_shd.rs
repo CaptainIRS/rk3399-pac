@@ -1,9 +1,9 @@
 #[doc = "Register `SPDIF_REPETTION_SHD` reader"]
 pub type R = crate::R<SpdifRepettionShdSpec>;
-#[doc = "Field `REPETTION` reader - Repetition This register provides the repetition of the bitstream when channel conveys non-linear PCM. In the design, it defines the length between Pa of the two consecutive data-burst. For the same audio format, the definition is different. Please convert the actual repetition in order to comply with the design."]
+#[doc = "Field `REPETTION` reader - Repetition\n\nThis register provides the repetition of the bitstream when\n\nchannel conveys non-linear PCM. In the design, it defines the\n\nlength between Pa of the two consecutive data-burst. For the\n\nsame audio format, the definition is different. Please convert the\n\nactual repetition in order to comply with the design."]
 pub type RepettionR = crate::FieldReader<u16>;
 impl R {
-    #[doc = "Bits 0:15 - Repetition This register provides the repetition of the bitstream when channel conveys non-linear PCM. In the design, it defines the length between Pa of the two consecutive data-burst. For the same audio format, the definition is different. Please convert the actual repetition in order to comply with the design."]
+    #[doc = "Bits 0:15 - Repetition\n\nThis register provides the repetition of the bitstream when\n\nchannel conveys non-linear PCM. In the design, it defines the\n\nlength between Pa of the two consecutive data-burst. For the\n\nsame audio format, the definition is different. Please convert the\n\nactual repetition in order to comply with the design."]
     #[inline(always)]
     pub fn repettion(&self) -> RepettionR {
         RepettionR::new((self.bits & 0xffff) as u16)

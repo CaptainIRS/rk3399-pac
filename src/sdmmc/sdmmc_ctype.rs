@@ -3,9 +3,10 @@ pub type R = crate::R<SdmmcCtypeSpec>;
 #[doc = "Register `SDMMC_CTYPE` writer"]
 pub type W = crate::W<SdmmcCtypeSpec>;
 #[doc = "Indicates if card is 1-bit or 4-bit:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CardWidth {
-    #[doc = "0: 4-bit mode"]
+    #[doc = "0: 1-bit mode"]
     B0 = 0,
     #[doc = "1: 4-bit mode"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl CardWidthR {
             true => CardWidth::B1,
         }
     }
-    #[doc = "4-bit mode"]
+    #[doc = "1-bit mode"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CardWidth::B0
@@ -44,7 +45,7 @@ impl<'a, REG> CardWidthW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "4-bit mode"]
+    #[doc = "1-bit mode"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CardWidth::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Indicates if card is 8-bit:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CardWidth8 {
-    #[doc = "0: 8-bit mode"]
+    #[doc = "0: non 8-bit mode"]
     B0 = 0,
     #[doc = "1: 8-bit mode"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl CardWidth8R {
             true => CardWidth8::B1,
         }
     }
-    #[doc = "8-bit mode"]
+    #[doc = "non 8-bit mode"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CardWidth8::B0
@@ -97,7 +99,7 @@ impl<'a, REG> CardWidth8W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "8-bit mode"]
+    #[doc = "non 8-bit mode"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CardWidth8::B0)

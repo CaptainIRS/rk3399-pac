@@ -10,7 +10,7 @@ pub type EnableQuickSrefreshW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type CkeDelayR = crate::FieldReader;
 #[doc = "Field `CKE_DELAY` writer - Additional cycles to delay CKE for status reporting."]
 pub type CkeDelayW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-#[doc = "Field `DFS_STATUS` reader - Holds the error associated with the DFS interrupt. Bit (0) set indicates an illegal command and bit (1) set indicates that a shutdown occurred during DFS. READ-ONLY"]
+#[doc = "Field `DFS_STATUS` reader - Holds the error associated with the DFS interrupt. Bit (0) set indicates an illegal command and bit (1) set indicates that a shutdown occurred during DFS."]
 pub type DfsStatusR = crate::FieldReader;
 impl R {
     #[doc = "Bit 0 - Allow user to interrupt memory initialization to enter self-refresh mode. Set to 1 to allow interruption."]
@@ -23,7 +23,7 @@ impl R {
     pub fn cke_delay(&self) -> CkeDelayR {
         CkeDelayR::new(((self.bits >> 8) & 7) as u8)
     }
-    #[doc = "Bits 24:25 - Holds the error associated with the DFS interrupt. Bit (0) set indicates an illegal command and bit (1) set indicates that a shutdown occurred during DFS. READ-ONLY"]
+    #[doc = "Bits 24:25 - Holds the error associated with the DFS interrupt. Bit (0) set indicates an illegal command and bit (1) set indicates that a shutdown occurred during DFS."]
     #[inline(always)]
     pub fn dfs_status(&self) -> DfsStatusR {
         DfsStatusR::new(((self.bits >> 24) & 3) as u8)

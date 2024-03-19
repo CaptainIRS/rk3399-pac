@@ -2,9 +2,9 @@
 pub type R = crate::R<DdrDenaliCtl200Spec>;
 #[doc = "Register `DDR_DENALI_CTL_200` writer"]
 pub type W = crate::W<DdrDenaliCtl200Spec>;
-#[doc = "Field `CONTROLLER_BUSY` reader - Indicator that the controller is processing a command. Evaluates all ports for outstanding transactions. Value of 1 indicates controller busy. READ-ONLY"]
+#[doc = "Field `CONTROLLER_BUSY` reader - Indicator that the controller is processing a command. Evaluates all ports for outstanding transactions. Value of 1 indicates controller busy."]
 pub type ControllerBusyR = crate::BitReader;
-#[doc = "Field `CTRLUPD_REQ` writer - Assert the DFI controller-initiated update request signal dfi_ctrlupd_req. Set to 1 to trigger. WRITE-ONLY"]
+#[doc = "Field `CTRLUPD_REQ` writer - Assert the DFI controller-initiated update request signal dfi_ctrlupd_req. Set to 1 to trigger."]
 pub type CtrlupdReqW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CTRLUPD_REQ_PER_AREF_EN` reader - Enable an automatic controller- initiated update (dfi_ctrlupd_req) after every refresh. Set to 1 to enable."]
 pub type CtrlupdReqPerArefEnR = crate::BitReader;
@@ -15,7 +15,7 @@ pub type PreambleSupportR = crate::FieldReader;
 #[doc = "Field `PREAMBLE_SUPPORT` writer - Selection of one or two cycle preamble for read and write burst transfers."]
 pub type PreambleSupportW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
-    #[doc = "Bit 0 - Indicator that the controller is processing a command. Evaluates all ports for outstanding transactions. Value of 1 indicates controller busy. READ-ONLY"]
+    #[doc = "Bit 0 - Indicator that the controller is processing a command. Evaluates all ports for outstanding transactions. Value of 1 indicates controller busy."]
     #[inline(always)]
     pub fn controller_busy(&self) -> ControllerBusyR {
         ControllerBusyR::new((self.bits & 1) != 0)
@@ -32,7 +32,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 8 - Assert the DFI controller-initiated update request signal dfi_ctrlupd_req. Set to 1 to trigger. WRITE-ONLY"]
+    #[doc = "Bit 8 - Assert the DFI controller-initiated update request signal dfi_ctrlupd_req. Set to 1 to trigger."]
     #[inline(always)]
     #[must_use]
     pub fn ctrlupd_req(&mut self) -> CtrlupdReqW<DdrDenaliCtl200Spec> {

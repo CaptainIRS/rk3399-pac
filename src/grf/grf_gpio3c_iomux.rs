@@ -4,14 +4,15 @@ pub type R = crate::R<GrfGpio3cIomuxSpec>;
 pub type W = crate::W<GrfGpio3cIomuxSpec>;
 #[doc = "GPIO3C\\[0\\]
 iomux select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gpio3c0Sel {
-    #[doc = "0: spdif_txb"]
+    #[doc = "0: gpio"]
     B00 = 0,
-    #[doc = "1: spdif_txb"]
+    #[doc = "1: mac_col"]
     B01 = 1,
-    #[doc = "2: spdif_txb"]
+    #[doc = "2: uart3gps_ctsn"]
     B10 = 2,
     #[doc = "3: spdif_txb"]
     B11 = 3,
@@ -40,17 +41,17 @@ impl Gpio3c0SelR {
             _ => unreachable!(),
         }
     }
-    #[doc = "spdif_txb"]
+    #[doc = "gpio"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == Gpio3c0Sel::B00
     }
-    #[doc = "spdif_txb"]
+    #[doc = "mac_col"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Gpio3c0Sel::B01
     }
-    #[doc = "spdif_txb"]
+    #[doc = "uart3gps_ctsn"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Gpio3c0Sel::B10
@@ -69,17 +70,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "spdif_txb"]
+    #[doc = "gpio"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio3c0Sel::B00)
     }
-    #[doc = "spdif_txb"]
+    #[doc = "mac_col"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio3c0Sel::B01)
     }
-    #[doc = "spdif_txb"]
+    #[doc = "uart3gps_ctsn"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio3c0Sel::B10)
@@ -92,14 +93,15 @@ where
 }
 #[doc = "GPIO3C\\[1\\]
 iomux select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gpio3c1Sel {
-    #[doc = "0: reserved"]
+    #[doc = "0: gpio"]
     B00 = 0,
-    #[doc = "1: reserved"]
+    #[doc = "1: mac_txclk"]
     B01 = 1,
-    #[doc = "2: reserved"]
+    #[doc = "2: uart3gps_rtsn"]
     B10 = 2,
     #[doc = "3: reserved"]
     B11 = 3,
@@ -128,17 +130,17 @@ impl Gpio3c1SelR {
             _ => unreachable!(),
         }
     }
-    #[doc = "reserved"]
+    #[doc = "gpio"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == Gpio3c1Sel::B00
     }
-    #[doc = "reserved"]
+    #[doc = "mac_txclk"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == Gpio3c1Sel::B01
     }
-    #[doc = "reserved"]
+    #[doc = "uart3gps_rtsn"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == Gpio3c1Sel::B10
@@ -157,17 +159,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "reserved"]
+    #[doc = "gpio"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio3c1Sel::B00)
     }
-    #[doc = "reserved"]
+    #[doc = "mac_txclk"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio3c1Sel::B01)
     }
-    #[doc = "reserved"]
+    #[doc = "uart3gps_rtsn"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(Gpio3c1Sel::B10)
@@ -178,9 +180,9 @@ where
         self.variant(Gpio3c1Sel::B11)
     }
 }
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:1 - GPIO3C\\[0\\]
@@ -195,7 +197,7 @@ iomux select"]
     pub fn gpio3c1_sel(&self) -> Gpio3c1SelR {
         Gpio3c1SelR::new(((self.bits >> 2) & 3) as u8)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
@@ -216,7 +218,7 @@ iomux select"]
     pub fn gpio3c1_sel(&mut self) -> Gpio3c1SelW<GrfGpio3cIomuxSpec> {
         Gpio3c1SelW::new(self, 2)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfGpio3cIomuxSpec> {

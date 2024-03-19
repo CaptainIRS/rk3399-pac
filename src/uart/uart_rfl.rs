@@ -1,9 +1,9 @@
 #[doc = "Register `UART_RFL` reader"]
 pub type R = crate::R<UartRflSpec>;
-#[doc = "Field `RECEIVE_FIFO_LEVEL` reader - Receive FIFO Level. This is indicates the number of data entries in the receive FIFO."]
+#[doc = "Field `RECEIVE_FIFO_LEVEL` reader - Receive FIFO Level.\n\nThis is indicates the number of data entries in the receive FIFO."]
 pub type ReceiveFifoLevelR = crate::FieldReader;
 impl R {
-    #[doc = "Bits 0:4 - Receive FIFO Level. This is indicates the number of data entries in the receive FIFO."]
+    #[doc = "Bits 0:4 - Receive FIFO Level.\n\nThis is indicates the number of data entries in the receive FIFO."]
     #[inline(always)]
     pub fn receive_fifo_level(&self) -> ReceiveFifoLevelR {
         ReceiveFifoLevelR::new((self.bits & 0x1f) as u8)

@@ -2,19 +2,19 @@
 pub type R = crate::R<ErrlogErrClrSpec>;
 #[doc = "Register `ERRLOG_ErrClr` writer"]
 pub type W = crate::W<ErrlogErrClrSpec>;
-#[doc = "Field `ERRCLR` reader - When set to 1, clears register ErrVld. Reading ErrClr always returns 0."]
+#[doc = "Field `ERRCLR` reader - When set to 1, clears register ErrVld. Reading ErrClr always returns\n\n0."]
 pub type ErrclrR = crate::BitReader;
-#[doc = "Field `ERRCLR` writer - When set to 1, clears register ErrVld. Reading ErrClr always returns 0."]
+#[doc = "Field `ERRCLR` writer - When set to 1, clears register ErrVld. Reading ErrClr always returns\n\n0."]
 pub type ErrclrW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - When set to 1, clears register ErrVld. Reading ErrClr always returns 0."]
+    #[doc = "Bit 0 - When set to 1, clears register ErrVld. Reading ErrClr always returns\n\n0."]
     #[inline(always)]
     pub fn errclr(&self) -> ErrclrR {
         ErrclrR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - When set to 1, clears register ErrVld. Reading ErrClr always returns 0."]
+    #[doc = "Bit 0 - When set to 1, clears register ErrVld. Reading ErrClr always returns\n\n0."]
     #[inline(always)]
     #[must_use]
     pub fn errclr(&mut self) -> ErrclrW<ErrlogErrClrSpec> {

@@ -1,11 +1,11 @@
 #[doc = "Register `DMAC_DBGSTATUS` reader"]
 pub type R = crate::R<DmacDbgstatusSpec>;
-#[doc = "Field `DMAC_DBGSTATUS_BITS_1` reader - The debug encoding is as follows: b00 = execute the instruction that the DBGINST \\[1:0\\]
-Registers contain b01 = reserved b10 = reserved b11 = reserved."]
+#[doc = "Field `DMAC_DBGSTATUS_BITS_1` reader - The debug encoding is as follows:\n\nb00 = execute the instruction that the DBGINST \\[1:0\\]
+Registers\n\ncontain\n\nb01 = reserved\n\nb10 = reserved\n\nb11 = reserved."]
 pub type DmacDbgstatusBits1R = crate::FieldReader;
 impl R {
-    #[doc = "Bits 0:1 - The debug encoding is as follows: b00 = execute the instruction that the DBGINST \\[1:0\\]
-Registers contain b01 = reserved b10 = reserved b11 = reserved."]
+    #[doc = "Bits 0:1 - The debug encoding is as follows:\n\nb00 = execute the instruction that the DBGINST \\[1:0\\]
+Registers\n\ncontain\n\nb01 = reserved\n\nb10 = reserved\n\nb11 = reserved."]
     #[inline(always)]
     pub fn dmac_dbgstatus_bits_1(&self) -> DmacDbgstatusBits1R {
         DmacDbgstatusBits1R::new((self.bits & 3) as u8)

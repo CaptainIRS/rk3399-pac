@@ -10,7 +10,7 @@ pub type PhySwGrpBypassShiftW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 pub type PhyGrpBypassOverrideR = crate::BitReader;
 #[doc = "Field `PHY_GRP_BYPASS_OVERRIDE` writer - Address/control group slice bypass mode override setting."]
 pub type PhyGrpBypassOverrideW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `SC_PHY_MANUAL_UPDATE` writer - Manual update of all slave delay line settings. Set to 1 to trigger. WRITE-ONLY"]
+#[doc = "Field `SC_PHY_MANUAL_UPDATE` writer - Manual update of all slave delay line settings. Set to 1 to trigger."]
 pub type ScPhyManualUpdateW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PHY_LP4_BOOT_DISABLE` reader - Controls the handling of the DFI frequency. When set to 1, DFI frequency 0 is considered the first operational frequency. When cleared to 0, DFI frequency 0 is the boot frequency and other DFI frequency values are operational frequencies. Must be cleared to 0 for LPDDR3 devices operating in an LPDDR4 capable configuration."]
 pub type PhyLp4BootDisableR = crate::BitReader;
@@ -46,7 +46,7 @@ impl W {
     pub fn phy_grp_bypass_override(&mut self) -> PhyGrpBypassOverrideW<DdrDenaliPhy898Spec> {
         PhyGrpBypassOverrideW::new(self, 8)
     }
-    #[doc = "Bit 16 - Manual update of all slave delay line settings. Set to 1 to trigger. WRITE-ONLY"]
+    #[doc = "Bit 16 - Manual update of all slave delay line settings. Set to 1 to trigger."]
     #[inline(always)]
     #[must_use]
     pub fn sc_phy_manual_update(&mut self) -> ScPhyManualUpdateW<DdrDenaliPhy898Spec> {

@@ -9,7 +9,7 @@ impl R {
         HdcpregBksv2R::new(self.bits)
     }
 }
-#[doc = "Contains the value of BKSV\\[23:16\\].\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hdcpreg_bksv2::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "HDCP KSV Status Register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hdcpreg_bksv2::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HdcpregBksv2Spec;
 impl crate::RegisterSpec for HdcpregBksv2Spec {
     type Ux = u8;

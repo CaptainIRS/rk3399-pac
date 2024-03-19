@@ -2,34 +2,34 @@
 pub type R = crate::R<DdrPiReg107Spec>;
 #[doc = "Register `DDR_PI_REG_107` writer"]
 pub type W = crate::W<DdrPiReg107Spec>;
-#[doc = "Field `PI_TVREF_SHORT_F1` reader - Indicates delay from dfi_calvl_strobe to next CMD (only param_calvl_vref_stepsize change of the VREF). The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TVREF_SHORT_F1` reader - Indicates delay from dfi_calvl_strobe to next CMD (only\n\nparam_calvl_vref_stepsize change of the VREF). The suffix \"_f1\" of\n\nthe parameter name is omitted when in non-DFS mode."]
 pub type PiTvrefShortF1R = crate::FieldReader<u16>;
-#[doc = "Field `PI_TVREF_SHORT_F1` writer - Indicates delay from dfi_calvl_strobe to next CMD (only param_calvl_vref_stepsize change of the VREF). The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TVREF_SHORT_F1` writer - Indicates delay from dfi_calvl_strobe to next CMD (only\n\nparam_calvl_vref_stepsize change of the VREF). The suffix \"_f1\" of\n\nthe parameter name is omitted when in non-DFS mode."]
 pub type PiTvrefShortF1W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
-#[doc = "Field `PI_TVREF_LONG_F1` reader - Indicates delay from dfi_calvl_strobe to next CMD (more than one param_calvl_vref_stepsize Vref change). The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TVREF_LONG_F1` reader - Indicates delay from dfi_calvl_strobe to next CMD (more than one\n\nparam_calvl_vref_stepsize Vref change). The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTvrefLongF1R = crate::FieldReader<u16>;
-#[doc = "Field `PI_TVREF_LONG_F1` writer - Indicates delay from dfi_calvl_strobe to next CMD (more than one param_calvl_vref_stepsize Vref change). The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TVREF_LONG_F1` writer - Indicates delay from dfi_calvl_strobe to next CMD (more than one\n\nparam_calvl_vref_stepsize Vref change). The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTvrefLongF1W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 impl R {
-    #[doc = "Bits 0:9 - Indicates delay from dfi_calvl_strobe to next CMD (only param_calvl_vref_stepsize change of the VREF). The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:9 - Indicates delay from dfi_calvl_strobe to next CMD (only\n\nparam_calvl_vref_stepsize change of the VREF). The suffix \"_f1\" of\n\nthe parameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tvref_short_f1(&self) -> PiTvrefShortF1R {
         PiTvrefShortF1R::new((self.bits & 0x03ff) as u16)
     }
-    #[doc = "Bits 16:25 - Indicates delay from dfi_calvl_strobe to next CMD (more than one param_calvl_vref_stepsize Vref change). The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 16:25 - Indicates delay from dfi_calvl_strobe to next CMD (more than one\n\nparam_calvl_vref_stepsize Vref change). The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tvref_long_f1(&self) -> PiTvrefLongF1R {
         PiTvrefLongF1R::new(((self.bits >> 16) & 0x03ff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:9 - Indicates delay from dfi_calvl_strobe to next CMD (only param_calvl_vref_stepsize change of the VREF). The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:9 - Indicates delay from dfi_calvl_strobe to next CMD (only\n\nparam_calvl_vref_stepsize change of the VREF). The suffix \"_f1\" of\n\nthe parameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tvref_short_f1(&mut self) -> PiTvrefShortF1W<DdrPiReg107Spec> {
         PiTvrefShortF1W::new(self, 0)
     }
-    #[doc = "Bits 16:25 - Indicates delay from dfi_calvl_strobe to next CMD (more than one param_calvl_vref_stepsize Vref change). The suffix \"_f1\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 16:25 - Indicates delay from dfi_calvl_strobe to next CMD (more than one\n\nparam_calvl_vref_stepsize Vref change). The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tvref_long_f1(&mut self) -> PiTvrefLongF1W<DdrPiReg107Spec> {

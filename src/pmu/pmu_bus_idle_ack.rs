@@ -1,9 +1,10 @@
 #[doc = "Register `PMU_BUS_IDLE_ACK` reader"]
 pub type R = crate::R<PmuBusIdleAckSpec>;
 #[doc = "idle acknowledge status from gpu niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckGpu {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -25,7 +26,7 @@ impl IdleAckGpuR {
             true => IdleAckGpu::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckGpu::B0
@@ -37,9 +38,10 @@ impl IdleAckGpuR {
     }
 }
 #[doc = "idle acknowledge status from perilp niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckPerilp {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -61,7 +63,7 @@ impl IdleAckPerilpR {
             true => IdleAckPerilp::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckPerilp::B0
@@ -73,9 +75,10 @@ impl IdleAckPerilpR {
     }
 }
 #[doc = "idle acknowledge status from perihp niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckPerihp {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -97,7 +100,7 @@ impl IdleAckPerihpR {
             true => IdleAckPerihp::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckPerihp::B0
@@ -109,9 +112,10 @@ impl IdleAckPerihpR {
     }
 }
 #[doc = "idle acknowledge status from vcodec niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckVcodec {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -133,7 +137,7 @@ impl IdleAckVcodecR {
             true => IdleAckVcodec::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckVcodec::B0
@@ -145,9 +149,10 @@ impl IdleAckVcodecR {
     }
 }
 #[doc = "idle acknowledge status from vdu niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckVdu {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -169,7 +174,7 @@ impl IdleAckVduR {
             true => IdleAckVdu::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckVdu::B0
@@ -181,9 +186,10 @@ impl IdleAckVduR {
     }
 }
 #[doc = "idle acknowledge status from rga niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckRga {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -205,7 +211,7 @@ impl IdleAckRgaR {
             true => IdleAckRga::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckRga::B0
@@ -217,9 +223,10 @@ impl IdleAckRgaR {
     }
 }
 #[doc = "idle acknowledge status from iep niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckIep {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -241,7 +248,7 @@ impl IdleAckIepR {
             true => IdleAckIep::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckIep::B0
@@ -253,9 +260,10 @@ impl IdleAckIepR {
     }
 }
 #[doc = "idle acknowledge status from vopb niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckVopb {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -277,7 +285,7 @@ impl IdleAckVopbR {
             true => IdleAckVopb::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckVopb::B0
@@ -289,9 +297,10 @@ impl IdleAckVopbR {
     }
 }
 #[doc = "idle acknowledge status from vopl niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckVopl {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -313,7 +322,7 @@ impl IdleAckVoplR {
             true => IdleAckVopl::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckVopl::B0
@@ -325,9 +334,10 @@ impl IdleAckVoplR {
     }
 }
 #[doc = "idle acknowledge status from isp0 niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckIsp0 {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -349,7 +359,7 @@ impl IdleAckIsp0R {
             true => IdleAckIsp0::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckIsp0::B0
@@ -361,9 +371,10 @@ impl IdleAckIsp0R {
     }
 }
 #[doc = "idle acknowledge status from isp1 niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckIsp1 {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -385,7 +396,7 @@ impl IdleAckIsp1R {
             true => IdleAckIsp1::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckIsp1::B0
@@ -397,9 +408,10 @@ impl IdleAckIsp1R {
     }
 }
 #[doc = "idle acknowledge status from hdcp niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckHdcp {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -421,7 +433,7 @@ impl IdleAckHdcpR {
             true => IdleAckHdcp::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckHdcp::B0
@@ -433,9 +445,10 @@ impl IdleAckHdcpR {
     }
 }
 #[doc = "idle acknowledge status from usb3 niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckUsb3 {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -457,7 +470,7 @@ impl IdleAckUsb3R {
             true => IdleAckUsb3::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckUsb3::B0
@@ -469,9 +482,10 @@ impl IdleAckUsb3R {
     }
 }
 #[doc = "idle acknowledge status from perilp m0 niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckPerilpm0 {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -493,7 +507,7 @@ impl IdleAckPerilpm0R {
             true => IdleAckPerilpm0::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckPerilpm0::B0
@@ -505,9 +519,10 @@ impl IdleAckPerilpm0R {
     }
 }
 #[doc = "idle acknowledge status from center niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckCenter {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -529,7 +544,7 @@ impl IdleAckCenterR {
             true => IdleAckCenter::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckCenter::B0
@@ -541,9 +556,10 @@ impl IdleAckCenterR {
     }
 }
 #[doc = "idle acknowledge status from ccim0 niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckCcim0 {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -565,7 +581,7 @@ impl IdleAckCcim0R {
             true => IdleAckCcim0::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckCcim0::B0
@@ -577,9 +593,10 @@ impl IdleAckCcim0R {
     }
 }
 #[doc = "idle acknowledge status from ccim1 niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckCcim1 {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -601,7 +618,7 @@ impl IdleAckCcim1R {
             true => IdleAckCcim1::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckCcim1::B0
@@ -613,9 +630,10 @@ impl IdleAckCcim1R {
     }
 }
 #[doc = "idle acknowledge status from vio niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckVio {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -637,7 +655,7 @@ impl IdleAckVioR {
             true => IdleAckVio::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckVio::B0
@@ -649,9 +667,10 @@ impl IdleAckVioR {
     }
 }
 #[doc = "idle acknowledge status from msch0 niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckMsch0 {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -673,7 +692,7 @@ impl IdleAckMsch0R {
             true => IdleAckMsch0::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckMsch0::B0
@@ -685,9 +704,10 @@ impl IdleAckMsch0R {
     }
 }
 #[doc = "idle acknowledge status from msch1 niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckMsch1 {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -709,7 +729,7 @@ impl IdleAckMsch1R {
             true => IdleAckMsch1::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckMsch1::B0
@@ -721,9 +741,10 @@ impl IdleAckMsch1R {
     }
 }
 #[doc = "idle acknowledge status from alive niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckAlive {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -745,7 +766,7 @@ impl IdleAckAliveR {
             true => IdleAckAlive::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckAlive::B0
@@ -757,9 +778,10 @@ impl IdleAckAliveR {
     }
 }
 #[doc = "idle acknowledge status from pmu niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckPmu {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -781,7 +803,7 @@ impl IdleAckPmuR {
             true => IdleAckPmu::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckPmu::B0
@@ -793,9 +815,10 @@ impl IdleAckPmuR {
     }
 }
 #[doc = "idle acknowledge status from edp niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckEdp {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -817,7 +840,7 @@ impl IdleAckEdpR {
             true => IdleAckEdp::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckEdp::B0
@@ -829,9 +852,10 @@ impl IdleAckEdpR {
     }
 }
 #[doc = "idle acknowledge status from gmac niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckGmac {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -853,7 +877,7 @@ impl IdleAckGmacR {
             true => IdleAckGmac::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckGmac::B0
@@ -865,9 +889,10 @@ impl IdleAckGmacR {
     }
 }
 #[doc = "idle acknowledge status from emmc niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckEmmc {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -889,7 +914,7 @@ impl IdleAckEmmcR {
             true => IdleAckEmmc::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckEmmc::B0
@@ -901,9 +926,10 @@ impl IdleAckEmmcR {
     }
 }
 #[doc = "idle acknowledge status from center1 niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckCenter1 {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -925,7 +951,7 @@ impl IdleAckCenter1R {
             true => IdleAckCenter1::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckCenter1::B0
@@ -937,9 +963,10 @@ impl IdleAckCenter1R {
     }
 }
 #[doc = "idle acknowledge status from pmu m0 niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckPmum0 {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -961,7 +988,7 @@ impl IdleAckPmum0R {
             true => IdleAckPmum0::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckPmum0::B0
@@ -973,9 +1000,10 @@ impl IdleAckPmum0R {
     }
 }
 #[doc = "idle acknowledge status from gic niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckGic {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -997,7 +1025,7 @@ impl IdleAckGicR {
             true => IdleAckGic::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckGic::B0
@@ -1009,9 +1037,10 @@ impl IdleAckGicR {
     }
 }
 #[doc = "idle acknowledge status from sd niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckSd {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -1033,7 +1062,7 @@ impl IdleAckSdR {
             true => IdleAckSd::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckSd::B0
@@ -1045,9 +1074,10 @@ impl IdleAckSdR {
     }
 }
 #[doc = "idle acknowledge status from sdioaudio niu\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IdleAckSdioaudio {
-    #[doc = "0: idle acknowledge status of niu is 1"]
+    #[doc = "0: idle acknowledge status of niu is 0"]
     B0 = 0,
     #[doc = "1: idle acknowledge status of niu is 1"]
     B1 = 1,
@@ -1069,7 +1099,7 @@ impl IdleAckSdioaudioR {
             true => IdleAckSdioaudio::B1,
         }
     }
-    #[doc = "idle acknowledge status of niu is 1"]
+    #[doc = "idle acknowledge status of niu is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IdleAckSdioaudio::B0

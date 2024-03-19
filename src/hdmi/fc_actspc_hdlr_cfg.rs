@@ -3,9 +3,10 @@ pub type R = crate::R<FcActspcHdlrCfgSpec>;
 #[doc = "Register `FC_ACTSPC_HDLR_CFG` writer"]
 pub type W = crate::W<FcActspcHdlrCfgSpec>;
 #[doc = "Active Space Handler Control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ActspcHdlrEn {
-    #[doc = "1: Fixed active space value mode disabled"]
+    #[doc = "1: Fixed active space value mode enabled. During active space, a fixed value of 0xAA is applied to all TMDS channels."]
     B1 = 1,
     #[doc = "0: Fixed active space value mode disabled"]
     B0 = 0,
@@ -27,7 +28,7 @@ impl ActspcHdlrEnR {
             false => ActspcHdlrEn::B0,
         }
     }
-    #[doc = "Fixed active space value mode disabled"]
+    #[doc = "Fixed active space value mode enabled. During active space, a fixed value of 0xAA is applied to all TMDS channels."]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == ActspcHdlrEn::B1
@@ -44,7 +45,7 @@ impl<'a, REG> ActspcHdlrEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Fixed active space value mode disabled"]
+    #[doc = "Fixed active space value mode enabled. During active space, a fixed value of 0xAA is applied to all TMDS channels."]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(ActspcHdlrEn::B1)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Active Space handler control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ActspcHdlrTgl {
-    #[doc = "1: Active space not oscillating"]
+    #[doc = "1: Active space 1 value is different from Active Space 2 value. Refer to Figure 8-4: 3D Structure of the HDMI 1.4b specification."]
     B1 = 1,
     #[doc = "0: Active space not oscillating"]
     B0 = 0,
@@ -80,7 +82,7 @@ impl ActspcHdlrTglR {
             false => ActspcHdlrTgl::B0,
         }
     }
-    #[doc = "Active space not oscillating"]
+    #[doc = "Active space 1 value is different from Active Space 2 value. Refer to Figure 8-4: 3D Structure of the HDMI 1.4b specification."]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == ActspcHdlrTgl::B1
@@ -97,7 +99,7 @@ impl<'a, REG> ActspcHdlrTglW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Active space not oscillating"]
+    #[doc = "Active space 1 value is different from Active Space 2 value. Refer to Figure 8-4: 3D Structure of the HDMI 1.4b specification."]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(ActspcHdlrTgl::B1)
@@ -134,7 +136,7 @@ impl W {
         ActspcHdlrTglW::new(self, 1)
     }
 }
-#[doc = "Active Space Handler Control 1b: Fixed active space value mode enabled. During active space, a fixed value of 0xAA is applied to all TMDS channels. 0b: Fixed active space value mode disabled\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_actspc_hdlr_cfg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_actspc_hdlr_cfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer Active Space Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_actspc_hdlr_cfg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_actspc_hdlr_cfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcActspcHdlrCfgSpec;
 impl crate::RegisterSpec for FcActspcHdlrCfgSpec {
     type Ux = u8;

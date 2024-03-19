@@ -2,11 +2,12 @@
 pub type R = crate::R<GpioSwportaDdrSpec>;
 #[doc = "Register `GPIO_SWPORTA_DDR` writer"]
 pub type W = crate::W<GpioSwportaDdrSpec>;
-#[doc = "Values written to this register independently control the direction of the corresponding data bit in Port A.\n\nValue on reset: 0"]
+#[doc = "Values written to this register independently control the direction\n\nof the corresponding data bit in Port A.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum GpioSwportaDdr {
-    #[doc = "0: Output"]
+    #[doc = "0: Input (default)"]
     B0 = 0,
     #[doc = "1: Output"]
     B1 = 1,
@@ -20,7 +21,7 @@ impl From<GpioSwportaDdr> for u32 {
 impl crate::FieldSpec for GpioSwportaDdr {
     type Ux = u32;
 }
-#[doc = "Field `GPIO_SWPORTA_DDR` reader - Values written to this register independently control the direction of the corresponding data bit in Port A."]
+#[doc = "Field `GPIO_SWPORTA_DDR` reader - Values written to this register independently control the direction\n\nof the corresponding data bit in Port A."]
 pub type GpioSwportaDdrR = crate::FieldReader<GpioSwportaDdr>;
 impl GpioSwportaDdrR {
     #[doc = "Get enumerated values variant"]
@@ -32,7 +33,7 @@ impl GpioSwportaDdrR {
             _ => None,
         }
     }
-    #[doc = "Output"]
+    #[doc = "Input (default)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == GpioSwportaDdr::B0
@@ -43,14 +44,14 @@ impl GpioSwportaDdrR {
         *self == GpioSwportaDdr::B1
     }
 }
-#[doc = "Field `GPIO_SWPORTA_DDR` writer - Values written to this register independently control the direction of the corresponding data bit in Port A."]
+#[doc = "Field `GPIO_SWPORTA_DDR` writer - Values written to this register independently control the direction\n\nof the corresponding data bit in Port A."]
 pub type GpioSwportaDdrW<'a, REG> = crate::FieldWriter<'a, REG, 32, GpioSwportaDdr>;
 impl<'a, REG> GpioSwportaDdrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u32>,
 {
-    #[doc = "Output"]
+    #[doc = "Input (default)"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(GpioSwportaDdr::B0)
@@ -62,14 +63,14 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 0:31 - Values written to this register independently control the direction of the corresponding data bit in Port A."]
+    #[doc = "Bits 0:31 - Values written to this register independently control the direction\n\nof the corresponding data bit in Port A."]
     #[inline(always)]
     pub fn gpio_swporta_ddr(&self) -> GpioSwportaDdrR {
         GpioSwportaDdrR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Values written to this register independently control the direction of the corresponding data bit in Port A."]
+    #[doc = "Bits 0:31 - Values written to this register independently control the direction\n\nof the corresponding data bit in Port A."]
     #[inline(always)]
     #[must_use]
     pub fn gpio_swporta_ddr(&mut self) -> GpioSwportaDdrW<GpioSwportaDdrSpec> {

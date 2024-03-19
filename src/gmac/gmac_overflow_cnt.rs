@@ -1,18 +1,18 @@
 #[doc = "Register `GMAC_OVERFLOW_CNT` reader"]
 pub type R = crate::R<GmacOverflowCntSpec>;
-#[doc = "Field `FRAME_MISS_NUMBER_2` reader - Indicates the number of frames missed by the controller due to the Host Receive Buffer being unavailable. This counter is incremented each time the DMA discards an incoming frame. The counter is cleared when this register is read with mci_be_i\\[0\\]
-at 1'b1.\n\nThe field is **cleared** (set to zero) following a read operation."]
+#[doc = "Field `FRAME_MISS_NUMBER_2` reader - Indicates the number of frames missed by the controller due to\n\nthe Host Receive Buffer being unavailable. This counter is\n\nincremented each time the DMA discards an incoming frame. The\n\ncounter is cleared when this register is read with mci_be_i\\[0\\]
+at\n\n1'b1.\n\nThe field is **cleared** (set to zero) following a read operation."]
 pub type FrameMissNumber2R = crate::FieldReader<u16>;
 #[doc = "Field `MISS_FRAME_OVERFLOW_BIT` reader - Overflow bit for Missed Frame Counter\n\nThe field is **cleared** (set to zero) following a read operation."]
 pub type MissFrameOverflowBitR = crate::BitReader;
-#[doc = "Field `FRAME_MISS_NUMBER` reader - Indicates the number of frames missed by the application This counter is incremented each time the MTL asserts the sideband signal mtl_rxoverflow_o. The counter is cleared when this register is read with mci_be_i\\[2\\]
+#[doc = "Field `FRAME_MISS_NUMBER` reader - Indicates the number of frames missed by the application\n\nThis counter is incremented each time the MTL asserts the\n\nsideband signal mtl_rxoverflow_o. The counter is cleared when\n\nthis register is read with mci_be_i\\[2\\]
 at 1'b1.\n\nThe field is **cleared** (set to zero) following a read operation."]
 pub type FrameMissNumberR = crate::FieldReader<u16>;
 #[doc = "Field `FIFO_OVERFLOW_BIT` reader - Overflow bit for FIFO Overflow Counter\n\nThe field is **cleared** (set to zero) following a read operation."]
 pub type FifoOverflowBitR = crate::BitReader;
 impl R {
-    #[doc = "Bits 0:15 - Indicates the number of frames missed by the controller due to the Host Receive Buffer being unavailable. This counter is incremented each time the DMA discards an incoming frame. The counter is cleared when this register is read with mci_be_i\\[0\\]
-at 1'b1."]
+    #[doc = "Bits 0:15 - Indicates the number of frames missed by the controller due to\n\nthe Host Receive Buffer being unavailable. This counter is\n\nincremented each time the DMA discards an incoming frame. The\n\ncounter is cleared when this register is read with mci_be_i\\[0\\]
+at\n\n1'b1."]
     #[inline(always)]
     pub fn frame_miss_number_2(&self) -> FrameMissNumber2R {
         FrameMissNumber2R::new((self.bits & 0xffff) as u16)
@@ -22,7 +22,7 @@ at 1'b1."]
     pub fn miss_frame_overflow_bit(&self) -> MissFrameOverflowBitR {
         MissFrameOverflowBitR::new(((self.bits >> 16) & 1) != 0)
     }
-    #[doc = "Bits 17:27 - Indicates the number of frames missed by the application This counter is incremented each time the MTL asserts the sideband signal mtl_rxoverflow_o. The counter is cleared when this register is read with mci_be_i\\[2\\]
+    #[doc = "Bits 17:27 - Indicates the number of frames missed by the application\n\nThis counter is incremented each time the MTL asserts the\n\nsideband signal mtl_rxoverflow_o. The counter is cleared when\n\nthis register is read with mci_be_i\\[2\\]
 at 1'b1."]
     #[inline(always)]
     pub fn frame_miss_number(&self) -> FrameMissNumberR {

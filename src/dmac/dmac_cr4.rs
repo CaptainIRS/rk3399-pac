@@ -1,13 +1,13 @@
 #[doc = "Register `DMAC_CR4` reader"]
 pub type R = crate::R<DmacCr4Spec>;
-#[doc = "Field `DMAC_CR4_BITS_0` reader - Provides the security state of the peripheral request interfaces: Bit \\[N\\]
-= 0 Assigns peripheral request interface N to the Secure state. Bit \\[N\\]
-= 1 Assigns peripheral request interface N to the Non-secure state"]
+#[doc = "Field `DMAC_CR4_BITS_0` reader - Provides the security state of the peripheral request interfaces:\n\nBit \\[N\\]
+= 0 Assigns peripheral request interface N to the Secure\n\nstate.\n\nBit \\[N\\]
+= 1 Assigns peripheral request interface N to the Non-secure\n\nstate"]
 pub type DmacCr4Bits0R = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Provides the security state of the peripheral request interfaces: Bit \\[N\\]
-= 0 Assigns peripheral request interface N to the Secure state. Bit \\[N\\]
-= 1 Assigns peripheral request interface N to the Non-secure state"]
+    #[doc = "Bits 0:31 - Provides the security state of the peripheral request interfaces:\n\nBit \\[N\\]
+= 0 Assigns peripheral request interface N to the Secure\n\nstate.\n\nBit \\[N\\]
+= 1 Assigns peripheral request interface N to the Non-secure\n\nstate"]
     #[inline(always)]
     pub fn dmac_cr4_bits_0(&self) -> DmacCr4Bits0R {
         DmacCr4Bits0R::new(self.bits)

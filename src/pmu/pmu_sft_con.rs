@@ -2,18 +2,19 @@
 pub type R = crate::R<PmuSftConSpec>;
 #[doc = "Register `PMU_SFT_CON` writer"]
 pub type W = crate::W<PmuSftConSpec>;
-#[doc = "Field `WAKEUP_SFT` reader - software wakeup request bit A 0 to 1 pulse posedge will wakeup pmu when in low power mode"]
+#[doc = "Field `WAKEUP_SFT` reader - software wakeup request bit\n\nA 0 to 1 pulse posedge will wakeup pmu when in low power mode"]
 pub type WakeupSftR = crate::BitReader;
-#[doc = "Field `WAKEUP_SFT` writer - software wakeup request bit A 0 to 1 pulse posedge will wakeup pmu when in low power mode"]
+#[doc = "Field `WAKEUP_SFT` writer - software wakeup request bit\n\nA 0 to 1 pulse posedge will wakeup pmu when in low power mode"]
 pub type WakeupSftW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `INPUT_CLAMP_CFG` reader - software control of input clamp signal"]
 pub type InputClampCfgR = crate::BitReader;
 #[doc = "Field `INPUT_CLAMP_CFG` writer - software control of input clamp signal"]
 pub type InputClampCfgW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "osc disable configure by software\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum OscDisableCfg {
-    #[doc = "1: enable psc"]
+    #[doc = "1: disable osc"]
     B1 = 1,
     #[doc = "0: enable psc"]
     B0 = 0,
@@ -35,7 +36,7 @@ impl OscDisableCfgR {
             false => OscDisableCfg::B0,
         }
     }
-    #[doc = "enable psc"]
+    #[doc = "disable osc"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == OscDisableCfg::B1
@@ -52,7 +53,7 @@ impl<'a, REG> OscDisableCfgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable psc"]
+    #[doc = "disable osc"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(OscDisableCfg::B1)
@@ -64,9 +65,10 @@ where
     }
 }
 #[doc = "pd_pmu low frequency mode configure by software\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PmuLfEnaCfg {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -88,7 +90,7 @@ impl PmuLfEnaCfgR {
             true => PmuLfEnaCfg::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PmuLfEnaCfg::B0
@@ -105,7 +107,7 @@ impl<'a, REG> PmuLfEnaCfgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PmuLfEnaCfg::B0)
@@ -117,9 +119,10 @@ where
     }
 }
 #[doc = "pd_alive low frequency mode configure by software\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AliveLfEnaCfg {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -141,7 +144,7 @@ impl AliveLfEnaCfgR {
             true => AliveLfEnaCfg::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == AliveLfEnaCfg::B0
@@ -158,7 +161,7 @@ impl<'a, REG> AliveLfEnaCfgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(AliveLfEnaCfg::B0)
@@ -174,9 +177,10 @@ pub type Pmu24mEnaCfgR = crate::BitReader;
 #[doc = "Field `PMU_24M_ENA_CFG` writer - configure PD_PMU use 24M clock"]
 pub type Pmu24mEnaCfgW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "dbg powered up of pd_a53_l0 enable when in power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DbgpwrdupL0Cfg {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -198,7 +202,7 @@ impl DbgpwrdupL0CfgR {
             true => DbgpwrdupL0Cfg::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == DbgpwrdupL0Cfg::B0
@@ -215,7 +219,7 @@ impl<'a, REG> DbgpwrdupL0CfgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(DbgpwrdupL0Cfg::B0)
@@ -231,9 +235,10 @@ pub type WakeupSftM0R = crate::BitReader;
 #[doc = "Field `WAKEUP_SFT_M0` writer - m0 configure this bit to wakeup PMU state machine."]
 pub type WakeupSftM0W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "ddrctl idle request configure\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ddrctl0CSysreqCfg {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -255,7 +260,7 @@ impl Ddrctl0CSysreqCfgR {
             true => Ddrctl0CSysreqCfg::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Ddrctl0CSysreqCfg::B0
@@ -272,7 +277,7 @@ impl<'a, REG> Ddrctl0CSysreqCfgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Ddrctl0CSysreqCfg::B0)
@@ -284,9 +289,10 @@ where
     }
 }
 #[doc = "ddr0 io retention configure by software\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ddr0IoRetCfg {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -308,7 +314,7 @@ impl Ddr0IoRetCfgR {
             true => Ddr0IoRetCfg::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Ddr0IoRetCfg::B0
@@ -325,7 +331,7 @@ impl<'a, REG> Ddr0IoRetCfgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Ddr0IoRetCfg::B0)
@@ -337,9 +343,10 @@ where
     }
 }
 #[doc = "ddrctl1 idle request configure\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ddrctl1CSysreqCfg {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -361,7 +368,7 @@ impl Ddrctl1CSysreqCfgR {
             true => Ddrctl1CSysreqCfg::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Ddrctl1CSysreqCfg::B0
@@ -378,7 +385,7 @@ impl<'a, REG> Ddrctl1CSysreqCfgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Ddrctl1CSysreqCfg::B0)
@@ -390,9 +397,10 @@ where
     }
 }
 #[doc = "ddr1 io retention configure by software\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ddr1IoRetCfg {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -414,7 +422,7 @@ impl Ddr1IoRetCfgR {
             true => Ddr1IoRetCfg::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Ddr1IoRetCfg::B0
@@ -431,7 +439,7 @@ impl<'a, REG> Ddr1IoRetCfgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Ddr1IoRetCfg::B0)
@@ -443,9 +451,10 @@ where
     }
 }
 #[doc = "dbg powered up of pd_a72_b0 enable when in power mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DbgpwrdupB0Cfg {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -467,7 +476,7 @@ impl DbgpwrdupB0CfgR {
             true => DbgpwrdupB0Cfg::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == DbgpwrdupB0Cfg::B0
@@ -484,7 +493,7 @@ impl<'a, REG> DbgpwrdupB0CfgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(DbgpwrdupB0Cfg::B0)
@@ -496,10 +505,11 @@ where
     }
 }
 #[doc = "dbgnopowerdown function of cluster_l enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DbgnopwrdwnLEnable {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -525,7 +535,7 @@ impl DbgnopwrdwnLEnableR {
             _ => None,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == DbgnopwrdwnLEnable::B0
@@ -543,7 +553,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(DbgnopwrdwnLEnable::B0)
@@ -555,9 +565,10 @@ where
     }
 }
 #[doc = "dbg powered up request function of cluster_l enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DbgpwrupreqLEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -579,7 +590,7 @@ impl DbgpwrupreqLEnR {
             true => DbgpwrupreqLEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == DbgpwrupreqLEn::B0
@@ -596,7 +607,7 @@ impl<'a, REG> DbgpwrupreqLEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(DbgpwrupreqLEn::B0)
@@ -608,9 +619,10 @@ where
     }
 }
 #[doc = "cluster_l clock source gating configure\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClusterLClkSrcGatingCfg {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -632,7 +644,7 @@ impl ClusterLClkSrcGatingCfgR {
             true => ClusterLClkSrcGatingCfg::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClusterLClkSrcGatingCfg::B0
@@ -649,7 +661,7 @@ impl<'a, REG> ClusterLClkSrcGatingCfgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClusterLClkSrcGatingCfg::B0)
@@ -661,9 +673,10 @@ where
     }
 }
 #[doc = "send l2 flush request to cluster_l by software\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum L2flushreqClusterL {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -685,7 +698,7 @@ impl L2flushreqClusterLR {
             true => L2flushreqClusterL::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == L2flushreqClusterL::B0
@@ -702,7 +715,7 @@ impl<'a, REG> L2flushreqClusterLW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(L2flushreqClusterL::B0)
@@ -714,9 +727,10 @@ where
     }
 }
 #[doc = "acinactm indicate to cluster_l\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AcinactmClusterLCfg {
-    #[doc = "0: acinactm to cluster_l is 1"]
+    #[doc = "0: acinactm to cluster_l is 0"]
     B0 = 0,
     #[doc = "1: acinactm to cluster_l is 1"]
     B1 = 1,
@@ -738,7 +752,7 @@ impl AcinactmClusterLCfgR {
             true => AcinactmClusterLCfg::B1,
         }
     }
-    #[doc = "acinactm to cluster_l is 1"]
+    #[doc = "acinactm to cluster_l is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == AcinactmClusterLCfg::B0
@@ -755,7 +769,7 @@ impl<'a, REG> AcinactmClusterLCfgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "acinactm to cluster_l is 1"]
+    #[doc = "acinactm to cluster_l is 0"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(AcinactmClusterLCfg::B0)
@@ -767,10 +781,11 @@ where
     }
 }
 #[doc = "dbgnopowerdown function of cluster_b enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DbgnopwrdwnBEnable {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -796,7 +811,7 @@ impl DbgnopwrdwnBEnableR {
             _ => None,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == DbgnopwrdwnBEnable::B0
@@ -814,7 +829,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(DbgnopwrdwnBEnable::B0)
@@ -826,9 +841,10 @@ where
     }
 }
 #[doc = "dbg powered up request function of cluster_b enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DbgpwrupreqBEn {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -850,7 +866,7 @@ impl DbgpwrupreqBEnR {
             true => DbgpwrupreqBEn::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == DbgpwrupreqBEn::B0
@@ -867,7 +883,7 @@ impl<'a, REG> DbgpwrupreqBEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(DbgpwrupreqBEn::B0)
@@ -879,9 +895,10 @@ where
     }
 }
 #[doc = "cluster_b clock source gating configure\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClusterBClkSrcGatingCfg {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -903,7 +920,7 @@ impl ClusterBClkSrcGatingCfgR {
             true => ClusterBClkSrcGatingCfg::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClusterBClkSrcGatingCfg::B0
@@ -920,7 +937,7 @@ impl<'a, REG> ClusterBClkSrcGatingCfgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClusterBClkSrcGatingCfg::B0)
@@ -932,9 +949,10 @@ where
     }
 }
 #[doc = "send l2 flush request to cluster_l by software\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum L2flushreqClusterB {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -956,7 +974,7 @@ impl L2flushreqClusterBR {
             true => L2flushreqClusterB::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == L2flushreqClusterB::B0
@@ -973,7 +991,7 @@ impl<'a, REG> L2flushreqClusterBW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(L2flushreqClusterB::B0)
@@ -985,9 +1003,10 @@ where
     }
 }
 #[doc = "acinactm indicate to cluster_b\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AcinactmClusterBCfg {
-    #[doc = "0: acinactm to cluster_b is 1"]
+    #[doc = "0: acinactm to cluster_b is 0"]
     B0 = 0,
     #[doc = "1: acinactm to cluster_b is 1"]
     B1 = 1,
@@ -1009,7 +1028,7 @@ impl AcinactmClusterBCfgR {
             true => AcinactmClusterBCfg::B1,
         }
     }
-    #[doc = "acinactm to cluster_b is 1"]
+    #[doc = "acinactm to cluster_b is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == AcinactmClusterBCfg::B0
@@ -1026,7 +1045,7 @@ impl<'a, REG> AcinactmClusterBCfgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "acinactm to cluster_b is 1"]
+    #[doc = "acinactm to cluster_b is 0"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(AcinactmClusterBCfg::B0)
@@ -1038,7 +1057,7 @@ where
     }
 }
 impl R {
-    #[doc = "Bit 0 - software wakeup request bit A 0 to 1 pulse posedge will wakeup pmu when in low power mode"]
+    #[doc = "Bit 0 - software wakeup request bit\n\nA 0 to 1 pulse posedge will wakeup pmu when in low power mode"]
     #[inline(always)]
     pub fn wakeup_sft(&self) -> WakeupSftR {
         WakeupSftR::new((self.bits & 1) != 0)
@@ -1155,7 +1174,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - software wakeup request bit A 0 to 1 pulse posedge will wakeup pmu when in low power mode"]
+    #[doc = "Bit 0 - software wakeup request bit\n\nA 0 to 1 pulse posedge will wakeup pmu when in low power mode"]
     #[inline(always)]
     #[must_use]
     pub fn wakeup_sft(&mut self) -> WakeupSftW<PmuSftConSpec> {

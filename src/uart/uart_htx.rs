@@ -2,19 +2,19 @@
 pub type R = crate::R<UartHtxSpec>;
 #[doc = "Register `UART_HTX` writer"]
 pub type W = crate::W<UartHtxSpec>;
-#[doc = "Field `HALT_TX_EN` reader - This register is use to halt transmissions for testing, so that the transmit FIFO can be filled by the master when FIFOs are implemented and enabled. 0 = Halt TX disabled 1 = Halt TX enabled"]
+#[doc = "Field `HALT_TX_EN` reader - This register is use to halt transmissions for testing, so that the\n\ntransmit FIFO can be filled by the master when FIFOs are\n\nimplemented and enabled.\n\n0 = Halt TX disabled\n\n1 = Halt TX enabled"]
 pub type HaltTxEnR = crate::BitReader;
-#[doc = "Field `HALT_TX_EN` writer - This register is use to halt transmissions for testing, so that the transmit FIFO can be filled by the master when FIFOs are implemented and enabled. 0 = Halt TX disabled 1 = Halt TX enabled"]
+#[doc = "Field `HALT_TX_EN` writer - This register is use to halt transmissions for testing, so that the\n\ntransmit FIFO can be filled by the master when FIFOs are\n\nimplemented and enabled.\n\n0 = Halt TX disabled\n\n1 = Halt TX enabled"]
 pub type HaltTxEnW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - This register is use to halt transmissions for testing, so that the transmit FIFO can be filled by the master when FIFOs are implemented and enabled. 0 = Halt TX disabled 1 = Halt TX enabled"]
+    #[doc = "Bit 0 - This register is use to halt transmissions for testing, so that the\n\ntransmit FIFO can be filled by the master when FIFOs are\n\nimplemented and enabled.\n\n0 = Halt TX disabled\n\n1 = Halt TX enabled"]
     #[inline(always)]
     pub fn halt_tx_en(&self) -> HaltTxEnR {
         HaltTxEnR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - This register is use to halt transmissions for testing, so that the transmit FIFO can be filled by the master when FIFOs are implemented and enabled. 0 = Halt TX disabled 1 = Halt TX enabled"]
+    #[doc = "Bit 0 - This register is use to halt transmissions for testing, so that the\n\ntransmit FIFO can be filled by the master when FIFOs are\n\nimplemented and enabled.\n\n0 = Halt TX disabled\n\n1 = Halt TX enabled"]
     #[inline(always)]
     #[must_use]
     pub fn halt_tx_en(&mut self) -> HaltTxEnW<UartHtxSpec> {

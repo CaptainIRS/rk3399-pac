@@ -2,16 +2,17 @@
 pub type R = crate::R<SdmmcRintstsSpec>;
 #[doc = "Register `SDMMC_RINTSTS` writer"]
 pub type W = crate::W<SdmmcRintstsSpec>;
-#[doc = "Field `INT_STATUS` reader - Writes to bits clear status bit. Value of 1 clears status bit, and value of 0 leaves bit intact. Bits are logged regardless of interrupt mask status. \\[15\\]: End-bit error (read)/Write no CRC (EBE) \\[14\\]: Auto command done (ACD) \\[13\\]: Start-bit error (SBE) \\[12\\]: Hardware locked write error (HLE) \\[11\\]: FIFO underrun/overrun error (FRUN) \\[10\\]: Data starvation-by-host timeout (HTO) /Volt_switch_int \\[9\\]: Data read timeout (DRTO) \\[8\\]: Response timeout (RTO) \\[7\\]: Data CRC error (DCRC) \\[6\\]: Response CRC error (RCRC) \\[5\\]: Receive FIFO data request (RXDR) \\[4\\]: Transmit FIFO data request (TXDR) \\[3\\]: Data transfer over (DTO) \\[2\\]: Command done (CD) \\[1\\]: Response error (RE) \\[0\\]: Card detect (CD)"]
+#[doc = "Field `INT_STATUS` reader - Writes to bits clear status bit. Value of 1 clears status bit, and\n\nvalue of 0 leaves bit intact. Bits are logged regardless of interrupt\n\nmask status.\n\n\\[15\\]: End-bit error (read)/Write no CRC (EBE)\n\n\\[14\\]: Auto command done (ACD)\n\n\\[13\\]: Start-bit error (SBE)\n\n\\[12\\]: Hardware locked write error (HLE)\n\n\\[11\\]: FIFO underrun/overrun error (FRUN)\n\n\\[10\\]: Data starvation-by-host timeout (HTO) /Volt_switch_int\n\n\\[9\\]: Data read timeout (DRTO)\n\n\\[8\\]: Response timeout (RTO)\n\n\\[7\\]: Data CRC error (DCRC)\n\n\\[6\\]: Response CRC error (RCRC)\n\n\\[5\\]: Receive FIFO data request (RXDR)\n\n\\[4\\]: Transmit FIFO data request (TXDR)\n\n\\[3\\]: Data transfer over (DTO)\n\n\\[2\\]: Command done (CD)\n\n\\[1\\]: Response error (RE)\n\n\\[0\\]: Card detect (CD)"]
 pub type IntStatusR = crate::FieldReader<u16>;
 #[doc = "Field `DATA_NOBUSY_INT_STATUS` reader - Data no busy interrupt status"]
 pub type DataNobusyIntStatusR = crate::BitReader;
 #[doc = "Field `DATA_NOBUSY_INT_STATUS` writer - Data no busy interrupt status"]
 pub type DataNobusyIntStatusW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Interrupt from SDIO card; Writes to these bits clear them. Value of 1 clears bit and 0 leaves bit intact.\n\nValue on reset: 0"]
+#[doc = "Interrupt from SDIO card; Writes to these bits clear them. Value\n\nof 1 clears bit and 0 leaves bit intact.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SdioInterrupt {
-    #[doc = "0: SDIO interrupt from card"]
+    #[doc = "0: no SDIO interrupt from card"]
     B0 = 0,
     #[doc = "1: SDIO interrupt from card"]
     B1 = 1,
@@ -22,7 +23,7 @@ impl From<SdioInterrupt> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SDIO_INTERRUPT` reader - Interrupt from SDIO card; Writes to these bits clear them. Value of 1 clears bit and 0 leaves bit intact."]
+#[doc = "Field `SDIO_INTERRUPT` reader - Interrupt from SDIO card; Writes to these bits clear them. Value\n\nof 1 clears bit and 0 leaves bit intact."]
 pub type SdioInterruptR = crate::BitReader<SdioInterrupt>;
 impl SdioInterruptR {
     #[doc = "Get enumerated values variant"]
@@ -33,7 +34,7 @@ impl SdioInterruptR {
             true => SdioInterrupt::B1,
         }
     }
-    #[doc = "SDIO interrupt from card"]
+    #[doc = "no SDIO interrupt from card"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SdioInterrupt::B0
@@ -45,7 +46,7 @@ impl SdioInterruptR {
     }
 }
 impl R {
-    #[doc = "Bits 0:15 - Writes to bits clear status bit. Value of 1 clears status bit, and value of 0 leaves bit intact. Bits are logged regardless of interrupt mask status. \\[15\\]: End-bit error (read)/Write no CRC (EBE) \\[14\\]: Auto command done (ACD) \\[13\\]: Start-bit error (SBE) \\[12\\]: Hardware locked write error (HLE) \\[11\\]: FIFO underrun/overrun error (FRUN) \\[10\\]: Data starvation-by-host timeout (HTO) /Volt_switch_int \\[9\\]: Data read timeout (DRTO) \\[8\\]: Response timeout (RTO) \\[7\\]: Data CRC error (DCRC) \\[6\\]: Response CRC error (RCRC) \\[5\\]: Receive FIFO data request (RXDR) \\[4\\]: Transmit FIFO data request (TXDR) \\[3\\]: Data transfer over (DTO) \\[2\\]: Command done (CD) \\[1\\]: Response error (RE) \\[0\\]: Card detect (CD)"]
+    #[doc = "Bits 0:15 - Writes to bits clear status bit. Value of 1 clears status bit, and\n\nvalue of 0 leaves bit intact. Bits are logged regardless of interrupt\n\nmask status.\n\n\\[15\\]: End-bit error (read)/Write no CRC (EBE)\n\n\\[14\\]: Auto command done (ACD)\n\n\\[13\\]: Start-bit error (SBE)\n\n\\[12\\]: Hardware locked write error (HLE)\n\n\\[11\\]: FIFO underrun/overrun error (FRUN)\n\n\\[10\\]: Data starvation-by-host timeout (HTO) /Volt_switch_int\n\n\\[9\\]: Data read timeout (DRTO)\n\n\\[8\\]: Response timeout (RTO)\n\n\\[7\\]: Data CRC error (DCRC)\n\n\\[6\\]: Response CRC error (RCRC)\n\n\\[5\\]: Receive FIFO data request (RXDR)\n\n\\[4\\]: Transmit FIFO data request (TXDR)\n\n\\[3\\]: Data transfer over (DTO)\n\n\\[2\\]: Command done (CD)\n\n\\[1\\]: Response error (RE)\n\n\\[0\\]: Card detect (CD)"]
     #[inline(always)]
     pub fn int_status(&self) -> IntStatusR {
         IntStatusR::new((self.bits & 0xffff) as u16)
@@ -55,7 +56,7 @@ impl R {
     pub fn data_nobusy_int_status(&self) -> DataNobusyIntStatusR {
         DataNobusyIntStatusR::new(((self.bits >> 16) & 1) != 0)
     }
-    #[doc = "Bit 24 - Interrupt from SDIO card; Writes to these bits clear them. Value of 1 clears bit and 0 leaves bit intact."]
+    #[doc = "Bit 24 - Interrupt from SDIO card; Writes to these bits clear them. Value\n\nof 1 clears bit and 0 leaves bit intact."]
     #[inline(always)]
     pub fn sdio_interrupt(&self) -> SdioInterruptR {
         SdioInterruptR::new(((self.bits >> 24) & 1) != 0)

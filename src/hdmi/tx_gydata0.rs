@@ -2,36 +2,30 @@
 pub type R = crate::R<TxGydata0Spec>;
 #[doc = "Register `TX_GYDATA0` writer"]
 pub type W = crate::W<TxGydata0Spec>;
-#[doc = "Field `GYDATA` reader - This register defines the value of gydata\\[7:0\\]
-when TX_INSTUFFING\\[0\\]
-(gydata_stuffing) is set to 1b."]
+#[doc = "Field `GYDATA` reader - This register defines the value of gydata\\[7:0\\]\n\nwhen TX_INSTUFFING\\[0\\]
+(gydata_stuffing) is set\n\nto 1b."]
 pub type GydataR = crate::FieldReader;
-#[doc = "Field `GYDATA` writer - This register defines the value of gydata\\[7:0\\]
-when TX_INSTUFFING\\[0\\]
-(gydata_stuffing) is set to 1b."]
+#[doc = "Field `GYDATA` writer - This register defines the value of gydata\\[7:0\\]\n\nwhen TX_INSTUFFING\\[0\\]
+(gydata_stuffing) is set\n\nto 1b."]
 pub type GydataW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - This register defines the value of gydata\\[7:0\\]
-when TX_INSTUFFING\\[0\\]
-(gydata_stuffing) is set to 1b."]
+    #[doc = "Bits 0:7 - This register defines the value of gydata\\[7:0\\]\n\nwhen TX_INSTUFFING\\[0\\]
+(gydata_stuffing) is set\n\nto 1b."]
     #[inline(always)]
     pub fn gydata(&self) -> GydataR {
         GydataR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - This register defines the value of gydata\\[7:0\\]
-when TX_INSTUFFING\\[0\\]
-(gydata_stuffing) is set to 1b."]
+    #[doc = "Bits 0:7 - This register defines the value of gydata\\[7:0\\]\n\nwhen TX_INSTUFFING\\[0\\]
+(gydata_stuffing) is set\n\nto 1b."]
     #[inline(always)]
     #[must_use]
     pub fn gydata(&mut self) -> GydataW<TxGydata0Spec> {
         GydataW::new(self, 0)
     }
 }
-#[doc = "This register defines the value of gydata\\[7:0\\]
-when TX_INSTUFFING\\[0\\]
-(gydata_stuffing) is set to 1b.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tx_gydata0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tx_gydata0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Video Input gy Data Channel Stuffing Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tx_gydata0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tx_gydata0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TxGydata0Spec;
 impl crate::RegisterSpec for TxGydata0Spec {
     type Ux = u8;

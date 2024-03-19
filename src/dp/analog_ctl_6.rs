@@ -2,19 +2,19 @@
 pub type R = crate::R<AnalogCtl6Spec>;
 #[doc = "Register `ANALOG_CTL_6` writer"]
 pub type W = crate::W<AnalogCtl6Spec>;
-#[doc = "Field `R_AMP_400MV_0DB` reader - The lookup-table 1(for calculating chx_swing_bit) value when V_diff is 400mv and Pre_emphasis is 0 db."]
+#[doc = "Field `R_AMP_400MV_0DB` reader - The lookup-table 1(for calculating \n\nchx_swing_bit) value when V_diff is 400mv \n\nand Pre_emphasis is 0 db."]
 pub type RAmp400mv0dbR = crate::FieldReader;
-#[doc = "Field `R_AMP_400MV_0DB` writer - The lookup-table 1(for calculating chx_swing_bit) value when V_diff is 400mv and Pre_emphasis is 0 db."]
+#[doc = "Field `R_AMP_400MV_0DB` writer - The lookup-table 1(for calculating \n\nchx_swing_bit) value when V_diff is 400mv \n\nand Pre_emphasis is 0 db."]
 pub type RAmp400mv0dbW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - The lookup-table 1(for calculating chx_swing_bit) value when V_diff is 400mv and Pre_emphasis is 0 db."]
+    #[doc = "Bits 0:7 - The lookup-table 1(for calculating \n\nchx_swing_bit) value when V_diff is 400mv \n\nand Pre_emphasis is 0 db."]
     #[inline(always)]
     pub fn r_amp_400mv_0db(&self) -> RAmp400mv0dbR {
         RAmp400mv0dbR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - The lookup-table 1(for calculating chx_swing_bit) value when V_diff is 400mv and Pre_emphasis is 0 db."]
+    #[doc = "Bits 0:7 - The lookup-table 1(for calculating \n\nchx_swing_bit) value when V_diff is 400mv \n\nand Pre_emphasis is 0 db."]
     #[inline(always)]
     #[must_use]
     pub fn r_amp_400mv_0db(&mut self) -> RAmp400mv0dbW<AnalogCtl6Spec> {

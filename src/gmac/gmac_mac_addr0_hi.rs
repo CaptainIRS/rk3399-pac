@@ -2,23 +2,19 @@
 pub type R = crate::R<GmacMacAddr0HiSpec>;
 #[doc = "Register `GMAC_MAC_ADDR0_HI` writer"]
 pub type W = crate::W<GmacMacAddr0HiSpec>;
-#[doc = "Field `A47_A32` reader - MAC Address0 \\[47:32\\]
-This field contains the upper 16 bits (47:32) of the 6-byte first MAC address. This is used by the MAC for filtering for received frames and for inserting the MAC address in the Transmit Flow Control (PAUSE) Frames."]
+#[doc = "Field `A47_A32` reader - MAC Address0 \\[47:32\\]\n\nThis field contains the upper 16 bits (47:32) of the 6-byte first\n\nMAC address. This is used by the MAC for filtering for received\n\nframes and for inserting the MAC address in the Transmit Flow\n\nControl (PAUSE) Frames."]
 pub type A47A32R = crate::FieldReader<u16>;
-#[doc = "Field `A47_A32` writer - MAC Address0 \\[47:32\\]
-This field contains the upper 16 bits (47:32) of the 6-byte first MAC address. This is used by the MAC for filtering for received frames and for inserting the MAC address in the Transmit Flow Control (PAUSE) Frames."]
+#[doc = "Field `A47_A32` writer - MAC Address0 \\[47:32\\]\n\nThis field contains the upper 16 bits (47:32) of the 6-byte first\n\nMAC address. This is used by the MAC for filtering for received\n\nframes and for inserting the MAC address in the Transmit Flow\n\nControl (PAUSE) Frames."]
 pub type A47A32W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:15 - MAC Address0 \\[47:32\\]
-This field contains the upper 16 bits (47:32) of the 6-byte first MAC address. This is used by the MAC for filtering for received frames and for inserting the MAC address in the Transmit Flow Control (PAUSE) Frames."]
+    #[doc = "Bits 0:15 - MAC Address0 \\[47:32\\]\n\nThis field contains the upper 16 bits (47:32) of the 6-byte first\n\nMAC address. This is used by the MAC for filtering for received\n\nframes and for inserting the MAC address in the Transmit Flow\n\nControl (PAUSE) Frames."]
     #[inline(always)]
     pub fn a47_a32(&self) -> A47A32R {
         A47A32R::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - MAC Address0 \\[47:32\\]
-This field contains the upper 16 bits (47:32) of the 6-byte first MAC address. This is used by the MAC for filtering for received frames and for inserting the MAC address in the Transmit Flow Control (PAUSE) Frames."]
+    #[doc = "Bits 0:15 - MAC Address0 \\[47:32\\]\n\nThis field contains the upper 16 bits (47:32) of the 6-byte first\n\nMAC address. This is used by the MAC for filtering for received\n\nframes and for inserting the MAC address in the Transmit Flow\n\nControl (PAUSE) Frames."]
     #[inline(always)]
     #[must_use]
     pub fn a47_a32(&mut self) -> A47A32W<GmacMacAddr0HiSpec> {

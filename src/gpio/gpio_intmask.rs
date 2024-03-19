@@ -2,11 +2,12 @@
 pub type R = crate::R<GpioIntmaskSpec>;
 #[doc = "Register `GPIO_INTMASK` writer"]
 pub type W = crate::W<GpioIntmaskSpec>;
-#[doc = "Controls whether an interrupt on Port A can create an interrupt for the interrupt controller by not masking it. Whenever a 1 is written to a bit in this register, it masks the interrupt generation capability for this signal; otherwise interrupts are allowed through.\n\nValue on reset: 0"]
+#[doc = "Controls whether an interrupt on Port A can create an\n\ninterrupt for the interrupt controller by not masking it. Whenever\n\na 1 is written to a bit in this register, it masks the interrupt\n\ngeneration capability for this signal; otherwise interrupts are\n\nallowed through.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum GpioIntMask {
-    #[doc = "0: Mask interrupt"]
+    #[doc = "0: Interrupt bits are unmasked (default)"]
     B0 = 0,
     #[doc = "1: Mask interrupt"]
     B1 = 1,
@@ -20,7 +21,7 @@ impl From<GpioIntMask> for u32 {
 impl crate::FieldSpec for GpioIntMask {
     type Ux = u32;
 }
-#[doc = "Field `GPIO_INT_MASK` reader - Controls whether an interrupt on Port A can create an interrupt for the interrupt controller by not masking it. Whenever a 1 is written to a bit in this register, it masks the interrupt generation capability for this signal; otherwise interrupts are allowed through."]
+#[doc = "Field `GPIO_INT_MASK` reader - Controls whether an interrupt on Port A can create an\n\ninterrupt for the interrupt controller by not masking it. Whenever\n\na 1 is written to a bit in this register, it masks the interrupt\n\ngeneration capability for this signal; otherwise interrupts are\n\nallowed through."]
 pub type GpioIntMaskR = crate::FieldReader<GpioIntMask>;
 impl GpioIntMaskR {
     #[doc = "Get enumerated values variant"]
@@ -32,7 +33,7 @@ impl GpioIntMaskR {
             _ => None,
         }
     }
-    #[doc = "Mask interrupt"]
+    #[doc = "Interrupt bits are unmasked (default)"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == GpioIntMask::B0
@@ -43,14 +44,14 @@ impl GpioIntMaskR {
         *self == GpioIntMask::B1
     }
 }
-#[doc = "Field `GPIO_INT_MASK` writer - Controls whether an interrupt on Port A can create an interrupt for the interrupt controller by not masking it. Whenever a 1 is written to a bit in this register, it masks the interrupt generation capability for this signal; otherwise interrupts are allowed through."]
+#[doc = "Field `GPIO_INT_MASK` writer - Controls whether an interrupt on Port A can create an\n\ninterrupt for the interrupt controller by not masking it. Whenever\n\na 1 is written to a bit in this register, it masks the interrupt\n\ngeneration capability for this signal; otherwise interrupts are\n\nallowed through."]
 pub type GpioIntMaskW<'a, REG> = crate::FieldWriter<'a, REG, 32, GpioIntMask>;
 impl<'a, REG> GpioIntMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u32>,
 {
-    #[doc = "Mask interrupt"]
+    #[doc = "Interrupt bits are unmasked (default)"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(GpioIntMask::B0)
@@ -62,14 +63,14 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 0:31 - Controls whether an interrupt on Port A can create an interrupt for the interrupt controller by not masking it. Whenever a 1 is written to a bit in this register, it masks the interrupt generation capability for this signal; otherwise interrupts are allowed through."]
+    #[doc = "Bits 0:31 - Controls whether an interrupt on Port A can create an\n\ninterrupt for the interrupt controller by not masking it. Whenever\n\na 1 is written to a bit in this register, it masks the interrupt\n\ngeneration capability for this signal; otherwise interrupts are\n\nallowed through."]
     #[inline(always)]
     pub fn gpio_int_mask(&self) -> GpioIntMaskR {
         GpioIntMaskR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Controls whether an interrupt on Port A can create an interrupt for the interrupt controller by not masking it. Whenever a 1 is written to a bit in this register, it masks the interrupt generation capability for this signal; otherwise interrupts are allowed through."]
+    #[doc = "Bits 0:31 - Controls whether an interrupt on Port A can create an\n\ninterrupt for the interrupt controller by not masking it. Whenever\n\na 1 is written to a bit in this register, it masks the interrupt\n\ngeneration capability for this signal; otherwise interrupts are\n\nallowed through."]
     #[inline(always)]
     #[must_use]
     pub fn gpio_int_mask(&mut self) -> GpioIntMaskW<GpioIntmaskSpec> {

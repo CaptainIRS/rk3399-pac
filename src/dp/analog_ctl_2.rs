@@ -2,10 +2,11 @@
 pub type R = crate::R<AnalogCtl2Spec>;
 #[doc = "Register `ANALOG_CTL_2` writer"]
 pub type W = crate::W<AnalogCtl2Spec>;
-#[doc = "Choose the reference clock of PHY use 24M or 27M:\n\nValue on reset: 1"]
+#[doc = "Choose the reference clock of PHY use \n\n24M or 27M:\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sel24m {
-    #[doc = "1: Use 27M clock."]
+    #[doc = "1: Use 24M clock,"]
     B1 = 1,
     #[doc = "0: Use 27M clock."]
     B0 = 0,
@@ -16,7 +17,7 @@ impl From<Sel24m> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SEL_24M` reader - Choose the reference clock of PHY use 24M or 27M:"]
+#[doc = "Field `SEL_24M` reader - Choose the reference clock of PHY use \n\n24M or 27M:"]
 pub type Sel24mR = crate::BitReader<Sel24m>;
 impl Sel24mR {
     #[doc = "Get enumerated values variant"]
@@ -27,7 +28,7 @@ impl Sel24mR {
             false => Sel24m::B0,
         }
     }
-    #[doc = "Use 27M clock."]
+    #[doc = "Use 24M clock,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Sel24m::B1
@@ -38,13 +39,13 @@ impl Sel24mR {
         *self == Sel24m::B0
     }
 }
-#[doc = "Field `SEL_24M` writer - Choose the reference clock of PHY use 24M or 27M:"]
+#[doc = "Field `SEL_24M` writer - Choose the reference clock of PHY use \n\n24M or 27M:"]
 pub type Sel24mW<'a, REG> = crate::BitWriter<'a, REG, Sel24m>;
 impl<'a, REG> Sel24mW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Use 27M clock."]
+    #[doc = "Use 24M clock,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Sel24m::B1)
@@ -56,14 +57,14 @@ where
     }
 }
 impl R {
-    #[doc = "Bit 3 - Choose the reference clock of PHY use 24M or 27M:"]
+    #[doc = "Bit 3 - Choose the reference clock of PHY use \n\n24M or 27M:"]
     #[inline(always)]
     pub fn sel_24m(&self) -> Sel24mR {
         Sel24mR::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 3 - Choose the reference clock of PHY use 24M or 27M:"]
+    #[doc = "Bit 3 - Choose the reference clock of PHY use \n\n24M or 27M:"]
     #[inline(always)]
     #[must_use]
     pub fn sel_24m(&mut self) -> Sel24mW<AnalogCtl2Spec> {

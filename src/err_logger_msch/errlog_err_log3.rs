@@ -1,9 +1,9 @@
 #[doc = "Register `ERRLOG_ErrLog3` reader"]
 pub type R = crate::R<ErrlogErrLog3Spec>;
-#[doc = "Field `ERRLOG3` reader - Contains up to 32 LSBs of transport protocol packet header field Addr of the logged error. Unused bits are read as 0."]
+#[doc = "Field `ERRLOG3` reader - Contains up to 32 LSBs of transport protocol packet header field\n\nAddr of the logged error. Unused bits are read as 0."]
 pub type Errlog3R = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Contains up to 32 LSBs of transport protocol packet header field Addr of the logged error. Unused bits are read as 0."]
+    #[doc = "Bits 0:31 - Contains up to 32 LSBs of transport protocol packet header field\n\nAddr of the logged error. Unused bits are read as 0."]
     #[inline(always)]
     pub fn errlog3(&self) -> Errlog3R {
         Errlog3R::new(self.bits)

@@ -2,162 +2,162 @@
 pub type R = crate::R<CruClkgateCon32Spec>;
 #[doc = "Register `CRU_CLKGATE_CON32` writer"]
 pub type W = crate::W<CruClkgateCon32Spec>;
-#[doc = "Field `ACLK_GMAC_EN` reader - aclk_gmac clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_GMAC_EN` reader - aclk_gmac clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkGmacEnR = crate::BitReader;
-#[doc = "Field `ACLK_GMAC_EN` writer - aclk_gmac clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_GMAC_EN` writer - aclk_gmac clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkGmacEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_GMAC_NOC_EN` reader - aclk_gmac_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `ACLK_GMAC_NOC_EN` reader - aclk_gmac_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type AclkGmacNocEnR = crate::BitReader;
-#[doc = "Field `ACLK_GMAC_NOC_EN` writer - aclk_gmac_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `ACLK_GMAC_NOC_EN` writer - aclk_gmac_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type AclkGmacNocEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PCLK_GMAC_EN` reader - pclk_gmac clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLK_GMAC_EN` reader - pclk_gmac clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkGmacEnR = crate::BitReader;
-#[doc = "Field `PCLK_GMAC_EN` writer - pclk_gmac clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLK_GMAC_EN` writer - pclk_gmac clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkGmacEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PCLK_GMAC_NOC_EN` reader - pclk_gmac_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `PCLK_GMAC_NOC_EN` reader - pclk_gmac_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type PclkGmacNocEnR = crate::BitReader;
-#[doc = "Field `PCLK_GMAC_NOC_EN` writer - pclk_gmac_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `PCLK_GMAC_NOC_EN` writer - pclk_gmac_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type PclkGmacNocEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_PERF_GMAC_EN` reader - aclk_perf_gmac clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_PERF_GMAC_EN` reader - aclk_perf_gmac clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkPerfGmacEnR = crate::BitReader;
-#[doc = "Field `ACLK_PERF_GMAC_EN` writer - aclk_perf_gmac clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_PERF_GMAC_EN` writer - aclk_perf_gmac clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkPerfGmacEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_EMMC_CORE_EN` reader - aclk_emmc_core clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_EMMC_CORE_EN` reader - aclk_emmc_core clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkEmmcCoreEnR = crate::BitReader;
-#[doc = "Field `ACLK_EMMC_CORE_EN` writer - aclk_emmc_core clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_EMMC_CORE_EN` writer - aclk_emmc_core clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkEmmcCoreEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_EMMC_NOC_EN` reader - aclk_emmc_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `ACLK_EMMC_NOC_EN` reader - aclk_emmc_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type AclkEmmcNocEnR = crate::BitReader;
-#[doc = "Field `ACLK_EMMC_NOC_EN` writer - aclk_emmc_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `ACLK_EMMC_NOC_EN` writer - aclk_emmc_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type AclkEmmcNocEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_EMMC_GRF_EN` reader - aclk_emmc_grf clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `ACLK_EMMC_GRF_EN` reader - aclk_emmc_grf clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type AclkEmmcGrfEnR = crate::BitReader;
-#[doc = "Field `ACLK_EMMC_GRF_EN` writer - aclk_emmc_grf clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `ACLK_EMMC_GRF_EN` writer - aclk_emmc_grf clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type AclkEmmcGrfEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PCLK_EDP_NOC_EN` reader - pclk_edp_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `PCLK_EDP_NOC_EN` reader - pclk_edp_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type PclkEdpNocEnR = crate::BitReader;
-#[doc = "Field `PCLK_EDP_NOC_EN` writer - pclk_edp_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `PCLK_EDP_NOC_EN` writer - pclk_edp_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type PclkEdpNocEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PCLK_EDP_CTRL_EN` reader - pclk_edp_ctrl clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLK_EDP_CTRL_EN` reader - pclk_edp_ctrl clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkEdpCtrlEnR = crate::BitReader;
-#[doc = "Field `PCLK_EDP_CTRL_EN` writer - pclk_edp_ctrl clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLK_EDP_CTRL_EN` writer - pclk_edp_ctrl clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkEdpCtrlEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bit 0 - aclk_gmac clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 0 - aclk_gmac clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn aclk_gmac_en(&self) -> AclkGmacEnR {
         AclkGmacEnR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - aclk_gmac_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 1 - aclk_gmac_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     pub fn aclk_gmac_noc_en(&self) -> AclkGmacNocEnR {
         AclkGmacNocEnR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - pclk_gmac clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 2 - pclk_gmac clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn pclk_gmac_en(&self) -> PclkGmacEnR {
         PclkGmacEnR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - pclk_gmac_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 3 - pclk_gmac_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     pub fn pclk_gmac_noc_en(&self) -> PclkGmacNocEnR {
         PclkGmacNocEnR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - aclk_perf_gmac clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 4 - aclk_perf_gmac clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn aclk_perf_gmac_en(&self) -> AclkPerfGmacEnR {
         AclkPerfGmacEnR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 8 - aclk_emmc_core clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 8 - aclk_emmc_core clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn aclk_emmc_core_en(&self) -> AclkEmmcCoreEnR {
         AclkEmmcCoreEnR::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bit 9 - aclk_emmc_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 9 - aclk_emmc_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     pub fn aclk_emmc_noc_en(&self) -> AclkEmmcNocEnR {
         AclkEmmcNocEnR::new(((self.bits >> 9) & 1) != 0)
     }
-    #[doc = "Bit 10 - aclk_emmc_grf clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 10 - aclk_emmc_grf clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     pub fn aclk_emmc_grf_en(&self) -> AclkEmmcGrfEnR {
         AclkEmmcGrfEnR::new(((self.bits >> 10) & 1) != 0)
     }
-    #[doc = "Bit 12 - pclk_edp_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 12 - pclk_edp_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     pub fn pclk_edp_noc_en(&self) -> PclkEdpNocEnR {
         PclkEdpNocEnR::new(((self.bits >> 12) & 1) != 0)
     }
-    #[doc = "Bit 13 - pclk_edp_ctrl clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 13 - pclk_edp_ctrl clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn pclk_edp_ctrl_en(&self) -> PclkEdpCtrlEnR {
         PclkEdpCtrlEnR::new(((self.bits >> 13) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - aclk_gmac clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 0 - aclk_gmac clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_gmac_en(&mut self) -> AclkGmacEnW<CruClkgateCon32Spec> {
         AclkGmacEnW::new(self, 0)
     }
-    #[doc = "Bit 1 - aclk_gmac_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 1 - aclk_gmac_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_gmac_noc_en(&mut self) -> AclkGmacNocEnW<CruClkgateCon32Spec> {
         AclkGmacNocEnW::new(self, 1)
     }
-    #[doc = "Bit 2 - pclk_gmac clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 2 - pclk_gmac clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn pclk_gmac_en(&mut self) -> PclkGmacEnW<CruClkgateCon32Spec> {
         PclkGmacEnW::new(self, 2)
     }
-    #[doc = "Bit 3 - pclk_gmac_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 3 - pclk_gmac_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     #[must_use]
     pub fn pclk_gmac_noc_en(&mut self) -> PclkGmacNocEnW<CruClkgateCon32Spec> {
         PclkGmacNocEnW::new(self, 3)
     }
-    #[doc = "Bit 4 - aclk_perf_gmac clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 4 - aclk_perf_gmac clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_perf_gmac_en(&mut self) -> AclkPerfGmacEnW<CruClkgateCon32Spec> {
         AclkPerfGmacEnW::new(self, 4)
     }
-    #[doc = "Bit 8 - aclk_emmc_core clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 8 - aclk_emmc_core clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_emmc_core_en(&mut self) -> AclkEmmcCoreEnW<CruClkgateCon32Spec> {
         AclkEmmcCoreEnW::new(self, 8)
     }
-    #[doc = "Bit 9 - aclk_emmc_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 9 - aclk_emmc_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_emmc_noc_en(&mut self) -> AclkEmmcNocEnW<CruClkgateCon32Spec> {
         AclkEmmcNocEnW::new(self, 9)
     }
-    #[doc = "Bit 10 - aclk_emmc_grf clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 10 - aclk_emmc_grf clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_emmc_grf_en(&mut self) -> AclkEmmcGrfEnW<CruClkgateCon32Spec> {
         AclkEmmcGrfEnW::new(self, 10)
     }
-    #[doc = "Bit 12 - pclk_edp_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 12 - pclk_edp_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     #[must_use]
     pub fn pclk_edp_noc_en(&mut self) -> PclkEdpNocEnW<CruClkgateCon32Spec> {
         PclkEdpNocEnW::new(self, 12)
     }
-    #[doc = "Bit 13 - pclk_edp_ctrl clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 13 - pclk_edp_ctrl clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn pclk_edp_ctrl_en(&mut self) -> PclkEdpCtrlEnW<CruClkgateCon32Spec> {
         PclkEdpCtrlEnW::new(self, 13)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkgateCon32Spec> {

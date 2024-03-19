@@ -36,7 +36,7 @@ impl W {
         OiecChannelnumcl3W::new(self, 4)
     }
 }
-#[doc = "Channel number for third left sample\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_audschnl6::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_audschnl6::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer Audio Sample Channel Status Configuration Register 6\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_audschnl6::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_audschnl6::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcAudschnl6Spec;
 impl crate::RegisterSpec for FcAudschnl6Spec {
     type Ux = u8;

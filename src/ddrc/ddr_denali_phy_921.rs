@@ -1,16 +1,16 @@
 #[doc = "Register `DDR_DENALI_PHY_921` reader"]
 pub type R = crate::R<DdrDenaliPhy921Spec>;
-#[doc = "Field `PHY_PLL_OBS_1` reader - PHY clock PLL_1 observe values. READ-ONLY"]
+#[doc = "Field `PHY_PLL_OBS_1` reader - PHY clock PLL_1 observe values."]
 pub type PhyPllObs1R = crate::FieldReader<u16>;
-#[doc = "Field `PHY_PLL_OBS_2` reader - PHY clock PLL_2 observe values. READ-ONLY"]
+#[doc = "Field `PHY_PLL_OBS_2` reader - PHY clock PLL_2 observe values."]
 pub type PhyPllObs2R = crate::FieldReader<u16>;
 impl R {
-    #[doc = "Bits 0:15 - PHY clock PLL_1 observe values. READ-ONLY"]
+    #[doc = "Bits 0:15 - PHY clock PLL_1 observe values."]
     #[inline(always)]
     pub fn phy_pll_obs_1(&self) -> PhyPllObs1R {
         PhyPllObs1R::new((self.bits & 0xffff) as u16)
     }
-    #[doc = "Bits 16:31 - PHY clock PLL_2 observe values. READ-ONLY"]
+    #[doc = "Bits 16:31 - PHY clock PLL_2 observe values."]
     #[inline(always)]
     pub fn phy_pll_obs_2(&self) -> PhyPllObs2R {
         PhyPllObs2R::new(((self.bits >> 16) & 0xffff) as u16)

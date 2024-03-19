@@ -2,14 +2,15 @@
 pub type R = crate::R<Rki2cMrxraddrSpec>;
 #[doc = "Register `RKI2C_MRXRADDR` writer"]
 pub type W = crate::W<Rki2cMrxraddrSpec>;
-#[doc = "Field `SRADDR` reader - slave register address accessed 24 bits register address"]
+#[doc = "Field `SRADDR` reader - slave register address accessed\n\n24 bits register address"]
 pub type SraddrR = crate::FieldReader<u32>;
-#[doc = "Field `SRADDR` writer - slave register address accessed 24 bits register address"]
+#[doc = "Field `SRADDR` writer - slave register address accessed\n\n24 bits register address"]
 pub type SraddrW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 #[doc = "address low byte valid\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sraddlvld {
-    #[doc = "0: valid"]
+    #[doc = "0: invalid"]
     B0 = 0,
     #[doc = "1: valid"]
     B1 = 1,
@@ -31,7 +32,7 @@ impl SraddlvldR {
             true => Sraddlvld::B1,
         }
     }
-    #[doc = "valid"]
+    #[doc = "invalid"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Sraddlvld::B0
@@ -48,7 +49,7 @@ impl<'a, REG> SraddlvldW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "valid"]
+    #[doc = "invalid"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Sraddlvld::B0)
@@ -60,9 +61,10 @@ where
     }
 }
 #[doc = "address middle byte valid\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sraddmvld {
-    #[doc = "0: valid"]
+    #[doc = "0: invalid"]
     B0 = 0,
     #[doc = "1: valid"]
     B1 = 1,
@@ -84,7 +86,7 @@ impl SraddmvldR {
             true => Sraddmvld::B1,
         }
     }
-    #[doc = "valid"]
+    #[doc = "invalid"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Sraddmvld::B0
@@ -101,7 +103,7 @@ impl<'a, REG> SraddmvldW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "valid"]
+    #[doc = "invalid"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Sraddmvld::B0)
@@ -113,9 +115,10 @@ where
     }
 }
 #[doc = "address high byte valid\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sraddhvld {
-    #[doc = "0: valid"]
+    #[doc = "0: invalid"]
     B0 = 0,
     #[doc = "1: valid"]
     B1 = 1,
@@ -137,7 +140,7 @@ impl SraddhvldR {
             true => Sraddhvld::B1,
         }
     }
-    #[doc = "valid"]
+    #[doc = "invalid"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Sraddhvld::B0
@@ -154,7 +157,7 @@ impl<'a, REG> SraddhvldW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "valid"]
+    #[doc = "invalid"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Sraddhvld::B0)
@@ -166,7 +169,7 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 0:23 - slave register address accessed 24 bits register address"]
+    #[doc = "Bits 0:23 - slave register address accessed\n\n24 bits register address"]
     #[inline(always)]
     pub fn sraddr(&self) -> SraddrR {
         SraddrR::new(self.bits & 0x00ff_ffff)
@@ -188,7 +191,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:23 - slave register address accessed 24 bits register address"]
+    #[doc = "Bits 0:23 - slave register address accessed\n\n24 bits register address"]
     #[inline(always)]
     #[must_use]
     pub fn sraddr(&mut self) -> SraddrW<Rki2cMrxraddrSpec> {

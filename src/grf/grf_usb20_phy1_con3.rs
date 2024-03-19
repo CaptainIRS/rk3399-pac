@@ -2,14 +2,15 @@
 pub type R = crate::R<GrfUsb20Phy1Con3Spec>;
 #[doc = "Register `GRF_USB20_PHY1_CON3` writer"]
 pub type W = crate::W<GrfUsb20Phy1Con3Spec>;
-#[doc = "Field `IDPULLUP` reader - idpullup Use the value of this register input to idpullup of usb2phy"]
+#[doc = "Field `IDPULLUP` reader - idpullup\n\nUse the value of this register input to idpullup\n\nof usb2phy"]
 pub type IdpullupR = crate::BitReader;
-#[doc = "Field `IDPULLUP` writer - idpullup Use the value of this register input to idpullup of usb2phy"]
+#[doc = "Field `IDPULLUP` writer - idpullup\n\nUse the value of this register input to idpullup\n\nof usb2phy"]
 pub type IdpullupW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "drvvbus_sel\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DrvvbusSel {
-    #[doc = "1: select drvvbus from usb3otg1 controller to drvvbus of usb2phy and GPIO to external PMIC"]
+    #[doc = "1: select the value of bit2 of USB20_PHY1_CON3 to drvvbus of usb2phy and GPIO to external PMIC"]
     B1 = 1,
     #[doc = "0: select drvvbus from usb3otg1 controller to drvvbus of usb2phy and GPIO to external PMIC"]
     B0 = 0,
@@ -31,7 +32,7 @@ impl DrvvbusSelR {
             false => DrvvbusSel::B0,
         }
     }
-    #[doc = "select drvvbus from usb3otg1 controller to drvvbus of usb2phy and GPIO to external PMIC"]
+    #[doc = "select the value of bit2 of USB20_PHY1_CON3 to drvvbus of usb2phy and GPIO to external PMIC"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == DrvvbusSel::B1
@@ -48,7 +49,7 @@ impl<'a, REG> DrvvbusSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "select drvvbus from usb3otg1 controller to drvvbus of usb2phy and GPIO to external PMIC"]
+    #[doc = "select the value of bit2 of USB20_PHY1_CON3 to drvvbus of usb2phy and GPIO to external PMIC"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(DrvvbusSel::B1)
@@ -59,24 +60,24 @@ where
         self.variant(DrvvbusSel::B0)
     }
 }
-#[doc = "Field `DRVVBUS` reader - drvvbus Pls see drvvbus_sel."]
+#[doc = "Field `DRVVBUS` reader - drvvbus\n\nPls see drvvbus_sel."]
 pub type DrvvbusR = crate::BitReader;
-#[doc = "Field `DRVVBUS` writer - drvvbus Pls see drvvbus_sel."]
+#[doc = "Field `DRVVBUS` writer - drvvbus\n\nPls see drvvbus_sel."]
 pub type DrvvbusW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CHRGVBUS` reader - chrgvbus Use the value of this register input to chrgvbus of usb2phy"]
+#[doc = "Field `CHRGVBUS` reader - chrgvbus\n\nUse the value of this register input to\n\nchrgvbus of usb2phy"]
 pub type ChrgvbusR = crate::BitReader;
-#[doc = "Field `CHRGVBUS` writer - chrgvbus Use the value of this register input to chrgvbus of usb2phy"]
+#[doc = "Field `CHRGVBUS` writer - chrgvbus\n\nUse the value of this register input to\n\nchrgvbus of usb2phy"]
 pub type ChrgvbusW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `DISCHRGVBUS` reader - dischrgvbus Use the value of this register input to chrgvbus of usb2phy"]
+#[doc = "Field `DISCHRGVBUS` reader - dischrgvbus\n\nUse the value of this register input to\n\nchrgvbus of usb2phy"]
 pub type DischrgvbusR = crate::BitReader;
-#[doc = "Field `DISCHRGVBUS` writer - dischrgvbus Use the value of this register input to chrgvbus of usb2phy"]
+#[doc = "Field `DISCHRGVBUS` writer - dischrgvbus\n\nUse the value of this register input to\n\nchrgvbus of usb2phy"]
 pub type DischrgvbusW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bit 0 - idpullup Use the value of this register input to idpullup of usb2phy"]
+    #[doc = "Bit 0 - idpullup\n\nUse the value of this register input to idpullup\n\nof usb2phy"]
     #[inline(always)]
     pub fn idpullup(&self) -> IdpullupR {
         IdpullupR::new((self.bits & 1) != 0)
@@ -86,29 +87,29 @@ impl R {
     pub fn drvvbus_sel(&self) -> DrvvbusSelR {
         DrvvbusSelR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - drvvbus Pls see drvvbus_sel."]
+    #[doc = "Bit 2 - drvvbus\n\nPls see drvvbus_sel."]
     #[inline(always)]
     pub fn drvvbus(&self) -> DrvvbusR {
         DrvvbusR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - chrgvbus Use the value of this register input to chrgvbus of usb2phy"]
+    #[doc = "Bit 3 - chrgvbus\n\nUse the value of this register input to\n\nchrgvbus of usb2phy"]
     #[inline(always)]
     pub fn chrgvbus(&self) -> ChrgvbusR {
         ChrgvbusR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - dischrgvbus Use the value of this register input to chrgvbus of usb2phy"]
+    #[doc = "Bit 4 - dischrgvbus\n\nUse the value of this register input to\n\nchrgvbus of usb2phy"]
     #[inline(always)]
     pub fn dischrgvbus(&self) -> DischrgvbusR {
         DischrgvbusR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bit 0 - idpullup Use the value of this register input to idpullup of usb2phy"]
+    #[doc = "Bit 0 - idpullup\n\nUse the value of this register input to idpullup\n\nof usb2phy"]
     #[inline(always)]
     #[must_use]
     pub fn idpullup(&mut self) -> IdpullupW<GrfUsb20Phy1Con3Spec> {
@@ -120,25 +121,25 @@ impl W {
     pub fn drvvbus_sel(&mut self) -> DrvvbusSelW<GrfUsb20Phy1Con3Spec> {
         DrvvbusSelW::new(self, 1)
     }
-    #[doc = "Bit 2 - drvvbus Pls see drvvbus_sel."]
+    #[doc = "Bit 2 - drvvbus\n\nPls see drvvbus_sel."]
     #[inline(always)]
     #[must_use]
     pub fn drvvbus(&mut self) -> DrvvbusW<GrfUsb20Phy1Con3Spec> {
         DrvvbusW::new(self, 2)
     }
-    #[doc = "Bit 3 - chrgvbus Use the value of this register input to chrgvbus of usb2phy"]
+    #[doc = "Bit 3 - chrgvbus\n\nUse the value of this register input to\n\nchrgvbus of usb2phy"]
     #[inline(always)]
     #[must_use]
     pub fn chrgvbus(&mut self) -> ChrgvbusW<GrfUsb20Phy1Con3Spec> {
         ChrgvbusW::new(self, 3)
     }
-    #[doc = "Bit 4 - dischrgvbus Use the value of this register input to chrgvbus of usb2phy"]
+    #[doc = "Bit 4 - dischrgvbus\n\nUse the value of this register input to\n\nchrgvbus of usb2phy"]
     #[inline(always)]
     #[must_use]
     pub fn dischrgvbus(&mut self) -> DischrgvbusW<GrfUsb20Phy1Con3Spec> {
         DischrgvbusW::new(self, 4)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfUsb20Phy1Con3Spec> {

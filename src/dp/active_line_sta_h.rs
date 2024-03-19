@@ -3,14 +3,14 @@ pub type R = crate::R<ActiveLineStaHSpec>;
 #[doc = "Register `ACTIVE_LINE_STA_H` writer"]
 pub type W = crate::W<ActiveLineStaHSpec>;
 #[doc = "Field `ACTIVE_LINE_STA_H` reader - ACTIVE_LINE \\[11:8\\]
-which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+which is detected by \n\nvideo capture module. \n\nThis bit field is valid only when STRM_VALID is \n\nhigh. And STRM_VALID becomes high when \n\ntwo successive frames are determined as \n\nstable."]
 pub type ActiveLineStaHR = crate::FieldReader;
 #[doc = "Field `ACTIVE_LINE_STA_H` writer - ACTIVE_LINE \\[11:8\\]
-which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+which is detected by \n\nvideo capture module. \n\nThis bit field is valid only when STRM_VALID is \n\nhigh. And STRM_VALID becomes high when \n\ntwo successive frames are determined as \n\nstable."]
 pub type ActiveLineStaHW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
     #[doc = "Bits 0:4 - ACTIVE_LINE \\[11:8\\]
-which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+which is detected by \n\nvideo capture module. \n\nThis bit field is valid only when STRM_VALID is \n\nhigh. And STRM_VALID becomes high when \n\ntwo successive frames are determined as \n\nstable."]
     #[inline(always)]
     pub fn active_line_sta_h(&self) -> ActiveLineStaHR {
         ActiveLineStaHR::new((self.bits & 0x1f) as u8)
@@ -18,7 +18,7 @@ which is detected by video capture module. This bit field is valid only when STR
 }
 impl W {
     #[doc = "Bits 0:4 - ACTIVE_LINE \\[11:8\\]
-which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+which is detected by \n\nvideo capture module. \n\nThis bit field is valid only when STRM_VALID is \n\nhigh. And STRM_VALID becomes high when \n\ntwo successive frames are determined as \n\nstable."]
     #[inline(always)]
     #[must_use]
     pub fn active_line_sta_h(&mut self) -> ActiveLineStaHW<ActiveLineStaHSpec> {

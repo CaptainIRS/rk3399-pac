@@ -1,9 +1,10 @@
 #[doc = "Register `PMU_CORE_PWR_ST` reader"]
 pub type R = crate::R<PmuCorePwrStSpec>;
 #[doc = "l2flushdone status of cluster_l\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum L2flushdoneClusterL {
-    #[doc = "0: cluster_l l2flushdone status is 1"]
+    #[doc = "0: cluster_l l2flushdone status is 0"]
     B0 = 0,
     #[doc = "1: cluster_l l2flushdone status is 1"]
     B1 = 1,
@@ -25,7 +26,7 @@ impl L2flushdoneClusterLR {
             true => L2flushdoneClusterL::B1,
         }
     }
-    #[doc = "cluster_l l2flushdone status is 1"]
+    #[doc = "cluster_l l2flushdone status is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == L2flushdoneClusterL::B0
@@ -37,9 +38,10 @@ impl L2flushdoneClusterLR {
     }
 }
 #[doc = "standbywfil2 status of cluster_l\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Standbywfil2ClusterL {
-    #[doc = "0: cluster_l standbywfil2 status is 1"]
+    #[doc = "0: cluster_l standbywfil2 status is 0"]
     B0 = 0,
     #[doc = "1: cluster_l standbywfil2 status is 1"]
     B1 = 1,
@@ -61,7 +63,7 @@ impl Standbywfil2ClusterLR {
             true => Standbywfil2ClusterL::B1,
         }
     }
-    #[doc = "cluster_l standbywfil2 status is 1"]
+    #[doc = "cluster_l standbywfil2 status is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Standbywfil2ClusterL::B0
@@ -73,10 +75,11 @@ impl Standbywfil2ClusterLR {
     }
 }
 #[doc = "standbywfe status of cluster_l\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum StandbywfeClusterL {
-    #[doc = "0: cluster_l standbywfe status is 1"]
+    #[doc = "0: cluster_l standbywfe status is 0"]
     B0 = 0,
     #[doc = "1: cluster_l standbywfe status is 1"]
     B1 = 1,
@@ -102,7 +105,7 @@ impl StandbywfeClusterLR {
             _ => None,
         }
     }
-    #[doc = "cluster_l standbywfe status is 1"]
+    #[doc = "cluster_l standbywfe status is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == StandbywfeClusterL::B0
@@ -114,10 +117,11 @@ impl StandbywfeClusterLR {
     }
 }
 #[doc = "standbywfi status of cluster_l\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum StandbywfiClusterL {
-    #[doc = "0: cluster_l standbywfi status is 1"]
+    #[doc = "0: cluster_l standbywfi status is 0"]
     B0 = 0,
     #[doc = "1: cluster_l standbywfi status is 1"]
     B1 = 1,
@@ -143,7 +147,7 @@ impl StandbywfiClusterLR {
             _ => None,
         }
     }
-    #[doc = "cluster_l standbywfi status is 1"]
+    #[doc = "cluster_l standbywfi status is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == StandbywfiClusterL::B0
@@ -155,9 +159,10 @@ impl StandbywfiClusterLR {
     }
 }
 #[doc = "l2flushdone status of cluster_b\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum L2flushdoneClusterB {
-    #[doc = "0: cluster_b l2flushdone status is 1"]
+    #[doc = "0: cluster_b l2flushdone status is 0"]
     B0 = 0,
     #[doc = "1: cluster_b l2flushdone status is 1"]
     B1 = 1,
@@ -179,7 +184,7 @@ impl L2flushdoneClusterBR {
             true => L2flushdoneClusterB::B1,
         }
     }
-    #[doc = "cluster_b l2flushdone status is 1"]
+    #[doc = "cluster_b l2flushdone status is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == L2flushdoneClusterB::B0
@@ -191,9 +196,10 @@ impl L2flushdoneClusterBR {
     }
 }
 #[doc = "standbywfil2 status of cluster_b\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Standbywfil2ClusterB {
-    #[doc = "0: cluster_b standbywfil2 status is 1"]
+    #[doc = "0: cluster_b standbywfil2 status is 0"]
     B0 = 0,
     #[doc = "1: cluster_b standbywfil2 status is 1"]
     B1 = 1,
@@ -215,7 +221,7 @@ impl Standbywfil2ClusterBR {
             true => Standbywfil2ClusterB::B1,
         }
     }
-    #[doc = "cluster_b standbywfil2 status is 1"]
+    #[doc = "cluster_b standbywfil2 status is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Standbywfil2ClusterB::B0
@@ -227,10 +233,11 @@ impl Standbywfil2ClusterBR {
     }
 }
 #[doc = "standbywfe status of cluster_b\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum StandbywfeClusterB {
-    #[doc = "0: cluster_b standbywfe status is 1"]
+    #[doc = "0: cluster_b standbywfe status is 0"]
     B0 = 0,
     #[doc = "1: cluster_b standbywfe status is 1"]
     B1 = 1,
@@ -256,7 +263,7 @@ impl StandbywfeClusterBR {
             _ => None,
         }
     }
-    #[doc = "cluster_b standbywfe status is 1"]
+    #[doc = "cluster_b standbywfe status is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == StandbywfeClusterB::B0
@@ -268,10 +275,11 @@ impl StandbywfeClusterBR {
     }
 }
 #[doc = "standbywfi status of cluster_b\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum StandbywfiClusterB {
-    #[doc = "0: cluster_b standbywfi status is 1"]
+    #[doc = "0: cluster_b standbywfi status is 0"]
     B0 = 0,
     #[doc = "1: cluster_b standbywfi status is 1"]
     B1 = 1,
@@ -297,7 +305,7 @@ impl StandbywfiClusterBR {
             _ => None,
         }
     }
-    #[doc = "cluster_b standbywfi status is 1"]
+    #[doc = "cluster_b standbywfi status is 0"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == StandbywfiClusterB::B0

@@ -3,9 +3,10 @@ pub type R = crate::R<SysCtl1Spec>;
 #[doc = "Register `SYS_CTL_1` writer"]
 pub type W = crate::W<SysCtl1Spec>;
 #[doc = "Video stream clock detect status control:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DetCtrl {
-    #[doc = "1: Use auto-detected status This bit's type is R/W."]
+    #[doc = "1: Use force detect status"]
     B1 = 1,
     #[doc = "0: Use auto-detected status This bit's type is R/W."]
     B0 = 0,
@@ -27,7 +28,7 @@ impl DetCtrlR {
             false => DetCtrl::B0,
         }
     }
-    #[doc = "Use auto-detected status This bit's type is R/W."]
+    #[doc = "Use force detect status"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == DetCtrl::B1
@@ -44,7 +45,7 @@ impl<'a, REG> DetCtrlW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Use auto-detected status This bit's type is R/W."]
+    #[doc = "Use force detect status"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(DetCtrl::B1)
@@ -55,10 +56,11 @@ where
         self.variant(DetCtrl::B0)
     }
 }
-#[doc = "Force video stream clock detect, this bit is only active when DET_CTRL is 1\n\nValue on reset: 0"]
+#[doc = "Force video stream clock detect, this bit is \n\nonly active when DET_CTRL is 1\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ForceDet {
-    #[doc = "1: Force video stream clock not detected This bit's type is R/W."]
+    #[doc = "1: Force video stream clock detected"]
     B1 = 1,
     #[doc = "0: Force video stream clock not detected This bit's type is R/W."]
     B0 = 0,
@@ -69,7 +71,7 @@ impl From<ForceDet> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FORCE_DET` reader - Force video stream clock detect, this bit is only active when DET_CTRL is 1"]
+#[doc = "Field `FORCE_DET` reader - Force video stream clock detect, this bit is \n\nonly active when DET_CTRL is 1"]
 pub type ForceDetR = crate::BitReader<ForceDet>;
 impl ForceDetR {
     #[doc = "Get enumerated values variant"]
@@ -80,7 +82,7 @@ impl ForceDetR {
             false => ForceDet::B0,
         }
     }
-    #[doc = "Force video stream clock not detected This bit's type is R/W."]
+    #[doc = "Force video stream clock detected"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == ForceDet::B1
@@ -91,13 +93,13 @@ impl ForceDetR {
         *self == ForceDet::B0
     }
 }
-#[doc = "Field `FORCE_DET` writer - Force video stream clock detect, this bit is only active when DET_CTRL is 1"]
+#[doc = "Field `FORCE_DET` writer - Force video stream clock detect, this bit is \n\nonly active when DET_CTRL is 1"]
 pub type ForceDetW<'a, REG> = crate::BitWriter1C<'a, REG, ForceDet>;
 impl<'a, REG> ForceDetW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Force video stream clock not detected This bit's type is R/W."]
+    #[doc = "Force video stream clock detected"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(ForceDet::B1)
@@ -108,10 +110,11 @@ where
         self.variant(ForceDet::B0)
     }
 }
-#[doc = "Video stream clock detect status, It will not affect video output.\n\nValue on reset: 0"]
+#[doc = "Video stream clock detect status, It will not \n\naffect video output.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DetSta {
-    #[doc = "1: Stream clock not detected Write any value to update the current status."]
+    #[doc = "1: Stream clock detected"]
     B1 = 1,
     #[doc = "0: Stream clock not detected Write any value to update the current status."]
     B0 = 0,
@@ -122,7 +125,7 @@ impl From<DetSta> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DET_STA` reader - Video stream clock detect status, It will not affect video output."]
+#[doc = "Field `DET_STA` reader - Video stream clock detect status, It will not \n\naffect video output."]
 pub type DetStaR = crate::BitReader<DetSta>;
 impl DetStaR {
     #[doc = "Get enumerated values variant"]
@@ -133,7 +136,7 @@ impl DetStaR {
             false => DetSta::B0,
         }
     }
-    #[doc = "Stream clock not detected Write any value to update the current status."]
+    #[doc = "Stream clock detected"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == DetSta::B1
@@ -144,13 +147,13 @@ impl DetStaR {
         *self == DetSta::B0
     }
 }
-#[doc = "Field `DET_STA` writer - Video stream clock detect status, It will not affect video output."]
+#[doc = "Field `DET_STA` writer - Video stream clock detect status, It will not \n\naffect video output."]
 pub type DetStaW<'a, REG> = crate::BitWriter<'a, REG, DetSta>;
 impl<'a, REG> DetStaW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Stream clock not detected Write any value to update the current status."]
+    #[doc = "Stream clock detected"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(DetSta::B1)
@@ -171,12 +174,12 @@ impl R {
     pub fn det_ctrl(&self) -> DetCtrlR {
         DetCtrlR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - Force video stream clock detect, this bit is only active when DET_CTRL is 1"]
+    #[doc = "Bit 1 - Force video stream clock detect, this bit is \n\nonly active when DET_CTRL is 1"]
     #[inline(always)]
     pub fn force_det(&self) -> ForceDetR {
         ForceDetR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - Video stream clock detect status, It will not affect video output."]
+    #[doc = "Bit 2 - Video stream clock detect status, It will not \n\naffect video output."]
     #[inline(always)]
     pub fn det_sta(&self) -> DetStaR {
         DetStaR::new(((self.bits >> 2) & 1) != 0)
@@ -194,13 +197,13 @@ impl W {
     pub fn det_ctrl(&mut self) -> DetCtrlW<SysCtl1Spec> {
         DetCtrlW::new(self, 0)
     }
-    #[doc = "Bit 1 - Force video stream clock detect, this bit is only active when DET_CTRL is 1"]
+    #[doc = "Bit 1 - Force video stream clock detect, this bit is \n\nonly active when DET_CTRL is 1"]
     #[inline(always)]
     #[must_use]
     pub fn force_det(&mut self) -> ForceDetW<SysCtl1Spec> {
         ForceDetW::new(self, 1)
     }
-    #[doc = "Bit 2 - Video stream clock detect status, It will not affect video output."]
+    #[doc = "Bit 2 - Video stream clock detect status, It will not \n\naffect video output."]
     #[inline(always)]
     #[must_use]
     pub fn det_sta(&mut self) -> DetStaW<SysCtl1Spec> {

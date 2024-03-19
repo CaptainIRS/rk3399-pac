@@ -36,7 +36,7 @@ impl W {
         I2cmphydoneW::new(self, 1)
     }
 }
-#[doc = "I2C Master PHY error indication\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ih_i2cmphy_stat0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ih_i2cmphy_stat0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PHY GEN2 I2C Master Interrupt Status Register (Done and Error Interrupts)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ih_i2cmphy_stat0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ih_i2cmphy_stat0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IhI2cmphyStat0Spec;
 impl crate::RegisterSpec for IhI2cmphyStat0Spec {
     type Ux = u8;

@@ -1,9 +1,9 @@
 #[doc = "Register `DDR_DENALI_PHY_174` reader"]
 pub type R = crate::R<DdrDenaliPhy174Spec>;
-#[doc = "Field `PHY_RDLVL_STATUS_OBS_1` reader - Observation register for read leveling status for slice 1. READ- ONLY"]
+#[doc = "Field `PHY_RDLVL_STATUS_OBS_1` reader - Observation register for read leveling status for slice 1."]
 pub type PhyRdlvlStatusObs1R = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Observation register for read leveling status for slice 1. READ- ONLY"]
+    #[doc = "Bits 0:31 - Observation register for read leveling status for slice 1."]
     #[inline(always)]
     pub fn phy_rdlvl_status_obs_1(&self) -> PhyRdlvlStatusObs1R {
         PhyRdlvlStatusObs1R::new(self.bits)

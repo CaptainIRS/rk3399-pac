@@ -3,12 +3,13 @@ pub type R = crate::R<LaneCountSetSpec>;
 #[doc = "Register `LANE_COUNT_SET` writer"]
 pub type W = crate::W<LaneCountSetSpec>;
 #[doc = "Main link lane count\n\nValue on reset: 4"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LaneCountSet {
-    #[doc = "1: four lanes other: Reserved"]
+    #[doc = "1: one lane"]
     H1 = 1,
-    #[doc = "2: four lanes other: Reserved"]
+    #[doc = "2: two lanes"]
     H2 = 2,
     #[doc = "4: four lanes other: Reserved"]
     H4 = 4,
@@ -35,12 +36,12 @@ impl LaneCountSetR {
             _ => None,
         }
     }
-    #[doc = "four lanes other: Reserved"]
+    #[doc = "one lane"]
     #[inline(always)]
     pub fn is_h1(&self) -> bool {
         *self == LaneCountSet::H1
     }
-    #[doc = "four lanes other: Reserved"]
+    #[doc = "two lanes"]
     #[inline(always)]
     pub fn is_h2(&self) -> bool {
         *self == LaneCountSet::H2
@@ -58,12 +59,12 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "four lanes other: Reserved"]
+    #[doc = "one lane"]
     #[inline(always)]
     pub fn h1(self) -> &'a mut crate::W<REG> {
         self.variant(LaneCountSet::H1)
     }
-    #[doc = "four lanes other: Reserved"]
+    #[doc = "two lanes"]
     #[inline(always)]
     pub fn h2(self) -> &'a mut crate::W<REG> {
         self.variant(LaneCountSet::H2)

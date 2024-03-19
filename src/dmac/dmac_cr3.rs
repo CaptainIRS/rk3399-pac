@@ -1,15 +1,15 @@
 #[doc = "Register `DMAC_CR3` reader"]
 pub type R = crate::R<DmacCr3Spec>;
-#[doc = "Field `DMAC_CR3_BITS_0` reader - Provides the security state of an event-interrupt resource: Bit \\[N\\]
+#[doc = "Field `DMAC_CR3_BITS_0` reader - Provides the security state of an event-interrupt resource:\n\nBit \\[N\\]
 = 0 Assigns event&lt;N> or irq\\[N\\]
-to the Secure state. Bit \\[N\\]
+to the Secure state.\n\nBit \\[N\\]
 = 1 Assigns event&lt;N> or irq\\[N\\]
 to the Non-secure state."]
 pub type DmacCr3Bits0R = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Provides the security state of an event-interrupt resource: Bit \\[N\\]
+    #[doc = "Bits 0:31 - Provides the security state of an event-interrupt resource:\n\nBit \\[N\\]
 = 0 Assigns event&lt;N> or irq\\[N\\]
-to the Secure state. Bit \\[N\\]
+to the Secure state.\n\nBit \\[N\\]
 = 1 Assigns event&lt;N> or irq\\[N\\]
 to the Non-secure state."]
     #[inline(always)]

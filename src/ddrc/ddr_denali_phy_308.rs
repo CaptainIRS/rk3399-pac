@@ -2,7 +2,7 @@
 pub type R = crate::R<DdrDenaliPhy308Spec>;
 #[doc = "Register `DDR_DENALI_PHY_308` writer"]
 pub type W = crate::W<DdrDenaliPhy308Spec>;
-#[doc = "Field `SC_PHY_RX_CAL_START_2` writer - Manual RX Calibration start for slice 2. WRITE-ONLY"]
+#[doc = "Field `SC_PHY_RX_CAL_START_2` writer - Manual RX Calibration start for slice 2."]
 pub type ScPhyRxCalStart2W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PHY_RX_CAL_OVERRIDE_2` reader - Manual setting of RX Calibration enable for slice 2."]
 pub type PhyRxCalOverride2R = crate::BitReader;
@@ -25,7 +25,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - Manual RX Calibration start for slice 2. WRITE-ONLY"]
+    #[doc = "Bit 0 - Manual RX Calibration start for slice 2."]
     #[inline(always)]
     #[must_use]
     pub fn sc_phy_rx_cal_start_2(&mut self) -> ScPhyRxCalStart2W<DdrDenaliPhy308Spec> {

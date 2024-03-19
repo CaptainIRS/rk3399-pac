@@ -3,9 +3,10 @@ pub type R = crate::R<SpdifIntsrSpec>;
 #[doc = "Register `SPDIF_INTSR` writer"]
 pub type W = crate::W<SpdifIntsrSpec>;
 #[doc = "User Data Interrupt Status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Udtis {
-    #[doc = "0: active"]
+    #[doc = "0: inactive"]
     B0 = 0,
     #[doc = "1: active"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl UdtisR {
             true => Udtis::B1,
         }
     }
-    #[doc = "active"]
+    #[doc = "inactive"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Udtis::B0
@@ -44,7 +45,7 @@ impl<'a, REG> UdtisW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "active"]
+    #[doc = "inactive"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Udtis::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Block/Data burst transfer interrupt status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bttis {
-    #[doc = "0: active"]
+    #[doc = "0: inactive"]
     B0 = 0,
     #[doc = "1: active"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl BttisR {
             true => Bttis::B1,
         }
     }
-    #[doc = "active"]
+    #[doc = "inactive"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Bttis::B0
@@ -97,7 +99,7 @@ impl<'a, REG> BttisW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "active"]
+    #[doc = "inactive"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Bttis::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "Sample Date Buffer empty interrupt status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sdbeis {
-    #[doc = "0: active"]
+    #[doc = "0: inactive"]
     B0 = 0,
     #[doc = "1: active"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl SdbeisR {
             true => Sdbeis::B1,
         }
     }
-    #[doc = "active"]
+    #[doc = "inactive"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Sdbeis::B0
@@ -150,7 +153,7 @@ impl<'a, REG> SdbeisW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "active"]
+    #[doc = "inactive"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Sdbeis::B0)

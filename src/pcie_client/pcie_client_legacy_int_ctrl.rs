@@ -3,9 +3,10 @@ pub type R = crate::R<PcieClientLegacyIntCtrlSpec>;
 #[doc = "Register `PCIE_CLIENT_LEGACY_INT_CTRL` writer"]
 pub type W = crate::W<PcieClientLegacyIntCtrlSpec>;
 #[doc = "Legacy interrupt pending status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IntPendSt {
-    #[doc = "0: pending When using legacy interrupts, this input is used to indicate the interrupt pending status of the Physical Functions. The input i must be set when an interrupt is pending in Function i."]
+    #[doc = "0: normal"]
     B0 = 0,
     #[doc = "1: pending When using legacy interrupts, this input is used to indicate the interrupt pending status of the Physical Functions. The input i must be set when an interrupt is pending in Function i."]
     B1 = 1,
@@ -27,7 +28,7 @@ impl IntPendStR {
             true => IntPendSt::B1,
         }
     }
-    #[doc = "pending When using legacy interrupts, this input is used to indicate the interrupt pending status of the Physical Functions. The input i must be set when an interrupt is pending in Function i."]
+    #[doc = "normal"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IntPendSt::B0
@@ -44,7 +45,7 @@ impl<'a, REG> IntPendStW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "pending When using legacy interrupts, this input is used to indicate the interrupt pending status of the Physical Functions. The input i must be set when an interrupt is pending in Function i."]
+    #[doc = "normal"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IntPendSt::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Legacy interrupt input\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IntIn {
-    #[doc = "0: assert When the core is configured as EP, this input is used by the client application to signal an interrupt from any of its PCI Functions to the RC using the Legacy PCI Express Interrupt Delivery mechanism of PCI Express. This input corresponds to INTA of the PCI bus. Asserting this signal causes the core to send out an Assert_INTx message, and de-asserting this signal causes the core to transmit a Deassert_INTx message."]
+    #[doc = "0: de-assert"]
     B0 = 0,
     #[doc = "1: assert When the core is configured as EP, this input is used by the client application to signal an interrupt from any of its PCI Functions to the RC using the Legacy PCI Express Interrupt Delivery mechanism of PCI Express. This input corresponds to INTA of the PCI bus. Asserting this signal causes the core to send out an Assert_INTx message, and de-asserting this signal causes the core to transmit a Deassert_INTx message."]
     B1 = 1,
@@ -80,7 +82,7 @@ impl IntInR {
             true => IntIn::B1,
         }
     }
-    #[doc = "assert When the core is configured as EP, this input is used by the client application to signal an interrupt from any of its PCI Functions to the RC using the Legacy PCI Express Interrupt Delivery mechanism of PCI Express. This input corresponds to INTA of the PCI bus. Asserting this signal causes the core to send out an Assert_INTx message, and de-asserting this signal causes the core to transmit a Deassert_INTx message."]
+    #[doc = "de-assert"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == IntIn::B0
@@ -97,7 +99,7 @@ impl<'a, REG> IntInW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "assert When the core is configured as EP, this input is used by the client application to signal an interrupt from any of its PCI Functions to the RC using the Legacy PCI Express Interrupt Delivery mechanism of PCI Express. This input corresponds to INTA of the PCI bus. Asserting this signal causes the core to send out an Assert_INTx message, and de-asserting this signal causes the core to transmit a Deassert_INTx message."]
+    #[doc = "de-assert"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(IntIn::B0)
@@ -108,11 +110,12 @@ where
         self.variant(IntIn::B1)
     }
 }
-#[doc = "Write mask For each served bit\n\nValue on reset: 0"]
+#[doc = "Write mask\n\nFor each served bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum WriteMask {
-    #[doc = "0: write enable"]
+    #[doc = "0: write mask"]
     B0 = 0,
     #[doc = "1: write enable"]
     B1 = 1,
@@ -126,14 +129,14 @@ impl From<WriteMask> for u8 {
 impl crate::FieldSpec for WriteMask {
     type Ux = u8;
 }
-#[doc = "Field `WRITE_MASK` writer - Write mask For each served bit"]
+#[doc = "Field `WRITE_MASK` writer - Write mask\n\nFor each served bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 2, WriteMask>;
 impl<'a, REG> WriteMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "write enable"]
+    #[doc = "write mask"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(WriteMask::B0)
@@ -169,7 +172,7 @@ impl W {
     pub fn int_in(&mut self) -> IntInW<PcieClientLegacyIntCtrlSpec> {
         IntInW::new(self, 1)
     }
-    #[doc = "Bits 16:17 - Write mask For each served bit"]
+    #[doc = "Bits 16:17 - Write mask\n\nFor each served bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<PcieClientLegacyIntCtrlSpec> {

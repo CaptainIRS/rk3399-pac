@@ -6,7 +6,7 @@ pub type W = crate::W<DdrDenaliCtl159Spec>;
 pub type Mr17Data1R = crate::FieldReader;
 #[doc = "Field `MR17_DATA_1` writer - Data to program into memory mode register 17 for chip select 1."]
 pub type Mr17Data1W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-#[doc = "Field `MR20_DATA_1` reader - Data read from MR20 for chip select 1. READ-ONLY"]
+#[doc = "Field `MR20_DATA_1` reader - Data read from MR20 for chip select 1."]
 pub type Mr20Data1R = crate::FieldReader;
 #[doc = "Field `MR22_DATA_F0_1` reader - Data to program into memory mode register 22 for chip select 1."]
 pub type Mr22DataF0_1R = crate::FieldReader<u16>;
@@ -18,7 +18,7 @@ impl R {
     pub fn mr17_data_1(&self) -> Mr17Data1R {
         Mr17Data1R::new((self.bits & 0xff) as u8)
     }
-    #[doc = "Bits 8:15 - Data read from MR20 for chip select 1. READ-ONLY"]
+    #[doc = "Bits 8:15 - Data read from MR20 for chip select 1."]
     #[inline(always)]
     pub fn mr20_data_1(&self) -> Mr20Data1R {
         Mr20Data1R::new(((self.bits >> 8) & 0xff) as u8)

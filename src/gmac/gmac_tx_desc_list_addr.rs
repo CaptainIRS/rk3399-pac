@@ -2,23 +2,23 @@
 pub type R = crate::R<GmacTxDescListAddrSpec>;
 #[doc = "Register `GMAC_TX_DESC_LIST_ADDR` writer"]
 pub type W = crate::W<GmacTxDescListAddrSpec>;
-#[doc = "Field `STL` reader - Start of Transmit List This field contains the base address of the First Descriptor in the Transmit Descriptor list. The LSB bits \\[1/2/3:0\\]
-for 32/64/128-bit bus width) will be ignored and taken as all-zero by the DMA internally. Hence these LSB bits are Read Only."]
+#[doc = "Field `STL` reader - Start of Transmit List\n\nThis field contains the base address of the First Descriptor in the\n\nTransmit Descriptor list. The LSB bits \\[1/2/3:0\\]
+for 32/64/128-bit\n\nbus width) will be ignored and taken as all-zero by the DMA\n\ninternally. Hence these LSB bits are Read Only."]
 pub type StlR = crate::FieldReader<u32>;
-#[doc = "Field `STL` writer - Start of Transmit List This field contains the base address of the First Descriptor in the Transmit Descriptor list. The LSB bits \\[1/2/3:0\\]
-for 32/64/128-bit bus width) will be ignored and taken as all-zero by the DMA internally. Hence these LSB bits are Read Only."]
+#[doc = "Field `STL` writer - Start of Transmit List\n\nThis field contains the base address of the First Descriptor in the\n\nTransmit Descriptor list. The LSB bits \\[1/2/3:0\\]
+for 32/64/128-bit\n\nbus width) will be ignored and taken as all-zero by the DMA\n\ninternally. Hence these LSB bits are Read Only."]
 pub type StlW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Start of Transmit List This field contains the base address of the First Descriptor in the Transmit Descriptor list. The LSB bits \\[1/2/3:0\\]
-for 32/64/128-bit bus width) will be ignored and taken as all-zero by the DMA internally. Hence these LSB bits are Read Only."]
+    #[doc = "Bits 0:31 - Start of Transmit List\n\nThis field contains the base address of the First Descriptor in the\n\nTransmit Descriptor list. The LSB bits \\[1/2/3:0\\]
+for 32/64/128-bit\n\nbus width) will be ignored and taken as all-zero by the DMA\n\ninternally. Hence these LSB bits are Read Only."]
     #[inline(always)]
     pub fn stl(&self) -> StlR {
         StlR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Start of Transmit List This field contains the base address of the First Descriptor in the Transmit Descriptor list. The LSB bits \\[1/2/3:0\\]
-for 32/64/128-bit bus width) will be ignored and taken as all-zero by the DMA internally. Hence these LSB bits are Read Only."]
+    #[doc = "Bits 0:31 - Start of Transmit List\n\nThis field contains the base address of the First Descriptor in the\n\nTransmit Descriptor list. The LSB bits \\[1/2/3:0\\]
+for 32/64/128-bit\n\nbus width) will be ignored and taken as all-zero by the DMA\n\ninternally. Hence these LSB bits are Read Only."]
     #[inline(always)]
     #[must_use]
     pub fn stl(&mut self) -> StlW<GmacTxDescListAddrSpec> {

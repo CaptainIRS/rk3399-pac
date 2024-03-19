@@ -3,9 +3,10 @@ pub type R = crate::R<VideoCtl10Spec>;
 #[doc = "Register `VIDEO_CTL_10` writer"]
 pub type W = crate::W<VideoCtl10Spec>;
 #[doc = "Slave mode HSYNC polarity configuration.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SlaveHsyncPCfg {
-    #[doc = "1: High is active. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+    #[doc = "1: Low is active,"]
     B1 = 1,
     #[doc = "0: High is active. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
     B0 = 0,
@@ -27,7 +28,7 @@ impl SlaveHsyncPCfgR {
             false => SlaveHsyncPCfg::B0,
         }
     }
-    #[doc = "High is active. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+    #[doc = "Low is active,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == SlaveHsyncPCfg::B1
@@ -44,7 +45,7 @@ impl<'a, REG> SlaveHsyncPCfgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "High is active. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+    #[doc = "Low is active,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(SlaveHsyncPCfg::B1)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Slave mode VSYNC polarity configuration.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SlaveVsyncPCfg {
-    #[doc = "1: High is active. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+    #[doc = "1: Low is active,"]
     B1 = 1,
     #[doc = "0: High is active. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
     B0 = 0,
@@ -80,7 +82,7 @@ impl SlaveVsyncPCfgR {
             false => SlaveVsyncPCfg::B0,
         }
     }
-    #[doc = "High is active. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+    #[doc = "Low is active,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == SlaveVsyncPCfg::B1
@@ -97,7 +99,7 @@ impl<'a, REG> SlaveVsyncPCfgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "High is active. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+    #[doc = "Low is active,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(SlaveVsyncPCfg::B1)
@@ -108,14 +110,15 @@ where
         self.variant(SlaveVsyncPCfg::B0)
     }
 }
-#[doc = "Field `SLAVE_I_SCAN_CFG` reader - Interlace scan mode configuration. 0: Progressive, 1: Interlace. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+#[doc = "Field `SLAVE_I_SCAN_CFG` reader - Interlace scan mode configuration. \n\n0: Progressive, 1: Interlace. \n\nWhen F_SEL is 1, this value is sent in main \n\nstream attribute packet. \n\nWhen BIST_EN is 1, this bit field is used to \n\nspecify the BIST video stream format."]
 pub type SlaveIScanCfgR = crate::BitReader;
-#[doc = "Field `SLAVE_I_SCAN_CFG` writer - Interlace scan mode configuration. 0: Progressive, 1: Interlace. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+#[doc = "Field `SLAVE_I_SCAN_CFG` writer - Interlace scan mode configuration. \n\n0: Progressive, 1: Interlace. \n\nWhen F_SEL is 1, this value is sent in main \n\nstream attribute packet. \n\nWhen BIST_EN is 1, this bit field is used to \n\nspecify the BIST video stream format."]
 pub type SlaveIScanCfgW<'a, REG> = crate::BitWriter1C<'a, REG>;
 #[doc = "Video format select.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FSel {
-    #[doc = "1: Video format information from video_capture module. According to the configuration of this bit field, the values of video format status registers in Base + 0x008C~ 0x00D0 are determined, which are transferred as main stream attribute packet. Note that if BIST_EN is set to 1, F_SEL must be cleared to 0 although video format information comes from registers set by user."]
+    #[doc = "1: Video format information from register,"]
     B1 = 1,
     #[doc = "0: Video format information from video_capture module. According to the configuration of this bit field, the values of video format status registers in Base + 0x008C~ 0x00D0 are determined, which are transferred as main stream attribute packet. Note that if BIST_EN is set to 1, F_SEL must be cleared to 0 although video format information comes from registers set by user."]
     B0 = 0,
@@ -137,7 +140,7 @@ impl FSelR {
             false => FSel::B0,
         }
     }
-    #[doc = "Video format information from video_capture module. According to the configuration of this bit field, the values of video format status registers in Base + 0x008C~ 0x00D0 are determined, which are transferred as main stream attribute packet. Note that if BIST_EN is set to 1, F_SEL must be cleared to 0 although video format information comes from registers set by user."]
+    #[doc = "Video format information from register,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == FSel::B1
@@ -154,7 +157,7 @@ impl<'a, REG> FSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Video format information from video_capture module. According to the configuration of this bit field, the values of video format status registers in Base + 0x008C~ 0x00D0 are determined, which are transferred as main stream attribute packet. Note that if BIST_EN is set to 1, F_SEL must be cleared to 0 although video format information comes from registers set by user."]
+    #[doc = "Video format information from register,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(FSel::B1)
@@ -176,7 +179,7 @@ impl R {
     pub fn slave_vsync_p_cfg(&self) -> SlaveVsyncPCfgR {
         SlaveVsyncPCfgR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - Interlace scan mode configuration. 0: Progressive, 1: Interlace. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+    #[doc = "Bit 2 - Interlace scan mode configuration. \n\n0: Progressive, 1: Interlace. \n\nWhen F_SEL is 1, this value is sent in main \n\nstream attribute packet. \n\nWhen BIST_EN is 1, this bit field is used to \n\nspecify the BIST video stream format."]
     #[inline(always)]
     pub fn slave_i_scan_cfg(&self) -> SlaveIScanCfgR {
         SlaveIScanCfgR::new(((self.bits >> 2) & 1) != 0)
@@ -200,7 +203,7 @@ impl W {
     pub fn slave_vsync_p_cfg(&mut self) -> SlaveVsyncPCfgW<VideoCtl10Spec> {
         SlaveVsyncPCfgW::new(self, 1)
     }
-    #[doc = "Bit 2 - Interlace scan mode configuration. 0: Progressive, 1: Interlace. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+    #[doc = "Bit 2 - Interlace scan mode configuration. \n\n0: Progressive, 1: Interlace. \n\nWhen F_SEL is 1, this value is sent in main \n\nstream attribute packet. \n\nWhen BIST_EN is 1, this bit field is used to \n\nspecify the BIST video stream format."]
     #[inline(always)]
     #[must_use]
     pub fn slave_i_scan_cfg(&mut self) -> SlaveIScanCfgW<VideoCtl10Spec> {

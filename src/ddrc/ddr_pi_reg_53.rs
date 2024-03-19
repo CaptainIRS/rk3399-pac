@@ -4,9 +4,9 @@ pub type R = crate::R<DdrPiReg53Spec>;
 pub type W = crate::W<DdrPiReg53Spec>;
 #[doc = "Field `PI_SWLVL_EXIT` writer - Indicates user request to exit software leveling. Set to 1 to exit."]
 pub type PiSwlvlExitW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PI_SWLVL_WR_SLICE_0` writer - Indicates software leveling write command in WDQ training for data slice 0."]
+#[doc = "Field `PI_SWLVL_WR_SLICE_0` writer - Indicates software leveling write command in WDQ training for data\n\nslice 0."]
 pub type PiSwlvlWrSlice0W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PI_SWLVL_RD_SLICE_0` writer - Indicates software leveling read command in WDQ training for data slice 0."]
+#[doc = "Field `PI_SWLVL_RD_SLICE_0` writer - Indicates software leveling read command in WDQ training for data\n\nslice 0."]
 pub type PiSwlvlRdSlice0W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PI_SW_WDQLVL_RESP_0` reader - Indicates WDQ leveling response for data slice 0."]
 pub type PiSwWdqlvlResp0R = crate::FieldReader;
@@ -24,13 +24,13 @@ impl W {
     pub fn pi_swlvl_exit(&mut self) -> PiSwlvlExitW<DdrPiReg53Spec> {
         PiSwlvlExitW::new(self, 0)
     }
-    #[doc = "Bit 8 - Indicates software leveling write command in WDQ training for data slice 0."]
+    #[doc = "Bit 8 - Indicates software leveling write command in WDQ training for data\n\nslice 0."]
     #[inline(always)]
     #[must_use]
     pub fn pi_swlvl_wr_slice_0(&mut self) -> PiSwlvlWrSlice0W<DdrPiReg53Spec> {
         PiSwlvlWrSlice0W::new(self, 8)
     }
-    #[doc = "Bit 16 - Indicates software leveling read command in WDQ training for data slice 0."]
+    #[doc = "Bit 16 - Indicates software leveling read command in WDQ training for data\n\nslice 0."]
     #[inline(always)]
     #[must_use]
     pub fn pi_swlvl_rd_slice_0(&mut self) -> PiSwlvlRdSlice0W<DdrPiReg53Spec> {

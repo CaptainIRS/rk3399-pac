@@ -2,19 +2,19 @@
 pub type R = crate::R<GmacHashTabHiSpec>;
 #[doc = "Register `GMAC_HASH_TAB_HI` writer"]
 pub type W = crate::W<GmacHashTabHiSpec>;
-#[doc = "Field `HTH` reader - Hash Table High This field contains the upper 32 bits of Hash table"]
+#[doc = "Field `HTH` reader - Hash Table High\n\nThis field contains the upper 32 bits of Hash table"]
 pub type HthR = crate::FieldReader<u32>;
-#[doc = "Field `HTH` writer - Hash Table High This field contains the upper 32 bits of Hash table"]
+#[doc = "Field `HTH` writer - Hash Table High\n\nThis field contains the upper 32 bits of Hash table"]
 pub type HthW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Hash Table High This field contains the upper 32 bits of Hash table"]
+    #[doc = "Bits 0:31 - Hash Table High\n\nThis field contains the upper 32 bits of Hash table"]
     #[inline(always)]
     pub fn hth(&self) -> HthR {
         HthR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Hash Table High This field contains the upper 32 bits of Hash table"]
+    #[doc = "Bits 0:31 - Hash Table High\n\nThis field contains the upper 32 bits of Hash table"]
     #[inline(always)]
     #[must_use]
     pub fn hth(&mut self) -> HthW<GmacHashTabHiSpec> {

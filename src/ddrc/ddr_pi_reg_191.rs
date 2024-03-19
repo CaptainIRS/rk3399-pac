@@ -2,19 +2,19 @@
 pub type R = crate::R<DdrPiReg191Spec>;
 #[doc = "Register `DDR_PI_REG_191` writer"]
 pub type W = crate::W<DdrPiReg191Spec>;
-#[doc = "Field `PI_TDFI_CTRLUPD_MAX_F2` reader - Defines the DFI tCTRLUPD_MAX timing parameter (in DFI clocks), the maximum cycles that dfi_ctrlupd_req can be asserted. If programmed to a non-zero, a timing violation causes an interrupt and bit (1) set in the PI_REG_193.pi_update_error_status parameter. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TDFI_CTRLUPD_MAX_F2` reader - Defines the DFI tCTRLUPD_MAX timing parameter (in DFI clocks),\n\nthe maximum cycles that dfi_ctrlupd_req can be asserted. If\n\nprogrammed to a non-zero, a timing violation causes an interrupt\n\nand bit (1) set in the PI_REG_193.pi_update_error_status\n\nparameter. The suffix \"_f2\" of the parameter name is omitted when\n\nin non-DFS mode."]
 pub type PiTdfiCtrlupdMaxF2R = crate::FieldReader<u16>;
-#[doc = "Field `PI_TDFI_CTRLUPD_MAX_F2` writer - Defines the DFI tCTRLUPD_MAX timing parameter (in DFI clocks), the maximum cycles that dfi_ctrlupd_req can be asserted. If programmed to a non-zero, a timing violation causes an interrupt and bit (1) set in the PI_REG_193.pi_update_error_status parameter. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TDFI_CTRLUPD_MAX_F2` writer - Defines the DFI tCTRLUPD_MAX timing parameter (in DFI clocks),\n\nthe maximum cycles that dfi_ctrlupd_req can be asserted. If\n\nprogrammed to a non-zero, a timing violation causes an interrupt\n\nand bit (1) set in the PI_REG_193.pi_update_error_status\n\nparameter. The suffix \"_f2\" of the parameter name is omitted when\n\nin non-DFS mode."]
 pub type PiTdfiCtrlupdMaxF2W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:15 - Defines the DFI tCTRLUPD_MAX timing parameter (in DFI clocks), the maximum cycles that dfi_ctrlupd_req can be asserted. If programmed to a non-zero, a timing violation causes an interrupt and bit (1) set in the PI_REG_193.pi_update_error_status parameter. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:15 - Defines the DFI tCTRLUPD_MAX timing parameter (in DFI clocks),\n\nthe maximum cycles that dfi_ctrlupd_req can be asserted. If\n\nprogrammed to a non-zero, a timing violation causes an interrupt\n\nand bit (1) set in the PI_REG_193.pi_update_error_status\n\nparameter. The suffix \"_f2\" of the parameter name is omitted when\n\nin non-DFS mode."]
     #[inline(always)]
     pub fn pi_tdfi_ctrlupd_max_f2(&self) -> PiTdfiCtrlupdMaxF2R {
         PiTdfiCtrlupdMaxF2R::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - Defines the DFI tCTRLUPD_MAX timing parameter (in DFI clocks), the maximum cycles that dfi_ctrlupd_req can be asserted. If programmed to a non-zero, a timing violation causes an interrupt and bit (1) set in the PI_REG_193.pi_update_error_status parameter. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:15 - Defines the DFI tCTRLUPD_MAX timing parameter (in DFI clocks),\n\nthe maximum cycles that dfi_ctrlupd_req can be asserted. If\n\nprogrammed to a non-zero, a timing violation causes an interrupt\n\nand bit (1) set in the PI_REG_193.pi_update_error_status\n\nparameter. The suffix \"_f2\" of the parameter name is omitted when\n\nin non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tdfi_ctrlupd_max_f2(&mut self) -> PiTdfiCtrlupdMaxF2W<DdrPiReg191Spec> {

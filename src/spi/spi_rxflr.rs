@@ -1,9 +1,9 @@
 #[doc = "Register `SPI_RXFLR` reader"]
 pub type R = crate::R<SpiRxflrSpec>;
-#[doc = "Field `RXFLR` reader - Receive FIFO Level Contains the number of valid data entries in the receive FIFO."]
+#[doc = "Field `RXFLR` reader - Receive FIFO Level\n\nContains the number of valid data entries in the receive FIFO."]
 pub type RxflrR = crate::FieldReader;
 impl R {
-    #[doc = "Bits 0:5 - Receive FIFO Level Contains the number of valid data entries in the receive FIFO."]
+    #[doc = "Bits 0:5 - Receive FIFO Level\n\nContains the number of valid data entries in the receive FIFO."]
     #[inline(always)]
     pub fn rxflr(&self) -> RxflrR {
         RxflrR::new((self.bits & 0x3f) as u8)

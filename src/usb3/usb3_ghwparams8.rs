@@ -1,9 +1,9 @@
 #[doc = "Register `USB3_GHWPARAMS8` reader"]
 pub type R = crate::R<Usb3Ghwparams8Spec>;
-#[doc = "Field `GHWPARAMS8_32_0` reader - ghwparams8_32_0 ghwparams8_32_0"]
+#[doc = "Field `GHWPARAMS8_32_0` reader - ghwparams8_32_0\n\nghwparams8_32_0"]
 pub type Ghwparams8_32_0R = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - ghwparams8_32_0 ghwparams8_32_0"]
+    #[doc = "Bits 0:31 - ghwparams8_32_0\n\nghwparams8_32_0"]
     #[inline(always)]
     pub fn ghwparams8_32_0(&self) -> Ghwparams8_32_0R {
         Ghwparams8_32_0R::new(self.bits)

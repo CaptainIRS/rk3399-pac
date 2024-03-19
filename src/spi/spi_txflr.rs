@@ -1,9 +1,9 @@
 #[doc = "Register `SPI_TXFLR` reader"]
 pub type R = crate::R<SpiTxflrSpec>;
-#[doc = "Field `TXFLR` reader - Transmit FIFO Level Contains the number of valid data entries in the transmit FIFO."]
+#[doc = "Field `TXFLR` reader - Transmit FIFO Level\n\nContains the number of valid data entries in the transmit FIFO."]
 pub type TxflrR = crate::FieldReader;
 impl R {
-    #[doc = "Bits 0:5 - Transmit FIFO Level Contains the number of valid data entries in the transmit FIFO."]
+    #[doc = "Bits 0:5 - Transmit FIFO Level\n\nContains the number of valid data entries in the transmit FIFO."]
     #[inline(always)]
     pub fn txflr(&self) -> TxflrR {
         TxflrR::new((self.bits & 0x3f) as u8)

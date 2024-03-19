@@ -1,9 +1,9 @@
 #[doc = "Register `SDMMC_PLDMND` writer"]
 pub type W = crate::W<SdmmcPldmndSpec>;
-#[doc = "Field `PD` writer - Poll Demand. If the OWN bit of a descriptor is not set, the FSM goes to the Suspend state. The host needs to write any value into this register for the IDMAC FSM to resume normal descriptor fetch operation. This is a write only register."]
+#[doc = "Field `PD` writer - Poll Demand. If the OWN bit of a descriptor is not set, the FSM\n\ngoes to the Suspend state. The host needs to write any value into\n\nthis register for the IDMAC FSM to resume normal descriptor\n\nfetch operation. This is a write only register."]
 pub type PdW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl W {
-    #[doc = "Bits 0:31 - Poll Demand. If the OWN bit of a descriptor is not set, the FSM goes to the Suspend state. The host needs to write any value into this register for the IDMAC FSM to resume normal descriptor fetch operation. This is a write only register."]
+    #[doc = "Bits 0:31 - Poll Demand. If the OWN bit of a descriptor is not set, the FSM\n\ngoes to the Suspend state. The host needs to write any value into\n\nthis register for the IDMAC FSM to resume normal descriptor\n\nfetch operation. This is a write only register."]
     #[inline(always)]
     #[must_use]
     pub fn pd(&mut self) -> PdW<SdmmcPldmndSpec> {

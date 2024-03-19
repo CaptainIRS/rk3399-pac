@@ -2,19 +2,19 @@
 pub type R = crate::R<AuxAddr19_16Spec>;
 #[doc = "Register `AUX_ADDR_19_16` writer"]
 pub type W = crate::W<AuxAddr19_16Spec>;
-#[doc = "Field `AUX_ADDR_19_16` reader - AUX_ADDR\\[7:0\\], Register control AUX CH address"]
+#[doc = "Field `AUX_ADDR_19_16` reader - AUX_ADDR\\[7:0\\], Register control AUX CH \n\naddress"]
 pub type AuxAddr19_16R = crate::FieldReader;
-#[doc = "Field `AUX_ADDR_19_16` writer - AUX_ADDR\\[7:0\\], Register control AUX CH address"]
+#[doc = "Field `AUX_ADDR_19_16` writer - AUX_ADDR\\[7:0\\], Register control AUX CH \n\naddress"]
 pub type AuxAddr19_16W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
-    #[doc = "Bits 0:3 - AUX_ADDR\\[7:0\\], Register control AUX CH address"]
+    #[doc = "Bits 0:3 - AUX_ADDR\\[7:0\\], Register control AUX CH \n\naddress"]
     #[inline(always)]
     pub fn aux_addr_19_16(&self) -> AuxAddr19_16R {
         AuxAddr19_16R::new((self.bits & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - AUX_ADDR\\[7:0\\], Register control AUX CH address"]
+    #[doc = "Bits 0:3 - AUX_ADDR\\[7:0\\], Register control AUX CH \n\naddress"]
     #[inline(always)]
     #[must_use]
     pub fn aux_addr_19_16(&mut self) -> AuxAddr19_16W<AuxAddr19_16Spec> {

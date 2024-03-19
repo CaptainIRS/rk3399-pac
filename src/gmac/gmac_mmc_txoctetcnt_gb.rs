@@ -2,19 +2,19 @@
 pub type R = crate::R<GmacMmcTxoctetcntGbSpec>;
 #[doc = "Register `GMAC_MMC_TXOCTETCNT_GB` writer"]
 pub type W = crate::W<GmacMmcTxoctetcntGbSpec>;
-#[doc = "Field `TXOCTETCOUNT_GB` reader - Number of bytes transmitted, exclusive of preamble and retried bytes, in good and bad frames."]
+#[doc = "Field `TXOCTETCOUNT_GB` reader - Number of bytes transmitted, exclusive of preamble and retried\n\nbytes, in good and bad frames."]
 pub type TxoctetcountGbR = crate::FieldReader<u32>;
-#[doc = "Field `TXOCTETCOUNT_GB` writer - Number of bytes transmitted, exclusive of preamble and retried bytes, in good and bad frames."]
+#[doc = "Field `TXOCTETCOUNT_GB` writer - Number of bytes transmitted, exclusive of preamble and retried\n\nbytes, in good and bad frames."]
 pub type TxoctetcountGbW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Number of bytes transmitted, exclusive of preamble and retried bytes, in good and bad frames."]
+    #[doc = "Bits 0:31 - Number of bytes transmitted, exclusive of preamble and retried\n\nbytes, in good and bad frames."]
     #[inline(always)]
     pub fn txoctetcount_gb(&self) -> TxoctetcountGbR {
         TxoctetcountGbR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Number of bytes transmitted, exclusive of preamble and retried bytes, in good and bad frames."]
+    #[doc = "Bits 0:31 - Number of bytes transmitted, exclusive of preamble and retried\n\nbytes, in good and bad frames."]
     #[inline(always)]
     #[must_use]
     pub fn txoctetcount_gb(&mut self) -> TxoctetcountGbW<GmacMmcTxoctetcntGbSpec> {

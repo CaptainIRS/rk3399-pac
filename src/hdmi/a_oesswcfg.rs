@@ -21,7 +21,8 @@ impl W {
         AOesswcfgW::new(self, 0)
     }
 }
-#[doc = "HDCP OESS WOO Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`a_oesswcfg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`a_oesswcfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "HDCP OESS WOO Configuration Register\n\nPulse width of the encryption enable (CTL3) signal in the HDCP OESS mode. The window of\n\nopportunity for the Original Encryption Status Signaling starts at the active edge of the\n\nVertical synchronism and stops after oesswindowoffset\\[7:0\\]*4 clock cycles of TMDS clock.\n\nAccording to the HDCP specification, the CTL3 signal must be asserted at least for eight\n\nTMDS clock cycles (oesswindowoffset\\[7:0\\]
+must be greater than 1), and it is recommended\n\nto transmit a larger pulse width for enhanced link reliability.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`a_oesswcfg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`a_oesswcfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AOesswcfgSpec;
 impl crate::RegisterSpec for AOesswcfgSpec {
     type Ux = u8;

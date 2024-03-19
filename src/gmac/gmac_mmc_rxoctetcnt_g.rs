@@ -2,19 +2,19 @@
 pub type R = crate::R<GmacMmcRxoctetcntGSpec>;
 #[doc = "Register `GMAC_MMC_RXOCTETCNT_G` writer"]
 pub type W = crate::W<GmacMmcRxoctetcntGSpec>;
-#[doc = "Field `RXOCTETCOUNT_G` reader - Number of bytes received, exclusive of preamble, only in good frames."]
+#[doc = "Field `RXOCTETCOUNT_G` reader - Number of bytes received, exclusive of preamble, only in good\n\nframes."]
 pub type RxoctetcountGR = crate::FieldReader<u32>;
-#[doc = "Field `RXOCTETCOUNT_G` writer - Number of bytes received, exclusive of preamble, only in good frames."]
+#[doc = "Field `RXOCTETCOUNT_G` writer - Number of bytes received, exclusive of preamble, only in good\n\nframes."]
 pub type RxoctetcountGW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Number of bytes received, exclusive of preamble, only in good frames."]
+    #[doc = "Bits 0:31 - Number of bytes received, exclusive of preamble, only in good\n\nframes."]
     #[inline(always)]
     pub fn rxoctetcount_g(&self) -> RxoctetcountGR {
         RxoctetcountGR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Number of bytes received, exclusive of preamble, only in good frames."]
+    #[doc = "Bits 0:31 - Number of bytes received, exclusive of preamble, only in good\n\nframes."]
     #[inline(always)]
     #[must_use]
     pub fn rxoctetcount_g(&mut self) -> RxoctetcountGW<GmacMmcRxoctetcntGSpec> {

@@ -2,7 +2,7 @@
 pub type R = crate::R<DdrDenaliCtl274Spec>;
 #[doc = "Register `DDR_DENALI_CTL_274` writer"]
 pub type W = crate::W<DdrDenaliCtl274Spec>;
-#[doc = "Field `MEM_RST_VALID` reader - Register access to mem_rst_valid signal. READ-ONLY"]
+#[doc = "Field `MEM_RST_VALID` reader - Register access to mem_rst_valid signal."]
 pub type MemRstValidR = crate::BitReader;
 #[doc = "Field `DLL_RST_DELAY` reader - Minimum cycles required for DLL reset signal dll_rst_n to be held. If this signal is not being used by the PHY, this parameter may be ignored."]
 pub type DllRstDelayR = crate::FieldReader<u16>;
@@ -13,7 +13,7 @@ pub type DllRstAdjDlyR = crate::FieldReader;
 #[doc = "Field `DLL_RST_ADJ_DLY` writer - Minimum cycles after setting master delay in DLL until the DLL reset signal dll_rst_n may be asserted. If this signal is not being used by the PHY, this parameter may be ignored."]
 pub type DllRstAdjDlyW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bit 0 - Register access to mem_rst_valid signal. READ-ONLY"]
+    #[doc = "Bit 0 - Register access to mem_rst_valid signal."]
     #[inline(always)]
     pub fn mem_rst_valid(&self) -> MemRstValidR {
         MemRstValidR::new((self.bits & 1) != 0)

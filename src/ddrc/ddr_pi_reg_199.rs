@@ -2,19 +2,19 @@
 pub type R = crate::R<DdrPiReg199Spec>;
 #[doc = "Register `DDR_PI_REG_199` writer"]
 pub type W = crate::W<DdrPiReg199Spec>;
-#[doc = "Field `PI_COL_DIFF` reader - Indicates the difference between the number of column pins available and the number being used."]
+#[doc = "Field `PI_COL_DIFF` reader - Indicates the difference between the number of column pins\n\navailable and the number being used."]
 pub type PiColDiffR = crate::FieldReader;
-#[doc = "Field `PI_COL_DIFF` writer - Indicates the difference between the number of column pins available and the number being used."]
+#[doc = "Field `PI_COL_DIFF` writer - Indicates the difference between the number of column pins\n\navailable and the number being used."]
 pub type PiColDiffW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
-    #[doc = "Bits 0:3 - Indicates the difference between the number of column pins available and the number being used."]
+    #[doc = "Bits 0:3 - Indicates the difference between the number of column pins\n\navailable and the number being used."]
     #[inline(always)]
     pub fn pi_col_diff(&self) -> PiColDiffR {
         PiColDiffR::new((self.bits & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - Indicates the difference between the number of column pins available and the number being used."]
+    #[doc = "Bits 0:3 - Indicates the difference between the number of column pins\n\navailable and the number being used."]
     #[inline(always)]
     #[must_use]
     pub fn pi_col_diff(&mut self) -> PiColDiffW<DdrPiReg199Spec> {

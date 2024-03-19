@@ -112,7 +112,7 @@ interrupt bit"]
         RxSense3W::new(self, 7)
     }
 }
-#[doc = "Mask bit for PHY_INT0.TX_PHY_LOCK interrupt bit\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`phy_mask0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`phy_mask0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PHY RXSENSE, PLL Lock, and HPD Mask Register Mask register for generation\n\nof PHY_INT0 interrupts.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`phy_mask0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`phy_mask0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PhyMask0Spec;
 impl crate::RegisterSpec for PhyMask0Spec {
     type Ux = u8;

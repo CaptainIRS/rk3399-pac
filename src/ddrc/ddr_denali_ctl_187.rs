@@ -2,16 +2,16 @@
 pub type R = crate::R<DdrDenaliCtl187Spec>;
 #[doc = "Register `DDR_DENALI_CTL_187` writer"]
 pub type W = crate::W<DdrDenaliCtl187Spec>;
-#[doc = "Field `ZQ_REQ` writer - User request to initiate a ZQ calibration. Program to 0x1 for ZQ Short (ZQCS), program to 0x2 for ZQ Long (ZQCL), program to 0x3 for ZQ Start, program to 0x4 for ZQ Initialization (ZQINIT), program to 0x5 for ZQ Latch, or program to 0x8 for ZQ Reset. Clearing to 0x0 will not trigger any ZQ command. This parameter should only be written when the ZQ_REQ_PENDING parameter is cleared to 0. WRITE-ONLY"]
+#[doc = "Field `ZQ_REQ` writer - User request to initiate a ZQ calibration. Program to 0x1 for ZQ Short (ZQCS), program to 0x2 for ZQ Long (ZQCL), program to 0x3 for ZQ Start, program to 0x4 for ZQ Initialization (ZQINIT), program to 0x5 for ZQ Latch, or program to 0x8 for ZQ Reset. Clearing to 0x0 will not trigger any ZQ command. This parameter should only be written when the ZQ_REQ_PENDING parameter is cleared to 0."]
 pub type ZqReqW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-#[doc = "Field `ZQ_REQ_PENDING` reader - Indicates that a ZQ command is currently in progress or waiting to run. Value of 1 indicates command in progress or waiting to run. When this is asserted, no writes to ZQ_REQ should occur. READ- ONLY"]
+#[doc = "Field `ZQ_REQ_PENDING` reader - Indicates that a ZQ command is currently in progress or waiting to run. Value of 1 indicates command in progress or waiting to run. When this is asserted, no writes to ZQ_REQ should occur."]
 pub type ZqReqPendingR = crate::BitReader;
 #[doc = "Field `ZQRESET_F0` reader - Number of cycles needed for a ZQRESET command for frequency copy 0."]
 pub type ZqresetF0R = crate::FieldReader<u16>;
 #[doc = "Field `ZQRESET_F0` writer - Number of cycles needed for a ZQRESET command for frequency copy 0."]
 pub type ZqresetF0W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 impl R {
-    #[doc = "Bit 8 - Indicates that a ZQ command is currently in progress or waiting to run. Value of 1 indicates command in progress or waiting to run. When this is asserted, no writes to ZQ_REQ should occur. READ- ONLY"]
+    #[doc = "Bit 8 - Indicates that a ZQ command is currently in progress or waiting to run. Value of 1 indicates command in progress or waiting to run. When this is asserted, no writes to ZQ_REQ should occur."]
     #[inline(always)]
     pub fn zq_req_pending(&self) -> ZqReqPendingR {
         ZqReqPendingR::new(((self.bits >> 8) & 1) != 0)
@@ -23,7 +23,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - User request to initiate a ZQ calibration. Program to 0x1 for ZQ Short (ZQCS), program to 0x2 for ZQ Long (ZQCL), program to 0x3 for ZQ Start, program to 0x4 for ZQ Initialization (ZQINIT), program to 0x5 for ZQ Latch, or program to 0x8 for ZQ Reset. Clearing to 0x0 will not trigger any ZQ command. This parameter should only be written when the ZQ_REQ_PENDING parameter is cleared to 0. WRITE-ONLY"]
+    #[doc = "Bits 0:3 - User request to initiate a ZQ calibration. Program to 0x1 for ZQ Short (ZQCS), program to 0x2 for ZQ Long (ZQCL), program to 0x3 for ZQ Start, program to 0x4 for ZQ Initialization (ZQINIT), program to 0x5 for ZQ Latch, or program to 0x8 for ZQ Reset. Clearing to 0x0 will not trigger any ZQ command. This parameter should only be written when the ZQ_REQ_PENDING parameter is cleared to 0."]
     #[inline(always)]
     #[must_use]
     pub fn zq_req(&mut self) -> ZqReqW<DdrDenaliCtl187Spec> {

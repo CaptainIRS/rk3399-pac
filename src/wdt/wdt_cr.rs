@@ -2,10 +2,11 @@
 pub type R = crate::R<WdtCrSpec>;
 #[doc = "Register `WDT_CR` writer"]
 pub type W = crate::W<WdtCrSpec>;
-#[doc = "Writable when the configuration parameter WDT_ALWAYS_EN=0, otherwise, it is readable. This bit is used to enable and disable the watchdog. When disabled, the counter dose not decrement .Thus, no interrupt or system reset is generated. Once this bit has been enabled, it can be cleared only by a system reset.\n\nValue on reset: 0"]
+#[doc = "Writable when the configuration parameter WDT_ALWAYS_EN=0,\n\notherwise, it is readable. This bit is used to enable and disable the\n\nwatchdog. When disabled, the counter dose not decrement .Thus,\n\nno interrupt or system reset is generated. Once this bit has been\n\nenabled, it can be cleared only by a system reset.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WdtEn {
-    #[doc = "0: WDT enabled."]
+    #[doc = "0: WDT disabled;"]
     B0 = 0,
     #[doc = "1: WDT enabled."]
     B1 = 1,
@@ -16,7 +17,7 @@ impl From<WdtEn> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WDT_EN` reader - Writable when the configuration parameter WDT_ALWAYS_EN=0, otherwise, it is readable. This bit is used to enable and disable the watchdog. When disabled, the counter dose not decrement .Thus, no interrupt or system reset is generated. Once this bit has been enabled, it can be cleared only by a system reset."]
+#[doc = "Field `WDT_EN` reader - Writable when the configuration parameter WDT_ALWAYS_EN=0,\n\notherwise, it is readable. This bit is used to enable and disable the\n\nwatchdog. When disabled, the counter dose not decrement .Thus,\n\nno interrupt or system reset is generated. Once this bit has been\n\nenabled, it can be cleared only by a system reset."]
 pub type WdtEnR = crate::BitReader<WdtEn>;
 impl WdtEnR {
     #[doc = "Get enumerated values variant"]
@@ -27,7 +28,7 @@ impl WdtEnR {
             true => WdtEn::B1,
         }
     }
-    #[doc = "WDT enabled."]
+    #[doc = "WDT disabled;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == WdtEn::B0
@@ -38,13 +39,13 @@ impl WdtEnR {
         *self == WdtEn::B1
     }
 }
-#[doc = "Field `WDT_EN` writer - Writable when the configuration parameter WDT_ALWAYS_EN=0, otherwise, it is readable. This bit is used to enable and disable the watchdog. When disabled, the counter dose not decrement .Thus, no interrupt or system reset is generated. Once this bit has been enabled, it can be cleared only by a system reset."]
+#[doc = "Field `WDT_EN` writer - Writable when the configuration parameter WDT_ALWAYS_EN=0,\n\notherwise, it is readable. This bit is used to enable and disable the\n\nwatchdog. When disabled, the counter dose not decrement .Thus,\n\nno interrupt or system reset is generated. Once this bit has been\n\nenabled, it can be cleared only by a system reset."]
 pub type WdtEnW<'a, REG> = crate::BitWriter<'a, REG, WdtEn>;
 impl<'a, REG> WdtEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "WDT enabled."]
+    #[doc = "WDT disabled;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(WdtEn::B0)
@@ -55,10 +56,11 @@ where
         self.variant(WdtEn::B1)
     }
 }
-#[doc = "Response mode. Selects the output response generated to a timeout.\n\nValue on reset: 1"]
+#[doc = "Response mode.\n\nSelects the output response generated to a timeout.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RespMode {
-    #[doc = "0: First generate an interrupt and if it is not cleared by the time a second timeout occurs then generate a system reset."]
+    #[doc = "0: Generate a system reset."]
     B0 = 0,
     #[doc = "1: First generate an interrupt and if it is not cleared by the time a second timeout occurs then generate a system reset."]
     B1 = 1,
@@ -69,7 +71,7 @@ impl From<RespMode> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RESP_MODE` reader - Response mode. Selects the output response generated to a timeout."]
+#[doc = "Field `RESP_MODE` reader - Response mode.\n\nSelects the output response generated to a timeout."]
 pub type RespModeR = crate::BitReader<RespMode>;
 impl RespModeR {
     #[doc = "Get enumerated values variant"]
@@ -80,7 +82,7 @@ impl RespModeR {
             true => RespMode::B1,
         }
     }
-    #[doc = "First generate an interrupt and if it is not cleared by the time a second timeout occurs then generate a system reset."]
+    #[doc = "Generate a system reset."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == RespMode::B0
@@ -91,13 +93,13 @@ impl RespModeR {
         *self == RespMode::B1
     }
 }
-#[doc = "Field `RESP_MODE` writer - Response mode. Selects the output response generated to a timeout."]
+#[doc = "Field `RESP_MODE` writer - Response mode.\n\nSelects the output response generated to a timeout."]
 pub type RespModeW<'a, REG> = crate::BitWriter<'a, REG, RespMode>;
 impl<'a, REG> RespModeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "First generate an interrupt and if it is not cleared by the time a second timeout occurs then generate a system reset."]
+    #[doc = "Generate a system reset."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(RespMode::B0)
@@ -108,23 +110,24 @@ where
         self.variant(RespMode::B1)
     }
 }
-#[doc = "Reset pulse length. This is used to select the number of pclk cycles for which the system reset stays asserted.\n\nValue on reset: 2"]
+#[doc = "Reset pulse length.\n\nThis is used to select the number of pclk cycles\n\nfor which the system reset stays asserted.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RstPluseLenth {
-    #[doc = "0: 256 pclk cycles"]
+    #[doc = "0: 2 pclk cycles"]
     B000 = 0,
-    #[doc = "1: 256 pclk cycles"]
+    #[doc = "1: 4 pclk cycles"]
     B001 = 1,
-    #[doc = "2: 256 pclk cycles"]
+    #[doc = "2: 8 pclk cycles"]
     B010 = 2,
-    #[doc = "3: 256 pclk cycles"]
+    #[doc = "3: 16 pclk cycles"]
     B011 = 3,
-    #[doc = "4: 256 pclk cycles"]
+    #[doc = "4: 32 pclk cycles"]
     B100 = 4,
-    #[doc = "5: 256 pclk cycles"]
+    #[doc = "5: 64 pclk cycles"]
     B101 = 5,
-    #[doc = "6: 256 pclk cycles"]
+    #[doc = "6: 128 pclk cycles"]
     B110 = 6,
     #[doc = "7: 256 pclk cycles"]
     B111 = 7,
@@ -138,7 +141,7 @@ impl From<RstPluseLenth> for u8 {
 impl crate::FieldSpec for RstPluseLenth {
     type Ux = u8;
 }
-#[doc = "Field `RST_PLUSE_LENTH` reader - Reset pulse length. This is used to select the number of pclk cycles for which the system reset stays asserted."]
+#[doc = "Field `RST_PLUSE_LENTH` reader - Reset pulse length.\n\nThis is used to select the number of pclk cycles\n\nfor which the system reset stays asserted."]
 pub type RstPluseLenthR = crate::FieldReader<RstPluseLenth>;
 impl RstPluseLenthR {
     #[doc = "Get enumerated values variant"]
@@ -156,37 +159,37 @@ impl RstPluseLenthR {
             _ => unreachable!(),
         }
     }
-    #[doc = "256 pclk cycles"]
+    #[doc = "2 pclk cycles"]
     #[inline(always)]
     pub fn is_b000(&self) -> bool {
         *self == RstPluseLenth::B000
     }
-    #[doc = "256 pclk cycles"]
+    #[doc = "4 pclk cycles"]
     #[inline(always)]
     pub fn is_b001(&self) -> bool {
         *self == RstPluseLenth::B001
     }
-    #[doc = "256 pclk cycles"]
+    #[doc = "8 pclk cycles"]
     #[inline(always)]
     pub fn is_b010(&self) -> bool {
         *self == RstPluseLenth::B010
     }
-    #[doc = "256 pclk cycles"]
+    #[doc = "16 pclk cycles"]
     #[inline(always)]
     pub fn is_b011(&self) -> bool {
         *self == RstPluseLenth::B011
     }
-    #[doc = "256 pclk cycles"]
+    #[doc = "32 pclk cycles"]
     #[inline(always)]
     pub fn is_b100(&self) -> bool {
         *self == RstPluseLenth::B100
     }
-    #[doc = "256 pclk cycles"]
+    #[doc = "64 pclk cycles"]
     #[inline(always)]
     pub fn is_b101(&self) -> bool {
         *self == RstPluseLenth::B101
     }
-    #[doc = "256 pclk cycles"]
+    #[doc = "128 pclk cycles"]
     #[inline(always)]
     pub fn is_b110(&self) -> bool {
         *self == RstPluseLenth::B110
@@ -197,44 +200,44 @@ impl RstPluseLenthR {
         *self == RstPluseLenth::B111
     }
 }
-#[doc = "Field `RST_PLUSE_LENTH` writer - Reset pulse length. This is used to select the number of pclk cycles for which the system reset stays asserted."]
+#[doc = "Field `RST_PLUSE_LENTH` writer - Reset pulse length.\n\nThis is used to select the number of pclk cycles\n\nfor which the system reset stays asserted."]
 pub type RstPluseLenthW<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, RstPluseLenth>;
 impl<'a, REG> RstPluseLenthW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "256 pclk cycles"]
+    #[doc = "2 pclk cycles"]
     #[inline(always)]
     pub fn b000(self) -> &'a mut crate::W<REG> {
         self.variant(RstPluseLenth::B000)
     }
-    #[doc = "256 pclk cycles"]
+    #[doc = "4 pclk cycles"]
     #[inline(always)]
     pub fn b001(self) -> &'a mut crate::W<REG> {
         self.variant(RstPluseLenth::B001)
     }
-    #[doc = "256 pclk cycles"]
+    #[doc = "8 pclk cycles"]
     #[inline(always)]
     pub fn b010(self) -> &'a mut crate::W<REG> {
         self.variant(RstPluseLenth::B010)
     }
-    #[doc = "256 pclk cycles"]
+    #[doc = "16 pclk cycles"]
     #[inline(always)]
     pub fn b011(self) -> &'a mut crate::W<REG> {
         self.variant(RstPluseLenth::B011)
     }
-    #[doc = "256 pclk cycles"]
+    #[doc = "32 pclk cycles"]
     #[inline(always)]
     pub fn b100(self) -> &'a mut crate::W<REG> {
         self.variant(RstPluseLenth::B100)
     }
-    #[doc = "256 pclk cycles"]
+    #[doc = "64 pclk cycles"]
     #[inline(always)]
     pub fn b101(self) -> &'a mut crate::W<REG> {
         self.variant(RstPluseLenth::B101)
     }
-    #[doc = "256 pclk cycles"]
+    #[doc = "128 pclk cycles"]
     #[inline(always)]
     pub fn b110(self) -> &'a mut crate::W<REG> {
         self.variant(RstPluseLenth::B110)
@@ -246,36 +249,36 @@ where
     }
 }
 impl R {
-    #[doc = "Bit 0 - Writable when the configuration parameter WDT_ALWAYS_EN=0, otherwise, it is readable. This bit is used to enable and disable the watchdog. When disabled, the counter dose not decrement .Thus, no interrupt or system reset is generated. Once this bit has been enabled, it can be cleared only by a system reset."]
+    #[doc = "Bit 0 - Writable when the configuration parameter WDT_ALWAYS_EN=0,\n\notherwise, it is readable. This bit is used to enable and disable the\n\nwatchdog. When disabled, the counter dose not decrement .Thus,\n\nno interrupt or system reset is generated. Once this bit has been\n\nenabled, it can be cleared only by a system reset."]
     #[inline(always)]
     pub fn wdt_en(&self) -> WdtEnR {
         WdtEnR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - Response mode. Selects the output response generated to a timeout."]
+    #[doc = "Bit 1 - Response mode.\n\nSelects the output response generated to a timeout."]
     #[inline(always)]
     pub fn resp_mode(&self) -> RespModeR {
         RespModeR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bits 2:4 - Reset pulse length. This is used to select the number of pclk cycles for which the system reset stays asserted."]
+    #[doc = "Bits 2:4 - Reset pulse length.\n\nThis is used to select the number of pclk cycles\n\nfor which the system reset stays asserted."]
     #[inline(always)]
     pub fn rst_pluse_lenth(&self) -> RstPluseLenthR {
         RstPluseLenthR::new(((self.bits >> 2) & 7) as u8)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Writable when the configuration parameter WDT_ALWAYS_EN=0, otherwise, it is readable. This bit is used to enable and disable the watchdog. When disabled, the counter dose not decrement .Thus, no interrupt or system reset is generated. Once this bit has been enabled, it can be cleared only by a system reset."]
+    #[doc = "Bit 0 - Writable when the configuration parameter WDT_ALWAYS_EN=0,\n\notherwise, it is readable. This bit is used to enable and disable the\n\nwatchdog. When disabled, the counter dose not decrement .Thus,\n\nno interrupt or system reset is generated. Once this bit has been\n\nenabled, it can be cleared only by a system reset."]
     #[inline(always)]
     #[must_use]
     pub fn wdt_en(&mut self) -> WdtEnW<WdtCrSpec> {
         WdtEnW::new(self, 0)
     }
-    #[doc = "Bit 1 - Response mode. Selects the output response generated to a timeout."]
+    #[doc = "Bit 1 - Response mode.\n\nSelects the output response generated to a timeout."]
     #[inline(always)]
     #[must_use]
     pub fn resp_mode(&mut self) -> RespModeW<WdtCrSpec> {
         RespModeW::new(self, 1)
     }
-    #[doc = "Bits 2:4 - Reset pulse length. This is used to select the number of pclk cycles for which the system reset stays asserted."]
+    #[doc = "Bits 2:4 - Reset pulse length.\n\nThis is used to select the number of pclk cycles\n\nfor which the system reset stays asserted."]
     #[inline(always)]
     #[must_use]
     pub fn rst_pluse_lenth(&mut self) -> RstPluseLenthW<WdtCrSpec> {

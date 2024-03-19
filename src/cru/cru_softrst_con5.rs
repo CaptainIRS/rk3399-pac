@@ -2,162 +2,162 @@
 pub type R = crate::R<CruSoftrstCon5Spec>;
 #[doc = "Register `CRU_SOFTRST_CON5` writer"]
 pub type W = crate::W<CruSoftrstCon5Spec>;
-#[doc = "Field `ARESETN_VCODEC_NOC_REQ` reader - aresetn_vcodec_noc request bit When HIGH, reset relative logic"]
+#[doc = "Field `ARESETN_VCODEC_NOC_REQ` reader - aresetn_vcodec_noc request bit\n\nWhen HIGH, reset relative logic"]
 pub type AresetnVcodecNocReqR = crate::BitReader;
-#[doc = "Field `ARESETN_VCODEC_NOC_REQ` writer - aresetn_vcodec_noc request bit When HIGH, reset relative logic"]
+#[doc = "Field `ARESETN_VCODEC_NOC_REQ` writer - aresetn_vcodec_noc request bit\n\nWhen HIGH, reset relative logic"]
 pub type AresetnVcodecNocReqW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ARESETN_VCODEC_REQ` reader - aresetn_vcodec request bit When HIGH, reset relative logic"]
+#[doc = "Field `ARESETN_VCODEC_REQ` reader - aresetn_vcodec request bit\n\nWhen HIGH, reset relative logic"]
 pub type AresetnVcodecReqR = crate::BitReader;
-#[doc = "Field `ARESETN_VCODEC_REQ` writer - aresetn_vcodec request bit When HIGH, reset relative logic"]
+#[doc = "Field `ARESETN_VCODEC_REQ` writer - aresetn_vcodec request bit\n\nWhen HIGH, reset relative logic"]
 pub type AresetnVcodecReqW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `HRESETN_VCODEC_NOC_REQ` reader - hresetn_vcodec_noc request bit When HIGH, reset relative logic"]
+#[doc = "Field `HRESETN_VCODEC_NOC_REQ` reader - hresetn_vcodec_noc request bit\n\nWhen HIGH, reset relative logic"]
 pub type HresetnVcodecNocReqR = crate::BitReader;
-#[doc = "Field `HRESETN_VCODEC_NOC_REQ` writer - hresetn_vcodec_noc request bit When HIGH, reset relative logic"]
+#[doc = "Field `HRESETN_VCODEC_NOC_REQ` writer - hresetn_vcodec_noc request bit\n\nWhen HIGH, reset relative logic"]
 pub type HresetnVcodecNocReqW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `HRESETN_VCODEC_REQ` reader - hresetn_vcodec request bit When HIGH, reset relative logic"]
+#[doc = "Field `HRESETN_VCODEC_REQ` reader - hresetn_vcodec request bit\n\nWhen HIGH, reset relative logic"]
 pub type HresetnVcodecReqR = crate::BitReader;
-#[doc = "Field `HRESETN_VCODEC_REQ` writer - hresetn_vcodec request bit When HIGH, reset relative logic"]
+#[doc = "Field `HRESETN_VCODEC_REQ` writer - hresetn_vcodec request bit\n\nWhen HIGH, reset relative logic"]
 pub type HresetnVcodecReqW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ARESETN_VDU_NOC_REQ` reader - aresetn_vdu_noc request bit When HIGH, reset relative logic"]
+#[doc = "Field `ARESETN_VDU_NOC_REQ` reader - aresetn_vdu_noc request bit\n\nWhen HIGH, reset relative logic"]
 pub type AresetnVduNocReqR = crate::BitReader;
-#[doc = "Field `ARESETN_VDU_NOC_REQ` writer - aresetn_vdu_noc request bit When HIGH, reset relative logic"]
+#[doc = "Field `ARESETN_VDU_NOC_REQ` writer - aresetn_vdu_noc request bit\n\nWhen HIGH, reset relative logic"]
 pub type AresetnVduNocReqW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ARESETN_VDU_REQ` reader - aresetn_vdu request bit When HIGH, reset relative logic"]
+#[doc = "Field `ARESETN_VDU_REQ` reader - aresetn_vdu request bit\n\nWhen HIGH, reset relative logic"]
 pub type AresetnVduReqR = crate::BitReader;
-#[doc = "Field `ARESETN_VDU_REQ` writer - aresetn_vdu request bit When HIGH, reset relative logic"]
+#[doc = "Field `ARESETN_VDU_REQ` writer - aresetn_vdu request bit\n\nWhen HIGH, reset relative logic"]
 pub type AresetnVduReqW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `HRESETN_VDU_NOC_REQ` reader - hresetn_vdu_noc request bit When HIGH, reset relative logic"]
+#[doc = "Field `HRESETN_VDU_NOC_REQ` reader - hresetn_vdu_noc request bit\n\nWhen HIGH, reset relative logic"]
 pub type HresetnVduNocReqR = crate::BitReader;
-#[doc = "Field `HRESETN_VDU_NOC_REQ` writer - hresetn_vdu_noc request bit When HIGH, reset relative logic"]
+#[doc = "Field `HRESETN_VDU_NOC_REQ` writer - hresetn_vdu_noc request bit\n\nWhen HIGH, reset relative logic"]
 pub type HresetnVduNocReqW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `HRESETN_VDU_REQ` reader - hresetn_vdu request bit When HIGH, reset relative logic"]
+#[doc = "Field `HRESETN_VDU_REQ` reader - hresetn_vdu request bit\n\nWhen HIGH, reset relative logic"]
 pub type HresetnVduReqR = crate::BitReader;
-#[doc = "Field `HRESETN_VDU_REQ` writer - hresetn_vdu request bit When HIGH, reset relative logic"]
+#[doc = "Field `HRESETN_VDU_REQ` writer - hresetn_vdu request bit\n\nWhen HIGH, reset relative logic"]
 pub type HresetnVduReqW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `RESETN_VDU_CORE_REQ` reader - resetn_vdu_core request bit When HIGH, reset relative logic"]
+#[doc = "Field `RESETN_VDU_CORE_REQ` reader - resetn_vdu_core request bit\n\nWhen HIGH, reset relative logic"]
 pub type ResetnVduCoreReqR = crate::BitReader;
-#[doc = "Field `RESETN_VDU_CORE_REQ` writer - resetn_vdu_core request bit When HIGH, reset relative logic"]
+#[doc = "Field `RESETN_VDU_CORE_REQ` writer - resetn_vdu_core request bit\n\nWhen HIGH, reset relative logic"]
 pub type ResetnVduCoreReqW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `RESETN_VDU_CA_REQ` reader - resetn_vdu_ca request bit When HIGH, reset relative logic"]
+#[doc = "Field `RESETN_VDU_CA_REQ` reader - resetn_vdu_ca request bit\n\nWhen HIGH, reset relative logic"]
 pub type ResetnVduCaReqR = crate::BitReader;
-#[doc = "Field `RESETN_VDU_CA_REQ` writer - resetn_vdu_ca request bit When HIGH, reset relative logic"]
+#[doc = "Field `RESETN_VDU_CA_REQ` writer - resetn_vdu_ca request bit\n\nWhen HIGH, reset relative logic"]
 pub type ResetnVduCaReqW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bit 0 - aresetn_vcodec_noc request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 0 - aresetn_vcodec_noc request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     pub fn aresetn_vcodec_noc_req(&self) -> AresetnVcodecNocReqR {
         AresetnVcodecNocReqR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - aresetn_vcodec request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 1 - aresetn_vcodec request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     pub fn aresetn_vcodec_req(&self) -> AresetnVcodecReqR {
         AresetnVcodecReqR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - hresetn_vcodec_noc request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 2 - hresetn_vcodec_noc request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     pub fn hresetn_vcodec_noc_req(&self) -> HresetnVcodecNocReqR {
         HresetnVcodecNocReqR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - hresetn_vcodec request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 3 - hresetn_vcodec request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     pub fn hresetn_vcodec_req(&self) -> HresetnVcodecReqR {
         HresetnVcodecReqR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 8 - aresetn_vdu_noc request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 8 - aresetn_vdu_noc request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     pub fn aresetn_vdu_noc_req(&self) -> AresetnVduNocReqR {
         AresetnVduNocReqR::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bit 9 - aresetn_vdu request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 9 - aresetn_vdu request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     pub fn aresetn_vdu_req(&self) -> AresetnVduReqR {
         AresetnVduReqR::new(((self.bits >> 9) & 1) != 0)
     }
-    #[doc = "Bit 10 - hresetn_vdu_noc request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 10 - hresetn_vdu_noc request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     pub fn hresetn_vdu_noc_req(&self) -> HresetnVduNocReqR {
         HresetnVduNocReqR::new(((self.bits >> 10) & 1) != 0)
     }
-    #[doc = "Bit 11 - hresetn_vdu request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 11 - hresetn_vdu request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     pub fn hresetn_vdu_req(&self) -> HresetnVduReqR {
         HresetnVduReqR::new(((self.bits >> 11) & 1) != 0)
     }
-    #[doc = "Bit 12 - resetn_vdu_core request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 12 - resetn_vdu_core request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     pub fn resetn_vdu_core_req(&self) -> ResetnVduCoreReqR {
         ResetnVduCoreReqR::new(((self.bits >> 12) & 1) != 0)
     }
-    #[doc = "Bit 13 - resetn_vdu_ca request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 13 - resetn_vdu_ca request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     pub fn resetn_vdu_ca_req(&self) -> ResetnVduCaReqR {
         ResetnVduCaReqR::new(((self.bits >> 13) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - aresetn_vcodec_noc request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 0 - aresetn_vcodec_noc request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     #[must_use]
     pub fn aresetn_vcodec_noc_req(&mut self) -> AresetnVcodecNocReqW<CruSoftrstCon5Spec> {
         AresetnVcodecNocReqW::new(self, 0)
     }
-    #[doc = "Bit 1 - aresetn_vcodec request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 1 - aresetn_vcodec request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     #[must_use]
     pub fn aresetn_vcodec_req(&mut self) -> AresetnVcodecReqW<CruSoftrstCon5Spec> {
         AresetnVcodecReqW::new(self, 1)
     }
-    #[doc = "Bit 2 - hresetn_vcodec_noc request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 2 - hresetn_vcodec_noc request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     #[must_use]
     pub fn hresetn_vcodec_noc_req(&mut self) -> HresetnVcodecNocReqW<CruSoftrstCon5Spec> {
         HresetnVcodecNocReqW::new(self, 2)
     }
-    #[doc = "Bit 3 - hresetn_vcodec request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 3 - hresetn_vcodec request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     #[must_use]
     pub fn hresetn_vcodec_req(&mut self) -> HresetnVcodecReqW<CruSoftrstCon5Spec> {
         HresetnVcodecReqW::new(self, 3)
     }
-    #[doc = "Bit 8 - aresetn_vdu_noc request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 8 - aresetn_vdu_noc request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     #[must_use]
     pub fn aresetn_vdu_noc_req(&mut self) -> AresetnVduNocReqW<CruSoftrstCon5Spec> {
         AresetnVduNocReqW::new(self, 8)
     }
-    #[doc = "Bit 9 - aresetn_vdu request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 9 - aresetn_vdu request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     #[must_use]
     pub fn aresetn_vdu_req(&mut self) -> AresetnVduReqW<CruSoftrstCon5Spec> {
         AresetnVduReqW::new(self, 9)
     }
-    #[doc = "Bit 10 - hresetn_vdu_noc request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 10 - hresetn_vdu_noc request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     #[must_use]
     pub fn hresetn_vdu_noc_req(&mut self) -> HresetnVduNocReqW<CruSoftrstCon5Spec> {
         HresetnVduNocReqW::new(self, 10)
     }
-    #[doc = "Bit 11 - hresetn_vdu request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 11 - hresetn_vdu request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     #[must_use]
     pub fn hresetn_vdu_req(&mut self) -> HresetnVduReqW<CruSoftrstCon5Spec> {
         HresetnVduReqW::new(self, 11)
     }
-    #[doc = "Bit 12 - resetn_vdu_core request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 12 - resetn_vdu_core request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     #[must_use]
     pub fn resetn_vdu_core_req(&mut self) -> ResetnVduCoreReqW<CruSoftrstCon5Spec> {
         ResetnVduCoreReqW::new(self, 12)
     }
-    #[doc = "Bit 13 - resetn_vdu_ca request bit When HIGH, reset relative logic"]
+    #[doc = "Bit 13 - resetn_vdu_ca request bit\n\nWhen HIGH, reset relative logic"]
     #[inline(always)]
     #[must_use]
     pub fn resetn_vdu_ca_req(&mut self) -> ResetnVduCaReqW<CruSoftrstCon5Spec> {
         ResetnVduCaReqW::new(self, 13)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruSoftrstCon5Spec> {

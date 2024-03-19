@@ -2,222 +2,222 @@
 pub type R = crate::R<CruClkgateCon9Spec>;
 #[doc = "Register `CRU_CLKGATE_CON9` writer"]
 pub type W = crate::W<CruClkgateCon9Spec>;
-#[doc = "Field `CLK_UART0_SRC_EN` reader - clk_uart0_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_UART0_SRC_EN` reader - clk_uart0_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkUart0SrcEnR = crate::BitReader;
-#[doc = "Field `CLK_UART0_SRC_EN` writer - clk_uart0_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_UART0_SRC_EN` writer - clk_uart0_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkUart0SrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CLK_UART0_FRAC_SRC_EN` reader - clk_uart0_frac_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_UART0_FRAC_SRC_EN` reader - clk_uart0_frac_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkUart0FracSrcEnR = crate::BitReader;
-#[doc = "Field `CLK_UART0_FRAC_SRC_EN` writer - clk_uart0_frac_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_UART0_FRAC_SRC_EN` writer - clk_uart0_frac_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkUart0FracSrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CLK_UART1_SRC_EN` reader - clk_uart1_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_UART1_SRC_EN` reader - clk_uart1_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkUart1SrcEnR = crate::BitReader;
-#[doc = "Field `CLK_UART1_SRC_EN` writer - clk_uart1_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_UART1_SRC_EN` writer - clk_uart1_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkUart1SrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CLK_UART1_FRAC_SRC_EN` reader - clk_uart1_frac_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_UART1_FRAC_SRC_EN` reader - clk_uart1_frac_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkUart1FracSrcEnR = crate::BitReader;
-#[doc = "Field `CLK_UART1_FRAC_SRC_EN` writer - clk_uart1_frac_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_UART1_FRAC_SRC_EN` writer - clk_uart1_frac_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkUart1FracSrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CLK_UART2_SRC_EN` reader - clk_uart2_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_UART2_SRC_EN` reader - clk_uart2_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkUart2SrcEnR = crate::BitReader;
-#[doc = "Field `CLK_UART2_SRC_EN` writer - clk_uart2_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_UART2_SRC_EN` writer - clk_uart2_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkUart2SrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CLK_UART2_FRAC_SRC_EN` reader - clk_uart2_frac_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_UART2_FRAC_SRC_EN` reader - clk_uart2_frac_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkUart2FracSrcEnR = crate::BitReader;
-#[doc = "Field `CLK_UART2_FRAC_SRC_EN` writer - clk_uart2_frac_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_UART2_FRAC_SRC_EN` writer - clk_uart2_frac_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkUart2FracSrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CLK_UART3_SRC_EN` reader - clk_uart3_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_UART3_SRC_EN` reader - clk_uart3_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkUart3SrcEnR = crate::BitReader;
-#[doc = "Field `CLK_UART3_SRC_EN` writer - clk_uart3_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_UART3_SRC_EN` writer - clk_uart3_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkUart3SrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CLK_UART3_FRAC_SRC_EN` reader - clk_uart3_frac_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_UART3_FRAC_SRC_EN` reader - clk_uart3_frac_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkUart3FracSrcEnR = crate::BitReader;
-#[doc = "Field `CLK_UART3_FRAC_SRC_EN` writer - clk_uart3_frac_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_UART3_FRAC_SRC_EN` writer - clk_uart3_frac_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkUart3FracSrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CLK_TSADC_SRC_EN` reader - clk_tsadc_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_TSADC_SRC_EN` reader - clk_tsadc_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkTsadcSrcEnR = crate::BitReader;
-#[doc = "Field `CLK_TSADC_SRC_EN` writer - clk_tsadc_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_TSADC_SRC_EN` writer - clk_tsadc_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkTsadcSrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CLK_SARADC_SRC_EN` reader - clk_saradc_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_SARADC_SRC_EN` reader - clk_saradc_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkSaradcSrcEnR = crate::BitReader;
-#[doc = "Field `CLK_SARADC_SRC_EN` writer - clk_saradc_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_SARADC_SRC_EN` writer - clk_saradc_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkSaradcSrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CLK_SPI0_SRC_EN` reader - clk_spi0_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_SPI0_SRC_EN` reader - clk_spi0_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkSpi0SrcEnR = crate::BitReader;
-#[doc = "Field `CLK_SPI0_SRC_EN` writer - clk_spi0_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_SPI0_SRC_EN` writer - clk_spi0_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkSpi0SrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CLK_SPI1_SRC_EN` reader - clk_spi1_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_SPI1_SRC_EN` reader - clk_spi1_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkSpi1SrcEnR = crate::BitReader;
-#[doc = "Field `CLK_SPI1_SRC_EN` writer - clk_spi1_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_SPI1_SRC_EN` writer - clk_spi1_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkSpi1SrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CLK_SPI2_SRC_EN` reader - clk_spi2_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_SPI2_SRC_EN` reader - clk_spi2_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkSpi2SrcEnR = crate::BitReader;
-#[doc = "Field `CLK_SPI2_SRC_EN` writer - clk_spi2_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_SPI2_SRC_EN` writer - clk_spi2_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkSpi2SrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CLK_SPI4_SRC_EN` reader - clk_spi4_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_SPI4_SRC_EN` reader - clk_spi4_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkSpi4SrcEnR = crate::BitReader;
-#[doc = "Field `CLK_SPI4_SRC_EN` writer - clk_spi4_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_SPI4_SRC_EN` writer - clk_spi4_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkSpi4SrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bit 0 - clk_uart0_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 0 - clk_uart0_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn clk_uart0_src_en(&self) -> ClkUart0SrcEnR {
         ClkUart0SrcEnR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - clk_uart0_frac_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 1 - clk_uart0_frac_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn clk_uart0_frac_src_en(&self) -> ClkUart0FracSrcEnR {
         ClkUart0FracSrcEnR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - clk_uart1_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 2 - clk_uart1_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn clk_uart1_src_en(&self) -> ClkUart1SrcEnR {
         ClkUart1SrcEnR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - clk_uart1_frac_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 3 - clk_uart1_frac_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn clk_uart1_frac_src_en(&self) -> ClkUart1FracSrcEnR {
         ClkUart1FracSrcEnR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - clk_uart2_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 4 - clk_uart2_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn clk_uart2_src_en(&self) -> ClkUart2SrcEnR {
         ClkUart2SrcEnR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - clk_uart2_frac_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 5 - clk_uart2_frac_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn clk_uart2_frac_src_en(&self) -> ClkUart2FracSrcEnR {
         ClkUart2FracSrcEnR::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 6 - clk_uart3_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 6 - clk_uart3_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn clk_uart3_src_en(&self) -> ClkUart3SrcEnR {
         ClkUart3SrcEnR::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 7 - clk_uart3_frac_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 7 - clk_uart3_frac_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn clk_uart3_frac_src_en(&self) -> ClkUart3FracSrcEnR {
         ClkUart3FracSrcEnR::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bit 10 - clk_tsadc_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 10 - clk_tsadc_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn clk_tsadc_src_en(&self) -> ClkTsadcSrcEnR {
         ClkTsadcSrcEnR::new(((self.bits >> 10) & 1) != 0)
     }
-    #[doc = "Bit 11 - clk_saradc_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 11 - clk_saradc_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn clk_saradc_src_en(&self) -> ClkSaradcSrcEnR {
         ClkSaradcSrcEnR::new(((self.bits >> 11) & 1) != 0)
     }
-    #[doc = "Bit 12 - clk_spi0_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 12 - clk_spi0_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn clk_spi0_src_en(&self) -> ClkSpi0SrcEnR {
         ClkSpi0SrcEnR::new(((self.bits >> 12) & 1) != 0)
     }
-    #[doc = "Bit 13 - clk_spi1_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 13 - clk_spi1_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn clk_spi1_src_en(&self) -> ClkSpi1SrcEnR {
         ClkSpi1SrcEnR::new(((self.bits >> 13) & 1) != 0)
     }
-    #[doc = "Bit 14 - clk_spi2_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 14 - clk_spi2_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn clk_spi2_src_en(&self) -> ClkSpi2SrcEnR {
         ClkSpi2SrcEnR::new(((self.bits >> 14) & 1) != 0)
     }
-    #[doc = "Bit 15 - clk_spi4_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 15 - clk_spi4_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn clk_spi4_src_en(&self) -> ClkSpi4SrcEnR {
         ClkSpi4SrcEnR::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - clk_uart0_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 0 - clk_uart0_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn clk_uart0_src_en(&mut self) -> ClkUart0SrcEnW<CruClkgateCon9Spec> {
         ClkUart0SrcEnW::new(self, 0)
     }
-    #[doc = "Bit 1 - clk_uart0_frac_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 1 - clk_uart0_frac_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn clk_uart0_frac_src_en(&mut self) -> ClkUart0FracSrcEnW<CruClkgateCon9Spec> {
         ClkUart0FracSrcEnW::new(self, 1)
     }
-    #[doc = "Bit 2 - clk_uart1_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 2 - clk_uart1_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn clk_uart1_src_en(&mut self) -> ClkUart1SrcEnW<CruClkgateCon9Spec> {
         ClkUart1SrcEnW::new(self, 2)
     }
-    #[doc = "Bit 3 - clk_uart1_frac_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 3 - clk_uart1_frac_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn clk_uart1_frac_src_en(&mut self) -> ClkUart1FracSrcEnW<CruClkgateCon9Spec> {
         ClkUart1FracSrcEnW::new(self, 3)
     }
-    #[doc = "Bit 4 - clk_uart2_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 4 - clk_uart2_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn clk_uart2_src_en(&mut self) -> ClkUart2SrcEnW<CruClkgateCon9Spec> {
         ClkUart2SrcEnW::new(self, 4)
     }
-    #[doc = "Bit 5 - clk_uart2_frac_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 5 - clk_uart2_frac_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn clk_uart2_frac_src_en(&mut self) -> ClkUart2FracSrcEnW<CruClkgateCon9Spec> {
         ClkUart2FracSrcEnW::new(self, 5)
     }
-    #[doc = "Bit 6 - clk_uart3_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 6 - clk_uart3_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn clk_uart3_src_en(&mut self) -> ClkUart3SrcEnW<CruClkgateCon9Spec> {
         ClkUart3SrcEnW::new(self, 6)
     }
-    #[doc = "Bit 7 - clk_uart3_frac_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 7 - clk_uart3_frac_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn clk_uart3_frac_src_en(&mut self) -> ClkUart3FracSrcEnW<CruClkgateCon9Spec> {
         ClkUart3FracSrcEnW::new(self, 7)
     }
-    #[doc = "Bit 10 - clk_tsadc_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 10 - clk_tsadc_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn clk_tsadc_src_en(&mut self) -> ClkTsadcSrcEnW<CruClkgateCon9Spec> {
         ClkTsadcSrcEnW::new(self, 10)
     }
-    #[doc = "Bit 11 - clk_saradc_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 11 - clk_saradc_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn clk_saradc_src_en(&mut self) -> ClkSaradcSrcEnW<CruClkgateCon9Spec> {
         ClkSaradcSrcEnW::new(self, 11)
     }
-    #[doc = "Bit 12 - clk_spi0_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 12 - clk_spi0_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn clk_spi0_src_en(&mut self) -> ClkSpi0SrcEnW<CruClkgateCon9Spec> {
         ClkSpi0SrcEnW::new(self, 12)
     }
-    #[doc = "Bit 13 - clk_spi1_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 13 - clk_spi1_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn clk_spi1_src_en(&mut self) -> ClkSpi1SrcEnW<CruClkgateCon9Spec> {
         ClkSpi1SrcEnW::new(self, 13)
     }
-    #[doc = "Bit 14 - clk_spi2_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 14 - clk_spi2_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn clk_spi2_src_en(&mut self) -> ClkSpi2SrcEnW<CruClkgateCon9Spec> {
         ClkSpi2SrcEnW::new(self, 14)
     }
-    #[doc = "Bit 15 - clk_spi4_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 15 - clk_spi4_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn clk_spi4_src_en(&mut self) -> ClkSpi4SrcEnW<CruClkgateCon9Spec> {
         ClkSpi4SrcEnW::new(self, 15)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkgateCon9Spec> {

@@ -18,10 +18,11 @@ pub type BistYcbcr422CrlW<'a, REG> = crate::BitWriter1C<'a, REG>;
 pub type MVidDebugEnR = crate::BitReader;
 #[doc = "Field `M_VID_DEBUG_EN` writer - Enable M_VID debugging"]
 pub type MVidDebugEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "AUX TX enable when AUX_CH_TEST_MODE = 1.\n\nValue on reset: 0"]
+#[doc = "AUX TX enable when AUX_CH_TEST_MODE = \n\n1.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AuxChEnTest {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -32,7 +33,7 @@ impl From<AuxChEnTest> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `AUX_CH_EN_TEST` reader - AUX TX enable when AUX_CH_TEST_MODE = 1."]
+#[doc = "Field `AUX_CH_EN_TEST` reader - AUX TX enable when AUX_CH_TEST_MODE = \n\n1."]
 pub type AuxChEnTestR = crate::BitReader<AuxChEnTest>;
 impl AuxChEnTestR {
     #[doc = "Get enumerated values variant"]
@@ -43,7 +44,7 @@ impl AuxChEnTestR {
             true => AuxChEnTest::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == AuxChEnTest::B0
@@ -54,13 +55,13 @@ impl AuxChEnTestR {
         *self == AuxChEnTest::B1
     }
 }
-#[doc = "Field `AUX_CH_EN_TEST` writer - AUX TX enable when AUX_CH_TEST_MODE = 1."]
+#[doc = "Field `AUX_CH_EN_TEST` writer - AUX TX enable when AUX_CH_TEST_MODE = \n\n1."]
 pub type AuxChEnTestW<'a, REG> = crate::BitWriter1C<'a, REG, AuxChEnTest>;
 impl<'a, REG> AuxChEnTestW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(AuxChEnTest::B0)
@@ -71,14 +72,15 @@ where
         self.variant(AuxChEnTest::B1)
     }
 }
-#[doc = "Field `AUX_CH_T_TEST` reader - AUX transmitted data when AUX_CH_TEST_MODE = 1"]
+#[doc = "Field `AUX_CH_T_TEST` reader - AUX transmitted data when \n\nAUX_CH_TEST_MODE = 1"]
 pub type AuxChTTestR = crate::BitReader;
-#[doc = "Field `AUX_CH_T_TEST` writer - AUX transmitted data when AUX_CH_TEST_MODE = 1"]
+#[doc = "Field `AUX_CH_T_TEST` writer - AUX transmitted data when \n\nAUX_CH_TEST_MODE = 1"]
 pub type AuxChTTestW<'a, REG> = crate::BitWriter1C<'a, REG>;
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AuxChTestMode {
-    #[doc = "1: AUX CH is in normal mode."]
+    #[doc = "1: AUX CH is in test mode."]
     B1 = 1,
     #[doc = "0: AUX CH is in normal mode."]
     B0 = 0,
@@ -100,7 +102,7 @@ impl AuxChTestModeR {
             false => AuxChTestMode::B0,
         }
     }
-    #[doc = "AUX CH is in normal mode."]
+    #[doc = "AUX CH is in test mode."]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == AuxChTestMode::B1
@@ -117,7 +119,7 @@ impl<'a, REG> AuxChTestModeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "AUX CH is in normal mode."]
+    #[doc = "AUX CH is in test mode."]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(AuxChTestMode::B1)
@@ -129,9 +131,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AuxSend0_1En {
-    #[doc = "1: normal AUX data transmitting in AUX CH when AUX_CH_TEST_MODE = 0"]
+    #[doc = "1: Force 0/1 toggle in AUX CH when AUX_CH_TEST_MODE = 0"]
     B1 = 1,
     #[doc = "0: normal AUX data transmitting in AUX CH when AUX_CH_TEST_MODE = 0"]
     B0 = 0,
@@ -153,7 +156,7 @@ impl AuxSend0_1EnR {
             false => AuxSend0_1En::B0,
         }
     }
-    #[doc = "normal AUX data transmitting in AUX CH when AUX_CH_TEST_MODE = 0"]
+    #[doc = "Force 0/1 toggle in AUX CH when AUX_CH_TEST_MODE = 0"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == AuxSend0_1En::B1
@@ -170,7 +173,7 @@ impl<'a, REG> AuxSend0_1EnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "normal AUX data transmitting in AUX CH when AUX_CH_TEST_MODE = 0"]
+    #[doc = "Force 0/1 toggle in AUX CH when AUX_CH_TEST_MODE = 0"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(AuxSend0_1En::B1)
@@ -181,7 +184,7 @@ where
         self.variant(AuxSend0_1En::B0)
     }
 }
-#[doc = "Field `AUX_CH_DATA_IN` reader - AUX received data for debug when AUX_CH_TEST_MODE = 1 and AUX_CH_EN_TEST=0 This bit is read only"]
+#[doc = "Field `AUX_CH_DATA_IN` reader - AUX received data for debug when \n\nAUX_CH_TEST_MODE = 1 and \n\nAUX_CH_EN_TEST=0 \n\nThis bit is read only"]
 pub type AuxChDataInR = crate::BitReader;
 impl R {
     #[doc = "Bits 0:2 - AUX Retry Timer Register"]
@@ -204,12 +207,12 @@ impl R {
     pub fn m_vid_debug_en(&self) -> MVidDebugEnR {
         MVidDebugEnR::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 7 - AUX TX enable when AUX_CH_TEST_MODE = 1."]
+    #[doc = "Bit 7 - AUX TX enable when AUX_CH_TEST_MODE = \n\n1."]
     #[inline(always)]
     pub fn aux_ch_en_test(&self) -> AuxChEnTestR {
         AuxChEnTestR::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bit 8 - AUX transmitted data when AUX_CH_TEST_MODE = 1"]
+    #[doc = "Bit 8 - AUX transmitted data when \n\nAUX_CH_TEST_MODE = 1"]
     #[inline(always)]
     pub fn aux_ch_t_test(&self) -> AuxChTTestR {
         AuxChTTestR::new(((self.bits >> 8) & 1) != 0)
@@ -224,7 +227,7 @@ impl R {
     pub fn aux_send_0_1_en(&self) -> AuxSend0_1EnR {
         AuxSend0_1EnR::new(((self.bits >> 10) & 1) != 0)
     }
-    #[doc = "Bit 11 - AUX received data for debug when AUX_CH_TEST_MODE = 1 and AUX_CH_EN_TEST=0 This bit is read only"]
+    #[doc = "Bit 11 - AUX received data for debug when \n\nAUX_CH_TEST_MODE = 1 and \n\nAUX_CH_EN_TEST=0 \n\nThis bit is read only"]
     #[inline(always)]
     pub fn aux_ch_data_in(&self) -> AuxChDataInR {
         AuxChDataInR::new(((self.bits >> 11) & 1) != 0)
@@ -255,13 +258,13 @@ impl W {
     pub fn m_vid_debug_en(&mut self) -> MVidDebugEnW<IntState0Spec> {
         MVidDebugEnW::new(self, 6)
     }
-    #[doc = "Bit 7 - AUX TX enable when AUX_CH_TEST_MODE = 1."]
+    #[doc = "Bit 7 - AUX TX enable when AUX_CH_TEST_MODE = \n\n1."]
     #[inline(always)]
     #[must_use]
     pub fn aux_ch_en_test(&mut self) -> AuxChEnTestW<IntState0Spec> {
         AuxChEnTestW::new(self, 7)
     }
-    #[doc = "Bit 8 - AUX transmitted data when AUX_CH_TEST_MODE = 1"]
+    #[doc = "Bit 8 - AUX transmitted data when \n\nAUX_CH_TEST_MODE = 1"]
     #[inline(always)]
     #[must_use]
     pub fn aux_ch_t_test(&mut self) -> AuxChTTestW<IntState0Spec> {

@@ -21,7 +21,7 @@ impl W {
         HdcpregAn7W::new(self, 0)
     }
 }
-#[doc = "Contains the value of BKSV\\[63:56\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hdcpreg_an7::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hdcpreg_an7::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "HDCP Forced AN Register 7\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hdcpreg_an7::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hdcpreg_an7::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HdcpregAn7Spec;
 impl crate::RegisterSpec for HdcpregAn7Spec {
     type Ux = u8;

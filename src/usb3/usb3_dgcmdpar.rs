@@ -2,19 +2,19 @@
 pub type R = crate::R<Usb3DgcmdparSpec>;
 #[doc = "Register `USB3_DGCMDPAR` writer"]
 pub type W = crate::W<Usb3DgcmdparSpec>;
-#[doc = "Field `PARAMETER` reader - PARAMETER This register indicates the device command parameter. This must be programmed before or along with the device command. The available device commands are listed in DGCMD register."]
+#[doc = "Field `PARAMETER` reader - PARAMETER\n\nThis register indicates the device command parameter. This must\n\nbe programmed before or along with the device command. The\n\navailable device commands are listed in DGCMD register."]
 pub type ParameterR = crate::FieldReader<u32>;
-#[doc = "Field `PARAMETER` writer - PARAMETER This register indicates the device command parameter. This must be programmed before or along with the device command. The available device commands are listed in DGCMD register."]
+#[doc = "Field `PARAMETER` writer - PARAMETER\n\nThis register indicates the device command parameter. This must\n\nbe programmed before or along with the device command. The\n\navailable device commands are listed in DGCMD register."]
 pub type ParameterW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - PARAMETER This register indicates the device command parameter. This must be programmed before or along with the device command. The available device commands are listed in DGCMD register."]
+    #[doc = "Bits 0:31 - PARAMETER\n\nThis register indicates the device command parameter. This must\n\nbe programmed before or along with the device command. The\n\navailable device commands are listed in DGCMD register."]
     #[inline(always)]
     pub fn parameter(&self) -> ParameterR {
         ParameterR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - PARAMETER This register indicates the device command parameter. This must be programmed before or along with the device command. The available device commands are listed in DGCMD register."]
+    #[doc = "Bits 0:31 - PARAMETER\n\nThis register indicates the device command parameter. This must\n\nbe programmed before or along with the device command. The\n\navailable device commands are listed in DGCMD register."]
     #[inline(always)]
     #[must_use]
     pub fn parameter(&mut self) -> ParameterW<Usb3DgcmdparSpec> {

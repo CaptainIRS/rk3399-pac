@@ -2,7 +2,7 @@
 pub type R = crate::R<DdrDenaliPhy645Spec>;
 #[doc = "Register `DDR_DENALI_PHY_645` writer"]
 pub type W = crate::W<DdrDenaliPhy645Spec>;
-#[doc = "Field `PHY_ADR_MASTER_DLY_LOCK_OBS_1` reader - Observation register for master delay results for address slice 1. READ-ONLY"]
+#[doc = "Field `PHY_ADR_MASTER_DLY_LOCK_OBS_1` reader - Observation register for master delay results for address slice 1."]
 pub type PhyAdrMasterDlyLockObs1R = crate::FieldReader<u16>;
 #[doc = "Field `PHY_ADR_SLAVE_LOOP_CNT_UPDATE_1` reader - Sets the frequency by which the slave delay encoded value holding registers are updated for address slice 1."]
 pub type PhyAdrSlaveLoopCntUpdate1R = crate::FieldReader;
@@ -13,7 +13,7 @@ pub type PhyAdrSlvDlyEncObsSelect1R = crate::FieldReader;
 #[doc = "Field `PHY_ADR_SLV_DLY_ENC_OBS_SELECT_1` writer - Select value to map the addr bits delay observation registers to the accessible delay observation register for address slice 1."]
 pub type PhyAdrSlvDlyEncObsSelect1W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
-    #[doc = "Bits 0:9 - Observation register for master delay results for address slice 1. READ-ONLY"]
+    #[doc = "Bits 0:9 - Observation register for master delay results for address slice 1."]
     #[inline(always)]
     pub fn phy_adr_master_dly_lock_obs_1(&self) -> PhyAdrMasterDlyLockObs1R {
         PhyAdrMasterDlyLockObs1R::new((self.bits & 0x03ff) as u16)

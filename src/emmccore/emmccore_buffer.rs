@@ -2,19 +2,19 @@
 pub type R = crate::R<EmmccoreBufferSpec>;
 #[doc = "Register `EMMCCORE_BUFFER` writer"]
 pub type W = crate::W<EmmccoreBufferSpec>;
-#[doc = "Field `BUFFERDATA` reader - The Host Controller Buffer can be accessed through this 32-bit Data Port Register."]
+#[doc = "Field `BUFFERDATA` reader - The Host Controller Buffer can be accessed through this 32-bit\n\nData Port Register."]
 pub type BufferdataR = crate::FieldReader<u32>;
-#[doc = "Field `BUFFERDATA` writer - The Host Controller Buffer can be accessed through this 32-bit Data Port Register."]
+#[doc = "Field `BUFFERDATA` writer - The Host Controller Buffer can be accessed through this 32-bit\n\nData Port Register."]
 pub type BufferdataW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - The Host Controller Buffer can be accessed through this 32-bit Data Port Register."]
+    #[doc = "Bits 0:31 - The Host Controller Buffer can be accessed through this 32-bit\n\nData Port Register."]
     #[inline(always)]
     pub fn bufferdata(&self) -> BufferdataR {
         BufferdataR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - The Host Controller Buffer can be accessed through this 32-bit Data Port Register."]
+    #[doc = "Bits 0:31 - The Host Controller Buffer can be accessed through this 32-bit\n\nData Port Register."]
     #[inline(always)]
     #[must_use]
     pub fn bufferdata(&mut self) -> BufferdataW<EmmccoreBufferSpec> {

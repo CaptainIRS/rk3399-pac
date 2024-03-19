@@ -3,9 +3,10 @@ pub type R = crate::R<PcieClientPowerCtrlSpec>;
 #[doc = "Register `PCIE_CLIENT_POWER_CTRL` writer"]
 pub type W = crate::W<PcieClientPowerCtrlSpec>;
 #[doc = "Client request exit L2 power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CltReqExitL2 {
-    #[doc = "0: Exit from L2_IDLE This input can be asserted by the client only in the short interval of time after the link enters L2 and before the system is powered OFF. While the power and clocks are still ON, the client can assert this input to initiate an exit from L2_IDLE->DETECT."]
+    #[doc = "0: keep"]
     B0 = 0,
     #[doc = "1: Exit from L2_IDLE This input can be asserted by the client only in the short interval of time after the link enters L2 and before the system is powered OFF. While the power and clocks are still ON, the client can assert this input to initiate an exit from L2_IDLE->DETECT."]
     B1 = 1,
@@ -27,7 +28,7 @@ impl CltReqExitL2R {
             true => CltReqExitL2::B1,
         }
     }
-    #[doc = "Exit from L2_IDLE This input can be asserted by the client only in the short interval of time after the link enters L2 and before the system is powered OFF. While the power and clocks are still ON, the client can assert this input to initiate an exit from L2_IDLE->DETECT."]
+    #[doc = "keep"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CltReqExitL2::B0
@@ -44,7 +45,7 @@ impl<'a, REG> CltReqExitL2W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Exit from L2_IDLE This input can be asserted by the client only in the short interval of time after the link enters L2 and before the system is powered OFF. While the power and clocks are still ON, the client can assert this input to initiate an exit from L2_IDLE->DETECT."]
+    #[doc = "keep"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CltReqExitL2::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Request transition to L23_Ready state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ReqTrnL23ready {
-    #[doc = "0: transition the power management state of the core to L23_READY When the core is configured as Endpoint, the client may assert this input to transition the power management state of the core to L23_READY (see Chapter 5 of PCI Express Specifications for a detailed description of power management). This is done after the PCI Functions in the core have been placed in the D3 state and after the client has acknowledged the PME_Turn_Off message from the Root Port. Asserting this input causes the link to transition to the L2 state, and requires a power-on reset to resume operation. This input can be hardwired to 0 if the link is not required to transition to L2. This input is not used in the Root Port mode."]
+    #[doc = "0: keep"]
     B0 = 0,
     #[doc = "1: transition the power management state of the core to L23_READY When the core is configured as Endpoint, the client may assert this input to transition the power management state of the core to L23_READY (see Chapter 5 of PCI Express Specifications for a detailed description of power management). This is done after the PCI Functions in the core have been placed in the D3 state and after the client has acknowledged the PME_Turn_Off message from the Root Port. Asserting this input causes the link to transition to the L2 state, and requires a power-on reset to resume operation. This input can be hardwired to 0 if the link is not required to transition to L2. This input is not used in the Root Port mode."]
     B1 = 1,
@@ -80,7 +82,7 @@ impl ReqTrnL23readyR {
             true => ReqTrnL23ready::B1,
         }
     }
-    #[doc = "transition the power management state of the core to L23_READY When the core is configured as Endpoint, the client may assert this input to transition the power management state of the core to L23_READY (see Chapter 5 of PCI Express Specifications for a detailed description of power management). This is done after the PCI Functions in the core have been placed in the D3 state and after the client has acknowledged the PME_Turn_Off message from the Root Port. Asserting this input causes the link to transition to the L2 state, and requires a power-on reset to resume operation. This input can be hardwired to 0 if the link is not required to transition to L2. This input is not used in the Root Port mode."]
+    #[doc = "keep"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ReqTrnL23ready::B0
@@ -97,7 +99,7 @@ impl<'a, REG> ReqTrnL23readyW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "transition the power management state of the core to L23_READY When the core is configured as Endpoint, the client may assert this input to transition the power management state of the core to L23_READY (see Chapter 5 of PCI Express Specifications for a detailed description of power management). This is done after the PCI Functions in the core have been placed in the D3 state and after the client has acknowledged the PME_Turn_Off message from the Root Port. Asserting this input causes the link to transition to the L2 state, and requires a power-on reset to resume operation. This input can be hardwired to 0 if the link is not required to transition to L2. This input is not used in the Root Port mode."]
+    #[doc = "keep"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ReqTrnL23ready::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "Client request exit L1 power state\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CltReqExitL1 {
-    #[doc = "0: request to exit the L1.1 or L1.2.Idle substate Client request to exit the L1.1 or L1.2.Idle substate. When the core clock is turned off, the client must activate this input to request the L1 PM substate state machine to de-assert CLKREQ_OUT and transition the link out of L1. If the core clock is not turned off in the L1.1 and L1.2 substates, this input can be permanently kept low."]
+    #[doc = "0: keep"]
     B0 = 0,
     #[doc = "1: request to exit the L1.1 or L1.2.Idle substate Client request to exit the L1.1 or L1.2.Idle substate. When the core clock is turned off, the client must activate this input to request the L1 PM substate state machine to de-assert CLKREQ_OUT and transition the link out of L1. If the core clock is not turned off in the L1.1 and L1.2 substates, this input can be permanently kept low."]
     B1 = 1,
@@ -133,7 +136,7 @@ impl CltReqExitL1R {
             true => CltReqExitL1::B1,
         }
     }
-    #[doc = "request to exit the L1.1 or L1.2.Idle substate Client request to exit the L1.1 or L1.2.Idle substate. When the core clock is turned off, the client must activate this input to request the L1 PM substate state machine to de-assert CLKREQ_OUT and transition the link out of L1. If the core clock is not turned off in the L1.1 and L1.2 substates, this input can be permanently kept low."]
+    #[doc = "keep"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CltReqExitL1::B0
@@ -150,7 +153,7 @@ impl<'a, REG> CltReqExitL1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "request to exit the L1.1 or L1.2.Idle substate Client request to exit the L1.1 or L1.2.Idle substate. When the core clock is turned off, the client must activate this input to request the L1 PM substate state machine to de-assert CLKREQ_OUT and transition the link out of L1. If the core clock is not turned off in the L1.1 and L1.2 substates, this input can be permanently kept low."]
+    #[doc = "keep"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CltReqExitL1::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "Hardware clear exit L2 request\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HwclrExitL2Req {
-    #[doc = "0: hardware polling and auto-clear mode"]
+    #[doc = "0: software polling and write clear mode"]
     B0 = 0,
     #[doc = "1: hardware polling and auto-clear mode"]
     B1 = 1,
@@ -186,7 +190,7 @@ impl HwclrExitL2ReqR {
             true => HwclrExitL2Req::B1,
         }
     }
-    #[doc = "hardware polling and auto-clear mode"]
+    #[doc = "software polling and write clear mode"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == HwclrExitL2Req::B0
@@ -203,7 +207,7 @@ impl<'a, REG> HwclrExitL2ReqW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "hardware polling and auto-clear mode"]
+    #[doc = "software polling and write clear mode"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(HwclrExitL2Req::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "Hardware clear exit L1 request\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HwclrExitL1Req {
-    #[doc = "0: hardware polling and auto-clear mode"]
+    #[doc = "0: software polling and write clear mode"]
     B0 = 0,
     #[doc = "1: hardware polling and auto-clear mode"]
     B1 = 1,
@@ -239,7 +244,7 @@ impl HwclrExitL1ReqR {
             true => HwclrExitL1Req::B1,
         }
     }
-    #[doc = "hardware polling and auto-clear mode"]
+    #[doc = "software polling and write clear mode"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == HwclrExitL1Req::B0
@@ -256,7 +261,7 @@ impl<'a, REG> HwclrExitL1ReqW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "hardware polling and auto-clear mode"]
+    #[doc = "software polling and write clear mode"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(HwclrExitL1Req::B0)
@@ -268,9 +273,10 @@ where
     }
 }
 #[doc = "Power state change ack\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PwrStcgAck {
-    #[doc = "0: write 1 to generate one high pulse ack to controller The client must assert this input to the core for one cycle in response to the assertion of power state change interrupt, when it is ready to transition to the low-power state requested by the configuration write request. The client may permanently maintain this input high if it does not need to delay the return of the completions for the configuration write transactions causing power-state changes."]
+    #[doc = "0: keep 0"]
     B0 = 0,
     #[doc = "1: write 1 to generate one high pulse ack to controller The client must assert this input to the core for one cycle in response to the assertion of power state change interrupt, when it is ready to transition to the low-power state requested by the configuration write request. The client may permanently maintain this input high if it does not need to delay the return of the completions for the configuration write transactions causing power-state changes."]
     B1 = 1,
@@ -287,7 +293,7 @@ impl<'a, REG> PwrStcgAckW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "write 1 to generate one high pulse ack to controller The client must assert this input to the core for one cycle in response to the assertion of power state change interrupt, when it is ready to transition to the low-power state requested by the configuration write request. The client may permanently maintain this input high if it does not need to delay the return of the completions for the configuration write transactions causing power-state changes."]
+    #[doc = "keep 0"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PwrStcgAck::B0)
@@ -299,9 +305,10 @@ where
     }
 }
 #[doc = "Power state change ack mode select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PwrStcgAckMode {
-    #[doc = "0: select power state change ack source from constant, it always keeps high."]
+    #[doc = "0: select power state change ack source from bit pwr_stcg_ack"]
     B0 = 0,
     #[doc = "1: select power state change ack source from constant, it always keeps high."]
     B1 = 1,
@@ -323,7 +330,7 @@ impl PwrStcgAckModeR {
             true => PwrStcgAckMode::B1,
         }
     }
-    #[doc = "select power state change ack source from constant, it always keeps high."]
+    #[doc = "select power state change ack source from bit pwr_stcg_ack"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == PwrStcgAckMode::B0
@@ -340,7 +347,7 @@ impl<'a, REG> PwrStcgAckModeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "select power state change ack source from constant, it always keeps high."]
+    #[doc = "select power state change ack source from bit pwr_stcg_ack"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(PwrStcgAckMode::B0)
@@ -351,11 +358,12 @@ where
         self.variant(PwrStcgAckMode::B1)
     }
 }
-#[doc = "Write mask bits For each served bit\n\nValue on reset: 0"]
+#[doc = "Write mask bits\n\nFor each served bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum WriteMask {
-    #[doc = "0: write enable"]
+    #[doc = "0: write mask"]
     B0 = 0,
     #[doc = "1: write enable"]
     B1 = 1,
@@ -369,14 +377,14 @@ impl From<WriteMask> for u16 {
 impl crate::FieldSpec for WriteMask {
     type Ux = u16;
 }
-#[doc = "Field `WRITE_MASK` writer - Write mask bits For each served bit"]
+#[doc = "Field `WRITE_MASK` writer - Write mask bits\n\nFor each served bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, WriteMask>;
 impl<'a, REG> WriteMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u16>,
 {
-    #[doc = "write enable"]
+    #[doc = "write mask"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(WriteMask::B0)
@@ -462,7 +470,7 @@ impl W {
     pub fn pwr_stcg_ack_mode(&mut self) -> PwrStcgAckModeW<PcieClientPowerCtrlSpec> {
         PwrStcgAckModeW::new(self, 9)
     }
-    #[doc = "Bits 16:31 - Write mask bits For each served bit"]
+    #[doc = "Bits 16:31 - Write mask bits\n\nFor each served bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<PcieClientPowerCtrlSpec> {

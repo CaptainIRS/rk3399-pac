@@ -1,9 +1,10 @@
 #[doc = "Register `I2S_INTSR` reader"]
 pub type R = crate::R<I2sIntsrSpec>;
 #[doc = "TX empty interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Txei {
-    #[doc = "0: active"]
+    #[doc = "0: inactive"]
     B0 = 0,
     #[doc = "1: active"]
     B1 = 1,
@@ -25,7 +26,7 @@ impl TxeiR {
             true => Txei::B1,
         }
     }
-    #[doc = "active"]
+    #[doc = "inactive"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Txei::B0
@@ -37,9 +38,10 @@ impl TxeiR {
     }
 }
 #[doc = "TX underrun interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Txui {
-    #[doc = "0: active"]
+    #[doc = "0: inactive"]
     B0 = 0,
     #[doc = "1: active"]
     B1 = 1,
@@ -61,7 +63,7 @@ impl TxuiR {
             true => Txui::B1,
         }
     }
-    #[doc = "active"]
+    #[doc = "inactive"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Txui::B0
@@ -73,9 +75,10 @@ impl TxuiR {
     }
 }
 #[doc = "RX full interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rxfi {
-    #[doc = "0: active"]
+    #[doc = "0: inactive"]
     B0 = 0,
     #[doc = "1: active"]
     B1 = 1,
@@ -97,7 +100,7 @@ impl RxfiR {
             true => Rxfi::B1,
         }
     }
-    #[doc = "active"]
+    #[doc = "inactive"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Rxfi::B0
@@ -109,9 +112,10 @@ impl RxfiR {
     }
 }
 #[doc = "RX overrun interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rxoi {
-    #[doc = "0: active"]
+    #[doc = "0: inactive"]
     B0 = 0,
     #[doc = "1: active"]
     B1 = 1,
@@ -133,7 +137,7 @@ impl RxoiR {
             true => Rxoi::B1,
         }
     }
-    #[doc = "active"]
+    #[doc = "inactive"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Rxoi::B0

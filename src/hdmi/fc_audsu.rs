@@ -126,7 +126,7 @@ impl W {
         U3rW::new(self, 7)
     }
 }
-#[doc = "Set user bit \"U\" for Channel 0, Left\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_audsu::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_audsu::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer Audio Sample User Flag Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_audsu::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_audsu::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcAudsuSpec;
 impl crate::RegisterSpec for FcAudsuSpec {
     type Ux = u8;

@@ -2,19 +2,19 @@
 pub type R = crate::R<GmacMmcRxoctetcntGbSpec>;
 #[doc = "Register `GMAC_MMC_RXOCTETCNT_GB` writer"]
 pub type W = crate::W<GmacMmcRxoctetcntGbSpec>;
-#[doc = "Field `RXOCTETCOUNT_GB` reader - Number of bytes received, exclusive of preamble, in good and bad frames."]
+#[doc = "Field `RXOCTETCOUNT_GB` reader - Number of bytes received, exclusive of preamble, in good and\n\nbad frames."]
 pub type RxoctetcountGbR = crate::FieldReader<u32>;
-#[doc = "Field `RXOCTETCOUNT_GB` writer - Number of bytes received, exclusive of preamble, in good and bad frames."]
+#[doc = "Field `RXOCTETCOUNT_GB` writer - Number of bytes received, exclusive of preamble, in good and\n\nbad frames."]
 pub type RxoctetcountGbW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Number of bytes received, exclusive of preamble, in good and bad frames."]
+    #[doc = "Bits 0:31 - Number of bytes received, exclusive of preamble, in good and\n\nbad frames."]
     #[inline(always)]
     pub fn rxoctetcount_gb(&self) -> RxoctetcountGbR {
         RxoctetcountGbR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Number of bytes received, exclusive of preamble, in good and bad frames."]
+    #[doc = "Bits 0:31 - Number of bytes received, exclusive of preamble, in good and\n\nbad frames."]
     #[inline(always)]
     #[must_use]
     pub fn rxoctetcount_gb(&mut self) -> RxoctetcountGbW<GmacMmcRxoctetcntGbSpec> {

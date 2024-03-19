@@ -3,9 +3,10 @@ pub type R = crate::R<PBandDecResetSpec>;
 #[doc = "Register `P_BAND_DEC_RESET` writer"]
 pub type W = crate::W<PBandDecResetSpec>;
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RBandDecReset {
-    #[doc = "1: band decoder works"]
+    #[doc = "1: reset band decoder"]
     B1 = 1,
     #[doc = "0: band decoder works"]
     B0 = 0,
@@ -27,7 +28,7 @@ impl RBandDecResetR {
             false => RBandDecReset::B0,
         }
     }
-    #[doc = "band decoder works"]
+    #[doc = "reset band decoder"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == RBandDecReset::B1
@@ -44,7 +45,7 @@ impl<'a, REG> RBandDecResetW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "band decoder works"]
+    #[doc = "reset band decoder"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(RBandDecReset::B1)

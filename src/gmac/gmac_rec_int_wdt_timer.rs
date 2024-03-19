@@ -2,23 +2,23 @@
 pub type R = crate::R<GmacRecIntWdtTimerSpec>;
 #[doc = "Register `GMAC_REC_INT_WDT_TIMER` writer"]
 pub type W = crate::W<GmacRecIntWdtTimerSpec>;
-#[doc = "Field `RIWT` reader - RI Watchdog Timer count Indicates the number of system clock cycles multiplied by 256 for which the watchdog timer is set. The watchdog timer gets triggered with the programmed value after the RxDMA completes the transfer of a frame for which the RI status bit is not set due to the setting in the corresponding descriptor RDES1\\[31\\]. When the watch-dog timer runs out, the RI bit is set and the timer is stopped. The watchdog timer is reset when RI bit is set high due to automatic setting of RI as per RDES1\\[31\\]
-of any received frame."]
+#[doc = "Field `RIWT` reader - RI Watchdog Timer count\n\nIndicates the number of system clock cycles multiplied by 256 for\n\nwhich the watchdog timer is set. The watchdog timer gets\n\ntriggered with the programmed value after the RxDMA completes\n\nthe transfer of a frame for which the RI status bit is not set due\n\nto the setting in the corresponding descriptor RDES1\\[31\\]. When\n\nthe watch-dog timer runs out, the RI bit is set and the timer is\n\nstopped. The watchdog timer is reset when RI bit is set high due\n\nto automatic setting of RI as per RDES1\\[31\\]
+of any received\n\nframe."]
 pub type RiwtR = crate::FieldReader;
-#[doc = "Field `RIWT` writer - RI Watchdog Timer count Indicates the number of system clock cycles multiplied by 256 for which the watchdog timer is set. The watchdog timer gets triggered with the programmed value after the RxDMA completes the transfer of a frame for which the RI status bit is not set due to the setting in the corresponding descriptor RDES1\\[31\\]. When the watch-dog timer runs out, the RI bit is set and the timer is stopped. The watchdog timer is reset when RI bit is set high due to automatic setting of RI as per RDES1\\[31\\]
-of any received frame."]
+#[doc = "Field `RIWT` writer - RI Watchdog Timer count\n\nIndicates the number of system clock cycles multiplied by 256 for\n\nwhich the watchdog timer is set. The watchdog timer gets\n\ntriggered with the programmed value after the RxDMA completes\n\nthe transfer of a frame for which the RI status bit is not set due\n\nto the setting in the corresponding descriptor RDES1\\[31\\]. When\n\nthe watch-dog timer runs out, the RI bit is set and the timer is\n\nstopped. The watchdog timer is reset when RI bit is set high due\n\nto automatic setting of RI as per RDES1\\[31\\]
+of any received\n\nframe."]
 pub type RiwtW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - RI Watchdog Timer count Indicates the number of system clock cycles multiplied by 256 for which the watchdog timer is set. The watchdog timer gets triggered with the programmed value after the RxDMA completes the transfer of a frame for which the RI status bit is not set due to the setting in the corresponding descriptor RDES1\\[31\\]. When the watch-dog timer runs out, the RI bit is set and the timer is stopped. The watchdog timer is reset when RI bit is set high due to automatic setting of RI as per RDES1\\[31\\]
-of any received frame."]
+    #[doc = "Bits 0:7 - RI Watchdog Timer count\n\nIndicates the number of system clock cycles multiplied by 256 for\n\nwhich the watchdog timer is set. The watchdog timer gets\n\ntriggered with the programmed value after the RxDMA completes\n\nthe transfer of a frame for which the RI status bit is not set due\n\nto the setting in the corresponding descriptor RDES1\\[31\\]. When\n\nthe watch-dog timer runs out, the RI bit is set and the timer is\n\nstopped. The watchdog timer is reset when RI bit is set high due\n\nto automatic setting of RI as per RDES1\\[31\\]
+of any received\n\nframe."]
     #[inline(always)]
     pub fn riwt(&self) -> RiwtR {
         RiwtR::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - RI Watchdog Timer count Indicates the number of system clock cycles multiplied by 256 for which the watchdog timer is set. The watchdog timer gets triggered with the programmed value after the RxDMA completes the transfer of a frame for which the RI status bit is not set due to the setting in the corresponding descriptor RDES1\\[31\\]. When the watch-dog timer runs out, the RI bit is set and the timer is stopped. The watchdog timer is reset when RI bit is set high due to automatic setting of RI as per RDES1\\[31\\]
-of any received frame."]
+    #[doc = "Bits 0:7 - RI Watchdog Timer count\n\nIndicates the number of system clock cycles multiplied by 256 for\n\nwhich the watchdog timer is set. The watchdog timer gets\n\ntriggered with the programmed value after the RxDMA completes\n\nthe transfer of a frame for which the RI status bit is not set due\n\nto the setting in the corresponding descriptor RDES1\\[31\\]. When\n\nthe watch-dog timer runs out, the RI bit is set and the timer is\n\nstopped. The watchdog timer is reset when RI bit is set high due\n\nto automatic setting of RI as per RDES1\\[31\\]
+of any received\n\nframe."]
     #[inline(always)]
     #[must_use]
     pub fn riwt(&mut self) -> RiwtW<GmacRecIntWdtTimerSpec> {

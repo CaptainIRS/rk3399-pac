@@ -1,9 +1,9 @@
 #[doc = "Register `DDR_PI_REG_175` writer"]
 pub type W = crate::W<DdrPiReg175Spec>;
-#[doc = "Field `PI_INT_ACK` writer - Clears the corresponding interrupt bit of the PI_REG_174.pi_int_status parameter."]
+#[doc = "Field `PI_INT_ACK` writer - Clears the corresponding interrupt bit of the\n\nPI_REG_174.pi_int_status parameter."]
 pub type PiIntAckW<'a, REG> = crate::FieldWriter<'a, REG, 18, u32>;
 impl W {
-    #[doc = "Bits 0:17 - Clears the corresponding interrupt bit of the PI_REG_174.pi_int_status parameter."]
+    #[doc = "Bits 0:17 - Clears the corresponding interrupt bit of the\n\nPI_REG_174.pi_int_status parameter."]
     #[inline(always)]
     #[must_use]
     pub fn pi_int_ack(&mut self) -> PiIntAckW<DdrPiReg175Spec> {

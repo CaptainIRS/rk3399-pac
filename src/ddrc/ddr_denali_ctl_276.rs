@@ -6,7 +6,7 @@ pub type W = crate::W<DdrDenaliCtl276Spec>;
 pub type TdfiPhyRdlatF2R = crate::FieldReader;
 #[doc = "Field `TDFI_PHY_RDLAT_F2` writer - Defines the DFI tPHY_RDLAT timing parameter (in DFI PHY clocks), the maximum cycles between a dfi_rddata_en assertion and a dfi_rddata_valid assertion."]
 pub type TdfiPhyRdlatF2W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-#[doc = "Field `TDFI_RDDATA_EN` reader - Holds the calculated DFI tRDDATA_EN timing parameter (in DFI PHY clocks), the maximum cycles between a read command and a dfi_rddata_en assertion. READ-ONLY"]
+#[doc = "Field `TDFI_RDDATA_EN` reader - Holds the calculated DFI tRDDATA_EN timing parameter (in DFI PHY clocks), the maximum cycles between a read command and a dfi_rddata_en assertion."]
 pub type TdfiRddataEnR = crate::FieldReader;
 #[doc = "Field `DRAM_CLK_DISABLE` reader - Set value for the dfi_dram_clk_disable signal. Bit (0) controls cs0, bit (1) controls cs1, etc. Set each bit to 1 to disable."]
 pub type DramClkDisableR = crate::FieldReader;
@@ -22,7 +22,7 @@ impl R {
     pub fn tdfi_phy_rdlat_f2(&self) -> TdfiPhyRdlatF2R {
         TdfiPhyRdlatF2R::new((self.bits & 0xff) as u8)
     }
-    #[doc = "Bits 8:15 - Holds the calculated DFI tRDDATA_EN timing parameter (in DFI PHY clocks), the maximum cycles between a read command and a dfi_rddata_en assertion. READ-ONLY"]
+    #[doc = "Bits 8:15 - Holds the calculated DFI tRDDATA_EN timing parameter (in DFI PHY clocks), the maximum cycles between a read command and a dfi_rddata_en assertion."]
     #[inline(always)]
     pub fn tdfi_rddata_en(&self) -> TdfiRddataEnR {
         TdfiRddataEnR::new(((self.bits >> 8) & 0xff) as u8)

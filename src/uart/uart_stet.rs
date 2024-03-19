@@ -2,19 +2,19 @@
 pub type R = crate::R<UartStetSpec>;
 #[doc = "Register `UART_STET` writer"]
 pub type W = crate::W<UartStetSpec>;
-#[doc = "Field `SHADOW_TX_EMPTY_TRIGGER` reader - Shadow TX Empty Trigger. This is a shadow register for the TX empty trigger bits (FCR\\[5:4\\])."]
+#[doc = "Field `SHADOW_TX_EMPTY_TRIGGER` reader - Shadow TX Empty Trigger.\n\nThis is a shadow register for the TX empty trigger bits\n\n(FCR\\[5:4\\])."]
 pub type ShadowTxEmptyTriggerR = crate::BitReader;
-#[doc = "Field `SHADOW_TX_EMPTY_TRIGGER` writer - Shadow TX Empty Trigger. This is a shadow register for the TX empty trigger bits (FCR\\[5:4\\])."]
+#[doc = "Field `SHADOW_TX_EMPTY_TRIGGER` writer - Shadow TX Empty Trigger.\n\nThis is a shadow register for the TX empty trigger bits\n\n(FCR\\[5:4\\])."]
 pub type ShadowTxEmptyTriggerW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - Shadow TX Empty Trigger. This is a shadow register for the TX empty trigger bits (FCR\\[5:4\\])."]
+    #[doc = "Bit 0 - Shadow TX Empty Trigger.\n\nThis is a shadow register for the TX empty trigger bits\n\n(FCR\\[5:4\\])."]
     #[inline(always)]
     pub fn shadow_tx_empty_trigger(&self) -> ShadowTxEmptyTriggerR {
         ShadowTxEmptyTriggerR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Shadow TX Empty Trigger. This is a shadow register for the TX empty trigger bits (FCR\\[5:4\\])."]
+    #[doc = "Bit 0 - Shadow TX Empty Trigger.\n\nThis is a shadow register for the TX empty trigger bits\n\n(FCR\\[5:4\\])."]
     #[inline(always)]
     #[must_use]
     pub fn shadow_tx_empty_trigger(&mut self) -> ShadowTxEmptyTriggerW<UartStetSpec> {

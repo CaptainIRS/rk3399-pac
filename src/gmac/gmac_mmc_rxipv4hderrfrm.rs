@@ -2,19 +2,19 @@
 pub type R = crate::R<GmacMmcRxipv4hderrfrmSpec>;
 #[doc = "Register `GMAC_MMC_RXIPV4HDERRFRM` writer"]
 pub type W = crate::W<GmacMmcRxipv4hderrfrmSpec>;
-#[doc = "Field `RXIPV4_HDRERR_FRMS` reader - Number of IPv4 datagrams received with header (checksum, length, or version mismatch) errors"]
+#[doc = "Field `RXIPV4_HDRERR_FRMS` reader - Number of IPv4 datagrams received with header (checksum,\n\nlength, or version mismatch) errors"]
 pub type Rxipv4HdrerrFrmsR = crate::FieldReader<u32>;
-#[doc = "Field `RXIPV4_HDRERR_FRMS` writer - Number of IPv4 datagrams received with header (checksum, length, or version mismatch) errors"]
+#[doc = "Field `RXIPV4_HDRERR_FRMS` writer - Number of IPv4 datagrams received with header (checksum,\n\nlength, or version mismatch) errors"]
 pub type Rxipv4HdrerrFrmsW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Number of IPv4 datagrams received with header (checksum, length, or version mismatch) errors"]
+    #[doc = "Bits 0:31 - Number of IPv4 datagrams received with header (checksum,\n\nlength, or version mismatch) errors"]
     #[inline(always)]
     pub fn rxipv4_hdrerr_frms(&self) -> Rxipv4HdrerrFrmsR {
         Rxipv4HdrerrFrmsR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Number of IPv4 datagrams received with header (checksum, length, or version mismatch) errors"]
+    #[doc = "Bits 0:31 - Number of IPv4 datagrams received with header (checksum,\n\nlength, or version mismatch) errors"]
     #[inline(always)]
     #[must_use]
     pub fn rxipv4_hdrerr_frms(&mut self) -> Rxipv4HdrerrFrmsW<GmacMmcRxipv4hderrfrmSpec> {

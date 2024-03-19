@@ -1,9 +1,9 @@
 #[doc = "Register `GMAC_CUR_HOST_TX_DESC` reader"]
 pub type R = crate::R<GmacCurHostTxDescSpec>;
-#[doc = "Field `HTDAP` reader - Host Transmit Descriptor Address Pointer Cleared on Reset. Pointer updated by DMA during operation."]
+#[doc = "Field `HTDAP` reader - Host Transmit Descriptor Address Pointer\n\nCleared on Reset. Pointer updated by DMA during operation."]
 pub type HtdapR = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Host Transmit Descriptor Address Pointer Cleared on Reset. Pointer updated by DMA during operation."]
+    #[doc = "Bits 0:31 - Host Transmit Descriptor Address Pointer\n\nCleared on Reset. Pointer updated by DMA during operation."]
     #[inline(always)]
     pub fn htdap(&self) -> HtdapR {
         HtdapR::new(self.bits)

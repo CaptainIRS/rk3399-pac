@@ -6,29 +6,29 @@ pub type W = crate::W<EfuseCtrlSpec>;
 pub type EfuseCsbR = crate::BitReader;
 #[doc = "Field `EFUSE_CSB` writer - efuse chip select enable signal, active low : CSB"]
 pub type EfuseCsbW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `EFUSE_STROBE` reader - efuse turn on the array for read or program access (active high) : STROBE"]
+#[doc = "Field `EFUSE_STROBE` reader - efuse turn on the array for read or program access (active high) :\n\nSTROBE"]
 pub type EfuseStrobeR = crate::BitReader;
-#[doc = "Field `EFUSE_STROBE` writer - efuse turn on the array for read or program access (active high) : STROBE"]
+#[doc = "Field `EFUSE_STROBE` writer - efuse turn on the array for read or program access (active high) :\n\nSTROBE"]
 pub type EfuseStrobeW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `EFUSE_LOAD` reader - efuse turn on sense amplifier and load data into latch (active high) : LOAD"]
+#[doc = "Field `EFUSE_LOAD` reader - efuse turn on sense amplifier and load data into latch (active\n\nhigh) : LOAD"]
 pub type EfuseLoadR = crate::BitReader;
-#[doc = "Field `EFUSE_LOAD` writer - efuse turn on sense amplifier and load data into latch (active high) : LOAD"]
+#[doc = "Field `EFUSE_LOAD` writer - efuse turn on sense amplifier and load data into latch (active\n\nhigh) : LOAD"]
 pub type EfuseLoadW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EFUSE_PGENB` reader - efuse program enable (active low) : PGENB"]
 pub type EfusePgenbR = crate::BitReader;
 #[doc = "Field `EFUSE_PGENB` writer - efuse program enable (active low) : PGENB"]
 pub type EfusePgenbW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `EFUSE_PS` reader - efuse pass 1.8V program voltage to internal for program(active high) : PS"]
+#[doc = "Field `EFUSE_PS` reader - efuse pass 1.8V program voltage to internal for program(active\n\nhigh) : PS"]
 pub type EfusePsR = crate::BitReader;
-#[doc = "Field `EFUSE_PS` writer - efuse pass 1.8V program voltage to internal for program(active high) : PS"]
+#[doc = "Field `EFUSE_PS` writer - efuse pass 1.8V program voltage to internal for program(active\n\nhigh) : PS"]
 pub type EfusePsW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EFUSE_PD` reader - efuse power down enable (active high) : PD"]
 pub type EfusePdR = crate::BitReader;
 #[doc = "Field `EFUSE_PD` writer - efuse power down enable (active high) : PD"]
 pub type EfusePdW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `EFUSE_MR` reader - efuse read trip point setting, MR = L for normal read mode; MR = H for margin read1 mode : MR"]
+#[doc = "Field `EFUSE_MR` reader - efuse read trip point setting, MR = L for normal read mode; MR =\n\nH for margin read1\n\nmode : MR"]
 pub type EfuseMrR = crate::BitReader;
-#[doc = "Field `EFUSE_MR` writer - efuse read trip point setting, MR = L for normal read mode; MR = H for margin read1 mode : MR"]
+#[doc = "Field `EFUSE_MR` writer - efuse read trip point setting, MR = L for normal read mode; MR =\n\nH for margin read1\n\nmode : MR"]
 pub type EfuseMrW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EFUSE_RSB` reader - efuse redundancy enable(active low) : RSB"]
 pub type EfuseRsbR = crate::BitReader;
@@ -52,12 +52,12 @@ impl R {
     pub fn efuse_csb(&self) -> EfuseCsbR {
         EfuseCsbR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - efuse turn on the array for read or program access (active high) : STROBE"]
+    #[doc = "Bit 1 - efuse turn on the array for read or program access (active high) :\n\nSTROBE"]
     #[inline(always)]
     pub fn efuse_strobe(&self) -> EfuseStrobeR {
         EfuseStrobeR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - efuse turn on sense amplifier and load data into latch (active high) : LOAD"]
+    #[doc = "Bit 2 - efuse turn on sense amplifier and load data into latch (active\n\nhigh) : LOAD"]
     #[inline(always)]
     pub fn efuse_load(&self) -> EfuseLoadR {
         EfuseLoadR::new(((self.bits >> 2) & 1) != 0)
@@ -67,7 +67,7 @@ impl R {
     pub fn efuse_pgenb(&self) -> EfusePgenbR {
         EfusePgenbR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - efuse pass 1.8V program voltage to internal for program(active high) : PS"]
+    #[doc = "Bit 4 - efuse pass 1.8V program voltage to internal for program(active\n\nhigh) : PS"]
     #[inline(always)]
     pub fn efuse_ps(&self) -> EfusePsR {
         EfusePsR::new(((self.bits >> 4) & 1) != 0)
@@ -77,7 +77,7 @@ impl R {
     pub fn efuse_pd(&self) -> EfusePdR {
         EfusePdR::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 6 - efuse read trip point setting, MR = L for normal read mode; MR = H for margin read1 mode : MR"]
+    #[doc = "Bit 6 - efuse read trip point setting, MR = L for normal read mode; MR =\n\nH for margin read1\n\nmode : MR"]
     #[inline(always)]
     pub fn efuse_mr(&self) -> EfuseMrR {
         EfuseMrR::new(((self.bits >> 6) & 1) != 0)
@@ -110,13 +110,13 @@ impl W {
     pub fn efuse_csb(&mut self) -> EfuseCsbW<EfuseCtrlSpec> {
         EfuseCsbW::new(self, 0)
     }
-    #[doc = "Bit 1 - efuse turn on the array for read or program access (active high) : STROBE"]
+    #[doc = "Bit 1 - efuse turn on the array for read or program access (active high) :\n\nSTROBE"]
     #[inline(always)]
     #[must_use]
     pub fn efuse_strobe(&mut self) -> EfuseStrobeW<EfuseCtrlSpec> {
         EfuseStrobeW::new(self, 1)
     }
-    #[doc = "Bit 2 - efuse turn on sense amplifier and load data into latch (active high) : LOAD"]
+    #[doc = "Bit 2 - efuse turn on sense amplifier and load data into latch (active\n\nhigh) : LOAD"]
     #[inline(always)]
     #[must_use]
     pub fn efuse_load(&mut self) -> EfuseLoadW<EfuseCtrlSpec> {
@@ -128,7 +128,7 @@ impl W {
     pub fn efuse_pgenb(&mut self) -> EfusePgenbW<EfuseCtrlSpec> {
         EfusePgenbW::new(self, 3)
     }
-    #[doc = "Bit 4 - efuse pass 1.8V program voltage to internal for program(active high) : PS"]
+    #[doc = "Bit 4 - efuse pass 1.8V program voltage to internal for program(active\n\nhigh) : PS"]
     #[inline(always)]
     #[must_use]
     pub fn efuse_ps(&mut self) -> EfusePsW<EfuseCtrlSpec> {
@@ -140,7 +140,7 @@ impl W {
     pub fn efuse_pd(&mut self) -> EfusePdW<EfuseCtrlSpec> {
         EfusePdW::new(self, 5)
     }
-    #[doc = "Bit 6 - efuse read trip point setting, MR = L for normal read mode; MR = H for margin read1 mode : MR"]
+    #[doc = "Bit 6 - efuse read trip point setting, MR = L for normal read mode; MR =\n\nH for margin read1\n\nmode : MR"]
     #[inline(always)]
     #[must_use]
     pub fn efuse_mr(&mut self) -> EfuseMrW<EfuseCtrlSpec> {

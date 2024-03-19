@@ -96,7 +96,7 @@ impl W {
         NvbiAutoW::new(self, 5)
     }
 }
-#[doc = "Enables ACR packet insertion\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_datauto3::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_datauto3::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer Data Island Auto Packet Scheduling Register 3\n\nConfigures the Frame Composer Automatic(1)/RDRB(0) data island packet insertion for\n\nAVI, GCP, AUDI and ACR packets. In Automatic mode, the packet is inserted on Vblanking\n\nwhen first line with active Vsync appears.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_datauto3::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_datauto3::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcDatauto3Spec;
 impl crate::RegisterSpec for FcDatauto3Spec {
     type Ux = u8;

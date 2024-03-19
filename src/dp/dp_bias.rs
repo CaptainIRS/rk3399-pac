@@ -2,15 +2,16 @@
 pub type R = crate::R<DpBiasSpec>;
 #[doc = "Register `DP_BIAS` writer"]
 pub type W = crate::W<DpBiasSpec>;
-#[doc = "Resistor tune for band gap TC control\n\nValue on reset: 0"]
+#[doc = "Resistor tune for band gap TC \n\ncontrol\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DpResistorTuneBgCtrl {
-    #[doc = "0: -25uV/°C"]
+    #[doc = "0: 25uV/°C"]
     B00 = 0,
-    #[doc = "1: -25uV/°C"]
+    #[doc = "1: 10uV/°C"]
     B01 = 1,
-    #[doc = "2: -25uV/°C"]
+    #[doc = "2: -10uV/°C"]
     B10 = 2,
     #[doc = "3: -25uV/°C"]
     B11 = 3,
@@ -24,7 +25,7 @@ impl From<DpResistorTuneBgCtrl> for u8 {
 impl crate::FieldSpec for DpResistorTuneBgCtrl {
     type Ux = u8;
 }
-#[doc = "Field `DP_RESISTOR_TUNE_BG_CTRL` reader - Resistor tune for band gap TC control"]
+#[doc = "Field `DP_RESISTOR_TUNE_BG_CTRL` reader - Resistor tune for band gap TC \n\ncontrol"]
 pub type DpResistorTuneBgCtrlR = crate::FieldReader<DpResistorTuneBgCtrl>;
 impl DpResistorTuneBgCtrlR {
     #[doc = "Get enumerated values variant"]
@@ -38,17 +39,17 @@ impl DpResistorTuneBgCtrlR {
             _ => unreachable!(),
         }
     }
-    #[doc = "-25uV/°C"]
+    #[doc = "25uV/°C"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == DpResistorTuneBgCtrl::B00
     }
-    #[doc = "-25uV/°C"]
+    #[doc = "10uV/°C"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == DpResistorTuneBgCtrl::B01
     }
-    #[doc = "-25uV/°C"]
+    #[doc = "-10uV/°C"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == DpResistorTuneBgCtrl::B10
@@ -59,24 +60,24 @@ impl DpResistorTuneBgCtrlR {
         *self == DpResistorTuneBgCtrl::B11
     }
 }
-#[doc = "Field `DP_RESISTOR_TUNE_BG_CTRL` writer - Resistor tune for band gap TC control"]
+#[doc = "Field `DP_RESISTOR_TUNE_BG_CTRL` writer - Resistor tune for band gap TC \n\ncontrol"]
 pub type DpResistorTuneBgCtrlW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, DpResistorTuneBgCtrl>;
 impl<'a, REG> DpResistorTuneBgCtrlW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "-25uV/°C"]
+    #[doc = "25uV/°C"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(DpResistorTuneBgCtrl::B00)
     }
-    #[doc = "-25uV/°C"]
+    #[doc = "10uV/°C"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(DpResistorTuneBgCtrl::B01)
     }
-    #[doc = "-25uV/°C"]
+    #[doc = "-10uV/°C"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(DpResistorTuneBgCtrl::B10)
@@ -88,9 +89,10 @@ where
     }
 }
 #[doc = "Select band gap\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DpBgSel {
-    #[doc = "0: sel Band gap"]
+    #[doc = "0: sel Register"]
     B0 = 0,
     #[doc = "1: sel Band gap"]
     B1 = 1,
@@ -112,7 +114,7 @@ impl DpBgSelR {
             true => DpBgSel::B1,
         }
     }
-    #[doc = "sel Band gap"]
+    #[doc = "sel Register"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == DpBgSel::B0
@@ -129,7 +131,7 @@ impl<'a, REG> DpBgSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "sel Band gap"]
+    #[doc = "sel Register"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(DpBgSel::B0)
@@ -141,9 +143,10 @@ where
     }
 }
 #[doc = "Band gap start up current control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DpDbCureentCtrl {
-    #[doc = "0: unbalance"]
+    #[doc = "0: balance"]
     B0 = 0,
     #[doc = "1: unbalance"]
     B1 = 1,
@@ -165,7 +168,7 @@ impl DpDbCureentCtrlR {
             true => DpDbCureentCtrl::B1,
         }
     }
-    #[doc = "unbalance"]
+    #[doc = "balance"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == DpDbCureentCtrl::B0
@@ -182,7 +185,7 @@ impl<'a, REG> DpDbCureentCtrlW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "unbalance"]
+    #[doc = "balance"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(DpDbCureentCtrl::B0)
@@ -194,12 +197,13 @@ where
     }
 }
 #[doc = "Select band gap out\n\nValue on reset: 3"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DpBgOutSel {
-    #[doc = "0: 0.63V"]
+    #[doc = "0: 0.56V"]
     B000 = 0,
-    #[doc = "4: 0.63V"]
+    #[doc = "4: 0.6V(default)"]
     B100 = 4,
     #[doc = "7: 0.63V"]
     B111 = 7,
@@ -226,12 +230,12 @@ impl DpBgOutSelR {
             _ => None,
         }
     }
-    #[doc = "0.63V"]
+    #[doc = "0.56V"]
     #[inline(always)]
     pub fn is_b000(&self) -> bool {
         *self == DpBgOutSel::B000
     }
-    #[doc = "0.63V"]
+    #[doc = "0.6V(default)"]
     #[inline(always)]
     pub fn is_b100(&self) -> bool {
         *self == DpBgOutSel::B100
@@ -249,12 +253,12 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "0.63V"]
+    #[doc = "0.56V"]
     #[inline(always)]
     pub fn b000(self) -> &'a mut crate::W<REG> {
         self.variant(DpBgOutSel::B000)
     }
-    #[doc = "0.63V"]
+    #[doc = "0.6V(default)"]
     #[inline(always)]
     pub fn b100(self) -> &'a mut crate::W<REG> {
         self.variant(DpBgOutSel::B100)
@@ -266,7 +270,7 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 0:1 - Resistor tune for band gap TC control"]
+    #[doc = "Bits 0:1 - Resistor tune for band gap TC \n\ncontrol"]
     #[inline(always)]
     pub fn dp_resistor_tune_bg_ctrl(&self) -> DpResistorTuneBgCtrlR {
         DpResistorTuneBgCtrlR::new((self.bits & 3) as u8)
@@ -288,7 +292,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:1 - Resistor tune for band gap TC control"]
+    #[doc = "Bits 0:1 - Resistor tune for band gap TC \n\ncontrol"]
     #[inline(always)]
     #[must_use]
     pub fn dp_resistor_tune_bg_ctrl(&mut self) -> DpResistorTuneBgCtrlW<DpBiasSpec> {

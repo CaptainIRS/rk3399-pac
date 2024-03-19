@@ -2,10 +2,11 @@
 pub type R = crate::R<Cci500StatusSpec>;
 #[doc = "Register `CCI500_STATUS` writer"]
 pub type W = crate::W<Cci500StatusSpec>;
-#[doc = "Indicates whether any changes to the Snoop Control Registers or the Control Override Register are pending in the CCI-500:\n\nValue on reset: 0"]
+#[doc = "Indicates whether any changes to the Snoop\n\nControl Registers or the Control Override\n\nRegister are pending in the CCI-500:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ChangePending {
-    #[doc = "0: Change pending"]
+    #[doc = "0: No change pending"]
     B0 = 0,
     #[doc = "1: Change pending"]
     B1 = 1,
@@ -16,7 +17,7 @@ impl From<ChangePending> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CHANGE_PENDING` reader - Indicates whether any changes to the Snoop Control Registers or the Control Override Register are pending in the CCI-500:"]
+#[doc = "Field `CHANGE_PENDING` reader - Indicates whether any changes to the Snoop\n\nControl Registers or the Control Override\n\nRegister are pending in the CCI-500:"]
 pub type ChangePendingR = crate::BitReader<ChangePending>;
 impl ChangePendingR {
     #[doc = "Get enumerated values variant"]
@@ -27,7 +28,7 @@ impl ChangePendingR {
             true => ChangePending::B1,
         }
     }
-    #[doc = "Change pending"]
+    #[doc = "No change pending"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ChangePending::B0
@@ -38,13 +39,13 @@ impl ChangePendingR {
         *self == ChangePending::B1
     }
 }
-#[doc = "Field `CHANGE_PENDING` writer - Indicates whether any changes to the Snoop Control Registers or the Control Override Register are pending in the CCI-500:"]
+#[doc = "Field `CHANGE_PENDING` writer - Indicates whether any changes to the Snoop\n\nControl Registers or the Control Override\n\nRegister are pending in the CCI-500:"]
 pub type ChangePendingW<'a, REG> = crate::BitWriter<'a, REG, ChangePending>;
 impl<'a, REG> ChangePendingW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Change pending"]
+    #[doc = "No change pending"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ChangePending::B0)
@@ -55,10 +56,11 @@ where
         self.variant(ChangePending::B1)
     }
 }
-#[doc = "Indicates when the snoop filter RAM is initialized. Shareable requests are not serviced during this period.\n\nValue on reset: 0"]
+#[doc = "Indicates when the snoop filter RAM is\n\ninitialized. Shareable requests are not\n\nserviced during this period.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SfRamInitialization {
-    #[doc = "0: Snoop filter RAM initialization is in progress."]
+    #[doc = "0: Snoop filter RAM initialization is complete."]
     B0 = 0,
     #[doc = "1: Snoop filter RAM initialization is in progress."]
     B1 = 1,
@@ -69,7 +71,7 @@ impl From<SfRamInitialization> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SF_RAM_INITIALIZATION` reader - Indicates when the snoop filter RAM is initialized. Shareable requests are not serviced during this period."]
+#[doc = "Field `SF_RAM_INITIALIZATION` reader - Indicates when the snoop filter RAM is\n\ninitialized. Shareable requests are not\n\nserviced during this period."]
 pub type SfRamInitializationR = crate::BitReader<SfRamInitialization>;
 impl SfRamInitializationR {
     #[doc = "Get enumerated values variant"]
@@ -80,7 +82,7 @@ impl SfRamInitializationR {
             true => SfRamInitialization::B1,
         }
     }
-    #[doc = "Snoop filter RAM initialization is in progress."]
+    #[doc = "Snoop filter RAM initialization is complete."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SfRamInitialization::B0
@@ -91,13 +93,13 @@ impl SfRamInitializationR {
         *self == SfRamInitialization::B1
     }
 }
-#[doc = "Field `SF_RAM_INITIALIZATION` writer - Indicates when the snoop filter RAM is initialized. Shareable requests are not serviced during this period."]
+#[doc = "Field `SF_RAM_INITIALIZATION` writer - Indicates when the snoop filter RAM is\n\ninitialized. Shareable requests are not\n\nserviced during this period."]
 pub type SfRamInitializationW<'a, REG> = crate::BitWriter<'a, REG, SfRamInitialization>;
 impl<'a, REG> SfRamInitializationW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Snoop filter RAM initialization is in progress."]
+    #[doc = "Snoop filter RAM initialization is complete."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SfRamInitialization::B0)
@@ -109,16 +111,17 @@ where
     }
 }
 #[doc = "The snoop filter RAM power states are\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SfRamState {
-    #[doc = "0: On. 0b101-0b111 Reserved"]
+    #[doc = "0: Off."]
     B000 = 0,
-    #[doc = "1: On. 0b101-0b111 Reserved"]
+    #[doc = "1: Static snoop filter RAM retention."]
     B001 = 1,
-    #[doc = "2: On. 0b101-0b111 Reserved"]
+    #[doc = "2: Reserved."]
     B010 = 2,
-    #[doc = "3: On. 0b101-0b111 Reserved"]
+    #[doc = "3: Dynamic snoop filter RAM retention."]
     B011 = 3,
     #[doc = "4: On. 0b101-0b111 Reserved"]
     B100 = 4,
@@ -147,22 +150,22 @@ impl SfRamStateR {
             _ => None,
         }
     }
-    #[doc = "On. 0b101-0b111 Reserved"]
+    #[doc = "Off."]
     #[inline(always)]
     pub fn is_b000(&self) -> bool {
         *self == SfRamState::B000
     }
-    #[doc = "On. 0b101-0b111 Reserved"]
+    #[doc = "Static snoop filter RAM retention."]
     #[inline(always)]
     pub fn is_b001(&self) -> bool {
         *self == SfRamState::B001
     }
-    #[doc = "On. 0b101-0b111 Reserved"]
+    #[doc = "Reserved."]
     #[inline(always)]
     pub fn is_b010(&self) -> bool {
         *self == SfRamState::B010
     }
-    #[doc = "On. 0b101-0b111 Reserved"]
+    #[doc = "Dynamic snoop filter RAM retention."]
     #[inline(always)]
     pub fn is_b011(&self) -> bool {
         *self == SfRamState::B011
@@ -180,22 +183,22 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "On. 0b101-0b111 Reserved"]
+    #[doc = "Off."]
     #[inline(always)]
     pub fn b000(self) -> &'a mut crate::W<REG> {
         self.variant(SfRamState::B000)
     }
-    #[doc = "On. 0b101-0b111 Reserved"]
+    #[doc = "Static snoop filter RAM retention."]
     #[inline(always)]
     pub fn b001(self) -> &'a mut crate::W<REG> {
         self.variant(SfRamState::B001)
     }
-    #[doc = "On. 0b101-0b111 Reserved"]
+    #[doc = "Reserved."]
     #[inline(always)]
     pub fn b010(self) -> &'a mut crate::W<REG> {
         self.variant(SfRamState::B010)
     }
-    #[doc = "On. 0b101-0b111 Reserved"]
+    #[doc = "Dynamic snoop filter RAM retention."]
     #[inline(always)]
     pub fn b011(self) -> &'a mut crate::W<REG> {
         self.variant(SfRamState::B011)
@@ -206,14 +209,15 @@ where
         self.variant(SfRamState::B100)
     }
 }
-#[doc = "Field `SF_RAM_STATE_REQUEST` reader - This is the last requested power state of the snoop filter RAMs Encoding as SF_RAM_state."]
+#[doc = "Field `SF_RAM_STATE_REQUEST` reader - This is the last requested power state of the\n\nsnoop filter RAMs Encoding as SF_RAM_state."]
 pub type SfRamStateRequestR = crate::FieldReader;
-#[doc = "Field `SF_RAM_STATE_REQUEST` writer - This is the last requested power state of the snoop filter RAMs Encoding as SF_RAM_state."]
+#[doc = "Field `SF_RAM_STATE_REQUEST` writer - This is the last requested power state of the\n\nsnoop filter RAMs Encoding as SF_RAM_state."]
 pub type SfRamStateRequestW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-#[doc = "Snoop filter RAM power state change pending. This bit reads back the PREQ input.\n\nValue on reset: 0"]
+#[doc = "Snoop filter RAM power state change pending.\n\nThis bit reads back the PREQ input.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SfRamStateChangePending {
-    #[doc = "0: State change is pending and might be accepted or denied"]
+    #[doc = "0: No change pending, any previous requests have been accepted or denied."]
     B0 = 0,
     #[doc = "1: State change is pending and might be accepted or denied"]
     B1 = 1,
@@ -224,7 +228,7 @@ impl From<SfRamStateChangePending> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SF_RAM_STATE_CHANGE_PENDING` reader - Snoop filter RAM power state change pending. This bit reads back the PREQ input."]
+#[doc = "Field `SF_RAM_STATE_CHANGE_PENDING` reader - Snoop filter RAM power state change pending.\n\nThis bit reads back the PREQ input."]
 pub type SfRamStateChangePendingR = crate::BitReader<SfRamStateChangePending>;
 impl SfRamStateChangePendingR {
     #[doc = "Get enumerated values variant"]
@@ -235,7 +239,7 @@ impl SfRamStateChangePendingR {
             true => SfRamStateChangePending::B1,
         }
     }
-    #[doc = "State change is pending and might be accepted or denied"]
+    #[doc = "No change pending, any previous requests have been accepted or denied."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SfRamStateChangePending::B0
@@ -246,13 +250,13 @@ impl SfRamStateChangePendingR {
         *self == SfRamStateChangePending::B1
     }
 }
-#[doc = "Field `SF_RAM_STATE_CHANGE_PENDING` writer - Snoop filter RAM power state change pending. This bit reads back the PREQ input."]
+#[doc = "Field `SF_RAM_STATE_CHANGE_PENDING` writer - Snoop filter RAM power state change pending.\n\nThis bit reads back the PREQ input."]
 pub type SfRamStateChangePendingW<'a, REG> = crate::BitWriter<'a, REG, SfRamStateChangePending>;
 impl<'a, REG> SfRamStateChangePendingW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "State change is pending and might be accepted or denied"]
+    #[doc = "No change pending, any previous requests have been accepted or denied."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SfRamStateChangePending::B0)
@@ -264,12 +268,12 @@ where
     }
 }
 impl R {
-    #[doc = "Bit 0 - Indicates whether any changes to the Snoop Control Registers or the Control Override Register are pending in the CCI-500:"]
+    #[doc = "Bit 0 - Indicates whether any changes to the Snoop\n\nControl Registers or the Control Override\n\nRegister are pending in the CCI-500:"]
     #[inline(always)]
     pub fn change_pending(&self) -> ChangePendingR {
         ChangePendingR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - Indicates when the snoop filter RAM is initialized. Shareable requests are not serviced during this period."]
+    #[doc = "Bit 1 - Indicates when the snoop filter RAM is\n\ninitialized. Shareable requests are not\n\nserviced during this period."]
     #[inline(always)]
     pub fn sf_ram_initialization(&self) -> SfRamInitializationR {
         SfRamInitializationR::new(((self.bits >> 1) & 1) != 0)
@@ -279,25 +283,25 @@ impl R {
     pub fn sf_ram_state(&self) -> SfRamStateR {
         SfRamStateR::new(((self.bits >> 2) & 7) as u8)
     }
-    #[doc = "Bits 5:7 - This is the last requested power state of the snoop filter RAMs Encoding as SF_RAM_state."]
+    #[doc = "Bits 5:7 - This is the last requested power state of the\n\nsnoop filter RAMs Encoding as SF_RAM_state."]
     #[inline(always)]
     pub fn sf_ram_state_request(&self) -> SfRamStateRequestR {
         SfRamStateRequestR::new(((self.bits >> 5) & 7) as u8)
     }
-    #[doc = "Bit 8 - Snoop filter RAM power state change pending. This bit reads back the PREQ input."]
+    #[doc = "Bit 8 - Snoop filter RAM power state change pending.\n\nThis bit reads back the PREQ input."]
     #[inline(always)]
     pub fn sf_ram_state_change_pending(&self) -> SfRamStateChangePendingR {
         SfRamStateChangePendingR::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Indicates whether any changes to the Snoop Control Registers or the Control Override Register are pending in the CCI-500:"]
+    #[doc = "Bit 0 - Indicates whether any changes to the Snoop\n\nControl Registers or the Control Override\n\nRegister are pending in the CCI-500:"]
     #[inline(always)]
     #[must_use]
     pub fn change_pending(&mut self) -> ChangePendingW<Cci500StatusSpec> {
         ChangePendingW::new(self, 0)
     }
-    #[doc = "Bit 1 - Indicates when the snoop filter RAM is initialized. Shareable requests are not serviced during this period."]
+    #[doc = "Bit 1 - Indicates when the snoop filter RAM is\n\ninitialized. Shareable requests are not\n\nserviced during this period."]
     #[inline(always)]
     #[must_use]
     pub fn sf_ram_initialization(&mut self) -> SfRamInitializationW<Cci500StatusSpec> {
@@ -309,13 +313,13 @@ impl W {
     pub fn sf_ram_state(&mut self) -> SfRamStateW<Cci500StatusSpec> {
         SfRamStateW::new(self, 2)
     }
-    #[doc = "Bits 5:7 - This is the last requested power state of the snoop filter RAMs Encoding as SF_RAM_state."]
+    #[doc = "Bits 5:7 - This is the last requested power state of the\n\nsnoop filter RAMs Encoding as SF_RAM_state."]
     #[inline(always)]
     #[must_use]
     pub fn sf_ram_state_request(&mut self) -> SfRamStateRequestW<Cci500StatusSpec> {
         SfRamStateRequestW::new(self, 5)
     }
-    #[doc = "Bit 8 - Snoop filter RAM power state change pending. This bit reads back the PREQ input."]
+    #[doc = "Bit 8 - Snoop filter RAM power state change pending.\n\nThis bit reads back the PREQ input."]
     #[inline(always)]
     #[must_use]
     pub fn sf_ram_state_change_pending(&mut self) -> SfRamStateChangePendingW<Cci500StatusSpec> {

@@ -2,19 +2,19 @@
 pub type R = crate::R<SpiRxftlrSpec>;
 #[doc = "Register `SPI_RXFTLR` writer"]
 pub type W = crate::W<SpiRxftlrSpec>;
-#[doc = "Field `RXFTLR` reader - Receive FIFO Threshold Level When the number of receive FIFO entries is greater than or equal to this value + 1, the receive FIFO full interrupt is triggered."]
+#[doc = "Field `RXFTLR` reader - Receive FIFO Threshold Level\n\nWhen the number of receive FIFO entries is greater than or equal\n\nto this value + 1, the receive FIFO full interrupt is triggered."]
 pub type RxftlrR = crate::FieldReader;
-#[doc = "Field `RXFTLR` writer - Receive FIFO Threshold Level When the number of receive FIFO entries is greater than or equal to this value + 1, the receive FIFO full interrupt is triggered."]
+#[doc = "Field `RXFTLR` writer - Receive FIFO Threshold Level\n\nWhen the number of receive FIFO entries is greater than or equal\n\nto this value + 1, the receive FIFO full interrupt is triggered."]
 pub type RxftlrW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
-    #[doc = "Bits 0:4 - Receive FIFO Threshold Level When the number of receive FIFO entries is greater than or equal to this value + 1, the receive FIFO full interrupt is triggered."]
+    #[doc = "Bits 0:4 - Receive FIFO Threshold Level\n\nWhen the number of receive FIFO entries is greater than or equal\n\nto this value + 1, the receive FIFO full interrupt is triggered."]
     #[inline(always)]
     pub fn rxftlr(&self) -> RxftlrR {
         RxftlrR::new((self.bits & 0x1f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - Receive FIFO Threshold Level When the number of receive FIFO entries is greater than or equal to this value + 1, the receive FIFO full interrupt is triggered."]
+    #[doc = "Bits 0:4 - Receive FIFO Threshold Level\n\nWhen the number of receive FIFO entries is greater than or equal\n\nto this value + 1, the receive FIFO full interrupt is triggered."]
     #[inline(always)]
     #[must_use]
     pub fn rxftlr(&mut self) -> RxftlrW<SpiRxftlrSpec> {

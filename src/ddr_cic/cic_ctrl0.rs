@@ -3,9 +3,10 @@ pub type R = crate::R<CicCtrl0Spec>;
 #[doc = "Register `CIC_CTRL0` writer"]
 pub type W = crate::W<CicCtrl0Spec>;
 #[doc = "Frequency change request\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ChgReq {
-    #[doc = "0: request"]
+    #[doc = "0: not request"]
     B0 = 0,
     #[doc = "1: request"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl ChgReqR {
             true => ChgReq::B1,
         }
     }
-    #[doc = "request"]
+    #[doc = "not request"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ChgReq::B0
@@ -44,7 +45,7 @@ impl<'a, REG> ChgReqW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "request"]
+    #[doc = "not request"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ChgReq::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Frequency change finish\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ChgFreqFinish {
-    #[doc = "0: finish"]
+    #[doc = "0: not finish"]
     B0 = 0,
     #[doc = "1: finish"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl ChgFreqFinishR {
             true => ChgFreqFinish::B1,
         }
     }
-    #[doc = "finish"]
+    #[doc = "not finish"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ChgFreqFinish::B0
@@ -97,7 +99,7 @@ impl<'a, REG> ChgFreqFinishW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "finish"]
+    #[doc = "not finish"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ChgFreqFinish::B0)
@@ -112,9 +114,9 @@ where
 pub type FailContEnR = crate::BitReader;
 #[doc = "Field `FAIL_CONT_EN` writer - When frequency change fail, whether continue to enable change."]
 pub type FailContEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CHG_FC_REG_COPY` reader - Select the copy of timing parameters that will be used after frequency change."]
+#[doc = "Field `CHG_FC_REG_COPY` reader - Select the copy of timing parameters that will be used after\n\nfrequency change."]
 pub type ChgFcRegCopyR = crate::FieldReader;
-#[doc = "Field `CHG_FC_REG_COPY` writer - Select the copy of timing parameters that will be used after frequency change."]
+#[doc = "Field `CHG_FC_REG_COPY` writer - Select the copy of timing parameters that will be used after\n\nfrequency change."]
 pub type ChgFcRegCopyW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `DDR0_FREQ_CHANGE_ACK` reader - Channel 0 DDR PHY frequency change acknowledge"]
 pub type Ddr0FreqChangeAckR = crate::BitReader;
@@ -132,9 +134,9 @@ pub type Ddr0CntrlFreqChangeAckW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Ddr1CntrlFreqChangeAckR = crate::BitReader;
 #[doc = "Field `DDR1_CNTRL_FREQ_CHANGE_ACK` writer - Channel 1 DDR controller frequency change acknowledge"]
 pub type Ddr1CntrlFreqChangeAckW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software. When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software. When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software. When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by software.\n\nWhen bit 16=0, bit 0 cannot be written by software;\n\nWhen bit 17=1, bit 1 can be written by software.\n\nWhen bit 17=0, bit 1 cannot be written by software;\n\n......\n\nWhen bit 31=1, bit 15 can be written by software.\n\nWhen bit 31=0, bit 15 cannot be written by software;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software. When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software. When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software. When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by software.\n\nWhen bit 16=0, bit 0 cannot be written by software;\n\nWhen bit 17=1, bit 1 can be written by software.\n\nWhen bit 17=0, bit 1 cannot be written by software;\n\n......\n\nWhen bit 31=1, bit 15 can be written by software.\n\nWhen bit 31=0, bit 15 cannot be written by software;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0 - Frequency change request"]
@@ -152,7 +154,7 @@ impl R {
     pub fn fail_cont_en(&self) -> FailContEnR {
         FailContEnR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bits 4:5 - Select the copy of timing parameters that will be used after frequency change."]
+    #[doc = "Bits 4:5 - Select the copy of timing parameters that will be used after\n\nfrequency change."]
     #[inline(always)]
     pub fn chg_fc_reg_copy(&self) -> ChgFcRegCopyR {
         ChgFcRegCopyR::new(((self.bits >> 4) & 3) as u8)
@@ -177,7 +179,7 @@ impl R {
     pub fn ddr1_cntrl_freq_change_ack(&self) -> Ddr1CntrlFreqChangeAckR {
         Ddr1CntrlFreqChangeAckR::new(((self.bits >> 11) & 1) != 0)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software. When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software. When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software. When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by software.\n\nWhen bit 16=0, bit 0 cannot be written by software;\n\nWhen bit 17=1, bit 1 can be written by software.\n\nWhen bit 17=0, bit 1 cannot be written by software;\n\n......\n\nWhen bit 31=1, bit 15 can be written by software.\n\nWhen bit 31=0, bit 15 cannot be written by software;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
@@ -202,7 +204,7 @@ impl W {
     pub fn fail_cont_en(&mut self) -> FailContEnW<CicCtrl0Spec> {
         FailContEnW::new(self, 2)
     }
-    #[doc = "Bits 4:5 - Select the copy of timing parameters that will be used after frequency change."]
+    #[doc = "Bits 4:5 - Select the copy of timing parameters that will be used after\n\nfrequency change."]
     #[inline(always)]
     #[must_use]
     pub fn chg_fc_reg_copy(&mut self) -> ChgFcRegCopyW<CicCtrl0Spec> {
@@ -232,7 +234,7 @@ impl W {
     pub fn ddr1_cntrl_freq_change_ack(&mut self) -> Ddr1CntrlFreqChangeAckW<CicCtrl0Spec> {
         Ddr1CntrlFreqChangeAckW::new(self, 11)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software. When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software. When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software. When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by software.\n\nWhen bit 16=0, bit 0 cannot be written by software;\n\nWhen bit 17=1, bit 1 can be written by software.\n\nWhen bit 17=0, bit 1 cannot be written by software;\n\n......\n\nWhen bit 31=1, bit 15 can be written by software.\n\nWhen bit 31=0, bit 15 cannot be written by software;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<CicCtrl0Spec> {

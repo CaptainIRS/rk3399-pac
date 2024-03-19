@@ -2,13 +2,13 @@
 pub type R = crate::R<DdrPiReg55Spec>;
 #[doc = "Register `DDR_PI_REG_55` writer"]
 pub type W = crate::W<DdrPiReg55Spec>;
-#[doc = "Field `PI_SWLVL_RD_SLICE_2` writer - Indicates software leveling read command in WDQ training for data slice 2."]
+#[doc = "Field `PI_SWLVL_RD_SLICE_2` writer - Indicates software leveling read command in WDQ training for data\n\nslice 2."]
 pub type PiSwlvlRdSlice2W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PI_SW_WDQLVL_RESP_2` reader - Indicates WDQ leveling response for data slice 2."]
 pub type PiSwWdqlvlResp2R = crate::FieldReader;
-#[doc = "Field `PI_SWLVL_WR_SLICE_3` writer - Indicates software leveling write command in WDQ training for data slice 3."]
+#[doc = "Field `PI_SWLVL_WR_SLICE_3` writer - Indicates software leveling write command in WDQ training for data\n\nslice 3."]
 pub type PiSwlvlWrSlice3W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PI_SWLVL_RD_SLICE_3` writer - Indicates software leveling read command in WDQ training for data slice 3."]
+#[doc = "Field `PI_SWLVL_RD_SLICE_3` writer - Indicates software leveling read command in WDQ training for data\n\nslice 3."]
 pub type PiSwlvlRdSlice3W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 8:9 - Indicates WDQ leveling response for data slice 2."]
@@ -18,19 +18,19 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - Indicates software leveling read command in WDQ training for data slice 2."]
+    #[doc = "Bit 0 - Indicates software leveling read command in WDQ training for data\n\nslice 2."]
     #[inline(always)]
     #[must_use]
     pub fn pi_swlvl_rd_slice_2(&mut self) -> PiSwlvlRdSlice2W<DdrPiReg55Spec> {
         PiSwlvlRdSlice2W::new(self, 0)
     }
-    #[doc = "Bit 16 - Indicates software leveling write command in WDQ training for data slice 3."]
+    #[doc = "Bit 16 - Indicates software leveling write command in WDQ training for data\n\nslice 3."]
     #[inline(always)]
     #[must_use]
     pub fn pi_swlvl_wr_slice_3(&mut self) -> PiSwlvlWrSlice3W<DdrPiReg55Spec> {
         PiSwlvlWrSlice3W::new(self, 16)
     }
-    #[doc = "Bit 24 - Indicates software leveling read command in WDQ training for data slice 3."]
+    #[doc = "Bit 24 - Indicates software leveling read command in WDQ training for data\n\nslice 3."]
     #[inline(always)]
     #[must_use]
     pub fn pi_swlvl_rd_slice_3(&mut self) -> PiSwlvlRdSlice3W<DdrPiReg55Spec> {

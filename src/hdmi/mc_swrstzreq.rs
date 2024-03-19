@@ -6,9 +6,9 @@ pub type W = crate::W<McSwrstzreqSpec>;
 pub type PixelswrstReqR = crate::BitReader;
 #[doc = "Field `PIXELSWRST_REQ` writer - Pixel software reset request."]
 pub type PixelswrstReqW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `TMDSSWRST_REQ` reader - TMDS software reset request. It is required to perform a write action on one of the following registers: fc_invidconf, fc_inhactiv0, fc_inhactiv1, fc_inhblank0, fc_inhblank1, fc_invactiv0 fc_invactiv1, fc_invblank, fc_hsyncindelay0, fc_hsyncindelay1, fc_hsyncinwidth0 fc_hsyncinwidth1, fc_vsyncindelay, fc_vsyncinwidth, fc_ctrldur, fc_exctrldur, fc_exctrlspac"]
+#[doc = "Field `TMDSSWRST_REQ` reader - TMDS software reset request.\n\nIt is required to perform a write action on one of the\n\nfollowing registers:\n\nfc_invidconf, fc_inhactiv0, fc_inhactiv1, fc_inhblank0,\n\nfc_inhblank1, fc_invactiv0\n\nfc_invactiv1, fc_invblank, fc_hsyncindelay0,\n\nfc_hsyncindelay1, fc_hsyncinwidth0\n\nfc_hsyncinwidth1, fc_vsyncindelay, fc_vsyncinwidth,\n\nfc_ctrldur, fc_exctrldur, fc_exctrlspac"]
 pub type TmdsswrstReqR = crate::BitReader;
-#[doc = "Field `TMDSSWRST_REQ` writer - TMDS software reset request. It is required to perform a write action on one of the following registers: fc_invidconf, fc_inhactiv0, fc_inhactiv1, fc_inhblank0, fc_inhblank1, fc_invactiv0 fc_invactiv1, fc_invblank, fc_hsyncindelay0, fc_hsyncindelay1, fc_hsyncinwidth0 fc_hsyncinwidth1, fc_vsyncindelay, fc_vsyncinwidth, fc_ctrldur, fc_exctrldur, fc_exctrlspac"]
+#[doc = "Field `TMDSSWRST_REQ` writer - TMDS software reset request.\n\nIt is required to perform a write action on one of the\n\nfollowing registers:\n\nfc_invidconf, fc_inhactiv0, fc_inhactiv1, fc_inhblank0,\n\nfc_inhblank1, fc_invactiv0\n\nfc_invactiv1, fc_invblank, fc_hsyncindelay0,\n\nfc_hsyncindelay1, fc_hsyncinwidth0\n\nfc_hsyncinwidth1, fc_vsyncindelay, fc_vsyncinwidth,\n\nfc_ctrldur, fc_exctrldur, fc_exctrlspac"]
 pub type TmdsswrstReqW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PREPSWRST_REQ` reader - Pixel Repetition software reset request."]
 pub type PrepswrstReqR = crate::BitReader;
@@ -22,13 +22,13 @@ pub type Ii2sswrstReqW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type IspdifswrstReqR = crate::BitReader;
 #[doc = "Field `ISPDIFSWRST_REQ` writer - SPDIF audio software reset request."]
 pub type IspdifswrstReqW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CECSWRST_REQ` reader - CEC software reset request. Defaults back to 1b after reset request. Note: After you configure cecswrst_req, set the value of the bit csc_clk_disable of the register mc_clkdis to 1, 0, and then 1 again."]
+#[doc = "Field `CECSWRST_REQ` reader - CEC software reset request. Defaults back to 1b after\n\nreset request. Note: After you configure cecswrst_req,\n\nset the value of the bit csc_clk_disable of the register\n\nmc_clkdis to 1, 0, and then 1 again."]
 pub type CecswrstReqR = crate::BitReader;
-#[doc = "Field `CECSWRST_REQ` writer - CEC software reset request. Defaults back to 1b after reset request. Note: After you configure cecswrst_req, set the value of the bit csc_clk_disable of the register mc_clkdis to 1, 0, and then 1 again."]
+#[doc = "Field `CECSWRST_REQ` writer - CEC software reset request. Defaults back to 1b after\n\nreset request. Note: After you configure cecswrst_req,\n\nset the value of the bit csc_clk_disable of the register\n\nmc_clkdis to 1, 0, and then 1 again."]
 pub type CecswrstReqW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `IGPASWRST_REQ` reader - GPAUD interface soft reset request. This bit is enabled when the Generic Parallel Audio (GPAUD) interface is enabled (AUDIO_IF = 6). Otherwise, this bit returns zero."]
+#[doc = "Field `IGPASWRST_REQ` reader - GPAUD interface soft reset request. This bit is enabled\n\nwhen the Generic Parallel Audio (GPAUD) interface is\n\nenabled (AUDIO_IF = 6). Otherwise, this bit returns\n\nzero."]
 pub type IgpaswrstReqR = crate::BitReader;
-#[doc = "Field `IGPASWRST_REQ` writer - GPAUD interface soft reset request. This bit is enabled when the Generic Parallel Audio (GPAUD) interface is enabled (AUDIO_IF = 6). Otherwise, this bit returns zero."]
+#[doc = "Field `IGPASWRST_REQ` writer - GPAUD interface soft reset request. This bit is enabled\n\nwhen the Generic Parallel Audio (GPAUD) interface is\n\nenabled (AUDIO_IF = 6). Otherwise, this bit returns\n\nzero."]
 pub type IgpaswrstReqW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Pixel software reset request."]
@@ -36,7 +36,7 @@ impl R {
     pub fn pixelswrst_req(&self) -> PixelswrstReqR {
         PixelswrstReqR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - TMDS software reset request. It is required to perform a write action on one of the following registers: fc_invidconf, fc_inhactiv0, fc_inhactiv1, fc_inhblank0, fc_inhblank1, fc_invactiv0 fc_invactiv1, fc_invblank, fc_hsyncindelay0, fc_hsyncindelay1, fc_hsyncinwidth0 fc_hsyncinwidth1, fc_vsyncindelay, fc_vsyncinwidth, fc_ctrldur, fc_exctrldur, fc_exctrlspac"]
+    #[doc = "Bit 1 - TMDS software reset request.\n\nIt is required to perform a write action on one of the\n\nfollowing registers:\n\nfc_invidconf, fc_inhactiv0, fc_inhactiv1, fc_inhblank0,\n\nfc_inhblank1, fc_invactiv0\n\nfc_invactiv1, fc_invblank, fc_hsyncindelay0,\n\nfc_hsyncindelay1, fc_hsyncinwidth0\n\nfc_hsyncinwidth1, fc_vsyncindelay, fc_vsyncinwidth,\n\nfc_ctrldur, fc_exctrldur, fc_exctrlspac"]
     #[inline(always)]
     pub fn tmdsswrst_req(&self) -> TmdsswrstReqR {
         TmdsswrstReqR::new(((self.bits >> 1) & 1) != 0)
@@ -56,12 +56,12 @@ impl R {
     pub fn ispdifswrst_req(&self) -> IspdifswrstReqR {
         IspdifswrstReqR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 6 - CEC software reset request. Defaults back to 1b after reset request. Note: After you configure cecswrst_req, set the value of the bit csc_clk_disable of the register mc_clkdis to 1, 0, and then 1 again."]
+    #[doc = "Bit 6 - CEC software reset request. Defaults back to 1b after\n\nreset request. Note: After you configure cecswrst_req,\n\nset the value of the bit csc_clk_disable of the register\n\nmc_clkdis to 1, 0, and then 1 again."]
     #[inline(always)]
     pub fn cecswrst_req(&self) -> CecswrstReqR {
         CecswrstReqR::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 7 - GPAUD interface soft reset request. This bit is enabled when the Generic Parallel Audio (GPAUD) interface is enabled (AUDIO_IF = 6). Otherwise, this bit returns zero."]
+    #[doc = "Bit 7 - GPAUD interface soft reset request. This bit is enabled\n\nwhen the Generic Parallel Audio (GPAUD) interface is\n\nenabled (AUDIO_IF = 6). Otherwise, this bit returns\n\nzero."]
     #[inline(always)]
     pub fn igpaswrst_req(&self) -> IgpaswrstReqR {
         IgpaswrstReqR::new(((self.bits >> 7) & 1) != 0)
@@ -74,7 +74,7 @@ impl W {
     pub fn pixelswrst_req(&mut self) -> PixelswrstReqW<McSwrstzreqSpec> {
         PixelswrstReqW::new(self, 0)
     }
-    #[doc = "Bit 1 - TMDS software reset request. It is required to perform a write action on one of the following registers: fc_invidconf, fc_inhactiv0, fc_inhactiv1, fc_inhblank0, fc_inhblank1, fc_invactiv0 fc_invactiv1, fc_invblank, fc_hsyncindelay0, fc_hsyncindelay1, fc_hsyncinwidth0 fc_hsyncinwidth1, fc_vsyncindelay, fc_vsyncinwidth, fc_ctrldur, fc_exctrldur, fc_exctrlspac"]
+    #[doc = "Bit 1 - TMDS software reset request.\n\nIt is required to perform a write action on one of the\n\nfollowing registers:\n\nfc_invidconf, fc_inhactiv0, fc_inhactiv1, fc_inhblank0,\n\nfc_inhblank1, fc_invactiv0\n\nfc_invactiv1, fc_invblank, fc_hsyncindelay0,\n\nfc_hsyncindelay1, fc_hsyncinwidth0\n\nfc_hsyncinwidth1, fc_vsyncindelay, fc_vsyncinwidth,\n\nfc_ctrldur, fc_exctrldur, fc_exctrlspac"]
     #[inline(always)]
     #[must_use]
     pub fn tmdsswrst_req(&mut self) -> TmdsswrstReqW<McSwrstzreqSpec> {
@@ -98,20 +98,20 @@ impl W {
     pub fn ispdifswrst_req(&mut self) -> IspdifswrstReqW<McSwrstzreqSpec> {
         IspdifswrstReqW::new(self, 4)
     }
-    #[doc = "Bit 6 - CEC software reset request. Defaults back to 1b after reset request. Note: After you configure cecswrst_req, set the value of the bit csc_clk_disable of the register mc_clkdis to 1, 0, and then 1 again."]
+    #[doc = "Bit 6 - CEC software reset request. Defaults back to 1b after\n\nreset request. Note: After you configure cecswrst_req,\n\nset the value of the bit csc_clk_disable of the register\n\nmc_clkdis to 1, 0, and then 1 again."]
     #[inline(always)]
     #[must_use]
     pub fn cecswrst_req(&mut self) -> CecswrstReqW<McSwrstzreqSpec> {
         CecswrstReqW::new(self, 6)
     }
-    #[doc = "Bit 7 - GPAUD interface soft reset request. This bit is enabled when the Generic Parallel Audio (GPAUD) interface is enabled (AUDIO_IF = 6). Otherwise, this bit returns zero."]
+    #[doc = "Bit 7 - GPAUD interface soft reset request. This bit is enabled\n\nwhen the Generic Parallel Audio (GPAUD) interface is\n\nenabled (AUDIO_IF = 6). Otherwise, this bit returns\n\nzero."]
     #[inline(always)]
     #[must_use]
     pub fn igpaswrst_req(&mut self) -> IgpaswrstReqW<McSwrstzreqSpec> {
         IgpaswrstReqW::new(self, 7)
     }
 }
-#[doc = "Pixel software reset request.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mc_swrstzreq::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mc_swrstzreq::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Main Controller Software Reset Register\n\nMain controller software reset request per clock domain. Writing zero to a bit of this\n\nregister results in an NRZ signal toggle at sfrclk rate to an output signal that indicates a\n\nsoftware reset request. This toggle must be used to generate a synchronized reset to de\n\ncorresponding domain, with at least 1 clock cycle.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mc_swrstzreq::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mc_swrstzreq::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct McSwrstzreqSpec;
 impl crate::RegisterSpec for McSwrstzreqSpec {
     type Ux = u8;

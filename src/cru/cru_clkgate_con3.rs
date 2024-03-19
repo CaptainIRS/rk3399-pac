@@ -2,102 +2,102 @@
 pub type R = crate::R<CruClkgateCon3Spec>;
 #[doc = "Register `CRU_CLKGATE_CON3` writer"]
 pub type W = crate::W<CruClkgateCon3Spec>;
-#[doc = "Field `CLK_DDRC_LPLL_SRC_EN` reader - clk_ddrc_lpll clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_DDRC_LPLL_SRC_EN` reader - clk_ddrc_lpll clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkDdrcLpllSrcEnR = crate::BitReader;
-#[doc = "Field `CLK_DDRC_LPLL_SRC_EN` writer - clk_ddrc_lpll clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_DDRC_LPLL_SRC_EN` writer - clk_ddrc_lpll clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkDdrcLpllSrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CLK_DDRC_BPLL_SRC_EN` reader - clk_ddrc_bpll clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_DDRC_BPLL_SRC_EN` reader - clk_ddrc_bpll clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkDdrcBpllSrcEnR = crate::BitReader;
-#[doc = "Field `CLK_DDRC_BPLL_SRC_EN` writer - clk_ddrc_bpll clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_DDRC_BPLL_SRC_EN` writer - clk_ddrc_bpll clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkDdrcBpllSrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CLK_DDRC_DPLL_SRC_EN` reader - clk_ddrc_dpll clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_DDRC_DPLL_SRC_EN` reader - clk_ddrc_dpll clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkDdrcDpllSrcEnR = crate::BitReader;
-#[doc = "Field `CLK_DDRC_DPLL_SRC_EN` writer - clk_ddrc_dpll clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_DDRC_DPLL_SRC_EN` writer - clk_ddrc_dpll clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkDdrcDpllSrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CLK_DDRC_GPLL_SRC_EN` reader - clk_ddrc_gpll clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_DDRC_GPLL_SRC_EN` reader - clk_ddrc_gpll clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkDdrcGpllSrcEnR = crate::BitReader;
-#[doc = "Field `CLK_DDRC_GPLL_SRC_EN` writer - clk_ddrc_gpll clock disable bit When HIGH, disable clock"]
+#[doc = "Field `CLK_DDRC_GPLL_SRC_EN` writer - clk_ddrc_gpll clock disable bit\n\nWhen HIGH, disable clock"]
 pub type ClkDdrcGpllSrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PCLK_DDR_EN` reader - pclk_ddr clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLK_DDR_EN` reader - pclk_ddr clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkDdrEnR = crate::BitReader;
-#[doc = "Field `PCLK_DDR_EN` writer - pclk_ddr clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLK_DDR_EN` writer - pclk_ddr clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkDdrEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_CENTER_SRC_EN` reader - aclk_center_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_CENTER_SRC_EN` reader - aclk_center_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkCenterSrcEnR = crate::BitReader;
-#[doc = "Field `ACLK_CENTER_SRC_EN` writer - aclk_center_src clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_CENTER_SRC_EN` writer - aclk_center_src clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkCenterSrcEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bit 0 - clk_ddrc_lpll clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 0 - clk_ddrc_lpll clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn clk_ddrc_lpll_src_en(&self) -> ClkDdrcLpllSrcEnR {
         ClkDdrcLpllSrcEnR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - clk_ddrc_bpll clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 1 - clk_ddrc_bpll clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn clk_ddrc_bpll_src_en(&self) -> ClkDdrcBpllSrcEnR {
         ClkDdrcBpllSrcEnR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - clk_ddrc_dpll clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 2 - clk_ddrc_dpll clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn clk_ddrc_dpll_src_en(&self) -> ClkDdrcDpllSrcEnR {
         ClkDdrcDpllSrcEnR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - clk_ddrc_gpll clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 3 - clk_ddrc_gpll clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn clk_ddrc_gpll_src_en(&self) -> ClkDdrcGpllSrcEnR {
         ClkDdrcGpllSrcEnR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - pclk_ddr clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 4 - pclk_ddr clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn pclk_ddr_en(&self) -> PclkDdrEnR {
         PclkDdrEnR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 7 - aclk_center_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 7 - aclk_center_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn aclk_center_src_en(&self) -> AclkCenterSrcEnR {
         AclkCenterSrcEnR::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - clk_ddrc_lpll clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 0 - clk_ddrc_lpll clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn clk_ddrc_lpll_src_en(&mut self) -> ClkDdrcLpllSrcEnW<CruClkgateCon3Spec> {
         ClkDdrcLpllSrcEnW::new(self, 0)
     }
-    #[doc = "Bit 1 - clk_ddrc_bpll clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 1 - clk_ddrc_bpll clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn clk_ddrc_bpll_src_en(&mut self) -> ClkDdrcBpllSrcEnW<CruClkgateCon3Spec> {
         ClkDdrcBpllSrcEnW::new(self, 1)
     }
-    #[doc = "Bit 2 - clk_ddrc_dpll clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 2 - clk_ddrc_dpll clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn clk_ddrc_dpll_src_en(&mut self) -> ClkDdrcDpllSrcEnW<CruClkgateCon3Spec> {
         ClkDdrcDpllSrcEnW::new(self, 2)
     }
-    #[doc = "Bit 3 - clk_ddrc_gpll clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 3 - clk_ddrc_gpll clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn clk_ddrc_gpll_src_en(&mut self) -> ClkDdrcGpllSrcEnW<CruClkgateCon3Spec> {
         ClkDdrcGpllSrcEnW::new(self, 3)
     }
-    #[doc = "Bit 4 - pclk_ddr clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 4 - pclk_ddr clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn pclk_ddr_en(&mut self) -> PclkDdrEnW<CruClkgateCon3Spec> {
         PclkDdrEnW::new(self, 4)
     }
-    #[doc = "Bit 7 - aclk_center_src clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 7 - aclk_center_src clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_center_src_en(&mut self) -> AclkCenterSrcEnW<CruClkgateCon3Spec> {
         AclkCenterSrcEnW::new(self, 7)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkgateCon3Spec> {

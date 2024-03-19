@@ -2,35 +2,35 @@
 pub type R = crate::R<DdrDenaliCtl223Spec>;
 #[doc = "Register `DDR_DENALI_CTL_223` writer"]
 pub type W = crate::W<DdrDenaliCtl223Spec>;
-#[doc = "Field `SWLVL_LOAD` writer - User request to load delays and execute software leveling. Set to 1 to trigger. WRITE-ONLY"]
+#[doc = "Field `SWLVL_LOAD` writer - User request to load delays and execute software leveling. Set to 1 to trigger."]
 pub type SwlvlLoadW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `SWLVL_START` writer - User request to initiate software leveling of type in the SW_LEVELING_MODE parameter. Set to 1 to trigger. WRITE-ONLY"]
+#[doc = "Field `SWLVL_START` writer - User request to initiate software leveling of type in the SW_LEVELING_MODE parameter. Set to 1 to trigger."]
 pub type SwlvlStartW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `SWLVL_EXIT` writer - User request to exit software leveling. Set to 1 to exit. WRITE- ONLY"]
+#[doc = "Field `SWLVL_EXIT` writer - User request to exit software leveling. Set to 1 to exit."]
 pub type SwlvlExitW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `SWLVL_OP_DONE` reader - Signals that software leveling is currently in progress. Value of 1 indicates operation complete. READ-ONLY"]
+#[doc = "Field `SWLVL_OP_DONE` reader - Signals that software leveling is currently in progress. Value of 1 indicates operation complete."]
 pub type SwlvlOpDoneR = crate::BitReader;
 impl R {
-    #[doc = "Bit 24 - Signals that software leveling is currently in progress. Value of 1 indicates operation complete. READ-ONLY"]
+    #[doc = "Bit 24 - Signals that software leveling is currently in progress. Value of 1 indicates operation complete."]
     #[inline(always)]
     pub fn swlvl_op_done(&self) -> SwlvlOpDoneR {
         SwlvlOpDoneR::new(((self.bits >> 24) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - User request to load delays and execute software leveling. Set to 1 to trigger. WRITE-ONLY"]
+    #[doc = "Bit 0 - User request to load delays and execute software leveling. Set to 1 to trigger."]
     #[inline(always)]
     #[must_use]
     pub fn swlvl_load(&mut self) -> SwlvlLoadW<DdrDenaliCtl223Spec> {
         SwlvlLoadW::new(self, 0)
     }
-    #[doc = "Bit 8 - User request to initiate software leveling of type in the SW_LEVELING_MODE parameter. Set to 1 to trigger. WRITE-ONLY"]
+    #[doc = "Bit 8 - User request to initiate software leveling of type in the SW_LEVELING_MODE parameter. Set to 1 to trigger."]
     #[inline(always)]
     #[must_use]
     pub fn swlvl_start(&mut self) -> SwlvlStartW<DdrDenaliCtl223Spec> {
         SwlvlStartW::new(self, 8)
     }
-    #[doc = "Bit 16 - User request to exit software leveling. Set to 1 to exit. WRITE- ONLY"]
+    #[doc = "Bit 16 - User request to exit software leveling. Set to 1 to exit."]
     #[inline(always)]
     #[must_use]
     pub fn swlvl_exit(&mut self) -> SwlvlExitW<DdrDenaliCtl223Spec> {

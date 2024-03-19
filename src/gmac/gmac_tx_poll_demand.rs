@@ -1,11 +1,11 @@
 #[doc = "Register `GMAC_TX_POLL_DEMAND` reader"]
 pub type R = crate::R<GmacTxPollDemandSpec>;
-#[doc = "Field `TPD` reader - Transmit Poll Demand When these bits are written with any value, the DMA reads the current descriptor pointed to by Register GMAC_CUR_HOST_TX_DESC. If that descriptor is not available (owned by Host), transmission returns to the Suspend state and DMA Register GMAC_STATUS\\[2\\]
-is asserted. If the descriptor is available, transmission resumes."]
+#[doc = "Field `TPD` reader - Transmit Poll Demand\n\nWhen these bits are written with any value, the DMA reads the\n\ncurrent descriptor pointed to by Register\n\nGMAC_CUR_HOST_TX_DESC. If that descriptor is not available\n\n(owned by Host), transmission returns to the Suspend state and\n\nDMA Register GMAC_STATUS\\[2\\]
+is asserted. If the descriptor is\n\navailable, transmission resumes."]
 pub type TpdR = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Transmit Poll Demand When these bits are written with any value, the DMA reads the current descriptor pointed to by Register GMAC_CUR_HOST_TX_DESC. If that descriptor is not available (owned by Host), transmission returns to the Suspend state and DMA Register GMAC_STATUS\\[2\\]
-is asserted. If the descriptor is available, transmission resumes."]
+    #[doc = "Bits 0:31 - Transmit Poll Demand\n\nWhen these bits are written with any value, the DMA reads the\n\ncurrent descriptor pointed to by Register\n\nGMAC_CUR_HOST_TX_DESC. If that descriptor is not available\n\n(owned by Host), transmission returns to the Suspend state and\n\nDMA Register GMAC_STATUS\\[2\\]
+is asserted. If the descriptor is\n\navailable, transmission resumes."]
     #[inline(always)]
     pub fn tpd(&self) -> TpdR {
         TpdR::new(self.bits)

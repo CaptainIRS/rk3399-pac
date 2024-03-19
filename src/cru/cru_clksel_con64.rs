@@ -2,19 +2,20 @@
 pub type R = crate::R<CruClkselCon64Spec>;
 #[doc = "Register `CRU_CLKSEL_CON64` writer"]
 pub type W = crate::W<CruClkselCon64Spec>;
-#[doc = "Field `CLK_UPHY0_TCPDCORE_DIV_CON` reader - clk_uphy0_tcpdcore divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_UPHY0_TCPDCORE_DIV_CON` reader - clk_uphy0_tcpdcore divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkUphy0TcpdcoreDivConR = crate::FieldReader;
-#[doc = "Field `CLK_UPHY0_TCPDCORE_DIV_CON` writer - clk_uphy0_tcpdcore divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_UPHY0_TCPDCORE_DIV_CON` writer - clk_uphy0_tcpdcore divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkUphy0TcpdcoreDivConW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "clk_uphy0_tcpdcore clock select control register\n\nValue on reset: 3"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ClkUphy0TcpdcoreClkSel {
-    #[doc = "0: gpll"]
+    #[doc = "0: xin_24m"]
     B00 = 0,
-    #[doc = "1: gpll"]
+    #[doc = "1: clk_32k"]
     B01 = 1,
-    #[doc = "2: gpll"]
+    #[doc = "2: cpll"]
     B10 = 2,
     #[doc = "3: gpll"]
     B11 = 3,
@@ -42,17 +43,17 @@ impl ClkUphy0TcpdcoreClkSelR {
             _ => unreachable!(),
         }
     }
-    #[doc = "gpll"]
+    #[doc = "xin_24m"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == ClkUphy0TcpdcoreClkSel::B00
     }
-    #[doc = "gpll"]
+    #[doc = "clk_32k"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == ClkUphy0TcpdcoreClkSel::B01
     }
-    #[doc = "gpll"]
+    #[doc = "cpll"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == ClkUphy0TcpdcoreClkSel::B10
@@ -71,17 +72,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "gpll"]
+    #[doc = "xin_24m"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(ClkUphy0TcpdcoreClkSel::B00)
     }
-    #[doc = "gpll"]
+    #[doc = "clk_32k"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(ClkUphy0TcpdcoreClkSel::B01)
     }
-    #[doc = "gpll"]
+    #[doc = "cpll"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {
         self.variant(ClkUphy0TcpdcoreClkSel::B10)
@@ -92,14 +93,15 @@ where
         self.variant(ClkUphy0TcpdcoreClkSel::B11)
     }
 }
-#[doc = "Field `CLK_UPHY0_TCPDPHY_REF_DIV_CON` reader - clk_uphy0_tcpdphy_ref divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_UPHY0_TCPDPHY_REF_DIV_CON` reader - clk_uphy0_tcpdphy_ref divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkUphy0TcpdphyRefDivConR = crate::FieldReader;
-#[doc = "Field `CLK_UPHY0_TCPDPHY_REF_DIV_CON` writer - clk_uphy0_tcpdphy_ref divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_UPHY0_TCPDPHY_REF_DIV_CON` writer - clk_uphy0_tcpdphy_ref divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkUphy0TcpdphyRefDivConW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "clk_uphy0_tcpdphy_ref clock select control register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClkUphy0TcpdphyRefClkSel {
-    #[doc = "0: clk_32k"]
+    #[doc = "0: xin_24m"]
     B0 = 0,
     #[doc = "1: clk_32k"]
     B1 = 1,
@@ -121,7 +123,7 @@ impl ClkUphy0TcpdphyRefClkSelR {
             true => ClkUphy0TcpdphyRefClkSel::B1,
         }
     }
-    #[doc = "clk_32k"]
+    #[doc = "xin_24m"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClkUphy0TcpdphyRefClkSel::B0
@@ -138,7 +140,7 @@ impl<'a, REG> ClkUphy0TcpdphyRefClkSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clk_32k"]
+    #[doc = "xin_24m"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClkUphy0TcpdphyRefClkSel::B0)
@@ -149,10 +151,10 @@ where
         self.variant(ClkUphy0TcpdphyRefClkSel::B1)
     }
 }
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:4 - clk_uphy0_tcpdcore divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:4 - clk_uphy0_tcpdcore divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn clk_uphy0_tcpdcore_div_con(&self) -> ClkUphy0TcpdcoreDivConR {
         ClkUphy0TcpdcoreDivConR::new((self.bits & 0x1f) as u8)
@@ -162,7 +164,7 @@ impl R {
     pub fn clk_uphy0_tcpdcore_clk_sel(&self) -> ClkUphy0TcpdcoreClkSelR {
         ClkUphy0TcpdcoreClkSelR::new(((self.bits >> 6) & 3) as u8)
     }
-    #[doc = "Bits 8:12 - clk_uphy0_tcpdphy_ref divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 8:12 - clk_uphy0_tcpdphy_ref divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn clk_uphy0_tcpdphy_ref_div_con(&self) -> ClkUphy0TcpdphyRefDivConR {
         ClkUphy0TcpdphyRefDivConR::new(((self.bits >> 8) & 0x1f) as u8)
@@ -174,7 +176,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - clk_uphy0_tcpdcore divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:4 - clk_uphy0_tcpdcore divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn clk_uphy0_tcpdcore_div_con(&mut self) -> ClkUphy0TcpdcoreDivConW<CruClkselCon64Spec> {
@@ -186,7 +188,7 @@ impl W {
     pub fn clk_uphy0_tcpdcore_clk_sel(&mut self) -> ClkUphy0TcpdcoreClkSelW<CruClkselCon64Spec> {
         ClkUphy0TcpdcoreClkSelW::new(self, 6)
     }
-    #[doc = "Bits 8:12 - clk_uphy0_tcpdphy_ref divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 8:12 - clk_uphy0_tcpdphy_ref divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn clk_uphy0_tcpdphy_ref_div_con(
@@ -202,7 +204,7 @@ impl W {
     ) -> ClkUphy0TcpdphyRefClkSelW<CruClkselCon64Spec> {
         ClkUphy0TcpdphyRefClkSelW::new(self, 15)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkselCon64Spec> {

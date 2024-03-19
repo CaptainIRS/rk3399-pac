@@ -1,11 +1,11 @@
 #[doc = "Register `SDMMC_RESP1` reader"]
 pub type R = crate::R<SdmmcResp1Spec>;
 #[doc = "Field `RESPONSE` reader - Register represents bit\\[63:32\\]
-of long response. When CIU sends auto-stop command, then response is saved in register. Response for previous command sent by host is still preserved in Response 0 register. Additional auto-stop issued only for data transfer commands, and response type is always \"short\" for them."]
+of long response.\n\nWhen CIU sends auto-stop command, then response is saved in\n\nregister. Response for previous command sent by host is still\n\npreserved in Response 0 register. Additional auto-stop issued\n\nonly for data transfer commands, and response type is always\n\n\"short\" for them."]
 pub type ResponseR = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Register represents bit\\[63:32\\]
-of long response. When CIU sends auto-stop command, then response is saved in register. Response for previous command sent by host is still preserved in Response 0 register. Additional auto-stop issued only for data transfer commands, and response type is always \"short\" for them."]
+of long response.\n\nWhen CIU sends auto-stop command, then response is saved in\n\nregister. Response for previous command sent by host is still\n\npreserved in Response 0 register. Additional auto-stop issued\n\nonly for data transfer commands, and response type is always\n\n\"short\" for them."]
     #[inline(always)]
     pub fn response(&self) -> ResponseR {
         ResponseR::new(self.bits)

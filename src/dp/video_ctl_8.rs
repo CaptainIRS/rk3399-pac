@@ -2,34 +2,34 @@
 pub type R = crate::R<VideoCtl8Spec>;
 #[doc = "Register `VIDEO_CTL_8` writer"]
 pub type W = crate::W<VideoCtl8Spec>;
-#[doc = "Field `VID_VRES_TH` reader - Video Frame Vertical Resolution variation threshold for video capture block. This bit field is used by CAPTURE block to determine whether STRM_VALID should be asserted."]
+#[doc = "Field `VID_VRES_TH` reader - Video Frame Vertical Resolution variation threshold for \n\nvideo capture block. This bit field is used by CAPTURE \n\nblock to determine whether STRM_VALID should be \n\nasserted."]
 pub type VidVresThR = crate::FieldReader;
-#[doc = "Field `VID_VRES_TH` writer - Video Frame Vertical Resolution variation threshold for video capture block. This bit field is used by CAPTURE block to determine whether STRM_VALID should be asserted."]
+#[doc = "Field `VID_VRES_TH` writer - Video Frame Vertical Resolution variation threshold for \n\nvideo capture block. This bit field is used by CAPTURE \n\nblock to determine whether STRM_VALID should be \n\nasserted."]
 pub type VidVresThW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-#[doc = "Field `VID_HRES_TH` reader - Video Frame Horizontal Resolution variation threshold for video capture block. This bit field is used by CAPTURE block to determine whether STRM_VALID should be asserted."]
+#[doc = "Field `VID_HRES_TH` reader - Video Frame Horizontal Resolution variation threshold \n\nfor video capture block. This bit field is used by \n\nCAPTURE block to determine whether STRM_VALID \n\nshould be asserted."]
 pub type VidHresThR = crate::FieldReader;
-#[doc = "Field `VID_HRES_TH` writer - Video Frame Horizontal Resolution variation threshold for video capture block. This bit field is used by CAPTURE block to determine whether STRM_VALID should be asserted."]
+#[doc = "Field `VID_HRES_TH` writer - Video Frame Horizontal Resolution variation threshold \n\nfor video capture block. This bit field is used by \n\nCAPTURE block to determine whether STRM_VALID \n\nshould be asserted."]
 pub type VidHresThW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
-    #[doc = "Bits 0:3 - Video Frame Vertical Resolution variation threshold for video capture block. This bit field is used by CAPTURE block to determine whether STRM_VALID should be asserted."]
+    #[doc = "Bits 0:3 - Video Frame Vertical Resolution variation threshold for \n\nvideo capture block. This bit field is used by CAPTURE \n\nblock to determine whether STRM_VALID should be \n\nasserted."]
     #[inline(always)]
     pub fn vid_vres_th(&self) -> VidVresThR {
         VidVresThR::new((self.bits & 0x0f) as u8)
     }
-    #[doc = "Bits 4:7 - Video Frame Horizontal Resolution variation threshold for video capture block. This bit field is used by CAPTURE block to determine whether STRM_VALID should be asserted."]
+    #[doc = "Bits 4:7 - Video Frame Horizontal Resolution variation threshold \n\nfor video capture block. This bit field is used by \n\nCAPTURE block to determine whether STRM_VALID \n\nshould be asserted."]
     #[inline(always)]
     pub fn vid_hres_th(&self) -> VidHresThR {
         VidHresThR::new(((self.bits >> 4) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - Video Frame Vertical Resolution variation threshold for video capture block. This bit field is used by CAPTURE block to determine whether STRM_VALID should be asserted."]
+    #[doc = "Bits 0:3 - Video Frame Vertical Resolution variation threshold for \n\nvideo capture block. This bit field is used by CAPTURE \n\nblock to determine whether STRM_VALID should be \n\nasserted."]
     #[inline(always)]
     #[must_use]
     pub fn vid_vres_th(&mut self) -> VidVresThW<VideoCtl8Spec> {
         VidVresThW::new(self, 0)
     }
-    #[doc = "Bits 4:7 - Video Frame Horizontal Resolution variation threshold for video capture block. This bit field is used by CAPTURE block to determine whether STRM_VALID should be asserted."]
+    #[doc = "Bits 4:7 - Video Frame Horizontal Resolution variation threshold \n\nfor video capture block. This bit field is used by \n\nCAPTURE block to determine whether STRM_VALID \n\nshould be asserted."]
     #[inline(always)]
     #[must_use]
     pub fn vid_hres_th(&mut self) -> VidHresThW<VideoCtl8Spec> {

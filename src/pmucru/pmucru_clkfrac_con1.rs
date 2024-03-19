@@ -2,19 +2,19 @@
 pub type R = crate::R<PmucruClkfracCon1Spec>;
 #[doc = "Register `PMUCRU_CLKFRAC_CON1` writer"]
 pub type W = crate::W<PmucruClkfracCon1Spec>;
-#[doc = "Field `WIFI_FRAC_DIV_CON` reader - wifi_frac divider control register Fout = Fsrc*numerator/denominator High 16-bit for numerator Low 16-bit for denominator"]
+#[doc = "Field `WIFI_FRAC_DIV_CON` reader - wifi_frac divider control register\n\nFout = Fsrc*numerator/denominator\n\nHigh 16-bit for numerator\n\nLow 16-bit for denominator"]
 pub type WifiFracDivConR = crate::FieldReader<u32>;
-#[doc = "Field `WIFI_FRAC_DIV_CON` writer - wifi_frac divider control register Fout = Fsrc*numerator/denominator High 16-bit for numerator Low 16-bit for denominator"]
+#[doc = "Field `WIFI_FRAC_DIV_CON` writer - wifi_frac divider control register\n\nFout = Fsrc*numerator/denominator\n\nHigh 16-bit for numerator\n\nLow 16-bit for denominator"]
 pub type WifiFracDivConW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - wifi_frac divider control register Fout = Fsrc*numerator/denominator High 16-bit for numerator Low 16-bit for denominator"]
+    #[doc = "Bits 0:31 - wifi_frac divider control register\n\nFout = Fsrc*numerator/denominator\n\nHigh 16-bit for numerator\n\nLow 16-bit for denominator"]
     #[inline(always)]
     pub fn wifi_frac_div_con(&self) -> WifiFracDivConR {
         WifiFracDivConR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - wifi_frac divider control register Fout = Fsrc*numerator/denominator High 16-bit for numerator Low 16-bit for denominator"]
+    #[doc = "Bits 0:31 - wifi_frac divider control register\n\nFout = Fsrc*numerator/denominator\n\nHigh 16-bit for numerator\n\nLow 16-bit for denominator"]
     #[inline(always)]
     #[must_use]
     pub fn wifi_frac_div_con(&mut self) -> WifiFracDivConW<PmucruClkfracCon1Spec> {

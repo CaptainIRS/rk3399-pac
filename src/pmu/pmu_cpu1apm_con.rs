@@ -3,9 +3,10 @@ pub type R = crate::R<PmuCpu1apmConSpec>;
 #[doc = "Register `PMU_CPU1APM_CON` writer"]
 pub type W = crate::W<PmuCpu1apmConSpec>;
 #[doc = "cpu_l1 wfi power down enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CpuL1WfiPwrdnEn {
-    #[doc = "0: enable ;"]
+    #[doc = "0: disable ;"]
     B0 = 0,
     #[doc = "1: enable ;"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl CpuL1WfiPwrdnEnR {
             true => CpuL1WfiPwrdnEn::B1,
         }
     }
-    #[doc = "enable ;"]
+    #[doc = "disable ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CpuL1WfiPwrdnEn::B0
@@ -44,7 +45,7 @@ impl<'a, REG> CpuL1WfiPwrdnEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable ;"]
+    #[doc = "disable ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CpuL1WfiPwrdnEn::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "cpu l1 interrupt wake enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CpuL1IntWakeupEn {
-    #[doc = "0: enable ;"]
+    #[doc = "0: disable ;"]
     B0 = 0,
     #[doc = "1: enable ;"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl CpuL1IntWakeupEnR {
             true => CpuL1IntWakeupEn::B1,
         }
     }
-    #[doc = "enable ;"]
+    #[doc = "disable ;"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == CpuL1IntWakeupEn::B0
@@ -97,7 +99,7 @@ impl<'a, REG> CpuL1IntWakeupEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable ;"]
+    #[doc = "disable ;"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(CpuL1IntWakeupEn::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "cpu l1 software wakeup source.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CpuL1SftWakeup {
-    #[doc = "1: nothing ;"]
+    #[doc = "1: wakeup ;"]
     B1 = 1,
     #[doc = "0: nothing ;"]
     B0 = 0,
@@ -133,7 +136,7 @@ impl CpuL1SftWakeupR {
             false => CpuL1SftWakeup::B0,
         }
     }
-    #[doc = "nothing ;"]
+    #[doc = "wakeup ;"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == CpuL1SftWakeup::B1
@@ -150,7 +153,7 @@ impl<'a, REG> CpuL1SftWakeupW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "nothing ;"]
+    #[doc = "wakeup ;"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(CpuL1SftWakeup::B1)

@@ -2,19 +2,19 @@
 pub type R = crate::R<SaradcDlyPuSocSpec>;
 #[doc = "Register `SARADC_DLY_PU_SOC` writer"]
 pub type W = crate::W<SaradcDlyPuSocSpec>;
-#[doc = "Field `DLY_PU_SOC` reader - delay between power up and start command The start signal will be asserted (DLY_PU_SOC + 2) sclk clock period later after power up"]
+#[doc = "Field `DLY_PU_SOC` reader - delay between power up and start command\n\nThe start signal will be asserted (DLY_PU_SOC + 2) sclk clock\n\nperiod later after power up"]
 pub type DlyPuSocR = crate::FieldReader;
-#[doc = "Field `DLY_PU_SOC` writer - delay between power up and start command The start signal will be asserted (DLY_PU_SOC + 2) sclk clock period later after power up"]
+#[doc = "Field `DLY_PU_SOC` writer - delay between power up and start command\n\nThe start signal will be asserted (DLY_PU_SOC + 2) sclk clock\n\nperiod later after power up"]
 pub type DlyPuSocW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
-    #[doc = "Bits 0:5 - delay between power up and start command The start signal will be asserted (DLY_PU_SOC + 2) sclk clock period later after power up"]
+    #[doc = "Bits 0:5 - delay between power up and start command\n\nThe start signal will be asserted (DLY_PU_SOC + 2) sclk clock\n\nperiod later after power up"]
     #[inline(always)]
     pub fn dly_pu_soc(&self) -> DlyPuSocR {
         DlyPuSocR::new((self.bits & 0x3f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:5 - delay between power up and start command The start signal will be asserted (DLY_PU_SOC + 2) sclk clock period later after power up"]
+    #[doc = "Bits 0:5 - delay between power up and start command\n\nThe start signal will be asserted (DLY_PU_SOC + 2) sclk clock\n\nperiod later after power up"]
     #[inline(always)]
     #[must_use]
     pub fn dly_pu_soc(&mut self) -> DlyPuSocW<SaradcDlyPuSocSpec> {

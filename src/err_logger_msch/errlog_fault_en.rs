@@ -2,19 +2,19 @@
 pub type R = crate::R<ErrlogFaultEnSpec>;
 #[doc = "Register `ERRLOG_FaultEn` writer"]
 pub type W = crate::W<ErrlogFaultEnSpec>;
-#[doc = "Field `FAULTEN` reader - When set to 1, enables error reporting output signal Fault. Fault is asserted when register ErrVld is set to 1, and driven to 0 when FaultEn is cleared to 0."]
+#[doc = "Field `FAULTEN` reader - When set to 1, enables error reporting output signal Fault. Fault is\n\nasserted when register ErrVld is set to 1, and driven to 0 when\n\nFaultEn is cleared to 0."]
 pub type FaultenR = crate::BitReader;
-#[doc = "Field `FAULTEN` writer - When set to 1, enables error reporting output signal Fault. Fault is asserted when register ErrVld is set to 1, and driven to 0 when FaultEn is cleared to 0."]
+#[doc = "Field `FAULTEN` writer - When set to 1, enables error reporting output signal Fault. Fault is\n\nasserted when register ErrVld is set to 1, and driven to 0 when\n\nFaultEn is cleared to 0."]
 pub type FaultenW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - When set to 1, enables error reporting output signal Fault. Fault is asserted when register ErrVld is set to 1, and driven to 0 when FaultEn is cleared to 0."]
+    #[doc = "Bit 0 - When set to 1, enables error reporting output signal Fault. Fault is\n\nasserted when register ErrVld is set to 1, and driven to 0 when\n\nFaultEn is cleared to 0."]
     #[inline(always)]
     pub fn faulten(&self) -> FaultenR {
         FaultenR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - When set to 1, enables error reporting output signal Fault. Fault is asserted when register ErrVld is set to 1, and driven to 0 when FaultEn is cleared to 0."]
+    #[doc = "Bit 0 - When set to 1, enables error reporting output signal Fault. Fault is\n\nasserted when register ErrVld is set to 1, and driven to 0 when\n\nFaultEn is cleared to 0."]
     #[inline(always)]
     #[must_use]
     pub fn faulten(&mut self) -> FaultenW<ErrlogFaultEnSpec> {

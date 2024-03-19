@@ -1,21 +1,21 @@
 #[doc = "Register `DMAC_DBGINST0` writer"]
 pub type W = crate::W<DmacDbginst0Spec>;
-#[doc = "Field `DMAC_DBGINST0_BITS_5` writer - The debug thread encoding is as follows: 0 = DMA manager thread 1 = DMA channel."]
+#[doc = "Field `DMAC_DBGINST0_BITS_5` writer - The debug thread encoding is as follows:\n\n0 = DMA manager thread\n\n1 = DMA channel."]
 pub type DmacDbginst0Bits5W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `DMAC_DBGINST0_BITS_3` writer - DMA channel number: b000 = DMA channel 0 b001 = DMA channel 1 b010 = DMA channel 2 ... b111 = DMA channel 7"]
+#[doc = "Field `DMAC_DBGINST0_BITS_3` writer - DMA channel number:\n\nb000 = DMA channel 0\n\nb001 = DMA channel 1\n\nb010 = DMA channel 2\n\n...\n\nb111 = DMA channel 7"]
 pub type DmacDbginst0Bits3W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `DMAC_DBGINST0_BITS_1` writer - Instruction byte 0"]
 pub type DmacDbginst0Bits1W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `DMAC_DBGINST0_BITS_0` writer - Instruction byte 1"]
 pub type DmacDbginst0Bits0W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl W {
-    #[doc = "Bit 0 - The debug thread encoding is as follows: 0 = DMA manager thread 1 = DMA channel."]
+    #[doc = "Bit 0 - The debug thread encoding is as follows:\n\n0 = DMA manager thread\n\n1 = DMA channel."]
     #[inline(always)]
     #[must_use]
     pub fn dmac_dbginst0_bits_5(&mut self) -> DmacDbginst0Bits5W<DmacDbginst0Spec> {
         DmacDbginst0Bits5W::new(self, 0)
     }
-    #[doc = "Bits 8:10 - DMA channel number: b000 = DMA channel 0 b001 = DMA channel 1 b010 = DMA channel 2 ... b111 = DMA channel 7"]
+    #[doc = "Bits 8:10 - DMA channel number:\n\nb000 = DMA channel 0\n\nb001 = DMA channel 1\n\nb010 = DMA channel 2\n\n...\n\nb111 = DMA channel 7"]
     #[inline(always)]
     #[must_use]
     pub fn dmac_dbginst0_bits_3(&mut self) -> DmacDbginst0Bits3W<DmacDbginst0Spec> {

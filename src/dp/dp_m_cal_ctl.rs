@@ -2,10 +2,11 @@
 pub type R = crate::R<DpMCalCtlSpec>;
 #[doc = "Register `DP_M_CAL_CTL` writer"]
 pub type W = crate::W<DpMCalCtlSpec>;
-#[doc = "Select which link clock is used to generate the M value\n\nValue on reset: 0"]
+#[doc = "Select which link clock is used to generate \n\nthe M value\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MGenClkSel {
-    #[doc = "1: Clock without down spreading is used"]
+    #[doc = "1: Clock with down spreading is used"]
     B1 = 1,
     #[doc = "0: Clock without down spreading is used"]
     B0 = 0,
@@ -16,7 +17,7 @@ impl From<MGenClkSel> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `M_GEN_CLK_SEL` reader - Select which link clock is used to generate the M value"]
+#[doc = "Field `M_GEN_CLK_SEL` reader - Select which link clock is used to generate \n\nthe M value"]
 pub type MGenClkSelR = crate::BitReader<MGenClkSel>;
 impl MGenClkSelR {
     #[doc = "Get enumerated values variant"]
@@ -27,7 +28,7 @@ impl MGenClkSelR {
             false => MGenClkSel::B0,
         }
     }
-    #[doc = "Clock without down spreading is used"]
+    #[doc = "Clock with down spreading is used"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == MGenClkSel::B1
@@ -38,13 +39,13 @@ impl MGenClkSelR {
         *self == MGenClkSel::B0
     }
 }
-#[doc = "Field `M_GEN_CLK_SEL` writer - Select which link clock is used to generate the M value"]
+#[doc = "Field `M_GEN_CLK_SEL` writer - Select which link clock is used to generate \n\nthe M value"]
 pub type MGenClkSelW<'a, REG> = crate::BitWriter1C<'a, REG, MGenClkSel>;
 impl<'a, REG> MGenClkSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Clock without down spreading is used"]
+    #[doc = "Clock with down spreading is used"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(MGenClkSel::B1)
@@ -55,10 +56,11 @@ where
         self.variant(MGenClkSel::B0)
     }
 }
-#[doc = "Enable M_VID value generation filter to reduce the variation of M_VID value. This filter is a low-pass filter to smooth out the M_VID variation\n\nValue on reset: 0"]
+#[doc = "Enable M_VID value generation filter to \n\nreduce the variation of M_VID value. This \n\nfilter is a low-pass filter to smooth out the \n\nM_VID variation\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MVidGenFilterEn {
-    #[doc = "1: Disable the filter Note: Refer to page 22 for details."]
+    #[doc = "1: Enable the filter"]
     B1 = 1,
     #[doc = "0: Disable the filter Note: Refer to page 22 for details."]
     B0 = 0,
@@ -69,7 +71,7 @@ impl From<MVidGenFilterEn> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `M_VID_GEN_FILTER_EN` reader - Enable M_VID value generation filter to reduce the variation of M_VID value. This filter is a low-pass filter to smooth out the M_VID variation"]
+#[doc = "Field `M_VID_GEN_FILTER_EN` reader - Enable M_VID value generation filter to \n\nreduce the variation of M_VID value. This \n\nfilter is a low-pass filter to smooth out the \n\nM_VID variation"]
 pub type MVidGenFilterEnR = crate::BitReader<MVidGenFilterEn>;
 impl MVidGenFilterEnR {
     #[doc = "Get enumerated values variant"]
@@ -80,7 +82,7 @@ impl MVidGenFilterEnR {
             false => MVidGenFilterEn::B0,
         }
     }
-    #[doc = "Disable the filter Note: Refer to page 22 for details."]
+    #[doc = "Enable the filter"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == MVidGenFilterEn::B1
@@ -91,13 +93,13 @@ impl MVidGenFilterEnR {
         *self == MVidGenFilterEn::B0
     }
 }
-#[doc = "Field `M_VID_GEN_FILTER_EN` writer - Enable M_VID value generation filter to reduce the variation of M_VID value. This filter is a low-pass filter to smooth out the M_VID variation"]
+#[doc = "Field `M_VID_GEN_FILTER_EN` writer - Enable M_VID value generation filter to \n\nreduce the variation of M_VID value. This \n\nfilter is a low-pass filter to smooth out the \n\nM_VID variation"]
 pub type MVidGenFilterEnW<'a, REG> = crate::BitWriter<'a, REG, MVidGenFilterEn>;
 impl<'a, REG> MVidGenFilterEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disable the filter Note: Refer to page 22 for details."]
+    #[doc = "Enable the filter"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(MVidGenFilterEn::B1)
@@ -109,25 +111,25 @@ where
     }
 }
 impl R {
-    #[doc = "Bit 0 - Select which link clock is used to generate the M value"]
+    #[doc = "Bit 0 - Select which link clock is used to generate \n\nthe M value"]
     #[inline(always)]
     pub fn m_gen_clk_sel(&self) -> MGenClkSelR {
         MGenClkSelR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 2 - Enable M_VID value generation filter to reduce the variation of M_VID value. This filter is a low-pass filter to smooth out the M_VID variation"]
+    #[doc = "Bit 2 - Enable M_VID value generation filter to \n\nreduce the variation of M_VID value. This \n\nfilter is a low-pass filter to smooth out the \n\nM_VID variation"]
     #[inline(always)]
     pub fn m_vid_gen_filter_en(&self) -> MVidGenFilterEnR {
         MVidGenFilterEnR::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Select which link clock is used to generate the M value"]
+    #[doc = "Bit 0 - Select which link clock is used to generate \n\nthe M value"]
     #[inline(always)]
     #[must_use]
     pub fn m_gen_clk_sel(&mut self) -> MGenClkSelW<DpMCalCtlSpec> {
         MGenClkSelW::new(self, 0)
     }
-    #[doc = "Bit 2 - Enable M_VID value generation filter to reduce the variation of M_VID value. This filter is a low-pass filter to smooth out the M_VID variation"]
+    #[doc = "Bit 2 - Enable M_VID value generation filter to \n\nreduce the variation of M_VID value. This \n\nfilter is a low-pass filter to smooth out the \n\nM_VID variation"]
     #[inline(always)]
     #[must_use]
     pub fn m_vid_gen_filter_en(&mut self) -> MVidGenFilterEnW<DpMCalCtlSpec> {

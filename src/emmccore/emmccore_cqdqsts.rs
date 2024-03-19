@@ -1,9 +1,9 @@
 #[doc = "Register `EMMCCORE_CQDQSTS` reader"]
 pub type R = crate::R<EmmccoreCqdqstsSpec>;
-#[doc = "Field `DQS` reader - Device Queue Status Every time the Host controller receives a queue status register (QSR) from the device, it updates this register with the response of status command, i.e. the device's queue status."]
+#[doc = "Field `DQS` reader - Device Queue Status\n\nEvery time the Host controller receives a queue status register\n\n(QSR) from the device, it updates this register with the response\n\nof status command, i.e. the device's queue status."]
 pub type DqsR = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - Device Queue Status Every time the Host controller receives a queue status register (QSR) from the device, it updates this register with the response of status command, i.e. the device's queue status."]
+    #[doc = "Bits 0:31 - Device Queue Status\n\nEvery time the Host controller receives a queue status register\n\n(QSR) from the device, it updates this register with the response\n\nof status command, i.e. the device's queue status."]
     #[inline(always)]
     pub fn dqs(&self) -> DqsR {
         DqsR::new(self.bits)

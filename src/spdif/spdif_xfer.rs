@@ -2,19 +2,19 @@
 pub type R = crate::R<SpdifXferSpec>;
 #[doc = "Register `SPDIF_XFER` writer"]
 pub type W = crate::W<SpdifXferSpec>;
-#[doc = "Field `XFER` reader - Transfer Start Register Transfer Start Register"]
+#[doc = "Field `XFER` reader - Transfer Start Register\n\nTransfer Start Register"]
 pub type XferR = crate::BitReader;
-#[doc = "Field `XFER` writer - Transfer Start Register Transfer Start Register"]
+#[doc = "Field `XFER` writer - Transfer Start Register\n\nTransfer Start Register"]
 pub type XferW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - Transfer Start Register Transfer Start Register"]
+    #[doc = "Bit 0 - Transfer Start Register\n\nTransfer Start Register"]
     #[inline(always)]
     pub fn xfer(&self) -> XferR {
         XferR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Transfer Start Register Transfer Start Register"]
+    #[doc = "Bit 0 - Transfer Start Register\n\nTransfer Start Register"]
     #[inline(always)]
     #[must_use]
     pub fn xfer(&mut self) -> XferW<SpdifXferSpec> {

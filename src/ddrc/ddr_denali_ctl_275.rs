@@ -2,9 +2,9 @@
 pub type R = crate::R<DdrDenaliCtl275Spec>;
 #[doc = "Register `DDR_DENALI_CTL_275` writer"]
 pub type W = crate::W<DdrDenaliCtl275Spec>;
-#[doc = "Field `TDFI_PHY_WRLAT` reader - Holds the calculated DFI tPHY_WRLAT timing parameter (in DFI PHY clocks), the maximum cycles between a write command and a dfi_wrdata_en assertion. READ-ONLY"]
+#[doc = "Field `TDFI_PHY_WRLAT` reader - Holds the calculated DFI tPHY_WRLAT timing parameter (in DFI PHY clocks), the maximum cycles between a write command and a dfi_wrdata_en assertion."]
 pub type TdfiPhyWrlatR = crate::FieldReader;
-#[doc = "Field `UPDATE_ERROR_STATUS` reader - Identifies the source of any DFI MC-initiated or PHY-initiated update errors. Value of 1 indicates a timing violation of the associated timing parameter. READ-ONLY"]
+#[doc = "Field `UPDATE_ERROR_STATUS` reader - Identifies the source of any DFI MC-initiated or PHY-initiated update errors. Value of 1 indicates a timing violation of the associated timing parameter."]
 pub type UpdateErrorStatusR = crate::FieldReader;
 #[doc = "Field `TDFI_PHY_RDLAT_F0` reader - Defines the DFI tPHY_RDLAT timing parameter (in DFI PHY clocks), the maximum cycles between a dfi_rddata_en assertion and a dfi_rddata_valid assertion."]
 pub type TdfiPhyRdlatF0R = crate::FieldReader;
@@ -15,12 +15,12 @@ pub type TdfiPhyRdlatF1R = crate::FieldReader;
 #[doc = "Field `TDFI_PHY_RDLAT_F1` writer - Defines the DFI tPHY_RDLAT timing parameter (in DFI PHY clocks), the maximum cycles between a dfi_rddata_en assertion and a dfi_rddata_valid assertion."]
 pub type TdfiPhyRdlatF1W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - Holds the calculated DFI tPHY_WRLAT timing parameter (in DFI PHY clocks), the maximum cycles between a write command and a dfi_wrdata_en assertion. READ-ONLY"]
+    #[doc = "Bits 0:7 - Holds the calculated DFI tPHY_WRLAT timing parameter (in DFI PHY clocks), the maximum cycles between a write command and a dfi_wrdata_en assertion."]
     #[inline(always)]
     pub fn tdfi_phy_wrlat(&self) -> TdfiPhyWrlatR {
         TdfiPhyWrlatR::new((self.bits & 0xff) as u8)
     }
-    #[doc = "Bits 8:14 - Identifies the source of any DFI MC-initiated or PHY-initiated update errors. Value of 1 indicates a timing violation of the associated timing parameter. READ-ONLY"]
+    #[doc = "Bits 8:14 - Identifies the source of any DFI MC-initiated or PHY-initiated update errors. Value of 1 indicates a timing violation of the associated timing parameter."]
     #[inline(always)]
     pub fn update_error_status(&self) -> UpdateErrorStatusR {
         UpdateErrorStatusR::new(((self.bits >> 8) & 0x7f) as u8)

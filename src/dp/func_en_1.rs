@@ -3,9 +3,10 @@ pub type R = crate::R<FuncEn1Spec>;
 #[doc = "Register `FUNC_EN_1` writer"]
 pub type W = crate::W<FuncEn1Spec>;
 #[doc = "Software defined function enable.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SwFuncEnN {
-    #[doc = "0: Disable All the function modules. The bit has the highest priority, if the bit is 1, other function enable bits does not work."]
+    #[doc = "0: Normal operation,"]
     B0 = 0,
     #[doc = "1: Disable All the function modules. The bit has the highest priority, if the bit is 1, other function enable bits does not work."]
     B1 = 1,
@@ -27,7 +28,7 @@ impl SwFuncEnNR {
             true => SwFuncEnN::B1,
         }
     }
-    #[doc = "Disable All the function modules. The bit has the highest priority, if the bit is 1, other function enable bits does not work."]
+    #[doc = "Normal operation,"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SwFuncEnN::B0
@@ -44,7 +45,7 @@ impl<'a, REG> SwFuncEnNW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disable All the function modules. The bit has the highest priority, if the bit is 1, other function enable bits does not work."]
+    #[doc = "Normal operation,"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SwFuncEnN::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Video FIFO functions enable.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VidFifoFuncEnN {
-    #[doc = "0: Disable video FIFO."]
+    #[doc = "0: Normal operation,"]
     B0 = 0,
     #[doc = "1: Disable video FIFO."]
     B1 = 1,
@@ -80,7 +82,7 @@ impl VidFifoFuncEnNR {
             true => VidFifoFuncEnN::B1,
         }
     }
-    #[doc = "Disable video FIFO."]
+    #[doc = "Normal operation,"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == VidFifoFuncEnN::B0
@@ -97,7 +99,7 @@ impl<'a, REG> VidFifoFuncEnNW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disable video FIFO."]
+    #[doc = "Normal operation,"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(VidFifoFuncEnN::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "Video capture functions enable.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VidCapFuncEnN {
-    #[doc = "0: Disable video capture."]
+    #[doc = "0: Normal operation,"]
     B0 = 0,
     #[doc = "1: Disable video capture."]
     B1 = 1,
@@ -133,7 +136,7 @@ impl VidCapFuncEnNR {
             true => VidCapFuncEnN::B1,
         }
     }
-    #[doc = "Disable video capture."]
+    #[doc = "Normal operation,"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == VidCapFuncEnN::B0
@@ -150,7 +153,7 @@ impl<'a, REG> VidCapFuncEnNW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disable video capture."]
+    #[doc = "Normal operation,"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(VidCapFuncEnN::B0)

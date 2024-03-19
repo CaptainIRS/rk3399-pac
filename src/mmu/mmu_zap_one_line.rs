@@ -2,19 +2,19 @@
 pub type R = crate::R<MmuZapOneLineSpec>;
 #[doc = "Register `MMU_ZAP_ONE_LINE` writer"]
 pub type W = crate::W<MmuZapOneLineSpec>;
-#[doc = "Field `MMU_ZAP_ONE_LINE` reader - address to be invalidated from the page table cache."]
+#[doc = "Field `MMU_ZAP_ONE_LINE` reader - address to be invalidated from the page table\n\ncache."]
 pub type MmuZapOneLineR = crate::FieldReader<u32>;
-#[doc = "Field `MMU_ZAP_ONE_LINE` writer - address to be invalidated from the page table cache."]
+#[doc = "Field `MMU_ZAP_ONE_LINE` writer - address to be invalidated from the page table\n\ncache."]
 pub type MmuZapOneLineW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - address to be invalidated from the page table cache."]
+    #[doc = "Bits 0:31 - address to be invalidated from the page table\n\ncache."]
     #[inline(always)]
     pub fn mmu_zap_one_line(&self) -> MmuZapOneLineR {
         MmuZapOneLineR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - address to be invalidated from the page table cache."]
+    #[doc = "Bits 0:31 - address to be invalidated from the page table\n\ncache."]
     #[inline(always)]
     #[must_use]
     pub fn mmu_zap_one_line(&mut self) -> MmuZapOneLineW<MmuZapOneLineSpec> {

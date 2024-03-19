@@ -2,19 +2,19 @@
 pub type R = crate::R<ActivePixelCfgHSpec>;
 #[doc = "Register `ACTIVE_PIXEL_CFG_H` writer"]
 pub type W = crate::W<ActivePixelCfgHSpec>;
-#[doc = "Field `ACTIVE_PIXEL_CFG_H` reader - ACTIVE_PIXEL_CFG is used to specify the number of active pixels in each line. This register is ACTIVE_PIXEL_CFG \\[13:8\\]. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+#[doc = "Field `ACTIVE_PIXEL_CFG_H` reader - ACTIVE_PIXEL_CFG is used to specify the \n\nnumber of active pixels in each line. This \n\nregister is ACTIVE_PIXEL_CFG \\[13:8\\]. \n\nWhen F_SEL is 1, this value is sent in main \n\nstream attribute packet. \n\nWhen BIST_EN is 1, this bit field is used to \n\nspecify the BIST video stream format."]
 pub type ActivePixelCfgHR = crate::FieldReader;
-#[doc = "Field `ACTIVE_PIXEL_CFG_H` writer - ACTIVE_PIXEL_CFG is used to specify the number of active pixels in each line. This register is ACTIVE_PIXEL_CFG \\[13:8\\]. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+#[doc = "Field `ACTIVE_PIXEL_CFG_H` writer - ACTIVE_PIXEL_CFG is used to specify the \n\nnumber of active pixels in each line. This \n\nregister is ACTIVE_PIXEL_CFG \\[13:8\\]. \n\nWhen F_SEL is 1, this value is sent in main \n\nstream attribute packet. \n\nWhen BIST_EN is 1, this bit field is used to \n\nspecify the BIST video stream format."]
 pub type ActivePixelCfgHW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
-    #[doc = "Bits 0:5 - ACTIVE_PIXEL_CFG is used to specify the number of active pixels in each line. This register is ACTIVE_PIXEL_CFG \\[13:8\\]. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+    #[doc = "Bits 0:5 - ACTIVE_PIXEL_CFG is used to specify the \n\nnumber of active pixels in each line. This \n\nregister is ACTIVE_PIXEL_CFG \\[13:8\\]. \n\nWhen F_SEL is 1, this value is sent in main \n\nstream attribute packet. \n\nWhen BIST_EN is 1, this bit field is used to \n\nspecify the BIST video stream format."]
     #[inline(always)]
     pub fn active_pixel_cfg_h(&self) -> ActivePixelCfgHR {
         ActivePixelCfgHR::new((self.bits & 0x3f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:5 - ACTIVE_PIXEL_CFG is used to specify the number of active pixels in each line. This register is ACTIVE_PIXEL_CFG \\[13:8\\]. When F_SEL is 1, this value is sent in main stream attribute packet. When BIST_EN is 1, this bit field is used to specify the BIST video stream format."]
+    #[doc = "Bits 0:5 - ACTIVE_PIXEL_CFG is used to specify the \n\nnumber of active pixels in each line. This \n\nregister is ACTIVE_PIXEL_CFG \\[13:8\\]. \n\nWhen F_SEL is 1, this value is sent in main \n\nstream attribute packet. \n\nWhen BIST_EN is 1, this bit field is used to \n\nspecify the BIST video stream format."]
     #[inline(always)]
     #[must_use]
     pub fn active_pixel_cfg_h(&mut self) -> ActivePixelCfgHW<ActivePixelCfgHSpec> {

@@ -2,147 +2,147 @@
 pub type R = crate::R<CruClkgateCon27Spec>;
 #[doc = "Register `CRU_CLKGATE_CON27` writer"]
 pub type W = crate::W<CruClkgateCon27Spec>;
-#[doc = "Field `HCLK_ISP0_NOC_EN` reader - hclk_isp0_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `HCLK_ISP0_NOC_EN` reader - hclk_isp0_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type HclkIsp0NocEnR = crate::BitReader;
-#[doc = "Field `HCLK_ISP0_NOC_EN` writer - hclk_isp0_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `HCLK_ISP0_NOC_EN` writer - hclk_isp0_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type HclkIsp0NocEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_ISP0_NOC_EN` reader - aclk_isp0_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `ACLK_ISP0_NOC_EN` reader - aclk_isp0_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type AclkIsp0NocEnR = crate::BitReader;
-#[doc = "Field `ACLK_ISP0_NOC_EN` writer - aclk_isp0_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `ACLK_ISP0_NOC_EN` writer - aclk_isp0_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type AclkIsp0NocEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `HCLK_ISP1_NOC_EN` reader - hclk_isp1_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `HCLK_ISP1_NOC_EN` reader - hclk_isp1_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type HclkIsp1NocEnR = crate::BitReader;
-#[doc = "Field `HCLK_ISP1_NOC_EN` writer - hclk_isp1_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `HCLK_ISP1_NOC_EN` writer - hclk_isp1_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type HclkIsp1NocEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_ISP1_NOC_EN` reader - aclk_isp1_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `ACLK_ISP1_NOC_EN` reader - aclk_isp1_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type AclkIsp1NocEnR = crate::BitReader;
-#[doc = "Field `ACLK_ISP1_NOC_EN` writer - aclk_isp1_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `ACLK_ISP1_NOC_EN` writer - aclk_isp1_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type AclkIsp1NocEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `HCLK_ISP0_WRAPPER_EN` reader - hclk_isp0_wrapper clock disable bit When HIGH, disable clock"]
+#[doc = "Field `HCLK_ISP0_WRAPPER_EN` reader - hclk_isp0_wrapper clock disable bit\n\nWhen HIGH, disable clock"]
 pub type HclkIsp0WrapperEnR = crate::BitReader;
-#[doc = "Field `HCLK_ISP0_WRAPPER_EN` writer - hclk_isp0_wrapper clock disable bit When HIGH, disable clock"]
+#[doc = "Field `HCLK_ISP0_WRAPPER_EN` writer - hclk_isp0_wrapper clock disable bit\n\nWhen HIGH, disable clock"]
 pub type HclkIsp0WrapperEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_ISP0_WRAPPER_EN` reader - aclk_isp0_wrapper clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_ISP0_WRAPPER_EN` reader - aclk_isp0_wrapper clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkIsp0WrapperEnR = crate::BitReader;
-#[doc = "Field `ACLK_ISP0_WRAPPER_EN` writer - aclk_isp0_wrapper clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_ISP0_WRAPPER_EN` writer - aclk_isp0_wrapper clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkIsp0WrapperEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PCLKIN_ISP1_WRAPPER_EN` reader - pclkin_isp1_wrapper clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLKIN_ISP1_WRAPPER_EN` reader - pclkin_isp1_wrapper clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkinIsp1WrapperEnR = crate::BitReader;
-#[doc = "Field `PCLKIN_ISP1_WRAPPER_EN` writer - pclkin_isp1_wrapper clock disable bit When HIGH, disable clock"]
+#[doc = "Field `PCLKIN_ISP1_WRAPPER_EN` writer - pclkin_isp1_wrapper clock disable bit\n\nWhen HIGH, disable clock"]
 pub type PclkinIsp1WrapperEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `HCLK_ISP1_WRAPPER_EN` reader - hclk_isp1_wrapper clock disable bit When HIGH, disable clock"]
+#[doc = "Field `HCLK_ISP1_WRAPPER_EN` reader - hclk_isp1_wrapper clock disable bit\n\nWhen HIGH, disable clock"]
 pub type HclkIsp1WrapperEnR = crate::BitReader;
-#[doc = "Field `HCLK_ISP1_WRAPPER_EN` writer - hclk_isp1_wrapper clock disable bit When HIGH, disable clock"]
+#[doc = "Field `HCLK_ISP1_WRAPPER_EN` writer - hclk_isp1_wrapper clock disable bit\n\nWhen HIGH, disable clock"]
 pub type HclkIsp1WrapperEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_ISP1_WRAPPER_EN` reader - aclk_isp1_wrapper clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_ISP1_WRAPPER_EN` reader - aclk_isp1_wrapper clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkIsp1WrapperEnR = crate::BitReader;
-#[doc = "Field `ACLK_ISP1_WRAPPER_EN` writer - aclk_isp1_wrapper clock disable bit When HIGH, disable clock"]
+#[doc = "Field `ACLK_ISP1_WRAPPER_EN` writer - aclk_isp1_wrapper clock disable bit\n\nWhen HIGH, disable clock"]
 pub type AclkIsp1WrapperEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bit 0 - hclk_isp0_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 0 - hclk_isp0_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     pub fn hclk_isp0_noc_en(&self) -> HclkIsp0NocEnR {
         HclkIsp0NocEnR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - aclk_isp0_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 1 - aclk_isp0_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     pub fn aclk_isp0_noc_en(&self) -> AclkIsp0NocEnR {
         AclkIsp0NocEnR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - hclk_isp1_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 2 - hclk_isp1_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     pub fn hclk_isp1_noc_en(&self) -> HclkIsp1NocEnR {
         HclkIsp1NocEnR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - aclk_isp1_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 3 - aclk_isp1_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     pub fn aclk_isp1_noc_en(&self) -> AclkIsp1NocEnR {
         AclkIsp1NocEnR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - hclk_isp0_wrapper clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 4 - hclk_isp0_wrapper clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn hclk_isp0_wrapper_en(&self) -> HclkIsp0WrapperEnR {
         HclkIsp0WrapperEnR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - aclk_isp0_wrapper clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 5 - aclk_isp0_wrapper clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn aclk_isp0_wrapper_en(&self) -> AclkIsp0WrapperEnR {
         AclkIsp0WrapperEnR::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 6 - pclkin_isp1_wrapper clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 6 - pclkin_isp1_wrapper clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn pclkin_isp1_wrapper_en(&self) -> PclkinIsp1WrapperEnR {
         PclkinIsp1WrapperEnR::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 7 - hclk_isp1_wrapper clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 7 - hclk_isp1_wrapper clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn hclk_isp1_wrapper_en(&self) -> HclkIsp1WrapperEnR {
         HclkIsp1WrapperEnR::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bit 8 - aclk_isp1_wrapper clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 8 - aclk_isp1_wrapper clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     pub fn aclk_isp1_wrapper_en(&self) -> AclkIsp1WrapperEnR {
         AclkIsp1WrapperEnR::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - hclk_isp0_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 0 - hclk_isp0_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     #[must_use]
     pub fn hclk_isp0_noc_en(&mut self) -> HclkIsp0NocEnW<CruClkgateCon27Spec> {
         HclkIsp0NocEnW::new(self, 0)
     }
-    #[doc = "Bit 1 - aclk_isp0_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 1 - aclk_isp0_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_isp0_noc_en(&mut self) -> AclkIsp0NocEnW<CruClkgateCon27Spec> {
         AclkIsp0NocEnW::new(self, 1)
     }
-    #[doc = "Bit 2 - hclk_isp1_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 2 - hclk_isp1_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     #[must_use]
     pub fn hclk_isp1_noc_en(&mut self) -> HclkIsp1NocEnW<CruClkgateCon27Spec> {
         HclkIsp1NocEnW::new(self, 2)
     }
-    #[doc = "Bit 3 - aclk_isp1_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 3 - aclk_isp1_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_isp1_noc_en(&mut self) -> AclkIsp1NocEnW<CruClkgateCon27Spec> {
         AclkIsp1NocEnW::new(self, 3)
     }
-    #[doc = "Bit 4 - hclk_isp0_wrapper clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 4 - hclk_isp0_wrapper clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn hclk_isp0_wrapper_en(&mut self) -> HclkIsp0WrapperEnW<CruClkgateCon27Spec> {
         HclkIsp0WrapperEnW::new(self, 4)
     }
-    #[doc = "Bit 5 - aclk_isp0_wrapper clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 5 - aclk_isp0_wrapper clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_isp0_wrapper_en(&mut self) -> AclkIsp0WrapperEnW<CruClkgateCon27Spec> {
         AclkIsp0WrapperEnW::new(self, 5)
     }
-    #[doc = "Bit 6 - pclkin_isp1_wrapper clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 6 - pclkin_isp1_wrapper clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn pclkin_isp1_wrapper_en(&mut self) -> PclkinIsp1WrapperEnW<CruClkgateCon27Spec> {
         PclkinIsp1WrapperEnW::new(self, 6)
     }
-    #[doc = "Bit 7 - hclk_isp1_wrapper clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 7 - hclk_isp1_wrapper clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn hclk_isp1_wrapper_en(&mut self) -> HclkIsp1WrapperEnW<CruClkgateCon27Spec> {
         HclkIsp1WrapperEnW::new(self, 7)
     }
-    #[doc = "Bit 8 - aclk_isp1_wrapper clock disable bit When HIGH, disable clock"]
+    #[doc = "Bit 8 - aclk_isp1_wrapper clock disable bit\n\nWhen HIGH, disable clock"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_isp1_wrapper_en(&mut self) -> AclkIsp1WrapperEnW<CruClkgateCon27Spec> {
         AclkIsp1WrapperEnW::new(self, 8)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkgateCon27Spec> {

@@ -2,34 +2,34 @@
 pub type R = crate::R<SpdifVldfrnSpec>;
 #[doc = "Register `SPDIF_VLDFRn` writer"]
 pub type W = crate::W<SpdifVldfrnSpec>;
-#[doc = "Field `VLDFR_SUB_0` reader - Validity Flag Subframe 0 Validity Flag for Subframe 0"]
+#[doc = "Field `VLDFR_SUB_0` reader - Validity Flag Subframe 0\n\nValidity Flag for Subframe 0"]
 pub type VldfrSub0R = crate::FieldReader<u16>;
-#[doc = "Field `VLDFR_SUB_0` writer - Validity Flag Subframe 0 Validity Flag for Subframe 0"]
+#[doc = "Field `VLDFR_SUB_0` writer - Validity Flag Subframe 0\n\nValidity Flag for Subframe 0"]
 pub type VldfrSub0W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-#[doc = "Field `VLDFR_SUB_1` reader - Validity Flag Subframe 1 Validity Flag Register 0"]
+#[doc = "Field `VLDFR_SUB_1` reader - Validity Flag Subframe 1\n\nValidity Flag Register 0"]
 pub type VldfrSub1R = crate::FieldReader<u16>;
-#[doc = "Field `VLDFR_SUB_1` writer - Validity Flag Subframe 1 Validity Flag Register 0"]
+#[doc = "Field `VLDFR_SUB_1` writer - Validity Flag Subframe 1\n\nValidity Flag Register 0"]
 pub type VldfrSub1W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:15 - Validity Flag Subframe 0 Validity Flag for Subframe 0"]
+    #[doc = "Bits 0:15 - Validity Flag Subframe 0\n\nValidity Flag for Subframe 0"]
     #[inline(always)]
     pub fn vldfr_sub_0(&self) -> VldfrSub0R {
         VldfrSub0R::new((self.bits & 0xffff) as u16)
     }
-    #[doc = "Bits 16:31 - Validity Flag Subframe 1 Validity Flag Register 0"]
+    #[doc = "Bits 16:31 - Validity Flag Subframe 1\n\nValidity Flag Register 0"]
     #[inline(always)]
     pub fn vldfr_sub_1(&self) -> VldfrSub1R {
         VldfrSub1R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - Validity Flag Subframe 0 Validity Flag for Subframe 0"]
+    #[doc = "Bits 0:15 - Validity Flag Subframe 0\n\nValidity Flag for Subframe 0"]
     #[inline(always)]
     #[must_use]
     pub fn vldfr_sub_0(&mut self) -> VldfrSub0W<SpdifVldfrnSpec> {
         VldfrSub0W::new(self, 0)
     }
-    #[doc = "Bits 16:31 - Validity Flag Subframe 1 Validity Flag Register 0"]
+    #[doc = "Bits 16:31 - Validity Flag Subframe 1\n\nValidity Flag Register 0"]
     #[inline(always)]
     #[must_use]
     pub fn vldfr_sub_1(&mut self) -> VldfrSub1W<SpdifVldfrnSpec> {

@@ -3,14 +3,14 @@ pub type R = crate::R<HBPorchStaLSpec>;
 #[doc = "Register `H_B_PORCH_STA_L` writer"]
 pub type W = crate::W<HBPorchStaLSpec>;
 #[doc = "Field `H_B_PORCH_STA_L` reader - H_B_PORCH \\[7:0\\]
-(horizon back porch) which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+(horizon back porch) which is \n\ndetected by video capture module. \n\nThis bit field is valid only when STRM_VALID is \n\nhigh. And STRM_VALID becomes high when two \n\nsuccessive frames are determined as stable."]
 pub type HBPorchStaLR = crate::FieldReader;
 #[doc = "Field `H_B_PORCH_STA_L` writer - H_B_PORCH \\[7:0\\]
-(horizon back porch) which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+(horizon back porch) which is \n\ndetected by video capture module. \n\nThis bit field is valid only when STRM_VALID is \n\nhigh. And STRM_VALID becomes high when two \n\nsuccessive frames are determined as stable."]
 pub type HBPorchStaLW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - H_B_PORCH \\[7:0\\]
-(horizon back porch) which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+(horizon back porch) which is \n\ndetected by video capture module. \n\nThis bit field is valid only when STRM_VALID is \n\nhigh. And STRM_VALID becomes high when two \n\nsuccessive frames are determined as stable."]
     #[inline(always)]
     pub fn h_b_porch_sta_l(&self) -> HBPorchStaLR {
         HBPorchStaLR::new((self.bits & 0xff) as u8)
@@ -18,7 +18,7 @@ impl R {
 }
 impl W {
     #[doc = "Bits 0:7 - H_B_PORCH \\[7:0\\]
-(horizon back porch) which is detected by video capture module. This bit field is valid only when STRM_VALID is high. And STRM_VALID becomes high when two successive frames are determined as stable."]
+(horizon back porch) which is \n\ndetected by video capture module. \n\nThis bit field is valid only when STRM_VALID is \n\nhigh. And STRM_VALID becomes high when two \n\nsuccessive frames are determined as stable."]
     #[inline(always)]
     #[must_use]
     pub fn h_b_porch_sta_l(&mut self) -> HBPorchStaLW<HBPorchStaLSpec> {

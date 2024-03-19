@@ -2,19 +2,19 @@
 pub type R = crate::R<Usb3Gevntadrhi0Spec>;
 #[doc = "Register `USB3_GEVNTADRHI0` writer"]
 pub type W = crate::W<Usb3Gevntadrhi0Spec>;
-#[doc = "Field `EVNTADRHI` reader - Event Buffer Address Holds the higher 32 bits of start address of the external memory for the Event Buffer. During operation, hardware does not update this address."]
+#[doc = "Field `EVNTADRHI` reader - Event Buffer Address\n\nHolds the higher 32 bits of start address of the external memory\n\nfor the Event Buffer. During operation, hardware does not update\n\nthis address."]
 pub type EvntadrhiR = crate::FieldReader<u32>;
-#[doc = "Field `EVNTADRHI` writer - Event Buffer Address Holds the higher 32 bits of start address of the external memory for the Event Buffer. During operation, hardware does not update this address."]
+#[doc = "Field `EVNTADRHI` writer - Event Buffer Address\n\nHolds the higher 32 bits of start address of the external memory\n\nfor the Event Buffer. During operation, hardware does not update\n\nthis address."]
 pub type EvntadrhiW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Event Buffer Address Holds the higher 32 bits of start address of the external memory for the Event Buffer. During operation, hardware does not update this address."]
+    #[doc = "Bits 0:31 - Event Buffer Address\n\nHolds the higher 32 bits of start address of the external memory\n\nfor the Event Buffer. During operation, hardware does not update\n\nthis address."]
     #[inline(always)]
     pub fn evntadrhi(&self) -> EvntadrhiR {
         EvntadrhiR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Event Buffer Address Holds the higher 32 bits of start address of the external memory for the Event Buffer. During operation, hardware does not update this address."]
+    #[doc = "Bits 0:31 - Event Buffer Address\n\nHolds the higher 32 bits of start address of the external memory\n\nfor the Event Buffer. During operation, hardware does not update\n\nthis address."]
     #[inline(always)]
     #[must_use]
     pub fn evntadrhi(&mut self) -> EvntadrhiW<Usb3Gevntadrhi0Spec> {

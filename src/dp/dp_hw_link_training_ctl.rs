@@ -2,25 +2,26 @@
 pub type R = crate::R<DpHwLinkTrainingCtlSpec>;
 #[doc = "Register `DP_HW_LINK_TRAINING_CTL` writer"]
 pub type W = crate::W<DpHwLinkTrainingCtlSpec>;
-#[doc = "Field `HW_TRAINING_EN` reader - Link training sequence enable Write 1 to enable training sequence, write 0 to force training sequence stop, this bit will self-clear when training done. This bit's type is R/W. This bit is self cleared."]
+#[doc = "Field `HW_TRAINING_EN` reader - Link training sequence enable \n\nWrite 1 to enable training sequence, write \n\n0 to force training sequence stop, this bit \n\nwill self-clear when training done. \n\nThis bit's type is R/W. This bit is self \n\ncleared."]
 pub type HwTrainingEnR = crate::BitReader;
-#[doc = "Field `HW_TRAINING_EN` writer - Link training sequence enable Write 1 to enable training sequence, write 0 to force training sequence stop, this bit will self-clear when training done. This bit's type is R/W. This bit is self cleared."]
+#[doc = "Field `HW_TRAINING_EN` writer - Link training sequence enable \n\nWrite 1 to enable training sequence, write \n\n0 to force training sequence stop, this bit \n\nwill self-clear when training done. \n\nThis bit's type is R/W. This bit is self \n\ncleared."]
 pub type HwTrainingEnW<'a, REG> = crate::BitWriter1C<'a, REG>;
 #[doc = "Training error code\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HwTrainingErrorCode {
-    #[doc = "0: EQ_LOOP_5_TIME This bit's type is RO."]
+    #[doc = "0: OK"]
     D0 = 0,
-    #[doc = "1: EQ_LOOP_5_TIME This bit's type is RO."]
+    #[doc = "1: AUX_WRITE_ERROR"]
     D1 = 1,
-    #[doc = "2: EQ_LOOP_5_TIME This bit's type is RO."]
+    #[doc = "2: MAX_DRIVE_REACHED"]
     D2 = 2,
-    #[doc = "3: EQ_LOOP_5_TIME This bit's type is RO."]
+    #[doc = "3: WRONG_LANE_COUNT_SETTING"]
     D3 = 3,
-    #[doc = "4: EQ_LOOP_5_TIME This bit's type is RO."]
+    #[doc = "4: LOOP_SAME_5_TIME"]
     D4 = 4,
-    #[doc = "5: EQ_LOOP_5_TIME This bit's type is RO."]
+    #[doc = "5: CR_FAIL_IN_EQ"]
     D5 = 5,
     #[doc = "6: EQ_LOOP_5_TIME This bit's type is RO."]
     D6 = 6,
@@ -51,32 +52,32 @@ impl HwTrainingErrorCodeR {
             _ => None,
         }
     }
-    #[doc = "EQ_LOOP_5_TIME This bit's type is RO."]
+    #[doc = "OK"]
     #[inline(always)]
     pub fn is_d0(&self) -> bool {
         *self == HwTrainingErrorCode::D0
     }
-    #[doc = "EQ_LOOP_5_TIME This bit's type is RO."]
+    #[doc = "AUX_WRITE_ERROR"]
     #[inline(always)]
     pub fn is_d1(&self) -> bool {
         *self == HwTrainingErrorCode::D1
     }
-    #[doc = "EQ_LOOP_5_TIME This bit's type is RO."]
+    #[doc = "MAX_DRIVE_REACHED"]
     #[inline(always)]
     pub fn is_d2(&self) -> bool {
         *self == HwTrainingErrorCode::D2
     }
-    #[doc = "EQ_LOOP_5_TIME This bit's type is RO."]
+    #[doc = "WRONG_LANE_COUNT_SETTING"]
     #[inline(always)]
     pub fn is_d3(&self) -> bool {
         *self == HwTrainingErrorCode::D3
     }
-    #[doc = "EQ_LOOP_5_TIME This bit's type is RO."]
+    #[doc = "LOOP_SAME_5_TIME"]
     #[inline(always)]
     pub fn is_d4(&self) -> bool {
         *self == HwTrainingErrorCode::D4
     }
-    #[doc = "EQ_LOOP_5_TIME This bit's type is RO."]
+    #[doc = "CR_FAIL_IN_EQ"]
     #[inline(always)]
     pub fn is_d5(&self) -> bool {
         *self == HwTrainingErrorCode::D5
@@ -88,7 +89,7 @@ impl HwTrainingErrorCodeR {
     }
 }
 impl R {
-    #[doc = "Bit 0 - Link training sequence enable Write 1 to enable training sequence, write 0 to force training sequence stop, this bit will self-clear when training done. This bit's type is R/W. This bit is self cleared."]
+    #[doc = "Bit 0 - Link training sequence enable \n\nWrite 1 to enable training sequence, write \n\n0 to force training sequence stop, this bit \n\nwill self-clear when training done. \n\nThis bit's type is R/W. This bit is self \n\ncleared."]
     #[inline(always)]
     pub fn hw_training_en(&self) -> HwTrainingEnR {
         HwTrainingEnR::new((self.bits & 1) != 0)
@@ -100,7 +101,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - Link training sequence enable Write 1 to enable training sequence, write 0 to force training sequence stop, this bit will self-clear when training done. This bit's type is R/W. This bit is self cleared."]
+    #[doc = "Bit 0 - Link training sequence enable \n\nWrite 1 to enable training sequence, write \n\n0 to force training sequence stop, this bit \n\nwill self-clear when training done. \n\nThis bit's type is R/W. This bit is self \n\ncleared."]
     #[inline(always)]
     #[must_use]
     pub fn hw_training_en(&mut self) -> HwTrainingEnW<DpHwLinkTrainingCtlSpec> {

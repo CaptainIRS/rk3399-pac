@@ -2,19 +2,19 @@
 pub type R = crate::R<UartSrtSpec>;
 #[doc = "Register `UART_SRT` writer"]
 pub type W = crate::W<UartSrtSpec>;
-#[doc = "Field `SHADOW_RCVR_TRIGGER` reader - Shadow RCVR Trigger. This is a shadow register for the RCVR trigger bits (FCR\\[7:6\\])."]
+#[doc = "Field `SHADOW_RCVR_TRIGGER` reader - Shadow RCVR Trigger.\n\nThis is a shadow register for the RCVR trigger bits (FCR\\[7:6\\])."]
 pub type ShadowRcvrTriggerR = crate::BitReader;
-#[doc = "Field `SHADOW_RCVR_TRIGGER` writer - Shadow RCVR Trigger. This is a shadow register for the RCVR trigger bits (FCR\\[7:6\\])."]
+#[doc = "Field `SHADOW_RCVR_TRIGGER` writer - Shadow RCVR Trigger.\n\nThis is a shadow register for the RCVR trigger bits (FCR\\[7:6\\])."]
 pub type ShadowRcvrTriggerW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - Shadow RCVR Trigger. This is a shadow register for the RCVR trigger bits (FCR\\[7:6\\])."]
+    #[doc = "Bit 0 - Shadow RCVR Trigger.\n\nThis is a shadow register for the RCVR trigger bits (FCR\\[7:6\\])."]
     #[inline(always)]
     pub fn shadow_rcvr_trigger(&self) -> ShadowRcvrTriggerR {
         ShadowRcvrTriggerR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Shadow RCVR Trigger. This is a shadow register for the RCVR trigger bits (FCR\\[7:6\\])."]
+    #[doc = "Bit 0 - Shadow RCVR Trigger.\n\nThis is a shadow register for the RCVR trigger bits (FCR\\[7:6\\])."]
     #[inline(always)]
     #[must_use]
     pub fn shadow_rcvr_trigger(&mut self) -> ShadowRcvrTriggerW<UartSrtSpec> {

@@ -3,9 +3,10 @@ pub type R = crate::R<EmmccoreErrintstsenaSpec>;
 #[doc = "Register `EMMCCORE_ERRINTSTSENA` writer"]
 pub type W = crate::W<EmmccoreErrintstsenaSpec>;
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cmdtimeouterr {
-    #[doc = "0: Enabled"]
+    #[doc = "0: Masked"]
     B0 = 0,
     #[doc = "1: Enabled"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl CmdtimeouterrR {
             true => Cmdtimeouterr::B1,
         }
     }
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cmdtimeouterr::B0
@@ -44,7 +45,7 @@ impl<'a, REG> CmdtimeouterrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cmdtimeouterr::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cmdcrcerr {
-    #[doc = "0: Enabled"]
+    #[doc = "0: Masked"]
     B0 = 0,
     #[doc = "1: Enabled"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl CmdcrcerrR {
             true => Cmdcrcerr::B1,
         }
     }
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cmdcrcerr::B0
@@ -97,7 +99,7 @@ impl<'a, REG> CmdcrcerrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cmdcrcerr::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cmdendbiterr {
-    #[doc = "0: Enabled"]
+    #[doc = "0: Masked"]
     B0 = 0,
     #[doc = "1: Enabled"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl CmdendbiterrR {
             true => Cmdendbiterr::B1,
         }
     }
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cmdendbiterr::B0
@@ -150,7 +153,7 @@ impl<'a, REG> CmdendbiterrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cmdendbiterr::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cmdindexerr {
-    #[doc = "0: Enabled"]
+    #[doc = "0: Masked"]
     B0 = 0,
     #[doc = "1: Enabled"]
     B1 = 1,
@@ -186,7 +190,7 @@ impl CmdindexerrR {
             true => Cmdindexerr::B1,
         }
     }
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cmdindexerr::B0
@@ -203,7 +207,7 @@ impl<'a, REG> CmdindexerrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cmdindexerr::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Datatimeouterr {
-    #[doc = "0: Enabled"]
+    #[doc = "0: Masked"]
     B0 = 0,
     #[doc = "1: Enabled"]
     B1 = 1,
@@ -239,7 +244,7 @@ impl DatatimeouterrR {
             true => Datatimeouterr::B1,
         }
     }
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Datatimeouterr::B0
@@ -256,7 +261,7 @@ impl<'a, REG> DatatimeouterrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Datatimeouterr::B0)
@@ -268,9 +273,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Datacrcerr {
-    #[doc = "0: Enabled"]
+    #[doc = "0: Masked"]
     B0 = 0,
     #[doc = "1: Enabled"]
     B1 = 1,
@@ -292,7 +298,7 @@ impl DatacrcerrR {
             true => Datacrcerr::B1,
         }
     }
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Datacrcerr::B0
@@ -309,7 +315,7 @@ impl<'a, REG> DatacrcerrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Datacrcerr::B0)
@@ -321,9 +327,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dataendbiterr {
-    #[doc = "0: Enabled"]
+    #[doc = "0: Masked"]
     B0 = 0,
     #[doc = "1: Enabled"]
     B1 = 1,
@@ -345,7 +352,7 @@ impl DataendbiterrR {
             true => Dataendbiterr::B1,
         }
     }
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Dataendbiterr::B0
@@ -362,7 +369,7 @@ impl<'a, REG> DataendbiterrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Dataendbiterr::B0)
@@ -374,9 +381,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Currentlimiterr {
-    #[doc = "0: Enabled"]
+    #[doc = "0: Masked"]
     B0 = 0,
     #[doc = "1: Enabled"]
     B1 = 1,
@@ -398,7 +406,7 @@ impl CurrentlimiterrR {
             true => Currentlimiterr::B1,
         }
     }
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Currentlimiterr::B0
@@ -415,7 +423,7 @@ impl<'a, REG> CurrentlimiterrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Currentlimiterr::B0)
@@ -427,9 +435,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Autocmderr {
-    #[doc = "0: Enabled"]
+    #[doc = "0: Masked"]
     B0 = 0,
     #[doc = "1: Enabled"]
     B1 = 1,
@@ -451,7 +460,7 @@ impl AutocmderrR {
             true => Autocmderr::B1,
         }
     }
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Autocmderr::B0
@@ -468,7 +477,7 @@ impl<'a, REG> AutocmderrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Autocmderr::B0)
@@ -480,9 +489,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Admaerr {
-    #[doc = "0: Enabled"]
+    #[doc = "0: Masked"]
     B0 = 0,
     #[doc = "1: Enabled"]
     B1 = 1,
@@ -504,7 +514,7 @@ impl AdmaerrR {
             true => Admaerr::B1,
         }
     }
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Admaerr::B0
@@ -521,7 +531,7 @@ impl<'a, REG> AdmaerrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Admaerr::B0)
@@ -533,9 +543,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Targetresperr {
-    #[doc = "0: Enabled"]
+    #[doc = "0: Masked"]
     B0 = 0,
     #[doc = "1: Enabled"]
     B1 = 1,
@@ -557,7 +568,7 @@ impl TargetresperrR {
             true => Targetresperr::B1,
         }
     }
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Targetresperr::B0
@@ -574,7 +585,7 @@ impl<'a, REG> TargetresperrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enabled"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Targetresperr::B0)

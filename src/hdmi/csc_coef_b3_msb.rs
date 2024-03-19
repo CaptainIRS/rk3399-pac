@@ -2,26 +2,26 @@
 pub type R = crate::R<CscCoefB3MsbSpec>;
 #[doc = "Register `CSC_COEF_B3_MSB` writer"]
 pub type W = crate::W<CscCoefB3MsbSpec>;
-#[doc = "Field `CSC_COEF_B3_MSB` reader - Color Space Converter Matrix B3 Coefficient Register MSB"]
+#[doc = "Field `CSC_COEF_B3_MSB` reader - Color Space Converter Matrix B3 Coefficient\n\nRegister MSB"]
 pub type CscCoefB3MsbR = crate::FieldReader;
-#[doc = "Field `CSC_COEF_B3_MSB` writer - Color Space Converter Matrix B3 Coefficient Register MSB"]
+#[doc = "Field `CSC_COEF_B3_MSB` writer - Color Space Converter Matrix B3 Coefficient\n\nRegister MSB"]
 pub type CscCoefB3MsbW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - Color Space Converter Matrix B3 Coefficient Register MSB"]
+    #[doc = "Bits 0:7 - Color Space Converter Matrix B3 Coefficient\n\nRegister MSB"]
     #[inline(always)]
     pub fn csc_coef_b3_msb(&self) -> CscCoefB3MsbR {
         CscCoefB3MsbR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Color Space Converter Matrix B3 Coefficient Register MSB"]
+    #[doc = "Bits 0:7 - Color Space Converter Matrix B3 Coefficient\n\nRegister MSB"]
     #[inline(always)]
     #[must_use]
     pub fn csc_coef_b3_msb(&mut self) -> CscCoefB3MsbW<CscCoefB3MsbSpec> {
         CscCoefB3MsbW::new(self, 0)
     }
 }
-#[doc = "Color Space Converter Matrix B3 Coefficient Register MSB\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csc_coef_b3_msb::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csc_coef_b3_msb::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Color Space Converter Matrix B3 Coefficient Register MSB Color Space\n\nConversion B3 coefficient.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csc_coef_b3_msb::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csc_coef_b3_msb::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CscCoefB3MsbSpec;
 impl crate::RegisterSpec for CscCoefB3MsbSpec {
     type Ux = u8;

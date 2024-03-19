@@ -2,19 +2,19 @@
 pub type R = crate::R<CruGlbSrstFstValueSpec>;
 #[doc = "Register `CRU_GLB_SRST_FST_VALUE` writer"]
 pub type W = crate::W<CruGlbSrstFstValueSpec>;
-#[doc = "Field `GLB_SRST_FST_VALUE` reader - The first global software reset config value If config 0xfdb9, it will generate first global software reset"]
+#[doc = "Field `GLB_SRST_FST_VALUE` reader - The first global software reset config value\n\nIf config 0xfdb9, it will generate first global software reset"]
 pub type GlbSrstFstValueR = crate::FieldReader<u16>;
-#[doc = "Field `GLB_SRST_FST_VALUE` writer - The first global software reset config value If config 0xfdb9, it will generate first global software reset"]
+#[doc = "Field `GLB_SRST_FST_VALUE` writer - The first global software reset config value\n\nIf config 0xfdb9, it will generate first global software reset"]
 pub type GlbSrstFstValueW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:15 - The first global software reset config value If config 0xfdb9, it will generate first global software reset"]
+    #[doc = "Bits 0:15 - The first global software reset config value\n\nIf config 0xfdb9, it will generate first global software reset"]
     #[inline(always)]
     pub fn glb_srst_fst_value(&self) -> GlbSrstFstValueR {
         GlbSrstFstValueR::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - The first global software reset config value If config 0xfdb9, it will generate first global software reset"]
+    #[doc = "Bits 0:15 - The first global software reset config value\n\nIf config 0xfdb9, it will generate first global software reset"]
     #[inline(always)]
     #[must_use]
     pub fn glb_srst_fst_value(&mut self) -> GlbSrstFstValueW<CruGlbSrstFstValueSpec> {

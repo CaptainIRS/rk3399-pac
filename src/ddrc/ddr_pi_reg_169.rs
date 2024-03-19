@@ -2,19 +2,19 @@
 pub type R = crate::R<DdrPiReg169Spec>;
 #[doc = "Register `DDR_PI_REG_169` writer"]
 pub type W = crate::W<DdrPiReg169Spec>;
-#[doc = "Field `PI_TMOD_F2` reader - Indicates TMOD value in cycles. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TMOD_F2` reader - Indicates TMOD value in cycles. The suffix \"_f2\" of the parameter\n\nname is omitted when in non-DFS mode."]
 pub type PiTmodF2R = crate::FieldReader;
-#[doc = "Field `PI_TMOD_F2` writer - Indicates TMOD value in cycles. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TMOD_F2` writer - Indicates TMOD value in cycles. The suffix \"_f2\" of the parameter\n\nname is omitted when in non-DFS mode."]
 pub type PiTmodF2W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - Indicates TMOD value in cycles. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:7 - Indicates TMOD value in cycles. The suffix \"_f2\" of the parameter\n\nname is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tmod_f2(&self) -> PiTmodF2R {
         PiTmodF2R::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Indicates TMOD value in cycles. The suffix \"_f2\" of the parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:7 - Indicates TMOD value in cycles. The suffix \"_f2\" of the parameter\n\nname is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tmod_f2(&mut self) -> PiTmodF2W<DdrPiReg169Spec> {

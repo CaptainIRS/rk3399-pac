@@ -2,9 +2,9 @@
 pub type R = crate::R<DdrDenaliCtl236Spec>;
 #[doc = "Register `DDR_DENALI_CTL_236` writer"]
 pub type W = crate::W<DdrDenaliCtl236Spec>;
-#[doc = "Field `RDLVL_REQ` writer - User request to initiate data eye training. Set to 1 to trigger. WRITE- ONLY"]
+#[doc = "Field `RDLVL_REQ` writer - User request to initiate data eye training. Set to 1 to trigger."]
 pub type RdlvlReqW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `RDLVL_GATE_REQ` writer - User request to initiate gate training. Set to 1 to trigger. WRITE- ONLY"]
+#[doc = "Field `RDLVL_GATE_REQ` writer - User request to initiate gate training. Set to 1 to trigger."]
 pub type RdlvlGateReqW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RDLVL_CS` reader - Specifies the target chip select for the data eye training operation initiated through the RDLVL_REQ parameter or the gate training operation initiated through the RDLVL_GATE_REQ parameter."]
 pub type RdlvlCsR = crate::BitReader;
@@ -27,13 +27,13 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - User request to initiate data eye training. Set to 1 to trigger. WRITE- ONLY"]
+    #[doc = "Bit 0 - User request to initiate data eye training. Set to 1 to trigger."]
     #[inline(always)]
     #[must_use]
     pub fn rdlvl_req(&mut self) -> RdlvlReqW<DdrDenaliCtl236Spec> {
         RdlvlReqW::new(self, 0)
     }
-    #[doc = "Bit 8 - User request to initiate gate training. Set to 1 to trigger. WRITE- ONLY"]
+    #[doc = "Bit 8 - User request to initiate gate training. Set to 1 to trigger."]
     #[inline(always)]
     #[must_use]
     pub fn rdlvl_gate_req(&mut self) -> RdlvlGateReqW<DdrDenaliCtl236Spec> {

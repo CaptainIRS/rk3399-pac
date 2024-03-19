@@ -2,19 +2,19 @@
 pub type R = crate::R<UartSbcrSpec>;
 #[doc = "Register `UART_SBCR` writer"]
 pub type W = crate::W<UartSbcrSpec>;
-#[doc = "Field `SHADOW_BREAK_CTRL` reader - Shadow Break Control Bit. This is a shadow register for the Break bit (LCR\\[6\\]), this can be used to remove the burden of having to performing a read modify write on the LCR."]
+#[doc = "Field `SHADOW_BREAK_CTRL` reader - Shadow Break Control Bit.\n\nThis is a shadow register for the Break bit (LCR\\[6\\]), this can be\n\nused to remove the burden of having to performing a read modify\n\nwrite on the LCR."]
 pub type ShadowBreakCtrlR = crate::BitReader;
-#[doc = "Field `SHADOW_BREAK_CTRL` writer - Shadow Break Control Bit. This is a shadow register for the Break bit (LCR\\[6\\]), this can be used to remove the burden of having to performing a read modify write on the LCR."]
+#[doc = "Field `SHADOW_BREAK_CTRL` writer - Shadow Break Control Bit.\n\nThis is a shadow register for the Break bit (LCR\\[6\\]), this can be\n\nused to remove the burden of having to performing a read modify\n\nwrite on the LCR."]
 pub type ShadowBreakCtrlW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - Shadow Break Control Bit. This is a shadow register for the Break bit (LCR\\[6\\]), this can be used to remove the burden of having to performing a read modify write on the LCR."]
+    #[doc = "Bit 0 - Shadow Break Control Bit.\n\nThis is a shadow register for the Break bit (LCR\\[6\\]), this can be\n\nused to remove the burden of having to performing a read modify\n\nwrite on the LCR."]
     #[inline(always)]
     pub fn shadow_break_ctrl(&self) -> ShadowBreakCtrlR {
         ShadowBreakCtrlR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Shadow Break Control Bit. This is a shadow register for the Break bit (LCR\\[6\\]), this can be used to remove the burden of having to performing a read modify write on the LCR."]
+    #[doc = "Bit 0 - Shadow Break Control Bit.\n\nThis is a shadow register for the Break bit (LCR\\[6\\]), this can be\n\nused to remove the burden of having to performing a read modify\n\nwrite on the LCR."]
     #[inline(always)]
     #[must_use]
     pub fn shadow_break_ctrl(&mut self) -> ShadowBreakCtrlW<UartSbcrSpec> {

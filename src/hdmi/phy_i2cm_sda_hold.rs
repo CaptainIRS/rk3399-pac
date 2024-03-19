@@ -2,26 +2,26 @@
 pub type R = crate::R<PhyI2cmSdaHoldSpec>;
 #[doc = "Register `PHY_I2CM_SDA_HOLD` writer"]
 pub type W = crate::W<PhyI2cmSdaHoldSpec>;
-#[doc = "Field `OSDA_HOLD` reader - Defines the number of SFR clock cycles to meet tHD:DAT (300 ns) osda_hold = round_to_high_integer (300 ns / (1/ isfrclk_frequency))"]
+#[doc = "Field `OSDA_HOLD` reader - Defines the number of SFR clock cycles to meet\n\ntHD:DAT (300 ns)\n\nosda_hold = round_to_high_integer (300 ns / (1/\n\nisfrclk_frequency))"]
 pub type OsdaHoldR = crate::FieldReader;
-#[doc = "Field `OSDA_HOLD` writer - Defines the number of SFR clock cycles to meet tHD:DAT (300 ns) osda_hold = round_to_high_integer (300 ns / (1/ isfrclk_frequency))"]
+#[doc = "Field `OSDA_HOLD` writer - Defines the number of SFR clock cycles to meet\n\ntHD:DAT (300 ns)\n\nosda_hold = round_to_high_integer (300 ns / (1/\n\nisfrclk_frequency))"]
 pub type OsdaHoldW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - Defines the number of SFR clock cycles to meet tHD:DAT (300 ns) osda_hold = round_to_high_integer (300 ns / (1/ isfrclk_frequency))"]
+    #[doc = "Bits 0:7 - Defines the number of SFR clock cycles to meet\n\ntHD:DAT (300 ns)\n\nosda_hold = round_to_high_integer (300 ns / (1/\n\nisfrclk_frequency))"]
     #[inline(always)]
     pub fn osda_hold(&self) -> OsdaHoldR {
         OsdaHoldR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Defines the number of SFR clock cycles to meet tHD:DAT (300 ns) osda_hold = round_to_high_integer (300 ns / (1/ isfrclk_frequency))"]
+    #[doc = "Bits 0:7 - Defines the number of SFR clock cycles to meet\n\ntHD:DAT (300 ns)\n\nosda_hold = round_to_high_integer (300 ns / (1/\n\nisfrclk_frequency))"]
     #[inline(always)]
     #[must_use]
     pub fn osda_hold(&mut self) -> OsdaHoldW<PhyI2cmSdaHoldSpec> {
         OsdaHoldW::new(self, 0)
     }
 }
-#[doc = "Defines the number of SFR clock cycles to meet tHD:DAT (300 ns) osda_hold = round_to_high_integer (300 ns / (1/ isfrclk_frequency))\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`phy_i2cm_sda_hold::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`phy_i2cm_sda_hold::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PHY I2C SDA HOLD Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`phy_i2cm_sda_hold::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`phy_i2cm_sda_hold::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PhyI2cmSdaHoldSpec;
 impl crate::RegisterSpec for PhyI2cmSdaHoldSpec {
     type Ux = u8;

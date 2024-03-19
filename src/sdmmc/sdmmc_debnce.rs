@@ -2,19 +2,19 @@
 pub type R = crate::R<SdmmcDebnceSpec>;
 #[doc = "Register `SDMMC_DEBNCE` writer"]
 pub type W = crate::W<SdmmcDebnceSpec>;
-#[doc = "Field `DEBOUNCE_COUNT` reader - Number of host clocks (clk) used by debounce filter logic; typical debounce time is 5-25 ms."]
+#[doc = "Field `DEBOUNCE_COUNT` reader - Number of host clocks (clk) used by debounce filter logic; typical\n\ndebounce time is 5-25 ms."]
 pub type DebounceCountR = crate::FieldReader<u32>;
-#[doc = "Field `DEBOUNCE_COUNT` writer - Number of host clocks (clk) used by debounce filter logic; typical debounce time is 5-25 ms."]
+#[doc = "Field `DEBOUNCE_COUNT` writer - Number of host clocks (clk) used by debounce filter logic; typical\n\ndebounce time is 5-25 ms."]
 pub type DebounceCountW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
-    #[doc = "Bits 0:23 - Number of host clocks (clk) used by debounce filter logic; typical debounce time is 5-25 ms."]
+    #[doc = "Bits 0:23 - Number of host clocks (clk) used by debounce filter logic; typical\n\ndebounce time is 5-25 ms."]
     #[inline(always)]
     pub fn debounce_count(&self) -> DebounceCountR {
         DebounceCountR::new(self.bits & 0x00ff_ffff)
     }
 }
 impl W {
-    #[doc = "Bits 0:23 - Number of host clocks (clk) used by debounce filter logic; typical debounce time is 5-25 ms."]
+    #[doc = "Bits 0:23 - Number of host clocks (clk) used by debounce filter logic; typical\n\ndebounce time is 5-25 ms."]
     #[inline(always)]
     #[must_use]
     pub fn debounce_count(&mut self) -> DebounceCountW<SdmmcDebnceSpec> {

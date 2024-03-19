@@ -3,10 +3,11 @@ pub type R = crate::R<LinkBwSetSpec>;
 #[doc = "Register `LINK_BW_SET` writer"]
 pub type W = crate::W<LinkBwSetSpec>;
 #[doc = "Main link bandwidth setting:\n\nValue on reset: 10"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LinkBwSet {
-    #[doc = "6: 2.7Gpbs per lane other: Reserved"]
+    #[doc = "6: 1.62Gpbs per lane"]
     H06 = 6,
     #[doc = "10: 2.7Gpbs per lane other: Reserved"]
     H0a = 10,
@@ -32,7 +33,7 @@ impl LinkBwSetR {
             _ => None,
         }
     }
-    #[doc = "2.7Gpbs per lane other: Reserved"]
+    #[doc = "1.62Gpbs per lane"]
     #[inline(always)]
     pub fn is_h06(&self) -> bool {
         *self == LinkBwSet::H06
@@ -50,7 +51,7 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "2.7Gpbs per lane other: Reserved"]
+    #[doc = "1.62Gpbs per lane"]
     #[inline(always)]
     pub fn h06(self) -> &'a mut crate::W<REG> {
         self.variant(LinkBwSet::H06)

@@ -14,17 +14,17 @@ pub mod generic;
 #[doc(hidden)]
 pub mod interrupt;
 pub use self::interrupt::Interrupt;
-#[doc = "Power Management Unit Clock and Reset Unit (PMUCRU) Registers"]
-pub struct Pmucru {
+#[doc = "Cache Coherent Interconnect 500 (CCI500) Registers"]
+pub struct Cci500 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for Pmucru {}
-impl Pmucru {
+unsafe impl Send for Cci500 {}
+impl Cci500 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const pmucru::RegisterBlock = 0xff75_0000 as *const _;
+    pub const PTR: *const cci500::RegisterBlock = 0xff9c_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const pmucru::RegisterBlock {
+    pub const fn ptr() -> *const cci500::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -46,20 +46,20 @@ impl Pmucru {
         }
     }
 }
-impl Deref for Pmucru {
-    type Target = pmucru::RegisterBlock;
+impl Deref for Cci500 {
+    type Target = cci500::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for Pmucru {
+impl core::fmt::Debug for Cci500 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Pmucru").finish()
+        f.debug_struct("Cci500").finish()
     }
 }
-#[doc = "Power Management Unit Clock and Reset Unit (PMUCRU) Registers"]
-pub mod pmucru;
+#[doc = "Cache Coherent Interconnect 500 (CCI500) Registers"]
+pub mod cci500;
 #[doc = "Clock and Reset Unit (CRU) Registers"]
 pub struct Cru {
     _marker: PhantomData<*const ()>,
@@ -106,6 +106,1202 @@ impl core::fmt::Debug for Cru {
 }
 #[doc = "Clock and Reset Unit (CRU) Registers"]
 pub mod cru;
+#[doc = "DDR Controller (DDRC) Registers"]
+pub struct Ddrc {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Ddrc {}
+impl Ddrc {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const ddrc::RegisterBlock = 0xffa8_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const ddrc::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Ddrc {
+    type Target = ddrc::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Ddrc {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Ddrc").finish()
+    }
+}
+#[doc = "DDR Controller (DDRC) Registers"]
+pub mod ddrc;
+#[doc = "DDR Controller 0 (DDRC0) Registers"]
+pub struct Ddrc0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Ddrc0 {}
+impl Ddrc0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const ddrc::RegisterBlock = 0xffa8_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const ddrc::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Ddrc0 {
+    type Target = ddrc::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Ddrc0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Ddrc0").finish()
+    }
+}
+#[doc = "DDR Controller 0 (DDRC0) Registers"]
+pub use self::ddrc as ddrc0;
+#[doc = "DDR Controller 1 (DDRC1) Registers"]
+pub struct Ddrc1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Ddrc1 {}
+impl Ddrc1 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const ddrc::RegisterBlock = 0xffa8_8000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const ddrc::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Ddrc1 {
+    type Target = ddrc::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Ddrc1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Ddrc1").finish()
+    }
+}
+#[doc = "DDR Controller 1 (DDRC1) Registers"]
+pub use self::ddrc as ddrc1;
+#[doc = "DDR Controller Interface Control Registers (DDR_CIC) Registers"]
+pub struct DdrCic {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for DdrCic {}
+impl DdrCic {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const ddr_cic::RegisterBlock = 0xff62_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const ddr_cic::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for DdrCic {
+    type Target = ddr_cic::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for DdrCic {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DdrCic").finish()
+    }
+}
+#[doc = "DDR Controller Interface Control Registers (DDR_CIC) Registers"]
+pub mod ddr_cic;
+#[doc = "DDR Monitor (DDR_MON) Registers"]
+pub struct DdrMon {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for DdrMon {}
+impl DdrMon {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const ddr_mon::RegisterBlock = 0xff63_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const ddr_mon::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for DdrMon {
+    type Target = ddr_mon::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for DdrMon {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DdrMon").finish()
+    }
+}
+#[doc = "DDR Monitor (DDR_MON) Registers"]
+pub mod ddr_mon;
+#[doc = "DMA Controller (DMAC) Registers"]
+pub struct Dmac {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Dmac {}
+impl Dmac {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const dmac::RegisterBlock = 0xff6d_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const dmac::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Dmac {
+    type Target = dmac::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Dmac {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Dmac").finish()
+    }
+}
+#[doc = "DMA Controller (DMAC) Registers"]
+pub mod dmac;
+#[doc = "DMA Controller 0 Registers"]
+pub struct Dmac0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Dmac0 {}
+impl Dmac0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const dmac::RegisterBlock = 0xff6d_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const dmac::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Dmac0 {
+    type Target = dmac::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Dmac0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Dmac0").finish()
+    }
+}
+#[doc = "DMA Controller 0 Registers"]
+pub use self::dmac as dmac0;
+#[doc = "DMA Controller 1 Registers"]
+pub struct Dmac1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Dmac1 {}
+impl Dmac1 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const dmac::RegisterBlock = 0xff6e_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const dmac::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Dmac1 {
+    type Target = dmac::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Dmac1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Dmac1").finish()
+    }
+}
+#[doc = "DMA Controller 1 Registers"]
+pub use self::dmac as dmac1;
+#[doc = "DisplayPort Registers"]
+pub struct Dp {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Dp {}
+impl Dp {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const dp::RegisterBlock = 0xfec0_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const dp::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Dp {
+    type Target = dp::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Dp {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Dp").finish()
+    }
+}
+#[doc = "DisplayPort Registers"]
+pub mod dp;
+#[doc = "eFuse Registers"]
+pub struct Efuse {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Efuse {}
+impl Efuse {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const efuse::RegisterBlock = 0xff69_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const efuse::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Efuse {
+    type Target = efuse::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Efuse {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Efuse").finish()
+    }
+}
+#[doc = "eFuse Registers"]
+pub mod efuse;
+#[doc = "eFuse 0 Registers"]
+pub struct Efuse0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Efuse0 {}
+impl Efuse0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const efuse::RegisterBlock = 0xff69_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const efuse::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Efuse0 {
+    type Target = efuse::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Efuse0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Efuse0").finish()
+    }
+}
+#[doc = "eFuse 0 Registers"]
+pub use self::efuse as efuse0;
+#[doc = "eFuse 1 Registers"]
+pub struct Efuse1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Efuse1 {}
+impl Efuse1 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const efuse::RegisterBlock = 0xfffa_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const efuse::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Efuse1 {
+    type Target = efuse::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Efuse1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Efuse1").finish()
+    }
+}
+#[doc = "eFuse 1 Registers"]
+pub use self::efuse as efuse1;
+#[doc = "eMMC Controller (EMMCCORE) Registers"]
+pub struct Emmccore {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Emmccore {}
+impl Emmccore {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const emmccore::RegisterBlock = 0xfe33_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const emmccore::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Emmccore {
+    type Target = emmccore::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Emmccore {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Emmccore").finish()
+    }
+}
+#[doc = "eMMC Controller (EMMCCORE) Registers"]
+pub mod emmccore;
+#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters to the memory schedule"]
+pub struct ErrLoggerMsch {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for ErrLoggerMsch {}
+impl ErrLoggerMsch {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const err_logger_msch::RegisterBlock = 0xffa8_7c80 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const err_logger_msch::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for ErrLoggerMsch {
+    type Target = err_logger_msch::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for ErrLoggerMsch {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ErrLoggerMsch").finish()
+    }
+}
+#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters to the memory schedule"]
+pub mod err_logger_msch;
+#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters to the memory schedule 0"]
+pub struct ErrLoggerMsch0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for ErrLoggerMsch0 {}
+impl ErrLoggerMsch0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const err_logger_msch::RegisterBlock = 0xffa8_7c80 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const err_logger_msch::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for ErrLoggerMsch0 {
+    type Target = err_logger_msch::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for ErrLoggerMsch0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ErrLoggerMsch0").finish()
+    }
+}
+#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters to the memory schedule 0"]
+pub use self::err_logger_msch as err_logger_msch0;
+#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters to the memory schedule 1"]
+pub struct ErrLoggerMsch1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for ErrLoggerMsch1 {}
+impl ErrLoggerMsch1 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const err_logger_msch::RegisterBlock = 0xffa8_fc80 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const err_logger_msch::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for ErrLoggerMsch1 {
+    type Target = err_logger_msch::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for ErrLoggerMsch1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ErrLoggerMsch1").finish()
+    }
+}
+#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters to the memory schedule 1"]
+pub use self::err_logger_msch as err_logger_msch1;
+#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters except the PMU of the Cortex-M0 to all slaves outside the PMU power domain"]
+pub struct ErrLoggerSlv {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for ErrLoggerSlv {}
+impl ErrLoggerSlv {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const err_logger_slv::RegisterBlock = 0xffa6_4000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const err_logger_slv::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for ErrLoggerSlv {
+    type Target = err_logger_slv::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for ErrLoggerSlv {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ErrLoggerSlv").finish()
+    }
+}
+#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters except the PMU of the Cortex-M0 to all slaves outside the PMU power domain"]
+pub mod err_logger_slv;
+#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters except the PMU of the Cortex-M0 to all slaves outside the PMU power domain"]
+pub struct ErrLoggerSlv0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for ErrLoggerSlv0 {}
+impl ErrLoggerSlv0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const err_logger_slv::RegisterBlock = 0xffa6_4000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const err_logger_slv::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for ErrLoggerSlv0 {
+    type Target = err_logger_slv::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for ErrLoggerSlv0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ErrLoggerSlv0").finish()
+    }
+}
+#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters except the PMU of the Cortex-M0 to all slaves outside the PMU power domain"]
+pub use self::err_logger_slv as err_logger_slv0;
+#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from the PMU of the Cortex-M0 to all slaves inside the PMU power domain"]
+pub struct ErrLoggerSlv1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for ErrLoggerSlv1 {}
+impl ErrLoggerSlv1 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const err_logger_slv::RegisterBlock = 0xffa6_8080 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const err_logger_slv::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for ErrLoggerSlv1 {
+    type Target = err_logger_slv::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for ErrLoggerSlv1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ErrLoggerSlv1").finish()
+    }
+}
+#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from the PMU of the Cortex-M0 to all slaves inside the PMU power domain"]
+pub use self::err_logger_slv as err_logger_slv1;
+#[doc = "Gigabit Media Access Controller (GMAC) Registers"]
+pub struct Gmac {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Gmac {}
+impl Gmac {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const gmac::RegisterBlock = 0xfe30_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const gmac::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Gmac {
+    type Target = gmac::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Gmac {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Gmac").finish()
+    }
+}
+#[doc = "Gigabit Media Access Controller (GMAC) Registers"]
+pub mod gmac;
+#[doc = "General Purpose Input/Output (GPIO) Registers"]
+pub struct Gpio {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Gpio {}
+impl Gpio {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const gpio::RegisterBlock = 0xff72_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const gpio::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Gpio {
+    type Target = gpio::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Gpio {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Gpio").finish()
+    }
+}
+#[doc = "General Purpose Input/Output (GPIO) Registers"]
+pub mod gpio;
+#[doc = "General Purpose Input/Output (GPIO) 0 Registers"]
+pub struct Gpio0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Gpio0 {}
+impl Gpio0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const gpio::RegisterBlock = 0xff72_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const gpio::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Gpio0 {
+    type Target = gpio::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Gpio0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Gpio0").finish()
+    }
+}
+#[doc = "General Purpose Input/Output (GPIO) 0 Registers"]
+pub use self::gpio as gpio0;
+#[doc = "General Purpose Input/Output (GPIO) 1 Registers"]
+pub struct Gpio1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Gpio1 {}
+impl Gpio1 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const gpio::RegisterBlock = 0xff73_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const gpio::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Gpio1 {
+    type Target = gpio::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Gpio1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Gpio1").finish()
+    }
+}
+#[doc = "General Purpose Input/Output (GPIO) 1 Registers"]
+pub use self::gpio as gpio1;
+#[doc = "General Purpose Input/Output (GPIO) 2 Registers"]
+pub struct Gpio2 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Gpio2 {}
+impl Gpio2 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const gpio::RegisterBlock = 0xff78_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const gpio::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Gpio2 {
+    type Target = gpio::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Gpio2 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Gpio2").finish()
+    }
+}
+#[doc = "General Purpose Input/Output (GPIO) 2 Registers"]
+pub use self::gpio as gpio2;
+#[doc = "General Purpose Input/Output (GPIO) 3 Registers"]
+pub struct Gpio3 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Gpio3 {}
+impl Gpio3 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const gpio::RegisterBlock = 0xff78_8000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const gpio::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Gpio3 {
+    type Target = gpio::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Gpio3 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Gpio3").finish()
+    }
+}
+#[doc = "General Purpose Input/Output (GPIO) 3 Registers"]
+pub use self::gpio as gpio3;
+#[doc = "General Purpose Input/Output (GPIO) 4 Registers"]
+pub struct Gpio4 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Gpio4 {}
+impl Gpio4 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const gpio::RegisterBlock = 0xff79_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const gpio::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Gpio4 {
+    type Target = gpio::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Gpio4 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Gpio4").finish()
+    }
+}
+#[doc = "General Purpose Input/Output (GPIO) 4 Registers"]
+pub use self::gpio as gpio4;
 #[doc = "General Register File (GRF) Registers"]
 pub struct Grf {
     _marker: PhantomData<*const ()>,
@@ -152,6 +1348,1110 @@ impl core::fmt::Debug for Grf {
 }
 #[doc = "General Register File (GRF) Registers"]
 pub mod grf;
+#[doc = "HDMI Registers"]
+pub struct Hdmi {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Hdmi {}
+impl Hdmi {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const hdmi::RegisterBlock = 0xff94_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const hdmi::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Hdmi {
+    type Target = hdmi::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Hdmi {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Hdmi").finish()
+    }
+}
+#[doc = "HDMI Registers"]
+pub mod hdmi;
+#[doc = "Inter-IC Sound (I2S) Registers"]
+pub struct I2s {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for I2s {}
+impl I2s {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const i2s::RegisterBlock = 0xff88_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const i2s::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for I2s {
+    type Target = i2s::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for I2s {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2s").finish()
+    }
+}
+#[doc = "Inter-IC Sound (I2S) Registers"]
+pub mod i2s;
+#[doc = "Inter-IC Sound (I2S) 0 Registers"]
+pub struct I2s0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for I2s0 {}
+impl I2s0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const i2s::RegisterBlock = 0xff88_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const i2s::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for I2s0 {
+    type Target = i2s::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for I2s0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2s0").finish()
+    }
+}
+#[doc = "Inter-IC Sound (I2S) 0 Registers"]
+pub use self::i2s as i2s0;
+#[doc = "Inter-IC Sound (I2S) 1 Registers"]
+pub struct I2s1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for I2s1 {}
+impl I2s1 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const i2s::RegisterBlock = 0xff89_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const i2s::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for I2s1 {
+    type Target = i2s::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for I2s1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2s1").finish()
+    }
+}
+#[doc = "Inter-IC Sound (I2S) 1 Registers"]
+pub use self::i2s as i2s1;
+#[doc = "Inter-IC Sound (I2S) 2 Registers"]
+pub struct I2s2 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for I2s2 {}
+impl I2s2 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const i2s::RegisterBlock = 0xff8a_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const i2s::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for I2s2 {
+    type Target = i2s::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for I2s2 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2s2").finish()
+    }
+}
+#[doc = "Inter-IC Sound (I2S) 2 Registers"]
+pub use self::i2s as i2s2;
+#[doc = "Mailbox Registers"]
+pub struct Mailbox {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Mailbox {}
+impl Mailbox {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const mailbox::RegisterBlock = 0xff6b_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const mailbox::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Mailbox {
+    type Target = mailbox::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Mailbox {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Mailbox").finish()
+    }
+}
+#[doc = "Mailbox Registers"]
+pub mod mailbox;
+#[doc = "Mailbox 0 Registers"]
+pub struct Mailbox0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Mailbox0 {}
+impl Mailbox0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const mailbox::RegisterBlock = 0xff6b_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const mailbox::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Mailbox0 {
+    type Target = mailbox::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Mailbox0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Mailbox0").finish()
+    }
+}
+#[doc = "Mailbox 0 Registers"]
+pub use self::mailbox as mailbox0;
+#[doc = "Mailbox 1 Registers"]
+pub struct Mailbox1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Mailbox1 {}
+impl Mailbox1 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const mailbox::RegisterBlock = 0xff39_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const mailbox::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Mailbox1 {
+    type Target = mailbox::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Mailbox1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Mailbox1").finish()
+    }
+}
+#[doc = "Mailbox 1 Registers"]
+pub use self::mailbox as mailbox1;
+#[doc = "Memory Management Unit (MMU) Registers"]
+pub struct Mmu {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Mmu {}
+impl Mmu {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const mmu::RegisterBlock = 0xff91_4000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const mmu::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Mmu {
+    type Target = mmu::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Mmu {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Mmu").finish()
+    }
+}
+#[doc = "Memory Management Unit (MMU) Registers"]
+pub mod mmu;
+#[doc = "Registers of Memory Management Unit 0 (MMU0) for Image Signal Processor 0 (ISP0)"]
+pub struct Mmu0Isp0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Mmu0Isp0 {}
+impl Mmu0Isp0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const mmu::RegisterBlock = 0xff91_4000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const mmu::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Mmu0Isp0 {
+    type Target = mmu::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Mmu0Isp0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Mmu0Isp0").finish()
+    }
+}
+#[doc = "Registers of Memory Management Unit 0 (MMU0) for Image Signal Processor 0 (ISP0)"]
+pub use self::mmu as mmu0_isp0;
+#[doc = "Registers of Memory Management Unit 0 (MMU0) for Image Signal Processor 1 (ISP1)"]
+pub struct Mmu0Isp1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Mmu0Isp1 {}
+impl Mmu0Isp1 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const mmu::RegisterBlock = 0xff92_4000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const mmu::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Mmu0Isp1 {
+    type Target = mmu::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Mmu0Isp1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Mmu0Isp1").finish()
+    }
+}
+#[doc = "Registers of Memory Management Unit 0 (MMU0) for Image Signal Processor 1 (ISP1)"]
+pub use self::mmu as mmu0_isp1;
+#[doc = "Registers of Memory Management Unit 1 (MMU1) for Image Signal Processor 0 (ISP0)"]
+pub struct Mmu1Isp0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Mmu1Isp0 {}
+impl Mmu1Isp0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const mmu::RegisterBlock = 0xff91_5000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const mmu::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Mmu1Isp0 {
+    type Target = mmu::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Mmu1Isp0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Mmu1Isp0").finish()
+    }
+}
+#[doc = "Registers of Memory Management Unit 1 (MMU1) for Image Signal Processor 0 (ISP0)"]
+pub use self::mmu as mmu1_isp0;
+#[doc = "Registers of Memory Management Unit 1 (MMU1) for Image Signal Processor 1 (ISP1)"]
+pub struct Mmu1Isp1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Mmu1Isp1 {}
+impl Mmu1Isp1 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const mmu::RegisterBlock = 0xff92_5000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const mmu::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Mmu1Isp1 {
+    type Target = mmu::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Mmu1Isp1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Mmu1Isp1").finish()
+    }
+}
+#[doc = "Registers of Memory Management Unit 1 (MMU1) for Image Signal Processor 1 (ISP1)"]
+pub use self::mmu as mmu1_isp1;
+#[doc = "Registers of Memory Management Unit (MMU) for High-bandwidth Digital Content Protection (HDCP)"]
+pub struct MmuHdcp {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for MmuHdcp {}
+impl MmuHdcp {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const mmu::RegisterBlock = 0xff93_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const mmu::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for MmuHdcp {
+    type Target = mmu::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for MmuHdcp {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MmuHdcp").finish()
+    }
+}
+#[doc = "Registers of Memory Management Unit (MMU) for High-bandwidth Digital Content Protection (HDCP)"]
+pub use self::mmu as mmu_hdcp;
+#[doc = "Registers of Memory Management Unit (MMU) for Image Enhancement Processor (IEP)"]
+pub struct MmuIep {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for MmuIep {}
+impl MmuIep {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const mmu::RegisterBlock = 0xff67_0800 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const mmu::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for MmuIep {
+    type Target = mmu::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for MmuIep {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MmuIep").finish()
+    }
+}
+#[doc = "Registers of Memory Management Unit (MMU) for Image Enhancement Processor (IEP)"]
+pub use self::mmu as mmu_iep;
+#[doc = "Registers of Memory Management Unit (MMU) for Video Output Processor (Big) (VOPB)"]
+pub struct MmuVopb {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for MmuVopb {}
+impl MmuVopb {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const mmu::RegisterBlock = 0xff90_0300 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const mmu::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for MmuVopb {
+    type Target = mmu::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for MmuVopb {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MmuVopb").finish()
+    }
+}
+#[doc = "Registers of Memory Management Unit (MMU) for Video Output Processor (Big) (VOPB)"]
+pub use self::mmu as mmu_vopb;
+#[doc = "Registers of Memory Management Unit (MMU) for Video Output Processor (Little) (VOPL)"]
+pub struct MmuVopl {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for MmuVopl {}
+impl MmuVopl {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const mmu::RegisterBlock = 0xff8f_0300 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const mmu::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for MmuVopl {
+    type Target = mmu::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for MmuVopl {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MmuVopl").finish()
+    }
+}
+#[doc = "Registers of Memory Management Unit (MMU) for Video Output Processor (Little) (VOPL)"]
+pub use self::mmu as mmu_vopl;
+#[doc = "Memory Schedule (MSCH) Registers"]
+pub struct Msch {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Msch {}
+impl Msch {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const msch::RegisterBlock = 0xffa8_4000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const msch::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Msch {
+    type Target = msch::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Msch {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Msch").finish()
+    }
+}
+#[doc = "Memory Schedule (MSCH) Registers"]
+pub mod msch;
+#[doc = "Memory Schedule (MSCH) 0 Registers"]
+pub struct Msch0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Msch0 {}
+impl Msch0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const msch::RegisterBlock = 0xffa8_4000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const msch::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Msch0 {
+    type Target = msch::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Msch0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Msch0").finish()
+    }
+}
+#[doc = "Memory Schedule (MSCH) 0 Registers"]
+pub use self::msch as msch0;
+#[doc = "Memory Schedule (MSCH) 1 Registers"]
+pub struct Msch1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Msch1 {}
+impl Msch1 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const msch::RegisterBlock = 0xffa8_c000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const msch::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Msch1 {
+    type Target = msch::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Msch1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Msch1").finish()
+    }
+}
+#[doc = "Memory Schedule (MSCH) 1 Registers"]
+pub use self::msch as msch1;
+#[doc = "PCIe Client Registers"]
+pub struct PcieClient {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for PcieClient {}
+impl PcieClient {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const pcie_client::RegisterBlock = 0xfd00_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const pcie_client::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for PcieClient {
+    type Target = pcie_client::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for PcieClient {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PcieClient").finish()
+    }
+}
+#[doc = "PCIe Client Registers"]
+pub mod pcie_client;
+#[doc = "PCIe Core Registers"]
+pub struct PcieCore {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for PcieCore {}
+impl PcieCore {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const pcie_core::RegisterBlock = 0xfd80_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const pcie_core::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for PcieCore {
+    type Target = pcie_core::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for PcieCore {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PcieCore").finish()
+    }
+}
+#[doc = "PCIe Core Registers"]
+pub mod pcie_core;
+#[doc = "Power Management Unit (PMU) Registers"]
+pub struct Pmu {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Pmu {}
+impl Pmu {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const pmu::RegisterBlock = 0xff31_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const pmu::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Pmu {
+    type Target = pmu::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Pmu {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Pmu").finish()
+    }
+}
+#[doc = "Power Management Unit (PMU) Registers"]
+pub mod pmu;
+#[doc = "Power Management Unit Clock and Reset Unit (PMUCRU) Registers"]
+pub struct Pmucru {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Pmucru {}
+impl Pmucru {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const pmucru::RegisterBlock = 0xff75_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const pmucru::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Pmucru {
+    type Target = pmucru::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Pmucru {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Pmucru").finish()
+    }
+}
+#[doc = "Power Management Unit Clock and Reset Unit (PMUCRU) Registers"]
+pub mod pmucru;
 #[doc = "Power Management Unit General Register File (PMUGRF) Registers"]
 pub struct Pmugrf {
     _marker: PhantomData<*const ()>,
@@ -198,6 +2498,742 @@ impl core::fmt::Debug for Pmugrf {
 }
 #[doc = "Power Management Unit General Register File (PMUGRF) Registers"]
 pub mod pmugrf;
+#[doc = "Probe Registers"]
+pub struct Probe {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Probe {}
+impl Probe {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const probe::RegisterBlock = 0xffa8_6000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const probe::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Probe {
+    type Target = probe::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Probe {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Probe").finish()
+    }
+}
+#[doc = "Probe Registers"]
+pub mod probe;
+#[doc = "Registers for the probe covering paths from the CCI_M1 to the memory schedule 0"]
+pub struct ProbeCciMsch0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for ProbeCciMsch0 {}
+impl ProbeCciMsch0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const probe::RegisterBlock = 0xffa8_6000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const probe::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for ProbeCciMsch0 {
+    type Target = probe::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for ProbeCciMsch0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ProbeCciMsch0").finish()
+    }
+}
+#[doc = "Registers for the probe covering paths from the CCI_M1 to the memory schedule 0"]
+pub use self::probe as probe_cci_msch0;
+#[doc = "Registers for the probe covering paths from the CCI_M1 to the memory schedule 1"]
+pub struct ProbeCciMsch1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for ProbeCciMsch1 {}
+impl ProbeCciMsch1 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const probe::RegisterBlock = 0xffa8_e000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const probe::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for ProbeCciMsch1 {
+    type Target = probe::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for ProbeCciMsch1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ProbeCciMsch1").finish()
+    }
+}
+#[doc = "Registers for the probe covering paths from the CCI_M1 to the memory schedule 1"]
+pub use self::probe as probe_cci_msch1;
+#[doc = "Registers for the probe covering paths from the GPU to the memory schedule 0"]
+pub struct ProbeGpuMsch0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for ProbeGpuMsch0 {}
+impl ProbeGpuMsch0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const probe::RegisterBlock = 0xffa8_6400 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const probe::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for ProbeGpuMsch0 {
+    type Target = probe::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for ProbeGpuMsch0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ProbeGpuMsch0").finish()
+    }
+}
+#[doc = "Registers for the probe covering paths from the GPU to the memory schedule 0"]
+pub use self::probe as probe_gpu_msch0;
+#[doc = "Registers for the probe covering paths from the GPU to the memory schedule 1"]
+pub struct ProbeGpuMsch1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for ProbeGpuMsch1 {}
+impl ProbeGpuMsch1 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const probe::RegisterBlock = 0xffa8_e400 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const probe::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for ProbeGpuMsch1 {
+    type Target = probe::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for ProbeGpuMsch1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ProbeGpuMsch1").finish()
+    }
+}
+#[doc = "Registers for the probe covering paths from the GPU to the memory schedule 1"]
+pub use self::probe as probe_gpu_msch1;
+#[doc = "Registers for the probe covering paths from the perihp master NIU to the memory schedule 0"]
+pub struct ProbePerihpMsch0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for ProbePerihpMsch0 {}
+impl ProbePerihpMsch0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const probe::RegisterBlock = 0xffa8_6800 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const probe::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for ProbePerihpMsch0 {
+    type Target = probe::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for ProbePerihpMsch0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ProbePerihpMsch0").finish()
+    }
+}
+#[doc = "Registers for the probe covering paths from the perihp master NIU to the memory schedule 0"]
+pub use self::probe as probe_perihp_msch0;
+#[doc = "Registers for the probe covering paths from the perihp master NIU to the memory schedule 1"]
+pub struct ProbePerihpMsch1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for ProbePerihpMsch1 {}
+impl ProbePerihpMsch1 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const probe::RegisterBlock = 0xffa8_e800 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const probe::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for ProbePerihpMsch1 {
+    type Target = probe::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for ProbePerihpMsch1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ProbePerihpMsch1").finish()
+    }
+}
+#[doc = "Registers for the probe covering paths from the perihp master NIU to the memory schedule 1"]
+pub use self::probe as probe_perihp_msch1;
+#[doc = "Registers for the probe covering paths from the perilp master NIU, debug and CCI_M0 to the memory schedule 0"]
+pub struct ProbePerilpMsch0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for ProbePerilpMsch0 {}
+impl ProbePerilpMsch0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const probe::RegisterBlock = 0xffa8_6c00 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const probe::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for ProbePerilpMsch0 {
+    type Target = probe::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for ProbePerilpMsch0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ProbePerilpMsch0").finish()
+    }
+}
+#[doc = "Registers for the probe covering paths from the perilp master NIU, debug and CCI_M0 to the memory schedule 0"]
+pub use self::probe as probe_perilp_msch0;
+#[doc = "Registers for the probe covering paths from the perilp master NIU, debug and CCI_M0 to the memory schedule 1"]
+pub struct ProbePerilpMsch1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for ProbePerilpMsch1 {}
+impl ProbePerilpMsch1 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const probe::RegisterBlock = 0xffa8_ec00 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const probe::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for ProbePerilpMsch1 {
+    type Target = probe::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for ProbePerilpMsch1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ProbePerilpMsch1").finish()
+    }
+}
+#[doc = "Registers for the probe covering paths from the perilp master NIU, debug and CCI_M0 to the memory schedule 1"]
+pub use self::probe as probe_perilp_msch1;
+#[doc = "Registers for the probe covering paths from video to the memory schedule 0"]
+pub struct ProbeVideoMsch0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for ProbeVideoMsch0 {}
+impl ProbeVideoMsch0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const probe::RegisterBlock = 0xffa8_7000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const probe::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for ProbeVideoMsch0 {
+    type Target = probe::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for ProbeVideoMsch0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ProbeVideoMsch0").finish()
+    }
+}
+#[doc = "Registers for the probe covering paths from video to the memory schedule 0"]
+pub use self::probe as probe_video_msch0;
+#[doc = "Registers for the probe covering paths from video to the memory schedule 1"]
+pub struct ProbeVideoMsch1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for ProbeVideoMsch1 {}
+impl ProbeVideoMsch1 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const probe::RegisterBlock = 0xffa8_f000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const probe::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for ProbeVideoMsch1 {
+    type Target = probe::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for ProbeVideoMsch1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ProbeVideoMsch1").finish()
+    }
+}
+#[doc = "Registers for the probe covering paths from video to the memory schedule 1"]
+pub use self::probe as probe_video_msch1;
+#[doc = "Registers for the probe covering paths from the IEP, ISP0 and VOP-BIG to the memory schedule 0"]
+pub struct ProbeVio0Msch0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for ProbeVio0Msch0 {}
+impl ProbeVio0Msch0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const probe::RegisterBlock = 0xffa8_7400 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const probe::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for ProbeVio0Msch0 {
+    type Target = probe::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for ProbeVio0Msch0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ProbeVio0Msch0").finish()
+    }
+}
+#[doc = "Registers for the probe covering paths from the IEP, ISP0 and VOP-BIG to the memory schedule 0"]
+pub use self::probe as probe_vio0_msch0;
+#[doc = "Registers for the probe covering paths from the IEP, ISP0 and VOP-BIG to the memory schedule 1"]
+pub struct ProbeVio0Msch1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for ProbeVio0Msch1 {}
+impl ProbeVio0Msch1 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const probe::RegisterBlock = 0xffa8_f400 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const probe::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for ProbeVio0Msch1 {
+    type Target = probe::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for ProbeVio0Msch1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ProbeVio0Msch1").finish()
+    }
+}
+#[doc = "Registers for the probe covering paths from the IEP, ISP0 and VOP-BIG to the memory schedule 1"]
+pub use self::probe as probe_vio0_msch1;
+#[doc = "Registers for the probe covering paths from the RGA, ISP1, VOP-LITTLE and HDCP to the memory schedule 0"]
+pub struct ProbeVio1Msch0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for ProbeVio1Msch0 {}
+impl ProbeVio1Msch0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const probe::RegisterBlock = 0xffa8_7800 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const probe::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for ProbeVio1Msch0 {
+    type Target = probe::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for ProbeVio1Msch0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ProbeVio1Msch0").finish()
+    }
+}
+#[doc = "Registers for the probe covering paths from the RGA, ISP1, VOP-LITTLE and HDCP to the memory schedule 0"]
+pub use self::probe as probe_vio1_msch0;
+#[doc = "Registers for the probe covering paths from the RGA, ISP1, VOP-LITTLE and HDCP to the memory schedule 1"]
+pub struct ProbeVio1Msch1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for ProbeVio1Msch1 {}
+impl ProbeVio1Msch1 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const probe::RegisterBlock = 0xffa8_f800 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const probe::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for ProbeVio1Msch1 {
+    type Target = probe::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for ProbeVio1Msch1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ProbeVio1Msch1").finish()
+    }
+}
+#[doc = "Registers for the probe covering paths from the RGA, ISP1, VOP-LITTLE and HDCP to the memory schedule 1"]
+pub use self::probe as probe_vio1_msch1;
+#[doc = "Pulse Width Modulation (PWM) Registers"]
+pub struct Pwm {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for Pwm {}
+impl Pwm {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const pwm::RegisterBlock = 0xff42_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const pwm::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for Pwm {
+    type Target = pwm::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for Pwm {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Pwm").finish()
+    }
+}
+#[doc = "Pulse Width Modulation (PWM) Registers"]
+pub mod pwm;
 #[doc = "Quality of Service (QOS) Registers"]
 pub struct Qos {
     _marker: PhantomData<*const ()>,
@@ -336,144 +3372,6 @@ impl core::fmt::Debug for QosCciM1 {
 }
 #[doc = "QoS Registers for CCI_M1"]
 pub use self::qos as qos_cci_m1;
-#[doc = "QoS Registers for DMAC0"]
-pub struct QosDmac0 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for QosDmac0 {}
-impl QosDmac0 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const qos::RegisterBlock = 0xffa6_4200 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const qos::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for QosDmac0 {
-    type Target = qos::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for QosDmac0 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("QosDmac0").finish()
-    }
-}
-#[doc = "QoS Registers for DMAC0"]
-pub use self::qos as qos_dmac0;
-#[doc = "QoS Registers for DMAC1"]
-pub struct QosDmac1 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for QosDmac1 {}
-impl QosDmac1 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const qos::RegisterBlock = 0xffa6_4280 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const qos::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for QosDmac1 {
-    type Target = qos::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for QosDmac1 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("QosDmac1").finish()
-    }
-}
-#[doc = "QoS Registers for DMAC1"]
-pub use self::qos as qos_dmac1;
-#[doc = "QoS Registers for DCF"]
-pub struct QosDcf {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for QosDcf {}
-impl QosDcf {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const qos::RegisterBlock = 0xffa6_4180 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const qos::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for QosDcf {
-    type Target = qos::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for QosDcf {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("QosDcf").finish()
-    }
-}
-#[doc = "QoS Registers for DCF"]
-pub use self::qos as qos_dcf;
 #[doc = "QoS Registers for CRYPTO0"]
 pub struct QosCrypto0 {
     _marker: PhantomData<*const ()>,
@@ -566,14 +3464,14 @@ impl core::fmt::Debug for QosCrypto1 {
 }
 #[doc = "QoS Registers for CRYPTO1"]
 pub use self::qos as qos_crypto1;
-#[doc = "QoS Registers for PMU_CM0"]
-pub struct QosPmuCm0 {
+#[doc = "QoS Registers for DCF"]
+pub struct QosDcf {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for QosPmuCm0 {}
-impl QosPmuCm0 {
+unsafe impl Send for QosDcf {}
+impl QosDcf {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const qos::RegisterBlock = 0xffa6_8000 as *const _;
+    pub const PTR: *const qos::RegisterBlock = 0xffa6_4180 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
     pub const fn ptr() -> *const qos::RegisterBlock {
@@ -598,28 +3496,28 @@ impl QosPmuCm0 {
         }
     }
 }
-impl Deref for QosPmuCm0 {
+impl Deref for QosDcf {
     type Target = qos::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for QosPmuCm0 {
+impl core::fmt::Debug for QosDcf {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("QosPmuCm0").finish()
+        f.debug_struct("QosDcf").finish()
     }
 }
-#[doc = "QoS Registers for PMU_CM0"]
-pub use self::qos as qos_pmu_cm0;
-#[doc = "QoS Registers for PERI_CM0"]
-pub struct QosPeriCm0 {
+#[doc = "QoS Registers for DCF"]
+pub use self::qos as qos_dcf;
+#[doc = "QoS Registers for DMAC0"]
+pub struct QosDmac0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for QosPeriCm0 {}
-impl QosPeriCm0 {
+unsafe impl Send for QosDmac0 {}
+impl QosDmac0 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const qos::RegisterBlock = 0xffa6_4300 as *const _;
+    pub const PTR: *const qos::RegisterBlock = 0xffa6_4200 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
     pub const fn ptr() -> *const qos::RegisterBlock {
@@ -644,28 +3542,28 @@ impl QosPeriCm0 {
         }
     }
 }
-impl Deref for QosPeriCm0 {
+impl Deref for QosDmac0 {
     type Target = qos::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for QosPeriCm0 {
+impl core::fmt::Debug for QosDmac0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("QosPeriCm0").finish()
+        f.debug_struct("QosDmac0").finish()
     }
 }
-#[doc = "QoS Registers for PERI_CM0"]
-pub use self::qos as qos_peri_cm0;
-#[doc = "QoS Registers for GIC"]
-pub struct QosGic {
+#[doc = "QoS Registers for DMAC0"]
+pub use self::qos as qos_dmac0;
+#[doc = "QoS Registers for DMAC1"]
+pub struct QosDmac1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for QosGic {}
-impl QosGic {
+unsafe impl Send for QosDmac1 {}
+impl QosDmac1 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const qos::RegisterBlock = 0xffa7_8000 as *const _;
+    pub const PTR: *const qos::RegisterBlock = 0xffa6_4280 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
     pub const fn ptr() -> *const qos::RegisterBlock {
@@ -690,112 +3588,20 @@ impl QosGic {
         }
     }
 }
-impl Deref for QosGic {
+impl Deref for QosDmac1 {
     type Target = qos::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for QosGic {
+impl core::fmt::Debug for QosDmac1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("QosGic").finish()
+        f.debug_struct("QosDmac1").finish()
     }
 }
-#[doc = "QoS Registers for GIC"]
-pub use self::qos as qos_gic;
-#[doc = "QoS Registers for SDIO"]
-pub struct QosSdio {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for QosSdio {}
-impl QosSdio {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const qos::RegisterBlock = 0xffa7_6000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const qos::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for QosSdio {
-    type Target = qos::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for QosSdio {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("QosSdio").finish()
-    }
-}
-#[doc = "QoS Registers for SDIO"]
-pub use self::qos as qos_sdio;
-#[doc = "QoS Registers for SDMMC"]
-pub struct QosSdmmc {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for QosSdmmc {}
-impl QosSdmmc {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const qos::RegisterBlock = 0xffa7_4000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const qos::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for QosSdmmc {
-    type Target = qos::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for QosSdmmc {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("QosSdmmc").finish()
-    }
-}
-#[doc = "QoS Registers for SDMMC"]
-pub use self::qos as qos_sdmmc;
+#[doc = "QoS Registers for DMAC1"]
+pub use self::qos as qos_dmac1;
 #[doc = "QoS Registers for EMMC"]
 pub struct QosEmmc {
     _marker: PhantomData<*const ()>,
@@ -842,14 +3648,14 @@ impl core::fmt::Debug for QosEmmc {
 }
 #[doc = "QoS Registers for EMMC"]
 pub use self::qos as qos_emmc;
-#[doc = "QoS Registers for PCIE"]
-pub struct QosPcie {
+#[doc = "QoS Registers for GIC"]
+pub struct QosGic {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for QosPcie {}
-impl QosPcie {
+unsafe impl Send for QosGic {}
+impl QosGic {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const qos::RegisterBlock = 0xffa6_0080 as *const _;
+    pub const PTR: *const qos::RegisterBlock = 0xffa7_8000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
     pub const fn ptr() -> *const qos::RegisterBlock {
@@ -874,66 +3680,20 @@ impl QosPcie {
         }
     }
 }
-impl Deref for QosPcie {
+impl Deref for QosGic {
     type Target = qos::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for QosPcie {
+impl core::fmt::Debug for QosGic {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("QosPcie").finish()
+        f.debug_struct("QosGic").finish()
     }
 }
-#[doc = "QoS Registers for PCIE"]
-pub use self::qos as qos_pcie;
-#[doc = "QoS Registers for HSIC"]
-pub struct QosHsic {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for QosHsic {}
-impl QosHsic {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const qos::RegisterBlock = 0xffa6_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const qos::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for QosHsic {
-    type Target = qos::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for QosHsic {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("QosHsic").finish()
-    }
-}
-#[doc = "QoS Registers for HSIC"]
-pub use self::qos as qos_hsic;
+#[doc = "QoS Registers for GIC"]
+pub use self::qos as qos_gic;
 #[doc = "QoS Registers for GMAC"]
 pub struct QosGmac {
     _marker: PhantomData<*const ()>,
@@ -980,190 +3740,6 @@ impl core::fmt::Debug for QosGmac {
 }
 #[doc = "QoS Registers for GMAC"]
 pub use self::qos as qos_gmac;
-#[doc = "QoS Registers for USB_OTG0"]
-pub struct QosUsbOtg0 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for QosUsbOtg0 {}
-impl QosUsbOtg0 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const qos::RegisterBlock = 0xffa7_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const qos::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for QosUsbOtg0 {
-    type Target = qos::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for QosUsbOtg0 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("QosUsbOtg0").finish()
-    }
-}
-#[doc = "QoS Registers for USB_OTG0"]
-pub use self::qos as qos_usb_otg0;
-#[doc = "QoS Registers for USB_OTG1"]
-pub struct QosUsbOtg1 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for QosUsbOtg1 {}
-impl QosUsbOtg1 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const qos::RegisterBlock = 0xffa7_0080 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const qos::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for QosUsbOtg1 {
-    type Target = qos::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for QosUsbOtg1 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("QosUsbOtg1").finish()
-    }
-}
-#[doc = "QoS Registers for USB_OTG1"]
-pub use self::qos as qos_usb_otg1;
-#[doc = "QoS Registers for USB_HOST0"]
-pub struct QosUsbHost0 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for QosUsbHost0 {}
-impl QosUsbHost0 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const qos::RegisterBlock = 0xffa6_0100 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const qos::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for QosUsbHost0 {
-    type Target = qos::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for QosUsbHost0 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("QosUsbHost0").finish()
-    }
-}
-#[doc = "QoS Registers for USB_HOST0"]
-pub use self::qos as qos_usb_host0;
-#[doc = "QoS Registers for USB_HOST1"]
-pub struct QosUsbHost1 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for QosUsbHost1 {}
-impl QosUsbHost1 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const qos::RegisterBlock = 0xffa6_0180 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const qos::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for QosUsbHost1 {
-    type Target = qos::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for QosUsbHost1 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("QosUsbHost1").finish()
-    }
-}
-#[doc = "QoS Registers for USB_HOST1"]
-pub use self::qos as qos_usb_host1;
 #[doc = "QoS Registers for GPU"]
 pub struct QosGpu {
     _marker: PhantomData<*const ()>,
@@ -1210,14 +3786,14 @@ impl core::fmt::Debug for QosGpu {
 }
 #[doc = "QoS Registers for GPU"]
 pub use self::qos as qos_gpu;
-#[doc = "QoS Registers for VIDEO_M0"]
-pub struct QosVideoM0 {
+#[doc = "QoS Registers for HDCP"]
+pub struct QosHdcp {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for QosVideoM0 {}
-impl QosVideoM0 {
+unsafe impl Send for QosHdcp {}
+impl QosHdcp {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const qos::RegisterBlock = 0xffab_8000 as *const _;
+    pub const PTR: *const qos::RegisterBlock = 0xffa9_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
     pub const fn ptr() -> *const qos::RegisterBlock {
@@ -1242,28 +3818,28 @@ impl QosVideoM0 {
         }
     }
 }
-impl Deref for QosVideoM0 {
+impl Deref for QosHdcp {
     type Target = qos::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for QosVideoM0 {
+impl core::fmt::Debug for QosHdcp {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("QosVideoM0").finish()
+        f.debug_struct("QosHdcp").finish()
     }
 }
-#[doc = "QoS Registers for VIDEO_M0"]
-pub use self::qos as qos_video_m0;
-#[doc = "QoS Registers for VIDEO_M1_R"]
-pub struct QosVideoM1R {
+#[doc = "QoS Registers for HDCP"]
+pub use self::qos as qos_hdcp;
+#[doc = "QoS Registers for HSIC"]
+pub struct QosHsic {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for QosVideoM1R {}
-impl QosVideoM1R {
+unsafe impl Send for QosHsic {}
+impl QosHsic {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const qos::RegisterBlock = 0xffac_0000 as *const _;
+    pub const PTR: *const qos::RegisterBlock = 0xffa6_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
     pub const fn ptr() -> *const qos::RegisterBlock {
@@ -1288,158 +3864,20 @@ impl QosVideoM1R {
         }
     }
 }
-impl Deref for QosVideoM1R {
+impl Deref for QosHsic {
     type Target = qos::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for QosVideoM1R {
+impl core::fmt::Debug for QosHsic {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("QosVideoM1R").finish()
+        f.debug_struct("QosHsic").finish()
     }
 }
-#[doc = "QoS Registers for VIDEO_M1_R"]
-pub use self::qos as qos_video_m1_r;
-#[doc = "QoS Registers for VIDEO_M1_W"]
-pub struct QosVideoM1W {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for QosVideoM1W {}
-impl QosVideoM1W {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const qos::RegisterBlock = 0xffac_0080 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const qos::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for QosVideoM1W {
-    type Target = qos::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for QosVideoM1W {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("QosVideoM1W").finish()
-    }
-}
-#[doc = "QoS Registers for VIDEO_M1_W"]
-pub use self::qos as qos_video_m1_w;
-#[doc = "QoS Registers for RGA_R"]
-pub struct QosRgaR {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for QosRgaR {}
-impl QosRgaR {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const qos::RegisterBlock = 0xffab_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const qos::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for QosRgaR {
-    type Target = qos::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for QosRgaR {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("QosRgaR").finish()
-    }
-}
-#[doc = "QoS Registers for RGA_R"]
-pub use self::qos as qos_rga_r;
-#[doc = "QoS Registers for RGA_W"]
-pub struct QosRgaW {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for QosRgaW {}
-impl QosRgaW {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const qos::RegisterBlock = 0xffab_0080 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const qos::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for QosRgaW {
-    type Target = qos::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for QosRgaW {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("QosRgaW").finish()
-    }
-}
-#[doc = "QoS Registers for RGA_W"]
-pub use self::qos as qos_rga_w;
+#[doc = "QoS Registers for HSIC"]
+pub use self::qos as qos_hsic;
 #[doc = "QoS Registers for IEP"]
 pub struct QosIep {
     _marker: PhantomData<*const ()>,
@@ -1486,144 +3924,6 @@ impl core::fmt::Debug for QosIep {
 }
 #[doc = "QoS Registers for IEP"]
 pub use self::qos as qos_iep;
-#[doc = "QoS Registers for VOP-BIG_R"]
-pub struct QosVopBigR {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for QosVopBigR {}
-impl QosVopBigR {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const qos::RegisterBlock = 0xffac_8000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const qos::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for QosVopBigR {
-    type Target = qos::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for QosVopBigR {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("QosVopBigR").finish()
-    }
-}
-#[doc = "QoS Registers for VOP-BIG_R"]
-pub use self::qos as qos_vop_big_r;
-#[doc = "QoS Registers for VOP-BIG_W"]
-pub struct QosVopBigW {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for QosVopBigW {}
-impl QosVopBigW {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const qos::RegisterBlock = 0xffac_8080 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const qos::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for QosVopBigW {
-    type Target = qos::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for QosVopBigW {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("QosVopBigW").finish()
-    }
-}
-#[doc = "QoS Registers for VOP-BIG_W"]
-pub use self::qos as qos_vop_big_w;
-#[doc = "QoS Registers for VOP-LITTLE"]
-pub struct QosVopLittle {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for QosVopLittle {}
-impl QosVopLittle {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const qos::RegisterBlock = 0xffad_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const qos::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for QosVopLittle {
-    type Target = qos::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for QosVopLittle {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("QosVopLittle").finish()
-    }
-}
-#[doc = "QoS Registers for VOP-LITTLE"]
-pub use self::qos as qos_vop_little;
 #[doc = "QoS Registers for ISP0_M0"]
 pub struct QosIsp0M0 {
     _marker: PhantomData<*const ()>,
@@ -1808,14 +4108,14 @@ impl core::fmt::Debug for QosIsp1M1 {
 }
 #[doc = "QoS Registers for ISP1_M1"]
 pub use self::qos as qos_isp1_m1;
-#[doc = "QoS Registers for HDCP"]
-pub struct QosHdcp {
+#[doc = "QoS Registers for PCIE"]
+pub struct QosPcie {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for QosHdcp {}
-impl QosHdcp {
+unsafe impl Send for QosPcie {}
+impl QosPcie {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const qos::RegisterBlock = 0xffa9_0000 as *const _;
+    pub const PTR: *const qos::RegisterBlock = 0xffa6_0080 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
     pub const fn ptr() -> *const qos::RegisterBlock {
@@ -1840,20 +4140,20 @@ impl QosHdcp {
         }
     }
 }
-impl Deref for QosHdcp {
+impl Deref for QosPcie {
     type Target = qos::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for QosHdcp {
+impl core::fmt::Debug for QosPcie {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("QosHdcp").finish()
+        f.debug_struct("QosPcie").finish()
     }
 }
-#[doc = "QoS Registers for HDCP"]
-pub use self::qos as qos_hdcp;
+#[doc = "QoS Registers for PCIE"]
+pub use self::qos as qos_pcie;
 #[doc = "QoS Registers for PERIHP_NSP"]
 pub struct QosPerihpNsp {
     _marker: PhantomData<*const ()>,
@@ -1900,52 +4200,6 @@ impl core::fmt::Debug for QosPerihpNsp {
 }
 #[doc = "QoS Registers for PERIHP_NSP"]
 pub use self::qos as qos_perihp_nsp;
-#[doc = "QoS Registers for PERILP_NSP"]
-pub struct QosPerilpNsp {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for QosPerilpNsp {}
-impl QosPerilpNsp {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const qos::RegisterBlock = 0xffad_8180 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const qos::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for QosPerilpNsp {
-    type Target = qos::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for QosPerilpNsp {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("QosPerilpNsp").finish()
-    }
-}
-#[doc = "QoS Registers for PERILP_NSP"]
-pub use self::qos as qos_perilp_nsp;
 #[doc = "QoS Registers for PERILPSLV_NSP"]
 pub struct QosPerilpslvNsp {
     _marker: PhantomData<*const ()>,
@@ -1992,17 +4246,17 @@ impl core::fmt::Debug for QosPerilpslvNsp {
 }
 #[doc = "QoS Registers for PERILPSLV_NSP"]
 pub use self::qos as qos_perilpslv_nsp;
-#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters except the PMU of the Cortex-M0 to all slaves outside the PMU power domain"]
-pub struct ErrLoggerSlv {
+#[doc = "QoS Registers for PERILP_NSP"]
+pub struct QosPerilpNsp {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ErrLoggerSlv {}
-impl ErrLoggerSlv {
+unsafe impl Send for QosPerilpNsp {}
+impl QosPerilpNsp {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const err_logger_slv::RegisterBlock = 0xffa6_4000 as *const _;
+    pub const PTR: *const qos::RegisterBlock = 0xffad_8180 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const err_logger_slv::RegisterBlock {
+    pub const fn ptr() -> *const qos::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2024,31 +4278,31 @@ impl ErrLoggerSlv {
         }
     }
 }
-impl Deref for ErrLoggerSlv {
-    type Target = err_logger_slv::RegisterBlock;
+impl Deref for QosPerilpNsp {
+    type Target = qos::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ErrLoggerSlv {
+impl core::fmt::Debug for QosPerilpNsp {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ErrLoggerSlv").finish()
+        f.debug_struct("QosPerilpNsp").finish()
     }
 }
-#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters except the PMU of the Cortex-M0 to all slaves outside the PMU power domain"]
-pub mod err_logger_slv;
-#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters except the PMU of the Cortex-M0 to all slaves outside the PMU power domain"]
-pub struct ErrLoggerSlv0 {
+#[doc = "QoS Registers for PERILP_NSP"]
+pub use self::qos as qos_perilp_nsp;
+#[doc = "QoS Registers for PERI_CM0"]
+pub struct QosPeriCm0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ErrLoggerSlv0 {}
-impl ErrLoggerSlv0 {
+unsafe impl Send for QosPeriCm0 {}
+impl QosPeriCm0 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const err_logger_slv::RegisterBlock = 0xffa6_4000 as *const _;
+    pub const PTR: *const qos::RegisterBlock = 0xffa6_4300 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const err_logger_slv::RegisterBlock {
+    pub const fn ptr() -> *const qos::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2070,31 +4324,31 @@ impl ErrLoggerSlv0 {
         }
     }
 }
-impl Deref for ErrLoggerSlv0 {
-    type Target = err_logger_slv::RegisterBlock;
+impl Deref for QosPeriCm0 {
+    type Target = qos::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ErrLoggerSlv0 {
+impl core::fmt::Debug for QosPeriCm0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ErrLoggerSlv0").finish()
+        f.debug_struct("QosPeriCm0").finish()
     }
 }
-#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters except the PMU of the Cortex-M0 to all slaves outside the PMU power domain"]
-pub use self::err_logger_slv as err_logger_slv0;
-#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from the PMU of the Cortex-M0 to all slaves inside the PMU power domain"]
-pub struct ErrLoggerSlv1 {
+#[doc = "QoS Registers for PERI_CM0"]
+pub use self::qos as qos_peri_cm0;
+#[doc = "QoS Registers for PMU_CM0"]
+pub struct QosPmuCm0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ErrLoggerSlv1 {}
-impl ErrLoggerSlv1 {
+unsafe impl Send for QosPmuCm0 {}
+impl QosPmuCm0 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const err_logger_slv::RegisterBlock = 0xffa6_8080 as *const _;
+    pub const PTR: *const qos::RegisterBlock = 0xffa6_8000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const err_logger_slv::RegisterBlock {
+    pub const fn ptr() -> *const qos::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2116,31 +4370,31 @@ impl ErrLoggerSlv1 {
         }
     }
 }
-impl Deref for ErrLoggerSlv1 {
-    type Target = err_logger_slv::RegisterBlock;
+impl Deref for QosPmuCm0 {
+    type Target = qos::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ErrLoggerSlv1 {
+impl core::fmt::Debug for QosPmuCm0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ErrLoggerSlv1").finish()
+        f.debug_struct("QosPmuCm0").finish()
     }
 }
-#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from the PMU of the Cortex-M0 to all slaves inside the PMU power domain"]
-pub use self::err_logger_slv as err_logger_slv1;
-#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters to the memory schedule"]
-pub struct ErrLoggerMsch {
+#[doc = "QoS Registers for PMU_CM0"]
+pub use self::qos as qos_pmu_cm0;
+#[doc = "QoS Registers for RGA_R"]
+pub struct QosRgaR {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ErrLoggerMsch {}
-impl ErrLoggerMsch {
+unsafe impl Send for QosRgaR {}
+impl QosRgaR {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const err_logger_msch::RegisterBlock = 0xffa8_7c80 as *const _;
+    pub const PTR: *const qos::RegisterBlock = 0xffab_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const err_logger_msch::RegisterBlock {
+    pub const fn ptr() -> *const qos::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2162,31 +4416,31 @@ impl ErrLoggerMsch {
         }
     }
 }
-impl Deref for ErrLoggerMsch {
-    type Target = err_logger_msch::RegisterBlock;
+impl Deref for QosRgaR {
+    type Target = qos::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ErrLoggerMsch {
+impl core::fmt::Debug for QosRgaR {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ErrLoggerMsch").finish()
+        f.debug_struct("QosRgaR").finish()
     }
 }
-#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters to the memory schedule"]
-pub mod err_logger_msch;
-#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters to the memory schedule 0"]
-pub struct ErrLoggerMsch0 {
+#[doc = "QoS Registers for RGA_R"]
+pub use self::qos as qos_rga_r;
+#[doc = "QoS Registers for RGA_W"]
+pub struct QosRgaW {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ErrLoggerMsch0 {}
-impl ErrLoggerMsch0 {
+unsafe impl Send for QosRgaW {}
+impl QosRgaW {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const err_logger_msch::RegisterBlock = 0xffa8_7c80 as *const _;
+    pub const PTR: *const qos::RegisterBlock = 0xffab_0080 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const err_logger_msch::RegisterBlock {
+    pub const fn ptr() -> *const qos::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2208,31 +4462,31 @@ impl ErrLoggerMsch0 {
         }
     }
 }
-impl Deref for ErrLoggerMsch0 {
-    type Target = err_logger_msch::RegisterBlock;
+impl Deref for QosRgaW {
+    type Target = qos::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ErrLoggerMsch0 {
+impl core::fmt::Debug for QosRgaW {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ErrLoggerMsch0").finish()
+        f.debug_struct("QosRgaW").finish()
     }
 }
-#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters to the memory schedule 0"]
-pub use self::err_logger_msch as err_logger_msch0;
-#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters to the memory schedule 1"]
-pub struct ErrLoggerMsch1 {
+#[doc = "QoS Registers for RGA_W"]
+pub use self::qos as qos_rga_w;
+#[doc = "QoS Registers for SDIO"]
+pub struct QosSdio {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ErrLoggerMsch1 {}
-impl ErrLoggerMsch1 {
+unsafe impl Send for QosSdio {}
+impl QosSdio {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const err_logger_msch::RegisterBlock = 0xffa8_fc80 as *const _;
+    pub const PTR: *const qos::RegisterBlock = 0xffa7_6000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const err_logger_msch::RegisterBlock {
+    pub const fn ptr() -> *const qos::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2254,31 +4508,31 @@ impl ErrLoggerMsch1 {
         }
     }
 }
-impl Deref for ErrLoggerMsch1 {
-    type Target = err_logger_msch::RegisterBlock;
+impl Deref for QosSdio {
+    type Target = qos::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ErrLoggerMsch1 {
+impl core::fmt::Debug for QosSdio {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ErrLoggerMsch1").finish()
+        f.debug_struct("QosSdio").finish()
     }
 }
-#[doc = "Error Logger (ERR_LOGGER) Registers for the paths from all masters to the memory schedule 1"]
-pub use self::err_logger_msch as err_logger_msch1;
-#[doc = "Memory Schedule (MSCH) Registers"]
-pub struct Msch {
+#[doc = "QoS Registers for SDIO"]
+pub use self::qos as qos_sdio;
+#[doc = "QoS Registers for SDMMC"]
+pub struct QosSdmmc {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for Msch {}
-impl Msch {
+unsafe impl Send for QosSdmmc {}
+impl QosSdmmc {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const msch::RegisterBlock = 0xffa8_4000 as *const _;
+    pub const PTR: *const qos::RegisterBlock = 0xffa7_4000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const msch::RegisterBlock {
+    pub const fn ptr() -> *const qos::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2300,31 +4554,31 @@ impl Msch {
         }
     }
 }
-impl Deref for Msch {
-    type Target = msch::RegisterBlock;
+impl Deref for QosSdmmc {
+    type Target = qos::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for Msch {
+impl core::fmt::Debug for QosSdmmc {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Msch").finish()
+        f.debug_struct("QosSdmmc").finish()
     }
 }
-#[doc = "Memory Schedule (MSCH) Registers"]
-pub mod msch;
-#[doc = "Memory Schedule (MSCH) 0 Registers"]
-pub struct Msch0 {
+#[doc = "QoS Registers for SDMMC"]
+pub use self::qos as qos_sdmmc;
+#[doc = "QoS Registers for USB_HOST0"]
+pub struct QosUsbHost0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for Msch0 {}
-impl Msch0 {
+unsafe impl Send for QosUsbHost0 {}
+impl QosUsbHost0 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const msch::RegisterBlock = 0xffa8_4000 as *const _;
+    pub const PTR: *const qos::RegisterBlock = 0xffa6_0100 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const msch::RegisterBlock {
+    pub const fn ptr() -> *const qos::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2346,31 +4600,31 @@ impl Msch0 {
         }
     }
 }
-impl Deref for Msch0 {
-    type Target = msch::RegisterBlock;
+impl Deref for QosUsbHost0 {
+    type Target = qos::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for Msch0 {
+impl core::fmt::Debug for QosUsbHost0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Msch0").finish()
+        f.debug_struct("QosUsbHost0").finish()
     }
 }
-#[doc = "Memory Schedule (MSCH) 0 Registers"]
-pub use self::msch as msch0;
-#[doc = "Memory Schedule (MSCH) 1 Registers"]
-pub struct Msch1 {
+#[doc = "QoS Registers for USB_HOST0"]
+pub use self::qos as qos_usb_host0;
+#[doc = "QoS Registers for USB_HOST1"]
+pub struct QosUsbHost1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for Msch1 {}
-impl Msch1 {
+unsafe impl Send for QosUsbHost1 {}
+impl QosUsbHost1 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const msch::RegisterBlock = 0xffa8_c000 as *const _;
+    pub const PTR: *const qos::RegisterBlock = 0xffa6_0180 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const msch::RegisterBlock {
+    pub const fn ptr() -> *const qos::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2392,31 +4646,31 @@ impl Msch1 {
         }
     }
 }
-impl Deref for Msch1 {
-    type Target = msch::RegisterBlock;
+impl Deref for QosUsbHost1 {
+    type Target = qos::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for Msch1 {
+impl core::fmt::Debug for QosUsbHost1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Msch1").finish()
+        f.debug_struct("QosUsbHost1").finish()
     }
 }
-#[doc = "Memory Schedule (MSCH) 1 Registers"]
-pub use self::msch as msch1;
-#[doc = "Probe Registers"]
-pub struct Probe {
+#[doc = "QoS Registers for USB_HOST1"]
+pub use self::qos as qos_usb_host1;
+#[doc = "QoS Registers for USB_OTG0"]
+pub struct QosUsbOtg0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for Probe {}
-impl Probe {
+unsafe impl Send for QosUsbOtg0 {}
+impl QosUsbOtg0 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const probe::RegisterBlock = 0xffa8_6000 as *const _;
+    pub const PTR: *const qos::RegisterBlock = 0xffa7_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const probe::RegisterBlock {
+    pub const fn ptr() -> *const qos::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2438,31 +4692,31 @@ impl Probe {
         }
     }
 }
-impl Deref for Probe {
-    type Target = probe::RegisterBlock;
+impl Deref for QosUsbOtg0 {
+    type Target = qos::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for Probe {
+impl core::fmt::Debug for QosUsbOtg0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Probe").finish()
+        f.debug_struct("QosUsbOtg0").finish()
     }
 }
-#[doc = "Probe Registers"]
-pub mod probe;
-#[doc = "Registers for the probe covering paths from the CCI_M1 to the memory schedule 0"]
-pub struct ProbeCciMsch0 {
+#[doc = "QoS Registers for USB_OTG0"]
+pub use self::qos as qos_usb_otg0;
+#[doc = "QoS Registers for USB_OTG1"]
+pub struct QosUsbOtg1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ProbeCciMsch0 {}
-impl ProbeCciMsch0 {
+unsafe impl Send for QosUsbOtg1 {}
+impl QosUsbOtg1 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const probe::RegisterBlock = 0xffa8_6000 as *const _;
+    pub const PTR: *const qos::RegisterBlock = 0xffa7_0080 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const probe::RegisterBlock {
+    pub const fn ptr() -> *const qos::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2484,31 +4738,31 @@ impl ProbeCciMsch0 {
         }
     }
 }
-impl Deref for ProbeCciMsch0 {
-    type Target = probe::RegisterBlock;
+impl Deref for QosUsbOtg1 {
+    type Target = qos::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ProbeCciMsch0 {
+impl core::fmt::Debug for QosUsbOtg1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ProbeCciMsch0").finish()
+        f.debug_struct("QosUsbOtg1").finish()
     }
 }
-#[doc = "Registers for the probe covering paths from the CCI_M1 to the memory schedule 0"]
-pub use self::probe as probe_cci_msch0;
-#[doc = "Registers for the probe covering paths from the GPU to the memory schedule 0"]
-pub struct ProbeGpuMsch0 {
+#[doc = "QoS Registers for USB_OTG1"]
+pub use self::qos as qos_usb_otg1;
+#[doc = "QoS Registers for VIDEO_M0"]
+pub struct QosVideoM0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ProbeGpuMsch0 {}
-impl ProbeGpuMsch0 {
+unsafe impl Send for QosVideoM0 {}
+impl QosVideoM0 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const probe::RegisterBlock = 0xffa8_6400 as *const _;
+    pub const PTR: *const qos::RegisterBlock = 0xffab_8000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const probe::RegisterBlock {
+    pub const fn ptr() -> *const qos::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2530,31 +4784,31 @@ impl ProbeGpuMsch0 {
         }
     }
 }
-impl Deref for ProbeGpuMsch0 {
-    type Target = probe::RegisterBlock;
+impl Deref for QosVideoM0 {
+    type Target = qos::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ProbeGpuMsch0 {
+impl core::fmt::Debug for QosVideoM0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ProbeGpuMsch0").finish()
+        f.debug_struct("QosVideoM0").finish()
     }
 }
-#[doc = "Registers for the probe covering paths from the GPU to the memory schedule 0"]
-pub use self::probe as probe_gpu_msch0;
-#[doc = "Registers for the probe covering paths from the perihp master NIU to the memory schedule 0"]
-pub struct ProbePerihpMsch0 {
+#[doc = "QoS Registers for VIDEO_M0"]
+pub use self::qos as qos_video_m0;
+#[doc = "QoS Registers for VIDEO_M1_R"]
+pub struct QosVideoM1R {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ProbePerihpMsch0 {}
-impl ProbePerihpMsch0 {
+unsafe impl Send for QosVideoM1R {}
+impl QosVideoM1R {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const probe::RegisterBlock = 0xffa8_6800 as *const _;
+    pub const PTR: *const qos::RegisterBlock = 0xffac_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const probe::RegisterBlock {
+    pub const fn ptr() -> *const qos::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2576,31 +4830,31 @@ impl ProbePerihpMsch0 {
         }
     }
 }
-impl Deref for ProbePerihpMsch0 {
-    type Target = probe::RegisterBlock;
+impl Deref for QosVideoM1R {
+    type Target = qos::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ProbePerihpMsch0 {
+impl core::fmt::Debug for QosVideoM1R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ProbePerihpMsch0").finish()
+        f.debug_struct("QosVideoM1R").finish()
     }
 }
-#[doc = "Registers for the probe covering paths from the perihp master NIU to the memory schedule 0"]
-pub use self::probe as probe_perihp_msch0;
-#[doc = "Registers for the probe covering paths from the perilp master NIU, debug and CCI_M0 to the memory schedule 0"]
-pub struct ProbePerilpMsch0 {
+#[doc = "QoS Registers for VIDEO_M1_R"]
+pub use self::qos as qos_video_m1_r;
+#[doc = "QoS Registers for VIDEO_M1_W"]
+pub struct QosVideoM1W {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ProbePerilpMsch0 {}
-impl ProbePerilpMsch0 {
+unsafe impl Send for QosVideoM1W {}
+impl QosVideoM1W {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const probe::RegisterBlock = 0xffa8_6c00 as *const _;
+    pub const PTR: *const qos::RegisterBlock = 0xffac_0080 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const probe::RegisterBlock {
+    pub const fn ptr() -> *const qos::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2622,31 +4876,31 @@ impl ProbePerilpMsch0 {
         }
     }
 }
-impl Deref for ProbePerilpMsch0 {
-    type Target = probe::RegisterBlock;
+impl Deref for QosVideoM1W {
+    type Target = qos::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ProbePerilpMsch0 {
+impl core::fmt::Debug for QosVideoM1W {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ProbePerilpMsch0").finish()
+        f.debug_struct("QosVideoM1W").finish()
     }
 }
-#[doc = "Registers for the probe covering paths from the perilp master NIU, debug and CCI_M0 to the memory schedule 0"]
-pub use self::probe as probe_perilp_msch0;
-#[doc = "Registers for the probe covering paths from video to the memory schedule 0"]
-pub struct ProbeVideoMsch0 {
+#[doc = "QoS Registers for VIDEO_M1_W"]
+pub use self::qos as qos_video_m1_w;
+#[doc = "QoS Registers for VOP-BIG_R"]
+pub struct QosVopBigR {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ProbeVideoMsch0 {}
-impl ProbeVideoMsch0 {
+unsafe impl Send for QosVopBigR {}
+impl QosVopBigR {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const probe::RegisterBlock = 0xffa8_7000 as *const _;
+    pub const PTR: *const qos::RegisterBlock = 0xffac_8000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const probe::RegisterBlock {
+    pub const fn ptr() -> *const qos::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2668,31 +4922,31 @@ impl ProbeVideoMsch0 {
         }
     }
 }
-impl Deref for ProbeVideoMsch0 {
-    type Target = probe::RegisterBlock;
+impl Deref for QosVopBigR {
+    type Target = qos::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ProbeVideoMsch0 {
+impl core::fmt::Debug for QosVopBigR {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ProbeVideoMsch0").finish()
+        f.debug_struct("QosVopBigR").finish()
     }
 }
-#[doc = "Registers for the probe covering paths from video to the memory schedule 0"]
-pub use self::probe as probe_video_msch0;
-#[doc = "Registers for the probe covering paths from the IEP, ISP0 and VOP-BIG to the memory schedule 0"]
-pub struct ProbeVio0Msch0 {
+#[doc = "QoS Registers for VOP-BIG_R"]
+pub use self::qos as qos_vop_big_r;
+#[doc = "QoS Registers for VOP-BIG_W"]
+pub struct QosVopBigW {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ProbeVio0Msch0 {}
-impl ProbeVio0Msch0 {
+unsafe impl Send for QosVopBigW {}
+impl QosVopBigW {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const probe::RegisterBlock = 0xffa8_7400 as *const _;
+    pub const PTR: *const qos::RegisterBlock = 0xffac_8080 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const probe::RegisterBlock {
+    pub const fn ptr() -> *const qos::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2714,31 +4968,31 @@ impl ProbeVio0Msch0 {
         }
     }
 }
-impl Deref for ProbeVio0Msch0 {
-    type Target = probe::RegisterBlock;
+impl Deref for QosVopBigW {
+    type Target = qos::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ProbeVio0Msch0 {
+impl core::fmt::Debug for QosVopBigW {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ProbeVio0Msch0").finish()
+        f.debug_struct("QosVopBigW").finish()
     }
 }
-#[doc = "Registers for the probe covering paths from the IEP, ISP0 and VOP-BIG to the memory schedule 0"]
-pub use self::probe as probe_vio0_msch0;
-#[doc = "Registers for the probe covering paths from the RGA, ISP1, VOP-LITTLE and HDCP to the memory schedule 0"]
-pub struct ProbeVio1Msch0 {
+#[doc = "QoS Registers for VOP-BIG_W"]
+pub use self::qos as qos_vop_big_w;
+#[doc = "QoS Registers for VOP-LITTLE"]
+pub struct QosVopLittle {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ProbeVio1Msch0 {}
-impl ProbeVio1Msch0 {
+unsafe impl Send for QosVopLittle {}
+impl QosVopLittle {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const probe::RegisterBlock = 0xffa8_7800 as *const _;
+    pub const PTR: *const qos::RegisterBlock = 0xffad_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const probe::RegisterBlock {
+    pub const fn ptr() -> *const qos::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2760,31 +5014,31 @@ impl ProbeVio1Msch0 {
         }
     }
 }
-impl Deref for ProbeVio1Msch0 {
-    type Target = probe::RegisterBlock;
+impl Deref for QosVopLittle {
+    type Target = qos::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ProbeVio1Msch0 {
+impl core::fmt::Debug for QosVopLittle {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ProbeVio1Msch0").finish()
+        f.debug_struct("QosVopLittle").finish()
     }
 }
-#[doc = "Registers for the probe covering paths from the RGA, ISP1, VOP-LITTLE and HDCP to the memory schedule 0"]
-pub use self::probe as probe_vio1_msch0;
-#[doc = "Registers for the probe covering paths from the CCI_M1 to the memory schedule 1"]
-pub struct ProbeCciMsch1 {
+#[doc = "QoS Registers for VOP-LITTLE"]
+pub use self::qos as qos_vop_little;
+#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) Registers"]
+pub struct Rki2c {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ProbeCciMsch1 {}
-impl ProbeCciMsch1 {
+unsafe impl Send for Rki2c {}
+impl Rki2c {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const probe::RegisterBlock = 0xffa8_e000 as *const _;
+    pub const PTR: *const rki2c::RegisterBlock = 0xff3c_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const probe::RegisterBlock {
+    pub const fn ptr() -> *const rki2c::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2806,31 +5060,31 @@ impl ProbeCciMsch1 {
         }
     }
 }
-impl Deref for ProbeCciMsch1 {
-    type Target = probe::RegisterBlock;
+impl Deref for Rki2c {
+    type Target = rki2c::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ProbeCciMsch1 {
+impl core::fmt::Debug for Rki2c {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ProbeCciMsch1").finish()
+        f.debug_struct("Rki2c").finish()
     }
 }
-#[doc = "Registers for the probe covering paths from the CCI_M1 to the memory schedule 1"]
-pub use self::probe as probe_cci_msch1;
-#[doc = "Registers for the probe covering paths from the GPU to the memory schedule 1"]
-pub struct ProbeGpuMsch1 {
+#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) Registers"]
+pub mod rki2c;
+#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 0 Registers"]
+pub struct Rki2c0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ProbeGpuMsch1 {}
-impl ProbeGpuMsch1 {
+unsafe impl Send for Rki2c0 {}
+impl Rki2c0 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const probe::RegisterBlock = 0xffa8_e400 as *const _;
+    pub const PTR: *const rki2c::RegisterBlock = 0xff3c_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const probe::RegisterBlock {
+    pub const fn ptr() -> *const rki2c::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2852,31 +5106,31 @@ impl ProbeGpuMsch1 {
         }
     }
 }
-impl Deref for ProbeGpuMsch1 {
-    type Target = probe::RegisterBlock;
+impl Deref for Rki2c0 {
+    type Target = rki2c::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ProbeGpuMsch1 {
+impl core::fmt::Debug for Rki2c0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ProbeGpuMsch1").finish()
+        f.debug_struct("Rki2c0").finish()
     }
 }
-#[doc = "Registers for the probe covering paths from the GPU to the memory schedule 1"]
-pub use self::probe as probe_gpu_msch1;
-#[doc = "Registers for the probe covering paths from the perihp master NIU to the memory schedule 1"]
-pub struct ProbePerihpMsch1 {
+#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 0 Registers"]
+pub use self::rki2c as rki2c0;
+#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 1 Registers"]
+pub struct Rki2c1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ProbePerihpMsch1 {}
-impl ProbePerihpMsch1 {
+unsafe impl Send for Rki2c1 {}
+impl Rki2c1 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const probe::RegisterBlock = 0xffa8_e800 as *const _;
+    pub const PTR: *const rki2c::RegisterBlock = 0xff11_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const probe::RegisterBlock {
+    pub const fn ptr() -> *const rki2c::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2898,31 +5152,31 @@ impl ProbePerihpMsch1 {
         }
     }
 }
-impl Deref for ProbePerihpMsch1 {
-    type Target = probe::RegisterBlock;
+impl Deref for Rki2c1 {
+    type Target = rki2c::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ProbePerihpMsch1 {
+impl core::fmt::Debug for Rki2c1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ProbePerihpMsch1").finish()
+        f.debug_struct("Rki2c1").finish()
     }
 }
-#[doc = "Registers for the probe covering paths from the perihp master NIU to the memory schedule 1"]
-pub use self::probe as probe_perihp_msch1;
-#[doc = "Registers for the probe covering paths from the perilp master NIU, debug and CCI_M0 to the memory schedule 1"]
-pub struct ProbePerilpMsch1 {
+#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 1 Registers"]
+pub use self::rki2c as rki2c1;
+#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 2 Registers"]
+pub struct Rki2c2 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ProbePerilpMsch1 {}
-impl ProbePerilpMsch1 {
+unsafe impl Send for Rki2c2 {}
+impl Rki2c2 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const probe::RegisterBlock = 0xffa8_ec00 as *const _;
+    pub const PTR: *const rki2c::RegisterBlock = 0xff12_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const probe::RegisterBlock {
+    pub const fn ptr() -> *const rki2c::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2944,31 +5198,31 @@ impl ProbePerilpMsch1 {
         }
     }
 }
-impl Deref for ProbePerilpMsch1 {
-    type Target = probe::RegisterBlock;
+impl Deref for Rki2c2 {
+    type Target = rki2c::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ProbePerilpMsch1 {
+impl core::fmt::Debug for Rki2c2 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ProbePerilpMsch1").finish()
+        f.debug_struct("Rki2c2").finish()
     }
 }
-#[doc = "Registers for the probe covering paths from the perilp master NIU, debug and CCI_M0 to the memory schedule 1"]
-pub use self::probe as probe_perilp_msch1;
-#[doc = "Registers for the probe covering paths from video to the memory schedule 1"]
-pub struct ProbeVideoMsch1 {
+#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 2 Registers"]
+pub use self::rki2c as rki2c2;
+#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 3 Registers"]
+pub struct Rki2c3 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ProbeVideoMsch1 {}
-impl ProbeVideoMsch1 {
+unsafe impl Send for Rki2c3 {}
+impl Rki2c3 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const probe::RegisterBlock = 0xffa8_f000 as *const _;
+    pub const PTR: *const rki2c::RegisterBlock = 0xff13_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const probe::RegisterBlock {
+    pub const fn ptr() -> *const rki2c::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -2990,31 +5244,31 @@ impl ProbeVideoMsch1 {
         }
     }
 }
-impl Deref for ProbeVideoMsch1 {
-    type Target = probe::RegisterBlock;
+impl Deref for Rki2c3 {
+    type Target = rki2c::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ProbeVideoMsch1 {
+impl core::fmt::Debug for Rki2c3 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ProbeVideoMsch1").finish()
+        f.debug_struct("Rki2c3").finish()
     }
 }
-#[doc = "Registers for the probe covering paths from video to the memory schedule 1"]
-pub use self::probe as probe_video_msch1;
-#[doc = "Registers for the probe covering paths from the IEP, ISP0 and VOP-BIG to the memory schedule 1"]
-pub struct ProbeVio0Msch1 {
+#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 3 Registers"]
+pub use self::rki2c as rki2c3;
+#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 4 Registers"]
+pub struct Rki2c4 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ProbeVio0Msch1 {}
-impl ProbeVio0Msch1 {
+unsafe impl Send for Rki2c4 {}
+impl Rki2c4 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const probe::RegisterBlock = 0xffa8_f400 as *const _;
+    pub const PTR: *const rki2c::RegisterBlock = 0xff3d_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const probe::RegisterBlock {
+    pub const fn ptr() -> *const rki2c::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -3036,31 +5290,31 @@ impl ProbeVio0Msch1 {
         }
     }
 }
-impl Deref for ProbeVio0Msch1 {
-    type Target = probe::RegisterBlock;
+impl Deref for Rki2c4 {
+    type Target = rki2c::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ProbeVio0Msch1 {
+impl core::fmt::Debug for Rki2c4 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ProbeVio0Msch1").finish()
+        f.debug_struct("Rki2c4").finish()
     }
 }
-#[doc = "Registers for the probe covering paths from the IEP, ISP0 and VOP-BIG to the memory schedule 1"]
-pub use self::probe as probe_vio0_msch1;
-#[doc = "Registers for the probe covering paths from the RGA, ISP1, VOP-LITTLE and HDCP to the memory schedule 1"]
-pub struct ProbeVio1Msch1 {
+#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 4 Registers"]
+pub use self::rki2c as rki2c4;
+#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 5 Registers"]
+pub struct Rki2c5 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ProbeVio1Msch1 {}
-impl ProbeVio1Msch1 {
+unsafe impl Send for Rki2c5 {}
+impl Rki2c5 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const probe::RegisterBlock = 0xffa8_f800 as *const _;
+    pub const PTR: *const rki2c::RegisterBlock = 0xff14_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const probe::RegisterBlock {
+    pub const fn ptr() -> *const rki2c::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -3082,31 +5336,31 @@ impl ProbeVio1Msch1 {
         }
     }
 }
-impl Deref for ProbeVio1Msch1 {
-    type Target = probe::RegisterBlock;
+impl Deref for Rki2c5 {
+    type Target = rki2c::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ProbeVio1Msch1 {
+impl core::fmt::Debug for Rki2c5 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ProbeVio1Msch1").finish()
+        f.debug_struct("Rki2c5").finish()
     }
 }
-#[doc = "Registers for the probe covering paths from the RGA, ISP1, VOP-LITTLE and HDCP to the memory schedule 1"]
-pub use self::probe as probe_vio1_msch1;
-#[doc = "Cache Coherent Interconnect 500 (CCI500) Registers"]
-pub struct Cci500 {
+#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 5 Registers"]
+pub use self::rki2c as rki2c5;
+#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 6 Registers"]
+pub struct Rki2c6 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for Cci500 {}
-impl Cci500 {
+unsafe impl Send for Rki2c6 {}
+impl Rki2c6 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const cci500::RegisterBlock = 0xff9c_0000 as *const _;
+    pub const PTR: *const rki2c::RegisterBlock = 0xff15_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const cci500::RegisterBlock {
+    pub const fn ptr() -> *const rki2c::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -3128,31 +5382,31 @@ impl Cci500 {
         }
     }
 }
-impl Deref for Cci500 {
-    type Target = cci500::RegisterBlock;
+impl Deref for Rki2c6 {
+    type Target = rki2c::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for Cci500 {
+impl core::fmt::Debug for Rki2c6 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Cci500").finish()
+        f.debug_struct("Rki2c6").finish()
     }
 }
-#[doc = "Cache Coherent Interconnect 500 (CCI500) Registers"]
-pub mod cci500;
-#[doc = "DDR Controller Interface Control Registers (DDR_CIC) Registers"]
-pub struct DdrCic {
+#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 6 Registers"]
+pub use self::rki2c as rki2c6;
+#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 7 Registers"]
+pub struct Rki2c7 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for DdrCic {}
-impl DdrCic {
+unsafe impl Send for Rki2c7 {}
+impl Rki2c7 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const ddr_cic::RegisterBlock = 0xff62_0000 as *const _;
+    pub const PTR: *const rki2c::RegisterBlock = 0xff16_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const ddr_cic::RegisterBlock {
+    pub const fn ptr() -> *const rki2c::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -3174,31 +5428,31 @@ impl DdrCic {
         }
     }
 }
-impl Deref for DdrCic {
-    type Target = ddr_cic::RegisterBlock;
+impl Deref for Rki2c7 {
+    type Target = rki2c::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for DdrCic {
+impl core::fmt::Debug for Rki2c7 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("DdrCic").finish()
+        f.debug_struct("Rki2c7").finish()
     }
 }
-#[doc = "DDR Controller Interface Control Registers (DDR_CIC) Registers"]
-pub mod ddr_cic;
-#[doc = "DDR Monitor (DDR_MON) Registers"]
-pub struct DdrMon {
+#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 7 Registers"]
+pub use self::rki2c as rki2c7;
+#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 8 Registers"]
+pub struct Rki2c8 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for DdrMon {}
-impl DdrMon {
+unsafe impl Send for Rki2c8 {}
+impl Rki2c8 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const ddr_mon::RegisterBlock = 0xff63_0000 as *const _;
+    pub const PTR: *const rki2c::RegisterBlock = 0xff3e_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const ddr_mon::RegisterBlock {
+    pub const fn ptr() -> *const rki2c::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -3220,31 +5474,31 @@ impl DdrMon {
         }
     }
 }
-impl Deref for DdrMon {
-    type Target = ddr_mon::RegisterBlock;
+impl Deref for Rki2c8 {
+    type Target = rki2c::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for DdrMon {
+impl core::fmt::Debug for Rki2c8 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("DdrMon").finish()
+        f.debug_struct("Rki2c8").finish()
     }
 }
-#[doc = "DDR Monitor (DDR_MON) Registers"]
-pub mod ddr_mon;
-#[doc = "Power Management Unit (PMU) Registers"]
-pub struct Pmu {
+#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 8 Registers"]
+pub use self::rki2c as rki2c8;
+#[doc = "Successive Approximation Register Analog-to-Digital Converter (SARADC) Registers"]
+pub struct Saradc {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for Pmu {}
-impl Pmu {
+unsafe impl Send for Saradc {}
+impl Saradc {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const pmu::RegisterBlock = 0xff31_0000 as *const _;
+    pub const PTR: *const saradc::RegisterBlock = 0xff10_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const pmu::RegisterBlock {
+    pub const fn ptr() -> *const saradc::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -3266,31 +5520,31 @@ impl Pmu {
         }
     }
 }
-impl Deref for Pmu {
-    type Target = pmu::RegisterBlock;
+impl Deref for Saradc {
+    type Target = saradc::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for Pmu {
+impl core::fmt::Debug for Saradc {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Pmu").finish()
+        f.debug_struct("Saradc").finish()
     }
 }
-#[doc = "Power Management Unit (PMU) Registers"]
-pub mod pmu;
-#[doc = "Memory Management Unit (MMU) Registers"]
-pub struct Mmu {
+#[doc = "Successive Approximation Register Analog-to-Digital Converter (SARADC) Registers"]
+pub mod saradc;
+#[doc = "Secure Digital MultiMedia Card (SDMMC) Registers"]
+pub struct Sdmmc {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for Mmu {}
-impl Mmu {
+unsafe impl Send for Sdmmc {}
+impl Sdmmc {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const mmu::RegisterBlock = 0xff91_4000 as *const _;
+    pub const PTR: *const sdmmc::RegisterBlock = 0xfe32_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const mmu::RegisterBlock {
+    pub const fn ptr() -> *const sdmmc::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -3312,31 +5566,31 @@ impl Mmu {
         }
     }
 }
-impl Deref for Mmu {
-    type Target = mmu::RegisterBlock;
+impl Deref for Sdmmc {
+    type Target = sdmmc::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for Mmu {
+impl core::fmt::Debug for Sdmmc {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Mmu").finish()
+        f.debug_struct("Sdmmc").finish()
     }
 }
-#[doc = "Memory Management Unit (MMU) Registers"]
-pub mod mmu;
-#[doc = "Registers of Memory Management Unit 0 (MMU0) for Image Signal Processor 0 (ISP0)"]
-pub struct Mmu0Isp0 {
+#[doc = "Secure Digital MultiMedia Card (SDMMC) Registers"]
+pub mod sdmmc;
+#[doc = "Sony/Philips Digital Interface (SPDIF) Registers"]
+pub struct Spdif {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for Mmu0Isp0 {}
-impl Mmu0Isp0 {
+unsafe impl Send for Spdif {}
+impl Spdif {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const mmu::RegisterBlock = 0xff91_4000 as *const _;
+    pub const PTR: *const spdif::RegisterBlock = 0xff87_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const mmu::RegisterBlock {
+    pub const fn ptr() -> *const spdif::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -3358,31 +5612,31 @@ impl Mmu0Isp0 {
         }
     }
 }
-impl Deref for Mmu0Isp0 {
-    type Target = mmu::RegisterBlock;
+impl Deref for Spdif {
+    type Target = spdif::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for Mmu0Isp0 {
+impl core::fmt::Debug for Spdif {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Mmu0Isp0").finish()
+        f.debug_struct("Spdif").finish()
     }
 }
-#[doc = "Registers of Memory Management Unit 0 (MMU0) for Image Signal Processor 0 (ISP0)"]
-pub use self::mmu as mmu0_isp0;
-#[doc = "Registers of Memory Management Unit 1 (MMU1) for Image Signal Processor 0 (ISP0)"]
-pub struct Mmu1Isp0 {
+#[doc = "Sony/Philips Digital Interface (SPDIF) Registers"]
+pub mod spdif;
+#[doc = "Serial Peripheral Interface (SPI) Registers"]
+pub struct Spi {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for Mmu1Isp0 {}
-impl Mmu1Isp0 {
+unsafe impl Send for Spi {}
+impl Spi {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const mmu::RegisterBlock = 0xff91_5000 as *const _;
+    pub const PTR: *const spi::RegisterBlock = 0xff1c_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const mmu::RegisterBlock {
+    pub const fn ptr() -> *const spi::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -3404,31 +5658,31 @@ impl Mmu1Isp0 {
         }
     }
 }
-impl Deref for Mmu1Isp0 {
-    type Target = mmu::RegisterBlock;
+impl Deref for Spi {
+    type Target = spi::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for Mmu1Isp0 {
+impl core::fmt::Debug for Spi {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Mmu1Isp0").finish()
+        f.debug_struct("Spi").finish()
     }
 }
-#[doc = "Registers of Memory Management Unit 1 (MMU1) for Image Signal Processor 0 (ISP0)"]
-pub use self::mmu as mmu1_isp0;
-#[doc = "Registers of Memory Management Unit 0 (MMU0) for Image Signal Processor 1 (ISP1)"]
-pub struct Mmu0Isp1 {
+#[doc = "Serial Peripheral Interface (SPI) Registers"]
+pub mod spi;
+#[doc = "Serial Peripheral Interface (SPI) 0 Registers"]
+pub struct Spi0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for Mmu0Isp1 {}
-impl Mmu0Isp1 {
+unsafe impl Send for Spi0 {}
+impl Spi0 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const mmu::RegisterBlock = 0xff92_4000 as *const _;
+    pub const PTR: *const spi::RegisterBlock = 0xff1c_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const mmu::RegisterBlock {
+    pub const fn ptr() -> *const spi::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -3450,31 +5704,31 @@ impl Mmu0Isp1 {
         }
     }
 }
-impl Deref for Mmu0Isp1 {
-    type Target = mmu::RegisterBlock;
+impl Deref for Spi0 {
+    type Target = spi::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for Mmu0Isp1 {
+impl core::fmt::Debug for Spi0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Mmu0Isp1").finish()
+        f.debug_struct("Spi0").finish()
     }
 }
-#[doc = "Registers of Memory Management Unit 0 (MMU0) for Image Signal Processor 1 (ISP1)"]
-pub use self::mmu as mmu0_isp1;
-#[doc = "Registers of Memory Management Unit 1 (MMU1) for Image Signal Processor 1 (ISP1)"]
-pub struct Mmu1Isp1 {
+#[doc = "Serial Peripheral Interface (SPI) 0 Registers"]
+pub use self::spi as spi0;
+#[doc = "Serial Peripheral Interface (SPI) 1 Registers"]
+pub struct Spi1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for Mmu1Isp1 {}
-impl Mmu1Isp1 {
+unsafe impl Send for Spi1 {}
+impl Spi1 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const mmu::RegisterBlock = 0xff92_5000 as *const _;
+    pub const PTR: *const spi::RegisterBlock = 0xff1d_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const mmu::RegisterBlock {
+    pub const fn ptr() -> *const spi::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -3496,31 +5750,31 @@ impl Mmu1Isp1 {
         }
     }
 }
-impl Deref for Mmu1Isp1 {
-    type Target = mmu::RegisterBlock;
+impl Deref for Spi1 {
+    type Target = spi::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for Mmu1Isp1 {
+impl core::fmt::Debug for Spi1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Mmu1Isp1").finish()
+        f.debug_struct("Spi1").finish()
     }
 }
-#[doc = "Registers of Memory Management Unit 1 (MMU1) for Image Signal Processor 1 (ISP1)"]
-pub use self::mmu as mmu1_isp1;
-#[doc = "Registers of Memory Management Unit (MMU) for Video Output Processor (Big) (VOPB)"]
-pub struct MmuVopb {
+#[doc = "Serial Peripheral Interface (SPI) 1 Registers"]
+pub use self::spi as spi1;
+#[doc = "Serial Peripheral Interface (SPI) 2 Registers"]
+pub struct Spi2 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for MmuVopb {}
-impl MmuVopb {
+unsafe impl Send for Spi2 {}
+impl Spi2 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const mmu::RegisterBlock = 0xff90_0300 as *const _;
+    pub const PTR: *const spi::RegisterBlock = 0xff1e_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const mmu::RegisterBlock {
+    pub const fn ptr() -> *const spi::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -3542,31 +5796,31 @@ impl MmuVopb {
         }
     }
 }
-impl Deref for MmuVopb {
-    type Target = mmu::RegisterBlock;
+impl Deref for Spi2 {
+    type Target = spi::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for MmuVopb {
+impl core::fmt::Debug for Spi2 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("MmuVopb").finish()
+        f.debug_struct("Spi2").finish()
     }
 }
-#[doc = "Registers of Memory Management Unit (MMU) for Video Output Processor (Big) (VOPB)"]
-pub use self::mmu as mmu_vopb;
-#[doc = "Registers of Memory Management Unit (MMU) for Video Output Processor (Little) (VOPL)"]
-pub struct MmuVopl {
+#[doc = "Serial Peripheral Interface (SPI) 2 Registers"]
+pub use self::spi as spi2;
+#[doc = "Serial Peripheral Interface (SPI) 3 Registers"]
+pub struct Spi3 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for MmuVopl {}
-impl MmuVopl {
+unsafe impl Send for Spi3 {}
+impl Spi3 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const mmu::RegisterBlock = 0xff8f_0300 as *const _;
+    pub const PTR: *const spi::RegisterBlock = 0xff35_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const mmu::RegisterBlock {
+    pub const fn ptr() -> *const spi::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -3588,31 +5842,31 @@ impl MmuVopl {
         }
     }
 }
-impl Deref for MmuVopl {
-    type Target = mmu::RegisterBlock;
+impl Deref for Spi3 {
+    type Target = spi::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for MmuVopl {
+impl core::fmt::Debug for Spi3 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("MmuVopl").finish()
+        f.debug_struct("Spi3").finish()
     }
 }
-#[doc = "Registers of Memory Management Unit (MMU) for Video Output Processor (Little) (VOPL)"]
-pub use self::mmu as mmu_vopl;
-#[doc = "Registers of Memory Management Unit (MMU) for Image Enhancement Processor (IEP)"]
-pub struct MmuIep {
+#[doc = "Serial Peripheral Interface (SPI) 3 Registers"]
+pub use self::spi as spi3;
+#[doc = "Serial Peripheral Interface (SPI) 4 Registers"]
+pub struct Spi4 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for MmuIep {}
-impl MmuIep {
+unsafe impl Send for Spi4 {}
+impl Spi4 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const mmu::RegisterBlock = 0xff67_0800 as *const _;
+    pub const PTR: *const spi::RegisterBlock = 0xff1f_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const mmu::RegisterBlock {
+    pub const fn ptr() -> *const spi::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -3634,31 +5888,31 @@ impl MmuIep {
         }
     }
 }
-impl Deref for MmuIep {
-    type Target = mmu::RegisterBlock;
+impl Deref for Spi4 {
+    type Target = spi::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for MmuIep {
+impl core::fmt::Debug for Spi4 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("MmuIep").finish()
+        f.debug_struct("Spi4").finish()
     }
 }
-#[doc = "Registers of Memory Management Unit (MMU) for Image Enhancement Processor (IEP)"]
-pub use self::mmu as mmu_iep;
-#[doc = "Registers of Memory Management Unit (MMU) for High-bandwidth Digital Content Protection (HDCP)"]
-pub struct MmuHdcp {
+#[doc = "Serial Peripheral Interface (SPI) 4 Registers"]
+pub use self::spi as spi4;
+#[doc = "Serial Peripheral Interface (SPI) 5 Registers"]
+pub struct Spi5 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for MmuHdcp {}
-impl MmuHdcp {
+unsafe impl Send for Spi5 {}
+impl Spi5 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const mmu::RegisterBlock = 0xff93_0000 as *const _;
+    pub const PTR: *const spi::RegisterBlock = 0xff20_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const mmu::RegisterBlock {
+    pub const fn ptr() -> *const spi::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -3680,20 +5934,20 @@ impl MmuHdcp {
         }
     }
 }
-impl Deref for MmuHdcp {
-    type Target = mmu::RegisterBlock;
+impl Deref for Spi5 {
+    type Target = spi::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for MmuHdcp {
+impl core::fmt::Debug for Spi5 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("MmuHdcp").finish()
+        f.debug_struct("Spi5").finish()
     }
 }
-#[doc = "Registers of Memory Management Unit (MMU) for High-bandwidth Digital Content Protection (HDCP)"]
-pub use self::mmu as mmu_hdcp;
+#[doc = "Serial Peripheral Interface (SPI) 5 Registers"]
+pub use self::spi as spi5;
 #[doc = "Timer Registers"]
 pub struct Timer {
     _marker: PhantomData<*const ()>,
@@ -4936,144 +7190,6 @@ impl core::fmt::Debug for Pmutimer1 {
 }
 #[doc = "Power Management Unit Timer 1 Registers"]
 pub use self::timer as pmutimer1;
-#[doc = "DMA Controller (DMAC) Registers"]
-pub struct Dmac {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Dmac {}
-impl Dmac {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const dmac::RegisterBlock = 0xff6d_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const dmac::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Dmac {
-    type Target = dmac::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Dmac {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Dmac").finish()
-    }
-}
-#[doc = "DMA Controller (DMAC) Registers"]
-pub mod dmac;
-#[doc = "DMA Controller 0 Registers"]
-pub struct Dmac0 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Dmac0 {}
-impl Dmac0 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const dmac::RegisterBlock = 0xff6d_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const dmac::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Dmac0 {
-    type Target = dmac::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Dmac0 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Dmac0").finish()
-    }
-}
-#[doc = "DMA Controller 0 Registers"]
-pub use self::dmac as dmac0;
-#[doc = "DMA Controller 1 Registers"]
-pub struct Dmac1 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Dmac1 {}
-impl Dmac1 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const dmac::RegisterBlock = 0xff6e_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const dmac::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Dmac1 {
-    type Target = dmac::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Dmac1 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Dmac1").finish()
-    }
-}
-#[doc = "DMA Controller 1 Registers"]
-pub use self::dmac as dmac1;
 #[doc = "Temperature Sensor Analog-to-Digital Converter (TSADC) Registers"]
 pub struct Tsadc {
     _marker: PhantomData<*const ()>,
@@ -5120,696 +7236,6 @@ impl core::fmt::Debug for Tsadc {
 }
 #[doc = "Temperature Sensor Analog-to-Digital Converter (TSADC) Registers"]
 pub mod tsadc;
-#[doc = "Mailbox Registers"]
-pub struct Mailbox {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Mailbox {}
-impl Mailbox {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const mailbox::RegisterBlock = 0xff6b_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const mailbox::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Mailbox {
-    type Target = mailbox::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Mailbox {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Mailbox").finish()
-    }
-}
-#[doc = "Mailbox Registers"]
-pub mod mailbox;
-#[doc = "Mailbox 0 Registers"]
-pub struct Mailbox0 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Mailbox0 {}
-impl Mailbox0 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const mailbox::RegisterBlock = 0xff6b_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const mailbox::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Mailbox0 {
-    type Target = mailbox::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Mailbox0 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Mailbox0").finish()
-    }
-}
-#[doc = "Mailbox 0 Registers"]
-pub use self::mailbox as mailbox0;
-#[doc = "Mailbox 1 Registers"]
-pub struct Mailbox1 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Mailbox1 {}
-impl Mailbox1 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const mailbox::RegisterBlock = 0xff39_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const mailbox::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Mailbox1 {
-    type Target = mailbox::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Mailbox1 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Mailbox1").finish()
-    }
-}
-#[doc = "Mailbox 1 Registers"]
-pub use self::mailbox as mailbox1;
-#[doc = "eFuse Registers"]
-pub struct Efuse {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Efuse {}
-impl Efuse {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const efuse::RegisterBlock = 0xff69_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const efuse::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Efuse {
-    type Target = efuse::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Efuse {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Efuse").finish()
-    }
-}
-#[doc = "eFuse Registers"]
-pub mod efuse;
-#[doc = "eFuse 0 Registers"]
-pub struct Efuse0 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Efuse0 {}
-impl Efuse0 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const efuse::RegisterBlock = 0xff69_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const efuse::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Efuse0 {
-    type Target = efuse::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Efuse0 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Efuse0").finish()
-    }
-}
-#[doc = "eFuse 0 Registers"]
-pub use self::efuse as efuse0;
-#[doc = "eFuse 1 Registers"]
-pub struct Efuse1 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Efuse1 {}
-impl Efuse1 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const efuse::RegisterBlock = 0xfffa_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const efuse::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Efuse1 {
-    type Target = efuse::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Efuse1 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Efuse1").finish()
-    }
-}
-#[doc = "eFuse 1 Registers"]
-pub use self::efuse as efuse1;
-#[doc = "Watchdog Timer (WDT) Registers"]
-pub struct Wdt {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Wdt {}
-impl Wdt {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const wdt::RegisterBlock = 0xff84_8000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const wdt::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Wdt {
-    type Target = wdt::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Wdt {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Wdt").finish()
-    }
-}
-#[doc = "Watchdog Timer (WDT) Registers"]
-pub mod wdt;
-#[doc = "Watchdog Timer (WDT) 0 Registers"]
-pub struct Wdt0 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Wdt0 {}
-impl Wdt0 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const wdt::RegisterBlock = 0xff84_8000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const wdt::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Wdt0 {
-    type Target = wdt::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Wdt0 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Wdt0").finish()
-    }
-}
-#[doc = "Watchdog Timer (WDT) 0 Registers"]
-pub use self::wdt as wdt0;
-#[doc = "Watchdog Timer (WDT) 1 Registers"]
-pub struct Wdt1 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Wdt1 {}
-impl Wdt1 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const wdt::RegisterBlock = 0xff84_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const wdt::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Wdt1 {
-    type Target = wdt::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Wdt1 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Wdt1").finish()
-    }
-}
-#[doc = "Watchdog Timer (WDT) 1 Registers"]
-pub use self::wdt as wdt1;
-#[doc = "Watchdog Timer (WDT) 2 Registers"]
-pub struct Wdt2 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Wdt2 {}
-impl Wdt2 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const wdt::RegisterBlock = 0xff38_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const wdt::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Wdt2 {
-    type Target = wdt::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Wdt2 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Wdt2").finish()
-    }
-}
-#[doc = "Watchdog Timer (WDT) 2 Registers"]
-pub use self::wdt as wdt2;
-#[doc = "Secure Digital MultiMedia Card (SDMMC) Registers"]
-pub struct Sdmmc {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Sdmmc {}
-impl Sdmmc {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const sdmmc::RegisterBlock = 0xfe32_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const sdmmc::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Sdmmc {
-    type Target = sdmmc::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Sdmmc {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Sdmmc").finish()
-    }
-}
-#[doc = "Secure Digital MultiMedia Card (SDMMC) Registers"]
-pub mod sdmmc;
-#[doc = "USB 3.0/2.0 OTG (USB3) Registers"]
-pub struct Usb3 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Usb3 {}
-impl Usb3 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const usb3::RegisterBlock = 0xfe80_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const usb3::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Usb3 {
-    type Target = usb3::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Usb3 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Usb3").finish()
-    }
-}
-#[doc = "USB 3.0/2.0 OTG (USB3) Registers"]
-pub mod usb3;
-#[doc = "USB 3.0/2.0 OTG Register 0 (USB3_OTG0) Registers"]
-pub struct Usb3Otg0 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Usb3Otg0 {}
-impl Usb3Otg0 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const usb3::RegisterBlock = 0xfe80_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const usb3::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Usb3Otg0 {
-    type Target = usb3::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Usb3Otg0 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Usb3Otg0").finish()
-    }
-}
-#[doc = "USB 3.0/2.0 OTG Register 0 (USB3_OTG0) Registers"]
-pub use self::usb3 as usb3_otg0;
-#[doc = "USB 3.0/2.0 OTG Register 1 (USB3_OTG1) Registers"]
-pub struct Usb3Otg1 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Usb3Otg1 {}
-impl Usb3Otg1 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const usb3::RegisterBlock = 0xfe90_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const usb3::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Usb3Otg1 {
-    type Target = usb3::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Usb3Otg1 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Usb3Otg1").finish()
-    }
-}
-#[doc = "USB 3.0/2.0 OTG Register 1 (USB3_OTG1) Registers"]
-pub use self::usb3 as usb3_otg1;
-#[doc = "Pulse Width Modulation (PWM) Registers"]
-pub struct Pwm {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Pwm {}
-impl Pwm {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const pwm::RegisterBlock = 0xff42_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const pwm::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Pwm {
-    type Target = pwm::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Pwm {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Pwm").finish()
-    }
-}
-#[doc = "Pulse Width Modulation (PWM) Registers"]
-pub mod pwm;
 #[doc = "Universal Asynchronous Receiver/Transmitter (UART) Registers"]
 pub struct Uart {
     _marker: PhantomData<*const ()>,
@@ -6086,17 +7512,17 @@ impl core::fmt::Debug for Uart4 {
 }
 #[doc = "Universal Asynchronous Receiver/Transmitter 4 (UART4) Registers"]
 pub use self::uart as uart4;
-#[doc = "General Purpose Input/Output (GPIO) Registers"]
-pub struct Gpio {
+#[doc = "USB 3.0/2.0 OTG (USB3) Registers"]
+pub struct Usb3 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for Gpio {}
-impl Gpio {
+unsafe impl Send for Usb3 {}
+impl Usb3 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const gpio::RegisterBlock = 0xff72_0000 as *const _;
+    pub const PTR: *const usb3::RegisterBlock = 0xfe80_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const gpio::RegisterBlock {
+    pub const fn ptr() -> *const usb3::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -6118,31 +7544,31 @@ impl Gpio {
         }
     }
 }
-impl Deref for Gpio {
-    type Target = gpio::RegisterBlock;
+impl Deref for Usb3 {
+    type Target = usb3::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for Gpio {
+impl core::fmt::Debug for Usb3 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Gpio").finish()
+        f.debug_struct("Usb3").finish()
     }
 }
-#[doc = "General Purpose Input/Output (GPIO) Registers"]
-pub mod gpio;
-#[doc = "General Purpose Input/Output (GPIO) 0 Registers"]
-pub struct Gpio0 {
+#[doc = "USB 3.0/2.0 OTG (USB3) Registers"]
+pub mod usb3;
+#[doc = "USB 3.0/2.0 OTG Register 0 (USB3_OTG0) Registers"]
+pub struct Usb3Otg0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for Gpio0 {}
-impl Gpio0 {
+unsafe impl Send for Usb3Otg0 {}
+impl Usb3Otg0 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const gpio::RegisterBlock = 0xff72_0000 as *const _;
+    pub const PTR: *const usb3::RegisterBlock = 0xfe80_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const gpio::RegisterBlock {
+    pub const fn ptr() -> *const usb3::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -6164,31 +7590,31 @@ impl Gpio0 {
         }
     }
 }
-impl Deref for Gpio0 {
-    type Target = gpio::RegisterBlock;
+impl Deref for Usb3Otg0 {
+    type Target = usb3::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for Gpio0 {
+impl core::fmt::Debug for Usb3Otg0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Gpio0").finish()
+        f.debug_struct("Usb3Otg0").finish()
     }
 }
-#[doc = "General Purpose Input/Output (GPIO) 0 Registers"]
-pub use self::gpio as gpio0;
-#[doc = "General Purpose Input/Output (GPIO) 1 Registers"]
-pub struct Gpio1 {
+#[doc = "USB 3.0/2.0 OTG Register 0 (USB3_OTG0) Registers"]
+pub use self::usb3 as usb3_otg0;
+#[doc = "USB 3.0/2.0 OTG Register 1 (USB3_OTG1) Registers"]
+pub struct Usb3Otg1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for Gpio1 {}
-impl Gpio1 {
+unsafe impl Send for Usb3Otg1 {}
+impl Usb3Otg1 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const gpio::RegisterBlock = 0xff73_0000 as *const _;
+    pub const PTR: *const usb3::RegisterBlock = 0xfe90_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const gpio::RegisterBlock {
+    pub const fn ptr() -> *const usb3::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -6210,31 +7636,31 @@ impl Gpio1 {
         }
     }
 }
-impl Deref for Gpio1 {
-    type Target = gpio::RegisterBlock;
+impl Deref for Usb3Otg1 {
+    type Target = usb3::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for Gpio1 {
+impl core::fmt::Debug for Usb3Otg1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Gpio1").finish()
+        f.debug_struct("Usb3Otg1").finish()
     }
 }
-#[doc = "General Purpose Input/Output (GPIO) 1 Registers"]
-pub use self::gpio as gpio1;
-#[doc = "General Purpose Input/Output (GPIO) 2 Registers"]
-pub struct Gpio2 {
+#[doc = "USB 3.0/2.0 OTG Register 1 (USB3_OTG1) Registers"]
+pub use self::usb3 as usb3_otg1;
+#[doc = "Watchdog Timer (WDT) Registers"]
+pub struct Wdt {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for Gpio2 {}
-impl Gpio2 {
+unsafe impl Send for Wdt {}
+impl Wdt {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const gpio::RegisterBlock = 0xff78_0000 as *const _;
+    pub const PTR: *const wdt::RegisterBlock = 0xff84_8000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const gpio::RegisterBlock {
+    pub const fn ptr() -> *const wdt::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -6256,31 +7682,31 @@ impl Gpio2 {
         }
     }
 }
-impl Deref for Gpio2 {
-    type Target = gpio::RegisterBlock;
+impl Deref for Wdt {
+    type Target = wdt::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for Gpio2 {
+impl core::fmt::Debug for Wdt {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Gpio2").finish()
+        f.debug_struct("Wdt").finish()
     }
 }
-#[doc = "General Purpose Input/Output (GPIO) 2 Registers"]
-pub use self::gpio as gpio2;
-#[doc = "General Purpose Input/Output (GPIO) 3 Registers"]
-pub struct Gpio3 {
+#[doc = "Watchdog Timer (WDT) Registers"]
+pub mod wdt;
+#[doc = "Watchdog Timer (WDT) 0 Registers"]
+pub struct Wdt0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for Gpio3 {}
-impl Gpio3 {
+unsafe impl Send for Wdt0 {}
+impl Wdt0 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const gpio::RegisterBlock = 0xff78_8000 as *const _;
+    pub const PTR: *const wdt::RegisterBlock = 0xff84_8000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const gpio::RegisterBlock {
+    pub const fn ptr() -> *const wdt::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -6302,31 +7728,31 @@ impl Gpio3 {
         }
     }
 }
-impl Deref for Gpio3 {
-    type Target = gpio::RegisterBlock;
+impl Deref for Wdt0 {
+    type Target = wdt::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for Gpio3 {
+impl core::fmt::Debug for Wdt0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Gpio3").finish()
+        f.debug_struct("Wdt0").finish()
     }
 }
-#[doc = "General Purpose Input/Output (GPIO) 3 Registers"]
-pub use self::gpio as gpio3;
-#[doc = "General Purpose Input/Output (GPIO) 4 Registers"]
-pub struct Gpio4 {
+#[doc = "Watchdog Timer (WDT) 0 Registers"]
+pub use self::wdt as wdt0;
+#[doc = "Watchdog Timer (WDT) 1 Registers"]
+pub struct Wdt1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for Gpio4 {}
-impl Gpio4 {
+unsafe impl Send for Wdt1 {}
+impl Wdt1 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const gpio::RegisterBlock = 0xff79_0000 as *const _;
+    pub const PTR: *const wdt::RegisterBlock = 0xff84_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const gpio::RegisterBlock {
+    pub const fn ptr() -> *const wdt::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -6348,31 +7774,31 @@ impl Gpio4 {
         }
     }
 }
-impl Deref for Gpio4 {
-    type Target = gpio::RegisterBlock;
+impl Deref for Wdt1 {
+    type Target = wdt::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for Gpio4 {
+impl core::fmt::Debug for Wdt1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Gpio4").finish()
+        f.debug_struct("Wdt1").finish()
     }
 }
-#[doc = "General Purpose Input/Output (GPIO) 4 Registers"]
-pub use self::gpio as gpio4;
-#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) Registers"]
-pub struct Rki2c {
+#[doc = "Watchdog Timer (WDT) 1 Registers"]
+pub use self::wdt as wdt1;
+#[doc = "Watchdog Timer (WDT) 2 Registers"]
+pub struct Wdt2 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for Rki2c {}
-impl Rki2c {
+unsafe impl Send for Wdt2 {}
+impl Wdt2 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const rki2c::RegisterBlock = 0xff3c_0000 as *const _;
+    pub const PTR: *const wdt::RegisterBlock = 0xff38_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const rki2c::RegisterBlock {
+    pub const fn ptr() -> *const wdt::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -6394,1521 +7820,195 @@ impl Rki2c {
         }
     }
 }
-impl Deref for Rki2c {
-    type Target = rki2c::RegisterBlock;
+impl Deref for Wdt2 {
+    type Target = wdt::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for Rki2c {
+impl core::fmt::Debug for Wdt2 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Rki2c").finish()
+        f.debug_struct("Wdt2").finish()
     }
 }
-#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) Registers"]
-pub mod rki2c;
-#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 0 Registers"]
-pub struct Rki2c0 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Rki2c0 {}
-impl Rki2c0 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const rki2c::RegisterBlock = 0xff3c_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const rki2c::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Rki2c0 {
-    type Target = rki2c::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Rki2c0 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Rki2c0").finish()
-    }
-}
-#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 0 Registers"]
-pub use self::rki2c as rki2c0;
-#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 1 Registers"]
-pub struct Rki2c1 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Rki2c1 {}
-impl Rki2c1 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const rki2c::RegisterBlock = 0xff11_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const rki2c::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Rki2c1 {
-    type Target = rki2c::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Rki2c1 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Rki2c1").finish()
-    }
-}
-#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 1 Registers"]
-pub use self::rki2c as rki2c1;
-#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 2 Registers"]
-pub struct Rki2c2 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Rki2c2 {}
-impl Rki2c2 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const rki2c::RegisterBlock = 0xff12_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const rki2c::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Rki2c2 {
-    type Target = rki2c::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Rki2c2 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Rki2c2").finish()
-    }
-}
-#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 2 Registers"]
-pub use self::rki2c as rki2c2;
-#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 3 Registers"]
-pub struct Rki2c3 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Rki2c3 {}
-impl Rki2c3 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const rki2c::RegisterBlock = 0xff13_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const rki2c::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Rki2c3 {
-    type Target = rki2c::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Rki2c3 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Rki2c3").finish()
-    }
-}
-#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 3 Registers"]
-pub use self::rki2c as rki2c3;
-#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 4 Registers"]
-pub struct Rki2c4 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Rki2c4 {}
-impl Rki2c4 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const rki2c::RegisterBlock = 0xff3d_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const rki2c::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Rki2c4 {
-    type Target = rki2c::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Rki2c4 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Rki2c4").finish()
-    }
-}
-#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 4 Registers"]
-pub use self::rki2c as rki2c4;
-#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 5 Registers"]
-pub struct Rki2c5 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Rki2c5 {}
-impl Rki2c5 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const rki2c::RegisterBlock = 0xff14_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const rki2c::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Rki2c5 {
-    type Target = rki2c::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Rki2c5 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Rki2c5").finish()
-    }
-}
-#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 5 Registers"]
-pub use self::rki2c as rki2c5;
-#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 6 Registers"]
-pub struct Rki2c6 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Rki2c6 {}
-impl Rki2c6 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const rki2c::RegisterBlock = 0xff15_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const rki2c::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Rki2c6 {
-    type Target = rki2c::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Rki2c6 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Rki2c6").finish()
-    }
-}
-#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 6 Registers"]
-pub use self::rki2c as rki2c6;
-#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 7 Registers"]
-pub struct Rki2c7 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Rki2c7 {}
-impl Rki2c7 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const rki2c::RegisterBlock = 0xff16_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const rki2c::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Rki2c7 {
-    type Target = rki2c::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Rki2c7 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Rki2c7").finish()
-    }
-}
-#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 7 Registers"]
-pub use self::rki2c as rki2c7;
-#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 8 Registers"]
-pub struct Rki2c8 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Rki2c8 {}
-impl Rki2c8 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const rki2c::RegisterBlock = 0xff3e_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const rki2c::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Rki2c8 {
-    type Target = rki2c::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Rki2c8 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Rki2c8").finish()
-    }
-}
-#[doc = "Rockchip Inter-Integrated Circuit (RKI2C) 8 Registers"]
-pub use self::rki2c as rki2c8;
-#[doc = "Inter-IC Sound (I2S) Registers"]
-pub struct I2s {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for I2s {}
-impl I2s {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const i2s::RegisterBlock = 0xff88_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const i2s::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for I2s {
-    type Target = i2s::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for I2s {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("I2s").finish()
-    }
-}
-#[doc = "Inter-IC Sound (I2S) Registers"]
-pub mod i2s;
-#[doc = "Inter-IC Sound (I2S) 0 Registers"]
-pub struct I2s0 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for I2s0 {}
-impl I2s0 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const i2s::RegisterBlock = 0xff88_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const i2s::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for I2s0 {
-    type Target = i2s::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for I2s0 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("I2s0").finish()
-    }
-}
-#[doc = "Inter-IC Sound (I2S) 0 Registers"]
-pub use self::i2s as i2s0;
-#[doc = "Inter-IC Sound (I2S) 1 Registers"]
-pub struct I2s1 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for I2s1 {}
-impl I2s1 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const i2s::RegisterBlock = 0xff89_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const i2s::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for I2s1 {
-    type Target = i2s::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for I2s1 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("I2s1").finish()
-    }
-}
-#[doc = "Inter-IC Sound (I2S) 1 Registers"]
-pub use self::i2s as i2s1;
-#[doc = "Inter-IC Sound (I2S) 2 Registers"]
-pub struct I2s2 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for I2s2 {}
-impl I2s2 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const i2s::RegisterBlock = 0xff8a_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const i2s::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for I2s2 {
-    type Target = i2s::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for I2s2 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("I2s2").finish()
-    }
-}
-#[doc = "Inter-IC Sound (I2S) 2 Registers"]
-pub use self::i2s as i2s2;
-#[doc = "Serial Peripheral Interface (SPI) Registers"]
-pub struct Spi {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Spi {}
-impl Spi {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const spi::RegisterBlock = 0xff1c_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const spi::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Spi {
-    type Target = spi::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Spi {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Spi").finish()
-    }
-}
-#[doc = "Serial Peripheral Interface (SPI) Registers"]
-pub mod spi;
-#[doc = "Serial Peripheral Interface (SPI) 0 Registers"]
-pub struct Spi0 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Spi0 {}
-impl Spi0 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const spi::RegisterBlock = 0xff1c_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const spi::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Spi0 {
-    type Target = spi::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Spi0 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Spi0").finish()
-    }
-}
-#[doc = "Serial Peripheral Interface (SPI) 0 Registers"]
-pub use self::spi as spi0;
-#[doc = "Serial Peripheral Interface (SPI) 1 Registers"]
-pub struct Spi1 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Spi1 {}
-impl Spi1 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const spi::RegisterBlock = 0xff1d_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const spi::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Spi1 {
-    type Target = spi::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Spi1 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Spi1").finish()
-    }
-}
-#[doc = "Serial Peripheral Interface (SPI) 1 Registers"]
-pub use self::spi as spi1;
-#[doc = "Serial Peripheral Interface (SPI) 2 Registers"]
-pub struct Spi2 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Spi2 {}
-impl Spi2 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const spi::RegisterBlock = 0xff1e_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const spi::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Spi2 {
-    type Target = spi::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Spi2 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Spi2").finish()
-    }
-}
-#[doc = "Serial Peripheral Interface (SPI) 2 Registers"]
-pub use self::spi as spi2;
-#[doc = "Serial Peripheral Interface (SPI) 3 Registers"]
-pub struct Spi3 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Spi3 {}
-impl Spi3 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const spi::RegisterBlock = 0xff35_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const spi::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Spi3 {
-    type Target = spi::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Spi3 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Spi3").finish()
-    }
-}
-#[doc = "Serial Peripheral Interface (SPI) 3 Registers"]
-pub use self::spi as spi3;
-#[doc = "Serial Peripheral Interface (SPI) 4 Registers"]
-pub struct Spi4 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Spi4 {}
-impl Spi4 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const spi::RegisterBlock = 0xff1f_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const spi::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Spi4 {
-    type Target = spi::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Spi4 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Spi4").finish()
-    }
-}
-#[doc = "Serial Peripheral Interface (SPI) 4 Registers"]
-pub use self::spi as spi4;
-#[doc = "Serial Peripheral Interface (SPI) 5 Registers"]
-pub struct Spi5 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Spi5 {}
-impl Spi5 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const spi::RegisterBlock = 0xff20_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const spi::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Spi5 {
-    type Target = spi::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Spi5 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Spi5").finish()
-    }
-}
-#[doc = "Serial Peripheral Interface (SPI) 5 Registers"]
-pub use self::spi as spi5;
-#[doc = "Sony/Philips Digital Interface (SPDIF) Registers"]
-pub struct Spdif {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Spdif {}
-impl Spdif {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const spdif::RegisterBlock = 0xff87_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const spdif::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Spdif {
-    type Target = spdif::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Spdif {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Spdif").finish()
-    }
-}
-#[doc = "Sony/Philips Digital Interface (SPDIF) Registers"]
-pub mod spdif;
-#[doc = "Gigabit Media Access Controller (GMAC) Registers"]
-pub struct Gmac {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Gmac {}
-impl Gmac {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const gmac::RegisterBlock = 0xfe30_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const gmac::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Gmac {
-    type Target = gmac::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Gmac {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Gmac").finish()
-    }
-}
-#[doc = "Gigabit Media Access Controller (GMAC) Registers"]
-pub mod gmac;
-#[doc = "eMMC Controller (EMMCCORE) Registers"]
-pub struct Emmccore {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Emmccore {}
-impl Emmccore {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const emmccore::RegisterBlock = 0xfe33_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const emmccore::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Emmccore {
-    type Target = emmccore::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Emmccore {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Emmccore").finish()
-    }
-}
-#[doc = "eMMC Controller (EMMCCORE) Registers"]
-pub mod emmccore;
-#[doc = "PCIe Client Registers"]
-pub struct PcieClient {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for PcieClient {}
-impl PcieClient {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const pcie_client::RegisterBlock = 0xfd00_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const pcie_client::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for PcieClient {
-    type Target = pcie_client::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for PcieClient {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PcieClient").finish()
-    }
-}
-#[doc = "PCIe Client Registers"]
-pub mod pcie_client;
-#[doc = "Successive Approximation Register Analog-to-Digital Converter (SARADC) Registers"]
-pub struct Saradc {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Saradc {}
-impl Saradc {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const saradc::RegisterBlock = 0xff10_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const saradc::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Saradc {
-    type Target = saradc::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Saradc {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Saradc").finish()
-    }
-}
-#[doc = "Successive Approximation Register Analog-to-Digital Converter (SARADC) Registers"]
-pub mod saradc;
-#[doc = "DDR Controller (DDRC) Registers"]
-pub struct Ddrc {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Ddrc {}
-impl Ddrc {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const ddrc::RegisterBlock = 0xffa8_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const ddrc::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Ddrc {
-    type Target = ddrc::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Ddrc {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Ddrc").finish()
-    }
-}
-#[doc = "DDR Controller (DDRC) Registers"]
-pub mod ddrc;
-#[doc = "DDR Controller 0 (DDRC0) Registers"]
-pub struct Ddrc0 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Ddrc0 {}
-impl Ddrc0 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const ddrc::RegisterBlock = 0xffa8_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const ddrc::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Ddrc0 {
-    type Target = ddrc::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Ddrc0 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Ddrc0").finish()
-    }
-}
-#[doc = "DDR Controller 0 (DDRC0) Registers"]
-pub use self::ddrc as ddrc0;
-#[doc = "DDR Controller 1 (DDRC1) Registers"]
-pub struct Ddrc1 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Ddrc1 {}
-impl Ddrc1 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const ddrc::RegisterBlock = 0xffa8_8000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const ddrc::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Ddrc1 {
-    type Target = ddrc::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Ddrc1 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Ddrc1").finish()
-    }
-}
-#[doc = "DDR Controller 1 (DDRC1) Registers"]
-pub use self::ddrc as ddrc1;
-#[doc = "PCIe Core Registers"]
-pub struct PcieCore {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for PcieCore {}
-impl PcieCore {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const pcie_core::RegisterBlock = 0xfd80_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const pcie_core::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for PcieCore {
-    type Target = pcie_core::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for PcieCore {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PcieCore").finish()
-    }
-}
-#[doc = "PCIe Core Registers"]
-pub mod pcie_core;
-#[doc = "DisplayPort Registers"]
-pub struct Dp {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Dp {}
-impl Dp {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const dp::RegisterBlock = 0xfec0_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const dp::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Dp {
-    type Target = dp::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Dp {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Dp").finish()
-    }
-}
-#[doc = "DisplayPort Registers"]
-pub mod dp;
-#[doc = "HDMI Registers"]
-pub struct Hdmi {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for Hdmi {}
-impl Hdmi {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const hdmi::RegisterBlock = 0xff94_0000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const hdmi::RegisterBlock {
-        Self::PTR
-    }
-    #[doc = r" Steal an instance of this peripheral"]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
-    #[doc = r" that may race with any existing instances, for example by only"]
-    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
-    #[doc = r" original peripheral and using critical sections to coordinate"]
-    #[doc = r" access between multiple new instances."]
-    #[doc = r""]
-    #[doc = r" Additionally, other software such as HALs may rely on only one"]
-    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
-    #[doc = r" no stolen instances are passed to such software."]
-    pub unsafe fn steal() -> Self {
-        Self {
-            _marker: PhantomData,
-        }
-    }
-}
-impl Deref for Hdmi {
-    type Target = hdmi::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for Hdmi {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("Hdmi").finish()
-    }
-}
-#[doc = "HDMI Registers"]
-pub mod hdmi;
+#[doc = "Watchdog Timer (WDT) 2 Registers"]
+pub use self::wdt as wdt2;
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r" All the peripherals."]
 #[allow(non_snake_case)]
 pub struct Peripherals {
-    #[doc = "PMUCRU"]
-    pub pmucru: Pmucru,
+    #[doc = "CCI500"]
+    pub cci500: Cci500,
     #[doc = "CRU"]
     pub cru: Cru,
+    #[doc = "DDRC"]
+    pub ddrc: Ddrc,
+    #[doc = "DDRC0"]
+    pub ddrc0: Ddrc0,
+    #[doc = "DDRC1"]
+    pub ddrc1: Ddrc1,
+    #[doc = "DDR_CIC"]
+    pub ddr_cic: DdrCic,
+    #[doc = "DDR_MON"]
+    pub ddr_mon: DdrMon,
+    #[doc = "DMAC"]
+    pub dmac: Dmac,
+    #[doc = "DMAC0"]
+    pub dmac0: Dmac0,
+    #[doc = "DMAC1"]
+    pub dmac1: Dmac1,
+    #[doc = "DP"]
+    pub dp: Dp,
+    #[doc = "EFUSE"]
+    pub efuse: Efuse,
+    #[doc = "EFUSE0"]
+    pub efuse0: Efuse0,
+    #[doc = "EFUSE1"]
+    pub efuse1: Efuse1,
+    #[doc = "EMMCCORE"]
+    pub emmccore: Emmccore,
+    #[doc = "ERR_LOGGER_MSCH"]
+    pub err_logger_msch: ErrLoggerMsch,
+    #[doc = "ERR_LOGGER_MSCH0"]
+    pub err_logger_msch0: ErrLoggerMsch0,
+    #[doc = "ERR_LOGGER_MSCH1"]
+    pub err_logger_msch1: ErrLoggerMsch1,
+    #[doc = "ERR_LOGGER_SLV"]
+    pub err_logger_slv: ErrLoggerSlv,
+    #[doc = "ERR_LOGGER_SLV0"]
+    pub err_logger_slv0: ErrLoggerSlv0,
+    #[doc = "ERR_LOGGER_SLV1"]
+    pub err_logger_slv1: ErrLoggerSlv1,
+    #[doc = "GMAC"]
+    pub gmac: Gmac,
+    #[doc = "GPIO"]
+    pub gpio: Gpio,
+    #[doc = "GPIO0"]
+    pub gpio0: Gpio0,
+    #[doc = "GPIO1"]
+    pub gpio1: Gpio1,
+    #[doc = "GPIO2"]
+    pub gpio2: Gpio2,
+    #[doc = "GPIO3"]
+    pub gpio3: Gpio3,
+    #[doc = "GPIO4"]
+    pub gpio4: Gpio4,
     #[doc = "GRF"]
     pub grf: Grf,
+    #[doc = "HDMI"]
+    pub hdmi: Hdmi,
+    #[doc = "I2S"]
+    pub i2s: I2s,
+    #[doc = "I2S0"]
+    pub i2s0: I2s0,
+    #[doc = "I2S1"]
+    pub i2s1: I2s1,
+    #[doc = "I2S2"]
+    pub i2s2: I2s2,
+    #[doc = "MAILBOX"]
+    pub mailbox: Mailbox,
+    #[doc = "MAILBOX0"]
+    pub mailbox0: Mailbox0,
+    #[doc = "MAILBOX1"]
+    pub mailbox1: Mailbox1,
+    #[doc = "MMU"]
+    pub mmu: Mmu,
+    #[doc = "MMU0_ISP0"]
+    pub mmu0_isp0: Mmu0Isp0,
+    #[doc = "MMU0_ISP1"]
+    pub mmu0_isp1: Mmu0Isp1,
+    #[doc = "MMU1_ISP0"]
+    pub mmu1_isp0: Mmu1Isp0,
+    #[doc = "MMU1_ISP1"]
+    pub mmu1_isp1: Mmu1Isp1,
+    #[doc = "MMU_HDCP"]
+    pub mmu_hdcp: MmuHdcp,
+    #[doc = "MMU_IEP"]
+    pub mmu_iep: MmuIep,
+    #[doc = "MMU_VOPB"]
+    pub mmu_vopb: MmuVopb,
+    #[doc = "MMU_VOPL"]
+    pub mmu_vopl: MmuVopl,
+    #[doc = "MSCH"]
+    pub msch: Msch,
+    #[doc = "MSCH0"]
+    pub msch0: Msch0,
+    #[doc = "MSCH1"]
+    pub msch1: Msch1,
+    #[doc = "PCIE_CLIENT"]
+    pub pcie_client: PcieClient,
+    #[doc = "PCIE_CORE"]
+    pub pcie_core: PcieCore,
+    #[doc = "PMU"]
+    pub pmu: Pmu,
+    #[doc = "PMUCRU"]
+    pub pmucru: Pmucru,
     #[doc = "PMUGRF"]
     pub pmugrf: Pmugrf,
+    #[doc = "PROBE"]
+    pub probe: Probe,
+    #[doc = "PROBE_CCI_MSCH0"]
+    pub probe_cci_msch0: ProbeCciMsch0,
+    #[doc = "PROBE_CCI_MSCH1"]
+    pub probe_cci_msch1: ProbeCciMsch1,
+    #[doc = "PROBE_GPU_MSCH0"]
+    pub probe_gpu_msch0: ProbeGpuMsch0,
+    #[doc = "PROBE_GPU_MSCH1"]
+    pub probe_gpu_msch1: ProbeGpuMsch1,
+    #[doc = "PROBE_PERIHP_MSCH0"]
+    pub probe_perihp_msch0: ProbePerihpMsch0,
+    #[doc = "PROBE_PERIHP_MSCH1"]
+    pub probe_perihp_msch1: ProbePerihpMsch1,
+    #[doc = "PROBE_PERILP_MSCH0"]
+    pub probe_perilp_msch0: ProbePerilpMsch0,
+    #[doc = "PROBE_PERILP_MSCH1"]
+    pub probe_perilp_msch1: ProbePerilpMsch1,
+    #[doc = "PROBE_VIDEO_MSCH0"]
+    pub probe_video_msch0: ProbeVideoMsch0,
+    #[doc = "PROBE_VIDEO_MSCH1"]
+    pub probe_video_msch1: ProbeVideoMsch1,
+    #[doc = "PROBE_VIO0_MSCH0"]
+    pub probe_vio0_msch0: ProbeVio0Msch0,
+    #[doc = "PROBE_VIO0_MSCH1"]
+    pub probe_vio0_msch1: ProbeVio0Msch1,
+    #[doc = "PROBE_VIO1_MSCH0"]
+    pub probe_vio1_msch0: ProbeVio1Msch0,
+    #[doc = "PROBE_VIO1_MSCH1"]
+    pub probe_vio1_msch1: ProbeVio1Msch1,
+    #[doc = "PWM"]
+    pub pwm: Pwm,
     #[doc = "QOS"]
     pub qos: Qos,
     #[doc = "QOS_CCI_M0"]
     pub qos_cci_m0: QosCciM0,
     #[doc = "QOS_CCI_M1"]
     pub qos_cci_m1: QosCciM1,
-    #[doc = "QOS_DMAC0"]
-    pub qos_dmac0: QosDmac0,
-    #[doc = "QOS_DMAC1"]
-    pub qos_dmac1: QosDmac1,
-    #[doc = "QOS_DCF"]
-    pub qos_dcf: QosDcf,
     #[doc = "QOS_CRYPTO0"]
     pub qos_crypto0: QosCrypto0,
     #[doc = "QOS_CRYPTO1"]
     pub qos_crypto1: QosCrypto1,
-    #[doc = "QOS_PMU_CM0"]
-    pub qos_pmu_cm0: QosPmuCm0,
-    #[doc = "QOS_PERI_CM0"]
-    pub qos_peri_cm0: QosPeriCm0,
-    #[doc = "QOS_GIC"]
-    pub qos_gic: QosGic,
-    #[doc = "QOS_SDIO"]
-    pub qos_sdio: QosSdio,
-    #[doc = "QOS_SDMMC"]
-    pub qos_sdmmc: QosSdmmc,
+    #[doc = "QOS_DCF"]
+    pub qos_dcf: QosDcf,
+    #[doc = "QOS_DMAC0"]
+    pub qos_dmac0: QosDmac0,
+    #[doc = "QOS_DMAC1"]
+    pub qos_dmac1: QosDmac1,
     #[doc = "QOS_EMMC"]
     pub qos_emmc: QosEmmc,
-    #[doc = "QOS_PCIE"]
-    pub qos_pcie: QosPcie,
-    #[doc = "QOS_HSIC"]
-    pub qos_hsic: QosHsic,
+    #[doc = "QOS_GIC"]
+    pub qos_gic: QosGic,
     #[doc = "QOS_GMAC"]
     pub qos_gmac: QosGmac,
-    #[doc = "QOS_USB_OTG0"]
-    pub qos_usb_otg0: QosUsbOtg0,
-    #[doc = "QOS_USB_OTG1"]
-    pub qos_usb_otg1: QosUsbOtg1,
-    #[doc = "QOS_USB_HOST0"]
-    pub qos_usb_host0: QosUsbHost0,
-    #[doc = "QOS_USB_HOST1"]
-    pub qos_usb_host1: QosUsbHost1,
     #[doc = "QOS_GPU"]
     pub qos_gpu: QosGpu,
-    #[doc = "QOS_VIDEO_M0"]
-    pub qos_video_m0: QosVideoM0,
-    #[doc = "QOS_VIDEO_M1_R"]
-    pub qos_video_m1_r: QosVideoM1R,
-    #[doc = "QOS_VIDEO_M1_W"]
-    pub qos_video_m1_w: QosVideoM1W,
-    #[doc = "QOS_RGA_R"]
-    pub qos_rga_r: QosRgaR,
-    #[doc = "QOS_RGA_W"]
-    pub qos_rga_w: QosRgaW,
+    #[doc = "QOS_HDCP"]
+    pub qos_hdcp: QosHdcp,
+    #[doc = "QOS_HSIC"]
+    pub qos_hsic: QosHsic,
     #[doc = "QOS_IEP"]
     pub qos_iep: QosIep,
-    #[doc = "QOS_VOP_BIG_R"]
-    pub qos_vop_big_r: QosVopBigR,
-    #[doc = "QOS_VOP_BIG_W"]
-    pub qos_vop_big_w: QosVopBigW,
-    #[doc = "QOS_VOP_LITTLE"]
-    pub qos_vop_little: QosVopLittle,
     #[doc = "QOS_ISP0_M0"]
     pub qos_isp0_m0: QosIsp0M0,
     #[doc = "QOS_ISP0_M1"]
@@ -7917,88 +8017,86 @@ pub struct Peripherals {
     pub qos_isp1_m0: QosIsp1M0,
     #[doc = "QOS_ISP1_M1"]
     pub qos_isp1_m1: QosIsp1M1,
-    #[doc = "QOS_HDCP"]
-    pub qos_hdcp: QosHdcp,
+    #[doc = "QOS_PCIE"]
+    pub qos_pcie: QosPcie,
     #[doc = "QOS_PERIHP_NSP"]
     pub qos_perihp_nsp: QosPerihpNsp,
-    #[doc = "QOS_PERILP_NSP"]
-    pub qos_perilp_nsp: QosPerilpNsp,
     #[doc = "QOS_PERILPSLV_NSP"]
     pub qos_perilpslv_nsp: QosPerilpslvNsp,
-    #[doc = "ERR_LOGGER_SLV"]
-    pub err_logger_slv: ErrLoggerSlv,
-    #[doc = "ERR_LOGGER_SLV0"]
-    pub err_logger_slv0: ErrLoggerSlv0,
-    #[doc = "ERR_LOGGER_SLV1"]
-    pub err_logger_slv1: ErrLoggerSlv1,
-    #[doc = "ERR_LOGGER_MSCH"]
-    pub err_logger_msch: ErrLoggerMsch,
-    #[doc = "ERR_LOGGER_MSCH0"]
-    pub err_logger_msch0: ErrLoggerMsch0,
-    #[doc = "ERR_LOGGER_MSCH1"]
-    pub err_logger_msch1: ErrLoggerMsch1,
-    #[doc = "MSCH"]
-    pub msch: Msch,
-    #[doc = "MSCH0"]
-    pub msch0: Msch0,
-    #[doc = "MSCH1"]
-    pub msch1: Msch1,
-    #[doc = "PROBE"]
-    pub probe: Probe,
-    #[doc = "PROBE_CCI_MSCH0"]
-    pub probe_cci_msch0: ProbeCciMsch0,
-    #[doc = "PROBE_GPU_MSCH0"]
-    pub probe_gpu_msch0: ProbeGpuMsch0,
-    #[doc = "PROBE_PERIHP_MSCH0"]
-    pub probe_perihp_msch0: ProbePerihpMsch0,
-    #[doc = "PROBE_PERILP_MSCH0"]
-    pub probe_perilp_msch0: ProbePerilpMsch0,
-    #[doc = "PROBE_VIDEO_MSCH0"]
-    pub probe_video_msch0: ProbeVideoMsch0,
-    #[doc = "PROBE_VIO0_MSCH0"]
-    pub probe_vio0_msch0: ProbeVio0Msch0,
-    #[doc = "PROBE_VIO1_MSCH0"]
-    pub probe_vio1_msch0: ProbeVio1Msch0,
-    #[doc = "PROBE_CCI_MSCH1"]
-    pub probe_cci_msch1: ProbeCciMsch1,
-    #[doc = "PROBE_GPU_MSCH1"]
-    pub probe_gpu_msch1: ProbeGpuMsch1,
-    #[doc = "PROBE_PERIHP_MSCH1"]
-    pub probe_perihp_msch1: ProbePerihpMsch1,
-    #[doc = "PROBE_PERILP_MSCH1"]
-    pub probe_perilp_msch1: ProbePerilpMsch1,
-    #[doc = "PROBE_VIDEO_MSCH1"]
-    pub probe_video_msch1: ProbeVideoMsch1,
-    #[doc = "PROBE_VIO0_MSCH1"]
-    pub probe_vio0_msch1: ProbeVio0Msch1,
-    #[doc = "PROBE_VIO1_MSCH1"]
-    pub probe_vio1_msch1: ProbeVio1Msch1,
-    #[doc = "CCI500"]
-    pub cci500: Cci500,
-    #[doc = "DDR_CIC"]
-    pub ddr_cic: DdrCic,
-    #[doc = "DDR_MON"]
-    pub ddr_mon: DdrMon,
-    #[doc = "PMU"]
-    pub pmu: Pmu,
-    #[doc = "MMU"]
-    pub mmu: Mmu,
-    #[doc = "MMU0_ISP0"]
-    pub mmu0_isp0: Mmu0Isp0,
-    #[doc = "MMU1_ISP0"]
-    pub mmu1_isp0: Mmu1Isp0,
-    #[doc = "MMU0_ISP1"]
-    pub mmu0_isp1: Mmu0Isp1,
-    #[doc = "MMU1_ISP1"]
-    pub mmu1_isp1: Mmu1Isp1,
-    #[doc = "MMU_VOPB"]
-    pub mmu_vopb: MmuVopb,
-    #[doc = "MMU_VOPL"]
-    pub mmu_vopl: MmuVopl,
-    #[doc = "MMU_IEP"]
-    pub mmu_iep: MmuIep,
-    #[doc = "MMU_HDCP"]
-    pub mmu_hdcp: MmuHdcp,
+    #[doc = "QOS_PERILP_NSP"]
+    pub qos_perilp_nsp: QosPerilpNsp,
+    #[doc = "QOS_PERI_CM0"]
+    pub qos_peri_cm0: QosPeriCm0,
+    #[doc = "QOS_PMU_CM0"]
+    pub qos_pmu_cm0: QosPmuCm0,
+    #[doc = "QOS_RGA_R"]
+    pub qos_rga_r: QosRgaR,
+    #[doc = "QOS_RGA_W"]
+    pub qos_rga_w: QosRgaW,
+    #[doc = "QOS_SDIO"]
+    pub qos_sdio: QosSdio,
+    #[doc = "QOS_SDMMC"]
+    pub qos_sdmmc: QosSdmmc,
+    #[doc = "QOS_USB_HOST0"]
+    pub qos_usb_host0: QosUsbHost0,
+    #[doc = "QOS_USB_HOST1"]
+    pub qos_usb_host1: QosUsbHost1,
+    #[doc = "QOS_USB_OTG0"]
+    pub qos_usb_otg0: QosUsbOtg0,
+    #[doc = "QOS_USB_OTG1"]
+    pub qos_usb_otg1: QosUsbOtg1,
+    #[doc = "QOS_VIDEO_M0"]
+    pub qos_video_m0: QosVideoM0,
+    #[doc = "QOS_VIDEO_M1_R"]
+    pub qos_video_m1_r: QosVideoM1R,
+    #[doc = "QOS_VIDEO_M1_W"]
+    pub qos_video_m1_w: QosVideoM1W,
+    #[doc = "QOS_VOP_BIG_R"]
+    pub qos_vop_big_r: QosVopBigR,
+    #[doc = "QOS_VOP_BIG_W"]
+    pub qos_vop_big_w: QosVopBigW,
+    #[doc = "QOS_VOP_LITTLE"]
+    pub qos_vop_little: QosVopLittle,
+    #[doc = "RKI2C"]
+    pub rki2c: Rki2c,
+    #[doc = "RKI2C0"]
+    pub rki2c0: Rki2c0,
+    #[doc = "RKI2C1"]
+    pub rki2c1: Rki2c1,
+    #[doc = "RKI2C2"]
+    pub rki2c2: Rki2c2,
+    #[doc = "RKI2C3"]
+    pub rki2c3: Rki2c3,
+    #[doc = "RKI2C4"]
+    pub rki2c4: Rki2c4,
+    #[doc = "RKI2C5"]
+    pub rki2c5: Rki2c5,
+    #[doc = "RKI2C6"]
+    pub rki2c6: Rki2c6,
+    #[doc = "RKI2C7"]
+    pub rki2c7: Rki2c7,
+    #[doc = "RKI2C8"]
+    pub rki2c8: Rki2c8,
+    #[doc = "SARADC"]
+    pub saradc: Saradc,
+    #[doc = "SDMMC"]
+    pub sdmmc: Sdmmc,
+    #[doc = "SPDIF"]
+    pub spdif: Spdif,
+    #[doc = "SPI"]
+    pub spi: Spi,
+    #[doc = "SPI0"]
+    pub spi0: Spi0,
+    #[doc = "SPI1"]
+    pub spi1: Spi1,
+    #[doc = "SPI2"]
+    pub spi2: Spi2,
+    #[doc = "SPI3"]
+    pub spi3: Spi3,
+    #[doc = "SPI4"]
+    pub spi4: Spi4,
+    #[doc = "SPI5"]
+    pub spi5: Spi5,
     #[doc = "TIMER"]
     pub timer: Timer,
     #[doc = "TIMER0"]
@@ -8053,44 +8151,8 @@ pub struct Peripherals {
     pub pmutimer0: Pmutimer0,
     #[doc = "PMUTIMER1"]
     pub pmutimer1: Pmutimer1,
-    #[doc = "DMAC"]
-    pub dmac: Dmac,
-    #[doc = "DMAC0"]
-    pub dmac0: Dmac0,
-    #[doc = "DMAC1"]
-    pub dmac1: Dmac1,
     #[doc = "TSADC"]
     pub tsadc: Tsadc,
-    #[doc = "MAILBOX"]
-    pub mailbox: Mailbox,
-    #[doc = "MAILBOX0"]
-    pub mailbox0: Mailbox0,
-    #[doc = "MAILBOX1"]
-    pub mailbox1: Mailbox1,
-    #[doc = "EFUSE"]
-    pub efuse: Efuse,
-    #[doc = "EFUSE0"]
-    pub efuse0: Efuse0,
-    #[doc = "EFUSE1"]
-    pub efuse1: Efuse1,
-    #[doc = "WDT"]
-    pub wdt: Wdt,
-    #[doc = "WDT0"]
-    pub wdt0: Wdt0,
-    #[doc = "WDT1"]
-    pub wdt1: Wdt1,
-    #[doc = "WDT2"]
-    pub wdt2: Wdt2,
-    #[doc = "SDMMC"]
-    pub sdmmc: Sdmmc,
-    #[doc = "USB3"]
-    pub usb3: Usb3,
-    #[doc = "USB3_OTG0"]
-    pub usb3_otg0: Usb3Otg0,
-    #[doc = "USB3_OTG1"]
-    pub usb3_otg1: Usb3Otg1,
-    #[doc = "PWM"]
-    pub pwm: Pwm,
     #[doc = "UART"]
     pub uart: Uart,
     #[doc = "UART0"]
@@ -8103,82 +8165,20 @@ pub struct Peripherals {
     pub uart3: Uart3,
     #[doc = "UART4"]
     pub uart4: Uart4,
-    #[doc = "GPIO"]
-    pub gpio: Gpio,
-    #[doc = "GPIO0"]
-    pub gpio0: Gpio0,
-    #[doc = "GPIO1"]
-    pub gpio1: Gpio1,
-    #[doc = "GPIO2"]
-    pub gpio2: Gpio2,
-    #[doc = "GPIO3"]
-    pub gpio3: Gpio3,
-    #[doc = "GPIO4"]
-    pub gpio4: Gpio4,
-    #[doc = "RKI2C"]
-    pub rki2c: Rki2c,
-    #[doc = "RKI2C0"]
-    pub rki2c0: Rki2c0,
-    #[doc = "RKI2C1"]
-    pub rki2c1: Rki2c1,
-    #[doc = "RKI2C2"]
-    pub rki2c2: Rki2c2,
-    #[doc = "RKI2C3"]
-    pub rki2c3: Rki2c3,
-    #[doc = "RKI2C4"]
-    pub rki2c4: Rki2c4,
-    #[doc = "RKI2C5"]
-    pub rki2c5: Rki2c5,
-    #[doc = "RKI2C6"]
-    pub rki2c6: Rki2c6,
-    #[doc = "RKI2C7"]
-    pub rki2c7: Rki2c7,
-    #[doc = "RKI2C8"]
-    pub rki2c8: Rki2c8,
-    #[doc = "I2S"]
-    pub i2s: I2s,
-    #[doc = "I2S0"]
-    pub i2s0: I2s0,
-    #[doc = "I2S1"]
-    pub i2s1: I2s1,
-    #[doc = "I2S2"]
-    pub i2s2: I2s2,
-    #[doc = "SPI"]
-    pub spi: Spi,
-    #[doc = "SPI0"]
-    pub spi0: Spi0,
-    #[doc = "SPI1"]
-    pub spi1: Spi1,
-    #[doc = "SPI2"]
-    pub spi2: Spi2,
-    #[doc = "SPI3"]
-    pub spi3: Spi3,
-    #[doc = "SPI4"]
-    pub spi4: Spi4,
-    #[doc = "SPI5"]
-    pub spi5: Spi5,
-    #[doc = "SPDIF"]
-    pub spdif: Spdif,
-    #[doc = "GMAC"]
-    pub gmac: Gmac,
-    #[doc = "EMMCCORE"]
-    pub emmccore: Emmccore,
-    #[doc = "PCIE_CLIENT"]
-    pub pcie_client: PcieClient,
-    #[doc = "SARADC"]
-    pub saradc: Saradc,
-    #[doc = "DDRC"]
-    pub ddrc: Ddrc,
-    #[doc = "DDRC0"]
-    pub ddrc0: Ddrc0,
-    #[doc = "DDRC1"]
-    pub ddrc1: Ddrc1,
-    #[doc = "PCIE_CORE"]
-    pub pcie_core: PcieCore,
-    #[doc = "DP"]
-    pub dp: Dp,
-    #[doc = "HDMI"]
-    pub hdmi: Hdmi,
+    #[doc = "USB3"]
+    pub usb3: Usb3,
+    #[doc = "USB3_OTG0"]
+    pub usb3_otg0: Usb3Otg0,
+    #[doc = "USB3_OTG1"]
+    pub usb3_otg1: Usb3Otg1,
+    #[doc = "WDT"]
+    pub wdt: Wdt,
+    #[doc = "WDT0"]
+    pub wdt0: Wdt0,
+    #[doc = "WDT1"]
+    pub wdt1: Wdt1,
+    #[doc = "WDT2"]
+    pub wdt2: Wdt2,
 }
 impl Peripherals {
     #[doc = r" Returns all the peripherals *once*."]
@@ -8201,16 +8201,214 @@ impl Peripherals {
     pub unsafe fn steal() -> Self {
         DEVICE_PERIPHERALS = true;
         Peripherals {
-            pmucru: Pmucru {
+            cci500: Cci500 {
                 _marker: PhantomData,
             },
             cru: Cru {
                 _marker: PhantomData,
             },
+            ddrc: Ddrc {
+                _marker: PhantomData,
+            },
+            ddrc0: Ddrc0 {
+                _marker: PhantomData,
+            },
+            ddrc1: Ddrc1 {
+                _marker: PhantomData,
+            },
+            ddr_cic: DdrCic {
+                _marker: PhantomData,
+            },
+            ddr_mon: DdrMon {
+                _marker: PhantomData,
+            },
+            dmac: Dmac {
+                _marker: PhantomData,
+            },
+            dmac0: Dmac0 {
+                _marker: PhantomData,
+            },
+            dmac1: Dmac1 {
+                _marker: PhantomData,
+            },
+            dp: Dp {
+                _marker: PhantomData,
+            },
+            efuse: Efuse {
+                _marker: PhantomData,
+            },
+            efuse0: Efuse0 {
+                _marker: PhantomData,
+            },
+            efuse1: Efuse1 {
+                _marker: PhantomData,
+            },
+            emmccore: Emmccore {
+                _marker: PhantomData,
+            },
+            err_logger_msch: ErrLoggerMsch {
+                _marker: PhantomData,
+            },
+            err_logger_msch0: ErrLoggerMsch0 {
+                _marker: PhantomData,
+            },
+            err_logger_msch1: ErrLoggerMsch1 {
+                _marker: PhantomData,
+            },
+            err_logger_slv: ErrLoggerSlv {
+                _marker: PhantomData,
+            },
+            err_logger_slv0: ErrLoggerSlv0 {
+                _marker: PhantomData,
+            },
+            err_logger_slv1: ErrLoggerSlv1 {
+                _marker: PhantomData,
+            },
+            gmac: Gmac {
+                _marker: PhantomData,
+            },
+            gpio: Gpio {
+                _marker: PhantomData,
+            },
+            gpio0: Gpio0 {
+                _marker: PhantomData,
+            },
+            gpio1: Gpio1 {
+                _marker: PhantomData,
+            },
+            gpio2: Gpio2 {
+                _marker: PhantomData,
+            },
+            gpio3: Gpio3 {
+                _marker: PhantomData,
+            },
+            gpio4: Gpio4 {
+                _marker: PhantomData,
+            },
             grf: Grf {
                 _marker: PhantomData,
             },
+            hdmi: Hdmi {
+                _marker: PhantomData,
+            },
+            i2s: I2s {
+                _marker: PhantomData,
+            },
+            i2s0: I2s0 {
+                _marker: PhantomData,
+            },
+            i2s1: I2s1 {
+                _marker: PhantomData,
+            },
+            i2s2: I2s2 {
+                _marker: PhantomData,
+            },
+            mailbox: Mailbox {
+                _marker: PhantomData,
+            },
+            mailbox0: Mailbox0 {
+                _marker: PhantomData,
+            },
+            mailbox1: Mailbox1 {
+                _marker: PhantomData,
+            },
+            mmu: Mmu {
+                _marker: PhantomData,
+            },
+            mmu0_isp0: Mmu0Isp0 {
+                _marker: PhantomData,
+            },
+            mmu0_isp1: Mmu0Isp1 {
+                _marker: PhantomData,
+            },
+            mmu1_isp0: Mmu1Isp0 {
+                _marker: PhantomData,
+            },
+            mmu1_isp1: Mmu1Isp1 {
+                _marker: PhantomData,
+            },
+            mmu_hdcp: MmuHdcp {
+                _marker: PhantomData,
+            },
+            mmu_iep: MmuIep {
+                _marker: PhantomData,
+            },
+            mmu_vopb: MmuVopb {
+                _marker: PhantomData,
+            },
+            mmu_vopl: MmuVopl {
+                _marker: PhantomData,
+            },
+            msch: Msch {
+                _marker: PhantomData,
+            },
+            msch0: Msch0 {
+                _marker: PhantomData,
+            },
+            msch1: Msch1 {
+                _marker: PhantomData,
+            },
+            pcie_client: PcieClient {
+                _marker: PhantomData,
+            },
+            pcie_core: PcieCore {
+                _marker: PhantomData,
+            },
+            pmu: Pmu {
+                _marker: PhantomData,
+            },
+            pmucru: Pmucru {
+                _marker: PhantomData,
+            },
             pmugrf: Pmugrf {
+                _marker: PhantomData,
+            },
+            probe: Probe {
+                _marker: PhantomData,
+            },
+            probe_cci_msch0: ProbeCciMsch0 {
+                _marker: PhantomData,
+            },
+            probe_cci_msch1: ProbeCciMsch1 {
+                _marker: PhantomData,
+            },
+            probe_gpu_msch0: ProbeGpuMsch0 {
+                _marker: PhantomData,
+            },
+            probe_gpu_msch1: ProbeGpuMsch1 {
+                _marker: PhantomData,
+            },
+            probe_perihp_msch0: ProbePerihpMsch0 {
+                _marker: PhantomData,
+            },
+            probe_perihp_msch1: ProbePerihpMsch1 {
+                _marker: PhantomData,
+            },
+            probe_perilp_msch0: ProbePerilpMsch0 {
+                _marker: PhantomData,
+            },
+            probe_perilp_msch1: ProbePerilpMsch1 {
+                _marker: PhantomData,
+            },
+            probe_video_msch0: ProbeVideoMsch0 {
+                _marker: PhantomData,
+            },
+            probe_video_msch1: ProbeVideoMsch1 {
+                _marker: PhantomData,
+            },
+            probe_vio0_msch0: ProbeVio0Msch0 {
+                _marker: PhantomData,
+            },
+            probe_vio0_msch1: ProbeVio0Msch1 {
+                _marker: PhantomData,
+            },
+            probe_vio1_msch0: ProbeVio1Msch0 {
+                _marker: PhantomData,
+            },
+            probe_vio1_msch1: ProbeVio1Msch1 {
+                _marker: PhantomData,
+            },
+            pwm: Pwm {
                 _marker: PhantomData,
             },
             qos: Qos {
@@ -8222,88 +8420,40 @@ impl Peripherals {
             qos_cci_m1: QosCciM1 {
                 _marker: PhantomData,
             },
-            qos_dmac0: QosDmac0 {
-                _marker: PhantomData,
-            },
-            qos_dmac1: QosDmac1 {
-                _marker: PhantomData,
-            },
-            qos_dcf: QosDcf {
-                _marker: PhantomData,
-            },
             qos_crypto0: QosCrypto0 {
                 _marker: PhantomData,
             },
             qos_crypto1: QosCrypto1 {
                 _marker: PhantomData,
             },
-            qos_pmu_cm0: QosPmuCm0 {
+            qos_dcf: QosDcf {
                 _marker: PhantomData,
             },
-            qos_peri_cm0: QosPeriCm0 {
+            qos_dmac0: QosDmac0 {
                 _marker: PhantomData,
             },
-            qos_gic: QosGic {
-                _marker: PhantomData,
-            },
-            qos_sdio: QosSdio {
-                _marker: PhantomData,
-            },
-            qos_sdmmc: QosSdmmc {
+            qos_dmac1: QosDmac1 {
                 _marker: PhantomData,
             },
             qos_emmc: QosEmmc {
                 _marker: PhantomData,
             },
-            qos_pcie: QosPcie {
-                _marker: PhantomData,
-            },
-            qos_hsic: QosHsic {
+            qos_gic: QosGic {
                 _marker: PhantomData,
             },
             qos_gmac: QosGmac {
                 _marker: PhantomData,
             },
-            qos_usb_otg0: QosUsbOtg0 {
-                _marker: PhantomData,
-            },
-            qos_usb_otg1: QosUsbOtg1 {
-                _marker: PhantomData,
-            },
-            qos_usb_host0: QosUsbHost0 {
-                _marker: PhantomData,
-            },
-            qos_usb_host1: QosUsbHost1 {
-                _marker: PhantomData,
-            },
             qos_gpu: QosGpu {
                 _marker: PhantomData,
             },
-            qos_video_m0: QosVideoM0 {
+            qos_hdcp: QosHdcp {
                 _marker: PhantomData,
             },
-            qos_video_m1_r: QosVideoM1R {
-                _marker: PhantomData,
-            },
-            qos_video_m1_w: QosVideoM1W {
-                _marker: PhantomData,
-            },
-            qos_rga_r: QosRgaR {
-                _marker: PhantomData,
-            },
-            qos_rga_w: QosRgaW {
+            qos_hsic: QosHsic {
                 _marker: PhantomData,
             },
             qos_iep: QosIep {
-                _marker: PhantomData,
-            },
-            qos_vop_big_r: QosVopBigR {
-                _marker: PhantomData,
-            },
-            qos_vop_big_w: QosVopBigW {
-                _marker: PhantomData,
-            },
-            qos_vop_little: QosVopLittle {
                 _marker: PhantomData,
             },
             qos_isp0_m0: QosIsp0M0 {
@@ -8318,127 +8468,124 @@ impl Peripherals {
             qos_isp1_m1: QosIsp1M1 {
                 _marker: PhantomData,
             },
-            qos_hdcp: QosHdcp {
+            qos_pcie: QosPcie {
                 _marker: PhantomData,
             },
             qos_perihp_nsp: QosPerihpNsp {
                 _marker: PhantomData,
             },
-            qos_perilp_nsp: QosPerilpNsp {
-                _marker: PhantomData,
-            },
             qos_perilpslv_nsp: QosPerilpslvNsp {
                 _marker: PhantomData,
             },
-            err_logger_slv: ErrLoggerSlv {
+            qos_perilp_nsp: QosPerilpNsp {
                 _marker: PhantomData,
             },
-            err_logger_slv0: ErrLoggerSlv0 {
+            qos_peri_cm0: QosPeriCm0 {
                 _marker: PhantomData,
             },
-            err_logger_slv1: ErrLoggerSlv1 {
+            qos_pmu_cm0: QosPmuCm0 {
                 _marker: PhantomData,
             },
-            err_logger_msch: ErrLoggerMsch {
+            qos_rga_r: QosRgaR {
                 _marker: PhantomData,
             },
-            err_logger_msch0: ErrLoggerMsch0 {
+            qos_rga_w: QosRgaW {
                 _marker: PhantomData,
             },
-            err_logger_msch1: ErrLoggerMsch1 {
+            qos_sdio: QosSdio {
                 _marker: PhantomData,
             },
-            msch: Msch {
+            qos_sdmmc: QosSdmmc {
                 _marker: PhantomData,
             },
-            msch0: Msch0 {
+            qos_usb_host0: QosUsbHost0 {
                 _marker: PhantomData,
             },
-            msch1: Msch1 {
+            qos_usb_host1: QosUsbHost1 {
                 _marker: PhantomData,
             },
-            probe: Probe {
+            qos_usb_otg0: QosUsbOtg0 {
                 _marker: PhantomData,
             },
-            probe_cci_msch0: ProbeCciMsch0 {
+            qos_usb_otg1: QosUsbOtg1 {
                 _marker: PhantomData,
             },
-            probe_gpu_msch0: ProbeGpuMsch0 {
+            qos_video_m0: QosVideoM0 {
                 _marker: PhantomData,
             },
-            probe_perihp_msch0: ProbePerihpMsch0 {
+            qos_video_m1_r: QosVideoM1R {
                 _marker: PhantomData,
             },
-            probe_perilp_msch0: ProbePerilpMsch0 {
+            qos_video_m1_w: QosVideoM1W {
                 _marker: PhantomData,
             },
-            probe_video_msch0: ProbeVideoMsch0 {
+            qos_vop_big_r: QosVopBigR {
                 _marker: PhantomData,
             },
-            probe_vio0_msch0: ProbeVio0Msch0 {
+            qos_vop_big_w: QosVopBigW {
                 _marker: PhantomData,
             },
-            probe_vio1_msch0: ProbeVio1Msch0 {
+            qos_vop_little: QosVopLittle {
                 _marker: PhantomData,
             },
-            probe_cci_msch1: ProbeCciMsch1 {
+            rki2c: Rki2c {
                 _marker: PhantomData,
             },
-            probe_gpu_msch1: ProbeGpuMsch1 {
+            rki2c0: Rki2c0 {
                 _marker: PhantomData,
             },
-            probe_perihp_msch1: ProbePerihpMsch1 {
+            rki2c1: Rki2c1 {
                 _marker: PhantomData,
             },
-            probe_perilp_msch1: ProbePerilpMsch1 {
+            rki2c2: Rki2c2 {
                 _marker: PhantomData,
             },
-            probe_video_msch1: ProbeVideoMsch1 {
+            rki2c3: Rki2c3 {
                 _marker: PhantomData,
             },
-            probe_vio0_msch1: ProbeVio0Msch1 {
+            rki2c4: Rki2c4 {
                 _marker: PhantomData,
             },
-            probe_vio1_msch1: ProbeVio1Msch1 {
+            rki2c5: Rki2c5 {
                 _marker: PhantomData,
             },
-            cci500: Cci500 {
+            rki2c6: Rki2c6 {
                 _marker: PhantomData,
             },
-            ddr_cic: DdrCic {
+            rki2c7: Rki2c7 {
                 _marker: PhantomData,
             },
-            ddr_mon: DdrMon {
+            rki2c8: Rki2c8 {
                 _marker: PhantomData,
             },
-            pmu: Pmu {
+            saradc: Saradc {
                 _marker: PhantomData,
             },
-            mmu: Mmu {
+            sdmmc: Sdmmc {
                 _marker: PhantomData,
             },
-            mmu0_isp0: Mmu0Isp0 {
+            spdif: Spdif {
                 _marker: PhantomData,
             },
-            mmu1_isp0: Mmu1Isp0 {
+            spi: Spi {
                 _marker: PhantomData,
             },
-            mmu0_isp1: Mmu0Isp1 {
+            spi0: Spi0 {
                 _marker: PhantomData,
             },
-            mmu1_isp1: Mmu1Isp1 {
+            spi1: Spi1 {
                 _marker: PhantomData,
             },
-            mmu_vopb: MmuVopb {
+            spi2: Spi2 {
                 _marker: PhantomData,
             },
-            mmu_vopl: MmuVopl {
+            spi3: Spi3 {
                 _marker: PhantomData,
             },
-            mmu_iep: MmuIep {
+            spi4: Spi4 {
                 _marker: PhantomData,
             },
-            mmu_hdcp: MmuHdcp {
+            spi5: Spi5 {
                 _marker: PhantomData,
             },
             timer: Timer {
@@ -8522,61 +8669,7 @@ impl Peripherals {
             pmutimer1: Pmutimer1 {
                 _marker: PhantomData,
             },
-            dmac: Dmac {
-                _marker: PhantomData,
-            },
-            dmac0: Dmac0 {
-                _marker: PhantomData,
-            },
-            dmac1: Dmac1 {
-                _marker: PhantomData,
-            },
             tsadc: Tsadc {
-                _marker: PhantomData,
-            },
-            mailbox: Mailbox {
-                _marker: PhantomData,
-            },
-            mailbox0: Mailbox0 {
-                _marker: PhantomData,
-            },
-            mailbox1: Mailbox1 {
-                _marker: PhantomData,
-            },
-            efuse: Efuse {
-                _marker: PhantomData,
-            },
-            efuse0: Efuse0 {
-                _marker: PhantomData,
-            },
-            efuse1: Efuse1 {
-                _marker: PhantomData,
-            },
-            wdt: Wdt {
-                _marker: PhantomData,
-            },
-            wdt0: Wdt0 {
-                _marker: PhantomData,
-            },
-            wdt1: Wdt1 {
-                _marker: PhantomData,
-            },
-            wdt2: Wdt2 {
-                _marker: PhantomData,
-            },
-            sdmmc: Sdmmc {
-                _marker: PhantomData,
-            },
-            usb3: Usb3 {
-                _marker: PhantomData,
-            },
-            usb3_otg0: Usb3Otg0 {
-                _marker: PhantomData,
-            },
-            usb3_otg1: Usb3Otg1 {
-                _marker: PhantomData,
-            },
-            pwm: Pwm {
                 _marker: PhantomData,
             },
             uart: Uart {
@@ -8597,118 +8690,25 @@ impl Peripherals {
             uart4: Uart4 {
                 _marker: PhantomData,
             },
-            gpio: Gpio {
+            usb3: Usb3 {
                 _marker: PhantomData,
             },
-            gpio0: Gpio0 {
+            usb3_otg0: Usb3Otg0 {
                 _marker: PhantomData,
             },
-            gpio1: Gpio1 {
+            usb3_otg1: Usb3Otg1 {
                 _marker: PhantomData,
             },
-            gpio2: Gpio2 {
+            wdt: Wdt {
                 _marker: PhantomData,
             },
-            gpio3: Gpio3 {
+            wdt0: Wdt0 {
                 _marker: PhantomData,
             },
-            gpio4: Gpio4 {
+            wdt1: Wdt1 {
                 _marker: PhantomData,
             },
-            rki2c: Rki2c {
-                _marker: PhantomData,
-            },
-            rki2c0: Rki2c0 {
-                _marker: PhantomData,
-            },
-            rki2c1: Rki2c1 {
-                _marker: PhantomData,
-            },
-            rki2c2: Rki2c2 {
-                _marker: PhantomData,
-            },
-            rki2c3: Rki2c3 {
-                _marker: PhantomData,
-            },
-            rki2c4: Rki2c4 {
-                _marker: PhantomData,
-            },
-            rki2c5: Rki2c5 {
-                _marker: PhantomData,
-            },
-            rki2c6: Rki2c6 {
-                _marker: PhantomData,
-            },
-            rki2c7: Rki2c7 {
-                _marker: PhantomData,
-            },
-            rki2c8: Rki2c8 {
-                _marker: PhantomData,
-            },
-            i2s: I2s {
-                _marker: PhantomData,
-            },
-            i2s0: I2s0 {
-                _marker: PhantomData,
-            },
-            i2s1: I2s1 {
-                _marker: PhantomData,
-            },
-            i2s2: I2s2 {
-                _marker: PhantomData,
-            },
-            spi: Spi {
-                _marker: PhantomData,
-            },
-            spi0: Spi0 {
-                _marker: PhantomData,
-            },
-            spi1: Spi1 {
-                _marker: PhantomData,
-            },
-            spi2: Spi2 {
-                _marker: PhantomData,
-            },
-            spi3: Spi3 {
-                _marker: PhantomData,
-            },
-            spi4: Spi4 {
-                _marker: PhantomData,
-            },
-            spi5: Spi5 {
-                _marker: PhantomData,
-            },
-            spdif: Spdif {
-                _marker: PhantomData,
-            },
-            gmac: Gmac {
-                _marker: PhantomData,
-            },
-            emmccore: Emmccore {
-                _marker: PhantomData,
-            },
-            pcie_client: PcieClient {
-                _marker: PhantomData,
-            },
-            saradc: Saradc {
-                _marker: PhantomData,
-            },
-            ddrc: Ddrc {
-                _marker: PhantomData,
-            },
-            ddrc0: Ddrc0 {
-                _marker: PhantomData,
-            },
-            ddrc1: Ddrc1 {
-                _marker: PhantomData,
-            },
-            pcie_core: PcieCore {
-                _marker: PhantomData,
-            },
-            dp: Dp {
-                _marker: PhantomData,
-            },
-            hdmi: Hdmi {
+            wdt2: Wdt2 {
                 _marker: PhantomData,
             },
         }

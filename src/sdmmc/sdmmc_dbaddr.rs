@@ -2,23 +2,23 @@
 pub type R = crate::R<SdmmcDbaddrSpec>;
 #[doc = "Register `SDMMC_DBADDR` writer"]
 pub type W = crate::W<SdmmcDbaddrSpec>;
-#[doc = "Field `SDL` reader - Start of Descriptor List. Contains the base address of the First Descriptor. The LSB bits \\[0/1/2:0\\]
-for 16/32/64-bit bus-width) are ignored and taken as all-zero by the IDMAC internally. Hence these LSB bits are read-only."]
+#[doc = "Field `SDL` reader - Start of Descriptor List. Contains the base address of the First\n\nDescriptor.\n\nThe LSB bits \\[0/1/2:0\\]
+for 16/32/64-bit bus-width) are ignored\n\nand taken as all-zero by the IDMAC internally. Hence these LSB\n\nbits are read-only."]
 pub type SdlR = crate::FieldReader<u32>;
-#[doc = "Field `SDL` writer - Start of Descriptor List. Contains the base address of the First Descriptor. The LSB bits \\[0/1/2:0\\]
-for 16/32/64-bit bus-width) are ignored and taken as all-zero by the IDMAC internally. Hence these LSB bits are read-only."]
+#[doc = "Field `SDL` writer - Start of Descriptor List. Contains the base address of the First\n\nDescriptor.\n\nThe LSB bits \\[0/1/2:0\\]
+for 16/32/64-bit bus-width) are ignored\n\nand taken as all-zero by the IDMAC internally. Hence these LSB\n\nbits are read-only."]
 pub type SdlW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Start of Descriptor List. Contains the base address of the First Descriptor. The LSB bits \\[0/1/2:0\\]
-for 16/32/64-bit bus-width) are ignored and taken as all-zero by the IDMAC internally. Hence these LSB bits are read-only."]
+    #[doc = "Bits 0:31 - Start of Descriptor List. Contains the base address of the First\n\nDescriptor.\n\nThe LSB bits \\[0/1/2:0\\]
+for 16/32/64-bit bus-width) are ignored\n\nand taken as all-zero by the IDMAC internally. Hence these LSB\n\nbits are read-only."]
     #[inline(always)]
     pub fn sdl(&self) -> SdlR {
         SdlR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Start of Descriptor List. Contains the base address of the First Descriptor. The LSB bits \\[0/1/2:0\\]
-for 16/32/64-bit bus-width) are ignored and taken as all-zero by the IDMAC internally. Hence these LSB bits are read-only."]
+    #[doc = "Bits 0:31 - Start of Descriptor List. Contains the base address of the First\n\nDescriptor.\n\nThe LSB bits \\[0/1/2:0\\]
+for 16/32/64-bit bus-width) are ignored\n\nand taken as all-zero by the IDMAC internally. Hence these LSB\n\nbits are read-only."]
     #[inline(always)]
     #[must_use]
     pub fn sdl(&mut self) -> SdlW<SdmmcDbaddrSpec> {

@@ -2,19 +2,19 @@
 pub type R = crate::R<MmuAutoGatingSpec>;
 #[doc = "Register `MMU_AUTO_GATING` writer"]
 pub type W = crate::W<MmuAutoGatingSpec>;
-#[doc = "Field `MMU_ATUO_GATING` reader - mmu clock auto gating when it is 1, the mmu will auto gating itself"]
+#[doc = "Field `MMU_ATUO_GATING` reader - mmu clock auto gating\n\nwhen it is 1, the mmu will auto gating itself"]
 pub type MmuAtuoGatingR = crate::BitReader;
-#[doc = "Field `MMU_ATUO_GATING` writer - mmu clock auto gating when it is 1, the mmu will auto gating itself"]
+#[doc = "Field `MMU_ATUO_GATING` writer - mmu clock auto gating\n\nwhen it is 1, the mmu will auto gating itself"]
 pub type MmuAtuoGatingW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - mmu clock auto gating when it is 1, the mmu will auto gating itself"]
+    #[doc = "Bit 0 - mmu clock auto gating\n\nwhen it is 1, the mmu will auto gating itself"]
     #[inline(always)]
     pub fn mmu_atuo_gating(&self) -> MmuAtuoGatingR {
         MmuAtuoGatingR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - mmu clock auto gating when it is 1, the mmu will auto gating itself"]
+    #[doc = "Bit 0 - mmu clock auto gating\n\nwhen it is 1, the mmu will auto gating itself"]
     #[inline(always)]
     #[must_use]
     pub fn mmu_atuo_gating(&mut self) -> MmuAtuoGatingW<MmuAutoGatingSpec> {

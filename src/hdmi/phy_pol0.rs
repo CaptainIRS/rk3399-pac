@@ -112,7 +112,7 @@ interrupt bit"]
         RxSense3W::new(self, 7)
     }
 }
-#[doc = "Polarity bit for PHY_INT0.TX_PHY_LOCK interrupt bit\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`phy_pol0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`phy_pol0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PHY RXSENSE, PLL Lock, and HPD Polarity Register Polarity register for\n\ngeneration of PHY_INT0 interrupts.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`phy_pol0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`phy_pol0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PhyPol0Spec;
 impl crate::RegisterSpec for PhyPol0Spec {
     type Ux = u8;

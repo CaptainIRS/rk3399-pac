@@ -6,9 +6,9 @@ pub type W = crate::W<FcHsyncinwidth1Spec>;
 pub type HInWidthR = crate::BitReader;
 #[doc = "Field `H_IN_WIDTH` writer - Input video Hsync active pulse width."]
 pub type HInWidthW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `H_IN_WIDTH_9` reader - Input video Hsync active pulse width. If configuration parameter HDMI_TX_14 = True (1), then this bit field holds bit 9. Number of Horizontal active pixels \\[0...1024\\]."]
+#[doc = "Field `H_IN_WIDTH_9` reader - Input video Hsync active pulse width.\n\nIf configuration parameter HDMI_TX_14 = True\n\n(1), then this bit field holds bit 9. Number of\n\nHorizontal active pixels \\[0...1024\\]."]
 pub type HInWidth9R = crate::BitReader;
-#[doc = "Field `H_IN_WIDTH_9` writer - Input video Hsync active pulse width. If configuration parameter HDMI_TX_14 = True (1), then this bit field holds bit 9. Number of Horizontal active pixels \\[0...1024\\]."]
+#[doc = "Field `H_IN_WIDTH_9` writer - Input video Hsync active pulse width.\n\nIf configuration parameter HDMI_TX_14 = True\n\n(1), then this bit field holds bit 9. Number of\n\nHorizontal active pixels \\[0...1024\\]."]
 pub type HInWidth9W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Input video Hsync active pulse width."]
@@ -16,7 +16,7 @@ impl R {
     pub fn h_in_width(&self) -> HInWidthR {
         HInWidthR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - Input video Hsync active pulse width. If configuration parameter HDMI_TX_14 = True (1), then this bit field holds bit 9. Number of Horizontal active pixels \\[0...1024\\]."]
+    #[doc = "Bit 1 - Input video Hsync active pulse width.\n\nIf configuration parameter HDMI_TX_14 = True\n\n(1), then this bit field holds bit 9. Number of\n\nHorizontal active pixels \\[0...1024\\]."]
     #[inline(always)]
     pub fn h_in_width_9(&self) -> HInWidth9R {
         HInWidth9R::new(((self.bits >> 1) & 1) != 0)
@@ -29,14 +29,14 @@ impl W {
     pub fn h_in_width(&mut self) -> HInWidthW<FcHsyncinwidth1Spec> {
         HInWidthW::new(self, 0)
     }
-    #[doc = "Bit 1 - Input video Hsync active pulse width. If configuration parameter HDMI_TX_14 = True (1), then this bit field holds bit 9. Number of Horizontal active pixels \\[0...1024\\]."]
+    #[doc = "Bit 1 - Input video Hsync active pulse width.\n\nIf configuration parameter HDMI_TX_14 = True\n\n(1), then this bit field holds bit 9. Number of\n\nHorizontal active pixels \\[0...1024\\]."]
     #[inline(always)]
     #[must_use]
     pub fn h_in_width_9(&mut self) -> HInWidth9W<FcHsyncinwidth1Spec> {
         HInWidth9W::new(self, 1)
     }
 }
-#[doc = "Input video Hsync active pulse width.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_hsyncinwidth1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_hsyncinwidth1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer Input Video HSync Width Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_hsyncinwidth1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_hsyncinwidth1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcHsyncinwidth1Spec;
 impl crate::RegisterSpec for FcHsyncinwidth1Spec {
     type Ux = u8;

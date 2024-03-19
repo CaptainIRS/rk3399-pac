@@ -2,9 +2,9 @@
 pub type R = crate::R<PhyI2cmIntSpec>;
 #[doc = "Register `PHY_I2CM_INT` writer"]
 pub type W = crate::W<PhyI2cmIntSpec>;
-#[doc = "Field `DONE_STATUS` reader - Operation done status bit. Marks the end of a read or write operation."]
+#[doc = "Field `DONE_STATUS` reader - Operation done status bit. Marks the end of a read or\n\nwrite operation."]
 pub type DoneStatusR = crate::BitReader;
-#[doc = "Field `DONE_INTERRUPT` reader - Operation done interrupt bit. Only lasts for 1 SFR clock cycle and is auto cleared after it. {done_interrupt = (done_mask==0b) &amp;&amp; (done_status==done_pol)}"]
+#[doc = "Field `DONE_INTERRUPT` reader - Operation done interrupt bit. Only lasts for 1 SFR\n\nclock cycle and is auto cleared after it.\n\n{done_interrupt = (done_mask==0b) &amp;&amp;\n\n(done_status==done_pol)}"]
 pub type DoneInterruptR = crate::BitReader;
 #[doc = "Field `DONE_MASK` reader - Done interrupt mask signal"]
 pub type DoneMaskR = crate::BitReader;
@@ -15,12 +15,12 @@ pub type DonePolR = crate::BitReader;
 #[doc = "Field `DONE_POL` writer - Done interrupt polarity configuration"]
 pub type DonePolW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - Operation done status bit. Marks the end of a read or write operation."]
+    #[doc = "Bit 0 - Operation done status bit. Marks the end of a read or\n\nwrite operation."]
     #[inline(always)]
     pub fn done_status(&self) -> DoneStatusR {
         DoneStatusR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - Operation done interrupt bit. Only lasts for 1 SFR clock cycle and is auto cleared after it. {done_interrupt = (done_mask==0b) &amp;&amp; (done_status==done_pol)}"]
+    #[doc = "Bit 1 - Operation done interrupt bit. Only lasts for 1 SFR\n\nclock cycle and is auto cleared after it.\n\n{done_interrupt = (done_mask==0b) &amp;&amp;\n\n(done_status==done_pol)}"]
     #[inline(always)]
     pub fn done_interrupt(&self) -> DoneInterruptR {
         DoneInterruptR::new(((self.bits >> 1) & 1) != 0)
@@ -50,7 +50,7 @@ impl W {
         DonePolW::new(self, 3)
     }
 }
-#[doc = "Operation done status bit. Marks the end of a read or write operation.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`phy_i2cm_int::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`phy_i2cm_int::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PHY I2C Done Interrupt Register\n\nThis register contains and configures I2C master PHY done interrupt.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`phy_i2cm_int::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`phy_i2cm_int::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PhyI2cmIntSpec;
 impl crate::RegisterSpec for PhyI2cmIntSpec {
     type Ux = u8;

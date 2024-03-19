@@ -2,14 +2,15 @@
 pub type R = crate::R<CruClkselCon18Spec>;
 #[doc = "Register `CRU_CLKSEL_CON18` writer"]
 pub type W = crate::W<CruClkselCon18Spec>;
-#[doc = "Field `CLK_PCIE_CORE_DIV_CON` reader - clk_pcie_core divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_PCIE_CORE_DIV_CON` reader - clk_pcie_core divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkPcieCoreDivConR = crate::FieldReader;
-#[doc = "Field `CLK_PCIE_CORE_DIV_CON` writer - clk_pcie_core divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_PCIE_CORE_DIV_CON` writer - clk_pcie_core divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkPcieCoreDivConW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "clk_pcie_core clock select control register\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClkPcieCoreClkSel {
-    #[doc = "0: pipe_clk_pcie from PCIE PHY"]
+    #[doc = "0: clk_pcie_core"]
     B0 = 0,
     #[doc = "1: pipe_clk_pcie from PCIE PHY"]
     B1 = 1,
@@ -31,7 +32,7 @@ impl ClkPcieCoreClkSelR {
             true => ClkPcieCoreClkSel::B1,
         }
     }
-    #[doc = "pipe_clk_pcie from PCIE PHY"]
+    #[doc = "clk_pcie_core"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClkPcieCoreClkSel::B0
@@ -48,7 +49,7 @@ impl<'a, REG> ClkPcieCoreClkSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "pipe_clk_pcie from PCIE PHY"]
+    #[doc = "clk_pcie_core"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClkPcieCoreClkSel::B0)
@@ -60,12 +61,13 @@ where
     }
 }
 #[doc = "clk_pcie_core clock source select control register\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ClkPcieCorePllSel {
-    #[doc = "0: NPLL"]
+    #[doc = "0: CPLL"]
     B00 = 0,
-    #[doc = "1: NPLL"]
+    #[doc = "1: GPLL"]
     B01 = 1,
     #[doc = "2: NPLL"]
     B1x = 2,
@@ -92,12 +94,12 @@ impl ClkPcieCorePllSelR {
             _ => None,
         }
     }
-    #[doc = "NPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn is_b00(&self) -> bool {
         *self == ClkPcieCorePllSel::B00
     }
-    #[doc = "NPLL"]
+    #[doc = "GPLL"]
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == ClkPcieCorePllSel::B01
@@ -115,12 +117,12 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "NPLL"]
+    #[doc = "CPLL"]
     #[inline(always)]
     pub fn b00(self) -> &'a mut crate::W<REG> {
         self.variant(ClkPcieCorePllSel::B00)
     }
-    #[doc = "NPLL"]
+    #[doc = "GPLL"]
     #[inline(always)]
     pub fn b01(self) -> &'a mut crate::W<REG> {
         self.variant(ClkPcieCorePllSel::B01)
@@ -132,9 +134,10 @@ where
     }
 }
 #[doc = "clk_pciephy_ref clock select control register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClkPciephyRefSel {
-    #[doc = "0: clk_pcie_ref100m"]
+    #[doc = "0: clk_pcie_ref24m"]
     B0 = 0,
     #[doc = "1: clk_pcie_ref100m"]
     B1 = 1,
@@ -156,7 +159,7 @@ impl ClkPciephyRefSelR {
             true => ClkPciephyRefSel::B1,
         }
     }
-    #[doc = "clk_pcie_ref100m"]
+    #[doc = "clk_pcie_ref24m"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == ClkPciephyRefSel::B0
@@ -173,7 +176,7 @@ impl<'a, REG> ClkPciephyRefSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "clk_pcie_ref100m"]
+    #[doc = "clk_pcie_ref24m"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(ClkPciephyRefSel::B0)
@@ -184,14 +187,14 @@ where
         self.variant(ClkPciephyRefSel::B1)
     }
 }
-#[doc = "Field `CLK_PCIEPHY_REF100M_DIV_CON` reader - clk_pciephy_ref100m divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_PCIEPHY_REF100M_DIV_CON` reader - clk_pciephy_ref100m divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkPciephyRef100mDivConR = crate::FieldReader;
-#[doc = "Field `CLK_PCIEPHY_REF100M_DIV_CON` writer - clk_pciephy_ref100m divider control register clk=clk_src/(div_con+1)"]
+#[doc = "Field `CLK_PCIEPHY_REF100M_DIV_CON` writer - clk_pciephy_ref100m divider control register\n\nclk=clk_src/(div_con+1)"]
 pub type ClkPciephyRef100mDivConW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:6 - clk_pcie_core divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:6 - clk_pcie_core divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn clk_pcie_core_div_con(&self) -> ClkPcieCoreDivConR {
         ClkPcieCoreDivConR::new((self.bits & 0x7f) as u8)
@@ -211,14 +214,14 @@ impl R {
     pub fn clk_pciephy_ref_sel(&self) -> ClkPciephyRefSelR {
         ClkPciephyRefSelR::new(((self.bits >> 10) & 1) != 0)
     }
-    #[doc = "Bits 11:15 - clk_pciephy_ref100m divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 11:15 - clk_pciephy_ref100m divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     pub fn clk_pciephy_ref100m_div_con(&self) -> ClkPciephyRef100mDivConR {
         ClkPciephyRef100mDivConR::new(((self.bits >> 11) & 0x1f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:6 - clk_pcie_core divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 0:6 - clk_pcie_core divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn clk_pcie_core_div_con(&mut self) -> ClkPcieCoreDivConW<CruClkselCon18Spec> {
@@ -242,13 +245,13 @@ impl W {
     pub fn clk_pciephy_ref_sel(&mut self) -> ClkPciephyRefSelW<CruClkselCon18Spec> {
         ClkPciephyRefSelW::new(self, 10)
     }
-    #[doc = "Bits 11:15 - clk_pciephy_ref100m divider control register clk=clk_src/(div_con+1)"]
+    #[doc = "Bits 11:15 - clk_pciephy_ref100m divider control register\n\nclk=clk_src/(div_con+1)"]
     #[inline(always)]
     #[must_use]
     pub fn clk_pciephy_ref100m_div_con(&mut self) -> ClkPciephyRef100mDivConW<CruClkselCon18Spec> {
         ClkPciephyRef100mDivConW::new(self, 11)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkselCon18Spec> {

@@ -2,19 +2,19 @@
 pub type R = crate::R<DmacWdSpec>;
 #[doc = "Register `DMAC_WD` writer"]
 pub type W = crate::W<DmacWdSpec>;
-#[doc = "Field `DMAC_WD_BITS_1` reader - Controls how the DMAC responds when it detects a lock-up condition: 0 = the DMAC aborts all of the contributing DMA channels and sets irq_abort HIGH 1 = the DMAC sets irq_abort HIGH."]
+#[doc = "Field `DMAC_WD_BITS_1` reader - Controls how the DMAC responds when it detects a lock-up\n\ncondition:\n\n0 = the DMAC aborts all of the contributing DMA channels and sets\n\nirq_abort HIGH\n\n1 = the DMAC sets irq_abort HIGH."]
 pub type DmacWdBits1R = crate::BitReader;
-#[doc = "Field `DMAC_WD_BITS_1` writer - Controls how the DMAC responds when it detects a lock-up condition: 0 = the DMAC aborts all of the contributing DMA channels and sets irq_abort HIGH 1 = the DMAC sets irq_abort HIGH."]
+#[doc = "Field `DMAC_WD_BITS_1` writer - Controls how the DMAC responds when it detects a lock-up\n\ncondition:\n\n0 = the DMAC aborts all of the contributing DMA channels and sets\n\nirq_abort HIGH\n\n1 = the DMAC sets irq_abort HIGH."]
 pub type DmacWdBits1W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - Controls how the DMAC responds when it detects a lock-up condition: 0 = the DMAC aborts all of the contributing DMA channels and sets irq_abort HIGH 1 = the DMAC sets irq_abort HIGH."]
+    #[doc = "Bit 0 - Controls how the DMAC responds when it detects a lock-up\n\ncondition:\n\n0 = the DMAC aborts all of the contributing DMA channels and sets\n\nirq_abort HIGH\n\n1 = the DMAC sets irq_abort HIGH."]
     #[inline(always)]
     pub fn dmac_wd_bits_1(&self) -> DmacWdBits1R {
         DmacWdBits1R::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Controls how the DMAC responds when it detects a lock-up condition: 0 = the DMAC aborts all of the contributing DMA channels and sets irq_abort HIGH 1 = the DMAC sets irq_abort HIGH."]
+    #[doc = "Bit 0 - Controls how the DMAC responds when it detects a lock-up\n\ncondition:\n\n0 = the DMAC aborts all of the contributing DMA channels and sets\n\nirq_abort HIGH\n\n1 = the DMAC sets irq_abort HIGH."]
     #[inline(always)]
     #[must_use]
     pub fn dmac_wd_bits_1(&mut self) -> DmacWdBits1W<DmacWdSpec> {

@@ -2,19 +2,19 @@
 pub type R = crate::R<GmacGmiiDataSpec>;
 #[doc = "Register `GMAC_GMII_DATA` writer"]
 pub type W = crate::W<GmacGmiiDataSpec>;
-#[doc = "Field `GD` reader - GMII Data This contains the 16-bit data value read from the PHY after a Management Read operation or the 16-bit data value to be written to the PHY before a Management Write operation."]
+#[doc = "Field `GD` reader - GMII Data\n\nThis contains the 16-bit data value read from the PHY after a\n\nManagement Read operation or the 16-bit data value to be\n\nwritten to the PHY before a Management Write operation."]
 pub type GdR = crate::FieldReader<u16>;
-#[doc = "Field `GD` writer - GMII Data This contains the 16-bit data value read from the PHY after a Management Read operation or the 16-bit data value to be written to the PHY before a Management Write operation."]
+#[doc = "Field `GD` writer - GMII Data\n\nThis contains the 16-bit data value read from the PHY after a\n\nManagement Read operation or the 16-bit data value to be\n\nwritten to the PHY before a Management Write operation."]
 pub type GdW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bits 0:15 - GMII Data This contains the 16-bit data value read from the PHY after a Management Read operation or the 16-bit data value to be written to the PHY before a Management Write operation."]
+    #[doc = "Bits 0:15 - GMII Data\n\nThis contains the 16-bit data value read from the PHY after a\n\nManagement Read operation or the 16-bit data value to be\n\nwritten to the PHY before a Management Write operation."]
     #[inline(always)]
     pub fn gd(&self) -> GdR {
         GdR::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - GMII Data This contains the 16-bit data value read from the PHY after a Management Read operation or the 16-bit data value to be written to the PHY before a Management Write operation."]
+    #[doc = "Bits 0:15 - GMII Data\n\nThis contains the 16-bit data value read from the PHY after a\n\nManagement Read operation or the 16-bit data value to be\n\nwritten to the PHY before a Management Write operation."]
     #[inline(always)]
     #[must_use]
     pub fn gd(&mut self) -> GdW<GmacGmiiDataSpec> {

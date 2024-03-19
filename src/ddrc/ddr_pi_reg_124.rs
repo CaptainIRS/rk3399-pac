@@ -6,9 +6,9 @@ pub type W = crate::W<DdrPiReg124Spec>;
 pub type PiWdqlvlIntervalR = crate::FieldReader<u16>;
 #[doc = "Field `PI_WDQLVL_INTERVAL` writer - Indicates write DQ train interval counter program value."]
 pub type PiWdqlvlIntervalW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-#[doc = "Field `PI_WDQLVL_EN` reader - Indicates if write DQ leveling is enabled. Bit1 represents the support when non-initialization. Bit0 represents the support when initialization."]
+#[doc = "Field `PI_WDQLVL_EN` reader - Indicates if write DQ leveling is enabled. Bit1 represents the\n\nsupport when non-initialization. Bit0 represents the support when\n\ninitialization."]
 pub type PiWdqlvlEnR = crate::FieldReader;
-#[doc = "Field `PI_WDQLVL_EN` writer - Indicates if write DQ leveling is enabled. Bit1 represents the support when non-initialization. Bit0 represents the support when initialization."]
+#[doc = "Field `PI_WDQLVL_EN` writer - Indicates if write DQ leveling is enabled. Bit1 represents the\n\nsupport when non-initialization. Bit0 represents the support when\n\ninitialization."]
 pub type PiWdqlvlEnW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `PI_WDQLVL_ON_SREF_EXIT` reader - Issues a write DQ training command on self-refresh exit."]
 pub type PiWdqlvlOnSrefExitR = crate::BitReader;
@@ -20,7 +20,7 @@ impl R {
     pub fn pi_wdqlvl_interval(&self) -> PiWdqlvlIntervalR {
         PiWdqlvlIntervalR::new((self.bits & 0xffff) as u16)
     }
-    #[doc = "Bits 16:17 - Indicates if write DQ leveling is enabled. Bit1 represents the support when non-initialization. Bit0 represents the support when initialization."]
+    #[doc = "Bits 16:17 - Indicates if write DQ leveling is enabled. Bit1 represents the\n\nsupport when non-initialization. Bit0 represents the support when\n\ninitialization."]
     #[inline(always)]
     pub fn pi_wdqlvl_en(&self) -> PiWdqlvlEnR {
         PiWdqlvlEnR::new(((self.bits >> 16) & 3) as u8)
@@ -38,7 +38,7 @@ impl W {
     pub fn pi_wdqlvl_interval(&mut self) -> PiWdqlvlIntervalW<DdrPiReg124Spec> {
         PiWdqlvlIntervalW::new(self, 0)
     }
-    #[doc = "Bits 16:17 - Indicates if write DQ leveling is enabled. Bit1 represents the support when non-initialization. Bit0 represents the support when initialization."]
+    #[doc = "Bits 16:17 - Indicates if write DQ leveling is enabled. Bit1 represents the\n\nsupport when non-initialization. Bit0 represents the support when\n\ninitialization."]
     #[inline(always)]
     #[must_use]
     pub fn pi_wdqlvl_en(&mut self) -> PiWdqlvlEnW<DdrPiReg124Spec> {

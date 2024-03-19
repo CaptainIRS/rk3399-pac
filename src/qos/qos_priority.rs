@@ -2,23 +2,23 @@
 pub type R = crate::R<QosPrioritySpec>;
 #[doc = "Register `QOS_Priority` writer"]
 pub type W = crate::W<QosPrioritySpec>;
-#[doc = "Field `P0` reader - In Programmable or Bandwidth Limiter mode, the priority level for write transactions. In Bandwidth Regulator mode, the priority level when the used throughput is above the threshold. In Bandwidth Regulator mode, P0 should have a value equal or lower than P1."]
+#[doc = "Field `P0` reader - In Programmable or Bandwidth Limiter mode, the priority level for\n\nwrite transactions. In Bandwidth Regulator mode, the priority level\n\nwhen the used throughput is above the threshold. In Bandwidth\n\nRegulator mode, P0 should have a value equal or lower than P1."]
 pub type P0R = crate::FieldReader;
-#[doc = "Field `P0` writer - In Programmable or Bandwidth Limiter mode, the priority level for write transactions. In Bandwidth Regulator mode, the priority level when the used throughput is above the threshold. In Bandwidth Regulator mode, P0 should have a value equal or lower than P1."]
+#[doc = "Field `P0` writer - In Programmable or Bandwidth Limiter mode, the priority level for\n\nwrite transactions. In Bandwidth Regulator mode, the priority level\n\nwhen the used throughput is above the threshold. In Bandwidth\n\nRegulator mode, P0 should have a value equal or lower than P1."]
 pub type P0W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-#[doc = "Field `P1` reader - In Programmable or Bandwidth Limiter mode, the priority level for read transactions. In Bandwidth regulator mode, the priority level when the used throughput is below the threshold. In Bandwidth Regulator mode, P1 should have a value equal or greater than P0."]
+#[doc = "Field `P1` reader - In Programmable or Bandwidth Limiter mode, the priority level for\n\nread transactions. In Bandwidth regulator mode, the priority level\n\nwhen the used throughput is below the threshold. In Bandwidth\n\nRegulator mode, P1 should have a value equal or greater than P0."]
 pub type P1R = crate::FieldReader;
-#[doc = "Field `P1` writer - In Programmable or Bandwidth Limiter mode, the priority level for read transactions. In Bandwidth regulator mode, the priority level when the used throughput is below the threshold. In Bandwidth Regulator mode, P1 should have a value equal or greater than P0."]
+#[doc = "Field `P1` writer - In Programmable or Bandwidth Limiter mode, the priority level for\n\nread transactions. In Bandwidth regulator mode, the priority level\n\nwhen the used throughput is below the threshold. In Bandwidth\n\nRegulator mode, P1 should have a value equal or greater than P0."]
 pub type P1W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `MARK` reader - Backward compatibility marker when 0."]
 pub type MarkR = crate::BitReader;
 impl R {
-    #[doc = "Bits 0:1 - In Programmable or Bandwidth Limiter mode, the priority level for write transactions. In Bandwidth Regulator mode, the priority level when the used throughput is above the threshold. In Bandwidth Regulator mode, P0 should have a value equal or lower than P1."]
+    #[doc = "Bits 0:1 - In Programmable or Bandwidth Limiter mode, the priority level for\n\nwrite transactions. In Bandwidth Regulator mode, the priority level\n\nwhen the used throughput is above the threshold. In Bandwidth\n\nRegulator mode, P0 should have a value equal or lower than P1."]
     #[inline(always)]
     pub fn p0(&self) -> P0R {
         P0R::new((self.bits & 3) as u8)
     }
-    #[doc = "Bits 2:3 - In Programmable or Bandwidth Limiter mode, the priority level for read transactions. In Bandwidth regulator mode, the priority level when the used throughput is below the threshold. In Bandwidth Regulator mode, P1 should have a value equal or greater than P0."]
+    #[doc = "Bits 2:3 - In Programmable or Bandwidth Limiter mode, the priority level for\n\nread transactions. In Bandwidth regulator mode, the priority level\n\nwhen the used throughput is below the threshold. In Bandwidth\n\nRegulator mode, P1 should have a value equal or greater than P0."]
     #[inline(always)]
     pub fn p1(&self) -> P1R {
         P1R::new(((self.bits >> 2) & 3) as u8)
@@ -30,13 +30,13 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:1 - In Programmable or Bandwidth Limiter mode, the priority level for write transactions. In Bandwidth Regulator mode, the priority level when the used throughput is above the threshold. In Bandwidth Regulator mode, P0 should have a value equal or lower than P1."]
+    #[doc = "Bits 0:1 - In Programmable or Bandwidth Limiter mode, the priority level for\n\nwrite transactions. In Bandwidth Regulator mode, the priority level\n\nwhen the used throughput is above the threshold. In Bandwidth\n\nRegulator mode, P0 should have a value equal or lower than P1."]
     #[inline(always)]
     #[must_use]
     pub fn p0(&mut self) -> P0W<QosPrioritySpec> {
         P0W::new(self, 0)
     }
-    #[doc = "Bits 2:3 - In Programmable or Bandwidth Limiter mode, the priority level for read transactions. In Bandwidth regulator mode, the priority level when the used throughput is below the threshold. In Bandwidth Regulator mode, P1 should have a value equal or greater than P0."]
+    #[doc = "Bits 2:3 - In Programmable or Bandwidth Limiter mode, the priority level for\n\nread transactions. In Bandwidth regulator mode, the priority level\n\nwhen the used throughput is below the threshold. In Bandwidth\n\nRegulator mode, P1 should have a value equal or greater than P0."]
     #[inline(always)]
     #[must_use]
     pub fn p1(&mut self) -> P1W<QosPrioritySpec> {

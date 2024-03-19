@@ -1,9 +1,9 @@
 #[doc = "Register `PCIE_CLIENT_DEBUG_OUT_1` reader"]
 pub type R = crate::R<PcieClientDebugOut1Spec>;
-#[doc = "Field `PERF_DATA_OUT` reader - Performance data out Each of the bits of this vector is explained below: Bit\\[17\\]:Pulse appears when event happens,described in Appendix B"]
+#[doc = "Field `PERF_DATA_OUT` reader - Performance data out\n\nEach of the bits of this vector is explained below:\n\nBit\\[17\\]:Pulse appears when event happens,described in Appendix\n\nB"]
 pub type PerfDataOutR = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:17 - Performance data out Each of the bits of this vector is explained below: Bit\\[17\\]:Pulse appears when event happens,described in Appendix B"]
+    #[doc = "Bits 0:17 - Performance data out\n\nEach of the bits of this vector is explained below:\n\nBit\\[17\\]:Pulse appears when event happens,described in Appendix\n\nB"]
     #[inline(always)]
     pub fn perf_data_out(&self) -> PerfDataOutR {
         PerfDataOutR::new(self.bits & 0x0003_ffff)

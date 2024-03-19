@@ -1,9 +1,9 @@
 #[doc = "Register `SDMMC_CDETECT` reader"]
 pub type R = crate::R<SdmmcCdetectSpec>;
-#[doc = "Field `CARD_DETECT_N` reader - Value on card_detect_n input ports; read-only bits. 0 represents presence of card."]
+#[doc = "Field `CARD_DETECT_N` reader - Value on card_detect_n input ports; read-only bits. 0 represents\n\npresence of card."]
 pub type CardDetectNR = crate::BitReader;
 impl R {
-    #[doc = "Bit 0 - Value on card_detect_n input ports; read-only bits. 0 represents presence of card."]
+    #[doc = "Bit 0 - Value on card_detect_n input ports; read-only bits. 0 represents\n\npresence of card."]
     #[inline(always)]
     pub fn card_detect_n(&self) -> CardDetectNR {
         CardDetectNR::new((self.bits & 1) != 0)

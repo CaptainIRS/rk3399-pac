@@ -2,19 +2,19 @@
 pub type R = crate::R<FcAcp7Spec>;
 #[doc = "Register `FC_ACP7` writer"]
 pub type W = crate::W<FcAcp7Spec>;
-#[doc = "Field `FC_ACP7` reader - Frame Composer ACP Packet Body Configuration Register 7"]
+#[doc = "Field `FC_ACP7` reader - Frame Composer ACP Packet Body Configuration\n\nRegister 7"]
 pub type FcAcp7R = crate::FieldReader;
-#[doc = "Field `FC_ACP7` writer - Frame Composer ACP Packet Body Configuration Register 7"]
+#[doc = "Field `FC_ACP7` writer - Frame Composer ACP Packet Body Configuration\n\nRegister 7"]
 pub type FcAcp7W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - Frame Composer ACP Packet Body Configuration Register 7"]
+    #[doc = "Bits 0:7 - Frame Composer ACP Packet Body Configuration\n\nRegister 7"]
     #[inline(always)]
     pub fn fc_acp7(&self) -> FcAcp7R {
         FcAcp7R::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Frame Composer ACP Packet Body Configuration Register 7"]
+    #[doc = "Bits 0:7 - Frame Composer ACP Packet Body Configuration\n\nRegister 7"]
     #[inline(always)]
     #[must_use]
     pub fn fc_acp7(&mut self) -> FcAcp7W<FcAcp7Spec> {

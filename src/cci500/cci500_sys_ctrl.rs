@@ -3,9 +3,10 @@ pub type R = crate::R<Cci500SysCtrlSpec>;
 #[doc = "Register `CCI500_SYS_CTRL` writer"]
 pub type W = crate::W<Cci500SysCtrlSpec>;
 #[doc = "snoop_disable control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SnoopDisable {
-    #[doc = "0: Disable all snoops, but not DVM messages"]
+    #[doc = "0: Snoop masters according to the Snoop Control Registers"]
     B0 = 0,
     #[doc = "1: Disable all snoops, but not DVM messages"]
     B1 = 1,
@@ -27,7 +28,7 @@ impl SnoopDisableR {
             true => SnoopDisable::B1,
         }
     }
-    #[doc = "Disable all snoops, but not DVM messages"]
+    #[doc = "Snoop masters according to the Snoop Control Registers"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SnoopDisable::B0
@@ -44,7 +45,7 @@ impl<'a, REG> SnoopDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disable all snoops, but not DVM messages"]
+    #[doc = "Snoop masters according to the Snoop Control Registers"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SnoopDisable::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "DVM message disable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DvmDisable {
-    #[doc = "0: Disable speculative fetches from all master interfaces"]
+    #[doc = "0: Send speculative fetches according to the Speculation Control Register"]
     B0 = 0,
     #[doc = "1: Disable speculative fetches from all master interfaces"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl DvmDisableR {
             true => DvmDisable::B1,
         }
     }
-    #[doc = "Disable speculative fetches from all master interfaces"]
+    #[doc = "Send speculative fetches according to the Speculation Control Register"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == DvmDisable::B0
@@ -97,7 +99,7 @@ impl<'a, REG> DvmDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disable speculative fetches from all master interfaces"]
+    #[doc = "Send speculative fetches according to the Speculation Control Register"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(DvmDisable::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "Disable the snoop filter\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SnoopFilterDisable {
-    #[doc = "0: Disable snoop filter operation"]
+    #[doc = "0: Snoop filter operation is defined by the power state input, PSTATE."]
     B0 = 0,
     #[doc = "1: Disable snoop filter operation"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl SnoopFilterDisableR {
             true => SnoopFilterDisable::B1,
         }
     }
-    #[doc = "Disable snoop filter operation"]
+    #[doc = "Snoop filter operation is defined by the power state input, PSTATE."]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == SnoopFilterDisable::B0
@@ -150,7 +153,7 @@ impl<'a, REG> SnoopFilterDisableW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disable snoop filter operation"]
+    #[doc = "Snoop filter operation is defined by the power state input, PSTATE."]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(SnoopFilterDisable::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "Disable regional clock gating\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DisableClockGating {
-    #[doc = "0: Disables regional clock gating in the CCI-500"]
+    #[doc = "0: Regional clock gating operates in the CCI-500"]
     B0 = 0,
     #[doc = "1: Disables regional clock gating in the CCI-500"]
     B1 = 1,
@@ -186,7 +190,7 @@ impl DisableClockGatingR {
             true => DisableClockGating::B1,
         }
     }
-    #[doc = "Disables regional clock gating in the CCI-500"]
+    #[doc = "Regional clock gating operates in the CCI-500"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == DisableClockGating::B0
@@ -203,7 +207,7 @@ impl<'a, REG> DisableClockGatingW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Disables regional clock gating in the CCI-500"]
+    #[doc = "Regional clock gating operates in the CCI-500"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(DisableClockGating::B0)

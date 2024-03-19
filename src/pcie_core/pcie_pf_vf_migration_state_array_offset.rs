@@ -1,15 +1,15 @@
 #[doc = "Register `PCIE_PF_VF_MIGRATION_STATE_ARRAY_OFFSET` reader"]
 pub type R = crate::R<PciePfVfMigrationStateArrayOffsetSpec>;
-#[doc = "Field `MSAOR` reader - MSAOR (no description)"]
+#[doc = "Field `MSAOR` reader - MSAOR\n\n(no description)"]
 pub type MsaorR = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - MSAOR (no description)"]
+    #[doc = "Bits 0:31 - MSAOR\n\n(no description)"]
     #[inline(always)]
     pub fn msaor(&self) -> MsaorR {
         MsaorR::new(self.bits)
     }
 }
-#[doc = "VF Migration State Array Offset Register (no description)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcie_pf_vf_migration_state_array_offset::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "VF Migration State Array Offset Register\n\n(no description)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcie_pf_vf_migration_state_array_offset::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PciePfVfMigrationStateArrayOffsetSpec;
 impl crate::RegisterSpec for PciePfVfMigrationStateArrayOffsetSpec {
     type Ux = u32;

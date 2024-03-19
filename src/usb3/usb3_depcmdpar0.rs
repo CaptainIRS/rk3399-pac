@@ -2,19 +2,19 @@
 pub type R = crate::R<Usb3Depcmdpar0Spec>;
 #[doc = "Register `USB3_DEP%sCMDPAR0` writer"]
 pub type W = crate::W<Usb3Depcmdpar0Spec>;
-#[doc = "Field `PARAMETER` reader - PARAMETER This register indicates the physical endpoint command Parameter 0. It must be programmed before issuing the command."]
+#[doc = "Field `PARAMETER` reader - PARAMETER\n\nThis register indicates the physical endpoint command Parameter\n\n0. It must be programmed before issuing the command."]
 pub type ParameterR = crate::FieldReader<u32>;
-#[doc = "Field `PARAMETER` writer - PARAMETER This register indicates the physical endpoint command Parameter 0. It must be programmed before issuing the command."]
+#[doc = "Field `PARAMETER` writer - PARAMETER\n\nThis register indicates the physical endpoint command Parameter\n\n0. It must be programmed before issuing the command."]
 pub type ParameterW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - PARAMETER This register indicates the physical endpoint command Parameter 0. It must be programmed before issuing the command."]
+    #[doc = "Bits 0:31 - PARAMETER\n\nThis register indicates the physical endpoint command Parameter\n\n0. It must be programmed before issuing the command."]
     #[inline(always)]
     pub fn parameter(&self) -> ParameterR {
         ParameterR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - PARAMETER This register indicates the physical endpoint command Parameter 0. It must be programmed before issuing the command."]
+    #[doc = "Bits 0:31 - PARAMETER\n\nThis register indicates the physical endpoint command Parameter\n\n0. It must be programmed before issuing the command."]
     #[inline(always)]
     #[must_use]
     pub fn parameter(&mut self) -> ParameterW<Usb3Depcmdpar0Spec> {

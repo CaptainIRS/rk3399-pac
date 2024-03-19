@@ -1,9 +1,9 @@
 #[doc = "Register `SPI_TXDR` writer"]
 pub type W = crate::W<SpiTxdrSpec>;
-#[doc = "Field `TXDR` writer - Transimt FIFO Data Register. When it is written to, data are moved into the transmit FIFO."]
+#[doc = "Field `TXDR` writer - Transimt FIFO Data Register.\n\nWhen it is written to, data are moved into the transmit FIFO."]
 pub type TxdrW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl W {
-    #[doc = "Bits 0:15 - Transimt FIFO Data Register. When it is written to, data are moved into the transmit FIFO."]
+    #[doc = "Bits 0:15 - Transimt FIFO Data Register.\n\nWhen it is written to, data are moved into the transmit FIFO."]
     #[inline(always)]
     #[must_use]
     pub fn txdr(&mut self) -> TxdrW<SpiTxdrSpec> {

@@ -3,9 +3,10 @@ pub type R = crate::R<DpIntStaSpec>;
 #[doc = "Register `DP_INT_STA` writer"]
 pub type W = crate::W<DpIntStaSpec>;
 #[doc = "AUX channel access error interrupt:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AuxErr {
-    #[doc = "1: Not interrupt occurred Write 1 to this bit to clear this interrupt source."]
+    #[doc = "1: Interrupt assert,"]
     B1 = 1,
     #[doc = "0: Not interrupt occurred Write 1 to this bit to clear this interrupt source."]
     B0 = 0,
@@ -27,7 +28,7 @@ impl AuxErrR {
             false => AuxErr::B0,
         }
     }
-    #[doc = "Not interrupt occurred Write 1 to this bit to clear this interrupt source."]
+    #[doc = "Interrupt assert,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == AuxErr::B1
@@ -44,7 +45,7 @@ impl<'a, REG> AuxErrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Not interrupt occurred Write 1 to this bit to clear this interrupt source."]
+    #[doc = "Interrupt assert,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(AuxErr::B1)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "AUX channel command reply is received:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RplyReceiv {
-    #[doc = "1: Not interrupt occurred Write 1 to this bit to clear this interrupt source."]
+    #[doc = "1: Interrupt assert,"]
     B1 = 1,
     #[doc = "0: Not interrupt occurred Write 1 to this bit to clear this interrupt source."]
     B0 = 0,
@@ -80,7 +82,7 @@ impl RplyReceivR {
             false => RplyReceiv::B0,
         }
     }
-    #[doc = "Not interrupt occurred Write 1 to this bit to clear this interrupt source."]
+    #[doc = "Interrupt assert,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == RplyReceiv::B1
@@ -97,7 +99,7 @@ impl<'a, REG> RplyReceivW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Not interrupt occurred Write 1 to this bit to clear this interrupt source."]
+    #[doc = "Interrupt assert,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(RplyReceiv::B1)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "Link lost interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LinkLost {
-    #[doc = "1: Not interrupt occurred Write 1 to this bit to clear this interrupt source."]
+    #[doc = "1: Link lost occurred"]
     B1 = 1,
     #[doc = "0: Not interrupt occurred Write 1 to this bit to clear this interrupt source."]
     B0 = 0,
@@ -133,7 +136,7 @@ impl LinkLostR {
             false => LinkLost::B0,
         }
     }
-    #[doc = "Not interrupt occurred Write 1 to this bit to clear this interrupt source."]
+    #[doc = "Link lost occurred"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == LinkLost::B1
@@ -150,7 +153,7 @@ impl<'a, REG> LinkLostW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Not interrupt occurred Write 1 to this bit to clear this interrupt source."]
+    #[doc = "Link lost occurred"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(LinkLost::B1)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "Sink lost interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SinkLost {
-    #[doc = "1: Not interrupt occurred Write 1 to this bit to clear this interrupt source."]
+    #[doc = "1: Sink lost occurred"]
     B1 = 1,
     #[doc = "0: Not interrupt occurred Write 1 to this bit to clear this interrupt source."]
     B0 = 0,
@@ -186,7 +190,7 @@ impl SinkLostR {
             false => SinkLost::B0,
         }
     }
-    #[doc = "Not interrupt occurred Write 1 to this bit to clear this interrupt source."]
+    #[doc = "Sink lost occurred"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == SinkLost::B1
@@ -203,7 +207,7 @@ impl<'a, REG> SinkLostW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Not interrupt occurred Write 1 to this bit to clear this interrupt source."]
+    #[doc = "Sink lost occurred"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(SinkLost::B1)
@@ -214,10 +218,11 @@ where
         self.variant(SinkLost::B0)
     }
 }
-#[doc = "Training FSM module finish link training procedure:\n\nValue on reset: 0"]
+#[doc = "Training FSM module finish link training \n\nprocedure:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HwTrainingFinish {
-    #[doc = "1: Not interrupt occurred Write 1 to this bit to clear this interrupt source."]
+    #[doc = "1: Hardware link training finished,"]
     B1 = 1,
     #[doc = "0: Not interrupt occurred Write 1 to this bit to clear this interrupt source."]
     B0 = 0,
@@ -228,7 +233,7 @@ impl From<HwTrainingFinish> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HW_TRAINING_FINISH` reader - Training FSM module finish link training procedure:"]
+#[doc = "Field `HW_TRAINING_FINISH` reader - Training FSM module finish link training \n\nprocedure:"]
 pub type HwTrainingFinishR = crate::BitReader<HwTrainingFinish>;
 impl HwTrainingFinishR {
     #[doc = "Get enumerated values variant"]
@@ -239,7 +244,7 @@ impl HwTrainingFinishR {
             false => HwTrainingFinish::B0,
         }
     }
-    #[doc = "Not interrupt occurred Write 1 to this bit to clear this interrupt source."]
+    #[doc = "Hardware link training finished,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == HwTrainingFinish::B1
@@ -250,13 +255,13 @@ impl HwTrainingFinishR {
         *self == HwTrainingFinish::B0
     }
 }
-#[doc = "Field `HW_TRAINING_FINISH` writer - Training FSM module finish link training procedure:"]
+#[doc = "Field `HW_TRAINING_FINISH` writer - Training FSM module finish link training \n\nprocedure:"]
 pub type HwTrainingFinishW<'a, REG> = crate::BitWriter<'a, REG, HwTrainingFinish>;
 impl<'a, REG> HwTrainingFinishW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Not interrupt occurred Write 1 to this bit to clear this interrupt source."]
+    #[doc = "Hardware link training finished,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(HwTrainingFinish::B1)
@@ -267,10 +272,11 @@ where
         self.variant(HwTrainingFinish::B0)
     }
 }
-#[doc = "IRQ (HPD de-asserted less than 2ms) detect interrupt:\n\nValue on reset: 0"]
+#[doc = "IRQ (HPD de-asserted less than 2ms) detect \n\ninterrupt:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IntHpd {
-    #[doc = "1: Not interrupt occurred Write 1 to this bit to clear this interrupt source."]
+    #[doc = "1: IRQ interrupt assert,"]
     B1 = 1,
     #[doc = "0: Not interrupt occurred Write 1 to this bit to clear this interrupt source."]
     B0 = 0,
@@ -281,7 +287,7 @@ impl From<IntHpd> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `INT_HPD` reader - IRQ (HPD de-asserted less than 2ms) detect interrupt:"]
+#[doc = "Field `INT_HPD` reader - IRQ (HPD de-asserted less than 2ms) detect \n\ninterrupt:"]
 pub type IntHpdR = crate::BitReader<IntHpd>;
 impl IntHpdR {
     #[doc = "Get enumerated values variant"]
@@ -292,7 +298,7 @@ impl IntHpdR {
             false => IntHpd::B0,
         }
     }
-    #[doc = "Not interrupt occurred Write 1 to this bit to clear this interrupt source."]
+    #[doc = "IRQ interrupt assert,"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == IntHpd::B1
@@ -303,13 +309,13 @@ impl IntHpdR {
         *self == IntHpd::B0
     }
 }
-#[doc = "Field `INT_HPD` writer - IRQ (HPD de-asserted less than 2ms) detect interrupt:"]
+#[doc = "Field `INT_HPD` writer - IRQ (HPD de-asserted less than 2ms) detect \n\ninterrupt:"]
 pub type IntHpdW<'a, REG> = crate::BitWriter<'a, REG, IntHpd>;
 impl<'a, REG> IntHpdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Not interrupt occurred Write 1 to this bit to clear this interrupt source."]
+    #[doc = "IRQ interrupt assert,"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(IntHpd::B1)
@@ -341,12 +347,12 @@ impl R {
     pub fn sink_lost(&self) -> SinkLostR {
         SinkLostR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 5 - Training FSM module finish link training procedure:"]
+    #[doc = "Bit 5 - Training FSM module finish link training \n\nprocedure:"]
     #[inline(always)]
     pub fn hw_training_finish(&self) -> HwTrainingFinishR {
         HwTrainingFinishR::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 6 - IRQ (HPD de-asserted less than 2ms) detect interrupt:"]
+    #[doc = "Bit 6 - IRQ (HPD de-asserted less than 2ms) detect \n\ninterrupt:"]
     #[inline(always)]
     pub fn int_hpd(&self) -> IntHpdR {
         IntHpdR::new(((self.bits >> 6) & 1) != 0)
@@ -377,13 +383,13 @@ impl W {
     pub fn sink_lost(&mut self) -> SinkLostW<DpIntStaSpec> {
         SinkLostW::new(self, 3)
     }
-    #[doc = "Bit 5 - Training FSM module finish link training procedure:"]
+    #[doc = "Bit 5 - Training FSM module finish link training \n\nprocedure:"]
     #[inline(always)]
     #[must_use]
     pub fn hw_training_finish(&mut self) -> HwTrainingFinishW<DpIntStaSpec> {
         HwTrainingFinishW::new(self, 5)
     }
-    #[doc = "Bit 6 - IRQ (HPD de-asserted less than 2ms) detect interrupt:"]
+    #[doc = "Bit 6 - IRQ (HPD de-asserted less than 2ms) detect \n\ninterrupt:"]
     #[inline(always)]
     #[must_use]
     pub fn int_hpd(&mut self) -> IntHpdW<DpIntStaSpec> {

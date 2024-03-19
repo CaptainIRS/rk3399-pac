@@ -2,14 +2,15 @@
 pub type R = crate::R<SdmmcIntmaskSpec>;
 #[doc = "Register `SDMMC_INTMASK` writer"]
 pub type W = crate::W<SdmmcIntmaskSpec>;
-#[doc = "Field `INT_MASK` reader - Bits used to mask unwanted interrupts. Value of 0 masks interrupt; value of 1 enables interrupt. \\[15\\]: End-bit error (read)/Write no CRC (EBE) \\[14\\]: Auto command done (ACD) \\[13\\]: Start-bit error (SBE) \\[12\\]: Hardware locked write error (HLE) \\[11\\]: FIFO underrun/overrun error (FRUN) \\[10\\]: Data starvation-by-host timeout (HTO) /Volt_switch_int \\[9\\]: Data read timeout (DRTO) \\[8\\]: Response timeout (RTO) \\[7\\]: Data CRC error (DCRC) \\[6\\]: Response CRC error (RCRC) \\[5\\]: Receive FIFO data request (RXDR) \\[4\\]: Transmit FIFO data request (TXDR) \\[3\\]: Data transfer over (DTO) \\[2\\]: Command done (CD) \\[1\\]: Response error (RE) \\[0\\]: Card detect (CD)"]
+#[doc = "Field `INT_MASK` reader - Bits used to mask unwanted interrupts. Value of 0 masks\n\ninterrupt; value of 1 enables interrupt.\n\n\\[15\\]: End-bit error (read)/Write no CRC (EBE)\n\n\\[14\\]: Auto command done (ACD)\n\n\\[13\\]: Start-bit error (SBE)\n\n\\[12\\]: Hardware locked write error (HLE)\n\n\\[11\\]: FIFO underrun/overrun error (FRUN)\n\n\\[10\\]: Data starvation-by-host timeout (HTO) /Volt_switch_int\n\n\\[9\\]: Data read timeout (DRTO)\n\n\\[8\\]: Response timeout (RTO)\n\n\\[7\\]: Data CRC error (DCRC)\n\n\\[6\\]: Response CRC error (RCRC)\n\n\\[5\\]: Receive FIFO data request (RXDR)\n\n\\[4\\]: Transmit FIFO data request (TXDR)\n\n\\[3\\]: Data transfer over (DTO)\n\n\\[2\\]: Command done (CD)\n\n\\[1\\]: Response error (RE)\n\n\\[0\\]: Card detect (CD)"]
 pub type IntMaskR = crate::FieldReader<u16>;
-#[doc = "Field `INT_MASK` writer - Bits used to mask unwanted interrupts. Value of 0 masks interrupt; value of 1 enables interrupt. \\[15\\]: End-bit error (read)/Write no CRC (EBE) \\[14\\]: Auto command done (ACD) \\[13\\]: Start-bit error (SBE) \\[12\\]: Hardware locked write error (HLE) \\[11\\]: FIFO underrun/overrun error (FRUN) \\[10\\]: Data starvation-by-host timeout (HTO) /Volt_switch_int \\[9\\]: Data read timeout (DRTO) \\[8\\]: Response timeout (RTO) \\[7\\]: Data CRC error (DCRC) \\[6\\]: Response CRC error (RCRC) \\[5\\]: Receive FIFO data request (RXDR) \\[4\\]: Transmit FIFO data request (TXDR) \\[3\\]: Data transfer over (DTO) \\[2\\]: Command done (CD) \\[1\\]: Response error (RE) \\[0\\]: Card detect (CD)"]
+#[doc = "Field `INT_MASK` writer - Bits used to mask unwanted interrupts. Value of 0 masks\n\ninterrupt; value of 1 enables interrupt.\n\n\\[15\\]: End-bit error (read)/Write no CRC (EBE)\n\n\\[14\\]: Auto command done (ACD)\n\n\\[13\\]: Start-bit error (SBE)\n\n\\[12\\]: Hardware locked write error (HLE)\n\n\\[11\\]: FIFO underrun/overrun error (FRUN)\n\n\\[10\\]: Data starvation-by-host timeout (HTO) /Volt_switch_int\n\n\\[9\\]: Data read timeout (DRTO)\n\n\\[8\\]: Response timeout (RTO)\n\n\\[7\\]: Data CRC error (DCRC)\n\n\\[6\\]: Response CRC error (RCRC)\n\n\\[5\\]: Receive FIFO data request (RXDR)\n\n\\[4\\]: Transmit FIFO data request (TXDR)\n\n\\[3\\]: Data transfer over (DTO)\n\n\\[2\\]: Command done (CD)\n\n\\[1\\]: Response error (RE)\n\n\\[0\\]: Card detect (CD)"]
 pub type IntMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DataNobusyIntMask {
-    #[doc = "0: data no busy interrupt masked"]
+    #[doc = "0: data no busy interrupt not masked"]
     B0 = 0,
     #[doc = "1: data no busy interrupt masked"]
     B1 = 1,
@@ -31,7 +32,7 @@ impl DataNobusyIntMaskR {
             true => DataNobusyIntMask::B1,
         }
     }
-    #[doc = "data no busy interrupt masked"]
+    #[doc = "data no busy interrupt not masked"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == DataNobusyIntMask::B0
@@ -48,7 +49,7 @@ impl<'a, REG> DataNobusyIntMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "data no busy interrupt masked"]
+    #[doc = "data no busy interrupt not masked"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(DataNobusyIntMask::B0)
@@ -59,12 +60,12 @@ where
         self.variant(DataNobusyIntMask::B1)
     }
 }
-#[doc = "Field `SDIO_INT_MASK` reader - Mask SDIO interrupts. When masked, SDIO interrupt detection for that card is disabled. A 0 masks an interrupt, and 1 enables an interrupt."]
+#[doc = "Field `SDIO_INT_MASK` reader - Mask SDIO interrupts.\n\nWhen masked, SDIO interrupt detection for that card is disabled.\n\nA 0 masks an interrupt, and 1 enables an interrupt."]
 pub type SdioIntMaskR = crate::BitReader;
-#[doc = "Field `SDIO_INT_MASK` writer - Mask SDIO interrupts. When masked, SDIO interrupt detection for that card is disabled. A 0 masks an interrupt, and 1 enables an interrupt."]
+#[doc = "Field `SDIO_INT_MASK` writer - Mask SDIO interrupts.\n\nWhen masked, SDIO interrupt detection for that card is disabled.\n\nA 0 masks an interrupt, and 1 enables an interrupt."]
 pub type SdioIntMaskW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bits 0:15 - Bits used to mask unwanted interrupts. Value of 0 masks interrupt; value of 1 enables interrupt. \\[15\\]: End-bit error (read)/Write no CRC (EBE) \\[14\\]: Auto command done (ACD) \\[13\\]: Start-bit error (SBE) \\[12\\]: Hardware locked write error (HLE) \\[11\\]: FIFO underrun/overrun error (FRUN) \\[10\\]: Data starvation-by-host timeout (HTO) /Volt_switch_int \\[9\\]: Data read timeout (DRTO) \\[8\\]: Response timeout (RTO) \\[7\\]: Data CRC error (DCRC) \\[6\\]: Response CRC error (RCRC) \\[5\\]: Receive FIFO data request (RXDR) \\[4\\]: Transmit FIFO data request (TXDR) \\[3\\]: Data transfer over (DTO) \\[2\\]: Command done (CD) \\[1\\]: Response error (RE) \\[0\\]: Card detect (CD)"]
+    #[doc = "Bits 0:15 - Bits used to mask unwanted interrupts. Value of 0 masks\n\ninterrupt; value of 1 enables interrupt.\n\n\\[15\\]: End-bit error (read)/Write no CRC (EBE)\n\n\\[14\\]: Auto command done (ACD)\n\n\\[13\\]: Start-bit error (SBE)\n\n\\[12\\]: Hardware locked write error (HLE)\n\n\\[11\\]: FIFO underrun/overrun error (FRUN)\n\n\\[10\\]: Data starvation-by-host timeout (HTO) /Volt_switch_int\n\n\\[9\\]: Data read timeout (DRTO)\n\n\\[8\\]: Response timeout (RTO)\n\n\\[7\\]: Data CRC error (DCRC)\n\n\\[6\\]: Response CRC error (RCRC)\n\n\\[5\\]: Receive FIFO data request (RXDR)\n\n\\[4\\]: Transmit FIFO data request (TXDR)\n\n\\[3\\]: Data transfer over (DTO)\n\n\\[2\\]: Command done (CD)\n\n\\[1\\]: Response error (RE)\n\n\\[0\\]: Card detect (CD)"]
     #[inline(always)]
     pub fn int_mask(&self) -> IntMaskR {
         IntMaskR::new((self.bits & 0xffff) as u16)
@@ -74,14 +75,14 @@ impl R {
     pub fn data_nobusy_int_mask(&self) -> DataNobusyIntMaskR {
         DataNobusyIntMaskR::new(((self.bits >> 16) & 1) != 0)
     }
-    #[doc = "Bit 24 - Mask SDIO interrupts. When masked, SDIO interrupt detection for that card is disabled. A 0 masks an interrupt, and 1 enables an interrupt."]
+    #[doc = "Bit 24 - Mask SDIO interrupts.\n\nWhen masked, SDIO interrupt detection for that card is disabled.\n\nA 0 masks an interrupt, and 1 enables an interrupt."]
     #[inline(always)]
     pub fn sdio_int_mask(&self) -> SdioIntMaskR {
         SdioIntMaskR::new(((self.bits >> 24) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - Bits used to mask unwanted interrupts. Value of 0 masks interrupt; value of 1 enables interrupt. \\[15\\]: End-bit error (read)/Write no CRC (EBE) \\[14\\]: Auto command done (ACD) \\[13\\]: Start-bit error (SBE) \\[12\\]: Hardware locked write error (HLE) \\[11\\]: FIFO underrun/overrun error (FRUN) \\[10\\]: Data starvation-by-host timeout (HTO) /Volt_switch_int \\[9\\]: Data read timeout (DRTO) \\[8\\]: Response timeout (RTO) \\[7\\]: Data CRC error (DCRC) \\[6\\]: Response CRC error (RCRC) \\[5\\]: Receive FIFO data request (RXDR) \\[4\\]: Transmit FIFO data request (TXDR) \\[3\\]: Data transfer over (DTO) \\[2\\]: Command done (CD) \\[1\\]: Response error (RE) \\[0\\]: Card detect (CD)"]
+    #[doc = "Bits 0:15 - Bits used to mask unwanted interrupts. Value of 0 masks\n\ninterrupt; value of 1 enables interrupt.\n\n\\[15\\]: End-bit error (read)/Write no CRC (EBE)\n\n\\[14\\]: Auto command done (ACD)\n\n\\[13\\]: Start-bit error (SBE)\n\n\\[12\\]: Hardware locked write error (HLE)\n\n\\[11\\]: FIFO underrun/overrun error (FRUN)\n\n\\[10\\]: Data starvation-by-host timeout (HTO) /Volt_switch_int\n\n\\[9\\]: Data read timeout (DRTO)\n\n\\[8\\]: Response timeout (RTO)\n\n\\[7\\]: Data CRC error (DCRC)\n\n\\[6\\]: Response CRC error (RCRC)\n\n\\[5\\]: Receive FIFO data request (RXDR)\n\n\\[4\\]: Transmit FIFO data request (TXDR)\n\n\\[3\\]: Data transfer over (DTO)\n\n\\[2\\]: Command done (CD)\n\n\\[1\\]: Response error (RE)\n\n\\[0\\]: Card detect (CD)"]
     #[inline(always)]
     #[must_use]
     pub fn int_mask(&mut self) -> IntMaskW<SdmmcIntmaskSpec> {
@@ -93,7 +94,7 @@ impl W {
     pub fn data_nobusy_int_mask(&mut self) -> DataNobusyIntMaskW<SdmmcIntmaskSpec> {
         DataNobusyIntMaskW::new(self, 16)
     }
-    #[doc = "Bit 24 - Mask SDIO interrupts. When masked, SDIO interrupt detection for that card is disabled. A 0 masks an interrupt, and 1 enables an interrupt."]
+    #[doc = "Bit 24 - Mask SDIO interrupts.\n\nWhen masked, SDIO interrupt detection for that card is disabled.\n\nA 0 masks an interrupt, and 1 enables an interrupt."]
     #[inline(always)]
     #[must_use]
     pub fn sdio_int_mask(&mut self) -> SdioIntMaskW<SdmmcIntmaskSpec> {

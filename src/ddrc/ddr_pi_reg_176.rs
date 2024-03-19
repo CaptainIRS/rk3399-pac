@@ -2,19 +2,19 @@
 pub type R = crate::R<DdrPiReg176Spec>;
 #[doc = "Register `DDR_PI_REG_176` writer"]
 pub type W = crate::W<DdrPiReg176Spec>;
-#[doc = "Field `PI_INT_MASK` reader - Indicates mask for PI interrupt signals from the PI_REG_174.pi_int_status parameter."]
+#[doc = "Field `PI_INT_MASK` reader - Indicates mask for PI interrupt signals from the\n\nPI_REG_174.pi_int_status parameter."]
 pub type PiIntMaskR = crate::FieldReader<u32>;
-#[doc = "Field `PI_INT_MASK` writer - Indicates mask for PI interrupt signals from the PI_REG_174.pi_int_status parameter."]
+#[doc = "Field `PI_INT_MASK` writer - Indicates mask for PI interrupt signals from the\n\nPI_REG_174.pi_int_status parameter."]
 pub type PiIntMaskW<'a, REG> = crate::FieldWriter<'a, REG, 18, u32>;
 impl R {
-    #[doc = "Bits 0:17 - Indicates mask for PI interrupt signals from the PI_REG_174.pi_int_status parameter."]
+    #[doc = "Bits 0:17 - Indicates mask for PI interrupt signals from the\n\nPI_REG_174.pi_int_status parameter."]
     #[inline(always)]
     pub fn pi_int_mask(&self) -> PiIntMaskR {
         PiIntMaskR::new(self.bits & 0x0003_ffff)
     }
 }
 impl W {
-    #[doc = "Bits 0:17 - Indicates mask for PI interrupt signals from the PI_REG_174.pi_int_status parameter."]
+    #[doc = "Bits 0:17 - Indicates mask for PI interrupt signals from the\n\nPI_REG_174.pi_int_status parameter."]
     #[inline(always)]
     #[must_use]
     pub fn pi_int_mask(&mut self) -> PiIntMaskW<DdrPiReg176Spec> {

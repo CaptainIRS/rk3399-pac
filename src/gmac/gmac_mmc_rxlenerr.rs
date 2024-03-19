@@ -2,19 +2,19 @@
 pub type R = crate::R<GmacMmcRxlenerrSpec>;
 #[doc = "Register `GMAC_MMC_RXLENERR` writer"]
 pub type W = crate::W<GmacMmcRxlenerrSpec>;
-#[doc = "Field `RXLENGTHERROR` reader - Number of frames received with length error (Length type field ≠frame size), for all frames with valid length field."]
+#[doc = "Field `RXLENGTHERROR` reader - Number of frames received with length error (Length type field\n\n≠frame size), for all frames with valid length field."]
 pub type RxlengtherrorR = crate::FieldReader<u32>;
-#[doc = "Field `RXLENGTHERROR` writer - Number of frames received with length error (Length type field ≠frame size), for all frames with valid length field."]
+#[doc = "Field `RXLENGTHERROR` writer - Number of frames received with length error (Length type field\n\n≠frame size), for all frames with valid length field."]
 pub type RxlengtherrorW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Number of frames received with length error (Length type field ≠frame size), for all frames with valid length field."]
+    #[doc = "Bits 0:31 - Number of frames received with length error (Length type field\n\n≠frame size), for all frames with valid length field."]
     #[inline(always)]
     pub fn rxlengtherror(&self) -> RxlengtherrorR {
         RxlengtherrorR::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Number of frames received with length error (Length type field ≠frame size), for all frames with valid length field."]
+    #[doc = "Bits 0:31 - Number of frames received with length error (Length type field\n\n≠frame size), for all frames with valid length field."]
     #[inline(always)]
     #[must_use]
     pub fn rxlengtherror(&mut self) -> RxlengtherrorW<GmacMmcRxlenerrSpec> {

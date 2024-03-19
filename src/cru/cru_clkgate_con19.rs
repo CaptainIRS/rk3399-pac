@@ -2,57 +2,57 @@
 pub type R = crate::R<CruClkgateCon19Spec>;
 #[doc = "Register `CRU_CLKGATE_CON19` writer"]
 pub type W = crate::W<CruClkgateCon19Spec>;
-#[doc = "Field `ACLK_CENTER_MAIN_NOC_EN` reader - aclk_center_main_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `ACLK_CENTER_MAIN_NOC_EN` reader - aclk_center_main_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type AclkCenterMainNocEnR = crate::BitReader;
-#[doc = "Field `ACLK_CENTER_MAIN_NOC_EN` writer - aclk_center_main_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `ACLK_CENTER_MAIN_NOC_EN` writer - aclk_center_main_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type AclkCenterMainNocEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ACLK_CENTER_PERI_NOC_EN` reader - aclk_center_peri_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `ACLK_CENTER_PERI_NOC_EN` reader - aclk_center_peri_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type AclkCenterPeriNocEnR = crate::BitReader;
-#[doc = "Field `ACLK_CENTER_PERI_NOC_EN` writer - aclk_center_peri_noc clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `ACLK_CENTER_PERI_NOC_EN` writer - aclk_center_peri_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type AclkCenterPeriNocEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PCLK_DDR_SGRF_EN` reader - pclk_ddr_sgrf clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `PCLK_DDR_SGRF_EN` reader - pclk_ddr_sgrf clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type PclkDdrSgrfEnR = crate::BitReader;
-#[doc = "Field `PCLK_DDR_SGRF_EN` writer - pclk_ddr_sgrf clock disable bit When HIGH, disable clock Suggest always on"]
+#[doc = "Field `PCLK_DDR_SGRF_EN` writer - pclk_ddr_sgrf clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
 pub type PclkDdrSgrfEnW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `WRITE_MASK` writer - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+#[doc = "Field `WRITE_MASK` writer - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
 pub type WriteMaskW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bit 0 - aclk_center_main_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 0 - aclk_center_main_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     pub fn aclk_center_main_noc_en(&self) -> AclkCenterMainNocEnR {
         AclkCenterMainNocEnR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - aclk_center_peri_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 1 - aclk_center_peri_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     pub fn aclk_center_peri_noc_en(&self) -> AclkCenterPeriNocEnR {
         AclkCenterPeriNocEnR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - pclk_ddr_sgrf clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 2 - pclk_ddr_sgrf clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     pub fn pclk_ddr_sgrf_en(&self) -> PclkDdrSgrfEnR {
         PclkDdrSgrfEnR::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - aclk_center_main_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 0 - aclk_center_main_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_center_main_noc_en(&mut self) -> AclkCenterMainNocEnW<CruClkgateCon19Spec> {
         AclkCenterMainNocEnW::new(self, 0)
     }
-    #[doc = "Bit 1 - aclk_center_peri_noc clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 1 - aclk_center_peri_noc clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     #[must_use]
     pub fn aclk_center_peri_noc_en(&mut self) -> AclkCenterPeriNocEnW<CruClkgateCon19Spec> {
         AclkCenterPeriNocEnW::new(self, 1)
     }
-    #[doc = "Bit 2 - pclk_ddr_sgrf clock disable bit When HIGH, disable clock Suggest always on"]
+    #[doc = "Bit 2 - pclk_ddr_sgrf clock disable bit\n\nWhen HIGH, disable clock\n\nSuggest always on"]
     #[inline(always)]
     #[must_use]
     pub fn pclk_ddr_sgrf_en(&mut self) -> PclkDdrSgrfEnW<CruClkgateCon19Spec> {
         PclkDdrSgrfEnW::new(self, 2)
     }
-    #[doc = "Bits 16:31 - write mask bits When every bit HIGH, enable the writing corresponding bit When every bit LOW, don't care the writing corresponding bit"]
+    #[doc = "Bits 16:31 - write mask bits\n\nWhen every bit HIGH, enable the writing corresponding bit\n\nWhen every bit LOW, don't care the writing corresponding bit"]
     #[inline(always)]
     #[must_use]
     pub fn write_mask(&mut self) -> WriteMaskW<CruClkgateCon19Spec> {

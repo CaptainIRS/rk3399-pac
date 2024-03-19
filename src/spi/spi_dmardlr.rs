@@ -2,19 +2,19 @@
 pub type R = crate::R<SpiDmardlrSpec>;
 #[doc = "Register `SPI_DMARDLR` writer"]
 pub type W = crate::W<SpiDmardlrSpec>;
-#[doc = "Field `RDL` reader - Receive Data Level This bit field controls the level at which a DMA request is made by the receive logic. The watermark level = DMARDL+1; that is, dma_rx_req is generated when the number of valid data entries in the receive FIFO is equal to or above this field value + 1, and Receive DMA Enable(DMACR\\[0\\])=1."]
+#[doc = "Field `RDL` reader - Receive Data Level\n\nThis bit field controls the level at which a DMA request is made by\n\nthe receive logic. The watermark level = DMARDL+1; that is,\n\ndma_rx_req is generated when the number of valid data entries\n\nin the receive FIFO is equal to or above this field value + 1, and\n\nReceive DMA Enable(DMACR\\[0\\])=1."]
 pub type RdlR = crate::FieldReader;
-#[doc = "Field `RDL` writer - Receive Data Level This bit field controls the level at which a DMA request is made by the receive logic. The watermark level = DMARDL+1; that is, dma_rx_req is generated when the number of valid data entries in the receive FIFO is equal to or above this field value + 1, and Receive DMA Enable(DMACR\\[0\\])=1."]
+#[doc = "Field `RDL` writer - Receive Data Level\n\nThis bit field controls the level at which a DMA request is made by\n\nthe receive logic. The watermark level = DMARDL+1; that is,\n\ndma_rx_req is generated when the number of valid data entries\n\nin the receive FIFO is equal to or above this field value + 1, and\n\nReceive DMA Enable(DMACR\\[0\\])=1."]
 pub type RdlW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
-    #[doc = "Bits 0:4 - Receive Data Level This bit field controls the level at which a DMA request is made by the receive logic. The watermark level = DMARDL+1; that is, dma_rx_req is generated when the number of valid data entries in the receive FIFO is equal to or above this field value + 1, and Receive DMA Enable(DMACR\\[0\\])=1."]
+    #[doc = "Bits 0:4 - Receive Data Level\n\nThis bit field controls the level at which a DMA request is made by\n\nthe receive logic. The watermark level = DMARDL+1; that is,\n\ndma_rx_req is generated when the number of valid data entries\n\nin the receive FIFO is equal to or above this field value + 1, and\n\nReceive DMA Enable(DMACR\\[0\\])=1."]
     #[inline(always)]
     pub fn rdl(&self) -> RdlR {
         RdlR::new((self.bits & 0x1f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - Receive Data Level This bit field controls the level at which a DMA request is made by the receive logic. The watermark level = DMARDL+1; that is, dma_rx_req is generated when the number of valid data entries in the receive FIFO is equal to or above this field value + 1, and Receive DMA Enable(DMACR\\[0\\])=1."]
+    #[doc = "Bits 0:4 - Receive Data Level\n\nThis bit field controls the level at which a DMA request is made by\n\nthe receive logic. The watermark level = DMARDL+1; that is,\n\ndma_rx_req is generated when the number of valid data entries\n\nin the receive FIFO is equal to or above this field value + 1, and\n\nReceive DMA Enable(DMACR\\[0\\])=1."]
     #[inline(always)]
     #[must_use]
     pub fn rdl(&mut self) -> RdlW<SpiDmardlrSpec> {

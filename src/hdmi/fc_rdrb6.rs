@@ -21,7 +21,7 @@ impl W {
         AviframeinterpolationW::new(self, 0)
     }
 }
-#[doc = "Frames interpolated between AVI packets\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_rdrb6::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_rdrb6::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer Round Robin AVI Packet Insertion Register 6\n\nConfigures the Frame Composer (FC) RDRB frame interpolation for AVI packet insertion on\n\ndata island when FC is on RDRB mode for this packet.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_rdrb6::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_rdrb6::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcRdrb6Spec;
 impl crate::RegisterSpec for FcRdrb6Spec {
     type Ux = u8;

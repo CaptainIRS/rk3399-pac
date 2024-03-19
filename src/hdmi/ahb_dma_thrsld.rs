@@ -21,7 +21,8 @@ impl W {
         FifoThresholdW::new(self, 0)
     }
 }
-#[doc = "FIFO medium threshold occupation value\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ahb_dma_thrsld::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ahb_dma_thrsld::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Audio DMA FIFO Threshold Register\n\nThis register defines the FIFO medium threshold occupation value.\n\nAfter the AHB master completes a burst transaction successfully, the FIFO may remain full\n\ntill the data fetch interface requests samples. Each data fetch operation reduces the\n\nnumber of samples stored in the FIFO by the number of channels enabled.\n\nTherefore, the fifo_threshold\\[7:0\\]
+is the medium number of samples that should be\n\navailable in the audio FIFO across the DMA operation.\n\nAs soon as the number of samples in the FIFO drops lower than the fifo_threshold\\[7:0\\], the\n\nDMA engine requests a new burst of samples for the AHB master. The length is constrained\n\nby the size of buffer provided, the instantiated FIFO depth minus fifo_threshold\\[7:0\\],\n\nand/or the number of words up to the next 1 kbyte boundary.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ahb_dma_thrsld::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ahb_dma_thrsld::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AhbDmaThrsldSpec;
 impl crate::RegisterSpec for AhbDmaThrsldSpec {
     type Ux = u8;

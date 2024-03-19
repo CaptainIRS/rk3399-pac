@@ -2,26 +2,26 @@
 pub type R = crate::R<FcIscr1_16Spec>;
 #[doc = "Register `FC_ISCR1_16` writer"]
 pub type W = crate::W<FcIscr1_16Spec>;
-#[doc = "Field `FC_ISCR1_16` reader - Frame Composer ISRC1 Packet Body Register 16; configures ISRC1 packet body of the ISRC1 packet"]
+#[doc = "Field `FC_ISCR1_16` reader - Frame Composer ISRC1 Packet Body Register 16;\n\nconfigures ISRC1 packet body of the ISRC1 packet"]
 pub type FcIscr1_16R = crate::FieldReader;
-#[doc = "Field `FC_ISCR1_16` writer - Frame Composer ISRC1 Packet Body Register 16; configures ISRC1 packet body of the ISRC1 packet"]
+#[doc = "Field `FC_ISCR1_16` writer - Frame Composer ISRC1 Packet Body Register 16;\n\nconfigures ISRC1 packet body of the ISRC1 packet"]
 pub type FcIscr1_16W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - Frame Composer ISRC1 Packet Body Register 16; configures ISRC1 packet body of the ISRC1 packet"]
+    #[doc = "Bits 0:7 - Frame Composer ISRC1 Packet Body Register 16;\n\nconfigures ISRC1 packet body of the ISRC1 packet"]
     #[inline(always)]
     pub fn fc_iscr1_16(&self) -> FcIscr1_16R {
         FcIscr1_16R::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Frame Composer ISRC1 Packet Body Register 16; configures ISRC1 packet body of the ISRC1 packet"]
+    #[doc = "Bits 0:7 - Frame Composer ISRC1 Packet Body Register 16;\n\nconfigures ISRC1 packet body of the ISRC1 packet"]
     #[inline(always)]
     #[must_use]
     pub fn fc_iscr1_16(&mut self) -> FcIscr1_16W<FcIscr1_16Spec> {
         FcIscr1_16W::new(self, 0)
     }
 }
-#[doc = "Frame Composer ISRC1 Packet Body Register 16; configures ISRC1 packet body of the ISRC1 packet\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_iscr1_16::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_iscr1_16::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer ISRC1 Packet Body Register 16\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc_iscr1_16::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc_iscr1_16::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FcIscr1_16Spec;
 impl crate::RegisterSpec for FcIscr1_16Spec {
     type Ux = u8;

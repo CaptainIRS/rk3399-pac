@@ -2,9 +2,9 @@
 pub type R = crate::R<IhMuteFcStat1Spec>;
 #[doc = "Register `IH_MUTE_FC_STAT1` writer"]
 pub type W = crate::W<IhMuteFcStat1Spec>;
-#[doc = "Field `AMP` reader - When set to 1, mutes ih_fc_stat1\\[2\\]. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
+#[doc = "Field `AMP` reader - When set to 1, mutes ih_fc_stat1\\[2\\]. Otherwise,\n\nthis field is a \"spare\" bit with no associated\n\nfunctionality.\n\nReset Value: (HDMI_TX_20== 1) ? 1 : 0"]
 pub type AmpR = crate::BitReader;
-#[doc = "Field `AMP` writer - When set to 1, mutes ih_fc_stat1\\[2\\]. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
+#[doc = "Field `AMP` writer - When set to 1, mutes ih_fc_stat1\\[2\\]. Otherwise,\n\nthis field is a \"spare\" bit with no associated\n\nfunctionality.\n\nReset Value: (HDMI_TX_20== 1) ? 1 : 0"]
 pub type AmpW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SPD` reader - When set to 1, mutes ih_fc_stat1\\[3\\]"]
 pub type SpdR = crate::BitReader;
@@ -27,7 +27,7 @@ pub type GmdR = crate::BitReader;
 #[doc = "Field `GMD` writer - When set to 1, mutes ih_fc_stat1\\[7\\]"]
 pub type GmdW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 2 - When set to 1, mutes ih_fc_stat1\\[2\\]. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
+    #[doc = "Bit 2 - When set to 1, mutes ih_fc_stat1\\[2\\]. Otherwise,\n\nthis field is a \"spare\" bit with no associated\n\nfunctionality.\n\nReset Value: (HDMI_TX_20== 1) ? 1 : 0"]
     #[inline(always)]
     pub fn amp(&self) -> AmpR {
         AmpR::new(((self.bits >> 2) & 1) != 0)
@@ -59,7 +59,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 2 - When set to 1, mutes ih_fc_stat1\\[2\\]. Otherwise, this field is a \"spare\" bit with no associated functionality. Reset Value: (HDMI_TX_20== 1) ? 1 : 0"]
+    #[doc = "Bit 2 - When set to 1, mutes ih_fc_stat1\\[2\\]. Otherwise,\n\nthis field is a \"spare\" bit with no associated\n\nfunctionality.\n\nReset Value: (HDMI_TX_20== 1) ? 1 : 0"]
     #[inline(always)]
     #[must_use]
     pub fn amp(&mut self) -> AmpW<IhMuteFcStat1Spec> {
@@ -96,7 +96,7 @@ impl W {
         GmdW::new(self, 7)
     }
 }
-#[doc = "When set to 1, mutes ih_fc_stat1\\[2\\]. Otherwise, this field is a \"spare\" bit with no associated functionality.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ih_mute_fc_stat1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ih_mute_fc_stat1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frame Composer Interrupt Mute Control Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ih_mute_fc_stat1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ih_mute_fc_stat1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IhMuteFcStat1Spec;
 impl crate::RegisterSpec for IhMuteFcStat1Spec {
     type Ux = u8;

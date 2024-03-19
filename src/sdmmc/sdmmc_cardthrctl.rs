@@ -3,9 +3,10 @@ pub type R = crate::R<SdmmcCardthrctlSpec>;
 #[doc = "Register `SDMMC_CARDTHRCTL` writer"]
 pub type W = crate::W<SdmmcCardthrctlSpec>;
 #[doc = "Card Read Threshold Enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cardrdthren {
-    #[doc = "0: Card Read Threshold enabled. Host Controller initiates Read Transfer only if CardRdThreshold amount of space is available in receive FIFO."]
+    #[doc = "0: Card Read Threshold disabled"]
     B0 = 0,
     #[doc = "1: Card Read Threshold enabled. Host Controller initiates Read Transfer only if CardRdThreshold amount of space is available in receive FIFO."]
     B1 = 1,
@@ -27,7 +28,7 @@ impl CardrdthrenR {
             true => Cardrdthren::B1,
         }
     }
-    #[doc = "Card Read Threshold enabled. Host Controller initiates Read Transfer only if CardRdThreshold amount of space is available in receive FIFO."]
+    #[doc = "Card Read Threshold disabled"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cardrdthren::B0
@@ -44,7 +45,7 @@ impl<'a, REG> CardrdthrenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Card Read Threshold enabled. Host Controller initiates Read Transfer only if CardRdThreshold amount of space is available in receive FIFO."]
+    #[doc = "Card Read Threshold disabled"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cardrdthren::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "Busy Clear Interrupt generation:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bsyclrinten {
-    #[doc = "0: Busy Clear Interrupt enabled Note: The application can disable this feature if it does not want to wait for a Busy Clear Interrupt. For example, in a multi-card scenario, the application can switch to the other card without waiting for a busy to be completed. In such cases, the application can use the polling method to determine the status of busy. By default this feature is disabled and backward-compatible to the legacy drivers where polling is used."]
+    #[doc = "0: Busy Clear Interrupt disabled"]
     B0 = 0,
     #[doc = "1: Busy Clear Interrupt enabled Note: The application can disable this feature if it does not want to wait for a Busy Clear Interrupt. For example, in a multi-card scenario, the application can switch to the other card without waiting for a busy to be completed. In such cases, the application can use the polling method to determine the status of busy. By default this feature is disabled and backward-compatible to the legacy drivers where polling is used."]
     B1 = 1,
@@ -80,7 +82,7 @@ impl BsyclrintenR {
             true => Bsyclrinten::B1,
         }
     }
-    #[doc = "Busy Clear Interrupt enabled Note: The application can disable this feature if it does not want to wait for a Busy Clear Interrupt. For example, in a multi-card scenario, the application can switch to the other card without waiting for a busy to be completed. In such cases, the application can use the polling method to determine the status of busy. By default this feature is disabled and backward-compatible to the legacy drivers where polling is used."]
+    #[doc = "Busy Clear Interrupt disabled"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Bsyclrinten::B0
@@ -97,7 +99,7 @@ impl<'a, REG> BsyclrintenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Busy Clear Interrupt enabled Note: The application can disable this feature if it does not want to wait for a Busy Clear Interrupt. For example, in a multi-card scenario, the application can switch to the other card without waiting for a busy to be completed. In such cases, the application can use the polling method to determine the status of busy. By default this feature is disabled and backward-compatible to the legacy drivers where polling is used."]
+    #[doc = "Busy Clear Interrupt disabled"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Bsyclrinten::B0)

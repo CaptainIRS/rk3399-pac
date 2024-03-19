@@ -2,14 +2,14 @@
 pub type R = crate::R<DdrDenaliCtl04Spec>;
 #[doc = "Register `DDR_DENALI_CTL_04` writer"]
 pub type W = crate::W<DdrDenaliCtl04Spec>;
-#[doc = "Field `DENALI0_WRCMD_SIDE_FIFO_LOG2_DEPTH` reader - Reports the depth of the DENALI port 0 processing FIFO. Value is the log2 value of the depth. READ- ONLY"]
+#[doc = "Field `DENALI0_WRCMD_SIDE_FIFO_LOG2_DEPTH` reader - Reports the depth of the DENALI port 0 processing FIFO. Value is the log2 value of the depth."]
 pub type Denali0WrcmdSideFifoLog2DepthR = crate::FieldReader;
 #[doc = "Field `DFS_CLOSE_BANKS` reader - Close all pages before doing DFS. Set to 1 to enable."]
 pub type DfsCloseBanksR = crate::BitReader;
 #[doc = "Field `DFS_CLOSE_BANKS` writer - Close all pages before doing DFS. Set to 1 to enable."]
 pub type DfsCloseBanksW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bits 0:7 - Reports the depth of the DENALI port 0 processing FIFO. Value is the log2 value of the depth. READ- ONLY"]
+    #[doc = "Bits 0:7 - Reports the depth of the DENALI port 0 processing FIFO. Value is the log2 value of the depth."]
     #[inline(always)]
     pub fn denali0_wrcmd_side_fifo_log2_depth(&self) -> Denali0WrcmdSideFifoLog2DepthR {
         Denali0WrcmdSideFifoLog2DepthR::new((self.bits & 0xff) as u8)

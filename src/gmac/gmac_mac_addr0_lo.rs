@@ -2,23 +2,19 @@
 pub type R = crate::R<GmacMacAddr0LoSpec>;
 #[doc = "Register `GMAC_MAC_ADDR0_LO` writer"]
 pub type W = crate::W<GmacMacAddr0LoSpec>;
-#[doc = "Field `A31_A0` reader - MAC Address0 \\[31:0\\]
-This field contains the lower 32 bits of the 6-byte first MAC address. This is used by the MAC for filtering for received frames and for inserting the MAC address in the Transmit Flow Control (PAUSE) Frames."]
+#[doc = "Field `A31_A0` reader - MAC Address0 \\[31:0\\]\n\nThis field contains the lower 32 bits of the 6-byte first MAC\n\naddress. This is used by the MAC for filtering for received frames\n\nand for inserting the MAC address in the Transmit Flow Control\n\n(PAUSE) Frames."]
 pub type A31A0R = crate::FieldReader<u32>;
-#[doc = "Field `A31_A0` writer - MAC Address0 \\[31:0\\]
-This field contains the lower 32 bits of the 6-byte first MAC address. This is used by the MAC for filtering for received frames and for inserting the MAC address in the Transmit Flow Control (PAUSE) Frames."]
+#[doc = "Field `A31_A0` writer - MAC Address0 \\[31:0\\]\n\nThis field contains the lower 32 bits of the 6-byte first MAC\n\naddress. This is used by the MAC for filtering for received frames\n\nand for inserting the MAC address in the Transmit Flow Control\n\n(PAUSE) Frames."]
 pub type A31A0W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - MAC Address0 \\[31:0\\]
-This field contains the lower 32 bits of the 6-byte first MAC address. This is used by the MAC for filtering for received frames and for inserting the MAC address in the Transmit Flow Control (PAUSE) Frames."]
+    #[doc = "Bits 0:31 - MAC Address0 \\[31:0\\]\n\nThis field contains the lower 32 bits of the 6-byte first MAC\n\naddress. This is used by the MAC for filtering for received frames\n\nand for inserting the MAC address in the Transmit Flow Control\n\n(PAUSE) Frames."]
     #[inline(always)]
     pub fn a31_a0(&self) -> A31A0R {
         A31A0R::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - MAC Address0 \\[31:0\\]
-This field contains the lower 32 bits of the 6-byte first MAC address. This is used by the MAC for filtering for received frames and for inserting the MAC address in the Transmit Flow Control (PAUSE) Frames."]
+    #[doc = "Bits 0:31 - MAC Address0 \\[31:0\\]\n\nThis field contains the lower 32 bits of the 6-byte first MAC\n\naddress. This is used by the MAC for filtering for received frames\n\nand for inserting the MAC address in the Transmit Flow Control\n\n(PAUSE) Frames."]
     #[inline(always)]
     #[must_use]
     pub fn a31_a0(&mut self) -> A31A0W<GmacMacAddr0LoSpec> {

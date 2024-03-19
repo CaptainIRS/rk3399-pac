@@ -2,10 +2,11 @@
 pub type R = crate::R<GrfA53PerfCon0Spec>;
 #[doc = "Register `GRF_A53_PERF_CON0` writer"]
 pub type W = crate::W<GrfA53PerfCon0Spec>;
-#[doc = "a53 performance monitor control register axi_perf enable bit\n\nValue on reset: 0"]
+#[doc = "a53 performance monitor control register\n\naxi_perf enable bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum A53SwAxiPerfWork {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -16,7 +17,7 @@ impl From<A53SwAxiPerfWork> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `A53_SW_AXI_PERF_WORK` reader - a53 performance monitor control register axi_perf enable bit"]
+#[doc = "Field `A53_SW_AXI_PERF_WORK` reader - a53 performance monitor control register\n\naxi_perf enable bit"]
 pub type A53SwAxiPerfWorkR = crate::BitReader<A53SwAxiPerfWork>;
 impl A53SwAxiPerfWorkR {
     #[doc = "Get enumerated values variant"]
@@ -27,7 +28,7 @@ impl A53SwAxiPerfWorkR {
             true => A53SwAxiPerfWork::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == A53SwAxiPerfWork::B0
@@ -38,13 +39,13 @@ impl A53SwAxiPerfWorkR {
         *self == A53SwAxiPerfWork::B1
     }
 }
-#[doc = "Field `A53_SW_AXI_PERF_WORK` writer - a53 performance monitor control register axi_perf enable bit"]
+#[doc = "Field `A53_SW_AXI_PERF_WORK` writer - a53 performance monitor control register\n\naxi_perf enable bit"]
 pub type A53SwAxiPerfWorkW<'a, REG> = crate::BitWriter<'a, REG, A53SwAxiPerfWork>;
 impl<'a, REG> A53SwAxiPerfWorkW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(A53SwAxiPerfWork::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "axi_perf clear bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum A53SwAxiPerfClr {
-    #[doc = "0: enable"]
+    #[doc = "0: disable"]
     B0 = 0,
     #[doc = "1: enable"]
     B1 = 1,
@@ -80,7 +82,7 @@ impl A53SwAxiPerfClrR {
             true => A53SwAxiPerfClr::B1,
         }
     }
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == A53SwAxiPerfClr::B0
@@ -97,7 +99,7 @@ impl<'a, REG> A53SwAxiPerfClrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "enable"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(A53SwAxiPerfClr::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "axi_perf counter type\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum A53SwAxiCntType {
-    #[doc = "0: ddr align transfer test"]
+    #[doc = "0: axi transfer test"]
     B0 = 0,
     #[doc = "1: ddr align transfer test"]
     B1 = 1,
@@ -133,7 +136,7 @@ impl A53SwAxiCntTypeR {
             true => A53SwAxiCntType::B1,
         }
     }
-    #[doc = "ddr align transfer test"]
+    #[doc = "axi transfer test"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == A53SwAxiCntType::B0
@@ -150,7 +153,7 @@ impl<'a, REG> A53SwAxiCntTypeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "ddr align transfer test"]
+    #[doc = "axi transfer test"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(A53SwAxiCntType::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "axi_perf counter id control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum A53SwArCntIdType {
-    #[doc = "0: count sw_ar_count_id read channel only"]
+    #[doc = "0: count all read channel id"]
     B0 = 0,
     #[doc = "1: count sw_ar_count_id read channel only"]
     B1 = 1,
@@ -186,7 +190,7 @@ impl A53SwArCntIdTypeR {
             true => A53SwArCntIdType::B1,
         }
     }
-    #[doc = "count sw_ar_count_id read channel only"]
+    #[doc = "count all read channel id"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == A53SwArCntIdType::B0
@@ -203,7 +207,7 @@ impl<'a, REG> A53SwArCntIdTypeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "count sw_ar_count_id read channel only"]
+    #[doc = "count all read channel id"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(A53SwArCntIdType::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "axi_perf counter id control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum A53SwAwCntIdType {
-    #[doc = "0: count sw_ar_count_id write channel only"]
+    #[doc = "0: count all write channel id"]
     B0 = 0,
     #[doc = "1: count sw_ar_count_id write channel only"]
     B1 = 1,
@@ -239,7 +244,7 @@ impl A53SwAwCntIdTypeR {
             true => A53SwAwCntIdType::B1,
         }
     }
-    #[doc = "count sw_ar_count_id write channel only"]
+    #[doc = "count all write channel id"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == A53SwAwCntIdType::B0
@@ -256,7 +261,7 @@ impl<'a, REG> A53SwAwCntIdTypeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "count sw_ar_count_id write channel only"]
+    #[doc = "count all write channel id"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(A53SwAwCntIdType::B0)
@@ -268,14 +273,15 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum A53SwDdrAlignType {
-    #[doc = "0: 128-Byte align"]
+    #[doc = "0: 16-Byte align"]
     D0 = 0,
-    #[doc = "1: 128-Byte align"]
+    #[doc = "1: 32-Byte align"]
     D1 = 1,
-    #[doc = "2: 128-Byte align"]
+    #[doc = "2: 64-Byte align"]
     D2 = 2,
     #[doc = "3: 128-Byte align"]
     D3 = 3,
@@ -303,17 +309,17 @@ impl A53SwDdrAlignTypeR {
             _ => unreachable!(),
         }
     }
-    #[doc = "128-Byte align"]
+    #[doc = "16-Byte align"]
     #[inline(always)]
     pub fn is_d0(&self) -> bool {
         *self == A53SwDdrAlignType::D0
     }
-    #[doc = "128-Byte align"]
+    #[doc = "32-Byte align"]
     #[inline(always)]
     pub fn is_d1(&self) -> bool {
         *self == A53SwDdrAlignType::D1
     }
-    #[doc = "128-Byte align"]
+    #[doc = "64-Byte align"]
     #[inline(always)]
     pub fn is_d2(&self) -> bool {
         *self == A53SwDdrAlignType::D2
@@ -331,17 +337,17 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "128-Byte align"]
+    #[doc = "16-Byte align"]
     #[inline(always)]
     pub fn d0(self) -> &'a mut crate::W<REG> {
         self.variant(A53SwDdrAlignType::D0)
     }
-    #[doc = "128-Byte align"]
+    #[doc = "32-Byte align"]
     #[inline(always)]
     pub fn d1(self) -> &'a mut crate::W<REG> {
         self.variant(A53SwDdrAlignType::D1)
     }
-    #[doc = "128-Byte align"]
+    #[doc = "64-Byte align"]
     #[inline(always)]
     pub fn d2(self) -> &'a mut crate::W<REG> {
         self.variant(A53SwDdrAlignType::D2)
@@ -352,16 +358,16 @@ where
         self.variant(A53SwDdrAlignType::D3)
     }
 }
-#[doc = "Field `A53_SW_RD_LATENCY_ID` reader - Axi read channel id for latency AXI_PERFormance test"]
+#[doc = "Field `A53_SW_RD_LATENCY_ID` reader - Axi read channel id for latency\n\nAXI_PERFormance test"]
 pub type A53SwRdLatencyIdR = crate::FieldReader;
-#[doc = "Field `A53_SW_RD_LATENCY_ID` writer - Axi read channel id for latency AXI_PERFormance test"]
+#[doc = "Field `A53_SW_RD_LATENCY_ID` writer - Axi read channel id for latency\n\nAXI_PERFormance test"]
 pub type A53SwRdLatencyIdW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
-#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` reader - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableR = crate::FieldReader<u16>;
-#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+#[doc = "Field `WRITE_ENABLE` writer - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
 pub type WriteEnableW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "Bit 0 - a53 performance monitor control register axi_perf enable bit"]
+    #[doc = "Bit 0 - a53 performance monitor control register\n\naxi_perf enable bit"]
     #[inline(always)]
     pub fn a53_sw_axi_perf_work(&self) -> A53SwAxiPerfWorkR {
         A53SwAxiPerfWorkR::new((self.bits & 1) != 0)
@@ -391,19 +397,19 @@ impl R {
     pub fn a53_sw_ddr_align_type(&self) -> A53SwDdrAlignTypeR {
         A53SwDdrAlignTypeR::new(((self.bits >> 5) & 3) as u8)
     }
-    #[doc = "Bits 8:13 - Axi read channel id for latency AXI_PERFormance test"]
+    #[doc = "Bits 8:13 - Axi read channel id for latency\n\nAXI_PERFormance test"]
     #[inline(always)]
     pub fn a53_sw_rd_latency_id(&self) -> A53SwRdLatencyIdR {
         A53SwRdLatencyIdR::new(((self.bits >> 8) & 0x3f) as u8)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     pub fn write_enable(&self) -> WriteEnableR {
         WriteEnableR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bit 0 - a53 performance monitor control register axi_perf enable bit"]
+    #[doc = "Bit 0 - a53 performance monitor control register\n\naxi_perf enable bit"]
     #[inline(always)]
     #[must_use]
     pub fn a53_sw_axi_perf_work(&mut self) -> A53SwAxiPerfWorkW<GrfA53PerfCon0Spec> {
@@ -439,13 +445,13 @@ impl W {
     pub fn a53_sw_ddr_align_type(&mut self) -> A53SwDdrAlignTypeW<GrfA53PerfCon0Spec> {
         A53SwDdrAlignTypeW::new(self, 5)
     }
-    #[doc = "Bits 8:13 - Axi read channel id for latency AXI_PERFormance test"]
+    #[doc = "Bits 8:13 - Axi read channel id for latency\n\nAXI_PERFormance test"]
     #[inline(always)]
     #[must_use]
     pub fn a53_sw_rd_latency_id(&mut self) -> A53SwRdLatencyIdW<GrfA53PerfCon0Spec> {
         A53SwRdLatencyIdW::new(self, 8)
     }
-    #[doc = "Bits 16:31 - bit0~15 write enable When bit 16=1, bit 0 can be written by software . When bit 16=0, bit 0 cannot be written by software; When bit 17=1, bit 1 can be written by software . When bit 17=0, bit 1 cannot be written by software; ...... When bit 31=1, bit 15 can be written by software . When bit 31=0, bit 15 cannot be written by software;"]
+    #[doc = "Bits 16:31 - bit0~15 write enable\n\nWhen bit 16=1, bit 0 can be written by\n\nsoftware .\n\nWhen bit 16=0, bit 0 cannot be written by\n\nsoftware;\n\nWhen bit 17=1, bit 1 can be written by\n\nsoftware .\n\nWhen bit 17=0, bit 1 cannot be written by\n\nsoftware;\n\n......\n\nWhen bit 31=1, bit 15 can be written by\n\nsoftware .\n\nWhen bit 31=0, bit 15 cannot be written by\n\nsoftware;"]
     #[inline(always)]
     #[must_use]
     pub fn write_enable(&mut self) -> WriteEnableW<GrfA53PerfCon0Spec> {

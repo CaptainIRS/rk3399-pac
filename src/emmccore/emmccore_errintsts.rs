@@ -3,9 +3,10 @@ pub type R = crate::R<EmmccoreErrintstsSpec>;
 #[doc = "Register `EMMCCORE_ERRINTSTS` writer"]
 pub type W = crate::W<EmmccoreErrintstsSpec>;
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cmdtimeouterr {
-    #[doc = "0: Timeout Occurs only if the no response is returned within 64 SDCLK cycles from the end bit of the command. If the HC detects a CMD line conflict, in which case Command CRC Error shall also be set. This bit shall be set without waiting for 64 SDCLK cycles because the command will be aborted by the HC."]
+    #[doc = "0: No Error"]
     B0 = 0,
     #[doc = "1: Timeout Occurs only if the no response is returned within 64 SDCLK cycles from the end bit of the command. If the HC detects a CMD line conflict, in which case Command CRC Error shall also be set. This bit shall be set without waiting for 64 SDCLK cycles because the command will be aborted by the HC."]
     B1 = 1,
@@ -27,7 +28,7 @@ impl CmdtimeouterrR {
             true => Cmdtimeouterr::B1,
         }
     }
-    #[doc = "Timeout Occurs only if the no response is returned within 64 SDCLK cycles from the end bit of the command. If the HC detects a CMD line conflict, in which case Command CRC Error shall also be set. This bit shall be set without waiting for 64 SDCLK cycles because the command will be aborted by the HC."]
+    #[doc = "No Error"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cmdtimeouterr::B0
@@ -44,7 +45,7 @@ impl<'a, REG> CmdtimeouterrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Timeout Occurs only if the no response is returned within 64 SDCLK cycles from the end bit of the command. If the HC detects a CMD line conflict, in which case Command CRC Error shall also be set. This bit shall be set without waiting for 64 SDCLK cycles because the command will be aborted by the HC."]
+    #[doc = "No Error"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cmdtimeouterr::B0)
@@ -56,9 +57,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cmdcrcerr {
-    #[doc = "0: CRC Error Generated Command CRC Error is generated in two cases. a. If a response is returned and the Command Time-out Error is set to 0, this bit is set to 1 when detecting a CRT error in the command response b. The HC detects a CMD line conflict by monitoring the CMD line when a command is issued. If the HC drives the CMD line to 1 level, but detects 0 level on the CMD line at the next SDCLK edge, then the HC shall abort the command (Stop driving CMD line) and set this bit to 1. The Command Timeout Error shall also be set to 1 to distinguish CMD line conflict."]
+    #[doc = "0: No Error"]
     B0 = 0,
     #[doc = "1: CRC Error Generated Command CRC Error is generated in two cases. a. If a response is returned and the Command Time-out Error is set to 0, this bit is set to 1 when detecting a CRT error in the command response b. The HC detects a CMD line conflict by monitoring the CMD line when a command is issued. If the HC drives the CMD line to 1 level, but detects 0 level on the CMD line at the next SDCLK edge, then the HC shall abort the command (Stop driving CMD line) and set this bit to 1. The Command Timeout Error shall also be set to 1 to distinguish CMD line conflict."]
     B1 = 1,
@@ -80,7 +82,7 @@ impl CmdcrcerrR {
             true => Cmdcrcerr::B1,
         }
     }
-    #[doc = "CRC Error Generated Command CRC Error is generated in two cases. a. If a response is returned and the Command Time-out Error is set to 0, this bit is set to 1 when detecting a CRT error in the command response b. The HC detects a CMD line conflict by monitoring the CMD line when a command is issued. If the HC drives the CMD line to 1 level, but detects 0 level on the CMD line at the next SDCLK edge, then the HC shall abort the command (Stop driving CMD line) and set this bit to 1. The Command Timeout Error shall also be set to 1 to distinguish CMD line conflict."]
+    #[doc = "No Error"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cmdcrcerr::B0
@@ -97,7 +99,7 @@ impl<'a, REG> CmdcrcerrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "CRC Error Generated Command CRC Error is generated in two cases. a. If a response is returned and the Command Time-out Error is set to 0, this bit is set to 1 when detecting a CRT error in the command response b. The HC detects a CMD line conflict by monitoring the CMD line when a command is issued. If the HC drives the CMD line to 1 level, but detects 0 level on the CMD line at the next SDCLK edge, then the HC shall abort the command (Stop driving CMD line) and set this bit to 1. The Command Timeout Error shall also be set to 1 to distinguish CMD line conflict."]
+    #[doc = "No Error"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cmdcrcerr::B0)
@@ -109,9 +111,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cmdendbiterr {
-    #[doc = "0: End Bit Error Generated Occurs when detecting that the end bit of a command response is 0."]
+    #[doc = "0: No Error"]
     B0 = 0,
     #[doc = "1: End Bit Error Generated Occurs when detecting that the end bit of a command response is 0."]
     B1 = 1,
@@ -133,7 +136,7 @@ impl CmdendbiterrR {
             true => Cmdendbiterr::B1,
         }
     }
-    #[doc = "End Bit Error Generated Occurs when detecting that the end bit of a command response is 0."]
+    #[doc = "No Error"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cmdendbiterr::B0
@@ -150,7 +153,7 @@ impl<'a, REG> CmdendbiterrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "End Bit Error Generated Occurs when detecting that the end bit of a command response is 0."]
+    #[doc = "No Error"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cmdendbiterr::B0)
@@ -162,9 +165,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cmdindexerr {
-    #[doc = "0: Error Occurs if a Command Index error occurs in the Command Response."]
+    #[doc = "0: No Error"]
     B0 = 0,
     #[doc = "1: Error Occurs if a Command Index error occurs in the Command Response."]
     B1 = 1,
@@ -186,7 +190,7 @@ impl CmdindexerrR {
             true => Cmdindexerr::B1,
         }
     }
-    #[doc = "Error Occurs if a Command Index error occurs in the Command Response."]
+    #[doc = "No Error"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Cmdindexerr::B0
@@ -203,7 +207,7 @@ impl<'a, REG> CmdindexerrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Error Occurs if a Command Index error occurs in the Command Response."]
+    #[doc = "No Error"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Cmdindexerr::B0)
@@ -215,9 +219,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Datatimeouterr {
-    #[doc = "0: Timeout Occurs when detecting one of following timeout conditions. a. Busy Timeout for R1b, R5b type. b. Busy Timeout after Write CRC status c. Write CRC status Timeout d. Read Data Timeout"]
+    #[doc = "0: No Error"]
     B0 = 0,
     #[doc = "1: Timeout Occurs when detecting one of following timeout conditions. a. Busy Timeout for R1b, R5b type. b. Busy Timeout after Write CRC status c. Write CRC status Timeout d. Read Data Timeout"]
     B1 = 1,
@@ -239,7 +244,7 @@ impl DatatimeouterrR {
             true => Datatimeouterr::B1,
         }
     }
-    #[doc = "Timeout Occurs when detecting one of following timeout conditions. a. Busy Timeout for R1b, R5b type. b. Busy Timeout after Write CRC status c. Write CRC status Timeout d. Read Data Timeout"]
+    #[doc = "No Error"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Datatimeouterr::B0
@@ -256,7 +261,7 @@ impl<'a, REG> DatatimeouterrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Timeout Occurs when detecting one of following timeout conditions. a. Busy Timeout for R1b, R5b type. b. Busy Timeout after Write CRC status c. Write CRC status Timeout d. Read Data Timeout"]
+    #[doc = "No Error"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Datatimeouterr::B0)
@@ -268,9 +273,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Datacrcerr {
-    #[doc = "0: Error Occurs when detecting CRC error when transferring read data which uses the DAT line or when detecting the Write CRC Status having a value of other than \"010\"."]
+    #[doc = "0: No Error"]
     B0 = 0,
     #[doc = "1: Error Occurs when detecting CRC error when transferring read data which uses the DAT line or when detecting the Write CRC Status having a value of other than \"010\"."]
     B1 = 1,
@@ -292,7 +298,7 @@ impl DatacrcerrR {
             true => Datacrcerr::B1,
         }
     }
-    #[doc = "Error Occurs when detecting CRC error when transferring read data which uses the DAT line or when detecting the Write CRC Status having a value of other than \"010\"."]
+    #[doc = "No Error"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Datacrcerr::B0
@@ -309,7 +315,7 @@ impl<'a, REG> DatacrcerrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Error Occurs when detecting CRC error when transferring read data which uses the DAT line or when detecting the Write CRC Status having a value of other than \"010\"."]
+    #[doc = "No Error"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Datacrcerr::B0)
@@ -321,9 +327,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dataendbiterr {
-    #[doc = "0: Error Occurs when detecting 0 at the end bit position of read data which uses the DAT line or the end bit position of the CRC status."]
+    #[doc = "0: No Error"]
     B0 = 0,
     #[doc = "1: Error Occurs when detecting 0 at the end bit position of read data which uses the DAT line or the end bit position of the CRC status."]
     B1 = 1,
@@ -345,7 +352,7 @@ impl DataendbiterrR {
             true => Dataendbiterr::B1,
         }
     }
-    #[doc = "Error Occurs when detecting 0 at the end bit position of read data which uses the DAT line or the end bit position of the CRC status."]
+    #[doc = "No Error"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Dataendbiterr::B0
@@ -362,7 +369,7 @@ impl<'a, REG> DataendbiterrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Error Occurs when detecting 0 at the end bit position of read data which uses the DAT line or the end bit position of the CRC status."]
+    #[doc = "No Error"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Dataendbiterr::B0)
@@ -374,9 +381,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Currentlimiterr {
-    #[doc = "0: Power Fail By setting the SD Bus Power bit in the Power Control Register, the HC is requested to supply power for the SD Bus. If the HC supports the Current Limit Function, it can be protected from an Illegal card by stopping power supply to the card in which case this bit indicates a failure status. Reading 1 means the HC is not supplying power to SD card due to some failure. Reading 0 means that the HC is supplying power and no error has occurred. This bit shall always set to be 0, if the HC does not support this function. Note: The current_Limit_Error is to be implemented if customer application requires it.. By default it is not implementedas there is no specific requirement from Customers."]
+    #[doc = "0: No Error"]
     B0 = 0,
     #[doc = "1: Power Fail By setting the SD Bus Power bit in the Power Control Register, the HC is requested to supply power for the SD Bus. If the HC supports the Current Limit Function, it can be protected from an Illegal card by stopping power supply to the card in which case this bit indicates a failure status. Reading 1 means the HC is not supplying power to SD card due to some failure. Reading 0 means that the HC is supplying power and no error has occurred. This bit shall always set to be 0, if the HC does not support this function. Note: The current_Limit_Error is to be implemented if customer application requires it.. By default it is not implementedas there is no specific requirement from Customers."]
     B1 = 1,
@@ -398,7 +406,7 @@ impl CurrentlimiterrR {
             true => Currentlimiterr::B1,
         }
     }
-    #[doc = "Power Fail By setting the SD Bus Power bit in the Power Control Register, the HC is requested to supply power for the SD Bus. If the HC supports the Current Limit Function, it can be protected from an Illegal card by stopping power supply to the card in which case this bit indicates a failure status. Reading 1 means the HC is not supplying power to SD card due to some failure. Reading 0 means that the HC is supplying power and no error has occurred. This bit shall always set to be 0, if the HC does not support this function. Note: The current_Limit_Error is to be implemented if customer application requires it.. By default it is not implementedas there is no specific requirement from Customers."]
+    #[doc = "No Error"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Currentlimiterr::B0
@@ -415,7 +423,7 @@ impl<'a, REG> CurrentlimiterrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Power Fail By setting the SD Bus Power bit in the Power Control Register, the HC is requested to supply power for the SD Bus. If the HC supports the Current Limit Function, it can be protected from an Illegal card by stopping power supply to the card in which case this bit indicates a failure status. Reading 1 means the HC is not supplying power to SD card due to some failure. Reading 0 means that the HC is supplying power and no error has occurred. This bit shall always set to be 0, if the HC does not support this function. Note: The current_Limit_Error is to be implemented if customer application requires it.. By default it is not implementedas there is no specific requirement from Customers."]
+    #[doc = "No Error"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Currentlimiterr::B0)
@@ -427,9 +435,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Autocmderr {
-    #[doc = "0: Error Auto CMD12 and Auto CMD23 use this error status. This bit is set when detecting that one of the bits D00-D04 in Auto CMD Error Status register has changed from 0 to 1. In case of Auto CMD12, this bit is set to 1, not only when the errors in Auto CMD12 occur but also when Auto CMD12 is not executed due to the previous command error."]
+    #[doc = "0: No Error"]
     B0 = 0,
     #[doc = "1: Error Auto CMD12 and Auto CMD23 use this error status. This bit is set when detecting that one of the bits D00-D04 in Auto CMD Error Status register has changed from 0 to 1. In case of Auto CMD12, this bit is set to 1, not only when the errors in Auto CMD12 occur but also when Auto CMD12 is not executed due to the previous command error."]
     B1 = 1,
@@ -451,7 +460,7 @@ impl AutocmderrR {
             true => Autocmderr::B1,
         }
     }
-    #[doc = "Error Auto CMD12 and Auto CMD23 use this error status. This bit is set when detecting that one of the bits D00-D04 in Auto CMD Error Status register has changed from 0 to 1. In case of Auto CMD12, this bit is set to 1, not only when the errors in Auto CMD12 occur but also when Auto CMD12 is not executed due to the previous command error."]
+    #[doc = "No Error"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Autocmderr::B0
@@ -468,7 +477,7 @@ impl<'a, REG> AutocmderrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Error Auto CMD12 and Auto CMD23 use this error status. This bit is set when detecting that one of the bits D00-D04 in Auto CMD Error Status register has changed from 0 to 1. In case of Auto CMD12, this bit is set to 1, not only when the errors in Auto CMD12 occur but also when Auto CMD12 is not executed due to the previous command error."]
+    #[doc = "No Error"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Autocmderr::B0)
@@ -480,9 +489,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Admaerr {
-    #[doc = "1: No error This bit is set when the Host Controller detects errors during ADMA based data transfer. The state of the ADMA at an error occurrence is saved in the ADMA Error Status Register."]
+    #[doc = "1: Error"]
     B1 = 1,
     #[doc = "0: No error This bit is set when the Host Controller detects errors during ADMA based data transfer. The state of the ADMA at an error occurrence is saved in the ADMA Error Status Register."]
     B0 = 0,
@@ -504,7 +514,7 @@ impl AdmaerrR {
             false => Admaerr::B0,
         }
     }
-    #[doc = "No error This bit is set when the Host Controller detects errors during ADMA based data transfer. The state of the ADMA at an error occurrence is saved in the ADMA Error Status Register."]
+    #[doc = "Error"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == Admaerr::B1
@@ -521,7 +531,7 @@ impl<'a, REG> AdmaerrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "No error This bit is set when the Host Controller detects errors during ADMA based data transfer. The state of the ADMA at an error occurrence is saved in the ADMA Error Status Register."]
+    #[doc = "Error"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(Admaerr::B1)
@@ -533,9 +543,10 @@ where
     }
 }
 #[doc = "\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Targetresperr {
-    #[doc = "0: error Occurs when detecting ERROR in m_hresp(dma transaction)"]
+    #[doc = "0: no error"]
     B0 = 0,
     #[doc = "1: error Occurs when detecting ERROR in m_hresp(dma transaction)"]
     B1 = 1,
@@ -557,7 +568,7 @@ impl TargetresperrR {
             true => Targetresperr::B1,
         }
     }
-    #[doc = "error Occurs when detecting ERROR in m_hresp(dma transaction)"]
+    #[doc = "no error"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == Targetresperr::B0
@@ -574,7 +585,7 @@ impl<'a, REG> TargetresperrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "error Occurs when detecting ERROR in m_hresp(dma transaction)"]
+    #[doc = "no error"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(Targetresperr::B0)

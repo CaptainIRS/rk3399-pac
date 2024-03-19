@@ -30,9 +30,9 @@ pub type CecAddrH5W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type CecAddrH6R = crate::BitReader;
 #[doc = "Field `CEC_ADDR_H_6` writer - Logical address 14 - Free use"]
 pub type CecAddrH6W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CEC_ADDR_H_7` reader - Logical address 15 - Unregistered (as initiator address), Broadcast (as destination address)"]
+#[doc = "Field `CEC_ADDR_H_7` reader - Logical address 15 - Unregistered (as initiator\n\naddress), Broadcast (as destination address)"]
 pub type CecAddrH7R = crate::BitReader;
-#[doc = "Field `CEC_ADDR_H_7` writer - Logical address 15 - Unregistered (as initiator address), Broadcast (as destination address)"]
+#[doc = "Field `CEC_ADDR_H_7` writer - Logical address 15 - Unregistered (as initiator\n\naddress), Broadcast (as destination address)"]
 pub type CecAddrH7W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Logical address 8 - Playback Device 2"]
@@ -70,7 +70,7 @@ impl R {
     pub fn cec_addr_h_6(&self) -> CecAddrH6R {
         CecAddrH6R::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 7 - Logical address 15 - Unregistered (as initiator address), Broadcast (as destination address)"]
+    #[doc = "Bit 7 - Logical address 15 - Unregistered (as initiator\n\naddress), Broadcast (as destination address)"]
     #[inline(always)]
     pub fn cec_addr_h_7(&self) -> CecAddrH7R {
         CecAddrH7R::new(((self.bits >> 7) & 1) != 0)
@@ -119,14 +119,14 @@ impl W {
     pub fn cec_addr_h_6(&mut self) -> CecAddrH6W<CecAddrHSpec> {
         CecAddrH6W::new(self, 6)
     }
-    #[doc = "Bit 7 - Logical address 15 - Unregistered (as initiator address), Broadcast (as destination address)"]
+    #[doc = "Bit 7 - Logical address 15 - Unregistered (as initiator\n\naddress), Broadcast (as destination address)"]
     #[inline(always)]
     #[must_use]
     pub fn cec_addr_h_7(&mut self) -> CecAddrH7W<CecAddrHSpec> {
         CecAddrH7W::new(self, 7)
     }
 }
-#[doc = "Logical address 8 - Playback Device 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cec_addr_h::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cec_addr_h::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "CEC Logical Address Register High\n\nThis register indicates the logical address(es) allocated to the CEC device.\n\nThis register is written by software when the logical allocation is finished. Bit value 1 means\n\nthe corresponding logical address is allocated to this device. Bit value 0 means the\n\ncorresponding logical address is not allocated to this device.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cec_addr_h::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cec_addr_h::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CecAddrHSpec;
 impl crate::RegisterSpec for CecAddrHSpec {
     type Ux = u8;

@@ -2,19 +2,19 @@
 pub type R = crate::R<SpiEnrSpec>;
 #[doc = "Register `SPI_ENR` writer"]
 pub type W = crate::W<SpiEnrSpec>;
-#[doc = "Field `ENR` reader - SPI Enable 1’b1: Enable all SPI operations. 1’b0: Disable all SPI operations Transmit and receive FIFO buffers are cleared when the device is disabled."]
+#[doc = "Field `ENR` reader - SPI Enable\n\n1’b1: Enable all SPI operations.\n\n1’b0: Disable all SPI operations\n\nTransmit and receive FIFO buffers are cleared when the device is\n\ndisabled."]
 pub type EnrR = crate::BitReader;
-#[doc = "Field `ENR` writer - SPI Enable 1’b1: Enable all SPI operations. 1’b0: Disable all SPI operations Transmit and receive FIFO buffers are cleared when the device is disabled."]
+#[doc = "Field `ENR` writer - SPI Enable\n\n1’b1: Enable all SPI operations.\n\n1’b0: Disable all SPI operations\n\nTransmit and receive FIFO buffers are cleared when the device is\n\ndisabled."]
 pub type EnrW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - SPI Enable 1’b1: Enable all SPI operations. 1’b0: Disable all SPI operations Transmit and receive FIFO buffers are cleared when the device is disabled."]
+    #[doc = "Bit 0 - SPI Enable\n\n1’b1: Enable all SPI operations.\n\n1’b0: Disable all SPI operations\n\nTransmit and receive FIFO buffers are cleared when the device is\n\ndisabled."]
     #[inline(always)]
     pub fn enr(&self) -> EnrR {
         EnrR::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - SPI Enable 1’b1: Enable all SPI operations. 1’b0: Disable all SPI operations Transmit and receive FIFO buffers are cleared when the device is disabled."]
+    #[doc = "Bit 0 - SPI Enable\n\n1’b1: Enable all SPI operations.\n\n1’b0: Disable all SPI operations\n\nTransmit and receive FIFO buffers are cleared when the device is\n\ndisabled."]
     #[inline(always)]
     #[must_use]
     pub fn enr(&mut self) -> EnrW<SpiEnrSpec> {

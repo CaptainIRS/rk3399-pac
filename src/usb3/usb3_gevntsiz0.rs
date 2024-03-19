@@ -2,34 +2,34 @@
 pub type R = crate::R<Usb3Gevntsiz0Spec>;
 #[doc = "Register `USB3_GEVNTSIZ0` writer"]
 pub type W = crate::W<Usb3Gevntsiz0Spec>;
-#[doc = "Field `EVENTSIZ` reader - Event Buffer Size in bytes Holds the size of the Event Buffer in bytes; must be a multiple of four. This is programmed by software once during initialization. The minimum size of the event buffer is 32 bytes."]
+#[doc = "Field `EVENTSIZ` reader - Event Buffer Size in bytes\n\nHolds the size of the Event Buffer in bytes; must be a multiple of\n\nfour. This is programmed by software once during initialization.\n\nThe minimum size of the event buffer is 32 bytes."]
 pub type EventsizR = crate::FieldReader<u16>;
-#[doc = "Field `EVENTSIZ` writer - Event Buffer Size in bytes Holds the size of the Event Buffer in bytes; must be a multiple of four. This is programmed by software once during initialization. The minimum size of the event buffer is 32 bytes."]
+#[doc = "Field `EVENTSIZ` writer - Event Buffer Size in bytes\n\nHolds the size of the Event Buffer in bytes; must be a multiple of\n\nfour. This is programmed by software once during initialization.\n\nThe minimum size of the event buffer is 32 bytes."]
 pub type EventsizW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-#[doc = "Field `EVNTINTRPTMASK` reader - Event Interrupt Mask When set to '1', this prevents the interrupt from being generated. However, even when the mask is set, the events are queued."]
+#[doc = "Field `EVNTINTRPTMASK` reader - Event Interrupt Mask\n\nWhen set to '1', this prevents the interrupt from being generated.\n\nHowever, even when the mask is set, the events are queued."]
 pub type EvntintrptmaskR = crate::BitReader;
-#[doc = "Field `EVNTINTRPTMASK` writer - Event Interrupt Mask When set to '1', this prevents the interrupt from being generated. However, even when the mask is set, the events are queued."]
+#[doc = "Field `EVNTINTRPTMASK` writer - Event Interrupt Mask\n\nWhen set to '1', this prevents the interrupt from being generated.\n\nHowever, even when the mask is set, the events are queued."]
 pub type EvntintrptmaskW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bits 0:15 - Event Buffer Size in bytes Holds the size of the Event Buffer in bytes; must be a multiple of four. This is programmed by software once during initialization. The minimum size of the event buffer is 32 bytes."]
+    #[doc = "Bits 0:15 - Event Buffer Size in bytes\n\nHolds the size of the Event Buffer in bytes; must be a multiple of\n\nfour. This is programmed by software once during initialization.\n\nThe minimum size of the event buffer is 32 bytes."]
     #[inline(always)]
     pub fn eventsiz(&self) -> EventsizR {
         EventsizR::new((self.bits & 0xffff) as u16)
     }
-    #[doc = "Bit 31 - Event Interrupt Mask When set to '1', this prevents the interrupt from being generated. However, even when the mask is set, the events are queued."]
+    #[doc = "Bit 31 - Event Interrupt Mask\n\nWhen set to '1', this prevents the interrupt from being generated.\n\nHowever, even when the mask is set, the events are queued."]
     #[inline(always)]
     pub fn evntintrptmask(&self) -> EvntintrptmaskR {
         EvntintrptmaskR::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - Event Buffer Size in bytes Holds the size of the Event Buffer in bytes; must be a multiple of four. This is programmed by software once during initialization. The minimum size of the event buffer is 32 bytes."]
+    #[doc = "Bits 0:15 - Event Buffer Size in bytes\n\nHolds the size of the Event Buffer in bytes; must be a multiple of\n\nfour. This is programmed by software once during initialization.\n\nThe minimum size of the event buffer is 32 bytes."]
     #[inline(always)]
     #[must_use]
     pub fn eventsiz(&mut self) -> EventsizW<Usb3Gevntsiz0Spec> {
         EventsizW::new(self, 0)
     }
-    #[doc = "Bit 31 - Event Interrupt Mask When set to '1', this prevents the interrupt from being generated. However, even when the mask is set, the events are queued."]
+    #[doc = "Bit 31 - Event Interrupt Mask\n\nWhen set to '1', this prevents the interrupt from being generated.\n\nHowever, even when the mask is set, the events are queued."]
     #[inline(always)]
     #[must_use]
     pub fn evntintrptmask(&mut self) -> EvntintrptmaskW<Usb3Gevntsiz0Spec> {
