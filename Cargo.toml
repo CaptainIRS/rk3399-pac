@@ -1,13 +1,13 @@
 [package]
-name = "rk3399-rs"
-version = "0.1.6"
+name = "rk3399-pac"
+version = "0.1.0"
 edition = "2021"
-description = "Rust crate containing structures for the register maps of the RK3399 SoC"
+description = "Peripheral Access Crate (PAC) for the RK3399 SoC from Rockchip"
 license = "MIT"
 readme = "README.md"
-keywords = ["rk3399", "rockchip", "svd", "peripheral", "embedded"]
+keywords = ["rk3399", "rockchip", "peripheral", "embedded", "pac"]
 categories = ["embedded", "hardware-support", "no-std", "no-std::no-alloc", "data-structures"]
-repository = "https://github.com/CaptainIRS/rk3399-rs"
+repository = "https://github.com/CaptainIRS/rk3399-pac"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
