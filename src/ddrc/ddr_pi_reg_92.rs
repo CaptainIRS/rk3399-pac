@@ -2,9 +2,9 @@
 pub type R = crate::R<DdrPiReg92Spec>;
 #[doc = "Register `DDR_PI_REG_92` writer"]
 pub type W = crate::W<DdrPiReg92Spec>;
-#[doc = "Field `PI_TDFI_WRCSLAT_F2` reader - Defines the DFI tPHY_WRCSLAT timing parameter (in DFI PHY\n\nclocks), the maximum cycles between a write command and a\n\ndfi_wrdata_cs_n assertion. The suffix \"_f2\" of the parameter name\n\nis omitted when in non-DFS mode."]
+#[doc = "Field `PI_TDFI_WRCSLAT_F2` reader - Defines the DFI tPHY_WRCSLAT timing parameter (in DFI PHY\n\nclocks), the maximum cycles between a write command and a\n\ndfi_wrdata_cs_n assertion. The suffix '_f2' of the parameter name\n\nis omitted when in non-DFS mode."]
 pub type PiTdfiWrcslatF2R = crate::FieldReader;
-#[doc = "Field `PI_TDFI_WRCSLAT_F2` writer - Defines the DFI tPHY_WRCSLAT timing parameter (in DFI PHY\n\nclocks), the maximum cycles between a write command and a\n\ndfi_wrdata_cs_n assertion. The suffix \"_f2\" of the parameter name\n\nis omitted when in non-DFS mode."]
+#[doc = "Field `PI_TDFI_WRCSLAT_F2` writer - Defines the DFI tPHY_WRCSLAT timing parameter (in DFI PHY\n\nclocks), the maximum cycles between a write command and a\n\ndfi_wrdata_cs_n assertion. The suffix '_f2' of the parameter name\n\nis omitted when in non-DFS mode."]
 pub type PiTdfiWrcslatF2W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `PI_TDFI_PHY_WRDATA` reader - Defines the DFI tPHY_WRDATA timing parameter (in DFI PHY\n\nclocks), the maximum cycles between a dfi_wrdata_en assertion\n\nand a dfi_wrdata signal."]
 pub type PiTdfiPhyWrdataR = crate::FieldReader;
@@ -17,7 +17,7 @@ pub type PiCalvlCsR = crate::FieldReader;
 #[doc = "Field `PI_CALVL_CS` writer - Specifies the target chip select for the CA training operation that is\n\ninitiated through the PI_REG_92.pi_calvl_req parameter."]
 pub type PiCalvlCsW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
-    #[doc = "Bits 0:7 - Defines the DFI tPHY_WRCSLAT timing parameter (in DFI PHY\n\nclocks), the maximum cycles between a write command and a\n\ndfi_wrdata_cs_n assertion. The suffix \"_f2\" of the parameter name\n\nis omitted when in non-DFS mode."]
+    #[doc = "Bits 0:7 - Defines the DFI tPHY_WRCSLAT timing parameter (in DFI PHY\n\nclocks), the maximum cycles between a write command and a\n\ndfi_wrdata_cs_n assertion. The suffix '_f2' of the parameter name\n\nis omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tdfi_wrcslat_f2(&self) -> PiTdfiWrcslatF2R {
         PiTdfiWrcslatF2R::new((self.bits & 0xff) as u8)
@@ -34,7 +34,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Defines the DFI tPHY_WRCSLAT timing parameter (in DFI PHY\n\nclocks), the maximum cycles between a write command and a\n\ndfi_wrdata_cs_n assertion. The suffix \"_f2\" of the parameter name\n\nis omitted when in non-DFS mode."]
+    #[doc = "Bits 0:7 - Defines the DFI tPHY_WRCSLAT timing parameter (in DFI PHY\n\nclocks), the maximum cycles between a write command and a\n\ndfi_wrdata_cs_n assertion. The suffix '_f2' of the parameter name\n\nis omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tdfi_wrcslat_f2(&mut self) -> PiTdfiWrcslatF2W<DdrPiReg92Spec> {

@@ -14,9 +14,9 @@ pub type PiCalvlStrobeNumW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 pub type PiSwCaTrainVrefR = crate::FieldReader;
 #[doc = "Field `PI_SW_CA_TRAIN_VREF` writer - Indicates the VREF value, which is set for software step-by-step CA\n\ntraining."]
 pub type PiSwCaTrainVrefW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
-#[doc = "Field `PI_TDFI_INIT_START_F0` reader - Defines the DFI tINIT_START timing parameter (in DFI clocks), the\n\nmaximum number or cycles between a dfi_init_start assertion and\n\na dfi_init_complete de-assertion from the PHY. The suffix \"_f0\" of\n\nthe parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TDFI_INIT_START_F0` reader - Defines the DFI tINIT_START timing parameter (in DFI clocks), the\n\nmaximum number or cycles between a dfi_init_start assertion and\n\na dfi_init_complete de-assertion from the PHY. The suffix '_f0' of\n\nthe parameter name is omitted when in non-DFS mode."]
 pub type PiTdfiInitStartF0R = crate::FieldReader;
-#[doc = "Field `PI_TDFI_INIT_START_F0` writer - Defines the DFI tINIT_START timing parameter (in DFI clocks), the\n\nmaximum number or cycles between a dfi_init_start assertion and\n\na dfi_init_complete de-assertion from the PHY. The suffix \"_f0\" of\n\nthe parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TDFI_INIT_START_F0` writer - Defines the DFI tINIT_START timing parameter (in DFI clocks), the\n\nmaximum number or cycles between a dfi_init_start assertion and\n\na dfi_init_complete de-assertion from the PHY. The suffix '_f0' of\n\nthe parameter name is omitted when in non-DFS mode."]
 pub type PiTdfiInitStartF0W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:3 - Indicates clock and command are valid before CKE HIGH."]
@@ -34,7 +34,7 @@ impl R {
     pub fn pi_sw_ca_train_vref(&self) -> PiSwCaTrainVrefR {
         PiSwCaTrainVrefR::new(((self.bits >> 16) & 0x7f) as u8)
     }
-    #[doc = "Bits 24:31 - Defines the DFI tINIT_START timing parameter (in DFI clocks), the\n\nmaximum number or cycles between a dfi_init_start assertion and\n\na dfi_init_complete de-assertion from the PHY. The suffix \"_f0\" of\n\nthe parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 24:31 - Defines the DFI tINIT_START timing parameter (in DFI clocks), the\n\nmaximum number or cycles between a dfi_init_start assertion and\n\na dfi_init_complete de-assertion from the PHY. The suffix '_f0' of\n\nthe parameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tdfi_init_start_f0(&self) -> PiTdfiInitStartF0R {
         PiTdfiInitStartF0R::new(((self.bits >> 24) & 0xff) as u8)
@@ -59,7 +59,7 @@ impl W {
     pub fn pi_sw_ca_train_vref(&mut self) -> PiSwCaTrainVrefW<DdrPiReg112Spec> {
         PiSwCaTrainVrefW::new(self, 16)
     }
-    #[doc = "Bits 24:31 - Defines the DFI tINIT_START timing parameter (in DFI clocks), the\n\nmaximum number or cycles between a dfi_init_start assertion and\n\na dfi_init_complete de-assertion from the PHY. The suffix \"_f0\" of\n\nthe parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 24:31 - Defines the DFI tINIT_START timing parameter (in DFI clocks), the\n\nmaximum number or cycles between a dfi_init_start assertion and\n\na dfi_init_complete de-assertion from the PHY. The suffix '_f0' of\n\nthe parameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tdfi_init_start_f0(&mut self) -> PiTdfiInitStartF0W<DdrPiReg112Spec> {

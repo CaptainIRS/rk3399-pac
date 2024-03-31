@@ -2,34 +2,34 @@
 pub type R = crate::R<DdrPiReg96Spec>;
 #[doc = "Register `DDR_PI_REG_96` writer"]
 pub type W = crate::W<DdrPiReg96Spec>;
-#[doc = "Field `PI_TDFI_CALVL_CC_F1` reader - Defines the DFI tCALVL_CC timing parameter (in DFI clocks), the\n\nminimum cycles between calibration commands. The suffix \"_f1\" of\n\nthe parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TDFI_CALVL_CC_F1` reader - Defines the DFI tCALVL_CC timing parameter (in DFI clocks), the\n\nminimum cycles between calibration commands. The suffix '_f1' of\n\nthe parameter name is omitted when in non-DFS mode."]
 pub type PiTdfiCalvlCcF1R = crate::FieldReader<u16>;
-#[doc = "Field `PI_TDFI_CALVL_CC_F1` writer - Defines the DFI tCALVL_CC timing parameter (in DFI clocks), the\n\nminimum cycles between calibration commands. The suffix \"_f1\" of\n\nthe parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TDFI_CALVL_CC_F1` writer - Defines the DFI tCALVL_CC timing parameter (in DFI clocks), the\n\nminimum cycles between calibration commands. The suffix '_f1' of\n\nthe parameter name is omitted when in non-DFS mode."]
 pub type PiTdfiCalvlCcF1W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
-#[doc = "Field `PI_TDFI_CALVL_CAPTURE_F1` reader - Defines the DFI tCALVL_CAPTURE timing parameter (in DFI\n\nclocks), the minimum cycles between a calibration command and a\n\ndfi_calvl_capture pulse. The suffix \"_f1\" of the parameter name is\n\nomitted when in non-DFS mode."]
+#[doc = "Field `PI_TDFI_CALVL_CAPTURE_F1` reader - Defines the DFI tCALVL_CAPTURE timing parameter (in DFI\n\nclocks), the minimum cycles between a calibration command and a\n\ndfi_calvl_capture pulse. The suffix '_f1' of the parameter name is\n\nomitted when in non-DFS mode."]
 pub type PiTdfiCalvlCaptureF1R = crate::FieldReader<u16>;
-#[doc = "Field `PI_TDFI_CALVL_CAPTURE_F1` writer - Defines the DFI tCALVL_CAPTURE timing parameter (in DFI\n\nclocks), the minimum cycles between a calibration command and a\n\ndfi_calvl_capture pulse. The suffix \"_f1\" of the parameter name is\n\nomitted when in non-DFS mode."]
+#[doc = "Field `PI_TDFI_CALVL_CAPTURE_F1` writer - Defines the DFI tCALVL_CAPTURE timing parameter (in DFI\n\nclocks), the minimum cycles between a calibration command and a\n\ndfi_calvl_capture pulse. The suffix '_f1' of the parameter name is\n\nomitted when in non-DFS mode."]
 pub type PiTdfiCalvlCaptureF1W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 impl R {
-    #[doc = "Bits 0:9 - Defines the DFI tCALVL_CC timing parameter (in DFI clocks), the\n\nminimum cycles between calibration commands. The suffix \"_f1\" of\n\nthe parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:9 - Defines the DFI tCALVL_CC timing parameter (in DFI clocks), the\n\nminimum cycles between calibration commands. The suffix '_f1' of\n\nthe parameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tdfi_calvl_cc_f1(&self) -> PiTdfiCalvlCcF1R {
         PiTdfiCalvlCcF1R::new((self.bits & 0x03ff) as u16)
     }
-    #[doc = "Bits 16:25 - Defines the DFI tCALVL_CAPTURE timing parameter (in DFI\n\nclocks), the minimum cycles between a calibration command and a\n\ndfi_calvl_capture pulse. The suffix \"_f1\" of the parameter name is\n\nomitted when in non-DFS mode."]
+    #[doc = "Bits 16:25 - Defines the DFI tCALVL_CAPTURE timing parameter (in DFI\n\nclocks), the minimum cycles between a calibration command and a\n\ndfi_calvl_capture pulse. The suffix '_f1' of the parameter name is\n\nomitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tdfi_calvl_capture_f1(&self) -> PiTdfiCalvlCaptureF1R {
         PiTdfiCalvlCaptureF1R::new(((self.bits >> 16) & 0x03ff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:9 - Defines the DFI tCALVL_CC timing parameter (in DFI clocks), the\n\nminimum cycles between calibration commands. The suffix \"_f1\" of\n\nthe parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:9 - Defines the DFI tCALVL_CC timing parameter (in DFI clocks), the\n\nminimum cycles between calibration commands. The suffix '_f1' of\n\nthe parameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tdfi_calvl_cc_f1(&mut self) -> PiTdfiCalvlCcF1W<DdrPiReg96Spec> {
         PiTdfiCalvlCcF1W::new(self, 0)
     }
-    #[doc = "Bits 16:25 - Defines the DFI tCALVL_CAPTURE timing parameter (in DFI\n\nclocks), the minimum cycles between a calibration command and a\n\ndfi_calvl_capture pulse. The suffix \"_f1\" of the parameter name is\n\nomitted when in non-DFS mode."]
+    #[doc = "Bits 16:25 - Defines the DFI tCALVL_CAPTURE timing parameter (in DFI\n\nclocks), the minimum cycles between a calibration command and a\n\ndfi_calvl_capture pulse. The suffix '_f1' of the parameter name is\n\nomitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tdfi_calvl_capture_f1(&mut self) -> PiTdfiCalvlCaptureF1W<DdrPiReg96Spec> {

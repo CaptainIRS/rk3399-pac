@@ -2,34 +2,34 @@
 pub type R = crate::R<DdrPiReg156Spec>;
 #[doc = "Register `DDR_PI_REG_156` writer"]
 pub type W = crate::W<DdrPiReg156Spec>;
-#[doc = "Field `PI_TFC_F0` reader - Indicates the delay in PHY clock cycles from setting MR13.OP7 to\n\nany valid command. The suffix \"_f0\" of the parameter name is\n\nomitted when in non-DFS mode."]
+#[doc = "Field `PI_TFC_F0` reader - Indicates the delay in PHY clock cycles from setting MR13.OP7 to\n\nany valid command. The suffix '_f0' of the parameter name is\n\nomitted when in non-DFS mode."]
 pub type PiTfcF0R = crate::FieldReader<u16>;
-#[doc = "Field `PI_TFC_F0` writer - Indicates the delay in PHY clock cycles from setting MR13.OP7 to\n\nany valid command. The suffix \"_f0\" of the parameter name is\n\nomitted when in non-DFS mode."]
+#[doc = "Field `PI_TFC_F0` writer - Indicates the delay in PHY clock cycles from setting MR13.OP7 to\n\nany valid command. The suffix '_f0' of the parameter name is\n\nomitted when in non-DFS mode."]
 pub type PiTfcF0W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
-#[doc = "Field `PI_TFC_F1` reader - Indicates the delay in PHY clock cycles from setting MR13.OP7 to\n\nany valid command. The suffix \"_f1\" of the parameter name is\n\nomitted when in non-DFS mode."]
+#[doc = "Field `PI_TFC_F1` reader - Indicates the delay in PHY clock cycles from setting MR13.OP7 to\n\nany valid command. The suffix '_f1' of the parameter name is\n\nomitted when in non-DFS mode."]
 pub type PiTfcF1R = crate::FieldReader<u16>;
-#[doc = "Field `PI_TFC_F1` writer - Indicates the delay in PHY clock cycles from setting MR13.OP7 to\n\nany valid command. The suffix \"_f1\" of the parameter name is\n\nomitted when in non-DFS mode."]
+#[doc = "Field `PI_TFC_F1` writer - Indicates the delay in PHY clock cycles from setting MR13.OP7 to\n\nany valid command. The suffix '_f1' of the parameter name is\n\nomitted when in non-DFS mode."]
 pub type PiTfcF1W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 impl R {
-    #[doc = "Bits 0:9 - Indicates the delay in PHY clock cycles from setting MR13.OP7 to\n\nany valid command. The suffix \"_f0\" of the parameter name is\n\nomitted when in non-DFS mode."]
+    #[doc = "Bits 0:9 - Indicates the delay in PHY clock cycles from setting MR13.OP7 to\n\nany valid command. The suffix '_f0' of the parameter name is\n\nomitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tfc_f0(&self) -> PiTfcF0R {
         PiTfcF0R::new((self.bits & 0x03ff) as u16)
     }
-    #[doc = "Bits 16:25 - Indicates the delay in PHY clock cycles from setting MR13.OP7 to\n\nany valid command. The suffix \"_f1\" of the parameter name is\n\nomitted when in non-DFS mode."]
+    #[doc = "Bits 16:25 - Indicates the delay in PHY clock cycles from setting MR13.OP7 to\n\nany valid command. The suffix '_f1' of the parameter name is\n\nomitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tfc_f1(&self) -> PiTfcF1R {
         PiTfcF1R::new(((self.bits >> 16) & 0x03ff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:9 - Indicates the delay in PHY clock cycles from setting MR13.OP7 to\n\nany valid command. The suffix \"_f0\" of the parameter name is\n\nomitted when in non-DFS mode."]
+    #[doc = "Bits 0:9 - Indicates the delay in PHY clock cycles from setting MR13.OP7 to\n\nany valid command. The suffix '_f0' of the parameter name is\n\nomitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tfc_f0(&mut self) -> PiTfcF0W<DdrPiReg156Spec> {
         PiTfcF0W::new(self, 0)
     }
-    #[doc = "Bits 16:25 - Indicates the delay in PHY clock cycles from setting MR13.OP7 to\n\nany valid command. The suffix \"_f1\" of the parameter name is\n\nomitted when in non-DFS mode."]
+    #[doc = "Bits 16:25 - Indicates the delay in PHY clock cycles from setting MR13.OP7 to\n\nany valid command. The suffix '_f1' of the parameter name is\n\nomitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tfc_f1(&mut self) -> PiTfcF1W<DdrPiReg156Spec> {

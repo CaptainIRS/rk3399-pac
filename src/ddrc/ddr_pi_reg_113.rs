@@ -2,34 +2,34 @@
 pub type R = crate::R<DdrPiReg113Spec>;
 #[doc = "Register `DDR_PI_REG_113` writer"]
 pub type W = crate::W<DdrPiReg113Spec>;
-#[doc = "Field `PI_TDFI_INIT_COMPLETE_F0` reader - Defines the DFI tINIT_COMPLETE timing parameter (in DFI clocks),\n\nthe maximum cycles between a dfi_init_start de-assertion and a\n\ndfi_init_complete assertion from the PHY. The suffix \"_f0\" of the\n\nparameter name is omitted when in non-DFS mode"]
+#[doc = "Field `PI_TDFI_INIT_COMPLETE_F0` reader - Defines the DFI tINIT_COMPLETE timing parameter (in DFI clocks),\n\nthe maximum cycles between a dfi_init_start de-assertion and a\n\ndfi_init_complete assertion from the PHY. The suffix '_f0' of the\n\nparameter name is omitted when in non-DFS mode"]
 pub type PiTdfiInitCompleteF0R = crate::FieldReader<u16>;
-#[doc = "Field `PI_TDFI_INIT_COMPLETE_F0` writer - Defines the DFI tINIT_COMPLETE timing parameter (in DFI clocks),\n\nthe maximum cycles between a dfi_init_start de-assertion and a\n\ndfi_init_complete assertion from the PHY. The suffix \"_f0\" of the\n\nparameter name is omitted when in non-DFS mode"]
+#[doc = "Field `PI_TDFI_INIT_COMPLETE_F0` writer - Defines the DFI tINIT_COMPLETE timing parameter (in DFI clocks),\n\nthe maximum cycles between a dfi_init_start de-assertion and a\n\ndfi_init_complete assertion from the PHY. The suffix '_f0' of the\n\nparameter name is omitted when in non-DFS mode"]
 pub type PiTdfiInitCompleteF0W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-#[doc = "Field `PI_TDFI_INIT_START_F1` reader - Defines the DFI tINIT_START timing parameter (in DFI clocks), the\n\nmaximum number or cycles between a dfi_init_start assertion and\n\na dfi_init_complete de-assertion from the PHY. The suffix \"_f1\" of\n\nthe parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TDFI_INIT_START_F1` reader - Defines the DFI tINIT_START timing parameter (in DFI clocks), the\n\nmaximum number or cycles between a dfi_init_start assertion and\n\na dfi_init_complete de-assertion from the PHY. The suffix '_f1' of\n\nthe parameter name is omitted when in non-DFS mode."]
 pub type PiTdfiInitStartF1R = crate::FieldReader;
-#[doc = "Field `PI_TDFI_INIT_START_F1` writer - Defines the DFI tINIT_START timing parameter (in DFI clocks), the\n\nmaximum number or cycles between a dfi_init_start assertion and\n\na dfi_init_complete de-assertion from the PHY. The suffix \"_f1\" of\n\nthe parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TDFI_INIT_START_F1` writer - Defines the DFI tINIT_START timing parameter (in DFI clocks), the\n\nmaximum number or cycles between a dfi_init_start assertion and\n\na dfi_init_complete de-assertion from the PHY. The suffix '_f1' of\n\nthe parameter name is omitted when in non-DFS mode."]
 pub type PiTdfiInitStartF1W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:15 - Defines the DFI tINIT_COMPLETE timing parameter (in DFI clocks),\n\nthe maximum cycles between a dfi_init_start de-assertion and a\n\ndfi_init_complete assertion from the PHY. The suffix \"_f0\" of the\n\nparameter name is omitted when in non-DFS mode"]
+    #[doc = "Bits 0:15 - Defines the DFI tINIT_COMPLETE timing parameter (in DFI clocks),\n\nthe maximum cycles between a dfi_init_start de-assertion and a\n\ndfi_init_complete assertion from the PHY. The suffix '_f0' of the\n\nparameter name is omitted when in non-DFS mode"]
     #[inline(always)]
     pub fn pi_tdfi_init_complete_f0(&self) -> PiTdfiInitCompleteF0R {
         PiTdfiInitCompleteF0R::new((self.bits & 0xffff) as u16)
     }
-    #[doc = "Bits 16:23 - Defines the DFI tINIT_START timing parameter (in DFI clocks), the\n\nmaximum number or cycles between a dfi_init_start assertion and\n\na dfi_init_complete de-assertion from the PHY. The suffix \"_f1\" of\n\nthe parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 16:23 - Defines the DFI tINIT_START timing parameter (in DFI clocks), the\n\nmaximum number or cycles between a dfi_init_start assertion and\n\na dfi_init_complete de-assertion from the PHY. The suffix '_f1' of\n\nthe parameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tdfi_init_start_f1(&self) -> PiTdfiInitStartF1R {
         PiTdfiInitStartF1R::new(((self.bits >> 16) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - Defines the DFI tINIT_COMPLETE timing parameter (in DFI clocks),\n\nthe maximum cycles between a dfi_init_start de-assertion and a\n\ndfi_init_complete assertion from the PHY. The suffix \"_f0\" of the\n\nparameter name is omitted when in non-DFS mode"]
+    #[doc = "Bits 0:15 - Defines the DFI tINIT_COMPLETE timing parameter (in DFI clocks),\n\nthe maximum cycles between a dfi_init_start de-assertion and a\n\ndfi_init_complete assertion from the PHY. The suffix '_f0' of the\n\nparameter name is omitted when in non-DFS mode"]
     #[inline(always)]
     #[must_use]
     pub fn pi_tdfi_init_complete_f0(&mut self) -> PiTdfiInitCompleteF0W<DdrPiReg113Spec> {
         PiTdfiInitCompleteF0W::new(self, 0)
     }
-    #[doc = "Bits 16:23 - Defines the DFI tINIT_START timing parameter (in DFI clocks), the\n\nmaximum number or cycles between a dfi_init_start assertion and\n\na dfi_init_complete de-assertion from the PHY. The suffix \"_f1\" of\n\nthe parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 16:23 - Defines the DFI tINIT_START timing parameter (in DFI clocks), the\n\nmaximum number or cycles between a dfi_init_start assertion and\n\na dfi_init_complete de-assertion from the PHY. The suffix '_f1' of\n\nthe parameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tdfi_init_start_f1(&mut self) -> PiTdfiInitStartF1W<DdrPiReg113Spec> {

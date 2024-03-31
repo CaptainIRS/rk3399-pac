@@ -1,153 +1,143 @@
 #[repr(C)]
 #[doc = "Register block"]
 pub struct RegisterBlock {
-    errlog_id_core_id: ErrlogIdCoreId,
-    errlog_id_revision_id: ErrlogIdRevisionId,
-    errlog_fault_en: ErrlogFaultEn,
-    errlog_err_vld: ErrlogErrVld,
-    errlog_err_clr: ErrlogErrClr,
-    errlog_err_log0: ErrlogErrLog0,
-    errlog_err_log1: ErrlogErrLog1,
+    id_core_id: IdCoreId,
+    id_revision_id: IdRevisionId,
+    fault_en: FaultEn,
+    err_vld: ErrVld,
+    err_clr: ErrClr,
+    err_log0: ErrLog0,
+    err_log1: ErrLog1,
     _reserved7: [u8; 0x04],
-    errlog_err_log3: ErrlogErrLog3,
+    err_log3: ErrLog3,
     _reserved8: [u8; 0x04],
-    errlog_err_log5: ErrlogErrLog5,
-    errlog_err_log6: ErrlogErrLog6,
-    errlog_err_log7: ErrlogErrLog7,
+    err_log5: ErrLog5,
+    err_log6: ErrLog6,
+    err_log7: ErrLog7,
     _reserved11: [u8; 0x04],
-    errlog_stall_en: ErrlogStallEn,
+    stall_en: StallEn,
 }
 impl RegisterBlock {
     #[doc = "0x00 - Contain CoreTypeId and CoreChecksum"]
     #[inline(always)]
-    pub const fn errlog_id_core_id(&self) -> &ErrlogIdCoreId {
-        &self.errlog_id_core_id
+    pub const fn id_core_id(&self) -> &IdCoreId {
+        &self.id_core_id
     }
     #[doc = "0x04 - IP Revision ID"]
     #[inline(always)]
-    pub const fn errlog_id_revision_id(&self) -> &ErrlogIdRevisionId {
-        &self.errlog_id_revision_id
+    pub const fn id_revision_id(&self) -> &IdRevisionId {
+        &self.id_revision_id
     }
     #[doc = "0x08 - Error interrupt enable"]
     #[inline(always)]
-    pub const fn errlog_fault_en(&self) -> &ErrlogFaultEn {
-        &self.errlog_fault_en
+    pub const fn fault_en(&self) -> &FaultEn {
+        &self.fault_en
     }
     #[doc = "0x0c - Error staus register"]
     #[inline(always)]
-    pub const fn errlog_err_vld(&self) -> &ErrlogErrVld {
-        &self.errlog_err_vld
+    pub const fn err_vld(&self) -> &ErrVld {
+        &self.err_vld
     }
     #[doc = "0x10 - Error interrupt status clear register"]
     #[inline(always)]
-    pub const fn errlog_err_clr(&self) -> &ErrlogErrClr {
-        &self.errlog_err_clr
+    pub const fn err_clr(&self) -> &ErrClr {
+        &self.err_clr
     }
     #[doc = "0x14 - Transport protocol header information register"]
     #[inline(always)]
-    pub const fn errlog_err_log0(&self) -> &ErrlogErrLog0 {
-        &self.errlog_err_log0
+    pub const fn err_log0(&self) -> &ErrLog0 {
+        &self.err_log0
     }
     #[doc = "0x18 - Route ID register"]
     #[inline(always)]
-    pub const fn errlog_err_log1(&self) -> &ErrlogErrLog1 {
-        &self.errlog_err_log1
+    pub const fn err_log1(&self) -> &ErrLog1 {
+        &self.err_log1
     }
     #[doc = "0x20 - Address register"]
     #[inline(always)]
-    pub const fn errlog_err_log3(&self) -> &ErrlogErrLog3 {
-        &self.errlog_err_log3
+    pub const fn err_log3(&self) -> &ErrLog3 {
+        &self.err_log3
     }
     #[doc = "0x28 - LSB user bits in transport protocol header"]
     #[inline(always)]
-    pub const fn errlog_err_log5(&self) -> &ErrlogErrLog5 {
-        &self.errlog_err_log5
+    pub const fn err_log5(&self) -> &ErrLog5 {
+        &self.err_log5
     }
     #[doc = "0x2c - MSB user bits in transport protocol header"]
     #[inline(always)]
-    pub const fn errlog_err_log6(&self) -> &ErrlogErrLog6 {
-        &self.errlog_err_log6
+    pub const fn err_log6(&self) -> &ErrLog6 {
+        &self.err_log6
     }
     #[doc = "0x30 - Securrity flag in transport protocol header"]
     #[inline(always)]
-    pub const fn errlog_err_log7(&self) -> &ErrlogErrLog7 {
-        &self.errlog_err_log7
+    pub const fn err_log7(&self) -> &ErrLog7 {
+        &self.err_log7
     }
     #[doc = "0x38 - Error logger mode selection"]
     #[inline(always)]
-    pub const fn errlog_stall_en(&self) -> &ErrlogStallEn {
-        &self.errlog_stall_en
+    pub const fn stall_en(&self) -> &StallEn {
+        &self.stall_en
     }
 }
-#[doc = "ERRLOG_Id_CoreId (r) register accessor: Contain CoreTypeId and CoreChecksum\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`errlog_id_core_id::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@errlog_id_core_id`]
+#[doc = "Id_CoreId (r) register accessor: Contain CoreTypeId and CoreChecksum\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`id_core_id::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@id_core_id`]
 module"]
-#[doc(alias = "ERRLOG_Id_CoreId")]
-pub type ErrlogIdCoreId = crate::Reg<errlog_id_core_id::ErrlogIdCoreIdSpec>;
+#[doc(alias = "Id_CoreId")]
+pub type IdCoreId = crate::Reg<id_core_id::IdCoreIdSpec>;
 #[doc = "Contain CoreTypeId and CoreChecksum"]
-pub mod errlog_id_core_id;
-#[doc = "ERRLOG_Id_RevisionId (r) register accessor: IP Revision ID\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`errlog_id_revision_id::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@errlog_id_revision_id`]
+pub mod id_core_id;
+#[doc = "Id_RevisionId (r) register accessor: IP Revision ID\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`id_revision_id::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@id_revision_id`]
 module"]
-#[doc(alias = "ERRLOG_Id_RevisionId")]
-pub type ErrlogIdRevisionId = crate::Reg<errlog_id_revision_id::ErrlogIdRevisionIdSpec>;
+#[doc(alias = "Id_RevisionId")]
+pub type IdRevisionId = crate::Reg<id_revision_id::IdRevisionIdSpec>;
 #[doc = "IP Revision ID"]
-pub mod errlog_id_revision_id;
-#[doc = "ERRLOG_FaultEn (rw) register accessor: Error interrupt enable\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`errlog_fault_en::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`errlog_fault_en::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@errlog_fault_en`]
+pub mod id_revision_id;
+#[doc = "FaultEn (rw) register accessor: Error interrupt enable\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fault_en::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fault_en::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fault_en`]
 module"]
-#[doc(alias = "ERRLOG_FaultEn")]
-pub type ErrlogFaultEn = crate::Reg<errlog_fault_en::ErrlogFaultEnSpec>;
+pub type FaultEn = crate::Reg<fault_en::FaultEnSpec>;
 #[doc = "Error interrupt enable"]
-pub mod errlog_fault_en;
-#[doc = "ERRLOG_ErrVld (r) register accessor: Error staus register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`errlog_err_vld::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@errlog_err_vld`]
+pub mod fault_en;
+#[doc = "ErrVld (r) register accessor: Error staus register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`err_vld::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@err_vld`]
 module"]
-#[doc(alias = "ERRLOG_ErrVld")]
-pub type ErrlogErrVld = crate::Reg<errlog_err_vld::ErrlogErrVldSpec>;
+pub type ErrVld = crate::Reg<err_vld::ErrVldSpec>;
 #[doc = "Error staus register"]
-pub mod errlog_err_vld;
-#[doc = "ERRLOG_ErrClr (rw) register accessor: Error interrupt status clear register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`errlog_err_clr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`errlog_err_clr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@errlog_err_clr`]
+pub mod err_vld;
+#[doc = "ErrClr (rw) register accessor: Error interrupt status clear register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`err_clr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`err_clr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@err_clr`]
 module"]
-#[doc(alias = "ERRLOG_ErrClr")]
-pub type ErrlogErrClr = crate::Reg<errlog_err_clr::ErrlogErrClrSpec>;
+pub type ErrClr = crate::Reg<err_clr::ErrClrSpec>;
 #[doc = "Error interrupt status clear register"]
-pub mod errlog_err_clr;
-#[doc = "ERRLOG_ErrLog0 (r) register accessor: Transport protocol header information register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`errlog_err_log0::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@errlog_err_log0`]
+pub mod err_clr;
+#[doc = "ErrLog0 (r) register accessor: Transport protocol header information register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`err_log0::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@err_log0`]
 module"]
-#[doc(alias = "ERRLOG_ErrLog0")]
-pub type ErrlogErrLog0 = crate::Reg<errlog_err_log0::ErrlogErrLog0Spec>;
+pub type ErrLog0 = crate::Reg<err_log0::ErrLog0Spec>;
 #[doc = "Transport protocol header information register"]
-pub mod errlog_err_log0;
-#[doc = "ERRLOG_ErrLog1 (r) register accessor: Route ID register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`errlog_err_log1::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@errlog_err_log1`]
+pub mod err_log0;
+#[doc = "ErrLog1 (r) register accessor: Route ID register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`err_log1::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@err_log1`]
 module"]
-#[doc(alias = "ERRLOG_ErrLog1")]
-pub type ErrlogErrLog1 = crate::Reg<errlog_err_log1::ErrlogErrLog1Spec>;
+pub type ErrLog1 = crate::Reg<err_log1::ErrLog1Spec>;
 #[doc = "Route ID register"]
-pub mod errlog_err_log1;
-#[doc = "ERRLOG_ErrLog3 (r) register accessor: Address register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`errlog_err_log3::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@errlog_err_log3`]
+pub mod err_log1;
+#[doc = "ErrLog3 (r) register accessor: Address register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`err_log3::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@err_log3`]
 module"]
-#[doc(alias = "ERRLOG_ErrLog3")]
-pub type ErrlogErrLog3 = crate::Reg<errlog_err_log3::ErrlogErrLog3Spec>;
+pub type ErrLog3 = crate::Reg<err_log3::ErrLog3Spec>;
 #[doc = "Address register"]
-pub mod errlog_err_log3;
-#[doc = "ERRLOG_ErrLog5 (r) register accessor: LSB user bits in transport protocol header\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`errlog_err_log5::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@errlog_err_log5`]
+pub mod err_log3;
+#[doc = "ErrLog5 (r) register accessor: LSB user bits in transport protocol header\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`err_log5::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@err_log5`]
 module"]
-#[doc(alias = "ERRLOG_ErrLog5")]
-pub type ErrlogErrLog5 = crate::Reg<errlog_err_log5::ErrlogErrLog5Spec>;
+pub type ErrLog5 = crate::Reg<err_log5::ErrLog5Spec>;
 #[doc = "LSB user bits in transport protocol header"]
-pub mod errlog_err_log5;
-#[doc = "ERRLOG_ErrLog6 (r) register accessor: MSB user bits in transport protocol header\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`errlog_err_log6::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@errlog_err_log6`]
+pub mod err_log5;
+#[doc = "ErrLog6 (r) register accessor: MSB user bits in transport protocol header\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`err_log6::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@err_log6`]
 module"]
-#[doc(alias = "ERRLOG_ErrLog6")]
-pub type ErrlogErrLog6 = crate::Reg<errlog_err_log6::ErrlogErrLog6Spec>;
+pub type ErrLog6 = crate::Reg<err_log6::ErrLog6Spec>;
 #[doc = "MSB user bits in transport protocol header"]
-pub mod errlog_err_log6;
-#[doc = "ERRLOG_ErrLog7 (r) register accessor: Securrity flag in transport protocol header\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`errlog_err_log7::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@errlog_err_log7`]
+pub mod err_log6;
+#[doc = "ErrLog7 (r) register accessor: Securrity flag in transport protocol header\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`err_log7::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@err_log7`]
 module"]
-#[doc(alias = "ERRLOG_ErrLog7")]
-pub type ErrlogErrLog7 = crate::Reg<errlog_err_log7::ErrlogErrLog7Spec>;
+pub type ErrLog7 = crate::Reg<err_log7::ErrLog7Spec>;
 #[doc = "Securrity flag in transport protocol header"]
-pub mod errlog_err_log7;
-#[doc = "ERRLOG_StallEn (rw) register accessor: Error logger mode selection\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`errlog_stall_en::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`errlog_stall_en::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@errlog_stall_en`]
+pub mod err_log7;
+#[doc = "StallEn (rw) register accessor: Error logger mode selection\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`stall_en::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`stall_en::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@stall_en`]
 module"]
-#[doc(alias = "ERRLOG_StallEn")]
-pub type ErrlogStallEn = crate::Reg<errlog_stall_en::ErrlogStallEnSpec>;
+pub type StallEn = crate::Reg<stall_en::StallEnSpec>;
 #[doc = "Error logger mode selection"]
-pub mod errlog_stall_en;
+pub mod stall_en;

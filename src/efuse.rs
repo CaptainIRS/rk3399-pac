@@ -1,67 +1,67 @@
 #[repr(C)]
 #[doc = "Register block"]
 pub struct RegisterBlock {
-    efuse_ctrl: EfuseCtrl,
-    efuse_dout: EfuseDout,
-    efuse_rf: EfuseRf,
+    ctrl: Ctrl,
+    dout: Dout,
+    rf: Rf,
     _reserved3: [u8; 0x04],
-    efuse_jtag_pass: EfuseJtagPass,
-    efuse_strobe_finish_ctrl: EfuseStrobeFinishCtrl,
+    jtag_pass: JtagPass,
+    strobe_finish_ctrl: StrobeFinishCtrl,
 }
 impl RegisterBlock {
     #[doc = "0x00 - e fuse control register"]
     #[inline(always)]
-    pub const fn efuse_ctrl(&self) -> &EfuseCtrl {
-        &self.efuse_ctrl
+    pub const fn ctrl(&self) -> &Ctrl {
+        &self.ctrl
     }
     #[doc = "0x04 - e fuse data out register"]
     #[inline(always)]
-    pub const fn efuse_dout(&self) -> &EfuseDout {
-        &self.efuse_dout
+    pub const fn dout(&self) -> &Dout {
+        &self.dout
     }
     #[doc = "0x08 - e fuse redundancy bit used indicator register"]
     #[inline(always)]
-    pub const fn efuse_rf(&self) -> &EfuseRf {
-        &self.efuse_rf
+    pub const fn rf(&self) -> &Rf {
+        &self.rf
     }
     #[doc = "0x10 - Jtag password"]
     #[inline(always)]
-    pub const fn efuse_jtag_pass(&self) -> &EfuseJtagPass {
-        &self.efuse_jtag_pass
+    pub const fn jtag_pass(&self) -> &JtagPass {
+        &self.jtag_pass
     }
     #[doc = "0x14 - e fuse strobe finish control register"]
     #[inline(always)]
-    pub const fn efuse_strobe_finish_ctrl(&self) -> &EfuseStrobeFinishCtrl {
-        &self.efuse_strobe_finish_ctrl
+    pub const fn strobe_finish_ctrl(&self) -> &StrobeFinishCtrl {
+        &self.strobe_finish_ctrl
     }
 }
-#[doc = "EFUSE_CTRL (rw) register accessor: e fuse control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`efuse_ctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`efuse_ctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@efuse_ctrl`]
+#[doc = "CTRL (rw) register accessor: e fuse control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ctrl`]
 module"]
-#[doc(alias = "EFUSE_CTRL")]
-pub type EfuseCtrl = crate::Reg<efuse_ctrl::EfuseCtrlSpec>;
+#[doc(alias = "CTRL")]
+pub type Ctrl = crate::Reg<ctrl::CtrlSpec>;
 #[doc = "e fuse control register"]
-pub mod efuse_ctrl;
-#[doc = "EFUSE_DOUT (r) register accessor: e fuse data out register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`efuse_dout::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@efuse_dout`]
+pub mod ctrl;
+#[doc = "DOUT (r) register accessor: e fuse data out register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dout::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dout`]
 module"]
-#[doc(alias = "EFUSE_DOUT")]
-pub type EfuseDout = crate::Reg<efuse_dout::EfuseDoutSpec>;
+#[doc(alias = "DOUT")]
+pub type Dout = crate::Reg<dout::DoutSpec>;
 #[doc = "e fuse data out register"]
-pub mod efuse_dout;
-#[doc = "EFUSE_RF (r) register accessor: e fuse redundancy bit used indicator register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`efuse_rf::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@efuse_rf`]
+pub mod dout;
+#[doc = "RF (r) register accessor: e fuse redundancy bit used indicator register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rf::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rf`]
 module"]
-#[doc(alias = "EFUSE_RF")]
-pub type EfuseRf = crate::Reg<efuse_rf::EfuseRfSpec>;
+#[doc(alias = "RF")]
+pub type Rf = crate::Reg<rf::RfSpec>;
 #[doc = "e fuse redundancy bit used indicator register"]
-pub mod efuse_rf;
-#[doc = "EFUSE_JTAG_PASS (rw) register accessor: Jtag password\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`efuse_jtag_pass::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`efuse_jtag_pass::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@efuse_jtag_pass`]
+pub mod rf;
+#[doc = "JTAG_PASS (rw) register accessor: Jtag password\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`jtag_pass::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`jtag_pass::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@jtag_pass`]
 module"]
-#[doc(alias = "EFUSE_JTAG_PASS")]
-pub type EfuseJtagPass = crate::Reg<efuse_jtag_pass::EfuseJtagPassSpec>;
+#[doc(alias = "JTAG_PASS")]
+pub type JtagPass = crate::Reg<jtag_pass::JtagPassSpec>;
 #[doc = "Jtag password"]
-pub mod efuse_jtag_pass;
-#[doc = "EFUSE_STROBE_FINISH_CTRL (rw) register accessor: e fuse strobe finish control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`efuse_strobe_finish_ctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`efuse_strobe_finish_ctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@efuse_strobe_finish_ctrl`]
+pub mod jtag_pass;
+#[doc = "STROBE_FINISH_CTRL (rw) register accessor: e fuse strobe finish control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`strobe_finish_ctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`strobe_finish_ctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@strobe_finish_ctrl`]
 module"]
-#[doc(alias = "EFUSE_STROBE_FINISH_CTRL")]
-pub type EfuseStrobeFinishCtrl = crate::Reg<efuse_strobe_finish_ctrl::EfuseStrobeFinishCtrlSpec>;
+#[doc(alias = "STROBE_FINISH_CTRL")]
+pub type StrobeFinishCtrl = crate::Reg<strobe_finish_ctrl::StrobeFinishCtrlSpec>;
 #[doc = "e fuse strobe finish control register"]
-pub mod efuse_strobe_finish_ctrl;
+pub mod strobe_finish_ctrl;

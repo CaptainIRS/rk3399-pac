@@ -2,9 +2,9 @@
 pub type R = crate::R<DdrPiReg68Spec>;
 #[doc = "Register `DDR_PI_REG_68` writer"]
 pub type W = crate::W<DdrPiReg68Spec>;
-#[doc = "Field `PI_ODT_EN_F2` reader - Enables support of DRAM ODT. When enabled, PI asserts and\n\nde-asserts ODT output to DRAM as needed. The suffix \"_f2\" of the\n\nparameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_ODT_EN_F2` reader - Enables support of DRAM ODT. When enabled, PI asserts and\n\nde-asserts ODT output to DRAM as needed. The suffix '_f2' of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiOdtEnF2R = crate::BitReader;
-#[doc = "Field `PI_ODT_EN_F2` writer - Enables support of DRAM ODT. When enabled, PI asserts and\n\nde-asserts ODT output to DRAM as needed. The suffix \"_f2\" of the\n\nparameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_ODT_EN_F2` writer - Enables support of DRAM ODT. When enabled, PI asserts and\n\nde-asserts ODT output to DRAM as needed. The suffix '_f2' of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiOdtEnF2W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PI_TODTH_WR` reader - Defines the DRAM minimum ODT high time after an ODT assertion\n\nfor a write command."]
 pub type PiTodthWrR = crate::FieldReader;
@@ -19,7 +19,7 @@ pub type PiOdtRdMapCs0R = crate::FieldReader;
 #[doc = "Field `PI_ODT_RD_MAP_CS0` writer - Determines the chip(s) that have termination when a read occurs\n\non chip select 0. Set bit X to enable termination on csX when cs0 is\n\nperforming a read."]
 pub type PiOdtRdMapCs0W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
-    #[doc = "Bit 0 - Enables support of DRAM ODT. When enabled, PI asserts and\n\nde-asserts ODT output to DRAM as needed. The suffix \"_f2\" of the\n\nparameter name is omitted when in non-DFS mode."]
+    #[doc = "Bit 0 - Enables support of DRAM ODT. When enabled, PI asserts and\n\nde-asserts ODT output to DRAM as needed. The suffix '_f2' of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_odt_en_f2(&self) -> PiOdtEnF2R {
         PiOdtEnF2R::new((self.bits & 1) != 0)
@@ -41,7 +41,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - Enables support of DRAM ODT. When enabled, PI asserts and\n\nde-asserts ODT output to DRAM as needed. The suffix \"_f2\" of the\n\nparameter name is omitted when in non-DFS mode."]
+    #[doc = "Bit 0 - Enables support of DRAM ODT. When enabled, PI asserts and\n\nde-asserts ODT output to DRAM as needed. The suffix '_f2' of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_odt_en_f2(&mut self) -> PiOdtEnF2W<DdrPiReg68Spec> {

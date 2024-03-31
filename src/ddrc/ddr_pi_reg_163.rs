@@ -2,34 +2,34 @@
 pub type R = crate::R<DdrPiReg163Spec>;
 #[doc = "Register `DDR_PI_REG_163` writer"]
 pub type W = crate::W<DdrPiReg163Spec>;
-#[doc = "Field `PI_TRAS_MAX_F1` reader - Indicates DRAM TRAS_MAX value in cycles. The suffix \"_f1\" of\n\nparameter name will be omitted when non DFS mode."]
+#[doc = "Field `PI_TRAS_MAX_F1` reader - Indicates DRAM TRAS_MAX value in cycles. The suffix '_f1' of\n\nparameter name will be omitted when non DFS mode."]
 pub type PiTrasMaxF1R = crate::FieldReader<u32>;
-#[doc = "Field `PI_TRAS_MAX_F1` writer - Indicates DRAM TRAS_MAX value in cycles. The suffix \"_f1\" of\n\nparameter name will be omitted when non DFS mode."]
+#[doc = "Field `PI_TRAS_MAX_F1` writer - Indicates DRAM TRAS_MAX value in cycles. The suffix '_f1' of\n\nparameter name will be omitted when non DFS mode."]
 pub type PiTrasMaxF1W<'a, REG> = crate::FieldWriter<'a, REG, 17, u32>;
-#[doc = "Field `PI_TRAS_MIN_F1` reader - Indicates DRAM TRAS_MIN value in cycles. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TRAS_MIN_F1` reader - Indicates DRAM TRAS_MIN value in cycles. The suffix '_f1' of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTrasMinF1R = crate::FieldReader;
-#[doc = "Field `PI_TRAS_MIN_F1` writer - Indicates DRAM TRAS_MIN value in cycles. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TRAS_MIN_F1` writer - Indicates DRAM TRAS_MIN value in cycles. The suffix '_f1' of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTrasMinF1W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:16 - Indicates DRAM TRAS_MAX value in cycles. The suffix \"_f1\" of\n\nparameter name will be omitted when non DFS mode."]
+    #[doc = "Bits 0:16 - Indicates DRAM TRAS_MAX value in cycles. The suffix '_f1' of\n\nparameter name will be omitted when non DFS mode."]
     #[inline(always)]
     pub fn pi_tras_max_f1(&self) -> PiTrasMaxF1R {
         PiTrasMaxF1R::new(self.bits & 0x0001_ffff)
     }
-    #[doc = "Bits 24:31 - Indicates DRAM TRAS_MIN value in cycles. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 24:31 - Indicates DRAM TRAS_MIN value in cycles. The suffix '_f1' of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tras_min_f1(&self) -> PiTrasMinF1R {
         PiTrasMinF1R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:16 - Indicates DRAM TRAS_MAX value in cycles. The suffix \"_f1\" of\n\nparameter name will be omitted when non DFS mode."]
+    #[doc = "Bits 0:16 - Indicates DRAM TRAS_MAX value in cycles. The suffix '_f1' of\n\nparameter name will be omitted when non DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tras_max_f1(&mut self) -> PiTrasMaxF1W<DdrPiReg163Spec> {
         PiTrasMaxF1W::new(self, 0)
     }
-    #[doc = "Bits 24:31 - Indicates DRAM TRAS_MIN value in cycles. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 24:31 - Indicates DRAM TRAS_MIN value in cycles. The suffix '_f1' of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tras_min_f1(&mut self) -> PiTrasMinF1W<DdrPiReg163Spec> {

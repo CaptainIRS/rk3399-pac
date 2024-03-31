@@ -7,8 +7,6 @@ pub type W = crate::W<DpTrainingPtnSetSpec>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SwTrainingPatternSet {
-    #[doc = "3: Reserved"]
-    B11 = 3,
     #[doc = "2: Sending training pattern 2"]
     B10 = 2,
     #[doc = "1: Sending training pattern 1"]
@@ -30,19 +28,13 @@ pub type SwTrainingPatternSetR = crate::FieldReader<SwTrainingPatternSet>;
 impl SwTrainingPatternSetR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> SwTrainingPatternSet {
+    pub const fn variant(&self) -> Option<SwTrainingPatternSet> {
         match self.bits {
-            3 => SwTrainingPatternSet::B11,
-            2 => SwTrainingPatternSet::B10,
-            1 => SwTrainingPatternSet::B01,
-            0 => SwTrainingPatternSet::B00,
-            _ => unreachable!(),
+            2 => Some(SwTrainingPatternSet::B10),
+            1 => Some(SwTrainingPatternSet::B01),
+            0 => Some(SwTrainingPatternSet::B00),
+            _ => None,
         }
-    }
-    #[doc = "Reserved"]
-    #[inline(always)]
-    pub fn is_b11(&self) -> bool {
-        *self == SwTrainingPatternSet::B11
     }
     #[doc = "Sending training pattern 2"]
     #[inline(always)]
@@ -61,17 +53,12 @@ impl SwTrainingPatternSetR {
     }
 }
 #[doc = "Field `SW_TRAINING_PATTERN_SET` writer - Link training pattern setting. \n\nSW_TRAINING_PATTERN_SET has higher \n\npriority than LINK_QUAL_PATTER_SET."]
-pub type SwTrainingPatternSetW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, SwTrainingPatternSet>;
+pub type SwTrainingPatternSetW<'a, REG> = crate::FieldWriter<'a, REG, 2, SwTrainingPatternSet>;
 impl<'a, REG> SwTrainingPatternSetW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Reserved"]
-    #[inline(always)]
-    pub fn b11(self) -> &'a mut crate::W<REG> {
-        self.variant(SwTrainingPatternSet::B11)
-    }
     #[doc = "Sending training pattern 2"]
     #[inline(always)]
     pub fn b10(self) -> &'a mut crate::W<REG> {

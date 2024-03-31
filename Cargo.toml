@@ -1,6 +1,6 @@
 [package]
 name = "rk3399-pac"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "Peripheral Access Crate (PAC) for the RK3399 SoC from Rockchip"
 license = "MIT"

@@ -1,806 +1,806 @@
 #[repr(C)]
 #[doc = "Register block"]
 pub struct RegisterBlock {
-    emmccore_saddr: EmmccoreSaddr,
-    emmccore_blksiz: EmmccoreBlksiz,
-    emmccore_blkcnt: EmmccoreBlkcnt,
-    emmccore_arg: EmmccoreArg,
-    emmccore_transmod: EmmccoreTransmod,
-    emmccore_cmd: EmmccoreCmd,
-    emmccore_resp0: EmmccoreResp0,
-    emmccore_resp1: EmmccoreResp1,
-    emmccore_resp2: EmmccoreResp2,
-    emmccore_resp3: EmmccoreResp3,
-    emmccore_buffer: EmmccoreBuffer,
-    emmccore_prests: EmmccorePrests,
-    emmccore_hostctrl1: EmmccoreHostctrl1,
-    emmccore_pwrctrl: EmmccorePwrctrl,
-    emmccore_blkgapctrl: EmmccoreBlkgapctrl,
+    saddr: Saddr,
+    blksiz: Blksiz,
+    blkcnt: Blkcnt,
+    arg: Arg,
+    transmod: Transmod,
+    cmd: Cmd,
+    resp0: Resp0,
+    resp1: Resp1,
+    resp2: Resp2,
+    resp3: Resp3,
+    buffer: Buffer,
+    prests: Prests,
+    hostctrl1: Hostctrl1,
+    pwrctrl: Pwrctrl,
+    blkgapctrl: Blkgapctrl,
     _reserved15: [u8; 0x01],
-    emmccore_clkctrl: EmmccoreClkctrl,
-    emmccore_timeout: EmmccoreTimeout,
-    emmccore_swrst: EmmccoreSwrst,
-    emmccore_norintsts: EmmccoreNorintsts,
-    emmccore_errintsts: EmmccoreErrintsts,
-    emmccore_norintstsena: EmmccoreNorintstsena,
-    emmccore_errintstsena: EmmccoreErrintstsena,
-    emmccore_norintsigena: EmmccoreNorintsigena,
-    emmccore_errintsigena: EmmccoreErrintsigena,
-    emmccore_acmderrsts: EmmccoreAcmderrsts,
-    emmccore_hostctrl2: EmmccoreHostctrl2,
-    emmccore_cap: EmmccoreCap,
+    clkctrl: Clkctrl,
+    timeout: Timeout,
+    swrst: Swrst,
+    norintsts: Norintsts,
+    errintsts: Errintsts,
+    norintstsena: Norintstsena,
+    errintstsena: Errintstsena,
+    norintsigena: Norintsigena,
+    errintsigena: Errintsigena,
+    acmderrsts: Acmderrsts,
+    hostctrl2: Hostctrl2,
+    cap: Cap,
     _reserved27: [u8; 0x08],
-    emmccore_feacmd: EmmccoreFeacmd,
-    emmccore_feerrint: EmmccoreFeerrint,
-    emmccore_admaerrsts: EmmccoreAdmaerrsts,
+    feacmd: Feacmd,
+    feerrint: Feerrint,
+    admaerrsts: Admaerrsts,
     _reserved30: [u8; 0x02],
-    emmccore_admaaddr: EmmccoreAdmaaddr,
-    emmccore_pvalinit: EmmccorePvalinit,
-    emmccore_pvalds: EmmccorePvalds,
-    emmccore_pvalhs: EmmccorePvalhs,
-    emmccore_pvalsdr12: EmmccorePvalsdr12,
-    emmccore_pvalsdr25: EmmccorePvalsdr25,
-    emmccore_pvalsdr50: EmmccorePvalsdr50,
-    emmccore_pvalsdr104: EmmccorePvalsdr104,
-    emmccore_pvalddr50: EmmccorePvalddr50,
-    emmccore_boottimeout: EmmccoreBoottimeout,
-    emmccore_pvalhs400: EmmccorePvalhs400,
+    admaaddr: Admaaddr,
+    pvalinit: Pvalinit,
+    pvalds: Pvalds,
+    pvalhs: Pvalhs,
+    pvalsdr12: Pvalsdr12,
+    pvalsdr25: Pvalsdr25,
+    pvalsdr50: Pvalsdr50,
+    pvalsdr104: Pvalsdr104,
+    pvalddr50: Pvalddr50,
+    boottimeout: Boottimeout,
+    pvalhs400: Pvalhs400,
     _reserved41: [u8; 0x02],
-    emmccore_vendor: EmmccoreVendor,
+    vendor: Vendor,
     _reserved42: [u8; 0x82],
-    emmccore_slotintsts: EmmccoreSlotintsts,
-    emmccore_version: EmmccoreVersion,
+    slotintsts: Slotintsts,
+    version: Version,
     _reserved44: [u8; 0x0100],
-    emmccore_cqver: EmmccoreCqver,
-    emmccore_cqcap: EmmccoreCqcap,
-    emmccore_cqcfg: EmmccoreCqcfg,
-    emmccore_cqctrl: EmmccoreCqctrl,
-    emmccore_cqintsts: EmmccoreCqintsts,
-    emmccore_cqintstsena: EmmccoreCqintstsena,
-    emmccore_cqintsigena: EmmccoreCqintsigena,
-    emmccore_cqintcoal: EmmccoreCqintcoal,
-    emmccore_cqtdlba: EmmccoreCqtdlba,
-    emmccore_cqtdlbau: EmmccoreCqtdlbau,
-    emmccore_cqtdb: EmmccoreCqtdb,
-    emmccore_cqtdbn: EmmccoreCqtdbn,
-    emmccore_cqdqsts: EmmccoreCqdqsts,
-    emmccore_cqdpt: EmmccoreCqdpt,
-    emmccore_cqtclr: EmmccoreCqtclr,
+    cqver: Cqver,
+    cqcap: Cqcap,
+    cqcfg: Cqcfg,
+    cqctrl: Cqctrl,
+    cqintsts: Cqintsts,
+    cqintstsena: Cqintstsena,
+    cqintsigena: Cqintsigena,
+    cqintcoal: Cqintcoal,
+    cqtdlba: Cqtdlba,
+    cqtdlbau: Cqtdlbau,
+    cqtdb: Cqtdb,
+    cqtdbn: Cqtdbn,
+    cqdqsts: Cqdqsts,
+    cqdpt: Cqdpt,
+    cqtclr: Cqtclr,
     _reserved59: [u8; 0x04],
-    emmccore_cqssc1: EmmccoreCqssc1,
-    emmccore_cqssc2: EmmccoreCqssc2,
-    emmccore_cqcrdt: EmmccoreCqcrdt,
+    cqssc1: Cqssc1,
+    cqssc2: Cqssc2,
+    cqcrdt: Cqcrdt,
     _reserved62: [u8; 0x04],
-    emmccore_cqrmem: EmmccoreCqrmem,
-    emmccore_cqtei: EmmccoreCqtei,
-    emmccore_cqcri: EmmccoreCqcri,
-    emmccore_cqcra: EmmccoreCqcra,
+    cqrmem: Cqrmem,
+    cqtei: Cqtei,
+    cqcri: Cqcri,
+    cqcra: Cqcra,
 }
 impl RegisterBlock {
     #[doc = "0x00 - System address/ Argument 2 register"]
     #[inline(always)]
-    pub const fn emmccore_saddr(&self) -> &EmmccoreSaddr {
-        &self.emmccore_saddr
+    pub const fn saddr(&self) -> &Saddr {
+        &self.saddr
     }
     #[doc = "0x04 - Block size register"]
     #[inline(always)]
-    pub const fn emmccore_blksiz(&self) -> &EmmccoreBlksiz {
-        &self.emmccore_blksiz
+    pub const fn blksiz(&self) -> &Blksiz {
+        &self.blksiz
     }
     #[doc = "0x06 - Block count register"]
     #[inline(always)]
-    pub const fn emmccore_blkcnt(&self) -> &EmmccoreBlkcnt {
-        &self.emmccore_blkcnt
+    pub const fn blkcnt(&self) -> &Blkcnt {
+        &self.blkcnt
     }
     #[doc = "0x08 - Argument register"]
     #[inline(always)]
-    pub const fn emmccore_arg(&self) -> &EmmccoreArg {
-        &self.emmccore_arg
+    pub const fn arg(&self) -> &Arg {
+        &self.arg
     }
     #[doc = "0x0c - Transfer mode register"]
     #[inline(always)]
-    pub const fn emmccore_transmod(&self) -> &EmmccoreTransmod {
-        &self.emmccore_transmod
+    pub const fn transmod(&self) -> &Transmod {
+        &self.transmod
     }
     #[doc = "0x0e - Command register"]
     #[inline(always)]
-    pub const fn emmccore_cmd(&self) -> &EmmccoreCmd {
-        &self.emmccore_cmd
+    pub const fn cmd(&self) -> &Cmd {
+        &self.cmd
     }
     #[doc = "0x10 - Response register bit \\[31:0\\]"]
     #[inline(always)]
-    pub const fn emmccore_resp0(&self) -> &EmmccoreResp0 {
-        &self.emmccore_resp0
+    pub const fn resp0(&self) -> &Resp0 {
+        &self.resp0
     }
     #[doc = "0x14 - Response register bit \\[63:32\\]"]
     #[inline(always)]
-    pub const fn emmccore_resp1(&self) -> &EmmccoreResp1 {
-        &self.emmccore_resp1
+    pub const fn resp1(&self) -> &Resp1 {
+        &self.resp1
     }
     #[doc = "0x18 - Response register bit \\[95:64\\]"]
     #[inline(always)]
-    pub const fn emmccore_resp2(&self) -> &EmmccoreResp2 {
-        &self.emmccore_resp2
+    pub const fn resp2(&self) -> &Resp2 {
+        &self.resp2
     }
     #[doc = "0x1c - Response register bit \\[127:98\\]"]
     #[inline(always)]
-    pub const fn emmccore_resp3(&self) -> &EmmccoreResp3 {
-        &self.emmccore_resp3
+    pub const fn resp3(&self) -> &Resp3 {
+        &self.resp3
     }
     #[doc = "0x20 - Buffer data port register"]
     #[inline(always)]
-    pub const fn emmccore_buffer(&self) -> &EmmccoreBuffer {
-        &self.emmccore_buffer
+    pub const fn buffer(&self) -> &Buffer {
+        &self.buffer
     }
     #[doc = "0x24 - Present state register"]
     #[inline(always)]
-    pub const fn emmccore_prests(&self) -> &EmmccorePrests {
-        &self.emmccore_prests
+    pub const fn prests(&self) -> &Prests {
+        &self.prests
     }
     #[doc = "0x28 - Host control 1 register"]
     #[inline(always)]
-    pub const fn emmccore_hostctrl1(&self) -> &EmmccoreHostctrl1 {
-        &self.emmccore_hostctrl1
+    pub const fn hostctrl1(&self) -> &Hostctrl1 {
+        &self.hostctrl1
     }
     #[doc = "0x29 - Power control register"]
     #[inline(always)]
-    pub const fn emmccore_pwrctrl(&self) -> &EmmccorePwrctrl {
-        &self.emmccore_pwrctrl
+    pub const fn pwrctrl(&self) -> &Pwrctrl {
+        &self.pwrctrl
     }
     #[doc = "0x2a - Block gap control register"]
     #[inline(always)]
-    pub const fn emmccore_blkgapctrl(&self) -> &EmmccoreBlkgapctrl {
-        &self.emmccore_blkgapctrl
+    pub const fn blkgapctrl(&self) -> &Blkgapctrl {
+        &self.blkgapctrl
     }
     #[doc = "0x2c - Clock control Register"]
     #[inline(always)]
-    pub const fn emmccore_clkctrl(&self) -> &EmmccoreClkctrl {
-        &self.emmccore_clkctrl
+    pub const fn clkctrl(&self) -> &Clkctrl {
+        &self.clkctrl
     }
     #[doc = "0x2e - Timeout control register"]
     #[inline(always)]
-    pub const fn emmccore_timeout(&self) -> &EmmccoreTimeout {
-        &self.emmccore_timeout
+    pub const fn timeout(&self) -> &Timeout {
+        &self.timeout
     }
     #[doc = "0x2f - Software reset register"]
     #[inline(always)]
-    pub const fn emmccore_swrst(&self) -> &EmmccoreSwrst {
-        &self.emmccore_swrst
+    pub const fn swrst(&self) -> &Swrst {
+        &self.swrst
     }
     #[doc = "0x30 - Normal interrupt status register"]
     #[inline(always)]
-    pub const fn emmccore_norintsts(&self) -> &EmmccoreNorintsts {
-        &self.emmccore_norintsts
+    pub const fn norintsts(&self) -> &Norintsts {
+        &self.norintsts
     }
     #[doc = "0x32 - Error interrupt status register"]
     #[inline(always)]
-    pub const fn emmccore_errintsts(&self) -> &EmmccoreErrintsts {
-        &self.emmccore_errintsts
+    pub const fn errintsts(&self) -> &Errintsts {
+        &self.errintsts
     }
     #[doc = "0x34 - Normal interrupt status enable register"]
     #[inline(always)]
-    pub const fn emmccore_norintstsena(&self) -> &EmmccoreNorintstsena {
-        &self.emmccore_norintstsena
+    pub const fn norintstsena(&self) -> &Norintstsena {
+        &self.norintstsena
     }
     #[doc = "0x36 - Error interrupt status enable register"]
     #[inline(always)]
-    pub const fn emmccore_errintstsena(&self) -> &EmmccoreErrintstsena {
-        &self.emmccore_errintstsena
+    pub const fn errintstsena(&self) -> &Errintstsena {
+        &self.errintstsena
     }
     #[doc = "0x38 - Normal interrupt signal enable register"]
     #[inline(always)]
-    pub const fn emmccore_norintsigena(&self) -> &EmmccoreNorintsigena {
-        &self.emmccore_norintsigena
+    pub const fn norintsigena(&self) -> &Norintsigena {
+        &self.norintsigena
     }
     #[doc = "0x3a - Error interrupt signal enable register"]
     #[inline(always)]
-    pub const fn emmccore_errintsigena(&self) -> &EmmccoreErrintsigena {
-        &self.emmccore_errintsigena
+    pub const fn errintsigena(&self) -> &Errintsigena {
+        &self.errintsigena
     }
     #[doc = "0x3c - Auto CMD error status register"]
     #[inline(always)]
-    pub const fn emmccore_acmderrsts(&self) -> &EmmccoreAcmderrsts {
-        &self.emmccore_acmderrsts
+    pub const fn acmderrsts(&self) -> &Acmderrsts {
+        &self.acmderrsts
     }
     #[doc = "0x3e - Host Control 2 Register"]
     #[inline(always)]
-    pub const fn emmccore_hostctrl2(&self) -> &EmmccoreHostctrl2 {
-        &self.emmccore_hostctrl2
+    pub const fn hostctrl2(&self) -> &Hostctrl2 {
+        &self.hostctrl2
     }
     #[doc = "0x40..0x48 - Capabilities register"]
     #[inline(always)]
-    pub const fn emmccore_cap(&self) -> &EmmccoreCap {
-        &self.emmccore_cap
+    pub const fn cap(&self) -> &Cap {
+        &self.cap
     }
     #[doc = "0x50 - Force event register for Auto CMD error status"]
     #[inline(always)]
-    pub const fn emmccore_feacmd(&self) -> &EmmccoreFeacmd {
-        &self.emmccore_feacmd
+    pub const fn feacmd(&self) -> &Feacmd {
+        &self.feacmd
     }
     #[doc = "0x52 - Force event register for error interrupt status"]
     #[inline(always)]
-    pub const fn emmccore_feerrint(&self) -> &EmmccoreFeerrint {
-        &self.emmccore_feerrint
+    pub const fn feerrint(&self) -> &Feerrint {
+        &self.feerrint
     }
     #[doc = "0x54 - ADMA error status register"]
     #[inline(always)]
-    pub const fn emmccore_admaerrsts(&self) -> &EmmccoreAdmaerrsts {
-        &self.emmccore_admaerrsts
+    pub const fn admaerrsts(&self) -> &Admaerrsts {
+        &self.admaerrsts
     }
     #[doc = "0x58..0x60 - ADMA system address register"]
     #[inline(always)]
-    pub const fn emmccore_admaaddr(&self) -> &EmmccoreAdmaaddr {
-        &self.emmccore_admaaddr
+    pub const fn admaaddr(&self) -> &Admaaddr {
+        &self.admaaddr
     }
     #[doc = "0x60 - Preset value register for Initialization"]
     #[inline(always)]
-    pub const fn emmccore_pvalinit(&self) -> &EmmccorePvalinit {
-        &self.emmccore_pvalinit
+    pub const fn pvalinit(&self) -> &Pvalinit {
+        &self.pvalinit
     }
     #[doc = "0x62 - Preset value register for Default Speed"]
     #[inline(always)]
-    pub const fn emmccore_pvalds(&self) -> &EmmccorePvalds {
-        &self.emmccore_pvalds
+    pub const fn pvalds(&self) -> &Pvalds {
+        &self.pvalds
     }
     #[doc = "0x64 - Preset value register for High Speed"]
     #[inline(always)]
-    pub const fn emmccore_pvalhs(&self) -> &EmmccorePvalhs {
-        &self.emmccore_pvalhs
+    pub const fn pvalhs(&self) -> &Pvalhs {
+        &self.pvalhs
     }
     #[doc = "0x66 - Preset value register for SDR12"]
     #[inline(always)]
-    pub const fn emmccore_pvalsdr12(&self) -> &EmmccorePvalsdr12 {
-        &self.emmccore_pvalsdr12
+    pub const fn pvalsdr12(&self) -> &Pvalsdr12 {
+        &self.pvalsdr12
     }
     #[doc = "0x68 - Preset value register for SDR25"]
     #[inline(always)]
-    pub const fn emmccore_pvalsdr25(&self) -> &EmmccorePvalsdr25 {
-        &self.emmccore_pvalsdr25
+    pub const fn pvalsdr25(&self) -> &Pvalsdr25 {
+        &self.pvalsdr25
     }
     #[doc = "0x6a - Preset value register for SDR50"]
     #[inline(always)]
-    pub const fn emmccore_pvalsdr50(&self) -> &EmmccorePvalsdr50 {
-        &self.emmccore_pvalsdr50
+    pub const fn pvalsdr50(&self) -> &Pvalsdr50 {
+        &self.pvalsdr50
     }
     #[doc = "0x6c - Preset value register for SDR104"]
     #[inline(always)]
-    pub const fn emmccore_pvalsdr104(&self) -> &EmmccorePvalsdr104 {
-        &self.emmccore_pvalsdr104
+    pub const fn pvalsdr104(&self) -> &Pvalsdr104 {
+        &self.pvalsdr104
     }
     #[doc = "0x6e - Preset value register for DDR50"]
     #[inline(always)]
-    pub const fn emmccore_pvalddr50(&self) -> &EmmccorePvalddr50 {
-        &self.emmccore_pvalddr50
+    pub const fn pvalddr50(&self) -> &Pvalddr50 {
+        &self.pvalddr50
     }
     #[doc = "0x70 - Boot timeout control register"]
     #[inline(always)]
-    pub const fn emmccore_boottimeout(&self) -> &EmmccoreBoottimeout {
-        &self.emmccore_boottimeout
+    pub const fn boottimeout(&self) -> &Boottimeout {
+        &self.boottimeout
     }
     #[doc = "0x74 - Preset value register for HS400"]
     #[inline(always)]
-    pub const fn emmccore_pvalhs400(&self) -> &EmmccorePvalhs400 {
-        &self.emmccore_pvalhs400
+    pub const fn pvalhs400(&self) -> &Pvalhs400 {
+        &self.pvalhs400
     }
     #[doc = "0x78 - Vendor register"]
     #[inline(always)]
-    pub const fn emmccore_vendor(&self) -> &EmmccoreVendor {
-        &self.emmccore_vendor
+    pub const fn vendor(&self) -> &Vendor {
+        &self.vendor
     }
     #[doc = "0xfc - Slot interrupt status register"]
     #[inline(always)]
-    pub const fn emmccore_slotintsts(&self) -> &EmmccoreSlotintsts {
-        &self.emmccore_slotintsts
+    pub const fn slotintsts(&self) -> &Slotintsts {
+        &self.slotintsts
     }
     #[doc = "0xfe - Host controller version register"]
     #[inline(always)]
-    pub const fn emmccore_version(&self) -> &EmmccoreVersion {
-        &self.emmccore_version
+    pub const fn version(&self) -> &Version {
+        &self.version
     }
     #[doc = "0x200 - Command queueing version register"]
     #[inline(always)]
-    pub const fn emmccore_cqver(&self) -> &EmmccoreCqver {
-        &self.emmccore_cqver
+    pub const fn cqver(&self) -> &Cqver {
+        &self.cqver
     }
     #[doc = "0x204 - Command queueing capabilities register"]
     #[inline(always)]
-    pub const fn emmccore_cqcap(&self) -> &EmmccoreCqcap {
-        &self.emmccore_cqcap
+    pub const fn cqcap(&self) -> &Cqcap {
+        &self.cqcap
     }
     #[doc = "0x208 - Command queueing configuration register"]
     #[inline(always)]
-    pub const fn emmccore_cqcfg(&self) -> &EmmccoreCqcfg {
-        &self.emmccore_cqcfg
+    pub const fn cqcfg(&self) -> &Cqcfg {
+        &self.cqcfg
     }
     #[doc = "0x20c - Command queueing control register"]
     #[inline(always)]
-    pub const fn emmccore_cqctrl(&self) -> &EmmccoreCqctrl {
-        &self.emmccore_cqctrl
+    pub const fn cqctrl(&self) -> &Cqctrl {
+        &self.cqctrl
     }
     #[doc = "0x210 - Command queueing interrupt status register"]
     #[inline(always)]
-    pub const fn emmccore_cqintsts(&self) -> &EmmccoreCqintsts {
-        &self.emmccore_cqintsts
+    pub const fn cqintsts(&self) -> &Cqintsts {
+        &self.cqintsts
     }
     #[doc = "0x214 - Command queueing interrupt status enable register"]
     #[inline(always)]
-    pub const fn emmccore_cqintstsena(&self) -> &EmmccoreCqintstsena {
-        &self.emmccore_cqintstsena
+    pub const fn cqintstsena(&self) -> &Cqintstsena {
+        &self.cqintstsena
     }
     #[doc = "0x218 - Command queueing interrupt signal enable register"]
     #[inline(always)]
-    pub const fn emmccore_cqintsigena(&self) -> &EmmccoreCqintsigena {
-        &self.emmccore_cqintsigena
+    pub const fn cqintsigena(&self) -> &Cqintsigena {
+        &self.cqintsigena
     }
     #[doc = "0x21c - Command queueing interrupt coalescing register"]
     #[inline(always)]
-    pub const fn emmccore_cqintcoal(&self) -> &EmmccoreCqintcoal {
-        &self.emmccore_cqintcoal
+    pub const fn cqintcoal(&self) -> &Cqintcoal {
+        &self.cqintcoal
     }
     #[doc = "0x220 - Command queueing task descriptor list base address register"]
     #[inline(always)]
-    pub const fn emmccore_cqtdlba(&self) -> &EmmccoreCqtdlba {
-        &self.emmccore_cqtdlba
+    pub const fn cqtdlba(&self) -> &Cqtdlba {
+        &self.cqtdlba
     }
     #[doc = "0x224 - Command queueing task descriptor list base address upper 32bits register"]
     #[inline(always)]
-    pub const fn emmccore_cqtdlbau(&self) -> &EmmccoreCqtdlbau {
-        &self.emmccore_cqtdlbau
+    pub const fn cqtdlbau(&self) -> &Cqtdlbau {
+        &self.cqtdlbau
     }
     #[doc = "0x228 - Command queueing task doorbell register"]
     #[inline(always)]
-    pub const fn emmccore_cqtdb(&self) -> &EmmccoreCqtdb {
-        &self.emmccore_cqtdb
+    pub const fn cqtdb(&self) -> &Cqtdb {
+        &self.cqtdb
     }
     #[doc = "0x22c - Command queueing task doorbell notification register"]
     #[inline(always)]
-    pub const fn emmccore_cqtdbn(&self) -> &EmmccoreCqtdbn {
-        &self.emmccore_cqtdbn
+    pub const fn cqtdbn(&self) -> &Cqtdbn {
+        &self.cqtdbn
     }
     #[doc = "0x230 - Command queueing device queue status register"]
     #[inline(always)]
-    pub const fn emmccore_cqdqsts(&self) -> &EmmccoreCqdqsts {
-        &self.emmccore_cqdqsts
+    pub const fn cqdqsts(&self) -> &Cqdqsts {
+        &self.cqdqsts
     }
     #[doc = "0x234 - Command queueing device pending tasks register"]
     #[inline(always)]
-    pub const fn emmccore_cqdpt(&self) -> &EmmccoreCqdpt {
-        &self.emmccore_cqdpt
+    pub const fn cqdpt(&self) -> &Cqdpt {
+        &self.cqdpt
     }
     #[doc = "0x238 - Command queueing task clear register"]
     #[inline(always)]
-    pub const fn emmccore_cqtclr(&self) -> &EmmccoreCqtclr {
-        &self.emmccore_cqtclr
+    pub const fn cqtclr(&self) -> &Cqtclr {
+        &self.cqtclr
     }
     #[doc = "0x240 - Command queueing send status configuration register 1"]
     #[inline(always)]
-    pub const fn emmccore_cqssc1(&self) -> &EmmccoreCqssc1 {
-        &self.emmccore_cqssc1
+    pub const fn cqssc1(&self) -> &Cqssc1 {
+        &self.cqssc1
     }
     #[doc = "0x244 - Command queueing send status configuration register 2"]
     #[inline(always)]
-    pub const fn emmccore_cqssc2(&self) -> &EmmccoreCqssc2 {
-        &self.emmccore_cqssc2
+    pub const fn cqssc2(&self) -> &Cqssc2 {
+        &self.cqssc2
     }
     #[doc = "0x248 - Command queueing command response for direct-command task register"]
     #[inline(always)]
-    pub const fn emmccore_cqcrdt(&self) -> &EmmccoreCqcrdt {
-        &self.emmccore_cqcrdt
+    pub const fn cqcrdt(&self) -> &Cqcrdt {
+        &self.cqcrdt
     }
     #[doc = "0x250 - Command queueing response mode error mask register"]
     #[inline(always)]
-    pub const fn emmccore_cqrmem(&self) -> &EmmccoreCqrmem {
-        &self.emmccore_cqrmem
+    pub const fn cqrmem(&self) -> &Cqrmem {
+        &self.cqrmem
     }
     #[doc = "0x254 - Command queueing task error information register"]
     #[inline(always)]
-    pub const fn emmccore_cqtei(&self) -> &EmmccoreCqtei {
-        &self.emmccore_cqtei
+    pub const fn cqtei(&self) -> &Cqtei {
+        &self.cqtei
     }
     #[doc = "0x258 - Command queueing command response index register"]
     #[inline(always)]
-    pub const fn emmccore_cqcri(&self) -> &EmmccoreCqcri {
-        &self.emmccore_cqcri
+    pub const fn cqcri(&self) -> &Cqcri {
+        &self.cqcri
     }
     #[doc = "0x25c - Command queueing command response argument register"]
     #[inline(always)]
-    pub const fn emmccore_cqcra(&self) -> &EmmccoreCqcra {
-        &self.emmccore_cqcra
+    pub const fn cqcra(&self) -> &Cqcra {
+        &self.cqcra
     }
 }
-#[doc = "EMMCCORE_SADDR (rw) register accessor: System address/ Argument 2 register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_saddr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_saddr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_saddr`]
+#[doc = "SADDR (rw) register accessor: System address/ Argument 2 register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`saddr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`saddr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@saddr`]
 module"]
-#[doc(alias = "EMMCCORE_SADDR")]
-pub type EmmccoreSaddr = crate::Reg<emmccore_saddr::EmmccoreSaddrSpec>;
+#[doc(alias = "SADDR")]
+pub type Saddr = crate::Reg<saddr::SaddrSpec>;
 #[doc = "System address/ Argument 2 register"]
-pub mod emmccore_saddr;
-#[doc = "EMMCCORE_BLKSIZ (rw) register accessor: Block size register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_blksiz::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_blksiz::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_blksiz`]
+pub mod saddr;
+#[doc = "BLKSIZ (rw) register accessor: Block size register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`blksiz::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`blksiz::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@blksiz`]
 module"]
-#[doc(alias = "EMMCCORE_BLKSIZ")]
-pub type EmmccoreBlksiz = crate::Reg<emmccore_blksiz::EmmccoreBlksizSpec>;
+#[doc(alias = "BLKSIZ")]
+pub type Blksiz = crate::Reg<blksiz::BlksizSpec>;
 #[doc = "Block size register"]
-pub mod emmccore_blksiz;
-#[doc = "EMMCCORE_BLKCNT (rw) register accessor: Block count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_blkcnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_blkcnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_blkcnt`]
+pub mod blksiz;
+#[doc = "BLKCNT (rw) register accessor: Block count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`blkcnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`blkcnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@blkcnt`]
 module"]
-#[doc(alias = "EMMCCORE_BLKCNT")]
-pub type EmmccoreBlkcnt = crate::Reg<emmccore_blkcnt::EmmccoreBlkcntSpec>;
+#[doc(alias = "BLKCNT")]
+pub type Blkcnt = crate::Reg<blkcnt::BlkcntSpec>;
 #[doc = "Block count register"]
-pub mod emmccore_blkcnt;
-#[doc = "EMMCCORE_ARG (rw) register accessor: Argument register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_arg::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_arg::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_arg`]
+pub mod blkcnt;
+#[doc = "ARG (rw) register accessor: Argument register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`arg::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`arg::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@arg`]
 module"]
-#[doc(alias = "EMMCCORE_ARG")]
-pub type EmmccoreArg = crate::Reg<emmccore_arg::EmmccoreArgSpec>;
+#[doc(alias = "ARG")]
+pub type Arg = crate::Reg<arg::ArgSpec>;
 #[doc = "Argument register"]
-pub mod emmccore_arg;
-#[doc = "EMMCCORE_TRANSMOD (rw) register accessor: Transfer mode register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_transmod::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_transmod::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_transmod`]
+pub mod arg;
+#[doc = "TRANSMOD (rw) register accessor: Transfer mode register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`transmod::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`transmod::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@transmod`]
 module"]
-#[doc(alias = "EMMCCORE_TRANSMOD")]
-pub type EmmccoreTransmod = crate::Reg<emmccore_transmod::EmmccoreTransmodSpec>;
+#[doc(alias = "TRANSMOD")]
+pub type Transmod = crate::Reg<transmod::TransmodSpec>;
 #[doc = "Transfer mode register"]
-pub mod emmccore_transmod;
-#[doc = "EMMCCORE_CMD (rw) register accessor: Command register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_cmd::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_cmd::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_cmd`]
+pub mod transmod;
+#[doc = "CMD (rw) register accessor: Command register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cmd::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cmd::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmd`]
 module"]
-#[doc(alias = "EMMCCORE_CMD")]
-pub type EmmccoreCmd = crate::Reg<emmccore_cmd::EmmccoreCmdSpec>;
+#[doc(alias = "CMD")]
+pub type Cmd = crate::Reg<cmd::CmdSpec>;
 #[doc = "Command register"]
-pub mod emmccore_cmd;
-#[doc = "EMMCCORE_RESP0 (rw) register accessor: Response register bit \\[31:0\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_resp0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_resp0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_resp0`]
+pub mod cmd;
+#[doc = "RESP0 (rw) register accessor: Response register bit \\[31:0\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`resp0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`resp0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@resp0`]
 module"]
-#[doc(alias = "EMMCCORE_RESP0")]
-pub type EmmccoreResp0 = crate::Reg<emmccore_resp0::EmmccoreResp0Spec>;
+#[doc(alias = "RESP0")]
+pub type Resp0 = crate::Reg<resp0::Resp0Spec>;
 #[doc = "Response register bit \\[31:0\\]"]
-pub mod emmccore_resp0;
-#[doc = "EMMCCORE_RESP1 (rw) register accessor: Response register bit \\[63:32\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_resp1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_resp1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_resp1`]
+pub mod resp0;
+#[doc = "RESP1 (rw) register accessor: Response register bit \\[63:32\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`resp1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`resp1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@resp1`]
 module"]
-#[doc(alias = "EMMCCORE_RESP1")]
-pub type EmmccoreResp1 = crate::Reg<emmccore_resp1::EmmccoreResp1Spec>;
+#[doc(alias = "RESP1")]
+pub type Resp1 = crate::Reg<resp1::Resp1Spec>;
 #[doc = "Response register bit \\[63:32\\]"]
-pub mod emmccore_resp1;
-#[doc = "EMMCCORE_RESP2 (rw) register accessor: Response register bit \\[95:64\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_resp2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_resp2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_resp2`]
+pub mod resp1;
+#[doc = "RESP2 (rw) register accessor: Response register bit \\[95:64\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`resp2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`resp2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@resp2`]
 module"]
-#[doc(alias = "EMMCCORE_RESP2")]
-pub type EmmccoreResp2 = crate::Reg<emmccore_resp2::EmmccoreResp2Spec>;
+#[doc(alias = "RESP2")]
+pub type Resp2 = crate::Reg<resp2::Resp2Spec>;
 #[doc = "Response register bit \\[95:64\\]"]
-pub mod emmccore_resp2;
-#[doc = "EMMCCORE_RESP3 (rw) register accessor: Response register bit \\[127:98\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_resp3::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_resp3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_resp3`]
+pub mod resp2;
+#[doc = "RESP3 (rw) register accessor: Response register bit \\[127:98\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`resp3::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`resp3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@resp3`]
 module"]
-#[doc(alias = "EMMCCORE_RESP3")]
-pub type EmmccoreResp3 = crate::Reg<emmccore_resp3::EmmccoreResp3Spec>;
+#[doc(alias = "RESP3")]
+pub type Resp3 = crate::Reg<resp3::Resp3Spec>;
 #[doc = "Response register bit \\[127:98\\]"]
-pub mod emmccore_resp3;
-#[doc = "EMMCCORE_BUFFER (rw) register accessor: Buffer data port register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_buffer::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_buffer::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_buffer`]
+pub mod resp3;
+#[doc = "BUFFER (rw) register accessor: Buffer data port register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`buffer::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`buffer::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@buffer`]
 module"]
-#[doc(alias = "EMMCCORE_BUFFER")]
-pub type EmmccoreBuffer = crate::Reg<emmccore_buffer::EmmccoreBufferSpec>;
+#[doc(alias = "BUFFER")]
+pub type Buffer = crate::Reg<buffer::BufferSpec>;
 #[doc = "Buffer data port register"]
-pub mod emmccore_buffer;
-#[doc = "EMMCCORE_PRESTS (rw) register accessor: Present state register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_prests::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_prests::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_prests`]
+pub mod buffer;
+#[doc = "PRESTS (rw) register accessor: Present state register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`prests::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`prests::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@prests`]
 module"]
-#[doc(alias = "EMMCCORE_PRESTS")]
-pub type EmmccorePrests = crate::Reg<emmccore_prests::EmmccorePrestsSpec>;
+#[doc(alias = "PRESTS")]
+pub type Prests = crate::Reg<prests::PrestsSpec>;
 #[doc = "Present state register"]
-pub mod emmccore_prests;
-#[doc = "EMMCCORE_HOSTCTRL1 (rw) register accessor: Host control 1 register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_hostctrl1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_hostctrl1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_hostctrl1`]
+pub mod prests;
+#[doc = "HOSTCTRL1 (rw) register accessor: Host control 1 register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hostctrl1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hostctrl1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hostctrl1`]
 module"]
-#[doc(alias = "EMMCCORE_HOSTCTRL1")]
-pub type EmmccoreHostctrl1 = crate::Reg<emmccore_hostctrl1::EmmccoreHostctrl1Spec>;
+#[doc(alias = "HOSTCTRL1")]
+pub type Hostctrl1 = crate::Reg<hostctrl1::Hostctrl1Spec>;
 #[doc = "Host control 1 register"]
-pub mod emmccore_hostctrl1;
-#[doc = "EMMCCORE_PWRCTRL (rw) register accessor: Power control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_pwrctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_pwrctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_pwrctrl`]
+pub mod hostctrl1;
+#[doc = "PWRCTRL (rw) register accessor: Power control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pwrctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pwrctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pwrctrl`]
 module"]
-#[doc(alias = "EMMCCORE_PWRCTRL")]
-pub type EmmccorePwrctrl = crate::Reg<emmccore_pwrctrl::EmmccorePwrctrlSpec>;
+#[doc(alias = "PWRCTRL")]
+pub type Pwrctrl = crate::Reg<pwrctrl::PwrctrlSpec>;
 #[doc = "Power control register"]
-pub mod emmccore_pwrctrl;
-#[doc = "EMMCCORE_BLKGAPCTRL (rw) register accessor: Block gap control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_blkgapctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_blkgapctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_blkgapctrl`]
+pub mod pwrctrl;
+#[doc = "BLKGAPCTRL (rw) register accessor: Block gap control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`blkgapctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`blkgapctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@blkgapctrl`]
 module"]
-#[doc(alias = "EMMCCORE_BLKGAPCTRL")]
-pub type EmmccoreBlkgapctrl = crate::Reg<emmccore_blkgapctrl::EmmccoreBlkgapctrlSpec>;
+#[doc(alias = "BLKGAPCTRL")]
+pub type Blkgapctrl = crate::Reg<blkgapctrl::BlkgapctrlSpec>;
 #[doc = "Block gap control register"]
-pub mod emmccore_blkgapctrl;
-#[doc = "EMMCCORE_CLKCTRL (rw) register accessor: Clock control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_clkctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_clkctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_clkctrl`]
+pub mod blkgapctrl;
+#[doc = "CLKCTRL (rw) register accessor: Clock control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clkctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clkctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@clkctrl`]
 module"]
-#[doc(alias = "EMMCCORE_CLKCTRL")]
-pub type EmmccoreClkctrl = crate::Reg<emmccore_clkctrl::EmmccoreClkctrlSpec>;
+#[doc(alias = "CLKCTRL")]
+pub type Clkctrl = crate::Reg<clkctrl::ClkctrlSpec>;
 #[doc = "Clock control Register"]
-pub mod emmccore_clkctrl;
-#[doc = "EMMCCORE_TIMEOUT (rw) register accessor: Timeout control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_timeout::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_timeout::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_timeout`]
+pub mod clkctrl;
+#[doc = "TIMEOUT (rw) register accessor: Timeout control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`timeout::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`timeout::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@timeout`]
 module"]
-#[doc(alias = "EMMCCORE_TIMEOUT")]
-pub type EmmccoreTimeout = crate::Reg<emmccore_timeout::EmmccoreTimeoutSpec>;
+#[doc(alias = "TIMEOUT")]
+pub type Timeout = crate::Reg<timeout::TimeoutSpec>;
 #[doc = "Timeout control register"]
-pub mod emmccore_timeout;
-#[doc = "EMMCCORE_SWRST (rw) register accessor: Software reset register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_swrst::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_swrst::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_swrst`]
+pub mod timeout;
+#[doc = "SWRST (rw) register accessor: Software reset register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`swrst::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`swrst::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@swrst`]
 module"]
-#[doc(alias = "EMMCCORE_SWRST")]
-pub type EmmccoreSwrst = crate::Reg<emmccore_swrst::EmmccoreSwrstSpec>;
+#[doc(alias = "SWRST")]
+pub type Swrst = crate::Reg<swrst::SwrstSpec>;
 #[doc = "Software reset register"]
-pub mod emmccore_swrst;
-#[doc = "EMMCCORE_NORINTSTS (rw) register accessor: Normal interrupt status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_norintsts::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_norintsts::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_norintsts`]
+pub mod swrst;
+#[doc = "NORINTSTS (rw) register accessor: Normal interrupt status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`norintsts::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`norintsts::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@norintsts`]
 module"]
-#[doc(alias = "EMMCCORE_NORINTSTS")]
-pub type EmmccoreNorintsts = crate::Reg<emmccore_norintsts::EmmccoreNorintstsSpec>;
+#[doc(alias = "NORINTSTS")]
+pub type Norintsts = crate::Reg<norintsts::NorintstsSpec>;
 #[doc = "Normal interrupt status register"]
-pub mod emmccore_norintsts;
-#[doc = "EMMCCORE_ERRINTSTS (rw) register accessor: Error interrupt status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_errintsts::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_errintsts::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_errintsts`]
+pub mod norintsts;
+#[doc = "ERRINTSTS (rw) register accessor: Error interrupt status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`errintsts::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`errintsts::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@errintsts`]
 module"]
-#[doc(alias = "EMMCCORE_ERRINTSTS")]
-pub type EmmccoreErrintsts = crate::Reg<emmccore_errintsts::EmmccoreErrintstsSpec>;
+#[doc(alias = "ERRINTSTS")]
+pub type Errintsts = crate::Reg<errintsts::ErrintstsSpec>;
 #[doc = "Error interrupt status register"]
-pub mod emmccore_errintsts;
-#[doc = "EMMCCORE_NORINTSTSENA (rw) register accessor: Normal interrupt status enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_norintstsena::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_norintstsena::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_norintstsena`]
+pub mod errintsts;
+#[doc = "NORINTSTSENA (rw) register accessor: Normal interrupt status enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`norintstsena::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`norintstsena::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@norintstsena`]
 module"]
-#[doc(alias = "EMMCCORE_NORINTSTSENA")]
-pub type EmmccoreNorintstsena = crate::Reg<emmccore_norintstsena::EmmccoreNorintstsenaSpec>;
+#[doc(alias = "NORINTSTSENA")]
+pub type Norintstsena = crate::Reg<norintstsena::NorintstsenaSpec>;
 #[doc = "Normal interrupt status enable register"]
-pub mod emmccore_norintstsena;
-#[doc = "EMMCCORE_ERRINTSTSENA (rw) register accessor: Error interrupt status enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_errintstsena::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_errintstsena::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_errintstsena`]
+pub mod norintstsena;
+#[doc = "ERRINTSTSENA (rw) register accessor: Error interrupt status enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`errintstsena::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`errintstsena::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@errintstsena`]
 module"]
-#[doc(alias = "EMMCCORE_ERRINTSTSENA")]
-pub type EmmccoreErrintstsena = crate::Reg<emmccore_errintstsena::EmmccoreErrintstsenaSpec>;
+#[doc(alias = "ERRINTSTSENA")]
+pub type Errintstsena = crate::Reg<errintstsena::ErrintstsenaSpec>;
 #[doc = "Error interrupt status enable register"]
-pub mod emmccore_errintstsena;
-#[doc = "EMMCCORE_NORINTSIGENA (rw) register accessor: Normal interrupt signal enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_norintsigena::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_norintsigena::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_norintsigena`]
+pub mod errintstsena;
+#[doc = "NORINTSIGENA (rw) register accessor: Normal interrupt signal enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`norintsigena::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`norintsigena::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@norintsigena`]
 module"]
-#[doc(alias = "EMMCCORE_NORINTSIGENA")]
-pub type EmmccoreNorintsigena = crate::Reg<emmccore_norintsigena::EmmccoreNorintsigenaSpec>;
+#[doc(alias = "NORINTSIGENA")]
+pub type Norintsigena = crate::Reg<norintsigena::NorintsigenaSpec>;
 #[doc = "Normal interrupt signal enable register"]
-pub mod emmccore_norintsigena;
-#[doc = "EMMCCORE_ERRINTSIGENA (rw) register accessor: Error interrupt signal enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_errintsigena::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_errintsigena::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_errintsigena`]
+pub mod norintsigena;
+#[doc = "ERRINTSIGENA (rw) register accessor: Error interrupt signal enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`errintsigena::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`errintsigena::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@errintsigena`]
 module"]
-#[doc(alias = "EMMCCORE_ERRINTSIGENA")]
-pub type EmmccoreErrintsigena = crate::Reg<emmccore_errintsigena::EmmccoreErrintsigenaSpec>;
+#[doc(alias = "ERRINTSIGENA")]
+pub type Errintsigena = crate::Reg<errintsigena::ErrintsigenaSpec>;
 #[doc = "Error interrupt signal enable register"]
-pub mod emmccore_errintsigena;
-#[doc = "EMMCCORE_ACMDERRSTS (r) register accessor: Auto CMD error status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_acmderrsts::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_acmderrsts`]
+pub mod errintsigena;
+#[doc = "ACMDERRSTS (r) register accessor: Auto CMD error status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`acmderrsts::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@acmderrsts`]
 module"]
-#[doc(alias = "EMMCCORE_ACMDERRSTS")]
-pub type EmmccoreAcmderrsts = crate::Reg<emmccore_acmderrsts::EmmccoreAcmderrstsSpec>;
+#[doc(alias = "ACMDERRSTS")]
+pub type Acmderrsts = crate::Reg<acmderrsts::AcmderrstsSpec>;
 #[doc = "Auto CMD error status register"]
-pub mod emmccore_acmderrsts;
-#[doc = "EMMCCORE_HOSTCTRL2 (rw) register accessor: Host Control 2 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_hostctrl2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_hostctrl2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_hostctrl2`]
+pub mod acmderrsts;
+#[doc = "HOSTCTRL2 (rw) register accessor: Host Control 2 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hostctrl2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hostctrl2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hostctrl2`]
 module"]
-#[doc(alias = "EMMCCORE_HOSTCTRL2")]
-pub type EmmccoreHostctrl2 = crate::Reg<emmccore_hostctrl2::EmmccoreHostctrl2Spec>;
+#[doc(alias = "HOSTCTRL2")]
+pub type Hostctrl2 = crate::Reg<hostctrl2::Hostctrl2Spec>;
 #[doc = "Host Control 2 Register"]
-pub mod emmccore_hostctrl2;
-#[doc = "EMMCCORE_CAP (rw) register accessor: Capabilities register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_cap::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_cap::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_cap`]
+pub mod hostctrl2;
+#[doc = "CAP (rw) register accessor: Capabilities register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cap::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cap::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap`]
 module"]
-#[doc(alias = "EMMCCORE_CAP")]
-pub type EmmccoreCap = crate::Reg<emmccore_cap::EmmccoreCapSpec>;
+#[doc(alias = "CAP")]
+pub type Cap = crate::Reg<cap::CapSpec>;
 #[doc = "Capabilities register"]
-pub mod emmccore_cap;
-#[doc = "EMMCCORE_FEACMD (w) register accessor: Force event register for Auto CMD error status\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_feacmd::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_feacmd`]
+pub mod cap;
+#[doc = "FEACMD (w) register accessor: Force event register for Auto CMD error status\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`feacmd::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@feacmd`]
 module"]
-#[doc(alias = "EMMCCORE_FEACMD")]
-pub type EmmccoreFeacmd = crate::Reg<emmccore_feacmd::EmmccoreFeacmdSpec>;
+#[doc(alias = "FEACMD")]
+pub type Feacmd = crate::Reg<feacmd::FeacmdSpec>;
 #[doc = "Force event register for Auto CMD error status"]
-pub mod emmccore_feacmd;
-#[doc = "EMMCCORE_FEERRINT (rw) register accessor: Force event register for error interrupt status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_feerrint::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_feerrint::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_feerrint`]
+pub mod feacmd;
+#[doc = "FEERRINT (rw) register accessor: Force event register for error interrupt status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`feerrint::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`feerrint::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@feerrint`]
 module"]
-#[doc(alias = "EMMCCORE_FEERRINT")]
-pub type EmmccoreFeerrint = crate::Reg<emmccore_feerrint::EmmccoreFeerrintSpec>;
+#[doc(alias = "FEERRINT")]
+pub type Feerrint = crate::Reg<feerrint::FeerrintSpec>;
 #[doc = "Force event register for error interrupt status"]
-pub mod emmccore_feerrint;
-#[doc = "EMMCCORE_ADMAERRSTS (r) register accessor: ADMA error status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_admaerrsts::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_admaerrsts`]
+pub mod feerrint;
+#[doc = "ADMAERRSTS (r) register accessor: ADMA error status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`admaerrsts::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@admaerrsts`]
 module"]
-#[doc(alias = "EMMCCORE_ADMAERRSTS")]
-pub type EmmccoreAdmaerrsts = crate::Reg<emmccore_admaerrsts::EmmccoreAdmaerrstsSpec>;
+#[doc(alias = "ADMAERRSTS")]
+pub type Admaerrsts = crate::Reg<admaerrsts::AdmaerrstsSpec>;
 #[doc = "ADMA error status register"]
-pub mod emmccore_admaerrsts;
-#[doc = "EMMCCORE_ADMAADDR (rw) register accessor: ADMA system address register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_admaaddr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_admaaddr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_admaaddr`]
+pub mod admaerrsts;
+#[doc = "ADMAADDR (rw) register accessor: ADMA system address register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`admaaddr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`admaaddr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@admaaddr`]
 module"]
-#[doc(alias = "EMMCCORE_ADMAADDR")]
-pub type EmmccoreAdmaaddr = crate::Reg<emmccore_admaaddr::EmmccoreAdmaaddrSpec>;
+#[doc(alias = "ADMAADDR")]
+pub type Admaaddr = crate::Reg<admaaddr::AdmaaddrSpec>;
 #[doc = "ADMA system address register"]
-pub mod emmccore_admaaddr;
-#[doc = "EMMCCORE_PVALINIT (r) register accessor: Preset value register for Initialization\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_pvalinit::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_pvalinit`]
+pub mod admaaddr;
+#[doc = "PVALINIT (r) register accessor: Preset value register for Initialization\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pvalinit::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pvalinit`]
 module"]
-#[doc(alias = "EMMCCORE_PVALINIT")]
-pub type EmmccorePvalinit = crate::Reg<emmccore_pvalinit::EmmccorePvalinitSpec>;
+#[doc(alias = "PVALINIT")]
+pub type Pvalinit = crate::Reg<pvalinit::PvalinitSpec>;
 #[doc = "Preset value register for Initialization"]
-pub mod emmccore_pvalinit;
-#[doc = "EMMCCORE_PVALDS (r) register accessor: Preset value register for Default Speed\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_pvalds::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_pvalds`]
+pub mod pvalinit;
+#[doc = "PVALDS (r) register accessor: Preset value register for Default Speed\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pvalds::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pvalds`]
 module"]
-#[doc(alias = "EMMCCORE_PVALDS")]
-pub type EmmccorePvalds = crate::Reg<emmccore_pvalds::EmmccorePvaldsSpec>;
+#[doc(alias = "PVALDS")]
+pub type Pvalds = crate::Reg<pvalds::PvaldsSpec>;
 #[doc = "Preset value register for Default Speed"]
-pub mod emmccore_pvalds;
-#[doc = "EMMCCORE_PVALHS (r) register accessor: Preset value register for High Speed\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_pvalhs::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_pvalhs`]
+pub mod pvalds;
+#[doc = "PVALHS (r) register accessor: Preset value register for High Speed\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pvalhs::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pvalhs`]
 module"]
-#[doc(alias = "EMMCCORE_PVALHS")]
-pub type EmmccorePvalhs = crate::Reg<emmccore_pvalhs::EmmccorePvalhsSpec>;
+#[doc(alias = "PVALHS")]
+pub type Pvalhs = crate::Reg<pvalhs::PvalhsSpec>;
 #[doc = "Preset value register for High Speed"]
-pub mod emmccore_pvalhs;
-#[doc = "EMMCCORE_PVALSDR12 (r) register accessor: Preset value register for SDR12\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_pvalsdr12::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_pvalsdr12`]
+pub mod pvalhs;
+#[doc = "PVALSDR12 (r) register accessor: Preset value register for SDR12\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pvalsdr12::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pvalsdr12`]
 module"]
-#[doc(alias = "EMMCCORE_PVALSDR12")]
-pub type EmmccorePvalsdr12 = crate::Reg<emmccore_pvalsdr12::EmmccorePvalsdr12Spec>;
+#[doc(alias = "PVALSDR12")]
+pub type Pvalsdr12 = crate::Reg<pvalsdr12::Pvalsdr12Spec>;
 #[doc = "Preset value register for SDR12"]
-pub mod emmccore_pvalsdr12;
-#[doc = "EMMCCORE_PVALSDR25 (r) register accessor: Preset value register for SDR25\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_pvalsdr25::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_pvalsdr25`]
+pub mod pvalsdr12;
+#[doc = "PVALSDR25 (r) register accessor: Preset value register for SDR25\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pvalsdr25::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pvalsdr25`]
 module"]
-#[doc(alias = "EMMCCORE_PVALSDR25")]
-pub type EmmccorePvalsdr25 = crate::Reg<emmccore_pvalsdr25::EmmccorePvalsdr25Spec>;
+#[doc(alias = "PVALSDR25")]
+pub type Pvalsdr25 = crate::Reg<pvalsdr25::Pvalsdr25Spec>;
 #[doc = "Preset value register for SDR25"]
-pub mod emmccore_pvalsdr25;
-#[doc = "EMMCCORE_PVALSDR50 (r) register accessor: Preset value register for SDR50\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_pvalsdr50::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_pvalsdr50`]
+pub mod pvalsdr25;
+#[doc = "PVALSDR50 (r) register accessor: Preset value register for SDR50\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pvalsdr50::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pvalsdr50`]
 module"]
-#[doc(alias = "EMMCCORE_PVALSDR50")]
-pub type EmmccorePvalsdr50 = crate::Reg<emmccore_pvalsdr50::EmmccorePvalsdr50Spec>;
+#[doc(alias = "PVALSDR50")]
+pub type Pvalsdr50 = crate::Reg<pvalsdr50::Pvalsdr50Spec>;
 #[doc = "Preset value register for SDR50"]
-pub mod emmccore_pvalsdr50;
-#[doc = "EMMCCORE_PVALSDR104 (r) register accessor: Preset value register for SDR104\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_pvalsdr104::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_pvalsdr104`]
+pub mod pvalsdr50;
+#[doc = "PVALSDR104 (r) register accessor: Preset value register for SDR104\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pvalsdr104::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pvalsdr104`]
 module"]
-#[doc(alias = "EMMCCORE_PVALSDR104")]
-pub type EmmccorePvalsdr104 = crate::Reg<emmccore_pvalsdr104::EmmccorePvalsdr104Spec>;
+#[doc(alias = "PVALSDR104")]
+pub type Pvalsdr104 = crate::Reg<pvalsdr104::Pvalsdr104Spec>;
 #[doc = "Preset value register for SDR104"]
-pub mod emmccore_pvalsdr104;
-#[doc = "EMMCCORE_PVALDDR50 (r) register accessor: Preset value register for DDR50\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_pvalddr50::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_pvalddr50`]
+pub mod pvalsdr104;
+#[doc = "PVALDDR50 (r) register accessor: Preset value register for DDR50\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pvalddr50::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pvalddr50`]
 module"]
-#[doc(alias = "EMMCCORE_PVALDDR50")]
-pub type EmmccorePvalddr50 = crate::Reg<emmccore_pvalddr50::EmmccorePvalddr50Spec>;
+#[doc(alias = "PVALDDR50")]
+pub type Pvalddr50 = crate::Reg<pvalddr50::Pvalddr50Spec>;
 #[doc = "Preset value register for DDR50"]
-pub mod emmccore_pvalddr50;
-#[doc = "EMMCCORE_BOOTTIMEOUT (rw) register accessor: Boot timeout control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_boottimeout::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_boottimeout::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_boottimeout`]
+pub mod pvalddr50;
+#[doc = "BOOTTIMEOUT (rw) register accessor: Boot timeout control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`boottimeout::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`boottimeout::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@boottimeout`]
 module"]
-#[doc(alias = "EMMCCORE_BOOTTIMEOUT")]
-pub type EmmccoreBoottimeout = crate::Reg<emmccore_boottimeout::EmmccoreBoottimeoutSpec>;
+#[doc(alias = "BOOTTIMEOUT")]
+pub type Boottimeout = crate::Reg<boottimeout::BoottimeoutSpec>;
 #[doc = "Boot timeout control register"]
-pub mod emmccore_boottimeout;
-#[doc = "EMMCCORE_PVALHS400 (r) register accessor: Preset value register for HS400\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_pvalhs400::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_pvalhs400`]
+pub mod boottimeout;
+#[doc = "PVALHS400 (r) register accessor: Preset value register for HS400\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pvalhs400::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pvalhs400`]
 module"]
-#[doc(alias = "EMMCCORE_PVALHS400")]
-pub type EmmccorePvalhs400 = crate::Reg<emmccore_pvalhs400::EmmccorePvalhs400Spec>;
+#[doc(alias = "PVALHS400")]
+pub type Pvalhs400 = crate::Reg<pvalhs400::Pvalhs400Spec>;
 #[doc = "Preset value register for HS400"]
-pub mod emmccore_pvalhs400;
-#[doc = "EMMCCORE_VENDOR (rw) register accessor: Vendor register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_vendor::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_vendor::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_vendor`]
+pub mod pvalhs400;
+#[doc = "VENDOR (rw) register accessor: Vendor register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`vendor::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`vendor::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@vendor`]
 module"]
-#[doc(alias = "EMMCCORE_VENDOR")]
-pub type EmmccoreVendor = crate::Reg<emmccore_vendor::EmmccoreVendorSpec>;
+#[doc(alias = "VENDOR")]
+pub type Vendor = crate::Reg<vendor::VendorSpec>;
 #[doc = "Vendor register"]
-pub mod emmccore_vendor;
-#[doc = "EMMCCORE_SLOTINTSTS (r) register accessor: Slot interrupt status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_slotintsts::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_slotintsts`]
+pub mod vendor;
+#[doc = "SLOTINTSTS (r) register accessor: Slot interrupt status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`slotintsts::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@slotintsts`]
 module"]
-#[doc(alias = "EMMCCORE_SLOTINTSTS")]
-pub type EmmccoreSlotintsts = crate::Reg<emmccore_slotintsts::EmmccoreSlotintstsSpec>;
+#[doc(alias = "SLOTINTSTS")]
+pub type Slotintsts = crate::Reg<slotintsts::SlotintstsSpec>;
 #[doc = "Slot interrupt status register"]
-pub mod emmccore_slotintsts;
-#[doc = "EMMCCORE_VERSION (r) register accessor: Host controller version register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_version::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_version`]
+pub mod slotintsts;
+#[doc = "VERSION (r) register accessor: Host controller version register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`version::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@version`]
 module"]
-#[doc(alias = "EMMCCORE_VERSION")]
-pub type EmmccoreVersion = crate::Reg<emmccore_version::EmmccoreVersionSpec>;
+#[doc(alias = "VERSION")]
+pub type Version = crate::Reg<version::VersionSpec>;
 #[doc = "Host controller version register"]
-pub mod emmccore_version;
-#[doc = "EMMCCORE_CQVER (r) register accessor: Command queueing version register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_cqver::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_cqver`]
+pub mod version;
+#[doc = "CQVER (r) register accessor: Command queueing version register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cqver::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cqver`]
 module"]
-#[doc(alias = "EMMCCORE_CQVER")]
-pub type EmmccoreCqver = crate::Reg<emmccore_cqver::EmmccoreCqverSpec>;
+#[doc(alias = "CQVER")]
+pub type Cqver = crate::Reg<cqver::CqverSpec>;
 #[doc = "Command queueing version register"]
-pub mod emmccore_cqver;
-#[doc = "EMMCCORE_CQCAP (r) register accessor: Command queueing capabilities register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_cqcap::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_cqcap`]
+pub mod cqver;
+#[doc = "CQCAP (r) register accessor: Command queueing capabilities register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cqcap::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cqcap`]
 module"]
-#[doc(alias = "EMMCCORE_CQCAP")]
-pub type EmmccoreCqcap = crate::Reg<emmccore_cqcap::EmmccoreCqcapSpec>;
+#[doc(alias = "CQCAP")]
+pub type Cqcap = crate::Reg<cqcap::CqcapSpec>;
 #[doc = "Command queueing capabilities register"]
-pub mod emmccore_cqcap;
-#[doc = "EMMCCORE_CQCFG (rw) register accessor: Command queueing configuration register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_cqcfg::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_cqcfg::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_cqcfg`]
+pub mod cqcap;
+#[doc = "CQCFG (rw) register accessor: Command queueing configuration register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cqcfg::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cqcfg::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cqcfg`]
 module"]
-#[doc(alias = "EMMCCORE_CQCFG")]
-pub type EmmccoreCqcfg = crate::Reg<emmccore_cqcfg::EmmccoreCqcfgSpec>;
+#[doc(alias = "CQCFG")]
+pub type Cqcfg = crate::Reg<cqcfg::CqcfgSpec>;
 #[doc = "Command queueing configuration register"]
-pub mod emmccore_cqcfg;
-#[doc = "EMMCCORE_CQCTRL (rw) register accessor: Command queueing control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_cqctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_cqctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_cqctrl`]
+pub mod cqcfg;
+#[doc = "CQCTRL (rw) register accessor: Command queueing control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cqctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cqctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cqctrl`]
 module"]
-#[doc(alias = "EMMCCORE_CQCTRL")]
-pub type EmmccoreCqctrl = crate::Reg<emmccore_cqctrl::EmmccoreCqctrlSpec>;
+#[doc(alias = "CQCTRL")]
+pub type Cqctrl = crate::Reg<cqctrl::CqctrlSpec>;
 #[doc = "Command queueing control register"]
-pub mod emmccore_cqctrl;
-#[doc = "EMMCCORE_CQINTSTS (rw) register accessor: Command queueing interrupt status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_cqintsts::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_cqintsts::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_cqintsts`]
+pub mod cqctrl;
+#[doc = "CQINTSTS (rw) register accessor: Command queueing interrupt status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cqintsts::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cqintsts::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cqintsts`]
 module"]
-#[doc(alias = "EMMCCORE_CQINTSTS")]
-pub type EmmccoreCqintsts = crate::Reg<emmccore_cqintsts::EmmccoreCqintstsSpec>;
+#[doc(alias = "CQINTSTS")]
+pub type Cqintsts = crate::Reg<cqintsts::CqintstsSpec>;
 #[doc = "Command queueing interrupt status register"]
-pub mod emmccore_cqintsts;
-#[doc = "EMMCCORE_CQINTSTSENA (rw) register accessor: Command queueing interrupt status enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_cqintstsena::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_cqintstsena::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_cqintstsena`]
+pub mod cqintsts;
+#[doc = "CQINTSTSENA (rw) register accessor: Command queueing interrupt status enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cqintstsena::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cqintstsena::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cqintstsena`]
 module"]
-#[doc(alias = "EMMCCORE_CQINTSTSENA")]
-pub type EmmccoreCqintstsena = crate::Reg<emmccore_cqintstsena::EmmccoreCqintstsenaSpec>;
+#[doc(alias = "CQINTSTSENA")]
+pub type Cqintstsena = crate::Reg<cqintstsena::CqintstsenaSpec>;
 #[doc = "Command queueing interrupt status enable register"]
-pub mod emmccore_cqintstsena;
-#[doc = "EMMCCORE_CQINTSIGENA (rw) register accessor: Command queueing interrupt signal enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_cqintsigena::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_cqintsigena::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_cqintsigena`]
+pub mod cqintstsena;
+#[doc = "CQINTSIGENA (rw) register accessor: Command queueing interrupt signal enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cqintsigena::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cqintsigena::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cqintsigena`]
 module"]
-#[doc(alias = "EMMCCORE_CQINTSIGENA")]
-pub type EmmccoreCqintsigena = crate::Reg<emmccore_cqintsigena::EmmccoreCqintsigenaSpec>;
+#[doc(alias = "CQINTSIGENA")]
+pub type Cqintsigena = crate::Reg<cqintsigena::CqintsigenaSpec>;
 #[doc = "Command queueing interrupt signal enable register"]
-pub mod emmccore_cqintsigena;
-#[doc = "EMMCCORE_CQINTCOAL (rw) register accessor: Command queueing interrupt coalescing register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_cqintcoal::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_cqintcoal::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_cqintcoal`]
+pub mod cqintsigena;
+#[doc = "CQINTCOAL (rw) register accessor: Command queueing interrupt coalescing register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cqintcoal::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cqintcoal::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cqintcoal`]
 module"]
-#[doc(alias = "EMMCCORE_CQINTCOAL")]
-pub type EmmccoreCqintcoal = crate::Reg<emmccore_cqintcoal::EmmccoreCqintcoalSpec>;
+#[doc(alias = "CQINTCOAL")]
+pub type Cqintcoal = crate::Reg<cqintcoal::CqintcoalSpec>;
 #[doc = "Command queueing interrupt coalescing register"]
-pub mod emmccore_cqintcoal;
-#[doc = "EMMCCORE_CQTDLBA (rw) register accessor: Command queueing task descriptor list base address register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_cqtdlba::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_cqtdlba::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_cqtdlba`]
+pub mod cqintcoal;
+#[doc = "CQTDLBA (rw) register accessor: Command queueing task descriptor list base address register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cqtdlba::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cqtdlba::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cqtdlba`]
 module"]
-#[doc(alias = "EMMCCORE_CQTDLBA")]
-pub type EmmccoreCqtdlba = crate::Reg<emmccore_cqtdlba::EmmccoreCqtdlbaSpec>;
+#[doc(alias = "CQTDLBA")]
+pub type Cqtdlba = crate::Reg<cqtdlba::CqtdlbaSpec>;
 #[doc = "Command queueing task descriptor list base address register"]
-pub mod emmccore_cqtdlba;
-#[doc = "EMMCCORE_CQTDLBAU (rw) register accessor: Command queueing task descriptor list base address upper 32bits register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_cqtdlbau::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_cqtdlbau::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_cqtdlbau`]
+pub mod cqtdlba;
+#[doc = "CQTDLBAU (rw) register accessor: Command queueing task descriptor list base address upper 32bits register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cqtdlbau::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cqtdlbau::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cqtdlbau`]
 module"]
-#[doc(alias = "EMMCCORE_CQTDLBAU")]
-pub type EmmccoreCqtdlbau = crate::Reg<emmccore_cqtdlbau::EmmccoreCqtdlbauSpec>;
+#[doc(alias = "CQTDLBAU")]
+pub type Cqtdlbau = crate::Reg<cqtdlbau::CqtdlbauSpec>;
 #[doc = "Command queueing task descriptor list base address upper 32bits register"]
-pub mod emmccore_cqtdlbau;
-#[doc = "EMMCCORE_CQTDB (rw) register accessor: Command queueing task doorbell register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_cqtdb::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_cqtdb::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_cqtdb`]
+pub mod cqtdlbau;
+#[doc = "CQTDB (rw) register accessor: Command queueing task doorbell register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cqtdb::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cqtdb::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cqtdb`]
 module"]
-#[doc(alias = "EMMCCORE_CQTDB")]
-pub type EmmccoreCqtdb = crate::Reg<emmccore_cqtdb::EmmccoreCqtdbSpec>;
+#[doc(alias = "CQTDB")]
+pub type Cqtdb = crate::Reg<cqtdb::CqtdbSpec>;
 #[doc = "Command queueing task doorbell register"]
-pub mod emmccore_cqtdb;
-#[doc = "EMMCCORE_CQTDBN (rw) register accessor: Command queueing task doorbell notification register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_cqtdbn::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_cqtdbn::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_cqtdbn`]
+pub mod cqtdb;
+#[doc = "CQTDBN (rw) register accessor: Command queueing task doorbell notification register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cqtdbn::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cqtdbn::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cqtdbn`]
 module"]
-#[doc(alias = "EMMCCORE_CQTDBN")]
-pub type EmmccoreCqtdbn = crate::Reg<emmccore_cqtdbn::EmmccoreCqtdbnSpec>;
+#[doc(alias = "CQTDBN")]
+pub type Cqtdbn = crate::Reg<cqtdbn::CqtdbnSpec>;
 #[doc = "Command queueing task doorbell notification register"]
-pub mod emmccore_cqtdbn;
-#[doc = "EMMCCORE_CQDQSTS (r) register accessor: Command queueing device queue status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_cqdqsts::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_cqdqsts`]
+pub mod cqtdbn;
+#[doc = "CQDQSTS (r) register accessor: Command queueing device queue status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cqdqsts::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cqdqsts`]
 module"]
-#[doc(alias = "EMMCCORE_CQDQSTS")]
-pub type EmmccoreCqdqsts = crate::Reg<emmccore_cqdqsts::EmmccoreCqdqstsSpec>;
+#[doc(alias = "CQDQSTS")]
+pub type Cqdqsts = crate::Reg<cqdqsts::CqdqstsSpec>;
 #[doc = "Command queueing device queue status register"]
-pub mod emmccore_cqdqsts;
-#[doc = "EMMCCORE_CQDPT (r) register accessor: Command queueing device pending tasks register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_cqdpt::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_cqdpt`]
+pub mod cqdqsts;
+#[doc = "CQDPT (r) register accessor: Command queueing device pending tasks register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cqdpt::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cqdpt`]
 module"]
-#[doc(alias = "EMMCCORE_CQDPT")]
-pub type EmmccoreCqdpt = crate::Reg<emmccore_cqdpt::EmmccoreCqdptSpec>;
+#[doc(alias = "CQDPT")]
+pub type Cqdpt = crate::Reg<cqdpt::CqdptSpec>;
 #[doc = "Command queueing device pending tasks register"]
-pub mod emmccore_cqdpt;
-#[doc = "EMMCCORE_CQTCLR (rw) register accessor: Command queueing task clear register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_cqtclr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_cqtclr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_cqtclr`]
+pub mod cqdpt;
+#[doc = "CQTCLR (rw) register accessor: Command queueing task clear register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cqtclr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cqtclr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cqtclr`]
 module"]
-#[doc(alias = "EMMCCORE_CQTCLR")]
-pub type EmmccoreCqtclr = crate::Reg<emmccore_cqtclr::EmmccoreCqtclrSpec>;
+#[doc(alias = "CQTCLR")]
+pub type Cqtclr = crate::Reg<cqtclr::CqtclrSpec>;
 #[doc = "Command queueing task clear register"]
-pub mod emmccore_cqtclr;
-#[doc = "EMMCCORE_CQSSC1 (rw) register accessor: Command queueing send status configuration register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_cqssc1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_cqssc1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_cqssc1`]
+pub mod cqtclr;
+#[doc = "CQSSC1 (rw) register accessor: Command queueing send status configuration register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cqssc1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cqssc1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cqssc1`]
 module"]
-#[doc(alias = "EMMCCORE_CQSSC1")]
-pub type EmmccoreCqssc1 = crate::Reg<emmccore_cqssc1::EmmccoreCqssc1Spec>;
+#[doc(alias = "CQSSC1")]
+pub type Cqssc1 = crate::Reg<cqssc1::Cqssc1Spec>;
 #[doc = "Command queueing send status configuration register 1"]
-pub mod emmccore_cqssc1;
-#[doc = "EMMCCORE_CQSSC2 (rw) register accessor: Command queueing send status configuration register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_cqssc2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmccore_cqssc2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_cqssc2`]
+pub mod cqssc1;
+#[doc = "CQSSC2 (rw) register accessor: Command queueing send status configuration register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cqssc2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cqssc2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cqssc2`]
 module"]
-#[doc(alias = "EMMCCORE_CQSSC2")]
-pub type EmmccoreCqssc2 = crate::Reg<emmccore_cqssc2::EmmccoreCqssc2Spec>;
+#[doc(alias = "CQSSC2")]
+pub type Cqssc2 = crate::Reg<cqssc2::Cqssc2Spec>;
 #[doc = "Command queueing send status configuration register 2"]
-pub mod emmccore_cqssc2;
-#[doc = "EMMCCORE_CQCRDT (r) register accessor: Command queueing command response for direct-command task register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_cqcrdt::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_cqcrdt`]
+pub mod cqssc2;
+#[doc = "CQCRDT (r) register accessor: Command queueing command response for direct-command task register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cqcrdt::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cqcrdt`]
 module"]
-#[doc(alias = "EMMCCORE_CQCRDT")]
-pub type EmmccoreCqcrdt = crate::Reg<emmccore_cqcrdt::EmmccoreCqcrdtSpec>;
+#[doc(alias = "CQCRDT")]
+pub type Cqcrdt = crate::Reg<cqcrdt::CqcrdtSpec>;
 #[doc = "Command queueing command response for direct-command task register"]
-pub mod emmccore_cqcrdt;
-#[doc = "EMMCCORE_CQRMEM (r) register accessor: Command queueing response mode error mask register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_cqrmem::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_cqrmem`]
+pub mod cqcrdt;
+#[doc = "CQRMEM (r) register accessor: Command queueing response mode error mask register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cqrmem::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cqrmem`]
 module"]
-#[doc(alias = "EMMCCORE_CQRMEM")]
-pub type EmmccoreCqrmem = crate::Reg<emmccore_cqrmem::EmmccoreCqrmemSpec>;
+#[doc(alias = "CQRMEM")]
+pub type Cqrmem = crate::Reg<cqrmem::CqrmemSpec>;
 #[doc = "Command queueing response mode error mask register"]
-pub mod emmccore_cqrmem;
-#[doc = "EMMCCORE_CQTEI (r) register accessor: Command queueing task error information register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_cqtei::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_cqtei`]
+pub mod cqrmem;
+#[doc = "CQTEI (r) register accessor: Command queueing task error information register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cqtei::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cqtei`]
 module"]
-#[doc(alias = "EMMCCORE_CQTEI")]
-pub type EmmccoreCqtei = crate::Reg<emmccore_cqtei::EmmccoreCqteiSpec>;
+#[doc(alias = "CQTEI")]
+pub type Cqtei = crate::Reg<cqtei::CqteiSpec>;
 #[doc = "Command queueing task error information register"]
-pub mod emmccore_cqtei;
-#[doc = "EMMCCORE_CQCRI (r) register accessor: Command queueing command response index register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_cqcri::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_cqcri`]
+pub mod cqtei;
+#[doc = "CQCRI (r) register accessor: Command queueing command response index register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cqcri::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cqcri`]
 module"]
-#[doc(alias = "EMMCCORE_CQCRI")]
-pub type EmmccoreCqcri = crate::Reg<emmccore_cqcri::EmmccoreCqcriSpec>;
+#[doc(alias = "CQCRI")]
+pub type Cqcri = crate::Reg<cqcri::CqcriSpec>;
 #[doc = "Command queueing command response index register"]
-pub mod emmccore_cqcri;
-#[doc = "EMMCCORE_CQCRA (r) register accessor: Command queueing command response argument register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmccore_cqcra::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emmccore_cqcra`]
+pub mod cqcri;
+#[doc = "CQCRA (r) register accessor: Command queueing command response argument register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cqcra::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cqcra`]
 module"]
-#[doc(alias = "EMMCCORE_CQCRA")]
-pub type EmmccoreCqcra = crate::Reg<emmccore_cqcra::EmmccoreCqcraSpec>;
+#[doc(alias = "CQCRA")]
+pub type Cqcra = crate::Reg<cqcra::CqcraSpec>;
 #[doc = "Command queueing command response argument register"]
-pub mod emmccore_cqcra;
+pub mod cqcra;

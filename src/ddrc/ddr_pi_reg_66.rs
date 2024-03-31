@@ -6,9 +6,9 @@ pub type W = crate::W<DdrPiReg66Spec>;
 pub type PiWrlvlStrobeNumR = crate::FieldReader;
 #[doc = "Field `PI_WRLVL_STROBE_NUM` writer - Defines the write leveling strobe number in LPDDR4."]
 pub type PiWrlvlStrobeNumW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Field `PI_TODTL_2CMD_F0` reader - Defines the DRAM delay from an ODT de-assertion to the next\n\nnon-write, non-read command. The suffix \"_f0\" of the parameter\n\nname is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TODTL_2CMD_F0` reader - Defines the DRAM delay from an ODT de-assertion to the next\n\nnon-write, non-read command. The suffix '_f0' of the parameter\n\nname is omitted when in non-DFS mode."]
 pub type PiTodtl2cmdF0R = crate::FieldReader;
-#[doc = "Field `PI_TODTL_2CMD_F0` writer - Defines the DRAM delay from an ODT de-assertion to the next\n\nnon-write, non-read command. The suffix \"_f0\" of the parameter\n\nname is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TODTL_2CMD_F0` writer - Defines the DRAM delay from an ODT de-assertion to the next\n\nnon-write, non-read command. The suffix '_f0' of the parameter\n\nname is omitted when in non-DFS mode."]
 pub type PiTodtl2cmdF0W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:4 - Defines the write leveling strobe number in LPDDR4."]
@@ -16,7 +16,7 @@ impl R {
     pub fn pi_wrlvl_strobe_num(&self) -> PiWrlvlStrobeNumR {
         PiWrlvlStrobeNumR::new((self.bits & 0x1f) as u8)
     }
-    #[doc = "Bits 24:31 - Defines the DRAM delay from an ODT de-assertion to the next\n\nnon-write, non-read command. The suffix \"_f0\" of the parameter\n\nname is omitted when in non-DFS mode."]
+    #[doc = "Bits 24:31 - Defines the DRAM delay from an ODT de-assertion to the next\n\nnon-write, non-read command. The suffix '_f0' of the parameter\n\nname is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_todtl_2cmd_f0(&self) -> PiTodtl2cmdF0R {
         PiTodtl2cmdF0R::new(((self.bits >> 24) & 0xff) as u8)
@@ -29,7 +29,7 @@ impl W {
     pub fn pi_wrlvl_strobe_num(&mut self) -> PiWrlvlStrobeNumW<DdrPiReg66Spec> {
         PiWrlvlStrobeNumW::new(self, 0)
     }
-    #[doc = "Bits 24:31 - Defines the DRAM delay from an ODT de-assertion to the next\n\nnon-write, non-read command. The suffix \"_f0\" of the parameter\n\nname is omitted when in non-DFS mode."]
+    #[doc = "Bits 24:31 - Defines the DRAM delay from an ODT de-assertion to the next\n\nnon-write, non-read command. The suffix '_f0' of the parameter\n\nname is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_todtl_2cmd_f0(&mut self) -> PiTodtl2cmdF0W<DdrPiReg66Spec> {

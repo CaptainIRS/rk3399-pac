@@ -1878,17 +1878,17 @@ of Address Register for\n\nBAR N"]
     pub const fn pcie_dma_channel_1_attribute_upper(&self) -> &PcieDmaChannel1AttributeUpper {
         &self.pcie_dma_channel_1_attribute_upper
     }
-    #[doc = "0x6000a0 - PCIe DMA Interrupt Register\n\n"]
+    #[doc = "0x6000a0 - PCIe DMA Interrupt Register"]
     #[inline(always)]
     pub const fn pcie_dma_interrupt(&self) -> &PcieDmaInterrupt {
         &self.pcie_dma_interrupt
     }
-    #[doc = "0x6000a4 - PCIe DMA Interrupt Enable Register\n\n"]
+    #[doc = "0x6000a4 - PCIe DMA Interrupt Enable Register"]
     #[inline(always)]
     pub const fn pcie_dma_interrupt_enable(&self) -> &PcieDmaInterruptEnable {
         &self.pcie_dma_interrupt_enable
     }
-    #[doc = "0x6000a8 - PCIe DMA Interrupt Disable Register\n\n"]
+    #[doc = "0x6000a8 - PCIe DMA Interrupt Disable Register"]
     #[inline(always)]
     pub const fn pcie_dma_interrupt_disable(&self) -> &PcieDmaInterruptDisable {
         &self.pcie_dma_interrupt_disable
@@ -3781,24 +3781,24 @@ pub type PcieDmaChannel1AttributeUpper =
     crate::Reg<pcie_dma_channel_1_attribute_upper::PcieDmaChannel1AttributeUpperSpec>;
 #[doc = "PCIe DMA Channel 1 Attribute Upper Register\n\nUpper 32-bit Attribute Values used\n\nwhen fetching and returning link list\n\ndescriptors"]
 pub mod pcie_dma_channel_1_attribute_upper;
-#[doc = "PCIE_DMA_INTERRUPT (rw) register accessor: PCIe DMA Interrupt Register\n\n\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcie_dma_interrupt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcie_dma_interrupt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pcie_dma_interrupt`]
+#[doc = "PCIE_DMA_INTERRUPT (rw) register accessor: PCIe DMA Interrupt Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcie_dma_interrupt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcie_dma_interrupt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pcie_dma_interrupt`]
 module"]
 #[doc(alias = "PCIE_DMA_INTERRUPT")]
 pub type PcieDmaInterrupt = crate::Reg<pcie_dma_interrupt::PcieDmaInterruptSpec>;
-#[doc = "PCIe DMA Interrupt Register\n\n"]
+#[doc = "PCIe DMA Interrupt Register"]
 pub mod pcie_dma_interrupt;
-#[doc = "PCIE_DMA_INTERRUPT_ENABLE (rw) register accessor: PCIe DMA Interrupt Enable Register\n\n\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcie_dma_interrupt_enable::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcie_dma_interrupt_enable::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pcie_dma_interrupt_enable`]
+#[doc = "PCIE_DMA_INTERRUPT_ENABLE (rw) register accessor: PCIe DMA Interrupt Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcie_dma_interrupt_enable::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcie_dma_interrupt_enable::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pcie_dma_interrupt_enable`]
 module"]
 #[doc(alias = "PCIE_DMA_INTERRUPT_ENABLE")]
 pub type PcieDmaInterruptEnable = crate::Reg<pcie_dma_interrupt_enable::PcieDmaInterruptEnableSpec>;
-#[doc = "PCIe DMA Interrupt Enable Register\n\n"]
+#[doc = "PCIe DMA Interrupt Enable Register"]
 pub mod pcie_dma_interrupt_enable;
-#[doc = "PCIE_DMA_INTERRUPT_DISABLE (rw) register accessor: PCIe DMA Interrupt Disable Register\n\n\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcie_dma_interrupt_disable::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcie_dma_interrupt_disable::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pcie_dma_interrupt_disable`]
+#[doc = "PCIE_DMA_INTERRUPT_DISABLE (rw) register accessor: PCIe DMA Interrupt Disable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcie_dma_interrupt_disable::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcie_dma_interrupt_disable::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pcie_dma_interrupt_disable`]
 module"]
 #[doc(alias = "PCIE_DMA_INTERRUPT_DISABLE")]
 pub type PcieDmaInterruptDisable =
     crate::Reg<pcie_dma_interrupt_disable::PcieDmaInterruptDisableSpec>;
-#[doc = "PCIe DMA Interrupt Disable Register\n\n"]
+#[doc = "PCIe DMA Interrupt Disable Register"]
 pub mod pcie_dma_interrupt_disable;
 #[doc = "PCIE_DMA_INBOUND_BUFFER_UNCORRECTED_ECC_ERRORS (r) register accessor: PCIe DMA Inbound Buffer Uncorrected ECC Errors\n\nReserved for future use\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcie_dma_inbound_buffer_uncorrected_ecc_errors::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pcie_dma_inbound_buffer_uncorrected_ecc_errors`]
 module"]

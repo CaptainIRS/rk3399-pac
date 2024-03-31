@@ -6,13 +6,13 @@ pub type W = crate::W<DdrPiReg102Spec>;
 pub type PiTcackehR = crate::FieldReader;
 #[doc = "Field `PI_TCACKEH` writer - Indicates DRAM TCACKEH value in cycles."]
 pub type PiTcackehW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Field `PI_TMRZ_F0` reader - Indicates DRAM TMRZ value in cycles. The suffix \"_f0\" of the\n\nparameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TMRZ_F0` reader - Indicates DRAM TMRZ value in cycles. The suffix '_f0' of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTmrzF0R = crate::FieldReader;
-#[doc = "Field `PI_TMRZ_F0` writer - Indicates DRAM TMRZ value in cycles. The suffix \"_f0\" of the\n\nparameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TMRZ_F0` writer - Indicates DRAM TMRZ value in cycles. The suffix '_f0' of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTmrzF0W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Field `PI_TCAENT_F0` reader - Indicates DRAM TCAENT value in cycles. The suffix \"_f0\" of the\n\nparameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TCAENT_F0` reader - Indicates DRAM TCAENT value in cycles. The suffix '_f0' of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTcaentF0R = crate::FieldReader<u16>;
-#[doc = "Field `PI_TCAENT_F0` writer - Indicates DRAM TCAENT value in cycles. The suffix \"_f0\" of the\n\nparameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TCAENT_F0` writer - Indicates DRAM TCAENT value in cycles. The suffix '_f0' of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiTcaentF0W<'a, REG> = crate::FieldWriter<'a, REG, 14, u16>;
 impl R {
     #[doc = "Bits 0:4 - Indicates DRAM TCACKEH value in cycles."]
@@ -20,12 +20,12 @@ impl R {
     pub fn pi_tcackeh(&self) -> PiTcackehR {
         PiTcackehR::new((self.bits & 0x1f) as u8)
     }
-    #[doc = "Bits 8:12 - Indicates DRAM TMRZ value in cycles. The suffix \"_f0\" of the\n\nparameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 8:12 - Indicates DRAM TMRZ value in cycles. The suffix '_f0' of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tmrz_f0(&self) -> PiTmrzF0R {
         PiTmrzF0R::new(((self.bits >> 8) & 0x1f) as u8)
     }
-    #[doc = "Bits 16:29 - Indicates DRAM TCAENT value in cycles. The suffix \"_f0\" of the\n\nparameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 16:29 - Indicates DRAM TCAENT value in cycles. The suffix '_f0' of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tcaent_f0(&self) -> PiTcaentF0R {
         PiTcaentF0R::new(((self.bits >> 16) & 0x3fff) as u16)
@@ -38,13 +38,13 @@ impl W {
     pub fn pi_tcackeh(&mut self) -> PiTcackehW<DdrPiReg102Spec> {
         PiTcackehW::new(self, 0)
     }
-    #[doc = "Bits 8:12 - Indicates DRAM TMRZ value in cycles. The suffix \"_f0\" of the\n\nparameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 8:12 - Indicates DRAM TMRZ value in cycles. The suffix '_f0' of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tmrz_f0(&mut self) -> PiTmrzF0W<DdrPiReg102Spec> {
         PiTmrzF0W::new(self, 8)
     }
-    #[doc = "Bits 16:29 - Indicates DRAM TCAENT value in cycles. The suffix \"_f0\" of the\n\nparameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 16:29 - Indicates DRAM TCAENT value in cycles. The suffix '_f0' of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tcaent_f0(&mut self) -> PiTcaentF0W<DdrPiReg102Spec> {

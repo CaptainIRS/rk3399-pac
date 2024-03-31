@@ -4,9 +4,9 @@ pub type R = crate::R<DdrPiReg187Spec>;
 pub type W = crate::W<DdrPiReg187Spec>;
 #[doc = "Field `PI_TDFI_CTRLUPD_MIN` reader - Reports the DFI tCTRLUPD_MIN timing parameter (in DFI clocks),\n\nthe minimum cycles that dfi_ctrlupd_req must be asserted."]
 pub type PiTdfiCtrlupdMinR = crate::FieldReader;
-#[doc = "Field `PI_TDFI_CTRLUPD_MAX_F0` reader - Defines the DFI tCTRLUPD_MAX timing parameter (in DFI clocks),\n\nthe maximum cycles that dfi_ctrlupd_req can be asserted. If\n\nprogrammed to a non-zero, a timing violation causes an interrupt\n\nand bit (1) set in the PI_REG_193.pi_update_error_status\n\nparameter. The suffix \"_f0\" of the parameter name is omitted when\n\nin non-DFS mode."]
+#[doc = "Field `PI_TDFI_CTRLUPD_MAX_F0` reader - Defines the DFI tCTRLUPD_MAX timing parameter (in DFI clocks),\n\nthe maximum cycles that dfi_ctrlupd_req can be asserted. If\n\nprogrammed to a non-zero, a timing violation causes an interrupt\n\nand bit (1) set in the PI_REG_193.pi_update_error_status\n\nparameter. The suffix '_f0' of the parameter name is omitted when\n\nin non-DFS mode."]
 pub type PiTdfiCtrlupdMaxF0R = crate::FieldReader<u16>;
-#[doc = "Field `PI_TDFI_CTRLUPD_MAX_F0` writer - Defines the DFI tCTRLUPD_MAX timing parameter (in DFI clocks),\n\nthe maximum cycles that dfi_ctrlupd_req can be asserted. If\n\nprogrammed to a non-zero, a timing violation causes an interrupt\n\nand bit (1) set in the PI_REG_193.pi_update_error_status\n\nparameter. The suffix \"_f0\" of the parameter name is omitted when\n\nin non-DFS mode."]
+#[doc = "Field `PI_TDFI_CTRLUPD_MAX_F0` writer - Defines the DFI tCTRLUPD_MAX timing parameter (in DFI clocks),\n\nthe maximum cycles that dfi_ctrlupd_req can be asserted. If\n\nprogrammed to a non-zero, a timing violation causes an interrupt\n\nand bit (1) set in the PI_REG_193.pi_update_error_status\n\nparameter. The suffix '_f0' of the parameter name is omitted when\n\nin non-DFS mode."]
 pub type PiTdfiCtrlupdMaxF0W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:3 - Reports the DFI tCTRLUPD_MIN timing parameter (in DFI clocks),\n\nthe minimum cycles that dfi_ctrlupd_req must be asserted."]
@@ -14,14 +14,14 @@ impl R {
     pub fn pi_tdfi_ctrlupd_min(&self) -> PiTdfiCtrlupdMinR {
         PiTdfiCtrlupdMinR::new((self.bits & 0x0f) as u8)
     }
-    #[doc = "Bits 8:23 - Defines the DFI tCTRLUPD_MAX timing parameter (in DFI clocks),\n\nthe maximum cycles that dfi_ctrlupd_req can be asserted. If\n\nprogrammed to a non-zero, a timing violation causes an interrupt\n\nand bit (1) set in the PI_REG_193.pi_update_error_status\n\nparameter. The suffix \"_f0\" of the parameter name is omitted when\n\nin non-DFS mode."]
+    #[doc = "Bits 8:23 - Defines the DFI tCTRLUPD_MAX timing parameter (in DFI clocks),\n\nthe maximum cycles that dfi_ctrlupd_req can be asserted. If\n\nprogrammed to a non-zero, a timing violation causes an interrupt\n\nand bit (1) set in the PI_REG_193.pi_update_error_status\n\nparameter. The suffix '_f0' of the parameter name is omitted when\n\nin non-DFS mode."]
     #[inline(always)]
     pub fn pi_tdfi_ctrlupd_max_f0(&self) -> PiTdfiCtrlupdMaxF0R {
         PiTdfiCtrlupdMaxF0R::new(((self.bits >> 8) & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 8:23 - Defines the DFI tCTRLUPD_MAX timing parameter (in DFI clocks),\n\nthe maximum cycles that dfi_ctrlupd_req can be asserted. If\n\nprogrammed to a non-zero, a timing violation causes an interrupt\n\nand bit (1) set in the PI_REG_193.pi_update_error_status\n\nparameter. The suffix \"_f0\" of the parameter name is omitted when\n\nin non-DFS mode."]
+    #[doc = "Bits 8:23 - Defines the DFI tCTRLUPD_MAX timing parameter (in DFI clocks),\n\nthe maximum cycles that dfi_ctrlupd_req can be asserted. If\n\nprogrammed to a non-zero, a timing violation causes an interrupt\n\nand bit (1) set in the PI_REG_193.pi_update_error_status\n\nparameter. The suffix '_f0' of the parameter name is omitted when\n\nin non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tdfi_ctrlupd_max_f0(&mut self) -> PiTdfiCtrlupdMaxF0W<DdrPiReg187Spec> {

@@ -15,8 +15,6 @@ pub enum LinkSpeed {
     B00 = 0,
     #[doc = "1: 2.7G"]
     B01 = 1,
-    #[doc = "2: Reserved"]
-    B1x = 2,
 }
 impl From<LinkSpeed> for u8 {
     #[inline(always)]
@@ -36,7 +34,6 @@ impl LinkSpeedR {
         match self.bits {
             0 => Some(LinkSpeed::B00),
             1 => Some(LinkSpeed::B01),
-            2 => Some(LinkSpeed::B1x),
             _ => None,
         }
     }
@@ -49,11 +46,6 @@ impl LinkSpeedR {
     #[inline(always)]
     pub fn is_b01(&self) -> bool {
         *self == LinkSpeed::B01
-    }
-    #[doc = "Reserved"]
-    #[inline(always)]
-    pub fn is_b1x(&self) -> bool {
-        *self == LinkSpeed::B1x
     }
 }
 impl R {

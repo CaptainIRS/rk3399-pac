@@ -1,248 +1,248 @@
 #[repr(C)]
 #[doc = "Register block"]
 pub struct RegisterBlock {
-    spi_ctrlr0: SpiCtrlr0,
-    spi_ctrlr1: SpiCtrlr1,
-    spi_enr: SpiEnr,
-    spi_ser: SpiSer,
-    spi_baudr: SpiBaudr,
-    spi_txftlr: SpiTxftlr,
-    spi_rxftlr: SpiRxftlr,
-    spi_txflr: SpiTxflr,
-    spi_rxflr: SpiRxflr,
-    spi_sr: SpiSr,
-    spi_ipr: SpiIpr,
-    spi_imr: SpiImr,
-    spi_isr: SpiIsr,
-    spi_risr: SpiRisr,
-    spi_icr: SpiIcr,
-    spi_dmacr: SpiDmacr,
-    spi_dmatdlr: SpiDmatdlr,
-    spi_dmardlr: SpiDmardlr,
+    ctrlr0: Ctrlr0,
+    ctrlr1: Ctrlr1,
+    enr: Enr,
+    ser: Ser,
+    baudr: Baudr,
+    txftlr: Txftlr,
+    rxftlr: Rxftlr,
+    txflr: Txflr,
+    rxflr: Rxflr,
+    sr: Sr,
+    ipr: Ipr,
+    imr: Imr,
+    isr: Isr,
+    risr: Risr,
+    icr: Icr,
+    dmacr: Dmacr,
+    dmatdlr: Dmatdlr,
+    dmardlr: Dmardlr,
     _reserved18: [u8; 0x03b8],
-    spi_txdr: SpiTxdr,
+    txdr: Txdr,
     _reserved19: [u8; 0x03fc],
-    spi_rxdr: SpiRxdr,
+    rxdr: Rxdr,
 }
 impl RegisterBlock {
     #[doc = "0x00 - Control Register 0"]
     #[inline(always)]
-    pub const fn spi_ctrlr0(&self) -> &SpiCtrlr0 {
-        &self.spi_ctrlr0
+    pub const fn ctrlr0(&self) -> &Ctrlr0 {
+        &self.ctrlr0
     }
     #[doc = "0x04 - Control Register 1"]
     #[inline(always)]
-    pub const fn spi_ctrlr1(&self) -> &SpiCtrlr1 {
-        &self.spi_ctrlr1
+    pub const fn ctrlr1(&self) -> &Ctrlr1 {
+        &self.ctrlr1
     }
     #[doc = "0x08 - SPI Enable"]
     #[inline(always)]
-    pub const fn spi_enr(&self) -> &SpiEnr {
-        &self.spi_enr
+    pub const fn enr(&self) -> &Enr {
+        &self.enr
     }
     #[doc = "0x0c - Slave Enable Register"]
     #[inline(always)]
-    pub const fn spi_ser(&self) -> &SpiSer {
-        &self.spi_ser
+    pub const fn ser(&self) -> &Ser {
+        &self.ser
     }
     #[doc = "0x10 - Baud Rate Select"]
     #[inline(always)]
-    pub const fn spi_baudr(&self) -> &SpiBaudr {
-        &self.spi_baudr
+    pub const fn baudr(&self) -> &Baudr {
+        &self.baudr
     }
     #[doc = "0x14 - Transmit FIFO Threshold Level"]
     #[inline(always)]
-    pub const fn spi_txftlr(&self) -> &SpiTxftlr {
-        &self.spi_txftlr
+    pub const fn txftlr(&self) -> &Txftlr {
+        &self.txftlr
     }
     #[doc = "0x18 - Receive FIFO Threshold Level"]
     #[inline(always)]
-    pub const fn spi_rxftlr(&self) -> &SpiRxftlr {
-        &self.spi_rxftlr
+    pub const fn rxftlr(&self) -> &Rxftlr {
+        &self.rxftlr
     }
     #[doc = "0x1c - Transmit FIFO Level"]
     #[inline(always)]
-    pub const fn spi_txflr(&self) -> &SpiTxflr {
-        &self.spi_txflr
+    pub const fn txflr(&self) -> &Txflr {
+        &self.txflr
     }
     #[doc = "0x20 - Receive FIFO Level"]
     #[inline(always)]
-    pub const fn spi_rxflr(&self) -> &SpiRxflr {
-        &self.spi_rxflr
+    pub const fn rxflr(&self) -> &Rxflr {
+        &self.rxflr
     }
     #[doc = "0x24 - SPI Status"]
     #[inline(always)]
-    pub const fn spi_sr(&self) -> &SpiSr {
-        &self.spi_sr
+    pub const fn sr(&self) -> &Sr {
+        &self.sr
     }
     #[doc = "0x28 - Interrupt Polarity"]
     #[inline(always)]
-    pub const fn spi_ipr(&self) -> &SpiIpr {
-        &self.spi_ipr
+    pub const fn ipr(&self) -> &Ipr {
+        &self.ipr
     }
     #[doc = "0x2c - Interrupt Mask"]
     #[inline(always)]
-    pub const fn spi_imr(&self) -> &SpiImr {
-        &self.spi_imr
+    pub const fn imr(&self) -> &Imr {
+        &self.imr
     }
     #[doc = "0x30 - Interrupt Status"]
     #[inline(always)]
-    pub const fn spi_isr(&self) -> &SpiIsr {
-        &self.spi_isr
+    pub const fn isr(&self) -> &Isr {
+        &self.isr
     }
     #[doc = "0x34 - Raw Interrupt Status"]
     #[inline(always)]
-    pub const fn spi_risr(&self) -> &SpiRisr {
-        &self.spi_risr
+    pub const fn risr(&self) -> &Risr {
+        &self.risr
     }
     #[doc = "0x38 - Interrupt Clear"]
     #[inline(always)]
-    pub const fn spi_icr(&self) -> &SpiIcr {
-        &self.spi_icr
+    pub const fn icr(&self) -> &Icr {
+        &self.icr
     }
     #[doc = "0x3c - DMA Control"]
     #[inline(always)]
-    pub const fn spi_dmacr(&self) -> &SpiDmacr {
-        &self.spi_dmacr
+    pub const fn dmacr(&self) -> &Dmacr {
+        &self.dmacr
     }
     #[doc = "0x40 - DMA Transmit Data Level"]
     #[inline(always)]
-    pub const fn spi_dmatdlr(&self) -> &SpiDmatdlr {
-        &self.spi_dmatdlr
+    pub const fn dmatdlr(&self) -> &Dmatdlr {
+        &self.dmatdlr
     }
     #[doc = "0x44 - DMA Receive Data Level"]
     #[inline(always)]
-    pub const fn spi_dmardlr(&self) -> &SpiDmardlr {
-        &self.spi_dmardlr
+    pub const fn dmardlr(&self) -> &Dmardlr {
+        &self.dmardlr
     }
     #[doc = "0x400 - Transmit FIFO Data"]
     #[inline(always)]
-    pub const fn spi_txdr(&self) -> &SpiTxdr {
-        &self.spi_txdr
+    pub const fn txdr(&self) -> &Txdr {
+        &self.txdr
     }
     #[doc = "0x800 - Receive FIFO Data"]
     #[inline(always)]
-    pub const fn spi_rxdr(&self) -> &SpiRxdr {
-        &self.spi_rxdr
+    pub const fn rxdr(&self) -> &Rxdr {
+        &self.rxdr
     }
 }
-#[doc = "SPI_CTRLR0 (rw) register accessor: Control Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_ctrlr0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`spi_ctrlr0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@spi_ctrlr0`]
+#[doc = "CTRLR0 (rw) register accessor: Control Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrlr0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrlr0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ctrlr0`]
 module"]
-#[doc(alias = "SPI_CTRLR0")]
-pub type SpiCtrlr0 = crate::Reg<spi_ctrlr0::SpiCtrlr0Spec>;
+#[doc(alias = "CTRLR0")]
+pub type Ctrlr0 = crate::Reg<ctrlr0::Ctrlr0Spec>;
 #[doc = "Control Register 0"]
-pub mod spi_ctrlr0;
-#[doc = "SPI_CTRLR1 (rw) register accessor: Control Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_ctrlr1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`spi_ctrlr1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@spi_ctrlr1`]
+pub mod ctrlr0;
+#[doc = "CTRLR1 (rw) register accessor: Control Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrlr1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrlr1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ctrlr1`]
 module"]
-#[doc(alias = "SPI_CTRLR1")]
-pub type SpiCtrlr1 = crate::Reg<spi_ctrlr1::SpiCtrlr1Spec>;
+#[doc(alias = "CTRLR1")]
+pub type Ctrlr1 = crate::Reg<ctrlr1::Ctrlr1Spec>;
 #[doc = "Control Register 1"]
-pub mod spi_ctrlr1;
-#[doc = "SPI_ENR (rw) register accessor: SPI Enable\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_enr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`spi_enr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@spi_enr`]
+pub mod ctrlr1;
+#[doc = "ENR (rw) register accessor: SPI Enable\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`enr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`enr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@enr`]
 module"]
-#[doc(alias = "SPI_ENR")]
-pub type SpiEnr = crate::Reg<spi_enr::SpiEnrSpec>;
+#[doc(alias = "ENR")]
+pub type Enr = crate::Reg<enr::EnrSpec>;
 #[doc = "SPI Enable"]
-pub mod spi_enr;
-#[doc = "SPI_SER (rw) register accessor: Slave Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_ser::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`spi_ser::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@spi_ser`]
+pub mod enr;
+#[doc = "SER (rw) register accessor: Slave Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ser::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ser::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ser`]
 module"]
-#[doc(alias = "SPI_SER")]
-pub type SpiSer = crate::Reg<spi_ser::SpiSerSpec>;
+#[doc(alias = "SER")]
+pub type Ser = crate::Reg<ser::SerSpec>;
 #[doc = "Slave Enable Register"]
-pub mod spi_ser;
-#[doc = "SPI_BAUDR (rw) register accessor: Baud Rate Select\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_baudr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`spi_baudr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@spi_baudr`]
+pub mod ser;
+#[doc = "BAUDR (rw) register accessor: Baud Rate Select\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`baudr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`baudr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@baudr`]
 module"]
-#[doc(alias = "SPI_BAUDR")]
-pub type SpiBaudr = crate::Reg<spi_baudr::SpiBaudrSpec>;
+#[doc(alias = "BAUDR")]
+pub type Baudr = crate::Reg<baudr::BaudrSpec>;
 #[doc = "Baud Rate Select"]
-pub mod spi_baudr;
-#[doc = "SPI_TXFTLR (rw) register accessor: Transmit FIFO Threshold Level\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_txftlr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`spi_txftlr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@spi_txftlr`]
+pub mod baudr;
+#[doc = "TXFTLR (rw) register accessor: Transmit FIFO Threshold Level\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`txftlr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`txftlr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@txftlr`]
 module"]
-#[doc(alias = "SPI_TXFTLR")]
-pub type SpiTxftlr = crate::Reg<spi_txftlr::SpiTxftlrSpec>;
+#[doc(alias = "TXFTLR")]
+pub type Txftlr = crate::Reg<txftlr::TxftlrSpec>;
 #[doc = "Transmit FIFO Threshold Level"]
-pub mod spi_txftlr;
-#[doc = "SPI_RXFTLR (rw) register accessor: Receive FIFO Threshold Level\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_rxftlr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`spi_rxftlr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@spi_rxftlr`]
+pub mod txftlr;
+#[doc = "RXFTLR (rw) register accessor: Receive FIFO Threshold Level\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxftlr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rxftlr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rxftlr`]
 module"]
-#[doc(alias = "SPI_RXFTLR")]
-pub type SpiRxftlr = crate::Reg<spi_rxftlr::SpiRxftlrSpec>;
+#[doc(alias = "RXFTLR")]
+pub type Rxftlr = crate::Reg<rxftlr::RxftlrSpec>;
 #[doc = "Receive FIFO Threshold Level"]
-pub mod spi_rxftlr;
-#[doc = "SPI_TXFLR (r) register accessor: Transmit FIFO Level\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_txflr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@spi_txflr`]
+pub mod rxftlr;
+#[doc = "TXFLR (r) register accessor: Transmit FIFO Level\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`txflr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@txflr`]
 module"]
-#[doc(alias = "SPI_TXFLR")]
-pub type SpiTxflr = crate::Reg<spi_txflr::SpiTxflrSpec>;
+#[doc(alias = "TXFLR")]
+pub type Txflr = crate::Reg<txflr::TxflrSpec>;
 #[doc = "Transmit FIFO Level"]
-pub mod spi_txflr;
-#[doc = "SPI_RXFLR (r) register accessor: Receive FIFO Level\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_rxflr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@spi_rxflr`]
+pub mod txflr;
+#[doc = "RXFLR (r) register accessor: Receive FIFO Level\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxflr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rxflr`]
 module"]
-#[doc(alias = "SPI_RXFLR")]
-pub type SpiRxflr = crate::Reg<spi_rxflr::SpiRxflrSpec>;
+#[doc(alias = "RXFLR")]
+pub type Rxflr = crate::Reg<rxflr::RxflrSpec>;
 #[doc = "Receive FIFO Level"]
-pub mod spi_rxflr;
-#[doc = "SPI_SR (r) register accessor: SPI Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_sr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@spi_sr`]
+pub mod rxflr;
+#[doc = "SR (r) register accessor: SPI Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sr`]
 module"]
-#[doc(alias = "SPI_SR")]
-pub type SpiSr = crate::Reg<spi_sr::SpiSrSpec>;
+#[doc(alias = "SR")]
+pub type Sr = crate::Reg<sr::SrSpec>;
 #[doc = "SPI Status"]
-pub mod spi_sr;
-#[doc = "SPI_IPR (rw) register accessor: Interrupt Polarity\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_ipr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`spi_ipr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@spi_ipr`]
+pub mod sr;
+#[doc = "IPR (rw) register accessor: Interrupt Polarity\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ipr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ipr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ipr`]
 module"]
-#[doc(alias = "SPI_IPR")]
-pub type SpiIpr = crate::Reg<spi_ipr::SpiIprSpec>;
+#[doc(alias = "IPR")]
+pub type Ipr = crate::Reg<ipr::IprSpec>;
 #[doc = "Interrupt Polarity"]
-pub mod spi_ipr;
-#[doc = "SPI_IMR (rw) register accessor: Interrupt Mask\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_imr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`spi_imr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@spi_imr`]
+pub mod ipr;
+#[doc = "IMR (rw) register accessor: Interrupt Mask\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`imr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`imr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@imr`]
 module"]
-#[doc(alias = "SPI_IMR")]
-pub type SpiImr = crate::Reg<spi_imr::SpiImrSpec>;
+#[doc(alias = "IMR")]
+pub type Imr = crate::Reg<imr::ImrSpec>;
 #[doc = "Interrupt Mask"]
-pub mod spi_imr;
-#[doc = "SPI_ISR (r) register accessor: Interrupt Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_isr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@spi_isr`]
+pub mod imr;
+#[doc = "ISR (r) register accessor: Interrupt Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`isr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@isr`]
 module"]
-#[doc(alias = "SPI_ISR")]
-pub type SpiIsr = crate::Reg<spi_isr::SpiIsrSpec>;
+#[doc(alias = "ISR")]
+pub type Isr = crate::Reg<isr::IsrSpec>;
 #[doc = "Interrupt Status"]
-pub mod spi_isr;
-#[doc = "SPI_RISR (r) register accessor: Raw Interrupt Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_risr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@spi_risr`]
+pub mod isr;
+#[doc = "RISR (r) register accessor: Raw Interrupt Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`risr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@risr`]
 module"]
-#[doc(alias = "SPI_RISR")]
-pub type SpiRisr = crate::Reg<spi_risr::SpiRisrSpec>;
+#[doc(alias = "RISR")]
+pub type Risr = crate::Reg<risr::RisrSpec>;
 #[doc = "Raw Interrupt Status"]
-pub mod spi_risr;
-#[doc = "SPI_ICR (w) register accessor: Interrupt Clear\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`spi_icr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@spi_icr`]
+pub mod risr;
+#[doc = "ICR (w) register accessor: Interrupt Clear\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`icr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@icr`]
 module"]
-#[doc(alias = "SPI_ICR")]
-pub type SpiIcr = crate::Reg<spi_icr::SpiIcrSpec>;
+#[doc(alias = "ICR")]
+pub type Icr = crate::Reg<icr::IcrSpec>;
 #[doc = "Interrupt Clear"]
-pub mod spi_icr;
-#[doc = "SPI_DMACR (rw) register accessor: DMA Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_dmacr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`spi_dmacr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@spi_dmacr`]
+pub mod icr;
+#[doc = "DMACR (rw) register accessor: DMA Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmacr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmacr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmacr`]
 module"]
-#[doc(alias = "SPI_DMACR")]
-pub type SpiDmacr = crate::Reg<spi_dmacr::SpiDmacrSpec>;
+#[doc(alias = "DMACR")]
+pub type Dmacr = crate::Reg<dmacr::DmacrSpec>;
 #[doc = "DMA Control"]
-pub mod spi_dmacr;
-#[doc = "SPI_DMATDLR (rw) register accessor: DMA Transmit Data Level\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_dmatdlr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`spi_dmatdlr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@spi_dmatdlr`]
+pub mod dmacr;
+#[doc = "DMATDLR (rw) register accessor: DMA Transmit Data Level\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmatdlr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmatdlr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmatdlr`]
 module"]
-#[doc(alias = "SPI_DMATDLR")]
-pub type SpiDmatdlr = crate::Reg<spi_dmatdlr::SpiDmatdlrSpec>;
+#[doc(alias = "DMATDLR")]
+pub type Dmatdlr = crate::Reg<dmatdlr::DmatdlrSpec>;
 #[doc = "DMA Transmit Data Level"]
-pub mod spi_dmatdlr;
-#[doc = "SPI_DMARDLR (rw) register accessor: DMA Receive Data Level\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_dmardlr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`spi_dmardlr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@spi_dmardlr`]
+pub mod dmatdlr;
+#[doc = "DMARDLR (rw) register accessor: DMA Receive Data Level\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmardlr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmardlr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmardlr`]
 module"]
-#[doc(alias = "SPI_DMARDLR")]
-pub type SpiDmardlr = crate::Reg<spi_dmardlr::SpiDmardlrSpec>;
+#[doc(alias = "DMARDLR")]
+pub type Dmardlr = crate::Reg<dmardlr::DmardlrSpec>;
 #[doc = "DMA Receive Data Level"]
-pub mod spi_dmardlr;
-#[doc = "SPI_TXDR (w) register accessor: Transmit FIFO Data\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`spi_txdr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@spi_txdr`]
+pub mod dmardlr;
+#[doc = "TXDR (w) register accessor: Transmit FIFO Data\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`txdr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@txdr`]
 module"]
-#[doc(alias = "SPI_TXDR")]
-pub type SpiTxdr = crate::Reg<spi_txdr::SpiTxdrSpec>;
+#[doc(alias = "TXDR")]
+pub type Txdr = crate::Reg<txdr::TxdrSpec>;
 #[doc = "Transmit FIFO Data"]
-pub mod spi_txdr;
-#[doc = "SPI_RXDR (rw) register accessor: Receive FIFO Data\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_rxdr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`spi_rxdr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@spi_rxdr`]
+pub mod txdr;
+#[doc = "RXDR (rw) register accessor: Receive FIFO Data\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rxdr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rxdr`]
 module"]
-#[doc(alias = "SPI_RXDR")]
-pub type SpiRxdr = crate::Reg<spi_rxdr::SpiRxdrSpec>;
+#[doc(alias = "RXDR")]
+pub type Rxdr = crate::Reg<rxdr::RxdrSpec>;
 #[doc = "Receive FIFO Data"]
-pub mod spi_rxdr;
+pub mod rxdr;

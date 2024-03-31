@@ -2,9 +2,9 @@
 pub type R = crate::R<DdrPiReg117Spec>;
 #[doc = "Register `DDR_PI_REG_117` writer"]
 pub type W = crate::W<DdrPiReg117Spec>;
-#[doc = "Field `PI_TCKEHDQS_F2` reader - Indicates the DRAM timing TCKEHDQS, minimum delay from CKE\n\nhigh to strobe high impedance. The suffix \"_f2\" of the parameter\n\nname is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TCKEHDQS_F2` reader - Indicates the DRAM timing TCKEHDQS, minimum delay from CKE\n\nhigh to strobe high impedance. The suffix '_f2' of the parameter\n\nname is omitted when in non-DFS mode."]
 pub type PiTckehdqsF2R = crate::FieldReader;
-#[doc = "Field `PI_TCKEHDQS_F2` writer - Indicates the DRAM timing TCKEHDQS, minimum delay from CKE\n\nhigh to strobe high impedance. The suffix \"_f2\" of the parameter\n\nname is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TCKEHDQS_F2` writer - Indicates the DRAM timing TCKEHDQS, minimum delay from CKE\n\nhigh to strobe high impedance. The suffix '_f2' of the parameter\n\nname is omitted when in non-DFS mode."]
 pub type PiTckehdqsF2W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `PI_WDQLVL_VREF_EN` reader - Indicates whether to do VREF training for non-initial WDQ leveling"]
 pub type PiWdqlvlVrefEnR = crate::BitReader;
@@ -15,7 +15,7 @@ pub type PiWdqlvlBstNumR = crate::FieldReader;
 #[doc = "Field `PI_WDQLVL_BST_NUM` writer - Indicates burst number for MPC, the maximum FIFO for LPDDR4 is\n\n5."]
 pub type PiWdqlvlBstNumW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
-    #[doc = "Bits 0:5 - Indicates the DRAM timing TCKEHDQS, minimum delay from CKE\n\nhigh to strobe high impedance. The suffix \"_f2\" of the parameter\n\nname is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:5 - Indicates the DRAM timing TCKEHDQS, minimum delay from CKE\n\nhigh to strobe high impedance. The suffix '_f2' of the parameter\n\nname is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tckehdqs_f2(&self) -> PiTckehdqsF2R {
         PiTckehdqsF2R::new((self.bits & 0x3f) as u8)
@@ -32,7 +32,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:5 - Indicates the DRAM timing TCKEHDQS, minimum delay from CKE\n\nhigh to strobe high impedance. The suffix \"_f2\" of the parameter\n\nname is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:5 - Indicates the DRAM timing TCKEHDQS, minimum delay from CKE\n\nhigh to strobe high impedance. The suffix '_f2' of the parameter\n\nname is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tckehdqs_f2(&mut self) -> PiTckehdqsF2W<DdrPiReg117Spec> {

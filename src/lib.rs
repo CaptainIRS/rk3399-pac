@@ -21,7 +21,7 @@ pub struct Cci500 {
 unsafe impl Send for Cci500 {}
 impl Cci500 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const cci500::RegisterBlock = 0xff9c_0000 as *const _;
+    pub const PTR: *const cci500::RegisterBlock = 0xffb0_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
     pub const fn ptr() -> *const cci500::RegisterBlock {

@@ -1,152 +1,152 @@
 #[repr(C)]
 #[doc = "Register block"]
 pub struct RegisterBlock {
-    gpio_swporta_dr: GpioSwportaDr,
-    gpio_swporta_ddr: GpioSwportaDdr,
+    swporta_dr: SwportaDr,
+    swporta_ddr: SwportaDdr,
     _reserved2: [u8; 0x28],
-    gpio_inten: GpioInten,
-    gpio_intmask: GpioIntmask,
-    gpio_inttype_level: GpioInttypeLevel,
-    gpio_int_polarity: GpioIntPolarity,
-    gpio_int_status: GpioIntStatus,
-    gpio_int_rawstatus: GpioIntRawstatus,
-    gpio_debounce: GpioDebounce,
-    gpio_porta_eoi: GpioPortaEoi,
-    gpio_ext_porta: GpioExtPorta,
+    inten: Inten,
+    intmask: Intmask,
+    inttype_level: InttypeLevel,
+    int_polarity: IntPolarity,
+    int_status: IntStatus,
+    int_rawstatus: IntRawstatus,
+    debounce: Debounce,
+    porta_eoi: PortaEoi,
+    ext_porta: ExtPorta,
     _reserved11: [u8; 0x0c],
-    gpio_ls_sync: GpioLsSync,
+    ls_sync: LsSync,
 }
 impl RegisterBlock {
     #[doc = "0x00 - Port A data register"]
     #[inline(always)]
-    pub const fn gpio_swporta_dr(&self) -> &GpioSwportaDr {
-        &self.gpio_swporta_dr
+    pub const fn swporta_dr(&self) -> &SwportaDr {
+        &self.swporta_dr
     }
     #[doc = "0x04 - Port A data direction register"]
     #[inline(always)]
-    pub const fn gpio_swporta_ddr(&self) -> &GpioSwportaDdr {
-        &self.gpio_swporta_ddr
+    pub const fn swporta_ddr(&self) -> &SwportaDdr {
+        &self.swporta_ddr
     }
     #[doc = "0x30 - Interrupt enable register"]
     #[inline(always)]
-    pub const fn gpio_inten(&self) -> &GpioInten {
-        &self.gpio_inten
+    pub const fn inten(&self) -> &Inten {
+        &self.inten
     }
     #[doc = "0x34 - Interrupt mask register"]
     #[inline(always)]
-    pub const fn gpio_intmask(&self) -> &GpioIntmask {
-        &self.gpio_intmask
+    pub const fn intmask(&self) -> &Intmask {
+        &self.intmask
     }
     #[doc = "0x38 - Interrupt level register"]
     #[inline(always)]
-    pub const fn gpio_inttype_level(&self) -> &GpioInttypeLevel {
-        &self.gpio_inttype_level
+    pub const fn inttype_level(&self) -> &InttypeLevel {
+        &self.inttype_level
     }
     #[doc = "0x3c - Interrupt polarity register"]
     #[inline(always)]
-    pub const fn gpio_int_polarity(&self) -> &GpioIntPolarity {
-        &self.gpio_int_polarity
+    pub const fn int_polarity(&self) -> &IntPolarity {
+        &self.int_polarity
     }
     #[doc = "0x40 - Interrupt status of port A"]
     #[inline(always)]
-    pub const fn gpio_int_status(&self) -> &GpioIntStatus {
-        &self.gpio_int_status
+    pub const fn int_status(&self) -> &IntStatus {
+        &self.int_status
     }
     #[doc = "0x44 - Raw Interrupt status of port A"]
     #[inline(always)]
-    pub const fn gpio_int_rawstatus(&self) -> &GpioIntRawstatus {
-        &self.gpio_int_rawstatus
+    pub const fn int_rawstatus(&self) -> &IntRawstatus {
+        &self.int_rawstatus
     }
     #[doc = "0x48 - Debounce enable register"]
     #[inline(always)]
-    pub const fn gpio_debounce(&self) -> &GpioDebounce {
-        &self.gpio_debounce
+    pub const fn debounce(&self) -> &Debounce {
+        &self.debounce
     }
     #[doc = "0x4c - Port A clear interrupt register"]
     #[inline(always)]
-    pub const fn gpio_porta_eoi(&self) -> &GpioPortaEoi {
-        &self.gpio_porta_eoi
+    pub const fn porta_eoi(&self) -> &PortaEoi {
+        &self.porta_eoi
     }
     #[doc = "0x50 - Port A external port register"]
     #[inline(always)]
-    pub const fn gpio_ext_porta(&self) -> &GpioExtPorta {
-        &self.gpio_ext_porta
+    pub const fn ext_porta(&self) -> &ExtPorta {
+        &self.ext_porta
     }
     #[doc = "0x60 - Level_sensitive synchronization enable register"]
     #[inline(always)]
-    pub const fn gpio_ls_sync(&self) -> &GpioLsSync {
-        &self.gpio_ls_sync
+    pub const fn ls_sync(&self) -> &LsSync {
+        &self.ls_sync
     }
 }
-#[doc = "GPIO_SWPORTA_DR (rw) register accessor: Port A data register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio_swporta_dr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio_swporta_dr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio_swporta_dr`]
+#[doc = "SWPORTA_DR (rw) register accessor: Port A data register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`swporta_dr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`swporta_dr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@swporta_dr`]
 module"]
-#[doc(alias = "GPIO_SWPORTA_DR")]
-pub type GpioSwportaDr = crate::Reg<gpio_swporta_dr::GpioSwportaDrSpec>;
+#[doc(alias = "SWPORTA_DR")]
+pub type SwportaDr = crate::Reg<swporta_dr::SwportaDrSpec>;
 #[doc = "Port A data register"]
-pub mod gpio_swporta_dr;
-#[doc = "GPIO_SWPORTA_DDR (rw) register accessor: Port A data direction register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio_swporta_ddr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio_swporta_ddr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio_swporta_ddr`]
+pub mod swporta_dr;
+#[doc = "SWPORTA_DDR (rw) register accessor: Port A data direction register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`swporta_ddr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`swporta_ddr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@swporta_ddr`]
 module"]
-#[doc(alias = "GPIO_SWPORTA_DDR")]
-pub type GpioSwportaDdr = crate::Reg<gpio_swporta_ddr::GpioSwportaDdrSpec>;
+#[doc(alias = "SWPORTA_DDR")]
+pub type SwportaDdr = crate::Reg<swporta_ddr::SwportaDdrSpec>;
 #[doc = "Port A data direction register"]
-pub mod gpio_swporta_ddr;
-#[doc = "GPIO_INTEN (rw) register accessor: Interrupt enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio_inten::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio_inten::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio_inten`]
+pub mod swporta_ddr;
+#[doc = "INTEN (rw) register accessor: Interrupt enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`inten::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`inten::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@inten`]
 module"]
-#[doc(alias = "GPIO_INTEN")]
-pub type GpioInten = crate::Reg<gpio_inten::GpioIntenSpec>;
+#[doc(alias = "INTEN")]
+pub type Inten = crate::Reg<inten::IntenSpec>;
 #[doc = "Interrupt enable register"]
-pub mod gpio_inten;
-#[doc = "GPIO_INTMASK (rw) register accessor: Interrupt mask register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio_intmask::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio_intmask::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio_intmask`]
+pub mod inten;
+#[doc = "INTMASK (rw) register accessor: Interrupt mask register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`intmask::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`intmask::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intmask`]
 module"]
-#[doc(alias = "GPIO_INTMASK")]
-pub type GpioIntmask = crate::Reg<gpio_intmask::GpioIntmaskSpec>;
+#[doc(alias = "INTMASK")]
+pub type Intmask = crate::Reg<intmask::IntmaskSpec>;
 #[doc = "Interrupt mask register"]
-pub mod gpio_intmask;
-#[doc = "GPIO_INTTYPE_LEVEL (rw) register accessor: Interrupt level register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio_inttype_level::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio_inttype_level::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio_inttype_level`]
+pub mod intmask;
+#[doc = "INTTYPE_LEVEL (rw) register accessor: Interrupt level register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`inttype_level::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`inttype_level::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@inttype_level`]
 module"]
-#[doc(alias = "GPIO_INTTYPE_LEVEL")]
-pub type GpioInttypeLevel = crate::Reg<gpio_inttype_level::GpioInttypeLevelSpec>;
+#[doc(alias = "INTTYPE_LEVEL")]
+pub type InttypeLevel = crate::Reg<inttype_level::InttypeLevelSpec>;
 #[doc = "Interrupt level register"]
-pub mod gpio_inttype_level;
-#[doc = "GPIO_INT_POLARITY (rw) register accessor: Interrupt polarity register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio_int_polarity::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio_int_polarity::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio_int_polarity`]
+pub mod inttype_level;
+#[doc = "INT_POLARITY (rw) register accessor: Interrupt polarity register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`int_polarity::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`int_polarity::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@int_polarity`]
 module"]
-#[doc(alias = "GPIO_INT_POLARITY")]
-pub type GpioIntPolarity = crate::Reg<gpio_int_polarity::GpioIntPolaritySpec>;
+#[doc(alias = "INT_POLARITY")]
+pub type IntPolarity = crate::Reg<int_polarity::IntPolaritySpec>;
 #[doc = "Interrupt polarity register"]
-pub mod gpio_int_polarity;
-#[doc = "GPIO_INT_STATUS (r) register accessor: Interrupt status of port A\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio_int_status::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio_int_status`]
+pub mod int_polarity;
+#[doc = "INT_STATUS (r) register accessor: Interrupt status of port A\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`int_status::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@int_status`]
 module"]
-#[doc(alias = "GPIO_INT_STATUS")]
-pub type GpioIntStatus = crate::Reg<gpio_int_status::GpioIntStatusSpec>;
+#[doc(alias = "INT_STATUS")]
+pub type IntStatus = crate::Reg<int_status::IntStatusSpec>;
 #[doc = "Interrupt status of port A"]
-pub mod gpio_int_status;
-#[doc = "GPIO_INT_RAWSTATUS (r) register accessor: Raw Interrupt status of port A\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio_int_rawstatus::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio_int_rawstatus`]
+pub mod int_status;
+#[doc = "INT_RAWSTATUS (r) register accessor: Raw Interrupt status of port A\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`int_rawstatus::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@int_rawstatus`]
 module"]
-#[doc(alias = "GPIO_INT_RAWSTATUS")]
-pub type GpioIntRawstatus = crate::Reg<gpio_int_rawstatus::GpioIntRawstatusSpec>;
+#[doc(alias = "INT_RAWSTATUS")]
+pub type IntRawstatus = crate::Reg<int_rawstatus::IntRawstatusSpec>;
 #[doc = "Raw Interrupt status of port A"]
-pub mod gpio_int_rawstatus;
-#[doc = "GPIO_DEBOUNCE (rw) register accessor: Debounce enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio_debounce::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio_debounce::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio_debounce`]
+pub mod int_rawstatus;
+#[doc = "DEBOUNCE (rw) register accessor: Debounce enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`debounce::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`debounce::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@debounce`]
 module"]
-#[doc(alias = "GPIO_DEBOUNCE")]
-pub type GpioDebounce = crate::Reg<gpio_debounce::GpioDebounceSpec>;
+#[doc(alias = "DEBOUNCE")]
+pub type Debounce = crate::Reg<debounce::DebounceSpec>;
 #[doc = "Debounce enable register"]
-pub mod gpio_debounce;
-#[doc = "GPIO_PORTA_EOI (w) register accessor: Port A clear interrupt register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio_porta_eoi::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio_porta_eoi`]
+pub mod debounce;
+#[doc = "PORTA_EOI (w) register accessor: Port A clear interrupt register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`porta_eoi::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@porta_eoi`]
 module"]
-#[doc(alias = "GPIO_PORTA_EOI")]
-pub type GpioPortaEoi = crate::Reg<gpio_porta_eoi::GpioPortaEoiSpec>;
+#[doc(alias = "PORTA_EOI")]
+pub type PortaEoi = crate::Reg<porta_eoi::PortaEoiSpec>;
 #[doc = "Port A clear interrupt register"]
-pub mod gpio_porta_eoi;
-#[doc = "GPIO_EXT_PORTA (r) register accessor: Port A external port register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio_ext_porta::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio_ext_porta`]
+pub mod porta_eoi;
+#[doc = "EXT_PORTA (r) register accessor: Port A external port register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ext_porta::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ext_porta`]
 module"]
-#[doc(alias = "GPIO_EXT_PORTA")]
-pub type GpioExtPorta = crate::Reg<gpio_ext_porta::GpioExtPortaSpec>;
+#[doc(alias = "EXT_PORTA")]
+pub type ExtPorta = crate::Reg<ext_porta::ExtPortaSpec>;
 #[doc = "Port A external port register"]
-pub mod gpio_ext_porta;
-#[doc = "GPIO_LS_SYNC (rw) register accessor: Level_sensitive synchronization enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio_ls_sync::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio_ls_sync::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio_ls_sync`]
+pub mod ext_porta;
+#[doc = "LS_SYNC (rw) register accessor: Level_sensitive synchronization enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ls_sync::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ls_sync::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ls_sync`]
 module"]
-#[doc(alias = "GPIO_LS_SYNC")]
-pub type GpioLsSync = crate::Reg<gpio_ls_sync::GpioLsSyncSpec>;
+#[doc(alias = "LS_SYNC")]
+pub type LsSync = crate::Reg<ls_sync::LsSyncSpec>;
 #[doc = "Level_sensitive synchronization enable register"]
-pub mod gpio_ls_sync;
+pub mod ls_sync;

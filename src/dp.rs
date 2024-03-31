@@ -214,12 +214,11 @@ pub struct RegisterBlock {
     _reserved174: [u8; 0x08],
     pll_reg_2: PllReg2,
     pll_reg_3: PllReg3,
-    pll_reg_4: PllReg4,
-    _reserved177: [u8; 0x10],
+    _reserved176: [u8; 0x14],
     pll_reg_5: PllReg5,
     pll_reg_mac: PllRegMac,
     tx_common3: TxCommon3,
-    _reserved180: [u8; 0x04],
+    _reserved179: [u8; 0x04],
     freq_in_reg: FreqInReg,
     p_reg_frq: PRegFrq,
     p_reg_frq_count_rdy: PRegFrqCountRdy,
@@ -1388,11 +1387,6 @@ impl RegisterBlock {
     pub const fn pll_reg_3(&self) -> &PllReg3 {
         &self.pll_reg_3
     }
-    #[doc = "0x9ec - Pll_control_4"]
-    #[inline(always)]
-    pub const fn pll_reg_4(&self) -> &PllReg4 {
-        &self.pll_reg_4
-    }
     #[doc = "0xa00 - Pll_control_5"]
     #[inline(always)]
     pub const fn pll_reg_5(&self) -> &PllReg5 {
@@ -2431,12 +2425,6 @@ module"]
 pub type PllReg3 = crate::Reg<pll_reg_3::PllReg3Spec>;
 #[doc = "Pll_control_3"]
 pub mod pll_reg_3;
-#[doc = "PLL_REG_4 (rw) register accessor: Pll_control_4\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pll_reg_4::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pll_reg_4::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pll_reg_4`]
-module"]
-#[doc(alias = "PLL_REG_4")]
-pub type PllReg4 = crate::Reg<pll_reg_4::PllReg4Spec>;
-#[doc = "Pll_control_4"]
-pub mod pll_reg_4;
 #[doc = "PLL_REG_5 (rw) register accessor: Pll_control_5\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pll_reg_5::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pll_reg_5::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pll_reg_5`]
 module"]
 #[doc(alias = "PLL_REG_5")]

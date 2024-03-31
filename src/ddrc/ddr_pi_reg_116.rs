@@ -61,13 +61,13 @@ where
 pub type PiRefreshBetweenSegmentDisableR = crate::BitReader;
 #[doc = "Field `PI_REFRESH_BETWEEN_SEGMENT_DISABLE` writer - Disables the refresh between CA first and second segment training.\n\nDefaut is set to 1."]
 pub type PiRefreshBetweenSegmentDisableW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PI_TCKEHDQS_F0` reader - Indicates the DRAM timing TCKEHDQS, minimum delay from CKE\n\nhigh to strobe high impedance. The suffix \"_f0\" of the parameter\n\nname is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TCKEHDQS_F0` reader - Indicates the DRAM timing TCKEHDQS, minimum delay from CKE\n\nhigh to strobe high impedance. The suffix '_f0' of the parameter\n\nname is omitted when in non-DFS mode."]
 pub type PiTckehdqsF0R = crate::FieldReader;
-#[doc = "Field `PI_TCKEHDQS_F0` writer - Indicates the DRAM timing TCKEHDQS, minimum delay from CKE\n\nhigh to strobe high impedance. The suffix \"_f0\" of the parameter\n\nname is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TCKEHDQS_F0` writer - Indicates the DRAM timing TCKEHDQS, minimum delay from CKE\n\nhigh to strobe high impedance. The suffix '_f0' of the parameter\n\nname is omitted when in non-DFS mode."]
 pub type PiTckehdqsF0W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
-#[doc = "Field `PI_TCKEHDQS_F1` reader - Indicates the DRAM timing TCKEHDQS, minimum delay from CKE\n\nhigh to strobe high impedance. The suffix \"_f1\" of the parameter\n\nname is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TCKEHDQS_F1` reader - Indicates the DRAM timing TCKEHDQS, minimum delay from CKE\n\nhigh to strobe high impedance. The suffix '_f1' of the parameter\n\nname is omitted when in non-DFS mode."]
 pub type PiTckehdqsF1R = crate::FieldReader;
-#[doc = "Field `PI_TCKEHDQS_F1` writer - Indicates the DRAM timing TCKEHDQS, minimum delay from CKE\n\nhigh to strobe high impedance. The suffix \"_f1\" of the parameter\n\nname is omitted when in non-DFS mode."]
+#[doc = "Field `PI_TCKEHDQS_F1` writer - Indicates the DRAM timing TCKEHDQS, minimum delay from CKE\n\nhigh to strobe high impedance. The suffix '_f1' of the parameter\n\nname is omitted when in non-DFS mode."]
 pub type PiTckehdqsF1W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
     #[doc = "Bit 0 - Indicates dfi_dram_clk_disable deassert following dfi_init_start\n\ndeassert or dfi_init_complete assert."]
@@ -80,12 +80,12 @@ impl R {
     pub fn pi_refresh_between_segment_disable(&self) -> PiRefreshBetweenSegmentDisableR {
         PiRefreshBetweenSegmentDisableR::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bits 16:21 - Indicates the DRAM timing TCKEHDQS, minimum delay from CKE\n\nhigh to strobe high impedance. The suffix \"_f0\" of the parameter\n\nname is omitted when in non-DFS mode."]
+    #[doc = "Bits 16:21 - Indicates the DRAM timing TCKEHDQS, minimum delay from CKE\n\nhigh to strobe high impedance. The suffix '_f0' of the parameter\n\nname is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tckehdqs_f0(&self) -> PiTckehdqsF0R {
         PiTckehdqsF0R::new(((self.bits >> 16) & 0x3f) as u8)
     }
-    #[doc = "Bits 24:29 - Indicates the DRAM timing TCKEHDQS, minimum delay from CKE\n\nhigh to strobe high impedance. The suffix \"_f1\" of the parameter\n\nname is omitted when in non-DFS mode."]
+    #[doc = "Bits 24:29 - Indicates the DRAM timing TCKEHDQS, minimum delay from CKE\n\nhigh to strobe high impedance. The suffix '_f1' of the parameter\n\nname is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_tckehdqs_f1(&self) -> PiTckehdqsF1R {
         PiTckehdqsF1R::new(((self.bits >> 24) & 0x3f) as u8)
@@ -108,13 +108,13 @@ impl W {
     ) -> PiRefreshBetweenSegmentDisableW<DdrPiReg116Spec> {
         PiRefreshBetweenSegmentDisableW::new(self, 8)
     }
-    #[doc = "Bits 16:21 - Indicates the DRAM timing TCKEHDQS, minimum delay from CKE\n\nhigh to strobe high impedance. The suffix \"_f0\" of the parameter\n\nname is omitted when in non-DFS mode."]
+    #[doc = "Bits 16:21 - Indicates the DRAM timing TCKEHDQS, minimum delay from CKE\n\nhigh to strobe high impedance. The suffix '_f0' of the parameter\n\nname is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tckehdqs_f0(&mut self) -> PiTckehdqsF0W<DdrPiReg116Spec> {
         PiTckehdqsF0W::new(self, 16)
     }
-    #[doc = "Bits 24:29 - Indicates the DRAM timing TCKEHDQS, minimum delay from CKE\n\nhigh to strobe high impedance. The suffix \"_f1\" of the parameter\n\nname is omitted when in non-DFS mode."]
+    #[doc = "Bits 24:29 - Indicates the DRAM timing TCKEHDQS, minimum delay from CKE\n\nhigh to strobe high impedance. The suffix '_f1' of the parameter\n\nname is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tckehdqs_f1(&mut self) -> PiTckehdqsF1W<DdrPiReg116Spec> {

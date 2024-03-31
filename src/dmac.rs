@@ -1,484 +1,494 @@
 #[repr(C)]
 #[doc = "Register block"]
 pub struct RegisterBlock {
-    dmac_dsr: DmacDsr,
-    dmac_dpc: DmacDpc,
+    dsr: Dsr,
+    dpc: Dpc,
     _reserved2: [u8; 0x18],
-    dmac_inten: DmacInten,
-    dmac_event_ris: DmacEventRis,
-    dmac_intmis: DmacIntmis,
-    dmac_intclr: DmacIntclr,
-    dmac_fsrd: DmacFsrd,
-    dmac_fsrc: DmacFsrc,
-    dmac_ftrd: DmacFtrd,
+    inten: Inten,
+    event_ris: EventRis,
+    intmis: Intmis,
+    intclr: Intclr,
+    fsrd: Fsrd,
+    fsrc: Fsrc,
+    ftrd: Ftrd,
     _reserved9: [u8; 0x04],
-    dmac_ftr0: DmacFtr0,
+    ftr0: Ftr0,
     _reserved10: [u8; 0xbc],
-    _reserved_10_dmac: [u8; 0x24],
-    _reserved11: [u8; 0x02dc],
-    _reserved_11_dmac: [u8; 0x30],
-    _reserved12: [u8; 0x08d0],
-    dmac_dbgstatus: DmacDbgstatus,
-    dmac_dbgcmd: DmacDbgcmd,
-    dmac_dbginst0: DmacDbginst0,
-    dmac_dbginst1: DmacDbginst1,
-    _reserved16: [u8; 0xf0],
-    dmac_cr0: DmacCr0,
-    dmac_cr1: DmacCr1,
-    dmac_cr2: DmacCr2,
-    dmac_cr3: DmacCr3,
-    dmac_cr4: DmacCr4,
-    dmac_crdn: DmacCrdn,
-    _reserved22: [u8; 0x68],
-    dmac_wd: DmacWd,
+    csr: (),
+    _reserved11: [u8; 0x04],
+    cpc: (),
+    _reserved12: [u8; 0x02fc],
+    sar: (),
+    _reserved13: [u8; 0x04],
+    dar: (),
+    _reserved14: [u8; 0x04],
+    ccr: (),
+    _reserved15: [u8; 0x04],
+    lc0_: (),
+    _reserved16: [u8; 0x04],
+    lc1_: (),
+    _reserved17: [u8; 0x08f0],
+    dbgstatus: Dbgstatus,
+    dbgcmd: Dbgcmd,
+    dbginst0: Dbginst0,
+    dbginst1: Dbginst1,
+    _reserved21: [u8; 0xf0],
+    cr0: Cr0,
+    cr1: Cr1,
+    cr2: Cr2,
+    cr3: Cr3,
+    cr4: Cr4,
+    crdn: Crdn,
+    _reserved27: [u8; 0x68],
+    wd: Wd,
 }
 impl RegisterBlock {
     #[doc = "0x00 - DMA Manager Status Register"]
     #[inline(always)]
-    pub const fn dmac_dsr(&self) -> &DmacDsr {
-        &self.dmac_dsr
+    pub const fn dsr(&self) -> &Dsr {
+        &self.dsr
     }
     #[doc = "0x04 - DMA Program Counter Register"]
     #[inline(always)]
-    pub const fn dmac_dpc(&self) -> &DmacDpc {
-        &self.dmac_dpc
+    pub const fn dpc(&self) -> &Dpc {
+        &self.dpc
     }
     #[doc = "0x20 - Interrupt Enable Register"]
     #[inline(always)]
-    pub const fn dmac_inten(&self) -> &DmacInten {
-        &self.dmac_inten
+    pub const fn inten(&self) -> &Inten {
+        &self.inten
     }
     #[doc = "0x24 - Event-Interrupt Raw Status Register"]
     #[inline(always)]
-    pub const fn dmac_event_ris(&self) -> &DmacEventRis {
-        &self.dmac_event_ris
+    pub const fn event_ris(&self) -> &EventRis {
+        &self.event_ris
     }
     #[doc = "0x28 - Interrupt Status Register"]
     #[inline(always)]
-    pub const fn dmac_intmis(&self) -> &DmacIntmis {
-        &self.dmac_intmis
+    pub const fn intmis(&self) -> &Intmis {
+        &self.intmis
     }
     #[doc = "0x2c - Interrupt Clear Register"]
     #[inline(always)]
-    pub const fn dmac_intclr(&self) -> &DmacIntclr {
-        &self.dmac_intclr
+    pub const fn intclr(&self) -> &Intclr {
+        &self.intclr
     }
     #[doc = "0x30 - Fault Status DMA Manager Register"]
     #[inline(always)]
-    pub const fn dmac_fsrd(&self) -> &DmacFsrd {
-        &self.dmac_fsrd
+    pub const fn fsrd(&self) -> &Fsrd {
+        &self.fsrd
     }
     #[doc = "0x34 - Fault Status DMA Channel Register"]
     #[inline(always)]
-    pub const fn dmac_fsrc(&self) -> &DmacFsrc {
-        &self.dmac_fsrc
+    pub const fn fsrc(&self) -> &Fsrc {
+        &self.fsrc
     }
     #[doc = "0x38 - Fault Type DMA Manager Register"]
     #[inline(always)]
-    pub const fn dmac_ftrd(&self) -> &DmacFtrd {
-        &self.dmac_ftrd
+    pub const fn ftrd(&self) -> &Ftrd {
+        &self.ftrd
     }
     #[doc = "0x40 - Fault Type DMA Channel Register"]
     #[inline(always)]
-    pub const fn dmac_ftr0(&self) -> &DmacFtr0 {
-        &self.dmac_ftr0
+    pub const fn ftr0(&self) -> &Ftr0 {
+        &self.ftr0
     }
     #[doc = "0x100..0x120 - Channel Status Registers"]
     #[inline(always)]
-    pub const fn dmac_csr(&self, n: usize) -> &DmacCsr {
+    pub const fn csr(&self, n: usize) -> &Csr {
         #[allow(clippy::no_effect)]
         [(); 8][n];
         unsafe {
             &*(self as *const Self)
                 .cast::<u8>()
                 .add(256)
-                .add(4 * n)
+                .add(32 * n)
                 .cast()
         }
     }
     #[doc = "Iterator for array of:"]
     #[doc = "0x100..0x120 - Channel Status Registers"]
     #[inline(always)]
-    pub fn dmac_csr_iter(&self) -> impl Iterator<Item = &DmacCsr> {
+    pub fn csr_iter(&self) -> impl Iterator<Item = &Csr> {
         (0..8).map(move |n| unsafe {
             &*(self as *const Self)
                 .cast::<u8>()
                 .add(256)
-                .add(4 * n)
+                .add(32 * n)
                 .cast()
         })
     }
     #[doc = "0x104..0x124 - Channel Program Counter Registers"]
     #[inline(always)]
-    pub const fn dmac_cpc(&self, n: usize) -> &DmacCpc {
+    pub const fn cpc(&self, n: usize) -> &Cpc {
         #[allow(clippy::no_effect)]
         [(); 8][n];
         unsafe {
             &*(self as *const Self)
                 .cast::<u8>()
                 .add(260)
-                .add(4 * n)
+                .add(32 * n)
                 .cast()
         }
     }
     #[doc = "Iterator for array of:"]
     #[doc = "0x104..0x124 - Channel Program Counter Registers"]
     #[inline(always)]
-    pub fn dmac_cpc_iter(&self) -> impl Iterator<Item = &DmacCpc> {
+    pub fn cpc_iter(&self) -> impl Iterator<Item = &Cpc> {
         (0..8).map(move |n| unsafe {
             &*(self as *const Self)
                 .cast::<u8>()
                 .add(260)
-                .add(4 * n)
+                .add(32 * n)
                 .cast()
         })
     }
     #[doc = "0x400..0x420 - Source Address Registers"]
     #[inline(always)]
-    pub const fn dmac_sar(&self, n: usize) -> &DmacSar {
+    pub const fn sar(&self, n: usize) -> &Sar {
         #[allow(clippy::no_effect)]
         [(); 8][n];
         unsafe {
             &*(self as *const Self)
                 .cast::<u8>()
                 .add(1024)
-                .add(4 * n)
+                .add(32 * n)
                 .cast()
         }
     }
     #[doc = "Iterator for array of:"]
     #[doc = "0x400..0x420 - Source Address Registers"]
     #[inline(always)]
-    pub fn dmac_sar_iter(&self) -> impl Iterator<Item = &DmacSar> {
+    pub fn sar_iter(&self) -> impl Iterator<Item = &Sar> {
         (0..8).map(move |n| unsafe {
             &*(self as *const Self)
                 .cast::<u8>()
                 .add(1024)
-                .add(4 * n)
+                .add(32 * n)
                 .cast()
         })
     }
     #[doc = "0x404..0x424 - DestinationAddress Registers"]
     #[inline(always)]
-    pub const fn dmac_dar(&self, n: usize) -> &DmacDar {
+    pub const fn dar(&self, n: usize) -> &Dar {
         #[allow(clippy::no_effect)]
         [(); 8][n];
         unsafe {
             &*(self as *const Self)
                 .cast::<u8>()
                 .add(1028)
-                .add(4 * n)
+                .add(32 * n)
                 .cast()
         }
     }
     #[doc = "Iterator for array of:"]
     #[doc = "0x404..0x424 - DestinationAddress Registers"]
     #[inline(always)]
-    pub fn dmac_dar_iter(&self) -> impl Iterator<Item = &DmacDar> {
+    pub fn dar_iter(&self) -> impl Iterator<Item = &Dar> {
         (0..8).map(move |n| unsafe {
             &*(self as *const Self)
                 .cast::<u8>()
                 .add(1028)
-                .add(4 * n)
+                .add(32 * n)
                 .cast()
         })
     }
     #[doc = "0x408..0x428 - Channel Control Registers"]
     #[inline(always)]
-    pub const fn dmac_ccr(&self, n: usize) -> &DmacCcr {
+    pub const fn ccr(&self, n: usize) -> &Ccr {
         #[allow(clippy::no_effect)]
         [(); 8][n];
         unsafe {
             &*(self as *const Self)
                 .cast::<u8>()
                 .add(1032)
-                .add(4 * n)
+                .add(32 * n)
                 .cast()
         }
     }
     #[doc = "Iterator for array of:"]
     #[doc = "0x408..0x428 - Channel Control Registers"]
     #[inline(always)]
-    pub fn dmac_ccr_iter(&self) -> impl Iterator<Item = &DmacCcr> {
+    pub fn ccr_iter(&self) -> impl Iterator<Item = &Ccr> {
         (0..8).map(move |n| unsafe {
             &*(self as *const Self)
                 .cast::<u8>()
                 .add(1032)
-                .add(4 * n)
+                .add(32 * n)
                 .cast()
         })
     }
     #[doc = "0x40c..0x42c - Loop Counter 0 Registers"]
     #[inline(always)]
-    pub const fn dmac_lc0_(&self, n: usize) -> &DmacLc0_ {
+    pub const fn lc0_(&self, n: usize) -> &Lc0_ {
         #[allow(clippy::no_effect)]
         [(); 8][n];
         unsafe {
             &*(self as *const Self)
                 .cast::<u8>()
                 .add(1036)
-                .add(4 * n)
+                .add(32 * n)
                 .cast()
         }
     }
     #[doc = "Iterator for array of:"]
     #[doc = "0x40c..0x42c - Loop Counter 0 Registers"]
     #[inline(always)]
-    pub fn dmac_lc0__iter(&self) -> impl Iterator<Item = &DmacLc0_> {
+    pub fn lc0__iter(&self) -> impl Iterator<Item = &Lc0_> {
         (0..8).map(move |n| unsafe {
             &*(self as *const Self)
                 .cast::<u8>()
                 .add(1036)
-                .add(4 * n)
+                .add(32 * n)
                 .cast()
         })
     }
     #[doc = "0x410..0x430 - Loop Counter 1 Registers"]
     #[inline(always)]
-    pub const fn dmac_lc1_(&self, n: usize) -> &DmacLc1_ {
+    pub const fn lc1_(&self, n: usize) -> &Lc1_ {
         #[allow(clippy::no_effect)]
         [(); 8][n];
         unsafe {
             &*(self as *const Self)
                 .cast::<u8>()
                 .add(1040)
-                .add(4 * n)
+                .add(32 * n)
                 .cast()
         }
     }
     #[doc = "Iterator for array of:"]
     #[doc = "0x410..0x430 - Loop Counter 1 Registers"]
     #[inline(always)]
-    pub fn dmac_lc1__iter(&self) -> impl Iterator<Item = &DmacLc1_> {
+    pub fn lc1__iter(&self) -> impl Iterator<Item = &Lc1_> {
         (0..8).map(move |n| unsafe {
             &*(self as *const Self)
                 .cast::<u8>()
                 .add(1040)
-                .add(4 * n)
+                .add(32 * n)
                 .cast()
         })
     }
     #[doc = "0xd00 - Debug Status Register"]
     #[inline(always)]
-    pub const fn dmac_dbgstatus(&self) -> &DmacDbgstatus {
-        &self.dmac_dbgstatus
+    pub const fn dbgstatus(&self) -> &Dbgstatus {
+        &self.dbgstatus
     }
     #[doc = "0xd04 - Debug Command Register"]
     #[inline(always)]
-    pub const fn dmac_dbgcmd(&self) -> &DmacDbgcmd {
-        &self.dmac_dbgcmd
+    pub const fn dbgcmd(&self) -> &Dbgcmd {
+        &self.dbgcmd
     }
     #[doc = "0xd08 - Debug Instruction-0 Register"]
     #[inline(always)]
-    pub const fn dmac_dbginst0(&self) -> &DmacDbginst0 {
-        &self.dmac_dbginst0
+    pub const fn dbginst0(&self) -> &Dbginst0 {
+        &self.dbginst0
     }
     #[doc = "0xd0c - Debug Instruction-1 Register"]
     #[inline(always)]
-    pub const fn dmac_dbginst1(&self) -> &DmacDbginst1 {
-        &self.dmac_dbginst1
+    pub const fn dbginst1(&self) -> &Dbginst1 {
+        &self.dbginst1
     }
     #[doc = "0xe00 - Configuration Register 0"]
     #[inline(always)]
-    pub const fn dmac_cr0(&self) -> &DmacCr0 {
-        &self.dmac_cr0
+    pub const fn cr0(&self) -> &Cr0 {
+        &self.cr0
     }
     #[doc = "0xe04 - Configuration Register 1"]
     #[inline(always)]
-    pub const fn dmac_cr1(&self) -> &DmacCr1 {
-        &self.dmac_cr1
+    pub const fn cr1(&self) -> &Cr1 {
+        &self.cr1
     }
     #[doc = "0xe08 - Configuration Register 2"]
     #[inline(always)]
-    pub const fn dmac_cr2(&self) -> &DmacCr2 {
-        &self.dmac_cr2
+    pub const fn cr2(&self) -> &Cr2 {
+        &self.cr2
     }
     #[doc = "0xe0c - Configuration Register 3"]
     #[inline(always)]
-    pub const fn dmac_cr3(&self) -> &DmacCr3 {
-        &self.dmac_cr3
+    pub const fn cr3(&self) -> &Cr3 {
+        &self.cr3
     }
     #[doc = "0xe10 - Configuration Register 4"]
     #[inline(always)]
-    pub const fn dmac_cr4(&self) -> &DmacCr4 {
-        &self.dmac_cr4
+    pub const fn cr4(&self) -> &Cr4 {
+        &self.cr4
     }
     #[doc = "0xe14 - DMA Configuration Register"]
     #[inline(always)]
-    pub const fn dmac_crdn(&self) -> &DmacCrdn {
-        &self.dmac_crdn
+    pub const fn crdn(&self) -> &Crdn {
+        &self.crdn
     }
     #[doc = "0xe80 - DMA Watchdog Register"]
     #[inline(always)]
-    pub const fn dmac_wd(&self) -> &DmacWd {
-        &self.dmac_wd
+    pub const fn wd(&self) -> &Wd {
+        &self.wd
     }
 }
-#[doc = "DMAC_DSR (r) register accessor: DMA Manager Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_dsr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_dsr`]
+#[doc = "DSR (r) register accessor: DMA Manager Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dsr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dsr`]
 module"]
-#[doc(alias = "DMAC_DSR")]
-pub type DmacDsr = crate::Reg<dmac_dsr::DmacDsrSpec>;
+#[doc(alias = "DSR")]
+pub type Dsr = crate::Reg<dsr::DsrSpec>;
 #[doc = "DMA Manager Status Register"]
-pub mod dmac_dsr;
-#[doc = "DMAC_DPC (r) register accessor: DMA Program Counter Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_dpc::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_dpc`]
+pub mod dsr;
+#[doc = "DPC (r) register accessor: DMA Program Counter Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dpc::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dpc`]
 module"]
-#[doc(alias = "DMAC_DPC")]
-pub type DmacDpc = crate::Reg<dmac_dpc::DmacDpcSpec>;
+#[doc(alias = "DPC")]
+pub type Dpc = crate::Reg<dpc::DpcSpec>;
 #[doc = "DMA Program Counter Register"]
-pub mod dmac_dpc;
-#[doc = "DMAC_INTEN (rw) register accessor: Interrupt Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_inten::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac_inten::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_inten`]
+pub mod dpc;
+#[doc = "INTEN (rw) register accessor: Interrupt Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`inten::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`inten::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@inten`]
 module"]
-#[doc(alias = "DMAC_INTEN")]
-pub type DmacInten = crate::Reg<dmac_inten::DmacIntenSpec>;
+#[doc(alias = "INTEN")]
+pub type Inten = crate::Reg<inten::IntenSpec>;
 #[doc = "Interrupt Enable Register"]
-pub mod dmac_inten;
-#[doc = "DMAC_EVENT_RIS (r) register accessor: Event-Interrupt Raw Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_event_ris::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_event_ris`]
+pub mod inten;
+#[doc = "EVENT_RIS (r) register accessor: Event-Interrupt Raw Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`event_ris::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@event_ris`]
 module"]
-#[doc(alias = "DMAC_EVENT_RIS")]
-pub type DmacEventRis = crate::Reg<dmac_event_ris::DmacEventRisSpec>;
+#[doc(alias = "EVENT_RIS")]
+pub type EventRis = crate::Reg<event_ris::EventRisSpec>;
 #[doc = "Event-Interrupt Raw Status Register"]
-pub mod dmac_event_ris;
-#[doc = "DMAC_INTMIS (r) register accessor: Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_intmis::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_intmis`]
+pub mod event_ris;
+#[doc = "INTMIS (r) register accessor: Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`intmis::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intmis`]
 module"]
-#[doc(alias = "DMAC_INTMIS")]
-pub type DmacIntmis = crate::Reg<dmac_intmis::DmacIntmisSpec>;
+#[doc(alias = "INTMIS")]
+pub type Intmis = crate::Reg<intmis::IntmisSpec>;
 #[doc = "Interrupt Status Register"]
-pub mod dmac_intmis;
-#[doc = "DMAC_INTCLR (w) register accessor: Interrupt Clear Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac_intclr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_intclr`]
+pub mod intmis;
+#[doc = "INTCLR (w) register accessor: Interrupt Clear Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`intclr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intclr`]
 module"]
-#[doc(alias = "DMAC_INTCLR")]
-pub type DmacIntclr = crate::Reg<dmac_intclr::DmacIntclrSpec>;
+#[doc(alias = "INTCLR")]
+pub type Intclr = crate::Reg<intclr::IntclrSpec>;
 #[doc = "Interrupt Clear Register"]
-pub mod dmac_intclr;
-#[doc = "DMAC_FSRD (r) register accessor: Fault Status DMA Manager Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_fsrd::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_fsrd`]
+pub mod intclr;
+#[doc = "FSRD (r) register accessor: Fault Status DMA Manager Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fsrd::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fsrd`]
 module"]
-#[doc(alias = "DMAC_FSRD")]
-pub type DmacFsrd = crate::Reg<dmac_fsrd::DmacFsrdSpec>;
+#[doc(alias = "FSRD")]
+pub type Fsrd = crate::Reg<fsrd::FsrdSpec>;
 #[doc = "Fault Status DMA Manager Register"]
-pub mod dmac_fsrd;
-#[doc = "DMAC_FSRC (r) register accessor: Fault Status DMA Channel Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_fsrc::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_fsrc`]
+pub mod fsrd;
+#[doc = "FSRC (r) register accessor: Fault Status DMA Channel Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fsrc::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fsrc`]
 module"]
-#[doc(alias = "DMAC_FSRC")]
-pub type DmacFsrc = crate::Reg<dmac_fsrc::DmacFsrcSpec>;
+#[doc(alias = "FSRC")]
+pub type Fsrc = crate::Reg<fsrc::FsrcSpec>;
 #[doc = "Fault Status DMA Channel Register"]
-pub mod dmac_fsrc;
-#[doc = "DMAC_FTRD (rw) register accessor: Fault Type DMA Manager Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_ftrd::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac_ftrd::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_ftrd`]
+pub mod fsrc;
+#[doc = "FTRD (rw) register accessor: Fault Type DMA Manager Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ftrd::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ftrd::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ftrd`]
 module"]
-#[doc(alias = "DMAC_FTRD")]
-pub type DmacFtrd = crate::Reg<dmac_ftrd::DmacFtrdSpec>;
+#[doc(alias = "FTRD")]
+pub type Ftrd = crate::Reg<ftrd::FtrdSpec>;
 #[doc = "Fault Type DMA Manager Register"]
-pub mod dmac_ftrd;
-#[doc = "DMAC_FTR0 (r) register accessor: Fault Type DMA Channel Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_ftr0::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_ftr0`]
+pub mod ftrd;
+#[doc = "FTR0 (r) register accessor: Fault Type DMA Channel Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ftr0::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ftr0`]
 module"]
-#[doc(alias = "DMAC_FTR0")]
-pub type DmacFtr0 = crate::Reg<dmac_ftr0::DmacFtr0Spec>;
+#[doc(alias = "FTR0")]
+pub type Ftr0 = crate::Reg<ftr0::Ftr0Spec>;
 #[doc = "Fault Type DMA Channel Register"]
-pub mod dmac_ftr0;
-#[doc = "DMAC_CSR (r) register accessor: Channel Status Registers\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_csr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_csr`]
+pub mod ftr0;
+#[doc = "CSR (r) register accessor: Channel Status Registers\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@csr`]
 module"]
-#[doc(alias = "DMAC_CSR")]
-pub type DmacCsr = crate::Reg<dmac_csr::DmacCsrSpec>;
+#[doc(alias = "CSR")]
+pub type Csr = crate::Reg<csr::CsrSpec>;
 #[doc = "Channel Status Registers"]
-pub mod dmac_csr;
-#[doc = "DMAC_CPC (r) register accessor: Channel Program Counter Registers\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_cpc::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_cpc`]
+pub mod csr;
+#[doc = "CPC (r) register accessor: Channel Program Counter Registers\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cpc::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cpc`]
 module"]
-#[doc(alias = "DMAC_CPC")]
-pub type DmacCpc = crate::Reg<dmac_cpc::DmacCpcSpec>;
+#[doc(alias = "CPC")]
+pub type Cpc = crate::Reg<cpc::CpcSpec>;
 #[doc = "Channel Program Counter Registers"]
-pub mod dmac_cpc;
-#[doc = "DMAC_SAR (r) register accessor: Source Address Registers\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_sar::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_sar`]
+pub mod cpc;
+#[doc = "SAR (r) register accessor: Source Address Registers\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sar::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sar`]
 module"]
-#[doc(alias = "DMAC_SAR")]
-pub type DmacSar = crate::Reg<dmac_sar::DmacSarSpec>;
+#[doc(alias = "SAR")]
+pub type Sar = crate::Reg<sar::SarSpec>;
 #[doc = "Source Address Registers"]
-pub mod dmac_sar;
-#[doc = "DMAC_DAR (r) register accessor: DestinationAddress Registers\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_dar::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_dar`]
+pub mod sar;
+#[doc = "DAR (r) register accessor: DestinationAddress Registers\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dar::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dar`]
 module"]
-#[doc(alias = "DMAC_DAR")]
-pub type DmacDar = crate::Reg<dmac_dar::DmacDarSpec>;
+#[doc(alias = "DAR")]
+pub type Dar = crate::Reg<dar::DarSpec>;
 #[doc = "DestinationAddress Registers"]
-pub mod dmac_dar;
-#[doc = "DMAC_CCR (r) register accessor: Channel Control Registers\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_ccr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_ccr`]
+pub mod dar;
+#[doc = "CCR (r) register accessor: Channel Control Registers\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ccr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ccr`]
 module"]
-#[doc(alias = "DMAC_CCR")]
-pub type DmacCcr = crate::Reg<dmac_ccr::DmacCcrSpec>;
+#[doc(alias = "CCR")]
+pub type Ccr = crate::Reg<ccr::CcrSpec>;
 #[doc = "Channel Control Registers"]
-pub mod dmac_ccr;
-#[doc = "DMAC_LC0_ (r) register accessor: Loop Counter 0 Registers\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_lc0_::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_lc0_`]
+pub mod ccr;
+#[doc = "LC0_ (r) register accessor: Loop Counter 0 Registers\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lc0_::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@lc0_`]
 module"]
-#[doc(alias = "DMAC_LC0_")]
-pub type DmacLc0_ = crate::Reg<dmac_lc0_::DmacLc0_Spec>;
+#[doc(alias = "LC0_")]
+pub type Lc0_ = crate::Reg<lc0_::Lc0_Spec>;
 #[doc = "Loop Counter 0 Registers"]
-pub mod dmac_lc0_;
-#[doc = "DMAC_LC1_ (r) register accessor: Loop Counter 1 Registers\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_lc1_::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_lc1_`]
+pub mod lc0_;
+#[doc = "LC1_ (r) register accessor: Loop Counter 1 Registers\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lc1_::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@lc1_`]
 module"]
-#[doc(alias = "DMAC_LC1_")]
-pub type DmacLc1_ = crate::Reg<dmac_lc1_::DmacLc1_Spec>;
+#[doc(alias = "LC1_")]
+pub type Lc1_ = crate::Reg<lc1_::Lc1_Spec>;
 #[doc = "Loop Counter 1 Registers"]
-pub mod dmac_lc1_;
-#[doc = "DMAC_DBGSTATUS (r) register accessor: Debug Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_dbgstatus::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_dbgstatus`]
+pub mod lc1_;
+#[doc = "DBGSTATUS (r) register accessor: Debug Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dbgstatus::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dbgstatus`]
 module"]
-#[doc(alias = "DMAC_DBGSTATUS")]
-pub type DmacDbgstatus = crate::Reg<dmac_dbgstatus::DmacDbgstatusSpec>;
+#[doc(alias = "DBGSTATUS")]
+pub type Dbgstatus = crate::Reg<dbgstatus::DbgstatusSpec>;
 #[doc = "Debug Status Register"]
-pub mod dmac_dbgstatus;
-#[doc = "DMAC_DBGCMD (w) register accessor: Debug Command Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac_dbgcmd::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_dbgcmd`]
+pub mod dbgstatus;
+#[doc = "DBGCMD (w) register accessor: Debug Command Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dbgcmd::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dbgcmd`]
 module"]
-#[doc(alias = "DMAC_DBGCMD")]
-pub type DmacDbgcmd = crate::Reg<dmac_dbgcmd::DmacDbgcmdSpec>;
+#[doc(alias = "DBGCMD")]
+pub type Dbgcmd = crate::Reg<dbgcmd::DbgcmdSpec>;
 #[doc = "Debug Command Register"]
-pub mod dmac_dbgcmd;
-#[doc = "DMAC_DBGINST0 (w) register accessor: Debug Instruction-0 Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac_dbginst0::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_dbginst0`]
+pub mod dbgcmd;
+#[doc = "DBGINST0 (w) register accessor: Debug Instruction-0 Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dbginst0::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dbginst0`]
 module"]
-#[doc(alias = "DMAC_DBGINST0")]
-pub type DmacDbginst0 = crate::Reg<dmac_dbginst0::DmacDbginst0Spec>;
+#[doc(alias = "DBGINST0")]
+pub type Dbginst0 = crate::Reg<dbginst0::Dbginst0Spec>;
 #[doc = "Debug Instruction-0 Register"]
-pub mod dmac_dbginst0;
-#[doc = "DMAC_DBGINST1 (w) register accessor: Debug Instruction-1 Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac_dbginst1::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_dbginst1`]
+pub mod dbginst0;
+#[doc = "DBGINST1 (w) register accessor: Debug Instruction-1 Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dbginst1::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dbginst1`]
 module"]
-#[doc(alias = "DMAC_DBGINST1")]
-pub type DmacDbginst1 = crate::Reg<dmac_dbginst1::DmacDbginst1Spec>;
+#[doc(alias = "DBGINST1")]
+pub type Dbginst1 = crate::Reg<dbginst1::Dbginst1Spec>;
 #[doc = "Debug Instruction-1 Register"]
-pub mod dmac_dbginst1;
-#[doc = "DMAC_CR0 (r) register accessor: Configuration Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_cr0::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_cr0`]
+pub mod dbginst1;
+#[doc = "CR0 (r) register accessor: Configuration Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cr0::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr0`]
 module"]
-#[doc(alias = "DMAC_CR0")]
-pub type DmacCr0 = crate::Reg<dmac_cr0::DmacCr0Spec>;
+#[doc(alias = "CR0")]
+pub type Cr0 = crate::Reg<cr0::Cr0Spec>;
 #[doc = "Configuration Register 0"]
-pub mod dmac_cr0;
-#[doc = "DMAC_CR1 (r) register accessor: Configuration Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_cr1::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_cr1`]
+pub mod cr0;
+#[doc = "CR1 (r) register accessor: Configuration Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cr1::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr1`]
 module"]
-#[doc(alias = "DMAC_CR1")]
-pub type DmacCr1 = crate::Reg<dmac_cr1::DmacCr1Spec>;
+#[doc(alias = "CR1")]
+pub type Cr1 = crate::Reg<cr1::Cr1Spec>;
 #[doc = "Configuration Register 1"]
-pub mod dmac_cr1;
-#[doc = "DMAC_CR2 (r) register accessor: Configuration Register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_cr2::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_cr2`]
+pub mod cr1;
+#[doc = "CR2 (r) register accessor: Configuration Register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cr2::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr2`]
 module"]
-#[doc(alias = "DMAC_CR2")]
-pub type DmacCr2 = crate::Reg<dmac_cr2::DmacCr2Spec>;
+#[doc(alias = "CR2")]
+pub type Cr2 = crate::Reg<cr2::Cr2Spec>;
 #[doc = "Configuration Register 2"]
-pub mod dmac_cr2;
-#[doc = "DMAC_CR3 (r) register accessor: Configuration Register 3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_cr3::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_cr3`]
+pub mod cr2;
+#[doc = "CR3 (r) register accessor: Configuration Register 3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cr3::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr3`]
 module"]
-#[doc(alias = "DMAC_CR3")]
-pub type DmacCr3 = crate::Reg<dmac_cr3::DmacCr3Spec>;
+#[doc(alias = "CR3")]
+pub type Cr3 = crate::Reg<cr3::Cr3Spec>;
 #[doc = "Configuration Register 3"]
-pub mod dmac_cr3;
-#[doc = "DMAC_CR4 (r) register accessor: Configuration Register 4\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_cr4::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_cr4`]
+pub mod cr3;
+#[doc = "CR4 (r) register accessor: Configuration Register 4\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cr4::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr4`]
 module"]
-#[doc(alias = "DMAC_CR4")]
-pub type DmacCr4 = crate::Reg<dmac_cr4::DmacCr4Spec>;
+#[doc(alias = "CR4")]
+pub type Cr4 = crate::Reg<cr4::Cr4Spec>;
 #[doc = "Configuration Register 4"]
-pub mod dmac_cr4;
-#[doc = "DMAC_CRDn (r) register accessor: DMA Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_crdn::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_crdn`]
+pub mod cr4;
+#[doc = "CRDn (r) register accessor: DMA Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`crdn::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@crdn`]
 module"]
-#[doc(alias = "DMAC_CRDn")]
-pub type DmacCrdn = crate::Reg<dmac_crdn::DmacCrdnSpec>;
+#[doc(alias = "CRDn")]
+pub type Crdn = crate::Reg<crdn::CrdnSpec>;
 #[doc = "DMA Configuration Register"]
-pub mod dmac_crdn;
-#[doc = "DMAC_WD (rw) register accessor: DMA Watchdog Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_wd::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac_wd::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac_wd`]
+pub mod crdn;
+#[doc = "WD (rw) register accessor: DMA Watchdog Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wd::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`wd::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@wd`]
 module"]
-#[doc(alias = "DMAC_WD")]
-pub type DmacWd = crate::Reg<dmac_wd::DmacWdSpec>;
+#[doc(alias = "WD")]
+pub type Wd = crate::Reg<wd::WdSpec>;
 #[doc = "DMA Watchdog Register"]
-pub mod dmac_wd;
+pub mod wd;

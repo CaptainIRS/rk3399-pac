@@ -1,727 +1,727 @@
 #[repr(C)]
 #[doc = "Register block"]
 pub struct RegisterBlock {
-    pmu_wakeup_cfg0: PmuWakeupCfg0,
-    pmu_wakeup_cfg1: PmuWakeupCfg1,
-    pmu_wakeup_cfg2: PmuWakeupCfg2,
-    pmu_wakeup_cfg3: PmuWakeupCfg3,
-    pmu_wakeup_cfg4: PmuWakeupCfg4,
-    pmu_pwrdn_con: PmuPwrdnCon,
-    pmu_pwrdn_st: PmuPwrdnSt,
-    pmu_pll_con: PmuPllCon,
-    pmu_pwrmode_con: PmuPwrmodeCon,
-    pmu_sft_con: PmuSftCon,
-    pmu_int_con: PmuIntCon,
-    pmu_int_st: PmuIntSt,
-    pmu_gpio0_pos_int_con: PmuGpio0PosIntCon,
-    pmu_gpio0_neg_int_con: PmuGpio0NegIntCon,
-    pmu_gpio1_pos_int_con: PmuGpio1PosIntCon,
-    pmu_gpio1_neg_int_con: PmuGpio1NegIntCon,
-    pmu_gpio0_pos_int_st: PmuGpio0PosIntSt,
-    pmu_gpio0_neg_int_st: PmuGpio0NegIntSt,
-    pmu_gpio1_pos_int_st: PmuGpio1PosIntSt,
-    pmu_gpio1_neg_int_st: PmuGpio1NegIntSt,
-    pmu_pwrdn_inten: PmuPwrdnInten,
-    pmu_pwrdn_status: PmuPwrdnStatus,
-    pmu_wakeup_status: PmuWakeupStatus,
-    pmu_bus_clr: PmuBusClr,
-    pmu_bus_idle_req: PmuBusIdleReq,
-    pmu_bus_idle_st: PmuBusIdleSt,
-    pmu_bus_idle_ack: PmuBusIdleAck,
-    pmu_cci500_con: PmuCci500Con,
-    pmu_adb400_con: PmuAdb400Con,
-    pmu_adb400_st: PmuAdb400St,
-    pmu_power_st: PmuPowerSt,
-    pmu_core_pwr_st: PmuCorePwrSt,
-    pmu_osc_cnt: PmuOscCnt,
-    pmu_plllock_cnt: PmuPlllockCnt,
-    pmu_pllrst_cnt: PmuPllrstCnt,
-    pmu_stable_cnt: PmuStableCnt,
-    pmu_ddrio_pwron_cnt: PmuDdrioPwronCnt,
-    pmu_wakeup_rst_clr_cnt: PmuWakeupRstClrCnt,
-    pmu_ddr_sref_st: PmuDdrSrefSt,
-    pmu_scu_l_pwrdn_cnt: PmuScuLPwrdnCnt,
-    pmu_scu_l_pwrup_cnt: PmuScuLPwrupCnt,
-    pmu_scu_b_pwrdn_cnt: PmuScuBPwrdnCnt,
-    pmu_scu_b_pwrup_cnt: PmuScuBPwrupCnt,
-    pmu_gpu_pwrdn_cnt: PmuGpuPwrdnCnt,
-    pmu_gpu_pwrup_cnt: PmuGpuPwrupCnt,
-    pmu_center_pwrdn_cnt: PmuCenterPwrdnCnt,
-    pmu_center_pwrup_cnt: PmuCenterPwrupCnt,
-    pmu_timeout_cnt: PmuTimeoutCnt,
-    pmu_cpu0apm_con: PmuCpu0apmCon,
-    pmu_cpu1apm_con: PmuCpu1apmCon,
-    pmu_cpu2apm_con: PmuCpu2apmCon,
-    pmu_cpu3apm_con: PmuCpu3apmCon,
-    pmu_cpu0bpm_con: PmuCpu0bpmCon,
-    pmu_cpu1bpm_con: PmuCpu1bpmCon,
-    pmu_noc_auto_ena: PmuNocAutoEna,
-    pmu_pwrdn_con1: PmuPwrdnCon1,
+    wakeup_cfg0: WakeupCfg0,
+    wakeup_cfg1: WakeupCfg1,
+    wakeup_cfg2: WakeupCfg2,
+    wakeup_cfg3: WakeupCfg3,
+    wakeup_cfg4: WakeupCfg4,
+    pwrdn_con: PwrdnCon,
+    pwrdn_st: PwrdnSt,
+    pll_con: PllCon,
+    pwrmode_con: PwrmodeCon,
+    sft_con: SftCon,
+    int_con: IntCon,
+    int_st: IntSt,
+    gpio0_pos_int_con: Gpio0PosIntCon,
+    gpio0_neg_int_con: Gpio0NegIntCon,
+    gpio1_pos_int_con: Gpio1PosIntCon,
+    gpio1_neg_int_con: Gpio1NegIntCon,
+    gpio0_pos_int_st: Gpio0PosIntSt,
+    gpio0_neg_int_st: Gpio0NegIntSt,
+    gpio1_pos_int_st: Gpio1PosIntSt,
+    gpio1_neg_int_st: Gpio1NegIntSt,
+    pwrdn_inten: PwrdnInten,
+    pwrdn_status: PwrdnStatus,
+    wakeup_status: WakeupStatus,
+    bus_clr: BusClr,
+    bus_idle_req: BusIdleReq,
+    bus_idle_st: BusIdleSt,
+    bus_idle_ack: BusIdleAck,
+    cci500_con: Cci500Con,
+    adb400_con: Adb400Con,
+    adb400_st: Adb400St,
+    power_st: PowerSt,
+    core_pwr_st: CorePwrSt,
+    osc_cnt: OscCnt,
+    plllock_cnt: PlllockCnt,
+    pllrst_cnt: PllrstCnt,
+    stable_cnt: StableCnt,
+    ddrio_pwron_cnt: DdrioPwronCnt,
+    wakeup_rst_clr_cnt: WakeupRstClrCnt,
+    ddr_sref_st: DdrSrefSt,
+    scu_l_pwrdn_cnt: ScuLPwrdnCnt,
+    scu_l_pwrup_cnt: ScuLPwrupCnt,
+    scu_b_pwrdn_cnt: ScuBPwrdnCnt,
+    scu_b_pwrup_cnt: ScuBPwrupCnt,
+    gpu_pwrdn_cnt: GpuPwrdnCnt,
+    gpu_pwrup_cnt: GpuPwrupCnt,
+    center_pwrdn_cnt: CenterPwrdnCnt,
+    center_pwrup_cnt: CenterPwrupCnt,
+    timeout_cnt: TimeoutCnt,
+    cpu0apm_con: Cpu0apmCon,
+    cpu1apm_con: Cpu1apmCon,
+    cpu2apm_con: Cpu2apmCon,
+    cpu3apm_con: Cpu3apmCon,
+    cpu0bpm_con: Cpu0bpmCon,
+    cpu1bpm_con: Cpu1bpmCon,
+    noc_auto_ena: NocAutoEna,
+    pwrdn_con1: PwrdnCon1,
     _reserved56: [u8; 0x10],
-    pmu_sys_reg0: PmuSysReg0,
-    pmu_sys_reg1: PmuSysReg1,
-    pmu_sys_reg2: PmuSysReg2,
-    pmu_sys_reg3: PmuSysReg3,
+    sys_reg0: SysReg0,
+    sys_reg1: SysReg1,
+    sys_reg2: SysReg2,
+    sys_reg3: SysReg3,
 }
 impl RegisterBlock {
     #[doc = "0x00 - pmu wakeup configure register 0"]
     #[inline(always)]
-    pub const fn pmu_wakeup_cfg0(&self) -> &PmuWakeupCfg0 {
-        &self.pmu_wakeup_cfg0
+    pub const fn wakeup_cfg0(&self) -> &WakeupCfg0 {
+        &self.wakeup_cfg0
     }
     #[doc = "0x04 - pmu wakeup configure register 1"]
     #[inline(always)]
-    pub const fn pmu_wakeup_cfg1(&self) -> &PmuWakeupCfg1 {
-        &self.pmu_wakeup_cfg1
+    pub const fn wakeup_cfg1(&self) -> &WakeupCfg1 {
+        &self.wakeup_cfg1
     }
     #[doc = "0x08 - pmu wakeup configure register 2"]
     #[inline(always)]
-    pub const fn pmu_wakeup_cfg2(&self) -> &PmuWakeupCfg2 {
-        &self.pmu_wakeup_cfg2
+    pub const fn wakeup_cfg2(&self) -> &WakeupCfg2 {
+        &self.wakeup_cfg2
     }
     #[doc = "0x0c - pmu wakeup configure register 3"]
     #[inline(always)]
-    pub const fn pmu_wakeup_cfg3(&self) -> &PmuWakeupCfg3 {
-        &self.pmu_wakeup_cfg3
+    pub const fn wakeup_cfg3(&self) -> &WakeupCfg3 {
+        &self.wakeup_cfg3
     }
     #[doc = "0x10 - pmu wakeup configure register 4"]
     #[inline(always)]
-    pub const fn pmu_wakeup_cfg4(&self) -> &PmuWakeupCfg4 {
-        &self.pmu_wakeup_cfg4
+    pub const fn wakeup_cfg4(&self) -> &WakeupCfg4 {
+        &self.wakeup_cfg4
     }
     #[doc = "0x14 - pmu power down configure register"]
     #[inline(always)]
-    pub const fn pmu_pwrdn_con(&self) -> &PmuPwrdnCon {
-        &self.pmu_pwrdn_con
+    pub const fn pwrdn_con(&self) -> &PwrdnCon {
+        &self.pwrdn_con
     }
     #[doc = "0x18 - pmu power down status register"]
     #[inline(always)]
-    pub const fn pmu_pwrdn_st(&self) -> &PmuPwrdnSt {
-        &self.pmu_pwrdn_st
+    pub const fn pwrdn_st(&self) -> &PwrdnSt {
+        &self.pwrdn_st
     }
     #[doc = "0x1c - PLL low power control register"]
     #[inline(always)]
-    pub const fn pmu_pll_con(&self) -> &PmuPllCon {
-        &self.pmu_pll_con
+    pub const fn pll_con(&self) -> &PllCon {
+        &self.pll_con
     }
     #[doc = "0x20 - pmu power mode configure register of common resource"]
     #[inline(always)]
-    pub const fn pmu_pwrmode_con(&self) -> &PmuPwrmodeCon {
-        &self.pmu_pwrmode_con
+    pub const fn pwrmode_con(&self) -> &PwrmodeCon {
+        &self.pwrmode_con
     }
     #[doc = "0x24 - pmu software configure register"]
     #[inline(always)]
-    pub const fn pmu_sft_con(&self) -> &PmuSftCon {
-        &self.pmu_sft_con
+    pub const fn sft_con(&self) -> &SftCon {
+        &self.sft_con
     }
     #[doc = "0x28 - pmu interrupt configure register"]
     #[inline(always)]
-    pub const fn pmu_int_con(&self) -> &PmuIntCon {
-        &self.pmu_int_con
+    pub const fn int_con(&self) -> &IntCon {
+        &self.int_con
     }
     #[doc = "0x2c - pmu interrupt status register"]
     #[inline(always)]
-    pub const fn pmu_int_st(&self) -> &PmuIntSt {
-        &self.pmu_int_st
+    pub const fn int_st(&self) -> &IntSt {
+        &self.int_st
     }
     #[doc = "0x30 - pmu gpio0 posedge interrupt configure register"]
     #[inline(always)]
-    pub const fn pmu_gpio0_pos_int_con(&self) -> &PmuGpio0PosIntCon {
-        &self.pmu_gpio0_pos_int_con
+    pub const fn gpio0_pos_int_con(&self) -> &Gpio0PosIntCon {
+        &self.gpio0_pos_int_con
     }
     #[doc = "0x34 - pmu gpio0 negedge interrupt configure register"]
     #[inline(always)]
-    pub const fn pmu_gpio0_neg_int_con(&self) -> &PmuGpio0NegIntCon {
-        &self.pmu_gpio0_neg_int_con
+    pub const fn gpio0_neg_int_con(&self) -> &Gpio0NegIntCon {
+        &self.gpio0_neg_int_con
     }
     #[doc = "0x38 - pmu gpio1 posedge interrupt configure register"]
     #[inline(always)]
-    pub const fn pmu_gpio1_pos_int_con(&self) -> &PmuGpio1PosIntCon {
-        &self.pmu_gpio1_pos_int_con
+    pub const fn gpio1_pos_int_con(&self) -> &Gpio1PosIntCon {
+        &self.gpio1_pos_int_con
     }
     #[doc = "0x3c - pmu gpio1 negedge interrupt configure register"]
     #[inline(always)]
-    pub const fn pmu_gpio1_neg_int_con(&self) -> &PmuGpio1NegIntCon {
-        &self.pmu_gpio1_neg_int_con
+    pub const fn gpio1_neg_int_con(&self) -> &Gpio1NegIntCon {
+        &self.gpio1_neg_int_con
     }
     #[doc = "0x40 - pmu gpio0 posedge interrupt status register"]
     #[inline(always)]
-    pub const fn pmu_gpio0_pos_int_st(&self) -> &PmuGpio0PosIntSt {
-        &self.pmu_gpio0_pos_int_st
+    pub const fn gpio0_pos_int_st(&self) -> &Gpio0PosIntSt {
+        &self.gpio0_pos_int_st
     }
     #[doc = "0x44 - pmu gpio0 negedge interrupt status register"]
     #[inline(always)]
-    pub const fn pmu_gpio0_neg_int_st(&self) -> &PmuGpio0NegIntSt {
-        &self.pmu_gpio0_neg_int_st
+    pub const fn gpio0_neg_int_st(&self) -> &Gpio0NegIntSt {
+        &self.gpio0_neg_int_st
     }
     #[doc = "0x48 - pmu gpio1 posedge interrupt status register"]
     #[inline(always)]
-    pub const fn pmu_gpio1_pos_int_st(&self) -> &PmuGpio1PosIntSt {
-        &self.pmu_gpio1_pos_int_st
+    pub const fn gpio1_pos_int_st(&self) -> &Gpio1PosIntSt {
+        &self.gpio1_pos_int_st
     }
     #[doc = "0x4c - pmu gpio1 negedge interrupt status register"]
     #[inline(always)]
-    pub const fn pmu_gpio1_neg_int_st(&self) -> &PmuGpio1NegIntSt {
-        &self.pmu_gpio1_neg_int_st
+    pub const fn gpio1_neg_int_st(&self) -> &Gpio1NegIntSt {
+        &self.gpio1_neg_int_st
     }
     #[doc = "0x50 - pmu power down interrupt enable register"]
     #[inline(always)]
-    pub const fn pmu_pwrdn_inten(&self) -> &PmuPwrdnInten {
-        &self.pmu_pwrdn_inten
+    pub const fn pwrdn_inten(&self) -> &PwrdnInten {
+        &self.pwrdn_inten
     }
     #[doc = "0x54 - pmu power down interrupt status register"]
     #[inline(always)]
-    pub const fn pmu_pwrdn_status(&self) -> &PmuPwrdnStatus {
-        &self.pmu_pwrdn_status
+    pub const fn pwrdn_status(&self) -> &PwrdnStatus {
+        &self.pwrdn_status
     }
     #[doc = "0x58 - pmu interrupt wakeup status register"]
     #[inline(always)]
-    pub const fn pmu_wakeup_status(&self) -> &PmuWakeupStatus {
-        &self.pmu_wakeup_status
+    pub const fn wakeup_status(&self) -> &WakeupStatus {
+        &self.wakeup_status
     }
     #[doc = "0x5c - pmu bus clear register"]
     #[inline(always)]
-    pub const fn pmu_bus_clr(&self) -> &PmuBusClr {
-        &self.pmu_bus_clr
+    pub const fn bus_clr(&self) -> &BusClr {
+        &self.bus_clr
     }
     #[doc = "0x60 - pmu bus idle request register"]
     #[inline(always)]
-    pub const fn pmu_bus_idle_req(&self) -> &PmuBusIdleReq {
-        &self.pmu_bus_idle_req
+    pub const fn bus_idle_req(&self) -> &BusIdleReq {
+        &self.bus_idle_req
     }
     #[doc = "0x64 - pmu bus idle status register"]
     #[inline(always)]
-    pub const fn pmu_bus_idle_st(&self) -> &PmuBusIdleSt {
-        &self.pmu_bus_idle_st
+    pub const fn bus_idle_st(&self) -> &BusIdleSt {
+        &self.bus_idle_st
     }
     #[doc = "0x68 - pmu bus idle ack status register"]
     #[inline(always)]
-    pub const fn pmu_bus_idle_ack(&self) -> &PmuBusIdleAck {
-        &self.pmu_bus_idle_ack
+    pub const fn bus_idle_ack(&self) -> &BusIdleAck {
+        &self.bus_idle_ack
     }
     #[doc = "0x6c - CCI-500 low power control register"]
     #[inline(always)]
-    pub const fn pmu_cci500_con(&self) -> &PmuCci500Con {
-        &self.pmu_cci500_con
+    pub const fn cci500_con(&self) -> &Cci500Con {
+        &self.cci500_con
     }
     #[doc = "0x70 - adb-400 low power control register"]
     #[inline(always)]
-    pub const fn pmu_adb400_con(&self) -> &PmuAdb400Con {
-        &self.pmu_adb400_con
+    pub const fn adb400_con(&self) -> &Adb400Con {
+        &self.adb400_con
     }
     #[doc = "0x74 - adb-400 low power status register"]
     #[inline(always)]
-    pub const fn pmu_adb400_st(&self) -> &PmuAdb400St {
-        &self.pmu_adb400_st
+    pub const fn adb400_st(&self) -> &Adb400St {
+        &self.adb400_st
     }
     #[doc = "0x78 - pmu power status register"]
     #[inline(always)]
-    pub const fn pmu_power_st(&self) -> &PmuPowerSt {
-        &self.pmu_power_st
+    pub const fn power_st(&self) -> &PowerSt {
+        &self.power_st
     }
     #[doc = "0x7c - pmu core power status register"]
     #[inline(always)]
-    pub const fn pmu_core_pwr_st(&self) -> &PmuCorePwrSt {
-        &self.pmu_core_pwr_st
+    pub const fn core_pwr_st(&self) -> &CorePwrSt {
+        &self.core_pwr_st
     }
     #[doc = "0x80 - pmu osc count register"]
     #[inline(always)]
-    pub const fn pmu_osc_cnt(&self) -> &PmuOscCnt {
-        &self.pmu_osc_cnt
+    pub const fn osc_cnt(&self) -> &OscCnt {
+        &self.osc_cnt
     }
     #[doc = "0x84 - pmu pll lock count register"]
     #[inline(always)]
-    pub const fn pmu_plllock_cnt(&self) -> &PmuPlllockCnt {
-        &self.pmu_plllock_cnt
+    pub const fn plllock_cnt(&self) -> &PlllockCnt {
+        &self.plllock_cnt
     }
     #[doc = "0x88 - pmu pll reset count register"]
     #[inline(always)]
-    pub const fn pmu_pllrst_cnt(&self) -> &PmuPllrstCnt {
-        &self.pmu_pllrst_cnt
+    pub const fn pllrst_cnt(&self) -> &PllrstCnt {
+        &self.pllrst_cnt
     }
     #[doc = "0x8c - pmu power stable count register"]
     #[inline(always)]
-    pub const fn pmu_stable_cnt(&self) -> &PmuStableCnt {
-        &self.pmu_stable_cnt
+    pub const fn stable_cnt(&self) -> &StableCnt {
+        &self.stable_cnt
     }
     #[doc = "0x90 - pmu ddrio power on count register"]
     #[inline(always)]
-    pub const fn pmu_ddrio_pwron_cnt(&self) -> &PmuDdrioPwronCnt {
-        &self.pmu_ddrio_pwron_cnt
+    pub const fn ddrio_pwron_cnt(&self) -> &DdrioPwronCnt {
+        &self.ddrio_pwron_cnt
     }
     #[doc = "0x94 - pmu wakeup reset clear count register"]
     #[inline(always)]
-    pub const fn pmu_wakeup_rst_clr_cnt(&self) -> &PmuWakeupRstClrCnt {
-        &self.pmu_wakeup_rst_clr_cnt
+    pub const fn wakeup_rst_clr_cnt(&self) -> &WakeupRstClrCnt {
+        &self.wakeup_rst_clr_cnt
     }
     #[doc = "0x98 - pmu ddr self refresh status register"]
     #[inline(always)]
-    pub const fn pmu_ddr_sref_st(&self) -> &PmuDdrSrefSt {
-        &self.pmu_ddr_sref_st
+    pub const fn ddr_sref_st(&self) -> &DdrSrefSt {
+        &self.ddr_sref_st
     }
     #[doc = "0x9c - pmu scu_l power down count register"]
     #[inline(always)]
-    pub const fn pmu_scu_l_pwrdn_cnt(&self) -> &PmuScuLPwrdnCnt {
-        &self.pmu_scu_l_pwrdn_cnt
+    pub const fn scu_l_pwrdn_cnt(&self) -> &ScuLPwrdnCnt {
+        &self.scu_l_pwrdn_cnt
     }
     #[doc = "0xa0 - pmu scu_l power up count register"]
     #[inline(always)]
-    pub const fn pmu_scu_l_pwrup_cnt(&self) -> &PmuScuLPwrupCnt {
-        &self.pmu_scu_l_pwrup_cnt
+    pub const fn scu_l_pwrup_cnt(&self) -> &ScuLPwrupCnt {
+        &self.scu_l_pwrup_cnt
     }
     #[doc = "0xa4 - pmu scu_b power down count register"]
     #[inline(always)]
-    pub const fn pmu_scu_b_pwrdn_cnt(&self) -> &PmuScuBPwrdnCnt {
-        &self.pmu_scu_b_pwrdn_cnt
+    pub const fn scu_b_pwrdn_cnt(&self) -> &ScuBPwrdnCnt {
+        &self.scu_b_pwrdn_cnt
     }
     #[doc = "0xa8 - pmu scu_b power up count register"]
     #[inline(always)]
-    pub const fn pmu_scu_b_pwrup_cnt(&self) -> &PmuScuBPwrupCnt {
-        &self.pmu_scu_b_pwrup_cnt
+    pub const fn scu_b_pwrup_cnt(&self) -> &ScuBPwrupCnt {
+        &self.scu_b_pwrup_cnt
     }
     #[doc = "0xac - pmu gpu power down count register"]
     #[inline(always)]
-    pub const fn pmu_gpu_pwrdn_cnt(&self) -> &PmuGpuPwrdnCnt {
-        &self.pmu_gpu_pwrdn_cnt
+    pub const fn gpu_pwrdn_cnt(&self) -> &GpuPwrdnCnt {
+        &self.gpu_pwrdn_cnt
     }
     #[doc = "0xb0 - pmu gpu power up count register"]
     #[inline(always)]
-    pub const fn pmu_gpu_pwrup_cnt(&self) -> &PmuGpuPwrupCnt {
-        &self.pmu_gpu_pwrup_cnt
+    pub const fn gpu_pwrup_cnt(&self) -> &GpuPwrupCnt {
+        &self.gpu_pwrup_cnt
     }
     #[doc = "0xb4 - pmu center power down count register"]
     #[inline(always)]
-    pub const fn pmu_center_pwrdn_cnt(&self) -> &PmuCenterPwrdnCnt {
-        &self.pmu_center_pwrdn_cnt
+    pub const fn center_pwrdn_cnt(&self) -> &CenterPwrdnCnt {
+        &self.center_pwrdn_cnt
     }
     #[doc = "0xb8 - pmu center power up count register"]
     #[inline(always)]
-    pub const fn pmu_center_pwrup_cnt(&self) -> &PmuCenterPwrupCnt {
-        &self.pmu_center_pwrup_cnt
+    pub const fn center_pwrup_cnt(&self) -> &CenterPwrupCnt {
+        &self.center_pwrup_cnt
     }
     #[doc = "0xbc - pmu timeout count register"]
     #[inline(always)]
-    pub const fn pmu_timeout_cnt(&self) -> &PmuTimeoutCnt {
-        &self.pmu_timeout_cnt
+    pub const fn timeout_cnt(&self) -> &TimeoutCnt {
+        &self.timeout_cnt
     }
     #[doc = "0xc0 - pmu cpu0 auto power down control register"]
     #[inline(always)]
-    pub const fn pmu_cpu0apm_con(&self) -> &PmuCpu0apmCon {
-        &self.pmu_cpu0apm_con
+    pub const fn cpu0apm_con(&self) -> &Cpu0apmCon {
+        &self.cpu0apm_con
     }
     #[doc = "0xc4 - pmu cpu1 auto power down control register"]
     #[inline(always)]
-    pub const fn pmu_cpu1apm_con(&self) -> &PmuCpu1apmCon {
-        &self.pmu_cpu1apm_con
+    pub const fn cpu1apm_con(&self) -> &Cpu1apmCon {
+        &self.cpu1apm_con
     }
     #[doc = "0xc8 - pmu cpu2 auto power down control register"]
     #[inline(always)]
-    pub const fn pmu_cpu2apm_con(&self) -> &PmuCpu2apmCon {
-        &self.pmu_cpu2apm_con
+    pub const fn cpu2apm_con(&self) -> &Cpu2apmCon {
+        &self.cpu2apm_con
     }
     #[doc = "0xcc - pmu cpu3 auto power down control register"]
     #[inline(always)]
-    pub const fn pmu_cpu3apm_con(&self) -> &PmuCpu3apmCon {
-        &self.pmu_cpu3apm_con
+    pub const fn cpu3apm_con(&self) -> &Cpu3apmCon {
+        &self.cpu3apm_con
     }
     #[doc = "0xd0 - pmu cluster_b cpu0 auto power down control register"]
     #[inline(always)]
-    pub const fn pmu_cpu0bpm_con(&self) -> &PmuCpu0bpmCon {
-        &self.pmu_cpu0bpm_con
+    pub const fn cpu0bpm_con(&self) -> &Cpu0bpmCon {
+        &self.cpu0bpm_con
     }
     #[doc = "0xd4 - pmu cluster_b cpu0 auto power down control register"]
     #[inline(always)]
-    pub const fn pmu_cpu1bpm_con(&self) -> &PmuCpu1bpmCon {
-        &self.pmu_cpu1bpm_con
+    pub const fn cpu1bpm_con(&self) -> &Cpu1bpmCon {
+        &self.cpu1bpm_con
     }
     #[doc = "0xd8 - NOC auto domain clock gating disable enable register"]
     #[inline(always)]
-    pub const fn pmu_noc_auto_ena(&self) -> &PmuNocAutoEna {
-        &self.pmu_noc_auto_ena
+    pub const fn noc_auto_ena(&self) -> &NocAutoEna {
+        &self.noc_auto_ena
     }
     #[doc = "0xdc - pmu power down configure register1"]
     #[inline(always)]
-    pub const fn pmu_pwrdn_con1(&self) -> &PmuPwrdnCon1 {
-        &self.pmu_pwrdn_con1
+    pub const fn pwrdn_con1(&self) -> &PwrdnCon1 {
+        &self.pwrdn_con1
     }
     #[doc = "0xf0 - pmu system register 0"]
     #[inline(always)]
-    pub const fn pmu_sys_reg0(&self) -> &PmuSysReg0 {
-        &self.pmu_sys_reg0
+    pub const fn sys_reg0(&self) -> &SysReg0 {
+        &self.sys_reg0
     }
     #[doc = "0xf4 - pmu system register 1"]
     #[inline(always)]
-    pub const fn pmu_sys_reg1(&self) -> &PmuSysReg1 {
-        &self.pmu_sys_reg1
+    pub const fn sys_reg1(&self) -> &SysReg1 {
+        &self.sys_reg1
     }
     #[doc = "0xf8 - pmu system register 2"]
     #[inline(always)]
-    pub const fn pmu_sys_reg2(&self) -> &PmuSysReg2 {
-        &self.pmu_sys_reg2
+    pub const fn sys_reg2(&self) -> &SysReg2 {
+        &self.sys_reg2
     }
     #[doc = "0xfc - pmu system register 3"]
     #[inline(always)]
-    pub const fn pmu_sys_reg3(&self) -> &PmuSysReg3 {
-        &self.pmu_sys_reg3
+    pub const fn sys_reg3(&self) -> &SysReg3 {
+        &self.sys_reg3
     }
 }
-#[doc = "PMU_WAKEUP_CFG0 (rw) register accessor: pmu wakeup configure register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_wakeup_cfg0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_wakeup_cfg0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_wakeup_cfg0`]
+#[doc = "WAKEUP_CFG0 (rw) register accessor: pmu wakeup configure register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wakeup_cfg0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`wakeup_cfg0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@wakeup_cfg0`]
 module"]
-#[doc(alias = "PMU_WAKEUP_CFG0")]
-pub type PmuWakeupCfg0 = crate::Reg<pmu_wakeup_cfg0::PmuWakeupCfg0Spec>;
+#[doc(alias = "WAKEUP_CFG0")]
+pub type WakeupCfg0 = crate::Reg<wakeup_cfg0::WakeupCfg0Spec>;
 #[doc = "pmu wakeup configure register 0"]
-pub mod pmu_wakeup_cfg0;
-#[doc = "PMU_WAKEUP_CFG1 (rw) register accessor: pmu wakeup configure register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_wakeup_cfg1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_wakeup_cfg1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_wakeup_cfg1`]
+pub mod wakeup_cfg0;
+#[doc = "WAKEUP_CFG1 (rw) register accessor: pmu wakeup configure register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wakeup_cfg1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`wakeup_cfg1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@wakeup_cfg1`]
 module"]
-#[doc(alias = "PMU_WAKEUP_CFG1")]
-pub type PmuWakeupCfg1 = crate::Reg<pmu_wakeup_cfg1::PmuWakeupCfg1Spec>;
+#[doc(alias = "WAKEUP_CFG1")]
+pub type WakeupCfg1 = crate::Reg<wakeup_cfg1::WakeupCfg1Spec>;
 #[doc = "pmu wakeup configure register 1"]
-pub mod pmu_wakeup_cfg1;
-#[doc = "PMU_WAKEUP_CFG2 (rw) register accessor: pmu wakeup configure register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_wakeup_cfg2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_wakeup_cfg2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_wakeup_cfg2`]
+pub mod wakeup_cfg1;
+#[doc = "WAKEUP_CFG2 (rw) register accessor: pmu wakeup configure register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wakeup_cfg2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`wakeup_cfg2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@wakeup_cfg2`]
 module"]
-#[doc(alias = "PMU_WAKEUP_CFG2")]
-pub type PmuWakeupCfg2 = crate::Reg<pmu_wakeup_cfg2::PmuWakeupCfg2Spec>;
+#[doc(alias = "WAKEUP_CFG2")]
+pub type WakeupCfg2 = crate::Reg<wakeup_cfg2::WakeupCfg2Spec>;
 #[doc = "pmu wakeup configure register 2"]
-pub mod pmu_wakeup_cfg2;
-#[doc = "PMU_WAKEUP_CFG3 (rw) register accessor: pmu wakeup configure register 3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_wakeup_cfg3::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_wakeup_cfg3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_wakeup_cfg3`]
+pub mod wakeup_cfg2;
+#[doc = "WAKEUP_CFG3 (rw) register accessor: pmu wakeup configure register 3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wakeup_cfg3::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`wakeup_cfg3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@wakeup_cfg3`]
 module"]
-#[doc(alias = "PMU_WAKEUP_CFG3")]
-pub type PmuWakeupCfg3 = crate::Reg<pmu_wakeup_cfg3::PmuWakeupCfg3Spec>;
+#[doc(alias = "WAKEUP_CFG3")]
+pub type WakeupCfg3 = crate::Reg<wakeup_cfg3::WakeupCfg3Spec>;
 #[doc = "pmu wakeup configure register 3"]
-pub mod pmu_wakeup_cfg3;
-#[doc = "PMU_WAKEUP_CFG4 (rw) register accessor: pmu wakeup configure register 4\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_wakeup_cfg4::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_wakeup_cfg4::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_wakeup_cfg4`]
+pub mod wakeup_cfg3;
+#[doc = "WAKEUP_CFG4 (rw) register accessor: pmu wakeup configure register 4\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wakeup_cfg4::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`wakeup_cfg4::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@wakeup_cfg4`]
 module"]
-#[doc(alias = "PMU_WAKEUP_CFG4")]
-pub type PmuWakeupCfg4 = crate::Reg<pmu_wakeup_cfg4::PmuWakeupCfg4Spec>;
+#[doc(alias = "WAKEUP_CFG4")]
+pub type WakeupCfg4 = crate::Reg<wakeup_cfg4::WakeupCfg4Spec>;
 #[doc = "pmu wakeup configure register 4"]
-pub mod pmu_wakeup_cfg4;
-#[doc = "PMU_PWRDN_CON (rw) register accessor: pmu power down configure register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_pwrdn_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_pwrdn_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_pwrdn_con`]
+pub mod wakeup_cfg4;
+#[doc = "PWRDN_CON (rw) register accessor: pmu power down configure register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pwrdn_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pwrdn_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pwrdn_con`]
 module"]
-#[doc(alias = "PMU_PWRDN_CON")]
-pub type PmuPwrdnCon = crate::Reg<pmu_pwrdn_con::PmuPwrdnConSpec>;
+#[doc(alias = "PWRDN_CON")]
+pub type PwrdnCon = crate::Reg<pwrdn_con::PwrdnConSpec>;
 #[doc = "pmu power down configure register"]
-pub mod pmu_pwrdn_con;
-#[doc = "PMU_PWRDN_ST (rw) register accessor: pmu power down status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_pwrdn_st::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_pwrdn_st::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_pwrdn_st`]
+pub mod pwrdn_con;
+#[doc = "PWRDN_ST (rw) register accessor: pmu power down status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pwrdn_st::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pwrdn_st::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pwrdn_st`]
 module"]
-#[doc(alias = "PMU_PWRDN_ST")]
-pub type PmuPwrdnSt = crate::Reg<pmu_pwrdn_st::PmuPwrdnStSpec>;
+#[doc(alias = "PWRDN_ST")]
+pub type PwrdnSt = crate::Reg<pwrdn_st::PwrdnStSpec>;
 #[doc = "pmu power down status register"]
-pub mod pmu_pwrdn_st;
-#[doc = "PMU_PLL_CON (rw) register accessor: PLL low power control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_pll_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_pll_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_pll_con`]
+pub mod pwrdn_st;
+#[doc = "PLL_CON (rw) register accessor: PLL low power control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pll_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pll_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pll_con`]
 module"]
-#[doc(alias = "PMU_PLL_CON")]
-pub type PmuPllCon = crate::Reg<pmu_pll_con::PmuPllConSpec>;
+#[doc(alias = "PLL_CON")]
+pub type PllCon = crate::Reg<pll_con::PllConSpec>;
 #[doc = "PLL low power control register"]
-pub mod pmu_pll_con;
-#[doc = "PMU_PWRMODE_CON (rw) register accessor: pmu power mode configure register of common resource\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_pwrmode_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_pwrmode_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_pwrmode_con`]
+pub mod pll_con;
+#[doc = "PWRMODE_CON (rw) register accessor: pmu power mode configure register of common resource\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pwrmode_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pwrmode_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pwrmode_con`]
 module"]
-#[doc(alias = "PMU_PWRMODE_CON")]
-pub type PmuPwrmodeCon = crate::Reg<pmu_pwrmode_con::PmuPwrmodeConSpec>;
+#[doc(alias = "PWRMODE_CON")]
+pub type PwrmodeCon = crate::Reg<pwrmode_con::PwrmodeConSpec>;
 #[doc = "pmu power mode configure register of common resource"]
-pub mod pmu_pwrmode_con;
-#[doc = "PMU_SFT_CON (rw) register accessor: pmu software configure register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_sft_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_sft_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_sft_con`]
+pub mod pwrmode_con;
+#[doc = "SFT_CON (rw) register accessor: pmu software configure register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sft_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sft_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sft_con`]
 module"]
-#[doc(alias = "PMU_SFT_CON")]
-pub type PmuSftCon = crate::Reg<pmu_sft_con::PmuSftConSpec>;
+#[doc(alias = "SFT_CON")]
+pub type SftCon = crate::Reg<sft_con::SftConSpec>;
 #[doc = "pmu software configure register"]
-pub mod pmu_sft_con;
-#[doc = "PMU_INT_CON (rw) register accessor: pmu interrupt configure register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_int_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_int_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_int_con`]
+pub mod sft_con;
+#[doc = "INT_CON (rw) register accessor: pmu interrupt configure register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`int_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`int_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@int_con`]
 module"]
-#[doc(alias = "PMU_INT_CON")]
-pub type PmuIntCon = crate::Reg<pmu_int_con::PmuIntConSpec>;
+#[doc(alias = "INT_CON")]
+pub type IntCon = crate::Reg<int_con::IntConSpec>;
 #[doc = "pmu interrupt configure register"]
-pub mod pmu_int_con;
-#[doc = "PMU_INT_ST (rw) register accessor: pmu interrupt status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_int_st::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_int_st::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_int_st`]
+pub mod int_con;
+#[doc = "INT_ST (rw) register accessor: pmu interrupt status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`int_st::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`int_st::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@int_st`]
 module"]
-#[doc(alias = "PMU_INT_ST")]
-pub type PmuIntSt = crate::Reg<pmu_int_st::PmuIntStSpec>;
+#[doc(alias = "INT_ST")]
+pub type IntSt = crate::Reg<int_st::IntStSpec>;
 #[doc = "pmu interrupt status register"]
-pub mod pmu_int_st;
-#[doc = "PMU_GPIO0_POS_INT_CON (rw) register accessor: pmu gpio0 posedge interrupt configure register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_gpio0_pos_int_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_gpio0_pos_int_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_gpio0_pos_int_con`]
+pub mod int_st;
+#[doc = "GPIO0_POS_INT_CON (rw) register accessor: pmu gpio0 posedge interrupt configure register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio0_pos_int_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio0_pos_int_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio0_pos_int_con`]
 module"]
-#[doc(alias = "PMU_GPIO0_POS_INT_CON")]
-pub type PmuGpio0PosIntCon = crate::Reg<pmu_gpio0_pos_int_con::PmuGpio0PosIntConSpec>;
+#[doc(alias = "GPIO0_POS_INT_CON")]
+pub type Gpio0PosIntCon = crate::Reg<gpio0_pos_int_con::Gpio0PosIntConSpec>;
 #[doc = "pmu gpio0 posedge interrupt configure register"]
-pub mod pmu_gpio0_pos_int_con;
-#[doc = "PMU_GPIO0_NEG_INT_CON (rw) register accessor: pmu gpio0 negedge interrupt configure register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_gpio0_neg_int_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_gpio0_neg_int_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_gpio0_neg_int_con`]
+pub mod gpio0_pos_int_con;
+#[doc = "GPIO0_NEG_INT_CON (rw) register accessor: pmu gpio0 negedge interrupt configure register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio0_neg_int_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio0_neg_int_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio0_neg_int_con`]
 module"]
-#[doc(alias = "PMU_GPIO0_NEG_INT_CON")]
-pub type PmuGpio0NegIntCon = crate::Reg<pmu_gpio0_neg_int_con::PmuGpio0NegIntConSpec>;
+#[doc(alias = "GPIO0_NEG_INT_CON")]
+pub type Gpio0NegIntCon = crate::Reg<gpio0_neg_int_con::Gpio0NegIntConSpec>;
 #[doc = "pmu gpio0 negedge interrupt configure register"]
-pub mod pmu_gpio0_neg_int_con;
-#[doc = "PMU_GPIO1_POS_INT_CON (rw) register accessor: pmu gpio1 posedge interrupt configure register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_gpio1_pos_int_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_gpio1_pos_int_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_gpio1_pos_int_con`]
+pub mod gpio0_neg_int_con;
+#[doc = "GPIO1_POS_INT_CON (rw) register accessor: pmu gpio1 posedge interrupt configure register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio1_pos_int_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio1_pos_int_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio1_pos_int_con`]
 module"]
-#[doc(alias = "PMU_GPIO1_POS_INT_CON")]
-pub type PmuGpio1PosIntCon = crate::Reg<pmu_gpio1_pos_int_con::PmuGpio1PosIntConSpec>;
+#[doc(alias = "GPIO1_POS_INT_CON")]
+pub type Gpio1PosIntCon = crate::Reg<gpio1_pos_int_con::Gpio1PosIntConSpec>;
 #[doc = "pmu gpio1 posedge interrupt configure register"]
-pub mod pmu_gpio1_pos_int_con;
-#[doc = "PMU_GPIO1_NEG_INT_CON (rw) register accessor: pmu gpio1 negedge interrupt configure register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_gpio1_neg_int_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_gpio1_neg_int_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_gpio1_neg_int_con`]
+pub mod gpio1_pos_int_con;
+#[doc = "GPIO1_NEG_INT_CON (rw) register accessor: pmu gpio1 negedge interrupt configure register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio1_neg_int_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio1_neg_int_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio1_neg_int_con`]
 module"]
-#[doc(alias = "PMU_GPIO1_NEG_INT_CON")]
-pub type PmuGpio1NegIntCon = crate::Reg<pmu_gpio1_neg_int_con::PmuGpio1NegIntConSpec>;
+#[doc(alias = "GPIO1_NEG_INT_CON")]
+pub type Gpio1NegIntCon = crate::Reg<gpio1_neg_int_con::Gpio1NegIntConSpec>;
 #[doc = "pmu gpio1 negedge interrupt configure register"]
-pub mod pmu_gpio1_neg_int_con;
-#[doc = "PMU_GPIO0_POS_INT_ST (rw) register accessor: pmu gpio0 posedge interrupt status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_gpio0_pos_int_st::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_gpio0_pos_int_st::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_gpio0_pos_int_st`]
+pub mod gpio1_neg_int_con;
+#[doc = "GPIO0_POS_INT_ST (rw) register accessor: pmu gpio0 posedge interrupt status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio0_pos_int_st::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio0_pos_int_st::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio0_pos_int_st`]
 module"]
-#[doc(alias = "PMU_GPIO0_POS_INT_ST")]
-pub type PmuGpio0PosIntSt = crate::Reg<pmu_gpio0_pos_int_st::PmuGpio0PosIntStSpec>;
+#[doc(alias = "GPIO0_POS_INT_ST")]
+pub type Gpio0PosIntSt = crate::Reg<gpio0_pos_int_st::Gpio0PosIntStSpec>;
 #[doc = "pmu gpio0 posedge interrupt status register"]
-pub mod pmu_gpio0_pos_int_st;
-#[doc = "PMU_GPIO0_NEG_INT_ST (rw) register accessor: pmu gpio0 negedge interrupt status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_gpio0_neg_int_st::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_gpio0_neg_int_st::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_gpio0_neg_int_st`]
+pub mod gpio0_pos_int_st;
+#[doc = "GPIO0_NEG_INT_ST (rw) register accessor: pmu gpio0 negedge interrupt status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio0_neg_int_st::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio0_neg_int_st::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio0_neg_int_st`]
 module"]
-#[doc(alias = "PMU_GPIO0_NEG_INT_ST")]
-pub type PmuGpio0NegIntSt = crate::Reg<pmu_gpio0_neg_int_st::PmuGpio0NegIntStSpec>;
+#[doc(alias = "GPIO0_NEG_INT_ST")]
+pub type Gpio0NegIntSt = crate::Reg<gpio0_neg_int_st::Gpio0NegIntStSpec>;
 #[doc = "pmu gpio0 negedge interrupt status register"]
-pub mod pmu_gpio0_neg_int_st;
-#[doc = "PMU_GPIO1_POS_INT_ST (rw) register accessor: pmu gpio1 posedge interrupt status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_gpio1_pos_int_st::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_gpio1_pos_int_st::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_gpio1_pos_int_st`]
+pub mod gpio0_neg_int_st;
+#[doc = "GPIO1_POS_INT_ST (rw) register accessor: pmu gpio1 posedge interrupt status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio1_pos_int_st::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio1_pos_int_st::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio1_pos_int_st`]
 module"]
-#[doc(alias = "PMU_GPIO1_POS_INT_ST")]
-pub type PmuGpio1PosIntSt = crate::Reg<pmu_gpio1_pos_int_st::PmuGpio1PosIntStSpec>;
+#[doc(alias = "GPIO1_POS_INT_ST")]
+pub type Gpio1PosIntSt = crate::Reg<gpio1_pos_int_st::Gpio1PosIntStSpec>;
 #[doc = "pmu gpio1 posedge interrupt status register"]
-pub mod pmu_gpio1_pos_int_st;
-#[doc = "PMU_GPIO1_NEG_INT_ST (rw) register accessor: pmu gpio1 negedge interrupt status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_gpio1_neg_int_st::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_gpio1_neg_int_st::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_gpio1_neg_int_st`]
+pub mod gpio1_pos_int_st;
+#[doc = "GPIO1_NEG_INT_ST (rw) register accessor: pmu gpio1 negedge interrupt status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio1_neg_int_st::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio1_neg_int_st::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio1_neg_int_st`]
 module"]
-#[doc(alias = "PMU_GPIO1_NEG_INT_ST")]
-pub type PmuGpio1NegIntSt = crate::Reg<pmu_gpio1_neg_int_st::PmuGpio1NegIntStSpec>;
+#[doc(alias = "GPIO1_NEG_INT_ST")]
+pub type Gpio1NegIntSt = crate::Reg<gpio1_neg_int_st::Gpio1NegIntStSpec>;
 #[doc = "pmu gpio1 negedge interrupt status register"]
-pub mod pmu_gpio1_neg_int_st;
-#[doc = "PMU_PWRDN_INTEN (rw) register accessor: pmu power down interrupt enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_pwrdn_inten::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_pwrdn_inten::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_pwrdn_inten`]
+pub mod gpio1_neg_int_st;
+#[doc = "PWRDN_INTEN (rw) register accessor: pmu power down interrupt enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pwrdn_inten::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pwrdn_inten::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pwrdn_inten`]
 module"]
-#[doc(alias = "PMU_PWRDN_INTEN")]
-pub type PmuPwrdnInten = crate::Reg<pmu_pwrdn_inten::PmuPwrdnIntenSpec>;
+#[doc(alias = "PWRDN_INTEN")]
+pub type PwrdnInten = crate::Reg<pwrdn_inten::PwrdnIntenSpec>;
 #[doc = "pmu power down interrupt enable register"]
-pub mod pmu_pwrdn_inten;
-#[doc = "PMU_PWRDN_STATUS (rw) register accessor: pmu power down interrupt status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_pwrdn_status::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_pwrdn_status::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_pwrdn_status`]
+pub mod pwrdn_inten;
+#[doc = "PWRDN_STATUS (rw) register accessor: pmu power down interrupt status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pwrdn_status::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pwrdn_status::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pwrdn_status`]
 module"]
-#[doc(alias = "PMU_PWRDN_STATUS")]
-pub type PmuPwrdnStatus = crate::Reg<pmu_pwrdn_status::PmuPwrdnStatusSpec>;
+#[doc(alias = "PWRDN_STATUS")]
+pub type PwrdnStatus = crate::Reg<pwrdn_status::PwrdnStatusSpec>;
 #[doc = "pmu power down interrupt status register"]
-pub mod pmu_pwrdn_status;
-#[doc = "PMU_WAKEUP_STATUS (rw) register accessor: pmu interrupt wakeup status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_wakeup_status::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_wakeup_status::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_wakeup_status`]
+pub mod pwrdn_status;
+#[doc = "WAKEUP_STATUS (rw) register accessor: pmu interrupt wakeup status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wakeup_status::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`wakeup_status::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@wakeup_status`]
 module"]
-#[doc(alias = "PMU_WAKEUP_STATUS")]
-pub type PmuWakeupStatus = crate::Reg<pmu_wakeup_status::PmuWakeupStatusSpec>;
+#[doc(alias = "WAKEUP_STATUS")]
+pub type WakeupStatus = crate::Reg<wakeup_status::WakeupStatusSpec>;
 #[doc = "pmu interrupt wakeup status register"]
-pub mod pmu_wakeup_status;
-#[doc = "PMU_BUS_CLR (rw) register accessor: pmu bus clear register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_bus_clr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_bus_clr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_bus_clr`]
+pub mod wakeup_status;
+#[doc = "BUS_CLR (rw) register accessor: pmu bus clear register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`bus_clr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`bus_clr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@bus_clr`]
 module"]
-#[doc(alias = "PMU_BUS_CLR")]
-pub type PmuBusClr = crate::Reg<pmu_bus_clr::PmuBusClrSpec>;
+#[doc(alias = "BUS_CLR")]
+pub type BusClr = crate::Reg<bus_clr::BusClrSpec>;
 #[doc = "pmu bus clear register"]
-pub mod pmu_bus_clr;
-#[doc = "PMU_BUS_IDLE_REQ (rw) register accessor: pmu bus idle request register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_bus_idle_req::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_bus_idle_req::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_bus_idle_req`]
+pub mod bus_clr;
+#[doc = "BUS_IDLE_REQ (rw) register accessor: pmu bus idle request register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`bus_idle_req::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`bus_idle_req::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@bus_idle_req`]
 module"]
-#[doc(alias = "PMU_BUS_IDLE_REQ")]
-pub type PmuBusIdleReq = crate::Reg<pmu_bus_idle_req::PmuBusIdleReqSpec>;
+#[doc(alias = "BUS_IDLE_REQ")]
+pub type BusIdleReq = crate::Reg<bus_idle_req::BusIdleReqSpec>;
 #[doc = "pmu bus idle request register"]
-pub mod pmu_bus_idle_req;
-#[doc = "PMU_BUS_IDLE_ST (r) register accessor: pmu bus idle status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_bus_idle_st::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_bus_idle_st`]
+pub mod bus_idle_req;
+#[doc = "BUS_IDLE_ST (r) register accessor: pmu bus idle status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`bus_idle_st::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@bus_idle_st`]
 module"]
-#[doc(alias = "PMU_BUS_IDLE_ST")]
-pub type PmuBusIdleSt = crate::Reg<pmu_bus_idle_st::PmuBusIdleStSpec>;
+#[doc(alias = "BUS_IDLE_ST")]
+pub type BusIdleSt = crate::Reg<bus_idle_st::BusIdleStSpec>;
 #[doc = "pmu bus idle status register"]
-pub mod pmu_bus_idle_st;
-#[doc = "PMU_BUS_IDLE_ACK (r) register accessor: pmu bus idle ack status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_bus_idle_ack::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_bus_idle_ack`]
+pub mod bus_idle_st;
+#[doc = "BUS_IDLE_ACK (r) register accessor: pmu bus idle ack status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`bus_idle_ack::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@bus_idle_ack`]
 module"]
-#[doc(alias = "PMU_BUS_IDLE_ACK")]
-pub type PmuBusIdleAck = crate::Reg<pmu_bus_idle_ack::PmuBusIdleAckSpec>;
+#[doc(alias = "BUS_IDLE_ACK")]
+pub type BusIdleAck = crate::Reg<bus_idle_ack::BusIdleAckSpec>;
 #[doc = "pmu bus idle ack status register"]
-pub mod pmu_bus_idle_ack;
-#[doc = "PMU_CCI500_CON (rw) register accessor: CCI-500 low power control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_cci500_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_cci500_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_cci500_con`]
+pub mod bus_idle_ack;
+#[doc = "CCI500_CON (rw) register accessor: CCI-500 low power control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cci500_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cci500_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cci500_con`]
 module"]
-#[doc(alias = "PMU_CCI500_CON")]
-pub type PmuCci500Con = crate::Reg<pmu_cci500_con::PmuCci500ConSpec>;
+#[doc(alias = "CCI500_CON")]
+pub type Cci500Con = crate::Reg<cci500_con::Cci500ConSpec>;
 #[doc = "CCI-500 low power control register"]
-pub mod pmu_cci500_con;
-#[doc = "PMU_ADB400_CON (rw) register accessor: adb-400 low power control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_adb400_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_adb400_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_adb400_con`]
+pub mod cci500_con;
+#[doc = "ADB400_CON (rw) register accessor: adb-400 low power control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`adb400_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`adb400_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@adb400_con`]
 module"]
-#[doc(alias = "PMU_ADB400_CON")]
-pub type PmuAdb400Con = crate::Reg<pmu_adb400_con::PmuAdb400ConSpec>;
+#[doc(alias = "ADB400_CON")]
+pub type Adb400Con = crate::Reg<adb400_con::Adb400ConSpec>;
 #[doc = "adb-400 low power control register"]
-pub mod pmu_adb400_con;
-#[doc = "PMU_ADB400_ST (rw) register accessor: adb-400 low power status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_adb400_st::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_adb400_st::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_adb400_st`]
+pub mod adb400_con;
+#[doc = "ADB400_ST (rw) register accessor: adb-400 low power status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`adb400_st::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`adb400_st::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@adb400_st`]
 module"]
-#[doc(alias = "PMU_ADB400_ST")]
-pub type PmuAdb400St = crate::Reg<pmu_adb400_st::PmuAdb400StSpec>;
+#[doc(alias = "ADB400_ST")]
+pub type Adb400St = crate::Reg<adb400_st::Adb400StSpec>;
 #[doc = "adb-400 low power status register"]
-pub mod pmu_adb400_st;
-#[doc = "PMU_POWER_ST (rw) register accessor: pmu power status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_power_st::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_power_st::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_power_st`]
+pub mod adb400_st;
+#[doc = "POWER_ST (rw) register accessor: pmu power status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`power_st::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`power_st::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@power_st`]
 module"]
-#[doc(alias = "PMU_POWER_ST")]
-pub type PmuPowerSt = crate::Reg<pmu_power_st::PmuPowerStSpec>;
+#[doc(alias = "POWER_ST")]
+pub type PowerSt = crate::Reg<power_st::PowerStSpec>;
 #[doc = "pmu power status register"]
-pub mod pmu_power_st;
-#[doc = "PMU_CORE_PWR_ST (r) register accessor: pmu core power status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_core_pwr_st::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_core_pwr_st`]
+pub mod power_st;
+#[doc = "CORE_PWR_ST (r) register accessor: pmu core power status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`core_pwr_st::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@core_pwr_st`]
 module"]
-#[doc(alias = "PMU_CORE_PWR_ST")]
-pub type PmuCorePwrSt = crate::Reg<pmu_core_pwr_st::PmuCorePwrStSpec>;
+#[doc(alias = "CORE_PWR_ST")]
+pub type CorePwrSt = crate::Reg<core_pwr_st::CorePwrStSpec>;
 #[doc = "pmu core power status register"]
-pub mod pmu_core_pwr_st;
-#[doc = "PMU_OSC_CNT (rw) register accessor: pmu osc count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_osc_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_osc_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_osc_cnt`]
+pub mod core_pwr_st;
+#[doc = "OSC_CNT (rw) register accessor: pmu osc count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`osc_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`osc_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@osc_cnt`]
 module"]
-#[doc(alias = "PMU_OSC_CNT")]
-pub type PmuOscCnt = crate::Reg<pmu_osc_cnt::PmuOscCntSpec>;
+#[doc(alias = "OSC_CNT")]
+pub type OscCnt = crate::Reg<osc_cnt::OscCntSpec>;
 #[doc = "pmu osc count register"]
-pub mod pmu_osc_cnt;
-#[doc = "PMU_PLLLOCK_CNT (rw) register accessor: pmu pll lock count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_plllock_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_plllock_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_plllock_cnt`]
+pub mod osc_cnt;
+#[doc = "PLLLOCK_CNT (rw) register accessor: pmu pll lock count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`plllock_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`plllock_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@plllock_cnt`]
 module"]
-#[doc(alias = "PMU_PLLLOCK_CNT")]
-pub type PmuPlllockCnt = crate::Reg<pmu_plllock_cnt::PmuPlllockCntSpec>;
+#[doc(alias = "PLLLOCK_CNT")]
+pub type PlllockCnt = crate::Reg<plllock_cnt::PlllockCntSpec>;
 #[doc = "pmu pll lock count register"]
-pub mod pmu_plllock_cnt;
-#[doc = "PMU_PLLRST_CNT (rw) register accessor: pmu pll reset count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_pllrst_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_pllrst_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_pllrst_cnt`]
+pub mod plllock_cnt;
+#[doc = "PLLRST_CNT (rw) register accessor: pmu pll reset count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pllrst_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pllrst_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pllrst_cnt`]
 module"]
-#[doc(alias = "PMU_PLLRST_CNT")]
-pub type PmuPllrstCnt = crate::Reg<pmu_pllrst_cnt::PmuPllrstCntSpec>;
+#[doc(alias = "PLLRST_CNT")]
+pub type PllrstCnt = crate::Reg<pllrst_cnt::PllrstCntSpec>;
 #[doc = "pmu pll reset count register"]
-pub mod pmu_pllrst_cnt;
-#[doc = "PMU_STABLE_CNT (rw) register accessor: pmu power stable count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_stable_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_stable_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_stable_cnt`]
+pub mod pllrst_cnt;
+#[doc = "STABLE_CNT (rw) register accessor: pmu power stable count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`stable_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`stable_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@stable_cnt`]
 module"]
-#[doc(alias = "PMU_STABLE_CNT")]
-pub type PmuStableCnt = crate::Reg<pmu_stable_cnt::PmuStableCntSpec>;
+#[doc(alias = "STABLE_CNT")]
+pub type StableCnt = crate::Reg<stable_cnt::StableCntSpec>;
 #[doc = "pmu power stable count register"]
-pub mod pmu_stable_cnt;
-#[doc = "PMU_DDRIO_PWRON_CNT (rw) register accessor: pmu ddrio power on count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_ddrio_pwron_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_ddrio_pwron_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_ddrio_pwron_cnt`]
+pub mod stable_cnt;
+#[doc = "DDRIO_PWRON_CNT (rw) register accessor: pmu ddrio power on count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ddrio_pwron_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ddrio_pwron_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ddrio_pwron_cnt`]
 module"]
-#[doc(alias = "PMU_DDRIO_PWRON_CNT")]
-pub type PmuDdrioPwronCnt = crate::Reg<pmu_ddrio_pwron_cnt::PmuDdrioPwronCntSpec>;
+#[doc(alias = "DDRIO_PWRON_CNT")]
+pub type DdrioPwronCnt = crate::Reg<ddrio_pwron_cnt::DdrioPwronCntSpec>;
 #[doc = "pmu ddrio power on count register"]
-pub mod pmu_ddrio_pwron_cnt;
-#[doc = "PMU_WAKEUP_RST_CLR_CNT (rw) register accessor: pmu wakeup reset clear count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_wakeup_rst_clr_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_wakeup_rst_clr_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_wakeup_rst_clr_cnt`]
+pub mod ddrio_pwron_cnt;
+#[doc = "WAKEUP_RST_CLR_CNT (rw) register accessor: pmu wakeup reset clear count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wakeup_rst_clr_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`wakeup_rst_clr_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@wakeup_rst_clr_cnt`]
 module"]
-#[doc(alias = "PMU_WAKEUP_RST_CLR_CNT")]
-pub type PmuWakeupRstClrCnt = crate::Reg<pmu_wakeup_rst_clr_cnt::PmuWakeupRstClrCntSpec>;
+#[doc(alias = "WAKEUP_RST_CLR_CNT")]
+pub type WakeupRstClrCnt = crate::Reg<wakeup_rst_clr_cnt::WakeupRstClrCntSpec>;
 #[doc = "pmu wakeup reset clear count register"]
-pub mod pmu_wakeup_rst_clr_cnt;
-#[doc = "PMU_DDR_SREF_ST (rw) register accessor: pmu ddr self refresh status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_ddr_sref_st::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_ddr_sref_st::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_ddr_sref_st`]
+pub mod wakeup_rst_clr_cnt;
+#[doc = "DDR_SREF_ST (rw) register accessor: pmu ddr self refresh status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ddr_sref_st::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ddr_sref_st::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ddr_sref_st`]
 module"]
-#[doc(alias = "PMU_DDR_SREF_ST")]
-pub type PmuDdrSrefSt = crate::Reg<pmu_ddr_sref_st::PmuDdrSrefStSpec>;
+#[doc(alias = "DDR_SREF_ST")]
+pub type DdrSrefSt = crate::Reg<ddr_sref_st::DdrSrefStSpec>;
 #[doc = "pmu ddr self refresh status register"]
-pub mod pmu_ddr_sref_st;
-#[doc = "PMU_SCU_L_PWRDN_CNT (rw) register accessor: pmu scu_l power down count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_scu_l_pwrdn_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_scu_l_pwrdn_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_scu_l_pwrdn_cnt`]
+pub mod ddr_sref_st;
+#[doc = "SCU_L_PWRDN_CNT (rw) register accessor: pmu scu_l power down count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scu_l_pwrdn_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`scu_l_pwrdn_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scu_l_pwrdn_cnt`]
 module"]
-#[doc(alias = "PMU_SCU_L_PWRDN_CNT")]
-pub type PmuScuLPwrdnCnt = crate::Reg<pmu_scu_l_pwrdn_cnt::PmuScuLPwrdnCntSpec>;
+#[doc(alias = "SCU_L_PWRDN_CNT")]
+pub type ScuLPwrdnCnt = crate::Reg<scu_l_pwrdn_cnt::ScuLPwrdnCntSpec>;
 #[doc = "pmu scu_l power down count register"]
-pub mod pmu_scu_l_pwrdn_cnt;
-#[doc = "PMU_SCU_L_PWRUP_CNT (rw) register accessor: pmu scu_l power up count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_scu_l_pwrup_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_scu_l_pwrup_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_scu_l_pwrup_cnt`]
+pub mod scu_l_pwrdn_cnt;
+#[doc = "SCU_L_PWRUP_CNT (rw) register accessor: pmu scu_l power up count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scu_l_pwrup_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`scu_l_pwrup_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scu_l_pwrup_cnt`]
 module"]
-#[doc(alias = "PMU_SCU_L_PWRUP_CNT")]
-pub type PmuScuLPwrupCnt = crate::Reg<pmu_scu_l_pwrup_cnt::PmuScuLPwrupCntSpec>;
+#[doc(alias = "SCU_L_PWRUP_CNT")]
+pub type ScuLPwrupCnt = crate::Reg<scu_l_pwrup_cnt::ScuLPwrupCntSpec>;
 #[doc = "pmu scu_l power up count register"]
-pub mod pmu_scu_l_pwrup_cnt;
-#[doc = "PMU_SCU_B_PWRDN_CNT (rw) register accessor: pmu scu_b power down count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_scu_b_pwrdn_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_scu_b_pwrdn_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_scu_b_pwrdn_cnt`]
+pub mod scu_l_pwrup_cnt;
+#[doc = "SCU_B_PWRDN_CNT (rw) register accessor: pmu scu_b power down count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scu_b_pwrdn_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`scu_b_pwrdn_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scu_b_pwrdn_cnt`]
 module"]
-#[doc(alias = "PMU_SCU_B_PWRDN_CNT")]
-pub type PmuScuBPwrdnCnt = crate::Reg<pmu_scu_b_pwrdn_cnt::PmuScuBPwrdnCntSpec>;
+#[doc(alias = "SCU_B_PWRDN_CNT")]
+pub type ScuBPwrdnCnt = crate::Reg<scu_b_pwrdn_cnt::ScuBPwrdnCntSpec>;
 #[doc = "pmu scu_b power down count register"]
-pub mod pmu_scu_b_pwrdn_cnt;
-#[doc = "PMU_SCU_B_PWRUP_CNT (rw) register accessor: pmu scu_b power up count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_scu_b_pwrup_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_scu_b_pwrup_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_scu_b_pwrup_cnt`]
+pub mod scu_b_pwrdn_cnt;
+#[doc = "SCU_B_PWRUP_CNT (rw) register accessor: pmu scu_b power up count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scu_b_pwrup_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`scu_b_pwrup_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scu_b_pwrup_cnt`]
 module"]
-#[doc(alias = "PMU_SCU_B_PWRUP_CNT")]
-pub type PmuScuBPwrupCnt = crate::Reg<pmu_scu_b_pwrup_cnt::PmuScuBPwrupCntSpec>;
+#[doc(alias = "SCU_B_PWRUP_CNT")]
+pub type ScuBPwrupCnt = crate::Reg<scu_b_pwrup_cnt::ScuBPwrupCntSpec>;
 #[doc = "pmu scu_b power up count register"]
-pub mod pmu_scu_b_pwrup_cnt;
-#[doc = "PMU_GPU_PWRDN_CNT (rw) register accessor: pmu gpu power down count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_gpu_pwrdn_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_gpu_pwrdn_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_gpu_pwrdn_cnt`]
+pub mod scu_b_pwrup_cnt;
+#[doc = "GPU_PWRDN_CNT (rw) register accessor: pmu gpu power down count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpu_pwrdn_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpu_pwrdn_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpu_pwrdn_cnt`]
 module"]
-#[doc(alias = "PMU_GPU_PWRDN_CNT")]
-pub type PmuGpuPwrdnCnt = crate::Reg<pmu_gpu_pwrdn_cnt::PmuGpuPwrdnCntSpec>;
+#[doc(alias = "GPU_PWRDN_CNT")]
+pub type GpuPwrdnCnt = crate::Reg<gpu_pwrdn_cnt::GpuPwrdnCntSpec>;
 #[doc = "pmu gpu power down count register"]
-pub mod pmu_gpu_pwrdn_cnt;
-#[doc = "PMU_GPU_PWRUP_CNT (rw) register accessor: pmu gpu power up count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_gpu_pwrup_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_gpu_pwrup_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_gpu_pwrup_cnt`]
+pub mod gpu_pwrdn_cnt;
+#[doc = "GPU_PWRUP_CNT (rw) register accessor: pmu gpu power up count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpu_pwrup_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpu_pwrup_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpu_pwrup_cnt`]
 module"]
-#[doc(alias = "PMU_GPU_PWRUP_CNT")]
-pub type PmuGpuPwrupCnt = crate::Reg<pmu_gpu_pwrup_cnt::PmuGpuPwrupCntSpec>;
+#[doc(alias = "GPU_PWRUP_CNT")]
+pub type GpuPwrupCnt = crate::Reg<gpu_pwrup_cnt::GpuPwrupCntSpec>;
 #[doc = "pmu gpu power up count register"]
-pub mod pmu_gpu_pwrup_cnt;
-#[doc = "PMU_CENTER_PWRDN_CNT (rw) register accessor: pmu center power down count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_center_pwrdn_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_center_pwrdn_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_center_pwrdn_cnt`]
+pub mod gpu_pwrup_cnt;
+#[doc = "CENTER_PWRDN_CNT (rw) register accessor: pmu center power down count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`center_pwrdn_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`center_pwrdn_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@center_pwrdn_cnt`]
 module"]
-#[doc(alias = "PMU_CENTER_PWRDN_CNT")]
-pub type PmuCenterPwrdnCnt = crate::Reg<pmu_center_pwrdn_cnt::PmuCenterPwrdnCntSpec>;
+#[doc(alias = "CENTER_PWRDN_CNT")]
+pub type CenterPwrdnCnt = crate::Reg<center_pwrdn_cnt::CenterPwrdnCntSpec>;
 #[doc = "pmu center power down count register"]
-pub mod pmu_center_pwrdn_cnt;
-#[doc = "PMU_CENTER_PWRUP_CNT (rw) register accessor: pmu center power up count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_center_pwrup_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_center_pwrup_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_center_pwrup_cnt`]
+pub mod center_pwrdn_cnt;
+#[doc = "CENTER_PWRUP_CNT (rw) register accessor: pmu center power up count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`center_pwrup_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`center_pwrup_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@center_pwrup_cnt`]
 module"]
-#[doc(alias = "PMU_CENTER_PWRUP_CNT")]
-pub type PmuCenterPwrupCnt = crate::Reg<pmu_center_pwrup_cnt::PmuCenterPwrupCntSpec>;
+#[doc(alias = "CENTER_PWRUP_CNT")]
+pub type CenterPwrupCnt = crate::Reg<center_pwrup_cnt::CenterPwrupCntSpec>;
 #[doc = "pmu center power up count register"]
-pub mod pmu_center_pwrup_cnt;
-#[doc = "PMU_TIMEOUT_CNT (rw) register accessor: pmu timeout count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_timeout_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_timeout_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_timeout_cnt`]
+pub mod center_pwrup_cnt;
+#[doc = "TIMEOUT_CNT (rw) register accessor: pmu timeout count register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`timeout_cnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`timeout_cnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@timeout_cnt`]
 module"]
-#[doc(alias = "PMU_TIMEOUT_CNT")]
-pub type PmuTimeoutCnt = crate::Reg<pmu_timeout_cnt::PmuTimeoutCntSpec>;
+#[doc(alias = "TIMEOUT_CNT")]
+pub type TimeoutCnt = crate::Reg<timeout_cnt::TimeoutCntSpec>;
 #[doc = "pmu timeout count register"]
-pub mod pmu_timeout_cnt;
-#[doc = "PMU_CPU0APM_CON (rw) register accessor: pmu cpu0 auto power down control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_cpu0apm_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_cpu0apm_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_cpu0apm_con`]
+pub mod timeout_cnt;
+#[doc = "CPU0APM_CON (rw) register accessor: pmu cpu0 auto power down control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cpu0apm_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cpu0apm_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cpu0apm_con`]
 module"]
-#[doc(alias = "PMU_CPU0APM_CON")]
-pub type PmuCpu0apmCon = crate::Reg<pmu_cpu0apm_con::PmuCpu0apmConSpec>;
+#[doc(alias = "CPU0APM_CON")]
+pub type Cpu0apmCon = crate::Reg<cpu0apm_con::Cpu0apmConSpec>;
 #[doc = "pmu cpu0 auto power down control register"]
-pub mod pmu_cpu0apm_con;
-#[doc = "PMU_CPU1APM_CON (rw) register accessor: pmu cpu1 auto power down control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_cpu1apm_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_cpu1apm_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_cpu1apm_con`]
+pub mod cpu0apm_con;
+#[doc = "CPU1APM_CON (rw) register accessor: pmu cpu1 auto power down control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cpu1apm_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cpu1apm_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cpu1apm_con`]
 module"]
-#[doc(alias = "PMU_CPU1APM_CON")]
-pub type PmuCpu1apmCon = crate::Reg<pmu_cpu1apm_con::PmuCpu1apmConSpec>;
+#[doc(alias = "CPU1APM_CON")]
+pub type Cpu1apmCon = crate::Reg<cpu1apm_con::Cpu1apmConSpec>;
 #[doc = "pmu cpu1 auto power down control register"]
-pub mod pmu_cpu1apm_con;
-#[doc = "PMU_CPU2APM_CON (rw) register accessor: pmu cpu2 auto power down control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_cpu2apm_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_cpu2apm_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_cpu2apm_con`]
+pub mod cpu1apm_con;
+#[doc = "CPU2APM_CON (rw) register accessor: pmu cpu2 auto power down control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cpu2apm_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cpu2apm_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cpu2apm_con`]
 module"]
-#[doc(alias = "PMU_CPU2APM_CON")]
-pub type PmuCpu2apmCon = crate::Reg<pmu_cpu2apm_con::PmuCpu2apmConSpec>;
+#[doc(alias = "CPU2APM_CON")]
+pub type Cpu2apmCon = crate::Reg<cpu2apm_con::Cpu2apmConSpec>;
 #[doc = "pmu cpu2 auto power down control register"]
-pub mod pmu_cpu2apm_con;
-#[doc = "PMU_CPU3APM_CON (rw) register accessor: pmu cpu3 auto power down control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_cpu3apm_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_cpu3apm_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_cpu3apm_con`]
+pub mod cpu2apm_con;
+#[doc = "CPU3APM_CON (rw) register accessor: pmu cpu3 auto power down control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cpu3apm_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cpu3apm_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cpu3apm_con`]
 module"]
-#[doc(alias = "PMU_CPU3APM_CON")]
-pub type PmuCpu3apmCon = crate::Reg<pmu_cpu3apm_con::PmuCpu3apmConSpec>;
+#[doc(alias = "CPU3APM_CON")]
+pub type Cpu3apmCon = crate::Reg<cpu3apm_con::Cpu3apmConSpec>;
 #[doc = "pmu cpu3 auto power down control register"]
-pub mod pmu_cpu3apm_con;
-#[doc = "PMU_CPU0BPM_CON (rw) register accessor: pmu cluster_b cpu0 auto power down control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_cpu0bpm_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_cpu0bpm_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_cpu0bpm_con`]
+pub mod cpu3apm_con;
+#[doc = "CPU0BPM_CON (rw) register accessor: pmu cluster_b cpu0 auto power down control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cpu0bpm_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cpu0bpm_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cpu0bpm_con`]
 module"]
-#[doc(alias = "PMU_CPU0BPM_CON")]
-pub type PmuCpu0bpmCon = crate::Reg<pmu_cpu0bpm_con::PmuCpu0bpmConSpec>;
+#[doc(alias = "CPU0BPM_CON")]
+pub type Cpu0bpmCon = crate::Reg<cpu0bpm_con::Cpu0bpmConSpec>;
 #[doc = "pmu cluster_b cpu0 auto power down control register"]
-pub mod pmu_cpu0bpm_con;
-#[doc = "PMU_CPU1BPM_CON (rw) register accessor: pmu cluster_b cpu0 auto power down control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_cpu1bpm_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_cpu1bpm_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_cpu1bpm_con`]
+pub mod cpu0bpm_con;
+#[doc = "CPU1BPM_CON (rw) register accessor: pmu cluster_b cpu0 auto power down control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cpu1bpm_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cpu1bpm_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cpu1bpm_con`]
 module"]
-#[doc(alias = "PMU_CPU1BPM_CON")]
-pub type PmuCpu1bpmCon = crate::Reg<pmu_cpu1bpm_con::PmuCpu1bpmConSpec>;
+#[doc(alias = "CPU1BPM_CON")]
+pub type Cpu1bpmCon = crate::Reg<cpu1bpm_con::Cpu1bpmConSpec>;
 #[doc = "pmu cluster_b cpu0 auto power down control register"]
-pub mod pmu_cpu1bpm_con;
-#[doc = "PMU_NOC_AUTO_ENA (rw) register accessor: NOC auto domain clock gating disable enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_noc_auto_ena::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_noc_auto_ena::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_noc_auto_ena`]
+pub mod cpu1bpm_con;
+#[doc = "NOC_AUTO_ENA (rw) register accessor: NOC auto domain clock gating disable enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`noc_auto_ena::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`noc_auto_ena::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@noc_auto_ena`]
 module"]
-#[doc(alias = "PMU_NOC_AUTO_ENA")]
-pub type PmuNocAutoEna = crate::Reg<pmu_noc_auto_ena::PmuNocAutoEnaSpec>;
+#[doc(alias = "NOC_AUTO_ENA")]
+pub type NocAutoEna = crate::Reg<noc_auto_ena::NocAutoEnaSpec>;
 #[doc = "NOC auto domain clock gating disable enable register"]
-pub mod pmu_noc_auto_ena;
-#[doc = "PMU_PWRDN_CON1 (rw) register accessor: pmu power down configure register1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_pwrdn_con1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_pwrdn_con1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_pwrdn_con1`]
+pub mod noc_auto_ena;
+#[doc = "PWRDN_CON1 (rw) register accessor: pmu power down configure register1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pwrdn_con1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pwrdn_con1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pwrdn_con1`]
 module"]
-#[doc(alias = "PMU_PWRDN_CON1")]
-pub type PmuPwrdnCon1 = crate::Reg<pmu_pwrdn_con1::PmuPwrdnCon1Spec>;
+#[doc(alias = "PWRDN_CON1")]
+pub type PwrdnCon1 = crate::Reg<pwrdn_con1::PwrdnCon1Spec>;
 #[doc = "pmu power down configure register1"]
-pub mod pmu_pwrdn_con1;
-#[doc = "PMU_SYS_REG0 (rw) register accessor: pmu system register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_sys_reg0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_sys_reg0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_sys_reg0`]
+pub mod pwrdn_con1;
+#[doc = "SYS_REG0 (rw) register accessor: pmu system register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sys_reg0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sys_reg0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sys_reg0`]
 module"]
-#[doc(alias = "PMU_SYS_REG0")]
-pub type PmuSysReg0 = crate::Reg<pmu_sys_reg0::PmuSysReg0Spec>;
+#[doc(alias = "SYS_REG0")]
+pub type SysReg0 = crate::Reg<sys_reg0::SysReg0Spec>;
 #[doc = "pmu system register 0"]
-pub mod pmu_sys_reg0;
-#[doc = "PMU_SYS_REG1 (rw) register accessor: pmu system register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_sys_reg1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_sys_reg1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_sys_reg1`]
+pub mod sys_reg0;
+#[doc = "SYS_REG1 (rw) register accessor: pmu system register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sys_reg1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sys_reg1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sys_reg1`]
 module"]
-#[doc(alias = "PMU_SYS_REG1")]
-pub type PmuSysReg1 = crate::Reg<pmu_sys_reg1::PmuSysReg1Spec>;
+#[doc(alias = "SYS_REG1")]
+pub type SysReg1 = crate::Reg<sys_reg1::SysReg1Spec>;
 #[doc = "pmu system register 1"]
-pub mod pmu_sys_reg1;
-#[doc = "PMU_SYS_REG2 (rw) register accessor: pmu system register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_sys_reg2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_sys_reg2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_sys_reg2`]
+pub mod sys_reg1;
+#[doc = "SYS_REG2 (rw) register accessor: pmu system register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sys_reg2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sys_reg2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sys_reg2`]
 module"]
-#[doc(alias = "PMU_SYS_REG2")]
-pub type PmuSysReg2 = crate::Reg<pmu_sys_reg2::PmuSysReg2Spec>;
+#[doc(alias = "SYS_REG2")]
+pub type SysReg2 = crate::Reg<sys_reg2::SysReg2Spec>;
 #[doc = "pmu system register 2"]
-pub mod pmu_sys_reg2;
-#[doc = "PMU_SYS_REG3 (rw) register accessor: pmu system register 3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmu_sys_reg3::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmu_sys_reg3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pmu_sys_reg3`]
+pub mod sys_reg2;
+#[doc = "SYS_REG3 (rw) register accessor: pmu system register 3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sys_reg3::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sys_reg3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sys_reg3`]
 module"]
-#[doc(alias = "PMU_SYS_REG3")]
-pub type PmuSysReg3 = crate::Reg<pmu_sys_reg3::PmuSysReg3Spec>;
+#[doc(alias = "SYS_REG3")]
+pub type SysReg3 = crate::Reg<sys_reg3::SysReg3Spec>;
 #[doc = "pmu system register 3"]
-pub mod pmu_sys_reg3;
+pub mod sys_reg3;

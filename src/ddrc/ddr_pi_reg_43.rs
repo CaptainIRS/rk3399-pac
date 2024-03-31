@@ -2,64 +2,64 @@
 pub type R = crate::R<DdrPiReg43Spec>;
 #[doc = "Register `DDR_PI_REG_43` writer"]
 pub type W = crate::W<DdrPiReg43Spec>;
-#[doc = "Field `PI_WRLAT_F0` reader - Indicates DRAM WRLAT value in cycles. The suffix \"_f0\" of the\n\nparameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_WRLAT_F0` reader - Indicates DRAM WRLAT value in cycles. The suffix '_f0' of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiWrlatF0R = crate::FieldReader;
-#[doc = "Field `PI_WRLAT_F0` writer - Indicates DRAM WRLAT value in cycles. The suffix \"_f0\" of the\n\nparameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_WRLAT_F0` writer - Indicates DRAM WRLAT value in cycles. The suffix '_f0' of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiWrlatF0W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
-#[doc = "Field `PI_ADDITIVE_LAT_F0` reader - Indicates DRAM additive latency value in cycles. The suffix \"_f0\" of\n\nthe parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_ADDITIVE_LAT_F0` reader - Indicates DRAM additive latency value in cycles. The suffix '_f0' of\n\nthe parameter name is omitted when in non-DFS mode."]
 pub type PiAdditiveLatF0R = crate::FieldReader;
-#[doc = "Field `PI_ADDITIVE_LAT_F0` writer - Indicates DRAM additive latency value in cycles. The suffix \"_f0\" of\n\nthe parameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_ADDITIVE_LAT_F0` writer - Indicates DRAM additive latency value in cycles. The suffix '_f0' of\n\nthe parameter name is omitted when in non-DFS mode."]
 pub type PiAdditiveLatF0W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
-#[doc = "Field `PI_CASLAT_LIN_F0` reader - Sets latency from read command send to data receive from/to\n\ncontroller. Bit0 is half-cycle increment and the upper bits define\n\nmemory CAS latency for the controller. The suffix \"_f0\" of the\n\nparameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_CASLAT_LIN_F0` reader - Sets latency from read command send to data receive from/to\n\ncontroller. Bit0 is half-cycle increment and the upper bits define\n\nmemory CAS latency for the controller. The suffix '_f0' of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiCaslatLinF0R = crate::FieldReader;
-#[doc = "Field `PI_CASLAT_LIN_F0` writer - Sets latency from read command send to data receive from/to\n\ncontroller. Bit0 is half-cycle increment and the upper bits define\n\nmemory CAS latency for the controller. The suffix \"_f0\" of the\n\nparameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_CASLAT_LIN_F0` writer - Sets latency from read command send to data receive from/to\n\ncontroller. Bit0 is half-cycle increment and the upper bits define\n\nmemory CAS latency for the controller. The suffix '_f0' of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiCaslatLinF0W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
-#[doc = "Field `PI_WRLAT_F1` reader - Indicates DRAM WRLAT value in cycles. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_WRLAT_F1` reader - Indicates DRAM WRLAT value in cycles. The suffix '_f1' of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiWrlatF1R = crate::FieldReader;
-#[doc = "Field `PI_WRLAT_F1` writer - Indicates DRAM WRLAT value in cycles. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_WRLAT_F1` writer - Indicates DRAM WRLAT value in cycles. The suffix '_f1' of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiWrlatF1W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
-    #[doc = "Bits 0:4 - Indicates DRAM WRLAT value in cycles. The suffix \"_f0\" of the\n\nparameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:4 - Indicates DRAM WRLAT value in cycles. The suffix '_f0' of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_wrlat_f0(&self) -> PiWrlatF0R {
         PiWrlatF0R::new((self.bits & 0x1f) as u8)
     }
-    #[doc = "Bits 8:13 - Indicates DRAM additive latency value in cycles. The suffix \"_f0\" of\n\nthe parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 8:13 - Indicates DRAM additive latency value in cycles. The suffix '_f0' of\n\nthe parameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_additive_lat_f0(&self) -> PiAdditiveLatF0R {
         PiAdditiveLatF0R::new(((self.bits >> 8) & 0x3f) as u8)
     }
-    #[doc = "Bits 16:22 - Sets latency from read command send to data receive from/to\n\ncontroller. Bit0 is half-cycle increment and the upper bits define\n\nmemory CAS latency for the controller. The suffix \"_f0\" of the\n\nparameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 16:22 - Sets latency from read command send to data receive from/to\n\ncontroller. Bit0 is half-cycle increment and the upper bits define\n\nmemory CAS latency for the controller. The suffix '_f0' of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_caslat_lin_f0(&self) -> PiCaslatLinF0R {
         PiCaslatLinF0R::new(((self.bits >> 16) & 0x7f) as u8)
     }
-    #[doc = "Bits 24:28 - Indicates DRAM WRLAT value in cycles. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 24:28 - Indicates DRAM WRLAT value in cycles. The suffix '_f1' of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_wrlat_f1(&self) -> PiWrlatF1R {
         PiWrlatF1R::new(((self.bits >> 24) & 0x1f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:4 - Indicates DRAM WRLAT value in cycles. The suffix \"_f0\" of the\n\nparameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:4 - Indicates DRAM WRLAT value in cycles. The suffix '_f0' of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_wrlat_f0(&mut self) -> PiWrlatF0W<DdrPiReg43Spec> {
         PiWrlatF0W::new(self, 0)
     }
-    #[doc = "Bits 8:13 - Indicates DRAM additive latency value in cycles. The suffix \"_f0\" of\n\nthe parameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 8:13 - Indicates DRAM additive latency value in cycles. The suffix '_f0' of\n\nthe parameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_additive_lat_f0(&mut self) -> PiAdditiveLatF0W<DdrPiReg43Spec> {
         PiAdditiveLatF0W::new(self, 8)
     }
-    #[doc = "Bits 16:22 - Sets latency from read command send to data receive from/to\n\ncontroller. Bit0 is half-cycle increment and the upper bits define\n\nmemory CAS latency for the controller. The suffix \"_f0\" of the\n\nparameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 16:22 - Sets latency from read command send to data receive from/to\n\ncontroller. Bit0 is half-cycle increment and the upper bits define\n\nmemory CAS latency for the controller. The suffix '_f0' of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_caslat_lin_f0(&mut self) -> PiCaslatLinF0W<DdrPiReg43Spec> {
         PiCaslatLinF0W::new(self, 16)
     }
-    #[doc = "Bits 24:28 - Indicates DRAM WRLAT value in cycles. The suffix \"_f1\" of the\n\nparameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 24:28 - Indicates DRAM WRLAT value in cycles. The suffix '_f1' of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_wrlat_f1(&mut self) -> PiWrlatF1W<DdrPiReg43Spec> {

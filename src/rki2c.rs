@@ -1,332 +1,333 @@
 #[repr(C)]
 #[doc = "Register block"]
 pub struct RegisterBlock {
-    rki2c_con: Rki2cCon,
-    rki2c_clkdiv: Rki2cClkdiv,
-    rki2c_mrxaddr: Rki2cMrxaddr,
-    rki2c_mrxraddr: Rki2cMrxraddr,
-    rki2c_mtxcnt: Rki2cMtxcnt,
-    rki2c_mrxcnt: Rki2cMrxcnt,
-    rki2c_ien: Rki2cIen,
-    rki2c_ipd: Rki2cIpd,
-    rki2c_fcnt: Rki2cFcnt,
-    rki2c_scl_oe_db: Rki2cSclOeDb,
+    con: Con,
+    clkdiv: Clkdiv,
+    mrxaddr: Mrxaddr,
+    mrxraddr: Mrxraddr,
+    mtxcnt: Mtxcnt,
+    mrxcnt: Mrxcnt,
+    ien: Ien,
+    ipd: Ipd,
+    fcnt: Fcnt,
+    scl_oe_db: SclOeDb,
     _reserved10: [u8; 0xd8],
-    rki2c_txdata0: Rki2cTxdata0,
-    rki2c_txdata1: Rki2cTxdata1,
-    rki2c_txdata2: Rki2cTxdata2,
-    rki2c_txdata3: Rki2cTxdata3,
-    rki2c_txdata4: Rki2cTxdata4,
-    rki2c_txdata5: Rki2cTxdata5,
-    rki2c_txdata6: Rki2cTxdata6,
-    rki2c_txdata7: Rki2cTxdata7,
+    txdata0: Txdata0,
+    txdata1: Txdata1,
+    txdata2: Txdata2,
+    txdata3: Txdata3,
+    txdata4: Txdata4,
+    txdata5: Txdata5,
+    txdata6: Txdata6,
+    txdata7: Txdata7,
     _reserved18: [u8; 0xe0],
-    rki2c_rxdata0: Rki2cRxdata0,
-    rki2c_rxdata1: Rki2cRxdata1,
-    rki2c_rxdata2: Rki2cRxdata2,
-    rki2c_rxdata3: Rki2cRxdata3,
-    rki2c_rxdata4: Rki2cRxdata4,
-    rki2c_rxdata5: Rki2cRxdata5,
-    rki2c_rxdata6: Rki2cRxdata6,
-    rki2c_rxdata7: Rki2cRxdata7,
-    rki2c_st: Rki2cSt,
+    rxdata0: Rxdata0,
+    rxdata1: Rxdata1,
+    rxdata2: Rxdata2,
+    rxdata3: Rxdata3,
+    rxdata4: Rxdata4,
+    rxdata5: Rxdata5,
+    rxdata6: Rxdata6,
+    rxdata7: Rxdata7,
+    st: St,
 }
 impl RegisterBlock {
     #[doc = "0x00 - control register"]
     #[inline(always)]
-    pub const fn rki2c_con(&self) -> &Rki2cCon {
-        &self.rki2c_con
+    pub const fn con(&self) -> &Con {
+        &self.con
     }
     #[doc = "0x04 - clock divider register"]
     #[inline(always)]
-    pub const fn rki2c_clkdiv(&self) -> &Rki2cClkdiv {
-        &self.rki2c_clkdiv
+    pub const fn clkdiv(&self) -> &Clkdiv {
+        &self.clkdiv
     }
     #[doc = "0x08 - the slave address accessed for master rx mode"]
     #[inline(always)]
-    pub const fn rki2c_mrxaddr(&self) -> &Rki2cMrxaddr {
-        &self.rki2c_mrxaddr
+    pub const fn mrxaddr(&self) -> &Mrxaddr {
+        &self.mrxaddr
     }
     #[doc = "0x0c - the slave register address accessed for master rx mode"]
     #[inline(always)]
-    pub const fn rki2c_mrxraddr(&self) -> &Rki2cMrxraddr {
-        &self.rki2c_mrxraddr
+    pub const fn mrxraddr(&self) -> &Mrxraddr {
+        &self.mrxraddr
     }
     #[doc = "0x10 - master transmit count"]
     #[inline(always)]
-    pub const fn rki2c_mtxcnt(&self) -> &Rki2cMtxcnt {
-        &self.rki2c_mtxcnt
+    pub const fn mtxcnt(&self) -> &Mtxcnt {
+        &self.mtxcnt
     }
     #[doc = "0x14 - master rx count"]
     #[inline(always)]
-    pub const fn rki2c_mrxcnt(&self) -> &Rki2cMrxcnt {
-        &self.rki2c_mrxcnt
+    pub const fn mrxcnt(&self) -> &Mrxcnt {
+        &self.mrxcnt
     }
     #[doc = "0x18 - interrupt enable register"]
     #[inline(always)]
-    pub const fn rki2c_ien(&self) -> &Rki2cIen {
-        &self.rki2c_ien
+    pub const fn ien(&self) -> &Ien {
+        &self.ien
     }
     #[doc = "0x1c - interrupt pending register"]
     #[inline(always)]
-    pub const fn rki2c_ipd(&self) -> &Rki2cIpd {
-        &self.rki2c_ipd
+    pub const fn ipd(&self) -> &Ipd {
+        &self.ipd
     }
     #[doc = "0x20 - finished count"]
     #[inline(always)]
-    pub const fn rki2c_fcnt(&self) -> &Rki2cFcnt {
-        &self.rki2c_fcnt
+    pub const fn fcnt(&self) -> &Fcnt {
+        &self.fcnt
     }
     #[doc = "0x24 - slave hold debounce configure register"]
     #[inline(always)]
-    pub const fn rki2c_scl_oe_db(&self) -> &Rki2cSclOeDb {
-        &self.rki2c_scl_oe_db
+    pub const fn scl_oe_db(&self) -> &SclOeDb {
+        &self.scl_oe_db
     }
     #[doc = "0x100 - I2C tx data register 0"]
     #[inline(always)]
-    pub const fn rki2c_txdata0(&self) -> &Rki2cTxdata0 {
-        &self.rki2c_txdata0
+    pub const fn txdata0(&self) -> &Txdata0 {
+        &self.txdata0
     }
     #[doc = "0x104 - I2C tx data register 1"]
     #[inline(always)]
-    pub const fn rki2c_txdata1(&self) -> &Rki2cTxdata1 {
-        &self.rki2c_txdata1
+    pub const fn txdata1(&self) -> &Txdata1 {
+        &self.txdata1
     }
     #[doc = "0x108 - I2C tx data register 2"]
     #[inline(always)]
-    pub const fn rki2c_txdata2(&self) -> &Rki2cTxdata2 {
-        &self.rki2c_txdata2
+    pub const fn txdata2(&self) -> &Txdata2 {
+        &self.txdata2
     }
     #[doc = "0x10c - I2C tx data register 3"]
     #[inline(always)]
-    pub const fn rki2c_txdata3(&self) -> &Rki2cTxdata3 {
-        &self.rki2c_txdata3
+    pub const fn txdata3(&self) -> &Txdata3 {
+        &self.txdata3
     }
     #[doc = "0x110 - I2C tx data register 4"]
     #[inline(always)]
-    pub const fn rki2c_txdata4(&self) -> &Rki2cTxdata4 {
-        &self.rki2c_txdata4
+    pub const fn txdata4(&self) -> &Txdata4 {
+        &self.txdata4
     }
     #[doc = "0x114 - I2C tx data register 5"]
     #[inline(always)]
-    pub const fn rki2c_txdata5(&self) -> &Rki2cTxdata5 {
-        &self.rki2c_txdata5
+    pub const fn txdata5(&self) -> &Txdata5 {
+        &self.txdata5
     }
     #[doc = "0x118 - I2C tx data register 6"]
     #[inline(always)]
-    pub const fn rki2c_txdata6(&self) -> &Rki2cTxdata6 {
-        &self.rki2c_txdata6
+    pub const fn txdata6(&self) -> &Txdata6 {
+        &self.txdata6
     }
     #[doc = "0x11c - I2C tx data register 7"]
     #[inline(always)]
-    pub const fn rki2c_txdata7(&self) -> &Rki2cTxdata7 {
-        &self.rki2c_txdata7
+    pub const fn txdata7(&self) -> &Txdata7 {
+        &self.txdata7
     }
     #[doc = "0x200 - I2C rx data register 0"]
     #[inline(always)]
-    pub const fn rki2c_rxdata0(&self) -> &Rki2cRxdata0 {
-        &self.rki2c_rxdata0
+    pub const fn rxdata0(&self) -> &Rxdata0 {
+        &self.rxdata0
     }
     #[doc = "0x204 - I2C rx data register 1"]
     #[inline(always)]
-    pub const fn rki2c_rxdata1(&self) -> &Rki2cRxdata1 {
-        &self.rki2c_rxdata1
+    pub const fn rxdata1(&self) -> &Rxdata1 {
+        &self.rxdata1
     }
     #[doc = "0x208 - I2C rx data register 2"]
     #[inline(always)]
-    pub const fn rki2c_rxdata2(&self) -> &Rki2cRxdata2 {
-        &self.rki2c_rxdata2
+    pub const fn rxdata2(&self) -> &Rxdata2 {
+        &self.rxdata2
     }
     #[doc = "0x20c - I2C rx data register 3"]
     #[inline(always)]
-    pub const fn rki2c_rxdata3(&self) -> &Rki2cRxdata3 {
-        &self.rki2c_rxdata3
+    pub const fn rxdata3(&self) -> &Rxdata3 {
+        &self.rxdata3
     }
     #[doc = "0x210 - I2C rx data register 4"]
     #[inline(always)]
-    pub const fn rki2c_rxdata4(&self) -> &Rki2cRxdata4 {
-        &self.rki2c_rxdata4
+    pub const fn rxdata4(&self) -> &Rxdata4 {
+        &self.rxdata4
     }
     #[doc = "0x214 - I2C rx data register 5"]
     #[inline(always)]
-    pub const fn rki2c_rxdata5(&self) -> &Rki2cRxdata5 {
-        &self.rki2c_rxdata5
+    pub const fn rxdata5(&self) -> &Rxdata5 {
+        &self.rxdata5
     }
     #[doc = "0x218 - I2C rx data register 6"]
     #[inline(always)]
-    pub const fn rki2c_rxdata6(&self) -> &Rki2cRxdata6 {
-        &self.rki2c_rxdata6
+    pub const fn rxdata6(&self) -> &Rxdata6 {
+        &self.rxdata6
     }
     #[doc = "0x21c - I2C rx data register 7"]
     #[inline(always)]
-    pub const fn rki2c_rxdata7(&self) -> &Rki2cRxdata7 {
-        &self.rki2c_rxdata7
+    pub const fn rxdata7(&self) -> &Rxdata7 {
+        &self.rxdata7
     }
     #[doc = "0x220 - status debug register"]
     #[inline(always)]
-    pub const fn rki2c_st(&self) -> &Rki2cSt {
-        &self.rki2c_st
+    pub const fn st(&self) -> &St {
+        &self.st
     }
 }
-#[doc = "RKI2C_CON (rw) register accessor: control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rki2c_con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_con`]
+#[doc = "CON (rw) register accessor: control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`con::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`con::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@con`]
 module"]
-#[doc(alias = "RKI2C_CON")]
-pub type Rki2cCon = crate::Reg<rki2c_con::Rki2cConSpec>;
+#[doc(alias = "CON")]
+pub type Con = crate::Reg<con::ConSpec>;
 #[doc = "control register"]
-pub mod rki2c_con;
-#[doc = "RKI2C_CLKDIV (rw) register accessor: clock divider register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_clkdiv::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rki2c_clkdiv::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_clkdiv`]
+#[path = "rki2c/con_.rs"]
+pub mod con;
+#[doc = "CLKDIV (rw) register accessor: clock divider register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clkdiv::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clkdiv::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@clkdiv`]
 module"]
-#[doc(alias = "RKI2C_CLKDIV")]
-pub type Rki2cClkdiv = crate::Reg<rki2c_clkdiv::Rki2cClkdivSpec>;
+#[doc(alias = "CLKDIV")]
+pub type Clkdiv = crate::Reg<clkdiv::ClkdivSpec>;
 #[doc = "clock divider register"]
-pub mod rki2c_clkdiv;
-#[doc = "RKI2C_MRXADDR (rw) register accessor: the slave address accessed for master rx mode\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_mrxaddr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rki2c_mrxaddr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_mrxaddr`]
+pub mod clkdiv;
+#[doc = "MRXADDR (rw) register accessor: the slave address accessed for master rx mode\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mrxaddr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mrxaddr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mrxaddr`]
 module"]
-#[doc(alias = "RKI2C_MRXADDR")]
-pub type Rki2cMrxaddr = crate::Reg<rki2c_mrxaddr::Rki2cMrxaddrSpec>;
+#[doc(alias = "MRXADDR")]
+pub type Mrxaddr = crate::Reg<mrxaddr::MrxaddrSpec>;
 #[doc = "the slave address accessed for master rx mode"]
-pub mod rki2c_mrxaddr;
-#[doc = "RKI2C_MRXRADDR (rw) register accessor: the slave register address accessed for master rx mode\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_mrxraddr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rki2c_mrxraddr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_mrxraddr`]
+pub mod mrxaddr;
+#[doc = "MRXRADDR (rw) register accessor: the slave register address accessed for master rx mode\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mrxraddr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mrxraddr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mrxraddr`]
 module"]
-#[doc(alias = "RKI2C_MRXRADDR")]
-pub type Rki2cMrxraddr = crate::Reg<rki2c_mrxraddr::Rki2cMrxraddrSpec>;
+#[doc(alias = "MRXRADDR")]
+pub type Mrxraddr = crate::Reg<mrxraddr::MrxraddrSpec>;
 #[doc = "the slave register address accessed for master rx mode"]
-pub mod rki2c_mrxraddr;
-#[doc = "RKI2C_MTXCNT (rw) register accessor: master transmit count\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_mtxcnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rki2c_mtxcnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_mtxcnt`]
+pub mod mrxraddr;
+#[doc = "MTXCNT (rw) register accessor: master transmit count\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mtxcnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mtxcnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mtxcnt`]
 module"]
-#[doc(alias = "RKI2C_MTXCNT")]
-pub type Rki2cMtxcnt = crate::Reg<rki2c_mtxcnt::Rki2cMtxcntSpec>;
+#[doc(alias = "MTXCNT")]
+pub type Mtxcnt = crate::Reg<mtxcnt::MtxcntSpec>;
 #[doc = "master transmit count"]
-pub mod rki2c_mtxcnt;
-#[doc = "RKI2C_MRXCNT (rw) register accessor: master rx count\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_mrxcnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rki2c_mrxcnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_mrxcnt`]
+pub mod mtxcnt;
+#[doc = "MRXCNT (rw) register accessor: master rx count\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mrxcnt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mrxcnt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mrxcnt`]
 module"]
-#[doc(alias = "RKI2C_MRXCNT")]
-pub type Rki2cMrxcnt = crate::Reg<rki2c_mrxcnt::Rki2cMrxcntSpec>;
+#[doc(alias = "MRXCNT")]
+pub type Mrxcnt = crate::Reg<mrxcnt::MrxcntSpec>;
 #[doc = "master rx count"]
-pub mod rki2c_mrxcnt;
-#[doc = "RKI2C_IEN (rw) register accessor: interrupt enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_ien::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rki2c_ien::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_ien`]
+pub mod mrxcnt;
+#[doc = "IEN (rw) register accessor: interrupt enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ien::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ien::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ien`]
 module"]
-#[doc(alias = "RKI2C_IEN")]
-pub type Rki2cIen = crate::Reg<rki2c_ien::Rki2cIenSpec>;
+#[doc(alias = "IEN")]
+pub type Ien = crate::Reg<ien::IenSpec>;
 #[doc = "interrupt enable register"]
-pub mod rki2c_ien;
-#[doc = "RKI2C_IPD (rw) register accessor: interrupt pending register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_ipd::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rki2c_ipd::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_ipd`]
+pub mod ien;
+#[doc = "IPD (rw) register accessor: interrupt pending register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ipd::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ipd::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ipd`]
 module"]
-#[doc(alias = "RKI2C_IPD")]
-pub type Rki2cIpd = crate::Reg<rki2c_ipd::Rki2cIpdSpec>;
+#[doc(alias = "IPD")]
+pub type Ipd = crate::Reg<ipd::IpdSpec>;
 #[doc = "interrupt pending register"]
-pub mod rki2c_ipd;
-#[doc = "RKI2C_FCNT (r) register accessor: finished count\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_fcnt::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_fcnt`]
+pub mod ipd;
+#[doc = "FCNT (r) register accessor: finished count\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fcnt::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fcnt`]
 module"]
-#[doc(alias = "RKI2C_FCNT")]
-pub type Rki2cFcnt = crate::Reg<rki2c_fcnt::Rki2cFcntSpec>;
+#[doc(alias = "FCNT")]
+pub type Fcnt = crate::Reg<fcnt::FcntSpec>;
 #[doc = "finished count"]
-pub mod rki2c_fcnt;
-#[doc = "RKI2C_SCL_OE_DB (rw) register accessor: slave hold debounce configure register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_scl_oe_db::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rki2c_scl_oe_db::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_scl_oe_db`]
+pub mod fcnt;
+#[doc = "SCL_OE_DB (rw) register accessor: slave hold debounce configure register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scl_oe_db::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`scl_oe_db::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scl_oe_db`]
 module"]
-#[doc(alias = "RKI2C_SCL_OE_DB")]
-pub type Rki2cSclOeDb = crate::Reg<rki2c_scl_oe_db::Rki2cSclOeDbSpec>;
+#[doc(alias = "SCL_OE_DB")]
+pub type SclOeDb = crate::Reg<scl_oe_db::SclOeDbSpec>;
 #[doc = "slave hold debounce configure register"]
-pub mod rki2c_scl_oe_db;
-#[doc = "RKI2C_TXDATA0 (rw) register accessor: I2C tx data register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_txdata0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rki2c_txdata0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_txdata0`]
+pub mod scl_oe_db;
+#[doc = "TXDATA0 (rw) register accessor: I2C tx data register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`txdata0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`txdata0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@txdata0`]
 module"]
-#[doc(alias = "RKI2C_TXDATA0")]
-pub type Rki2cTxdata0 = crate::Reg<rki2c_txdata0::Rki2cTxdata0Spec>;
+#[doc(alias = "TXDATA0")]
+pub type Txdata0 = crate::Reg<txdata0::Txdata0Spec>;
 #[doc = "I2C tx data register 0"]
-pub mod rki2c_txdata0;
-#[doc = "RKI2C_TXDATA1 (rw) register accessor: I2C tx data register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_txdata1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rki2c_txdata1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_txdata1`]
+pub mod txdata0;
+#[doc = "TXDATA1 (rw) register accessor: I2C tx data register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`txdata1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`txdata1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@txdata1`]
 module"]
-#[doc(alias = "RKI2C_TXDATA1")]
-pub type Rki2cTxdata1 = crate::Reg<rki2c_txdata1::Rki2cTxdata1Spec>;
+#[doc(alias = "TXDATA1")]
+pub type Txdata1 = crate::Reg<txdata1::Txdata1Spec>;
 #[doc = "I2C tx data register 1"]
-pub mod rki2c_txdata1;
-#[doc = "RKI2C_TXDATA2 (rw) register accessor: I2C tx data register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_txdata2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rki2c_txdata2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_txdata2`]
+pub mod txdata1;
+#[doc = "TXDATA2 (rw) register accessor: I2C tx data register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`txdata2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`txdata2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@txdata2`]
 module"]
-#[doc(alias = "RKI2C_TXDATA2")]
-pub type Rki2cTxdata2 = crate::Reg<rki2c_txdata2::Rki2cTxdata2Spec>;
+#[doc(alias = "TXDATA2")]
+pub type Txdata2 = crate::Reg<txdata2::Txdata2Spec>;
 #[doc = "I2C tx data register 2"]
-pub mod rki2c_txdata2;
-#[doc = "RKI2C_TXDATA3 (rw) register accessor: I2C tx data register 3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_txdata3::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rki2c_txdata3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_txdata3`]
+pub mod txdata2;
+#[doc = "TXDATA3 (rw) register accessor: I2C tx data register 3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`txdata3::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`txdata3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@txdata3`]
 module"]
-#[doc(alias = "RKI2C_TXDATA3")]
-pub type Rki2cTxdata3 = crate::Reg<rki2c_txdata3::Rki2cTxdata3Spec>;
+#[doc(alias = "TXDATA3")]
+pub type Txdata3 = crate::Reg<txdata3::Txdata3Spec>;
 #[doc = "I2C tx data register 3"]
-pub mod rki2c_txdata3;
-#[doc = "RKI2C_TXDATA4 (rw) register accessor: I2C tx data register 4\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_txdata4::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rki2c_txdata4::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_txdata4`]
+pub mod txdata3;
+#[doc = "TXDATA4 (rw) register accessor: I2C tx data register 4\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`txdata4::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`txdata4::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@txdata4`]
 module"]
-#[doc(alias = "RKI2C_TXDATA4")]
-pub type Rki2cTxdata4 = crate::Reg<rki2c_txdata4::Rki2cTxdata4Spec>;
+#[doc(alias = "TXDATA4")]
+pub type Txdata4 = crate::Reg<txdata4::Txdata4Spec>;
 #[doc = "I2C tx data register 4"]
-pub mod rki2c_txdata4;
-#[doc = "RKI2C_TXDATA5 (rw) register accessor: I2C tx data register 5\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_txdata5::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rki2c_txdata5::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_txdata5`]
+pub mod txdata4;
+#[doc = "TXDATA5 (rw) register accessor: I2C tx data register 5\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`txdata5::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`txdata5::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@txdata5`]
 module"]
-#[doc(alias = "RKI2C_TXDATA5")]
-pub type Rki2cTxdata5 = crate::Reg<rki2c_txdata5::Rki2cTxdata5Spec>;
+#[doc(alias = "TXDATA5")]
+pub type Txdata5 = crate::Reg<txdata5::Txdata5Spec>;
 #[doc = "I2C tx data register 5"]
-pub mod rki2c_txdata5;
-#[doc = "RKI2C_TXDATA6 (rw) register accessor: I2C tx data register 6\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_txdata6::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rki2c_txdata6::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_txdata6`]
+pub mod txdata5;
+#[doc = "TXDATA6 (rw) register accessor: I2C tx data register 6\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`txdata6::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`txdata6::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@txdata6`]
 module"]
-#[doc(alias = "RKI2C_TXDATA6")]
-pub type Rki2cTxdata6 = crate::Reg<rki2c_txdata6::Rki2cTxdata6Spec>;
+#[doc(alias = "TXDATA6")]
+pub type Txdata6 = crate::Reg<txdata6::Txdata6Spec>;
 #[doc = "I2C tx data register 6"]
-pub mod rki2c_txdata6;
-#[doc = "RKI2C_TXDATA7 (rw) register accessor: I2C tx data register 7\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_txdata7::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rki2c_txdata7::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_txdata7`]
+pub mod txdata6;
+#[doc = "TXDATA7 (rw) register accessor: I2C tx data register 7\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`txdata7::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`txdata7::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@txdata7`]
 module"]
-#[doc(alias = "RKI2C_TXDATA7")]
-pub type Rki2cTxdata7 = crate::Reg<rki2c_txdata7::Rki2cTxdata7Spec>;
+#[doc(alias = "TXDATA7")]
+pub type Txdata7 = crate::Reg<txdata7::Txdata7Spec>;
 #[doc = "I2C tx data register 7"]
-pub mod rki2c_txdata7;
-#[doc = "RKI2C_RXDATA0 (r) register accessor: I2C rx data register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_rxdata0::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_rxdata0`]
+pub mod txdata7;
+#[doc = "RXDATA0 (r) register accessor: I2C rx data register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdata0::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rxdata0`]
 module"]
-#[doc(alias = "RKI2C_RXDATA0")]
-pub type Rki2cRxdata0 = crate::Reg<rki2c_rxdata0::Rki2cRxdata0Spec>;
+#[doc(alias = "RXDATA0")]
+pub type Rxdata0 = crate::Reg<rxdata0::Rxdata0Spec>;
 #[doc = "I2C rx data register 0"]
-pub mod rki2c_rxdata0;
-#[doc = "RKI2C_RXDATA1 (r) register accessor: I2C rx data register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_rxdata1::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_rxdata1`]
+pub mod rxdata0;
+#[doc = "RXDATA1 (r) register accessor: I2C rx data register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdata1::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rxdata1`]
 module"]
-#[doc(alias = "RKI2C_RXDATA1")]
-pub type Rki2cRxdata1 = crate::Reg<rki2c_rxdata1::Rki2cRxdata1Spec>;
+#[doc(alias = "RXDATA1")]
+pub type Rxdata1 = crate::Reg<rxdata1::Rxdata1Spec>;
 #[doc = "I2C rx data register 1"]
-pub mod rki2c_rxdata1;
-#[doc = "RKI2C_RXDATA2 (r) register accessor: I2C rx data register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_rxdata2::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_rxdata2`]
+pub mod rxdata1;
+#[doc = "RXDATA2 (r) register accessor: I2C rx data register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdata2::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rxdata2`]
 module"]
-#[doc(alias = "RKI2C_RXDATA2")]
-pub type Rki2cRxdata2 = crate::Reg<rki2c_rxdata2::Rki2cRxdata2Spec>;
+#[doc(alias = "RXDATA2")]
+pub type Rxdata2 = crate::Reg<rxdata2::Rxdata2Spec>;
 #[doc = "I2C rx data register 2"]
-pub mod rki2c_rxdata2;
-#[doc = "RKI2C_RXDATA3 (r) register accessor: I2C rx data register 3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_rxdata3::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_rxdata3`]
+pub mod rxdata2;
+#[doc = "RXDATA3 (r) register accessor: I2C rx data register 3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdata3::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rxdata3`]
 module"]
-#[doc(alias = "RKI2C_RXDATA3")]
-pub type Rki2cRxdata3 = crate::Reg<rki2c_rxdata3::Rki2cRxdata3Spec>;
+#[doc(alias = "RXDATA3")]
+pub type Rxdata3 = crate::Reg<rxdata3::Rxdata3Spec>;
 #[doc = "I2C rx data register 3"]
-pub mod rki2c_rxdata3;
-#[doc = "RKI2C_RXDATA4 (r) register accessor: I2C rx data register 4\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_rxdata4::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_rxdata4`]
+pub mod rxdata3;
+#[doc = "RXDATA4 (r) register accessor: I2C rx data register 4\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdata4::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rxdata4`]
 module"]
-#[doc(alias = "RKI2C_RXDATA4")]
-pub type Rki2cRxdata4 = crate::Reg<rki2c_rxdata4::Rki2cRxdata4Spec>;
+#[doc(alias = "RXDATA4")]
+pub type Rxdata4 = crate::Reg<rxdata4::Rxdata4Spec>;
 #[doc = "I2C rx data register 4"]
-pub mod rki2c_rxdata4;
-#[doc = "RKI2C_RXDATA5 (r) register accessor: I2C rx data register 5\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_rxdata5::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_rxdata5`]
+pub mod rxdata4;
+#[doc = "RXDATA5 (r) register accessor: I2C rx data register 5\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdata5::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rxdata5`]
 module"]
-#[doc(alias = "RKI2C_RXDATA5")]
-pub type Rki2cRxdata5 = crate::Reg<rki2c_rxdata5::Rki2cRxdata5Spec>;
+#[doc(alias = "RXDATA5")]
+pub type Rxdata5 = crate::Reg<rxdata5::Rxdata5Spec>;
 #[doc = "I2C rx data register 5"]
-pub mod rki2c_rxdata5;
-#[doc = "RKI2C_RXDATA6 (r) register accessor: I2C rx data register 6\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_rxdata6::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_rxdata6`]
+pub mod rxdata5;
+#[doc = "RXDATA6 (r) register accessor: I2C rx data register 6\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdata6::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rxdata6`]
 module"]
-#[doc(alias = "RKI2C_RXDATA6")]
-pub type Rki2cRxdata6 = crate::Reg<rki2c_rxdata6::Rki2cRxdata6Spec>;
+#[doc(alias = "RXDATA6")]
+pub type Rxdata6 = crate::Reg<rxdata6::Rxdata6Spec>;
 #[doc = "I2C rx data register 6"]
-pub mod rki2c_rxdata6;
-#[doc = "RKI2C_RXDATA7 (r) register accessor: I2C rx data register 7\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_rxdata7::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_rxdata7`]
+pub mod rxdata6;
+#[doc = "RXDATA7 (r) register accessor: I2C rx data register 7\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdata7::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rxdata7`]
 module"]
-#[doc(alias = "RKI2C_RXDATA7")]
-pub type Rki2cRxdata7 = crate::Reg<rki2c_rxdata7::Rki2cRxdata7Spec>;
+#[doc(alias = "RXDATA7")]
+pub type Rxdata7 = crate::Reg<rxdata7::Rxdata7Spec>;
 #[doc = "I2C rx data register 7"]
-pub mod rki2c_rxdata7;
-#[doc = "RKI2C_ST (r) register accessor: status debug register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rki2c_st::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rki2c_st`]
+pub mod rxdata7;
+#[doc = "ST (r) register accessor: status debug register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`st::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@st`]
 module"]
-#[doc(alias = "RKI2C_ST")]
-pub type Rki2cSt = crate::Reg<rki2c_st::Rki2cStSpec>;
+#[doc(alias = "ST")]
+pub type St = crate::Reg<st::StSpec>;
 #[doc = "status debug register"]
-pub mod rki2c_st;
+pub mod st;

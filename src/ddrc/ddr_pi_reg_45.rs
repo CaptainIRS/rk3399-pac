@@ -2,9 +2,9 @@
 pub type R = crate::R<DdrPiReg45Spec>;
 #[doc = "Register `DDR_PI_REG_45` writer"]
 pub type W = crate::W<DdrPiReg45Spec>;
-#[doc = "Field `PI_CASLAT_LIN_F2` reader - Sets latency from read command send to data receive from/to\n\ncontroller. Bit0 is half-cycle increment and the upper bits define\n\nmemory CAS latency for the controller. The suffix \"_f2\" of the\n\nparameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_CASLAT_LIN_F2` reader - Sets latency from read command send to data receive from/to\n\ncontroller. Bit0 is half-cycle increment and the upper bits define\n\nmemory CAS latency for the controller. The suffix '_f2' of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiCaslatLinF2R = crate::FieldReader;
-#[doc = "Field `PI_CASLAT_LIN_F2` writer - Sets latency from read command send to data receive from/to\n\ncontroller. Bit0 is half-cycle increment and the upper bits define\n\nmemory CAS latency for the controller. The suffix \"_f2\" of the\n\nparameter name is omitted when in non-DFS mode."]
+#[doc = "Field `PI_CASLAT_LIN_F2` writer - Sets latency from read command send to data receive from/to\n\ncontroller. Bit0 is half-cycle increment and the upper bits define\n\nmemory CAS latency for the controller. The suffix '_f2' of the\n\nparameter name is omitted when in non-DFS mode."]
 pub type PiCaslatLinF2W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `PI_PREAMBLE_SUPPORT` reader - Indicates selection of one or two-cycle preamble for read and write\n\nburst transfers."]
 pub type PiPreambleSupportR = crate::FieldReader;
@@ -17,7 +17,7 @@ pub type PiMcarefForwardOnlyR = crate::BitReader;
 #[doc = "Field `PI_MCAREF_FORWARD_ONLY` writer - Pass mc auto refresh command to DRAM device, not generate\n\nauto-refresh by PI. It is recommended to set to 1."]
 pub type PiMcarefForwardOnlyW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bits 0:6 - Sets latency from read command send to data receive from/to\n\ncontroller. Bit0 is half-cycle increment and the upper bits define\n\nmemory CAS latency for the controller. The suffix \"_f2\" of the\n\nparameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:6 - Sets latency from read command send to data receive from/to\n\ncontroller. Bit0 is half-cycle increment and the upper bits define\n\nmemory CAS latency for the controller. The suffix '_f2' of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     pub fn pi_caslat_lin_f2(&self) -> PiCaslatLinF2R {
         PiCaslatLinF2R::new((self.bits & 0x7f) as u8)
@@ -34,7 +34,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:6 - Sets latency from read command send to data receive from/to\n\ncontroller. Bit0 is half-cycle increment and the upper bits define\n\nmemory CAS latency for the controller. The suffix \"_f2\" of the\n\nparameter name is omitted when in non-DFS mode."]
+    #[doc = "Bits 0:6 - Sets latency from read command send to data receive from/to\n\ncontroller. Bit0 is half-cycle increment and the upper bits define\n\nmemory CAS latency for the controller. The suffix '_f2' of the\n\nparameter name is omitted when in non-DFS mode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_caslat_lin_f2(&mut self) -> PiCaslatLinF2W<DdrPiReg45Spec> {

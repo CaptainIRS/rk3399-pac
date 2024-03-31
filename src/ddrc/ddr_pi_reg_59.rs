@@ -2,9 +2,9 @@
 pub type R = crate::R<DdrPiReg59Spec>;
 #[doc = "Register `DDR_PI_REG_59` writer"]
 pub type W = crate::W<DdrPiReg59Spec>;
-#[doc = "Field `PI_TDFI_CTRL_DELAY_F2` reader - Defines the DFI tCTRL_DELAY timing parameter (in DFI clocks), the\n\ndelay between a DFI command change and a memory command.\n\nThe suffix \"_f2\" of the parameter name is omitted when in non-DFS\n\nmode."]
+#[doc = "Field `PI_TDFI_CTRL_DELAY_F2` reader - Defines the DFI tCTRL_DELAY timing parameter (in DFI clocks), the\n\ndelay between a DFI command change and a memory command.\n\nThe suffix '_f2' of the parameter name is omitted when in non-DFS\n\nmode."]
 pub type PiTdfiCtrlDelayF2R = crate::FieldReader;
-#[doc = "Field `PI_TDFI_CTRL_DELAY_F2` writer - Defines the DFI tCTRL_DELAY timing parameter (in DFI clocks), the\n\ndelay between a DFI command change and a memory command.\n\nThe suffix \"_f2\" of the parameter name is omitted when in non-DFS\n\nmode."]
+#[doc = "Field `PI_TDFI_CTRL_DELAY_F2` writer - Defines the DFI tCTRL_DELAY timing parameter (in DFI clocks), the\n\ndelay between a DFI command change and a memory command.\n\nThe suffix '_f2' of the parameter name is omitted when in non-DFS\n\nmode."]
 pub type PiTdfiCtrlDelayF2W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `PI_WRLVL_REQ` writer - Indicates user request to initiate write leveling. Set to 1 to trigger."]
 pub type PiWrlvlReqW<'a, REG> = crate::BitWriter<'a, REG>;
@@ -17,7 +17,7 @@ pub type PiWldqsenR = crate::FieldReader;
 #[doc = "Field `PI_WLDQSEN` writer - Indicates delay from the issuing MRS to the first DQS strobe for\n\nwrite leveling."]
 pub type PiWldqsenW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
-    #[doc = "Bits 0:3 - Defines the DFI tCTRL_DELAY timing parameter (in DFI clocks), the\n\ndelay between a DFI command change and a memory command.\n\nThe suffix \"_f2\" of the parameter name is omitted when in non-DFS\n\nmode."]
+    #[doc = "Bits 0:3 - Defines the DFI tCTRL_DELAY timing parameter (in DFI clocks), the\n\ndelay between a DFI command change and a memory command.\n\nThe suffix '_f2' of the parameter name is omitted when in non-DFS\n\nmode."]
     #[inline(always)]
     pub fn pi_tdfi_ctrl_delay_f2(&self) -> PiTdfiCtrlDelayF2R {
         PiTdfiCtrlDelayF2R::new((self.bits & 0x0f) as u8)
@@ -34,7 +34,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - Defines the DFI tCTRL_DELAY timing parameter (in DFI clocks), the\n\ndelay between a DFI command change and a memory command.\n\nThe suffix \"_f2\" of the parameter name is omitted when in non-DFS\n\nmode."]
+    #[doc = "Bits 0:3 - Defines the DFI tCTRL_DELAY timing parameter (in DFI clocks), the\n\ndelay between a DFI command change and a memory command.\n\nThe suffix '_f2' of the parameter name is omitted when in non-DFS\n\nmode."]
     #[inline(always)]
     #[must_use]
     pub fn pi_tdfi_ctrl_delay_f2(&mut self) -> PiTdfiCtrlDelayF2W<DdrPiReg59Spec> {
