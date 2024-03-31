@@ -12,8 +12,8 @@ pub struct RegisterBlock {
     fsrc: Fsrc,
     ftrd: Ftrd,
     _reserved9: [u8; 0x04],
-    ftr0: Ftr0,
-    _reserved10: [u8; 0xbc],
+    ftr: [Ftr; 8],
+    _reserved10: [u8; 0xa0],
     csr: (),
     _reserved11: [u8; 0x04],
     cpc: (),
@@ -24,9 +24,9 @@ pub struct RegisterBlock {
     _reserved14: [u8; 0x04],
     ccr: (),
     _reserved15: [u8; 0x04],
-    lc0_: (),
+    lc0: (),
     _reserved16: [u8; 0x04],
-    lc1_: (),
+    lc1: (),
     _reserved17: [u8; 0x08f0],
     dbgstatus: Dbgstatus,
     dbgcmd: Dbgcmd,
@@ -88,10 +88,16 @@ impl RegisterBlock {
     pub const fn ftrd(&self) -> &Ftrd {
         &self.ftrd
     }
-    #[doc = "0x40 - Fault Type DMA Channel Register"]
+    #[doc = "0x40..0x60 - Fault Type DMA Channel Register"]
     #[inline(always)]
-    pub const fn ftr0(&self) -> &Ftr0 {
-        &self.ftr0
+    pub const fn ftr(&self, n: usize) -> &Ftr {
+        &self.ftr[n]
+    }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x40..0x60 - Fault Type DMA Channel Register"]
+    #[inline(always)]
+    pub fn ftr_iter(&self) -> impl Iterator<Item = &Ftr> {
+        self.ftr.iter()
     }
     #[doc = "0x100..0x120 - Channel Status Registers"]
     #[inline(always)]
@@ -102,7 +108,7 @@ impl RegisterBlock {
             &*(self as *const Self)
                 .cast::<u8>()
                 .add(256)
-                .add(32 * n)
+                .add(8 * n)
                 .cast()
         }
     }
@@ -114,7 +120,7 @@ impl RegisterBlock {
             &*(self as *const Self)
                 .cast::<u8>()
                 .add(256)
-                .add(32 * n)
+                .add(8 * n)
                 .cast()
         })
     }
@@ -127,7 +133,7 @@ impl RegisterBlock {
             &*(self as *const Self)
                 .cast::<u8>()
                 .add(260)
-                .add(32 * n)
+                .add(8 * n)
                 .cast()
         }
     }
@@ -139,7 +145,7 @@ impl RegisterBlock {
             &*(self as *const Self)
                 .cast::<u8>()
                 .add(260)
-                .add(32 * n)
+                .add(8 * n)
                 .cast()
         })
     }
@@ -220,7 +226,7 @@ impl RegisterBlock {
     }
     #[doc = "0x40c..0x42c - Loop Counter 0 Registers"]
     #[inline(always)]
-    pub const fn lc0_(&self, n: usize) -> &Lc0_ {
+    pub const fn lc0(&self, n: usize) -> &Lc0 {
         #[allow(clippy::no_effect)]
         [(); 8][n];
         unsafe {
@@ -234,7 +240,7 @@ impl RegisterBlock {
     #[doc = "Iterator for array of:"]
     #[doc = "0x40c..0x42c - Loop Counter 0 Registers"]
     #[inline(always)]
-    pub fn lc0__iter(&self) -> impl Iterator<Item = &Lc0_> {
+    pub fn lc0_iter(&self) -> impl Iterator<Item = &Lc0> {
         (0..8).map(move |n| unsafe {
             &*(self as *const Self)
                 .cast::<u8>()
@@ -245,7 +251,7 @@ impl RegisterBlock {
     }
     #[doc = "0x410..0x430 - Loop Counter 1 Registers"]
     #[inline(always)]
-    pub const fn lc1_(&self, n: usize) -> &Lc1_ {
+    pub const fn lc1(&self, n: usize) -> &Lc1 {
         #[allow(clippy::no_effect)]
         [(); 8][n];
         unsafe {
@@ -259,7 +265,7 @@ impl RegisterBlock {
     #[doc = "Iterator for array of:"]
     #[doc = "0x410..0x430 - Loop Counter 1 Registers"]
     #[inline(always)]
-    pub fn lc1__iter(&self) -> impl Iterator<Item = &Lc1_> {
+    pub fn lc1_iter(&self) -> impl Iterator<Item = &Lc1> {
         (0..8).map(move |n| unsafe {
             &*(self as *const Self)
                 .cast::<u8>()
@@ -378,12 +384,12 @@ module"]
 pub type Ftrd = crate::Reg<ftrd::FtrdSpec>;
 #[doc = "Fault Type DMA Manager Register"]
 pub mod ftrd;
-#[doc = "FTR0 (r) register accessor: Fault Type DMA Channel Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ftr0::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ftr0`]
+#[doc = "FTR (r) register accessor: Fault Type DMA Channel Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ftr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ftr`]
 module"]
-#[doc(alias = "FTR0")]
-pub type Ftr0 = crate::Reg<ftr0::Ftr0Spec>;
+#[doc(alias = "FTR")]
+pub type Ftr = crate::Reg<ftr::FtrSpec>;
 #[doc = "Fault Type DMA Channel Register"]
-pub mod ftr0;
+pub mod ftr;
 #[doc = "CSR (r) register accessor: Channel Status Registers\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@csr`]
 module"]
 #[doc(alias = "CSR")]
@@ -414,18 +420,18 @@ module"]
 pub type Ccr = crate::Reg<ccr::CcrSpec>;
 #[doc = "Channel Control Registers"]
 pub mod ccr;
-#[doc = "LC0_ (r) register accessor: Loop Counter 0 Registers\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lc0_::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@lc0_`]
+#[doc = "LC0 (r) register accessor: Loop Counter 0 Registers\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lc0::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@lc0`]
 module"]
-#[doc(alias = "LC0_")]
-pub type Lc0_ = crate::Reg<lc0_::Lc0_Spec>;
+#[doc(alias = "LC0")]
+pub type Lc0 = crate::Reg<lc0::Lc0Spec>;
 #[doc = "Loop Counter 0 Registers"]
-pub mod lc0_;
-#[doc = "LC1_ (r) register accessor: Loop Counter 1 Registers\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lc1_::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@lc1_`]
+pub mod lc0;
+#[doc = "LC1 (r) register accessor: Loop Counter 1 Registers\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lc1::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@lc1`]
 module"]
-#[doc(alias = "LC1_")]
-pub type Lc1_ = crate::Reg<lc1_::Lc1_Spec>;
+#[doc(alias = "LC1")]
+pub type Lc1 = crate::Reg<lc1::Lc1Spec>;
 #[doc = "Loop Counter 1 Registers"]
-pub mod lc1_;
+pub mod lc1;
 #[doc = "DBGSTATUS (r) register accessor: Debug Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dbgstatus::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dbgstatus`]
 module"]
 #[doc(alias = "DBGSTATUS")]
